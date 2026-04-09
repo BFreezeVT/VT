@@ -39,6 +39,7 @@ export default function Navigation() {
           <button data-testid="nav-why" onClick={() => scrollTo("why-it")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Why Us</button>
           <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Approach</button>
           <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Industries</button>
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">AI</button>
           <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Compliance</button>
           <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
           <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm transition-colors">
@@ -70,6 +71,7 @@ export default function Navigation() {
           <button data-testid="mobile-nav-why" onClick={() => scrollTo("why-it")} className="block text-[#A0B6CD] hover:text-white text-sm">Why Us</button>
           <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#A0B6CD] hover:text-white text-sm">Approach</button>
           <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#A0B6CD] hover:text-white text-sm">Industries</button>
+          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#A0B6CD] hover:text-white text-sm">AI</button>
           <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#A0B6CD] hover:text-white text-sm">Compliance</button>
           <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#A0B6CD] hover:text-white text-sm">FAQ</button>
           <a href="tel:9529417333" className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm">
