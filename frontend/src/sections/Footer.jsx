@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Linkedin, Youtube, Facebook } from "lucide-react";
 import { Separator } from "../components/ui/separator";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const scrollTo = (id) => {
@@ -71,6 +72,7 @@ export default function Footer() {
               <button data-testid="footer-link-compliance" onClick={() => scrollTo("compliance")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Compliance</button>
               <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
               <button data-testid="footer-link-audit" onClick={() => scrollTo("audit")} className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Free Audit</button>
+              <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#A0B6CD] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
             </div>
           </div>
 
