@@ -1,25 +1,152 @@
 import { Quote } from "lucide-react";
-
-const CASE_IMG = "https://images.pexels.com/photos/36574302/pexels-photo-36574302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "../components/ui/carousel";
 
 const testimonials = [
   {
-    quote: "Before Veracity, we were dealing with weekly outages and a ransomware scare that nearly shut down a $12M project. Within 90 days, every lingering IT issue was resolved. We haven't had a single minute of unplanned downtime in over a year.",
-    name: "Mike Henderson",
-    title: "VP of Operations, Twin Cities General Contractors",
-    industry: "Construction",
+    name: "Cody Nuernberg",
+    title: "President",
+    company: "BLD Connection",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_516099152.jpg",
+    quote: "Veracity Technologies has helped streamline our company's operations. The biggest advantage of partnering with them is the confidence and peace of mind they provide in our IT infrastructure. Their proactive, responsive, and knowledgeable team minimizes downtime and ensures consistent operations.",
   },
   {
-    quote: "When our previous provider couldn't meet SOC 2 requirements, Veracity had us audit-ready in 60 days. They understand financial compliance at a level we've never seen from an MSP. Our clients trust us more because of them.",
-    name: "Sarah Chen",
-    title: "Managing Director, Northland Capital Advisors",
-    industry: "Financial Services",
+    name: "Ryan Morris",
+    title: "Vice President",
+    company: "Fraser Morris",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_120011449.jpg",
+    quote: "The most significant benefit has been their prompt response to issues and the expertise of the technical staff, who intimately understand our systems for complex projects. Their swift action ensures minimal downtime, while intimate knowledge of our environment brings unparalleled efficiency.",
   },
   {
-    quote: "Veracity segmented our OT and IT networks, locked down our SCADA systems, and cut our incident response time by 80%. Our plant hasn't missed a production run due to IT since we partnered with them.",
-    name: "James Kowalski",
-    title: "Plant Manager, Precision Components MFG",
-    industry: "Manufacturing",
+    name: "Lauren Holec",
+    title: "Manager",
+    company: "Athena Actuarial",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_562997764.jpg",
+    quote: "Partnering with Veracity as our IT Managed Services Provider has been a positive experience. Their exceptional responsiveness ensures our questions and issues are addressed within hours. What sets Veracity apart is their unique blend of large-scale expertise and small-firm collaboration.",
+  },
+  {
+    name: "Mike Schultz",
+    title: "Owner",
+    company: "Surface Solutions",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_376499707.jpg",
+    quote: "Since partnering with Veracity Technologies, our productivity has soared thanks to their exceptional responsiveness and efficient handling of IT issues. Their quick response to tickets and expert problem-solving keeps our systems running smoothly.",
+  },
+  {
+    name: "Kaitie Firm",
+    title: "Operations & Special Project Manager",
+    company: "Juut SalonSpa",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_516649850.jpg",
+    quote: "Partnering with Veracity Technologies for our tech support has been a game-changer. Their expertise in areas where we lack has been invaluable. Quick response time, efficient problem-solving, and seamless understanding of technology complexities have saved us time and headaches.",
+  },
+  {
+    name: "Dustin Benz",
+    title: "President",
+    company: "iSpace Environments",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_323256330.jpg",
+    quote: "Working with Veracity Technologies has reshaped our IT landscape with tailored solutions prioritizing reliability and efficiency. Their services provide peace of mind and freedom, enabling seamless focus on running our business. Minimal disruptions, increased productivity, and zero IT guesswork.",
+  },
+  {
+    name: "Matthew Pince",
+    title: "Operations",
+    company: "Pulse Products",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_401108036.jpg",
+    quote: "Extremely satisfied with Veracity Technologies since they became our Technology support partner. The single biggest benefit has been their proactive approach, which gives us peace of mind and helps us avoid any potential downtime. Their team is highly professional and skilled.",
+  },
+  {
+    name: "Jordan Sanford",
+    title: "Vice President",
+    company: "Prestige Global Meeting Source",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_887369454.jpg",
+    quote: "Partnering with Veracity Technologies has transformed our organization by instilling immense confidence at all levels. Their dedicated team provides a deep understanding of our IT ecosystem. Veracity's exceptional focus on relationships and customer service sets them apart.",
+  },
+  {
+    name: "Linda Sobkowiak",
+    title: "Director of Operations",
+    company: "Stubbe and Associates",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_851202914.jpg",
+    quote: "Working with Veracity Technologies has been incredibly beneficial. The single biggest benefit has been their responsiveness and understanding of our employees' varying tech knowledge levels. They not only provide technical support but also evaluate and mitigate risks specific to our industry.",
+  },
+  {
+    name: "Mark Schulte",
+    title: "President",
+    company: "VIA Actuarial Solutions",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_401836330.jpg",
+    quote: "Veracity Technologies has greatly transformed our IT landscape, ensuring a seamless transition to remote work and modernizing our infrastructure. Their outstanding service and rapid issue resolution make them an essential partner for any business.",
+  },
+  {
+    name: "Shelley Rice",
+    title: "Operations Manager",
+    company: "Foreman and Airhart",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_950680703.jpg",
+    quote: "Partnering with Veracity Technologies has brought significant benefits, notably their exceptional responsiveness and knowledgeable staff, who provide a personal touch to our support requirements. Their ability to understand and cater to each client's unique working environment sets them apart.",
+  },
+  {
+    name: "Nadine Wikstrom",
+    title: "Director of Operations",
+    company: "SEIU Local 284",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_916777825.jpg",
+    quote: "Partnering with Veracity Technologies has changed our company, ensuring all licenses, equipment, and employee computer issues are efficiently managed. With over 12 years of partnership, Veracity's professionalism and commitment to tailored solutions have been unmatched.",
+  },
+  {
+    name: "Aaron Lindberg",
+    title: "Chief Investment Officer",
+    company: "Kingdom Legacy Advisors",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_777267656.jpg",
+    quote: "Since teaming up with Veracity Technologies, our biggest benefit has been their streamlined, one-stop solution for all our technology needs. Their expertise and personalized support ensure efficient operations without the hassle of managing multiple vendors.",
+  },
+  {
+    name: "Janet Johnson",
+    title: "Legal Administrator",
+    company: "Gregerson, Rosow, Johnson, and Nilan",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_508762783.jpg",
+    quote: "In my nearly 32 years with our firm, partnering with Veracity Technologies has been invaluable. Their deep understanding of our systems and operations ensures they provide tailored advice without upselling. Their prompt responsiveness and personalized service distinguish them.",
+  },
+  {
+    name: "Jesse Hallstrom",
+    title: "Chief Financial Officer",
+    company: "Hempel Companies",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_680591936.jpg",
+    quote: "Partnering with Veracity Technologies has been crucial for our operations. They swiftly solve problems, ensuring smooth business continuity. Their transparent, fair pricing and dedicated client focus set them apart from others.",
+  },
+  {
+    name: "Gretchen Postula",
+    title: "Managing Director",
+    company: "North Sky Capital",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_215968298.jpg",
+    quote: "The standout benefit has been their personalized approach. Unlike larger firms where we felt like just another client, Veracity understands our unique needs and challenges. Their quarterly business reviews strengthen our partnership, aligning technology with our business objectives.",
+  },
+  {
+    name: "Ellen Qureshi",
+    title: "CCO",
+    company: "Black Lake Investments",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_231011304.jpg",
+    quote: "I've been consistently impressed by their vigilant monitoring and expert support, providing peace of mind regarding our IT Infrastructure. Their commitment to SOC reporting underscores their strong internal controls and operational oversight.",
+  },
+  {
+    name: "Robbin Stusse",
+    title: "Operations Manager",
+    company: "Edelmann and Associates",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_625887714.jpg",
+    quote: "Working with Veracity Technologies as our IT partner has been exceptional. The comprehensive support for all our IT needs, from PCs to servers and network solutions, makes them feel like an extension of our own team.",
+  },
+  {
+    name: "Karen Engen",
+    title: "President",
+    company: "Practice Builders",
+    photo: null,
+    quote: "Veracity Technologies has consistently impressed us as our Technology support partner. Their ability to swiftly resolve issues ensures minimal disruption to our operations, crucial for both our staff and patients. Their dedicated customer service sets them apart.",
+  },
+  {
+    name: "Bob Harris",
+    title: "Controller",
+    company: "Salon Only Sales",
+    photo: "https://transform.octanecdn.com/fitLogo/200x200/https://octanecdn.com/veracitytechcom/veracitytechcom_852921665.jpg",
+    quote: "Veracity Technologies has been an invaluable partner for our tech support needs. Their commitment to integrating innovative technologies and enhancing our network security has been transformative. I trust Veracity to manage and set up our entire network.",
   },
 ];
 
@@ -33,52 +160,96 @@ export default function CaseStudy() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Client Results</p>
+          <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">What Our Clients Say</p>
           <h2
             data-testid="case-study-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
-            Trusted across industries. Proven in results.
+            Trusted by businesses across the Twin Cities.
           </h2>
+          <p className="text-[#A0B6CD] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+            Don&rsquo;t take our word for it. Here&rsquo;s what our clients have to say about partnering with Veracity Technologies.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              data-testid={`testimonial-card-${i}`}
-              className={`grid-border-card p-8 relative flex flex-col animate-fade-in-up stagger-${i + 2}`}
-            >
-              <Quote className="w-7 h-7 text-[#0077B3]/20 mb-4" />
-              <span className="overline text-[#0077B3] text-[10px] mb-3">{t.industry}</span>
-              <p className="text-[#A0B6CD] text-sm leading-relaxed mb-6 flex-1 italic">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="border-t border-[#003B71] pt-4 mt-auto">
-                <p data-testid={`testimonial-author-${i}`} className="text-white font-semibold text-sm">{t.name}</p>
-                <p className="text-[#A0B6CD] text-xs">{t.title}</p>
-              </div>
-            </div>
-          ))}
+        {/* Carousel - 3 visible at a time on desktop */}
+        <div className="px-10 lg:px-14">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            data-testid="testimonial-carousel"
+          >
+            <CarouselContent className="-ml-6">
+              {testimonials.map((t, i) => (
+                <CarouselItem
+                  key={i}
+                  className="pl-6 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <div
+                    data-testid={`testimonial-card-${i}`}
+                    className="grid-border-card p-6 h-full flex flex-col"
+                  >
+                    <Quote className="w-6 h-6 text-[#0077B3]/20 mb-4 flex-shrink-0" />
+                    <p className="text-[#A0B6CD] text-sm leading-relaxed mb-6 flex-1 italic">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <div className="border-t border-[#003B71] pt-4 mt-auto flex items-center gap-3">
+                      {t.photo ? (
+                        <img
+                          src={t.photo}
+                          alt={t.name}
+                          className="w-10 h-10 rounded-full object-cover border border-[#003B71]"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-10 h-10 rounded-full bg-[#003B71] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                          {t.name.split(" ").map(n => n[0]).join("")}
+                        </div>
+                      )}
+                      <div>
+                        <p data-testid={`testimonial-author-${i}`} className="text-white font-semibold text-sm">
+                          {t.name}
+                        </p>
+                        <p className="text-[#A0B6CD] text-xs">
+                          {t.title}, {t.company}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious
+              data-testid="carousel-prev"
+              className="border-[#003B71] bg-[#001A33] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -left-5 lg:-left-7"
+            />
+            <CarouselNext
+              data-testid="carousel-next"
+              className="border-[#003B71] bg-[#001A33] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -right-5 lg:-right-7"
+            />
+          </Carousel>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        {/* Stats */}
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
           <div data-testid="case-study-metric-0" className="text-center grid-border-card p-5">
-            <p className="stat-number text-3xl text-white">0</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Minutes Unplanned Downtime</p>
+            <p className="stat-number text-3xl text-white">20+</p>
+            <p className="text-xs text-[#A0B6CD] mt-1">Happy Clients</p>
           </div>
           <div data-testid="case-study-metric-1" className="text-center grid-border-card p-5">
-            <p className="stat-number text-3xl text-white">60</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Day Compliance Turnaround</p>
+            <p className="stat-number text-3xl text-white">32</p>
+            <p className="text-xs text-[#A0B6CD] mt-1">Years Longest Partnership</p>
           </div>
           <div data-testid="case-study-metric-2" className="text-center grid-border-card p-5">
-            <p className="stat-number text-3xl text-[#0077B3]">80%</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Faster Incident Response</p>
+            <p className="stat-number text-3xl text-[#0077B3]">24/7</p>
+            <p className="text-xs text-[#A0B6CD] mt-1">Support Availability</p>
           </div>
           <div data-testid="case-study-metric-3" className="text-center grid-border-card p-5">
-            <p className="stat-number text-3xl text-white">100%</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Issues Resolved</p>
+            <p className="stat-number text-3xl text-white">4.9</p>
+            <p className="text-xs text-[#A0B6CD] mt-1">Average Client Rating</p>
           </div>
         </div>
       </div>
