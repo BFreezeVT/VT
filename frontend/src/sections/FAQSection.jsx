@@ -37,6 +37,7 @@ export default function FAQSection() {
     <section
       id="faq"
       data-testid="faq-section"
+      aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
       className="py-24 lg:py-32 bg-[#001A33]/20"
     >
       <div className="max-w-3xl mx-auto px-6">

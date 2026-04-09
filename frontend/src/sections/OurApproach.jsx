@@ -30,6 +30,7 @@ export default function OurApproach() {
     <section
       id="approach"
       data-testid="approach-section"
+      aria-label="Our managed IT approach including proactive monitoring, MFA, disaster recovery, and 24/7 support"
       className="py-24 lg:py-32 bg-[#020812] relative overflow-hidden"
     >
       {/* Subtle background texture */}

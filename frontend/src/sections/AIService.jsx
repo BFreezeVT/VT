@@ -38,6 +38,7 @@ export default function AIService() {
     <section
       id="ai-service"
       data-testid="ai-service-section"
+      aria-label="AI as a Service offerings including AI security, governance, and threat detection"
       className="py-24 lg:py-32 bg-[#020812] relative overflow-hidden"
     >
       {/* Subtle animated grid background */}

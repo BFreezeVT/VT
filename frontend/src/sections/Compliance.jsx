@@ -35,6 +35,7 @@ export default function Compliance() {
     <section
       id="compliance"
       data-testid="compliance-section"
+      aria-label="Compliance and risk management for CMMC, ISO 27001, OSHA, PCI-DSS, and more"
       className="py-24 lg:py-32 relative overflow-hidden"
     >
       <div

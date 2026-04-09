@@ -28,6 +28,7 @@ export default function CaseStudy() {
     <section
       id="case-study"
       data-testid="case-study-section"
+      aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
       className="py-24 lg:py-32 bg-[#020812]"
     >
       <div className="max-w-7xl mx-auto px-6">

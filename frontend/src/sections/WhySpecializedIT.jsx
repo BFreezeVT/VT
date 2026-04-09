@@ -30,6 +30,7 @@ export default function WhySpecializedIT() {
     <section
       id="why-it"
       data-testid="why-specialized-section"
+      aria-label="Why regulated industries need specialized IT support"
       className="py-24 lg:py-32 bg-[#001A33]/40"
     >
       <div className="max-w-7xl mx-auto px-6">

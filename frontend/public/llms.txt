@@ -1,0 +1,110 @@
+# Veracity Technologies
+> Industry-specialized managed IT services and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in Minneapolis-St. Paul, Minnesota.
+
+## Company Overview
+Veracity Technologies is a managed service provider (MSP) that delivers IT infrastructure management and cybersecurity solutions tailored to regulated, operational industries. We serve construction firms, financial services organizations, manufacturing plants, and high-compliance enterprises across the Minneapolis-St. Paul region and beyond.
+
+Contact: (952) 941-7333 | info@veracitytech.com
+Location: Minneapolis-St. Paul, MN
+
+## Core Services
+
+### Managed IT Services
+- 24/7 proactive network monitoring with AI-powered anomaly detection
+- Multi-factor authentication (MFA) deployment and management
+- Disaster recovery planning (DRP) and tested backup solutions
+- Industry software integration (Procore, Sage, Bloomberg, SAP, SCADA systems)
+- Field and job site connectivity with ruggedized networking
+- Secure remote access via VPN and zero-trust architecture
+- 15-minute SLA for critical issues
+
+### Cybersecurity Services
+- Ransomware prevention and rapid incident response
+- Phishing prevention and employee security training
+- Credential exposure monitoring and remediation
+- Payment fraud prevention with email authentication protocols
+- Network segmentation and endpoint protection
+- BMS/IACS and SCADA system security
+
+### AI as a Service
+- AI strategy and integration consulting
+- AI security and governance frameworks
+- AI-powered threat detection (ML-based SOC)
+- Shadow AI monitoring and discovery
+- Data loss prevention for LLMs and AI tools
+- AI readiness assessments and adoption roadmaps
+
+### Compliance Management
+- CMMC (Cybersecurity Maturity Model Certification)
+- SOC 2 Type I and Type II
+- PCI-DSS
+- HIPAA
+- ISO 27001
+- NIST 800-171
+- SEC/FINRA regulations
+- OSHA digital record-keeping
+- ITAR compliance
+
+## Industries Served
+
+### Construction
+Job site connectivity, BIM security, Procore and Sage integration, rapid-response IT. Construction ransomware attacks have risen 41% year-over-year.
+
+### Financial Services
+SOC 2, PCI-DSS, and SEC/FINRA-aligned cybersecurity for banks, RIAs, and fintech. Average data breach cost in financial services: $4.9M.
+
+### Manufacturing
+OT/IT convergence security, SCADA protection, network segmentation. Manufacturing is the #1 most-attacked industry by ransomware for 3 consecutive years.
+
+### High-Compliance Industries
+CMMC, HIPAA, ITAR, NIST 800-171 expertise for defense contractors, healthcare, and government suppliers.
+
+## Key Statistics
+- 41% year-over-year increase in construction ransomware attacks
+- 75% of security alerts stem from stolen or compromised credentials
+- $4.9M average cost of a data breach in financial services
+- Manufacturing is #1 most-attacked industry by ransomware for 3 years
+- 78% of organizations have no AI security policy in place
+
+## Free Offer
+Veracity Technologies offers a free Technology & Cyber Risk Audit that includes:
+- Full network vulnerability scan
+- Password and access policy review
+- Ransomware and threat readiness assessment
+- Industry-specific compliance gap analysis
+- Disaster recovery plan evaluation
+
+Guarantee: If the audit does not identify at least three actionable improvements, Veracity Technologies will donate $100 to the client's chosen industry charity.
+
+## Credentials & Affiliations
+- CMMC Registered Provider
+- ISO 27001 Aligned
+- CompTIA Security+ Certified
+- Member: AGC of America (Associated General Contractors)
+- Member: ABC (Associated Builders and Contractors)
+
+## Client Results
+- 0 minutes unplanned downtime after implementation
+- 60-day compliance turnaround
+- 80% faster incident response
+- 100% of lingering IT issues resolved
+
+## FAQ
+
+Q: Will a cybersecurity audit disrupt operations?
+A: No. The assessment is non-invasive and uses passive scanning tools that do not interfere with networks or workflows.
+
+Q: How long does the audit take?
+A: 3-5 business days, with a comprehensive report delivered within one week.
+
+Q: Is data kept confidential?
+A: Yes. NDAs are signed before engagement, and data handling follows ISO 27001 protocols.
+
+Q: What industries does Veracity Technologies serve?
+A: Construction, financial services, manufacturing, and high-compliance industries including defense, healthcare, and government suppliers.
+
+Q: What compliance frameworks does Veracity support?
+A: CMMC, SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST 800-171, SEC/FINRA, OSHA, and ITAR.
+
+Q: Does Veracity offer AI security?
+A: Yes. Services include AI governance, shadow AI monitoring, data loss prevention for LLMs, AI-powered threat detection, and AI readiness assessments.

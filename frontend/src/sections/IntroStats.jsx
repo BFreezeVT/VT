@@ -5,6 +5,7 @@ export default function IntroStats() {
     <section
       id="intro-stats"
       data-testid="intro-stats-section"
+      aria-label="Cybersecurity threat statistics for construction, financial services, and manufacturing"
       className="py-24 lg:py-32 bg-[#020812]"
     >
       <div className="max-w-7xl mx-auto px-6">

@@ -12,7 +12,10 @@ export default function HeroSection() {
     <section
       id="hero"
       data-testid="hero-section"
+      aria-label="Veracity Technologies - Managed IT and Cybersecurity"
       className="relative min-h-screen flex items-center justify-start overflow-hidden"
+      itemScope
+      itemType="https://schema.org/WPHeader"
     >
       {/* Background */}
       <div

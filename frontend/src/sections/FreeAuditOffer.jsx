@@ -23,6 +23,7 @@ export default function FreeAuditOffer() {
     <section
       id="audit"
       data-testid="audit-section"
+      aria-label="Schedule a free technology and cyber risk audit"
       className="py-24 lg:py-32 bg-[#001A33]/40"
     >
       <div className="max-w-7xl mx-auto px-6">

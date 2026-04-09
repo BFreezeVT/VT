@@ -32,6 +32,7 @@ export default function Industries() {
     <section
       id="industries"
       data-testid="industries-section"
+      aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
       className="py-24 lg:py-32 bg-[#001A33]/30"
     >
       <div className="max-w-7xl mx-auto px-6">

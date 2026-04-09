@@ -18,18 +18,20 @@ function App() {
   return (
     <div className="min-h-screen bg-[#020812]" data-testid="app-root">
       <Navigation />
-      <HeroSection />
-      <IntroStats />
-      <WhySpecializedIT />
-      <OurApproach />
-      <Industries />
-      <AIService />
-      <Compliance />
-      <CaseStudy />
-      <FreeAuditOffer />
-      <RiskReversal />
-      <CyberGame />
-      <FAQSection />
+      <main role="main">
+        <HeroSection />
+        <IntroStats />
+        <WhySpecializedIT />
+        <OurApproach />
+        <Industries />
+        <AIService />
+        <Compliance />
+        <CaseStudy />
+        <FreeAuditOffer />
+        <RiskReversal />
+        <CyberGame />
+        <FAQSection />
+      </main>
       <Footer />
     </div>
   );
