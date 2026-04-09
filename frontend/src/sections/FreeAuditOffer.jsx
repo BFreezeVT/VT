@@ -1,0 +1,160 @@
+import { useState } from "react";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { CheckCircle, ClipboardCheck, Search, Lock, BarChart3, Clock } from "lucide-react";
+
+const auditIncludes = [
+  { icon: Search, text: "Full network vulnerability scan" },
+  { icon: Lock, text: "Password & access policy review" },
+  { icon: BarChart3, text: "Ransomware readiness assessment" },
+  { icon: ClipboardCheck, text: "Compliance gap analysis" },
+  { icon: Clock, text: "Disaster recovery plan evaluation" },
+];
+
+export default function FreeAuditOffer() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <section
+      id="audit"
+      data-testid="audit-section"
+      className="py-24 lg:py-32 bg-[#001A33]/40"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Left - Info */}
+          <div className="animate-fade-in-up">
+            <p className="overline text-[#FF5722] mb-4">Limited Availability</p>
+            <h2
+              data-testid="audit-heading"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6"
+              style={{ fontFamily: "Outfit, sans-serif" }}
+            >
+              Free Construction Technology &amp; Cyber Risk Audit
+            </h2>
+            <p className="text-[#A0B6CD] text-base leading-relaxed mb-10">
+              Our team will conduct a comprehensive, non-invasive review of your IT infrastructure 
+              and cybersecurity posture. You&rsquo;ll receive a detailed report with actionable 
+              recommendations tailored to construction operations.
+            </p>
+
+            <p className="text-white font-semibold text-sm mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>
+              What&rsquo;s included:
+            </p>
+            <div className="space-y-3">
+              {auditIncludes.map((item, i) => (
+                <div
+                  key={i}
+                  data-testid={`audit-include-${i}`}
+                  className="flex items-center gap-3"
+                >
+                  <item.icon className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
+                  <span className="text-[#A0B6CD] text-sm">{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right - Form */}
+          <div className="animate-fade-in-up stagger-2">
+            <div className="grid-border-card p-8 lg:p-10">
+              {!submitted ? (
+                <>
+                  <h3
+                    className="text-white font-bold text-xl mb-2"
+                    style={{ fontFamily: "Outfit, sans-serif" }}
+                  >
+                    Schedule Your Free Audit
+                  </h3>
+                  <p className="text-[#A0B6CD] text-sm mb-8">
+                    Fill in your details and we&rsquo;ll be in touch within one business day.
+                  </p>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">
+                        Company Name
+                      </label>
+                      <Input
+                        data-testid="form-company"
+                        id="company"
+                        placeholder="Your construction firm"
+                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="role" className="text-white text-sm font-medium mb-1.5 block">
+                        Your Role
+                      </label>
+                      <Input
+                        data-testid="form-role"
+                        id="role"
+                        placeholder="e.g. IT Director, Owner, PM"
+                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="text-white text-sm font-medium mb-1.5 block">
+                        Phone
+                      </label>
+                      <Input
+                        data-testid="form-phone"
+                        id="phone"
+                        type="tel"
+                        placeholder="(555) 123-4567"
+                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">
+                        Email
+                      </label>
+                      <Input
+                        data-testid="form-email"
+                        id="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        required
+                      />
+                    </div>
+                    <Button
+                      data-testid="form-submit-button"
+                      type="submit"
+                      className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12 text-base"
+                    >
+                      Schedule Your Free Audit
+                    </Button>
+                    <p className="text-xs text-[#A0B6CD]/60 text-center">
+                      Non-invasive. Confidential. No obligation.
+                    </p>
+                  </form>
+                </>
+              ) : (
+                <div data-testid="form-success" className="text-center py-8">
+                  <CheckCircle className="w-16 h-16 text-[#0077B3] mx-auto mb-4" />
+                  <h3
+                    className="text-white font-bold text-xl mb-2"
+                    style={{ fontFamily: "Outfit, sans-serif" }}
+                  >
+                    Thank you!
+                  </h3>
+                  <p className="text-[#A0B6CD] text-sm">
+                    We&rsquo;ve received your request. Our team will reach out within one business day to schedule your free audit.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

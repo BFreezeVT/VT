@@ -1,0 +1,79 @@
+import { Monitor, ShieldCheck, Layers, Headphones } from "lucide-react";
+
+const SERVER_IMG = "https://images.unsplash.com/photo-1680992044138-ce4864c2b962?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tJTIwc2VjdXJlJTIwdGVjaHxlbnwwfHx8fDE3NzU3NDQxMzR8MA&ixlib=rb-4.1.0&q=85";
+
+const approaches = [
+  {
+    icon: Monitor,
+    title: "Proactive Network Monitoring",
+    desc: "24/7 eyes on your infrastructure. We catch and resolve issues before they impact your project timeline.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "MFA & Disaster Recovery",
+    desc: "Multi-factor authentication across all access points plus tested disaster recovery plans that restore operations in hours, not days.",
+  },
+  {
+    icon: Layers,
+    title: "Construction Software Integration",
+    desc: "Seamless integration with Procore, Sage, PlanGrid, and other tools your teams rely on daily.",
+  },
+  {
+    icon: Headphones,
+    title: "24/7 Expert Support",
+    desc: "Our team knows the difference between a submittal and a change order. Real construction IT expertise, around the clock.",
+  },
+];
+
+export default function OurApproach() {
+  return (
+    <section
+      id="approach"
+      data-testid="approach-section"
+      className="py-24 lg:py-32 bg-[#020812] relative overflow-hidden"
+    >
+      {/* Subtle background texture */}
+      <div
+        className="absolute inset-0 opacity-[0.04] bg-cover bg-center"
+        style={{ backgroundImage: `url(${SERVER_IMG})` }}
+      />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Our Approach</p>
+          <h2
+            data-testid="approach-heading"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
+            style={{ fontFamily: "Outfit, sans-serif" }}
+          >
+            Proactive protection built for construction.
+          </h2>
+          <p className="text-[#A0B6CD] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+            We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {approaches.map((a, i) => (
+            <div
+              key={a.title}
+              data-testid={`approach-card-${i}`}
+              className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
+            >
+              <div className="w-12 h-12 flex items-center justify-center border border-[#003B71] bg-[#020812] mb-6 group-hover:border-[#0077B3] transition-colors">
+                <a.icon className="w-6 h-6 text-[#0077B3]" />
+              </div>
+              <h3
+                className="text-white font-semibold text-lg mb-3"
+                style={{ fontFamily: "Outfit, sans-serif" }}
+              >
+                {a.title}
+              </h3>
+              <p className="text-[#A0B6CD] text-sm leading-relaxed">{a.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

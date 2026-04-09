@@ -1,0 +1,99 @@
+import { Phone, Mail, MapPin } from "lucide-react";
+import { Separator } from "../components/ui/separator";
+
+export default function Footer() {
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <footer
+      data-testid="footer"
+      className="bg-[#020812] border-t border-[#003B71] pt-16 pb-8"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div>
+            <p
+              className="text-white font-bold text-xl tracking-tight mb-4"
+              style={{ fontFamily: "Outfit, sans-serif" }}
+            >
+              VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
+            </p>
+            <p className="text-[#A0B6CD] text-sm leading-relaxed">
+              Construction-first IT and cybersecurity for the Minneapolis-St. Paul region and beyond.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <p className="overline text-[#A0B6CD] mb-4">Navigate</p>
+            <div className="space-y-2">
+              <button data-testid="footer-link-why" onClick={() => scrollTo("why-it")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Why Specialized IT</button>
+              <button data-testid="footer-link-approach" onClick={() => scrollTo("approach")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Our Approach</button>
+              <button data-testid="footer-link-compliance" onClick={() => scrollTo("compliance")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Compliance</button>
+              <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
+              <button data-testid="footer-link-audit" onClick={() => scrollTo("audit")} className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Free Audit</button>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="overline text-[#A0B6CD] mb-4">Contact</p>
+            <div className="space-y-3">
+              <a
+                data-testid="footer-phone"
+                href="tel:9529417333"
+                className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#0077B3]" />
+                (952) 941-7333
+              </a>
+              <a
+                data-testid="footer-email"
+                href="mailto:info@veracitytech.com"
+                className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm transition-colors"
+              >
+                <Mail className="w-4 h-4 text-[#0077B3]" />
+                info@veracitytech.com
+              </a>
+              <div className="flex items-start gap-2 text-[#A0B6CD] text-sm">
+                <MapPin className="w-4 h-4 text-[#0077B3] mt-0.5 flex-shrink-0" />
+                <span>Minneapolis-St. Paul, MN</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Affiliations */}
+          <div>
+            <p className="overline text-[#A0B6CD] mb-4">Credentials</p>
+            <div className="space-y-2 text-sm text-[#A0B6CD]">
+              <p data-testid="footer-credential-0">CMMC Registered Provider</p>
+              <p data-testid="footer-credential-1">ISO 27001 Aligned</p>
+              <p data-testid="footer-credential-2">CompTIA Security+ Certified</p>
+            </div>
+            <Separator className="my-4 bg-[#003B71]" />
+            <p className="overline text-[#A0B6CD] mb-2">Affiliations</p>
+            <div className="space-y-1 text-sm text-[#A0B6CD]">
+              <p data-testid="footer-affiliation-agc">AGC of America</p>
+              <p data-testid="footer-affiliation-abc">ABC (Associated Builders and Contractors)</p>
+            </div>
+          </div>
+        </div>
+
+        <Separator className="bg-[#003B71] mb-6" />
+
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p data-testid="footer-copyright" className="text-[#A0B6CD]/60 text-xs">
+            &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4 text-xs text-[#A0B6CD]/60">
+            <button data-testid="footer-privacy" className="hover:text-white transition-colors">Privacy Policy</button>
+            <button data-testid="footer-terms" className="hover:text-white transition-colors">Terms of Service</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
