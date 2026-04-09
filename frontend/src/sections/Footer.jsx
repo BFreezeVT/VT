@@ -32,6 +32,7 @@ export default function Footer() {
             <div className="space-y-2">
               <button data-testid="footer-link-why" onClick={() => scrollTo("why-it")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Why Specialized IT</button>
               <button data-testid="footer-link-approach" onClick={() => scrollTo("approach")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Our Approach</button>
+              <button data-testid="footer-link-industries" onClick={() => scrollTo("industries")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Industries</button>
               <button data-testid="footer-link-compliance" onClick={() => scrollTo("compliance")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Compliance</button>
               <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
               <button data-testid="footer-link-audit" onClick={() => scrollTo("audit")} className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Free Audit</button>

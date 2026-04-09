@@ -4,6 +4,7 @@ import HeroSection from "./sections/HeroSection";
 import IntroStats from "./sections/IntroStats";
 import WhySpecializedIT from "./sections/WhySpecializedIT";
 import OurApproach from "./sections/OurApproach";
+import Industries from "./sections/Industries";
 import Compliance from "./sections/Compliance";
 import CaseStudy from "./sections/CaseStudy";
 import FreeAuditOffer from "./sections/FreeAuditOffer";
@@ -19,6 +20,7 @@ function App() {
       <IntroStats />
       <WhySpecializedIT />
       <OurApproach />
+      <Industries />
       <Compliance />
       <CaseStudy />
       <FreeAuditOffer />

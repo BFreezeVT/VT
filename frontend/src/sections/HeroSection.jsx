@@ -38,7 +38,7 @@ export default function HeroSection() {
             data-testid="hero-subhead"
             className="text-base md:text-lg text-[#A0B6CD] leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
-            Construction-first IT and cybersecurity that keeps your crews connected, your data safe, and your project schedules intact.
+            Construction-first IT and cybersecurity that keeps your crews connected, your data safe, and your project schedules intact. Trusted by firms in financial services, manufacturing, and high-compliance industries.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
