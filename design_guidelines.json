@@ -1,0 +1,119 @@
+{
+  "project_name": "Veracity Technologies Landing Page",
+  "theme": "dark",
+  "archetype": "Archetype 2: Performance Pro / Archetype 4: Swiss High-Contrast hybrid",
+  "reasoning": "A dark, highly technical 'control room' vibe fits the IT security domain. We use a base of deep tinted navy to accommodate Pantone 541, paired with Pantone 314 (Teal/Cyan) accents. We prioritize stark white text for high contrast. This conveys authority, safety, and ruggedness suited for construction.",
+  "colors": {
+    "background": "#020812",
+    "surface": "#001A33",
+    "surface_border": "#003B71",
+    "primary": "#0077B3",
+    "secondary": "#003B71",
+    "text_main": "#FFFFFF",
+    "text_muted": "#A0B6CD",
+    "accent": "#FF5722"
+  },
+  "typography": {
+    "headings": "Outfit, sans-serif",
+    "body": "IBM Plex Sans, sans-serif",
+    "rules": [
+      "NO Inter for headings. Ensure Outfit and IBM Plex Sans are imported via Google Fonts.",
+      "Headings > 32px must use tracking-tight.",
+      "Overlines must be uppercase + tiny + tracking-[0.2em].",
+      "Line-height: leading-none for headers, leading-relaxed for body."
+    ]
+  },
+  "layout_spacing": {
+    "container": "max-w-7xl mx-auto px-6",
+    "section_padding": "py-24 lg:py-32",
+    "grid_strategy": "TETRIS GRID (asymmetric) for Features/Why Us; CONTROL ROOM (dense) for Stats and Approach."
+  },
+  "component_guidelines": {
+    "buttons": "Flat solid. Primary CTAs use bg-white text-[#003B71] to avoid overuse of teal. Secondary/Form CTAs use bg-[#0077B3] text-white. Sharp edges (rounded-none or rounded-sm).",
+    "cards": "Surface strategy: 'Grid Borders'. 1px subtle borders (border-[#003B71]), dark flat background (#001A33). NO soft shadows.",
+    "inputs": "Shadcn inputs with custom styles: bg-black/20, border-[#003B71], text-white, focus:border-[#0077B3].",
+    "accordion": "Shadcn accordion for FAQs with border-b border-[#003B71] and clear white hover state."
+  },
+  "media": {
+    "hero_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/a4251189-ed5f-43ed-b8ac-224a99473a6d/images/755e40885bf612d0a90f9e7d5acb7000d6297c9bf69e34da7d49ec1541dea8ff.png",
+      "description": "Abstract 3D geometric construction IT background",
+      "usage": "Hero section background with dark overlay bg-[#020812]/80. Ensure text is clearly visible."
+    },
+    "tech_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/a4251189-ed5f-43ed-b8ac-224a99473a6d/images/135a01eaf279db78834b25ee533b6a592fa900f14e025322226c4102d084a5db.png",
+      "description": "Dark tech texture",
+      "usage": "Background overlay for Compliance or Approach section"
+    },
+    "tablet_manager": {
+      "url": "https://images.unsplash.com/photo-1714575600356-6635434699f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwbWFuYWdlciUyMHRhYmxldHxlbnwwfHx8fDE3NzU3NDQxMzR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Construction manager with tablet",
+      "usage": "Featured image in 'Why Construction Needs Specialized IT'."
+    },
+    "case_study": {
+      "url": "https://images.pexels.com/photos/36574302/pexels-photo-36574302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Group of construction workers collaborating",
+      "usage": "Case Study/Testimonial section visual."
+    },
+    "server_room": {
+      "url": "https://images.unsplash.com/photo-1680992044138-ce4864c2b962?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxzZXJ2ZXIlMjByb29tJTIwc2VjdXJlJTIwdGVjaHxlbnwwfHx8fDE3NzU3NDQxMzR8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Server rack",
+      "usage": "Visual for 'Our Approach' features."
+    }
+  },
+  "sections": [
+    {
+      "name": "Navigation",
+      "content": "Veracity Technologies text logo + Phone (952) 941-7333 + 'Schedule Audit' CTA."
+    },
+    {
+      "name": "Hero",
+      "content": "Headline: 'Stop Job Site Downtime Before It Stops Your Project.' Subhead, CTA 'Schedule Your Free Audit', phone number. Use 'hero_bg'."
+    },
+    {
+      "name": "Intro_Stats",
+      "content": "Problem statement with data points: 41% rise in construction ransomware, 75% credential exposure alerts. Style as large 'Control Room' metric cards."
+    },
+    {
+      "name": "Why_Specialized_IT",
+      "content": "Bullets explaining the need for construction-specific IT. Use 'tablet_manager'."
+    },
+    {
+      "name": "Our_Approach",
+      "content": "Proactive monitoring, MFA, DRP, 24/7 support. Use 'server_room' image."
+    },
+    {
+      "name": "Compliance",
+      "content": "CMMC, ISO 27001, OSHA."
+    },
+    {
+      "name": "Case_Study",
+      "content": "Testimonial content. Use 'case_study' image."
+    },
+    {
+      "name": "Free_Audit_Offer",
+      "content": "Short form (company name, role, phone, email) with 'Schedule Your Free Audit' CTA."
+    },
+    {
+      "name": "Risk_Reversal",
+      "content": "$100 charity donation promise guarantee. Standalone prominent section."
+    },
+    {
+      "name": "FAQs",
+      "content": "Accordion format for common questions."
+    },
+    {
+      "name": "Footer",
+      "content": "Compliance credentials, affiliations (AGC, ABC), Phone, Email."
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Build a single-page landing page strictly using the provided colors and images.",
+    "Implement the 'Tetris Grid' pattern for the 'Why Construction Needs IT' section.",
+    "For the Problem Statement stats (41% / 75%), use massive typography (text-5xl to text-6xl+) in a Bento box format.",
+    "Use Lucide React icons for the IT services and compliance badges.",
+    "Ensure the contact form uses Shadcn Form components with proper hover/focus states.",
+    "Add data-testid attributes to ALL interactive elements (buttons, links, form inputs, accordions, toggles).",
+    "Use Framer Motion for subtle entry animations on scroll (y: 20, opacity: 0 to 1)."
+  ]
+}
