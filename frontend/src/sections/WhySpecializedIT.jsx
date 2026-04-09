@@ -5,23 +5,23 @@ const TABLET_IMG = "https://images.unsplash.com/photo-1714575600356-6635434699f8
 const reasons = [
   {
     icon: Wifi,
-    title: "Job Site Connectivity",
-    desc: "Ruggedized networking that keeps every trailer, crane cam, and field tablet online across sprawling sites.",
+    title: "Field & Site Connectivity",
+    desc: "Ruggedized networking for job sites, branch offices, and factory floors — keeping every device and team online across distributed operations.",
   },
   {
     icon: Lock,
     title: "Secure Remote Access",
-    desc: "VPN and zero-trust frameworks so PMs, subs, and owners collaborate without exposing blueprints or bids.",
+    desc: "Zero-trust frameworks and VPN solutions so remote teams, vendors, and clients collaborate without exposing sensitive data or financial systems.",
   },
   {
     icon: Users,
-    title: "Vendor Coordination",
-    desc: "Managed integrations between your GC systems, sub portals, and owner dashboards with role-based controls.",
+    title: "Vendor & Partner Coordination",
+    desc: "Role-based integrations between your core systems, client portals, and third-party platforms with audit-ready access controls.",
   },
   {
     icon: Zap,
-    title: "Rapid Response",
-    desc: "15-minute SLA for critical issues because a downed server on pour day costs more than IT downtime elsewhere.",
+    title: "Rapid Response SLAs",
+    desc: "15-minute SLA for critical issues. A downed system on production day — whether it's a pour, a trade, or a manufacturing run — costs more than anywhere else.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function WhySpecializedIT() {
               <img
                 data-testid="why-it-image"
                 src={TABLET_IMG}
-                alt="Construction manager using tablet on site"
+                alt="Professional managing operations on tablet"
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
@@ -56,11 +56,11 @@ export default function WhySpecializedIT() {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
-              Generic tech support can&rsquo;t keep up with construction&rsquo;s pace.
+              Generic tech support can&rsquo;t keep up with regulated, operational industries.
             </h2>
             <p className="text-[#A0B6CD] text-base leading-relaxed mb-10 animate-fade-in-up stagger-2">
-              Your projects move fast, your teams are mobile, and your data is mission-critical. 
-              You need IT that understands the job site, not just the server room.
+              Your operations move fast, your teams are distributed, and your data is mission-critical. 
+              You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace — not just the server room.
             </p>
 
             <div className="space-y-6">

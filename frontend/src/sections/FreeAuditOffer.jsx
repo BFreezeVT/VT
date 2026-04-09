@@ -6,8 +6,8 @@ import { CheckCircle, ClipboardCheck, Search, Lock, BarChart3, Clock } from "luc
 const auditIncludes = [
   { icon: Search, text: "Full network vulnerability scan" },
   { icon: Lock, text: "Password & access policy review" },
-  { icon: BarChart3, text: "Ransomware readiness assessment" },
-  { icon: ClipboardCheck, text: "Compliance gap analysis" },
+  { icon: BarChart3, text: "Ransomware & threat readiness assessment" },
+  { icon: ClipboardCheck, text: "Industry-specific compliance gap analysis" },
   { icon: Clock, text: "Disaster recovery plan evaluation" },
 ];
 
@@ -35,12 +35,12 @@ export default function FreeAuditOffer() {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
-              Free Construction Technology &amp; Cyber Risk Audit
+              Free Technology &amp; Cyber Risk Audit
             </h2>
             <p className="text-[#A0B6CD] text-base leading-relaxed mb-10">
               Our team will conduct a comprehensive, non-invasive review of your IT infrastructure 
-              and cybersecurity posture. You&rsquo;ll receive a detailed report with actionable 
-              recommendations tailored to construction operations.
+              and cybersecurity posture — tailored to your industry. You&rsquo;ll receive a detailed 
+              report with actionable recommendations for your specific compliance and operational needs.
             </p>
 
             <p className="text-white font-semibold text-sm mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>
@@ -82,7 +82,7 @@ export default function FreeAuditOffer() {
                       <Input
                         data-testid="form-company"
                         id="company"
-                        placeholder="Your construction firm"
+                        placeholder="Your company name"
                         className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
                       />

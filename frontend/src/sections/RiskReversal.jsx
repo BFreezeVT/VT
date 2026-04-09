@@ -24,7 +24,7 @@ export default function RiskReversal() {
             className="text-[#A0B6CD] text-base leading-relaxed max-w-2xl mx-auto"
           >
             If you don&rsquo;t find at least <span className="text-white font-semibold">three actionable improvements</span> from 
-            our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite construction charity. 
+            our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
             That&rsquo;s how confident we are in the value we deliver.
           </p>
         </div>

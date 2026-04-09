@@ -22,7 +22,7 @@ export default function Footer() {
               VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
             </p>
             <p className="text-[#A0B6CD] text-sm leading-relaxed">
-              Construction-first IT and cybersecurity for the Minneapolis-St. Paul region and beyond.
+              Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
           </div>
 

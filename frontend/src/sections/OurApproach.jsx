@@ -15,13 +15,13 @@ const approaches = [
   },
   {
     icon: Layers,
-    title: "Construction Software Integration",
-    desc: "Seamless integration with Procore, Sage, PlanGrid, and other tools your teams rely on daily.",
+    title: "Industry Software Integration",
+    desc: "Seamless integration with Procore, Sage, Bloomberg, SAP, and other industry-specific tools your teams rely on daily.",
   },
   {
     icon: Headphones,
     title: "24/7 Expert Support",
-    desc: "Our team knows the difference between a submittal and a change order. Real construction IT expertise, around the clock.",
+    desc: "Our team knows the difference between a submittal, a wire transfer, and a SCADA alert. Real industry IT expertise, around the clock.",
   },
 ];
 
@@ -46,10 +46,10 @@ export default function OurApproach() {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
-            Proactive protection built for construction.
+            Proactive protection built for operational industries.
           </h2>
           <p className="text-[#A0B6CD] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
-            We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit.
+            We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit — whether you&rsquo;re on a job site, a trading floor, or a production line.
           </p>
         </div>
 

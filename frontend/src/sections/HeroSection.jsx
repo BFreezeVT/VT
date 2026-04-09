@@ -25,20 +25,20 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
         <div className="max-w-3xl">
           <p className="overline text-[#0077B3] mb-6 animate-fade-in-up stagger-1">
-            Construction IT &amp; Cybersecurity
+            Managed IT &amp; Cybersecurity
           </p>
           <h1
             data-testid="hero-headline"
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white mb-6 animate-fade-in-up stagger-2"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
-            Stop Job Site Downtime Before It Stops Your Project.
+            Stop Downtime Before It Stops Your Business.
           </h1>
           <p
             data-testid="hero-subhead"
             className="text-base md:text-lg text-[#A0B6CD] leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
-            Construction-first IT and cybersecurity that keeps your crews connected, your data safe, and your project schedules intact. Trusted by firms in financial services, manufacturing, and high-compliance industries.
+            Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations. Your crews stay connected, your data stays safe, and your operations stay on schedule.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">

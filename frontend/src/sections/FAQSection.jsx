@@ -8,27 +8,27 @@ import {
 const faqs = [
   {
     q: "Will this audit disrupt our operations?",
-    a: "Not at all. Our assessment is completely non-invasive. We work around your schedule and use passive scanning tools that won't interfere with your network or project workflows. Most of our review happens in the background while your teams work uninterrupted.",
+    a: "Not at all. Our assessment is completely non-invasive. We work around your schedule and use passive scanning tools that won't interfere with your network, production systems, or daily workflows. Most of our review happens in the background while your teams work uninterrupted.",
   },
   {
     q: "How long does the audit take?",
-    a: "The initial assessment typically takes 3-5 business days. You'll receive a comprehensive report with findings and recommendations within one week of completion.",
+    a: "The initial assessment typically takes 3-5 business days. You'll receive a comprehensive report with findings and recommendations tailored to your industry within one week of completion.",
   },
   {
     q: "Is our data kept confidential?",
-    a: "Absolutely. We sign NDAs before any engagement and follow strict data handling protocols aligned with ISO 27001 standards. Your project data, financials, and infrastructure details remain completely confidential.",
+    a: "Absolutely. We sign NDAs before any engagement and follow strict data handling protocols aligned with ISO 27001 standards. Your project data, financial records, intellectual property, and infrastructure details remain completely confidential.",
   },
   {
-    q: "Do you work with subcontractors and specialty trades?",
-    a: "Yes. We understand the complex vendor ecosystem in construction. Our solutions are designed to securely connect GCs, subs, owners, and architects while maintaining proper access controls for each party.",
+    q: "Do you work with our industry?",
+    a: "We specialize in construction, financial services, manufacturing, and high-compliance industries. Our team holds sector-specific certifications and understands the unique regulatory requirements, tools, and threats each industry faces.",
   },
   {
-    q: "What construction software do you support?",
-    a: "We have deep expertise with Procore, Sage 300 CRE, PlanGrid, Bluebeam, AutoCAD, Revit, and most major construction management platforms. If your team uses it, we know how to secure and optimize it.",
+    q: "What software and platforms do you support?",
+    a: "We have deep expertise across industry-specific platforms — Procore, Sage, and Bluebeam for construction; Bloomberg, Salesforce, and trading platforms for financial services; SAP, SCADA, and MES systems for manufacturing. If your team uses it, we know how to secure and optimize it.",
   },
   {
-    q: "Can you help with remote job site connectivity?",
-    a: "That's one of our specialties. We deploy ruggedized networking solutions for job sites of all sizes, from single-building renovations to multi-acre developments, ensuring reliable connectivity for every trailer and field device.",
+    q: "Can you help with compliance requirements?",
+    a: "That's one of our core strengths. We support CMMC, SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST 800-171, SEC/FINRA regulations, and OSHA digital requirements. We'll identify gaps and build a roadmap to get you audit-ready.",
   },
 ];
 
