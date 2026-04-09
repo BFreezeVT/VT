@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin, Youtube, Facebook } from "lucide-react";
 import { Separator } from "../components/ui/separator";
 
 export default function Footer() {
@@ -23,9 +23,41 @@ export default function Footer() {
             >
               VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
             </p>
-            <p className="text-[#A0B6CD] text-sm leading-relaxed">
+            <p className="text-[#A0B6CD] text-sm leading-relaxed mb-5">
               Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
+            <div className="flex items-center gap-3">
+              <a
+                data-testid="footer-linkedin"
+                href="https://www.linkedin.com/company/veracity-technologies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Veracity Technologies on LinkedIn"
+                className="w-9 h-9 flex items-center justify-center border border-[#003B71] bg-[#001A33] text-[#A0B6CD] hover:text-white hover:border-[#0077B3] transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                data-testid="footer-youtube"
+                href="https://www.youtube.com/@VeracityTechnologies"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Veracity Technologies on YouTube"
+                className="w-9 h-9 flex items-center justify-center border border-[#003B71] bg-[#001A33] text-[#A0B6CD] hover:text-white hover:border-[#0077B3] transition-colors"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                data-testid="footer-facebook"
+                href="https://www.facebook.com/veracitytech"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Veracity Technologies on Facebook"
+                className="w-9 h-9 flex items-center justify-center border border-[#003B71] bg-[#001A33] text-[#A0B6CD] hover:text-white hover:border-[#0077B3] transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
