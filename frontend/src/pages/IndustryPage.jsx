@@ -4,6 +4,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { useState, useEffect } from "react";
 import industryData from "../data/industryData";
+import { useLeadSubmit } from "../hooks/useLeadSubmit";
 
 const iconMap = { Landmark, HardHat, Factory };
 
@@ -31,7 +32,7 @@ const allTestimonials = [
 export default function IndustryPage() {
   const { industrySlug } = useParams();
   const industry = industryData.find((ind) => ind.slug === industrySlug);
-  const [submitted, setSubmitted] = useState(false);
+  const { submitted, submitting, submitLead } = useLeadSubmit();
 
   useEffect(() => {
     if (industry) {
@@ -241,22 +242,33 @@ export default function IndustryPage() {
                   <p className="text-[#A0B6CD] text-sm mb-8 text-center">
                     Non-invasive. Confidential. Tailored to {industry.name.toLowerCase()}.
                   </p>
-                  <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <form onSubmit={(e) => {
+                    e.preventDefault();
+                    const fd = new FormData(e.target);
+                    submitLead({
+                      company: fd.get("company"),
+                      name: fd.get("name"),
+                      phone: fd.get("phone"),
+                      email: fd.get("email"),
+                      source_page: "industry",
+                      source_industry: industry.name,
+                    });
+                  }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">Company</label>
-                      <Input data-testid="industry-form-company" id="company" placeholder="Your company" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="name" className="text-white text-sm font-medium mb-1.5 block">Name</label>
-                      <Input data-testid="industry-form-name" id="name" placeholder="Full name" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="phone" className="text-white text-sm font-medium mb-1.5 block">Phone</label>
-                      <Input data-testid="industry-form-phone" id="phone" type="tel" placeholder="(555) 123-4567" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">Email</label>
-                      <Input data-testid="industry-form-email" id="email" type="email" placeholder="you@company.com" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div className="sm:col-span-2">
                       <Button data-testid="industry-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12">

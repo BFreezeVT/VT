@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { CheckCircle, ClipboardCheck, Search, Lock, BarChart3, Clock } from "lucide-react";
+import { useLeadSubmit } from "../hooks/useLeadSubmit";
 
 const auditIncludes = [
   { icon: Search, text: "Full network vulnerability scan" },
@@ -12,12 +12,7 @@ const auditIncludes = [
 ];
 
 export default function FreeAuditOffer() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const { submitted, submitting, submitLead } = useLeadSubmit();
 
   return (
     <section
@@ -75,7 +70,17 @@ export default function FreeAuditOffer() {
                   <p className="text-[#A0B6CD] text-sm mb-8">
                     Fill in your details and we&rsquo;ll be in touch within one business day.
                   </p>
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={(e) => {
+                    e.preventDefault();
+                    const fd = new FormData(e.target);
+                    submitLead({
+                      company: fd.get("company"),
+                      role: fd.get("role"),
+                      phone: fd.get("phone"),
+                      email: fd.get("email"),
+                      source_page: "homepage",
+                    });
+                  }} className="space-y-5">
                     <div>
                       <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">
                         Company Name
@@ -83,6 +88,7 @@ export default function FreeAuditOffer() {
                       <Input
                         data-testid="form-company"
                         id="company"
+                        name="company"
                         placeholder="Your company name"
                         className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
@@ -95,6 +101,7 @@ export default function FreeAuditOffer() {
                       <Input
                         data-testid="form-role"
                         id="role"
+                        name="role"
                         placeholder="e.g. IT Director, Owner, PM"
                         className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
@@ -107,6 +114,7 @@ export default function FreeAuditOffer() {
                       <Input
                         data-testid="form-phone"
                         id="phone"
+                        name="phone"
                         type="tel"
                         placeholder="(555) 123-4567"
                         className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
@@ -120,6 +128,7 @@ export default function FreeAuditOffer() {
                       <Input
                         data-testid="form-email"
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="you@company.com"
                         className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"

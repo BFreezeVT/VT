@@ -1,0 +1,324 @@
+{
+  "timestamp": "2026-04-17T16:15:41.194499",
+  "summary": {
+    "tests_run": 13,
+    "tests_passed": 13,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test_name": "Health Check",
+      "endpoint": "health",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "status": "healthy",
+        "service": "Veracity Technologies API",
+        "version": "1.0.0"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Root Endpoint",
+      "endpoint": "",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "message": "Veracity Technologies API"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Create Lead",
+      "endpoint": "leads",
+      "method": "POST",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "success": true,
+        "id": "7f56399f-c033-44bb-8746-697b29a0e9fb",
+        "message": "Your audit request has been received."
+      },
+      "error": null
+    },
+    {
+      "test_name": "Create Lead",
+      "endpoint": "leads",
+      "method": "POST",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "success": true,
+        "id": "8d66d5cd-069f-43f9-a39c-0570b5b09592",
+        "message": "Your audit request has been received."
+      },
+      "error": null
+    },
+    {
+      "test_name": "Create Lead",
+      "endpoint": "leads",
+      "method": "POST",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "success": true,
+        "id": "b0f6d7ac-1198-4895-bde2-8bc788643271",
+        "message": "Your audit request has been received."
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get All Leads",
+      "endpoint": "leads",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "b0f6d7ac-1198-4895-bde2-8bc788643271",
+          "company": "Test Company Industry",
+          "name": "Bob Johnson",
+          "role": null,
+          "phone": "555-456-7890",
+          "email": "bob@testcompany.com",
+          "source_page": "industry",
+          "source_city": null,
+          "source_industry": "Construction",
+          "created_at": "2026-04-17T16:15:40.027349+00:00",
+          "status": "new"
+        },
+        {
+          "id": "8d66d5cd-069f-43f9-a39c-0570b5b09592",
+          "company": "Test Company City",
+          "name": "Jane Smith",
+          "role": null,
+          "phone": "555-987-6543",
+          "email": "jane@testcompany.com",
+          "source_page": "city",
+          "source_city": "Minneapolis",
+          "source_industry": null,
+          "created_at": "2026-04-17T16:15:39.871306+00:00",
+          "status": "new"
+        },
+        {
+          "id": "7f56399f-c033-44bb-8746-697b29a0e9fb",
+          "company": "Test Company Homepage",
+          "name": "John Doe",
+          "role": "IT Director",
+          "phone": "555-123-4567",
+          "email": "john@testcompany.com",
+          "source_page": "homepage",
+          "source_city": null,
+          "source_industry": null,
+          "created_at": "2026-04-17T16:15:39.713327+00:00",
+          "status": "new"
+        },
+        {
+          "id": "2cdabe71-f0c3-427a-9b23-f6c9768de819",
+          "company": "Test Corp",
+          "name": "John Doe",
+          "role": null,
+          "phone": "555-1234",
+          "email": "john@test.com",
+          "source_page": "homepage",
+          "source_city": null,
+          "source_industry": null,
+          "created_at": "2026-04-17T16:13:55.900323+00:00",
+          "status": "new"
+        }
+      ],
+      "error": null
+    },
+    {
+      "test_name": "Get Lead Count",
+      "endpoint": "leads/count",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "count": 4
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get Blog Posts",
+      "endpoint": "blog",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "slug": "ai-cybersecurity-threats-2025",
+          "title": "How AI Is Changing the Cybersecurity Threat Landscape in 2025",
+          "excerpt": "AI-powered attacks are outpacing traditional defenses. Here's what businesses in construction, finance, and manufacturing need to know \u2014 and do \u2014 right now.",
+          "category": "AI & Cybersecurity",
+          "author": "Veracity Technologies",
+          "published_date": "2025-12-01",
+          "read_time": "7 min read"
+        },
+        {
+          "slug": "soc-2-compliance-guide-small-business",
+          "title": "SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide",
+          "excerpt": "SOC 2 isn't just for enterprises anymore. Here's how smaller firms in the Twin Cities can achieve compliance without breaking the bank \u2014 or their operations.",
+          "category": "Compliance",
+          "author": "Veracity Technologies",
+          "published_date": "2025-11-15",
+          "read_time": "9 min read"
+        },
+        {
+          "slug": "ransomware-protection-construction-firms",
+          "title": "Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week",
+          "excerpt": "Construction ransomware attacks are up 41%. Here are five concrete steps any construction firm can implement immediately to reduce their risk.",
+          "category": "Construction",
+          "author": "Veracity Technologies",
+          "published_date": "2025-11-01",
+          "read_time": "6 min read"
+        },
+        {
+          "slug": "manufacturing-ot-it-security-guide",
+          "title": "Bridging the OT/IT Gap: A Security Guide for Manufacturing Plants",
+          "excerpt": "When operational technology meets information technology, vulnerabilities multiply. Here's how manufacturing firms can secure the convergence without halting production.",
+          "category": "Manufacturing",
+          "author": "Veracity Technologies",
+          "published_date": "2025-10-15",
+          "read_time": "8 min read"
+        },
+        {
+          "slug": "shadow-ai-risks-business",
+          "title": "Shadow AI: The Hidden Risk in Your Organization",
+          "excerpt": "Your employees are using AI tools you don't know about. Here's why that's dangerous and what to do about it before it causes a breach.",
+          "category": "AI & Cybersecurity",
+          "author": "Veracity Technologies",
+          "published_date": "2025-10-01",
+          "read_time": "5 min read"
+        },
+        {
+          "slug": "financial-services-wire-fraud-prevention",
+          "title": "Wire Fraud Prevention for Financial Services Firms",
+          "excerpt": "Business email compromise costs financial firms billions annually. Here's a practical framework for preventing wire fraud at your organization.",
+          "category": "Financial Services",
+          "author": "Veracity Technologies",
+          "published_date": "2025-09-15",
+          "read_time": "6 min read"
+        }
+      ],
+      "error": null
+    },
+    {
+      "test_name": "Get Blog Post (ai-cybersecurity-threats-2025)",
+      "endpoint": "blog/ai-cybersecurity-threats-2025",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "slug": "ai-cybersecurity-threats-2025",
+        "title": "How AI Is Changing the Cybersecurity Threat Landscape in 2025",
+        "excerpt": "AI-powered attacks are outpacing traditional defenses. Here's what businesses in construction, finance, and manufacturing need to know \u2014 and do \u2014 right now.",
+        "category": "AI & Cybersecurity",
+        "author": "Veracity Technologies",
+        "published_date": "2025-12-01",
+        "read_time": "7 min read",
+        "content": "Artificial intelligence has fundamentally changed the cybersecurity landscape. While defenders have long used AI for threat detection and anomaly monitoring, attackers are now weaponizing the same technology at scale.\n\n## The New Threat Vectors\n\n**AI-Generated Phishing**: Large language models can now craft phishing emails that are virtually indistinguishable from legitimate correspondence. These emails reference real projects, use correct industry terminology, and mimic the writing style of known contacts. For construction firms exchanging payment instructions, or financial advisors communicating portfolio changes, this is a critical vulnerability.\n\n**Deepfake Voice and Video**: Attackers are using AI-generated voice clones to impersonate executives on phone calls, authorizing wire transfers or credential resets. A CFO's voice can be cloned from a single earnings call recording.\n\n**Automated Vulnerability Scanning**: AI-powered tools can scan thousands of systems simultaneously, identifying and exploiting vulnerabilities faster than human security teams can patch them.\n\n## What Your Business Should Do Now\n\n1. **Implement AI-powered email security** that analyzes behavioral patterns, not just content signatures\n2. **Establish verbal verification protocols** for any financial transaction over a defined threshold\n3. **Deploy AI-augmented SOC monitoring** that detects lateral movement and anomalous access patterns in real time\n4. **Train employees on AI-specific threats** \u2014 traditional phishing training is no longer sufficient\n5. **Audit your AI tool usage** \u2014 shadow AI tools may be leaking sensitive data to third-party models\n\n## Industry-Specific Risks\n\n**Construction**: AI-generated fake RFIs, change orders, and payment applications are emerging as targeted attack vectors against general contractors.\n\n**Financial Services**: AI can generate convincing fake financial reports and compliance documents, potentially manipulating investment decisions or audit outcomes.\n\n**Manufacturing**: AI-powered attacks can target SCADA and ICS systems with customized payloads designed to disrupt specific industrial processes.\n\n## The Bottom Line\n\nThe organizations that will be most resilient in 2025 and beyond are those that adopt AI defensively before they become victims of AI offensively. At Veracity Technologies, our SOC uses machine learning models trained on industry-specific threat data to detect and respond to attacks in real time \u2014 24/7.\n\n*If your business hasn't conducted an AI security assessment, now is the time. Contact us for a free evaluation.*"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get Blog Post (soc-2-compliance-guide-small-business)",
+      "endpoint": "blog/soc-2-compliance-guide-small-business",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "slug": "soc-2-compliance-guide-small-business",
+        "title": "SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide",
+        "excerpt": "SOC 2 isn't just for enterprises anymore. Here's how smaller firms in the Twin Cities can achieve compliance without breaking the bank \u2014 or their operations.",
+        "category": "Compliance",
+        "author": "Veracity Technologies",
+        "published_date": "2025-11-15",
+        "read_time": "9 min read",
+        "content": "SOC 2 compliance was once considered the domain of large enterprises and SaaS companies. Today, it's increasingly required by clients, partners, and regulators across industries \u2014 including financial services, professional services, and even construction firms bidding on government-adjacent projects.\n\n## What Is SOC 2?\n\nSOC 2 (System and Organization Controls 2) is a framework developed by the AICPA that evaluates an organization's controls related to security, availability, processing integrity, confidentiality, and privacy. There are two types:\n\n- **Type I**: Evaluates the design of controls at a specific point in time\n- **Type II**: Evaluates the operating effectiveness of controls over a period (typically 6-12 months)\n\n## Why Small Businesses Need SOC 2\n\n**Client requirements are escalating.** Enterprise clients increasingly require SOC 2 reports from their vendors before signing contracts. If you're a financial advisory firm, an IT consultancy, or a managed service provider, not having SOC 2 can cost you deals.\n\n**Insurance premiums are tied to compliance.** Cyber insurance carriers are offering significantly lower premiums to organizations that can demonstrate SOC 2 compliance.\n\n**It forces good hygiene.** The SOC 2 process identifies gaps you didn't know existed \u2014 from access control weaknesses to missing backup verification procedures.\n\n## The Practical Path to SOC 2\n\n### Phase 1: Gap Assessment (Weeks 1-3)\nWe evaluate your current environment against SOC 2 Trust Service Criteria. This identifies what you already have in place and what needs to change.\n\n### Phase 2: Remediation (Weeks 4-10)\nWe implement the missing controls \u2014 access management, encryption, monitoring, incident response procedures, vendor management, and more. For most small businesses, this involves configuring existing tools properly rather than buying new ones.\n\n### Phase 3: Evidence Collection (Weeks 11-16)\nFor Type II, we help you collect and organize the evidence auditors need \u2014 logs, access reviews, change management records, and policy acknowledgments.\n\n### Phase 4: Audit (Weeks 17-20)\nWe coordinate with your auditor, provide all documentation, and handle questions on your behalf.\n\n## Common Misconceptions\n\n**\"SOC 2 is too expensive for us.\"** A typical small business SOC 2 engagement costs $15,000-$40,000 \u2014 far less than losing a single enterprise client or paying higher insurance premiums for years.\n\n**\"We need to overhaul everything.\"** Most organizations are 60-70% compliant before they start. The gap is usually in documentation and monitoring, not in fundamental infrastructure changes.\n\n**\"It will disrupt our operations.\"** With proper planning, SOC 2 preparation runs in the background while your team works normally.\n\n## Veracity's Approach\n\nWe've guided dozens of Twin Cities businesses through SOC 2 \u2014 from 10-person financial advisory firms to 200-employee manufacturing companies. Our approach minimizes disruption while ensuring you pass your audit on the first attempt.\n\n*Ready to start? Schedule a free compliance gap assessment with our team.*"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get Blog Post (ransomware-protection-construction-firms)",
+      "endpoint": "blog/ransomware-protection-construction-firms",
+      "method": "GET",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "slug": "ransomware-protection-construction-firms",
+        "title": "Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week",
+        "excerpt": "Construction ransomware attacks are up 41%. Here are five concrete steps any construction firm can implement immediately to reduce their risk.",
+        "category": "Construction",
+        "author": "Veracity Technologies",
+        "published_date": "2025-11-01",
+        "read_time": "6 min read",
+        "content": "Construction firms have seen a 41% year-over-year increase in ransomware attacks. The industry's unique characteristics \u2014 distributed job sites, heavy subcontractor reliance, large wire transfers, and time-sensitive project schedules \u2014 make it an ideal target for cybercriminals.\n\nHere are five steps you can implement this week to significantly reduce your risk.\n\n## 1. Enable Multi-Factor Authentication (MFA) Everywhere\n\nThis is the single most impactful step you can take. Require MFA on:\n- Email (Office 365 / Google Workspace)\n- Project management tools (Procore, PlanGrid)\n- VPN access\n- Financial systems (Sage, QuickBooks)\n- Remote desktop connections\n\n**Time to implement: 1-2 hours.** Most platforms support MFA natively \u2014 you just need to turn it on and enforce it.\n\n## 2. Segment Your Network\n\nDon't let your accounting department's network communicate directly with your job site trailers. If ransomware infects one segment, segmentation prevents it from spreading to the rest.\n\n**Basic segmentation:**\n- Corporate office on one VLAN\n- Job site connectivity on another\n- Guest/vendor access isolated\n- Financial systems on a restricted segment\n\n## 3. Implement Email Authentication (DMARC/DKIM/SPF)\n\nPayment fraud via spoofed emails is the #1 financial cybercrime in construction. Configure:\n- **SPF**: Specifies which servers can send email on your behalf\n- **DKIM**: Adds a digital signature to outgoing emails\n- **DMARC**: Tells receiving servers what to do with emails that fail authentication\n\nThis prevents attackers from sending emails that appear to come from your domain.\n\n## 4. Test Your Backups \u2014 Today\n\nHaving backups isn't enough. You need to verify:\n- Backups are completing successfully (check logs)\n- You can actually restore from them (run a test restore)\n- They're stored offline or immutable (ransomware targets backups first)\n- Your recovery time meets your business needs (can you afford 3 days of downtime?)\n\n## 5. Establish a Wire Transfer Verification Protocol\n\nCreate a mandatory policy: any change to banking information for wire transfers must be verified via phone call to a known number (not the number in the email). This alone can prevent six-figure losses.\n\n## Beyond the Basics\n\nThese five steps will significantly reduce your risk, but they're just the beginning. A comprehensive cybersecurity program for construction firms should also include:\n- 24/7 endpoint detection and response (EDR)\n- Security awareness training for all employees\n- Vendor security assessments\n- Incident response planning\n- Regular penetration testing\n\n*Veracity Technologies specializes in construction cybersecurity. Schedule a free audit to see where your firm stands.*"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get Non-existent Blog Post",
+      "endpoint": "blog/nonexistent-post",
+      "method": "GET",
+      "expected_status": 404,
+      "actual_status": 404,
+      "success": true,
+      "response_data": {
+        "detail": "Post not found"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Create Invalid Lead",
+      "endpoint": "leads",
+      "method": "POST",
+      "expected_status": 422,
+      "actual_status": 422,
+      "success": true,
+      "response_data": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "phone"
+            ],
+            "msg": "Field required",
+            "input": {
+              "company": "Test Company"
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/missing"
+          },
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "email"
+            ],
+            "msg": "Field required",
+            "input": {
+              "company": "Test Company"
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/missing"
+          }
+        ]
+      },
+      "error": null
+    }
+  ]
+}

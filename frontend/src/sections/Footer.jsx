@@ -73,6 +73,7 @@ export default function Footer() {
               <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
               <button data-testid="footer-link-audit" onClick={() => scrollTo("audit")} className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Free Audit</button>
               <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#A0B6CD] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
+              <Link data-testid="footer-link-resources" to="/resources" className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Resources</Link>
             </div>
           </div>
 

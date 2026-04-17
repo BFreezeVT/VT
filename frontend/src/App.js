@@ -17,6 +17,8 @@ import Footer from "./sections/Footer";
 import ServiceAreasIndex from "./pages/ServiceAreasIndex";
 import ServiceAreaPage from "./pages/ServiceAreaPage";
 import IndustryPage from "./pages/IndustryPage";
+import BlogIndex from "./pages/BlogIndex";
+import BlogPost from "./pages/BlogPost";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -58,6 +60,8 @@ function App() {
         <Route path="/service-areas" element={<ServiceAreasIndex />} />
         <Route path="/service-areas/:citySlug" element={<ServiceAreaPage />} />
         <Route path="/industries/:industrySlug" element={<IndustryPage />} />
+        <Route path="/resources" element={<BlogIndex />} />
+        <Route path="/resources/:slug" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
   );
