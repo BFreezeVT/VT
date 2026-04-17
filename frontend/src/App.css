@@ -43,14 +43,14 @@
 
 /* Grid border pattern for cards */
 .grid-border-card {
-  border: 1px solid #003B71;
-  background: #001A33;
+  border: 1px solid #0d4a8a;
+  background: #0f2340;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .grid-border-card:hover {
   border-color: #0077B3;
-  background: #00223D;
+  background: #132d4f;
 }
 
 /* Stat cards large typography */
@@ -74,10 +74,10 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #020812;
+  background: #0a1628;
 }
 ::-webkit-scrollbar-thumb {
-  background: #003B71;
+  background: #0d4a8a;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -86,7 +86,7 @@
 
 /* Hero background overlay */
 .hero-overlay {
-  background: linear-gradient(180deg, rgba(2, 8, 18, 0.75) 0%, rgba(2, 8, 18, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(10, 22, 40, 0.75) 0%, rgba(10, 22, 40, 0.92) 100%);
 }
 
 /* Selection */

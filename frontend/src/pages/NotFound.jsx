@@ -4,13 +4,13 @@ import { Button } from "../components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#020812] flex flex-col" data-testid="not-found-page">
-      <nav className="bg-[#020812]/95 backdrop-blur-md border-b border-[#003B71]">
+    <div className="min-h-screen bg-[#0a1628] flex flex-col" data-testid="not-found-page">
+      <nav className="bg-[#0a1628]/95 backdrop-blur-md border-b border-[#0d4a8a]">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
-          <a href="tel:9529417333" className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm">
+          <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm">
             <Phone className="w-4 h-4" /> (952) 941-7333
           </a>
         </div>
@@ -25,22 +25,22 @@ export default function NotFound() {
           <h1 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: "Outfit" }}>
             Page Not Found
           </h1>
-          <p className="text-[#A0B6CD] text-sm mb-8">
+          <p className="text-[#b0c4d8] text-sm mb-8">
             This page doesn&rsquo;t exist or may have been moved. Let&rsquo;s get you back on track.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/">
-              <Button className="bg-white text-[#003B71] hover:bg-white/90 rounded-sm font-semibold px-6 h-11">
+              <Button className="bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-semibold px-6 h-11">
                 <ChevronLeft className="w-4 h-4 mr-1" /> Back to Home
               </Button>
             </Link>
             <Link to="/service-areas">
-              <Button className="bg-transparent border border-[#003B71] hover:border-[#0077B3] text-white rounded-sm font-semibold px-6 h-11">
+              <Button className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-6 h-11">
                 Service Areas
               </Button>
             </Link>
             <Link to="/resources">
-              <Button className="bg-transparent border border-[#003B71] hover:border-[#0077B3] text-white rounded-sm font-semibold px-6 h-11">
+              <Button className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-6 h-11">
                 Resources
               </Button>
             </Link>
@@ -48,9 +48,9 @@ export default function NotFound() {
         </div>
       </main>
 
-      <footer className="border-t border-[#003B71] py-6">
+      <footer className="border-t border-[#0d4a8a] py-6">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-[#A0B6CD]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.</p>
+          <p className="text-[#b0c4d8]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.</p>
         </div>
       </footer>
     </div>

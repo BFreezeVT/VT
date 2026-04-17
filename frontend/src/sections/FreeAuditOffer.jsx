@@ -20,7 +20,7 @@ export default function FreeAuditOffer() {
       id="audit"
       data-testid="audit-section"
       aria-label="Schedule a free technology and cyber risk audit"
-      className="py-24 lg:py-32 bg-[#001A33]/40"
+      className="py-24 lg:py-32 bg-[#0f2340]/40"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -34,7 +34,7 @@ export default function FreeAuditOffer() {
             >
               Free Technology &amp; Cyber Risk Audit
             </h2>
-            <p className="text-[#A0B6CD] text-base leading-relaxed mb-10">
+            <p className="text-[#b0c4d8] text-base leading-relaxed mb-10">
               Our team will conduct a comprehensive, non-invasive review of your IT infrastructure 
               and cybersecurity posture — tailored to your industry. You&rsquo;ll receive a detailed 
               report with actionable recommendations for your specific compliance and operational needs.
@@ -51,7 +51,7 @@ export default function FreeAuditOffer() {
                   className="flex items-center gap-3"
                 >
                   <item.icon className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
-                  <span className="text-[#A0B6CD] text-sm">{item.text}</span>
+                  <span className="text-[#b0c4d8] text-sm">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -71,7 +71,7 @@ export default function FreeAuditOffer() {
                       Schedule Your Free Audit
                     </h3>
                   </div>
-                  <p className="text-[#A0B6CD] text-sm mb-8">
+                  <p className="text-[#b0c4d8] text-sm mb-8">
                     Fill in your details and we&rsquo;ll be in touch within one business day.
                   </p>
                   <form onSubmit={(e) => {
@@ -94,7 +94,7 @@ export default function FreeAuditOffer() {
                         id="company"
                         name="company"
                         placeholder="Your company name"
-                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -107,7 +107,7 @@ export default function FreeAuditOffer() {
                         id="role"
                         name="role"
                         placeholder="e.g. IT Director, Owner, PM"
-                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function FreeAuditOffer() {
                         name="phone"
                         type="tel"
                         placeholder="(555) 123-4567"
-                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -135,7 +135,7 @@ export default function FreeAuditOffer() {
                         name="email"
                         type="email"
                         placeholder="you@company.com"
-                        className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11"
+                        className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -146,7 +146,7 @@ export default function FreeAuditOffer() {
                     >
                       Schedule Your Free Audit
                     </Button>
-                    <p className="text-xs text-[#A0B6CD]/60 text-center">
+                    <p className="text-xs text-[#b0c4d8]/60 text-center">
                       Non-invasive. Confidential. No obligation.
                     </p>
                   </form>
@@ -160,7 +160,7 @@ export default function FreeAuditOffer() {
                   >
                     Thank you!
                   </h3>
-                  <p className="text-[#A0B6CD] text-sm">
+                  <p className="text-[#b0c4d8] text-sm">
                     We&rsquo;ve received your request. Our team will reach out within one business day to schedule your free audit.
                   </p>
                 </div>

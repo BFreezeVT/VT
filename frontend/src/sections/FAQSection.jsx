@@ -38,7 +38,7 @@ export default function FAQSection() {
       id="faq"
       data-testid="faq-section"
       aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
-      className="py-24 lg:py-32 bg-[#001A33]/20"
+      className="py-24 lg:py-32 bg-[#0f2340]/20"
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -58,7 +58,7 @@ export default function FAQSection() {
               key={i}
               value={`faq-${i}`}
               data-testid={`faq-item-${i}`}
-              className="border-b border-[#003B71] px-0"
+              className="border-b border-[#0d4a8a] px-0"
             >
               <AccordionTrigger
                 data-testid={`faq-trigger-${i}`}
@@ -68,7 +68,7 @@ export default function FAQSection() {
               </AccordionTrigger>
               <AccordionContent
                 data-testid={`faq-content-${i}`}
-                className="text-[#A0B6CD] text-sm leading-relaxed pb-5"
+                className="text-[#b0c4d8] text-sm leading-relaxed pb-5"
               >
                 {faq.a}
               </AccordionContent>

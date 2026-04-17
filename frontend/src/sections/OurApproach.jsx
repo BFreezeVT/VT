@@ -32,7 +32,7 @@ export default function OurApproach() {
       id="approach"
       data-testid="approach-section"
       aria-label="Our managed IT approach including proactive monitoring, MFA, disaster recovery, and 24/7 support"
-      className="py-24 lg:py-32 bg-[#020812] relative overflow-hidden"
+      className="py-24 lg:py-32 bg-[#0a1628] relative overflow-hidden"
     >
       {/* Subtle background texture */}
       <div
@@ -51,12 +51,12 @@ export default function OurApproach() {
             >
               Proactive protection built for operational industries.
             </h2>
-            <p className="text-[#A0B6CD] text-base max-w-2xl animate-fade-in-up stagger-2">
+            <p className="text-[#b0c4d8] text-base max-w-2xl animate-fade-in-up stagger-2">
               We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit — whether you&rsquo;re on a job site, a trading floor, or a production line.
             </p>
           </div>
           <div className="animate-fade-in-up stagger-2">
-            <div className="relative overflow-hidden border border-[#003B71]">
+            <div className="relative overflow-hidden border border-[#0d4a8a]">
               <img
                 data-testid="soc-image"
                 src={SOC_IMG}
@@ -64,7 +64,7 @@ export default function OurApproach() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020812]/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <p className="text-[#0077B3] text-xs uppercase tracking-wider font-semibold mb-1">24/7 Monitoring</p>
                 <p className="text-white text-sm">Our SOC team watches your infrastructure around the clock.</p>
@@ -80,7 +80,7 @@ export default function OurApproach() {
               data-testid={`approach-card-${i}`}
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
-              <div className="w-12 h-12 flex items-center justify-center border border-[#003B71] bg-[#020812] mb-6 group-hover:border-[#0077B3] transition-colors">
+              <div className="w-12 h-12 flex items-center justify-center border border-[#0d4a8a] bg-[#0a1628] mb-6 group-hover:border-[#0077B3] transition-colors">
                 <a.icon className="w-6 h-6 text-[#0077B3]" />
               </div>
               <h3
@@ -89,7 +89,7 @@ export default function OurApproach() {
               >
                 {a.title}
               </h3>
-              <p className="text-[#A0B6CD] text-sm leading-relaxed">{a.desc}</p>
+              <p className="text-[#b0c4d8] text-sm leading-relaxed">{a.desc}</p>
             </div>
           ))}
         </div>

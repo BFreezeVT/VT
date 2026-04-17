@@ -32,13 +32,13 @@ export default function WhySpecializedIT() {
       id="why-it"
       data-testid="why-specialized-section"
       aria-label="Why regulated industries need specialized IT support"
-      className="py-24 lg:py-32 bg-[#001A33]/40"
+      className="py-24 lg:py-32 bg-[#0f2340]/40"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image stack */}
           <div className="animate-fade-in-up stagger-1 order-2 lg:order-1 space-y-4">
-            <div className="relative overflow-hidden border border-[#003B71]">
+            <div className="relative overflow-hidden border border-[#0d4a8a]">
               <img
                 data-testid="why-it-image"
                 src={TABLET_IMG}
@@ -46,7 +46,7 @@ export default function WhySpecializedIT() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020812]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 to-transparent" />
             </div>
             <div className="relative overflow-hidden border border-[#FF5722]/20">
               <img
@@ -56,7 +56,7 @@ export default function WhySpecializedIT() {
                 className="w-full h-32 object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#020812]/80 to-transparent flex items-center px-5">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/80 to-transparent flex items-center px-5">
                 <p className="text-[#FF5722] text-sm font-semibold">This is what a ransomware attack looks like. We stop it before it starts.</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function WhySpecializedIT() {
             >
               Generic tech support can&rsquo;t keep up with regulated, operational industries.
             </h2>
-            <p className="text-[#A0B6CD] text-base leading-relaxed mb-10 animate-fade-in-up stagger-2">
+            <p className="text-[#b0c4d8] text-base leading-relaxed mb-10 animate-fade-in-up stagger-2">
               Your operations move fast, your teams are distributed, and your data is mission-critical. 
               You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace — not just the server room.
             </p>
@@ -84,14 +84,14 @@ export default function WhySpecializedIT() {
                   data-testid={`why-reason-${i}`}
                   className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}
                 >
-                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-[#003B71] bg-[#001A33]">
+                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-[#0d4a8a] bg-[#0f2340]">
                     <r.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                       {r.title}
                     </h3>
-                    <p className="text-[#A0B6CD] text-sm leading-relaxed">{r.desc}</p>
+                    <p className="text-[#b0c4d8] text-sm leading-relaxed">{r.desc}</p>
                   </div>
                 </div>
               ))}

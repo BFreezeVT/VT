@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --background: 210 80% 3%;
+    --background: 210 60% 6%;
     --foreground: 0 0% 100%;
-    --card: 210 100% 10%;
+    --card: 210 50% 13%;
     --card-foreground: 0 0% 100%;
-    --popover: 210 100% 10%;
+    --popover: 210 50% 13%;
     --popover-foreground: 0 0% 100%;
     --primary: 199 100% 35%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 100% 22%;
+    --secondary: 210 60% 25%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 100% 10%;
-    --muted-foreground: 210 30% 72%;
+    --muted: 210 50% 13%;
+    --muted-foreground: 210 25% 78%;
     --accent: 14 100% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 100% 22%;
-    --input: 210 100% 22%;
+    --border: 210 60% 25%;
+    --input: 210 60% 25%;
     --ring: 199 100% 35%;
     --radius: 0.25rem;
   }
@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#020812] text-white;
+    @apply bg-[#0a1628] text-white;
     font-family: 'IBM Plex Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

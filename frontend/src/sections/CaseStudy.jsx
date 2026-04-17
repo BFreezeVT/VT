@@ -156,7 +156,7 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-24 lg:py-32 bg-[#020812]"
+      className="py-24 lg:py-32 bg-[#0a1628]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -168,7 +168,7 @@ export default function CaseStudy() {
           >
             Trusted by businesses across the Twin Cities.
           </h2>
-          <p className="text-[#A0B6CD] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#b0c4d8] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             Don&rsquo;t take our word for it. Here&rsquo;s what our clients have to say about partnering with Veracity Technologies.
           </p>
         </div>
@@ -193,19 +193,19 @@ export default function CaseStudy() {
                     className="grid-border-card p-6 h-full flex flex-col"
                   >
                     <Quote className="w-6 h-6 text-[#0077B3]/20 mb-4 flex-shrink-0" />
-                    <p className="text-[#A0B6CD] text-sm leading-relaxed mb-6 flex-1 italic">
+                    <p className="text-[#b0c4d8] text-sm leading-relaxed mb-6 flex-1 italic">
                       &ldquo;{t.quote}&rdquo;
                     </p>
-                    <div className="border-t border-[#003B71] pt-4 mt-auto flex items-center gap-3">
+                    <div className="border-t border-[#0d4a8a] pt-4 mt-auto flex items-center gap-3">
                       {t.photo ? (
                         <img
                           src={t.photo}
                           alt={t.name}
-                          className="w-10 h-10 rounded-full object-cover border border-[#003B71]"
+                          className="w-10 h-10 rounded-full object-cover border border-[#0d4a8a]"
                           loading="lazy"
                         />
                       ) : (
-                        <div className="w-10 h-10 rounded-full bg-[#003B71] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-[#0d4a8a] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                           {t.name.split(" ").map(n => n[0]).join("")}
                         </div>
                       )}
@@ -213,7 +213,7 @@ export default function CaseStudy() {
                         <p data-testid={`testimonial-author-${i}`} className="text-white font-semibold text-sm">
                           {t.name}
                         </p>
-                        <p className="text-[#A0B6CD] text-xs">
+                        <p className="text-[#b0c4d8] text-xs">
                           {t.title}, {t.company}
                         </p>
                       </div>
@@ -224,11 +224,11 @@ export default function CaseStudy() {
             </CarouselContent>
             <CarouselPrevious
               data-testid="carousel-prev"
-              className="border-[#003B71] bg-[#001A33] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -left-5 lg:-left-7"
+              className="border-[#0d4a8a] bg-[#0f2340] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -left-5 lg:-left-7"
             />
             <CarouselNext
               data-testid="carousel-next"
-              className="border-[#003B71] bg-[#001A33] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -right-5 lg:-right-7"
+              className="border-[#0d4a8a] bg-[#0f2340] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -right-5 lg:-right-7"
             />
           </Carousel>
         </div>
@@ -237,19 +237,19 @@ export default function CaseStudy() {
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6">
           <div data-testid="case-study-metric-0" className="text-center grid-border-card p-5">
             <p className="stat-number text-3xl text-white">20+</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Happy Clients</p>
+            <p className="text-xs text-[#b0c4d8] mt-1">Happy Clients</p>
           </div>
           <div data-testid="case-study-metric-1" className="text-center grid-border-card p-5">
             <p className="stat-number text-3xl text-white">32</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Years Longest Partnership</p>
+            <p className="text-xs text-[#b0c4d8] mt-1">Years Longest Partnership</p>
           </div>
           <div data-testid="case-study-metric-2" className="text-center grid-border-card p-5">
             <p className="stat-number text-3xl text-[#0077B3]">24/7</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Support Availability</p>
+            <p className="text-xs text-[#b0c4d8] mt-1">Support Availability</p>
           </div>
           <div data-testid="case-study-metric-3" className="text-center grid-border-card p-5">
             <p className="stat-number text-3xl text-white">4.9</p>
-            <p className="text-xs text-[#A0B6CD] mt-1">Average Client Rating</p>
+            <p className="text-xs text-[#b0c4d8] mt-1">Average Client Rating</p>
           </div>
         </div>
       </div>

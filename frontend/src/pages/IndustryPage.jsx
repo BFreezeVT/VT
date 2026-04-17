@@ -49,7 +49,7 @@ export default function IndustryPage() {
 
   if (!industry) {
     return (
-      <div className="min-h-screen bg-[#020812] flex items-center justify-center">
+      <div className="min-h-screen bg-[#0a1628] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit" }}>Page Not Found</h1>
           <Link to="/" className="text-[#0077B3] hover:text-white">Back to Home</Link>
@@ -62,7 +62,7 @@ export default function IndustryPage() {
   const testimonials = industry.testimonialIndices.map((i) => allTestimonials[i]);
 
   return (
-    <div className="min-h-screen bg-[#020812]" data-testid={`industry-page-${industry.slug}`}>
+    <div className="min-h-screen bg-[#0a1628]" data-testid={`industry-page-${industry.slug}`}>
       {/* Page-specific SEO schema */}
       <script
         type="application/ld+json"
@@ -85,22 +85,22 @@ export default function IndustryPage() {
       />
 
       {/* Nav */}
-      <nav className="bg-[#020812]/95 backdrop-blur-md border-b border-[#003B71] sticky top-0 z-50">
+      <nav className="bg-[#0a1628]/95 backdrop-blur-md border-b border-[#0d4a8a] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" data-testid="industry-nav-home" className="text-[#A0B6CD] hover:text-white text-sm flex items-center gap-1">
+            <Link to="/" data-testid="industry-nav-home" className="text-[#b0c4d8] hover:text-white text-sm flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> Home
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
             <Button
               data-testid="industry-nav-cta"
               onClick={() => document.getElementById("industry-form")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-white text-[#003B71] hover:bg-white/90 rounded-sm font-semibold text-sm px-5"
+              className="bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-semibold text-sm px-5"
             >
               {industry.ctaText}
             </Button>
@@ -128,36 +128,36 @@ export default function IndustryPage() {
                 >
                   {industry.headline}
                 </h1>
-                <p data-testid="industry-subhead" className="text-base md:text-lg text-[#A0B6CD] leading-relaxed mb-8 max-w-2xl">
+                <p data-testid="industry-subhead" className="text-base md:text-lg text-[#b0c4d8] leading-relaxed mb-8 max-w-2xl">
                   {industry.subhead}
                 </p>
                 <Button
                   data-testid="industry-hero-cta"
                   onClick={() => document.getElementById("industry-form")?.scrollIntoView({ behavior: "smooth" })}
-                  className="bg-white text-[#003B71] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12"
+                  className="bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12"
                 >
                   {industry.ctaText}
                 </Button>
               </div>
               <div className="grid-border-card p-8 text-center">
                 <p className="stat-number text-5xl sm:text-6xl text-white mb-2">{industry.heroStat.value}</p>
-                <p className="text-sm text-[#A0B6CD]">{industry.heroStat.label}</p>
+                <p className="text-sm text-[#b0c4d8]">{industry.heroStat.label}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Description */}
-        <section data-testid="industry-about" className="py-20 bg-[#001A33]/40">
+        <section data-testid="industry-about" className="py-20 bg-[#0f2340]/40">
           <div className="max-w-4xl mx-auto px-6">
-            <p data-testid="industry-description" className="text-[#A0B6CD] text-base leading-relaxed">
+            <p data-testid="industry-description" className="text-[#b0c4d8] text-base leading-relaxed">
               {industry.description}
             </p>
           </div>
         </section>
 
         {/* Challenges */}
-        <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#020812]">
+        <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#0a1628]">
           <div className="max-w-7xl mx-auto px-6">
             <p className="overline text-[#FF5722] mb-4">The Challenges</p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12" style={{ fontFamily: "Outfit" }}>
@@ -167,7 +167,7 @@ export default function IndustryPage() {
               {industry.challenges.map((ch, i) => (
                 <div key={i} data-testid={`industry-challenge-${i}`} className="grid-border-card p-6 group">
                   <h3 className="text-white font-semibold text-base mb-3" style={{ fontFamily: "Outfit" }}>{ch.title}</h3>
-                  <p className="text-[#A0B6CD] text-sm leading-relaxed">{ch.desc}</p>
+                  <p className="text-[#b0c4d8] text-sm leading-relaxed">{ch.desc}</p>
                 </div>
               ))}
             </div>
@@ -175,7 +175,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Compliance + Software */}
-        <section data-testid="industry-compliance" className="py-20 bg-[#001A33]/30">
+        <section data-testid="industry-compliance" className="py-20 bg-[#0f2340]/30">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
@@ -199,7 +199,7 @@ export default function IndustryPage() {
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {industry.software.map((s, i) => (
-                    <span key={i} data-testid={`industry-software-${i}`} className="text-xs font-medium text-[#0077B3] border border-[#003B71] bg-[#0077B3]/5 px-3 py-1.5">
+                    <span key={i} data-testid={`industry-software-${i}`} className="text-xs font-medium text-[#0077B3] border border-[#0d4a8a] bg-[#0077B3]/5 px-3 py-1.5">
                       {s}
                     </span>
                   ))}
@@ -210,7 +210,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Testimonials */}
-        <section data-testid="industry-testimonials" className="py-20 bg-[#020812]">
+        <section data-testid="industry-testimonials" className="py-20 bg-[#0a1628]">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-2xl font-bold text-white mb-10 text-center" style={{ fontFamily: "Outfit" }}>
               Trusted by {industry.name.toLowerCase()} professionals
@@ -219,10 +219,10 @@ export default function IndustryPage() {
               {testimonials.map((t, i) => (
                 <div key={i} data-testid={`industry-testimonial-${i}`} className="grid-border-card p-6 flex flex-col">
                   <Quote className="w-6 h-6 text-[#0077B3]/20 mb-3" />
-                  <p className="text-[#A0B6CD] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="border-t border-[#003B71] pt-3 mt-auto">
+                  <p className="text-[#b0c4d8] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="border-t border-[#0d4a8a] pt-3 mt-auto">
                     <p className="text-white font-semibold text-sm">{t.name}</p>
-                    <p className="text-[#A0B6CD] text-xs">{t.title}, {t.company}</p>
+                    <p className="text-[#b0c4d8] text-xs">{t.title}, {t.company}</p>
                   </div>
                 </div>
               ))}
@@ -231,7 +231,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Form */}
-        <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-[#001A33]/40">
+        <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-[#0f2340]/40">
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid-border-card p-8 lg:p-10">
               {!submitted ? (
@@ -239,7 +239,7 @@ export default function IndustryPage() {
                   <h2 className="text-2xl font-bold text-white mb-2 text-center" style={{ fontFamily: "Outfit" }}>
                     {industry.ctaText}
                   </h2>
-                  <p className="text-[#A0B6CD] text-sm mb-8 text-center">
+                  <p className="text-[#b0c4d8] text-sm mb-8 text-center">
                     Non-invasive. Confidential. Tailored to {industry.name.toLowerCase()}.
                   </p>
                   <form onSubmit={(e) => {
@@ -256,19 +256,19 @@ export default function IndustryPage() {
                   }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">Company</label>
-                      <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="name" className="text-white text-sm font-medium mb-1.5 block">Name</label>
-                      <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="phone" className="text-white text-sm font-medium mb-1.5 block">Phone</label>
-                      <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">Email</label>
-                      <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-black/20 border-[#003B71] text-white placeholder:text-[#A0B6CD]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div className="sm:col-span-2">
                       <Button data-testid="industry-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12">
@@ -281,7 +281,7 @@ export default function IndustryPage() {
                 <div data-testid="industry-form-success" className="text-center py-6">
                   <Shield className="w-12 h-12 text-[#0077B3] mx-auto mb-4" />
                   <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>Thank you!</h3>
-                  <p className="text-[#A0B6CD] text-sm">We'll reach out within one business day to schedule your {industry.name.toLowerCase()} security audit.</p>
+                  <p className="text-[#b0c4d8] text-sm">We'll reach out within one business day to schedule your {industry.name.toLowerCase()} security audit.</p>
                 </div>
               )}
             </div>
@@ -289,16 +289,16 @@ export default function IndustryPage() {
         </section>
 
         {/* Other industries */}
-        <section className="py-16 bg-[#020812]">
+        <section className="py-16 bg-[#0a1628]">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-[#A0B6CD] text-sm mb-4">We also specialize in:</p>
+            <p className="text-[#b0c4d8] text-sm mb-4">We also specialize in:</p>
             <div className="flex justify-center gap-4 flex-wrap">
               {industryData.filter((ind) => ind.slug !== industry.slug).map((ind) => (
                 <Link
                   key={ind.slug}
                   to={`/industries/${ind.slug}`}
                   data-testid={`other-industry-${ind.slug}`}
-                  className="text-sm text-[#0077B3] border border-[#003B71] hover:border-[#0077B3] px-5 py-2.5 transition-colors"
+                  className="text-sm text-[#0077B3] border border-[#0d4a8a] hover:border-[#0077B3] px-5 py-2.5 transition-colors"
                 >
                   {ind.name}
                 </Link>
@@ -309,10 +309,10 @@ export default function IndustryPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#020812] border-t border-[#003B71] py-8">
+      <footer className="bg-[#0a1628] border-t border-[#0d4a8a] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#A0B6CD]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.</p>
-          <div className="flex items-center gap-6 text-sm text-[#A0B6CD]">
+          <p className="text-[#b0c4d8]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.</p>
+          <div className="flex items-center gap-6 text-sm text-[#b0c4d8]">
             <a href="tel:9529417333" className="hover:text-white flex items-center gap-1"><Phone className="w-3 h-3" /> (952) 941-7333</a>
             <Link to="/" className="hover:text-white">Home</Link>
           </div>

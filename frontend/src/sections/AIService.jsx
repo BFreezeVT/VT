@@ -39,7 +39,7 @@ export default function AIService() {
       id="ai-service"
       data-testid="ai-service-section"
       aria-label="AI as a Service offerings including AI security, governance, and threat detection"
-      className="py-24 lg:py-32 bg-[#020812] relative overflow-hidden"
+      className="py-24 lg:py-32 bg-[#0a1628] relative overflow-hidden"
     >
       {/* Subtle animated grid background */}
       <div className="absolute inset-0 opacity-[0.03]"
@@ -67,7 +67,7 @@ export default function AIService() {
               >
                 AI is transforming your industry. We make sure it doesn&rsquo;t expose you.
               </h2>
-              <p className="text-[#A0B6CD] text-base leading-relaxed mb-8">
+              <p className="text-[#b0c4d8] text-base leading-relaxed mb-8">
                 Every organization is racing to adopt AI. But without proper security, governance, 
                 and compliance frameworks, AI becomes your biggest attack surface. We help you 
                 move fast and stay protected.
@@ -76,7 +76,7 @@ export default function AIService() {
                 <p className="stat-number text-3xl sm:text-4xl text-white mb-1">
                   78<span className="text-[#FF5722]">%</span>
                 </p>
-                <p className="text-xs text-[#A0B6CD]">of organizations have no AI security policy in place</p>
+                <p className="text-xs text-[#b0c4d8]">of organizations have no AI security policy in place</p>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function AIService() {
                 data-testid={`ai-card-${i}`}
                 className={`grid-border-card p-6 group animate-fade-in-up stagger-${(i % 6) + 1}`}
               >
-                <div className="w-10 h-10 flex items-center justify-center border border-[#003B71] bg-[#020812] mb-4 group-hover:border-[#0077B3] transition-colors">
+                <div className="w-10 h-10 flex items-center justify-center border border-[#0d4a8a] bg-[#0a1628] mb-4 group-hover:border-[#0077B3] transition-colors">
                   <svc.icon className="w-5 h-5 text-[#0077B3]" />
                 </div>
                 <h3
@@ -98,7 +98,7 @@ export default function AIService() {
                 >
                   {svc.title}
                 </h3>
-                <p className="text-[#A0B6CD] text-sm leading-relaxed">{svc.desc}</p>
+                <p className="text-[#b0c4d8] text-sm leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>

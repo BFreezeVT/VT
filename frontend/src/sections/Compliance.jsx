@@ -43,7 +43,7 @@ export default function Compliance() {
         className="absolute inset-0 opacity-[0.06] bg-cover bg-center"
         style={{ backgroundImage: `url(${TECH_BG})` }}
       />
-      <div className="absolute inset-0 bg-[#001A33]/60" />
+      <div className="absolute inset-0 bg-[#0f2340]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center mb-16">
@@ -56,7 +56,7 @@ export default function Compliance() {
             >
               Stay compliant. Stay protected.
             </h2>
-            <p className="text-[#A0B6CD] text-base max-w-2xl animate-fade-in-up stagger-2">
+            <p className="text-[#b0c4d8] text-base max-w-2xl animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function Compliance() {
               data-testid={`compliance-card-${i}`}
               className={`grid-border-card p-6 group animate-fade-in-up stagger-${i + 3}`}
             >
-              <div className="w-10 h-10 flex items-center justify-center border border-[#003B71] bg-[#020812] mb-4 group-hover:border-[#0077B3] transition-colors">
+              <div className="w-10 h-10 flex items-center justify-center border border-[#0d4a8a] bg-[#0a1628] mb-4 group-hover:border-[#0077B3] transition-colors">
                 <item.icon className="w-5 h-5 text-[#0077B3]" />
               </div>
               <h3
@@ -87,7 +87,7 @@ export default function Compliance() {
               >
                 {item.title}
               </h3>
-              <p className="text-[#A0B6CD] text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-[#b0c4d8] text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

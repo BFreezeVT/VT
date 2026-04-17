@@ -12,7 +12,7 @@ export default function Footer() {
       data-testid="footer"
       role="contentinfo"
       aria-label="Veracity Technologies contact information, credentials, and affiliations"
-      className="bg-[#020812] border-t border-[#003B71] pt-16 pb-8"
+      className="bg-[#0a1628] border-t border-[#0d4a8a] pt-16 pb-8"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -24,7 +24,7 @@ export default function Footer() {
               className="h-24 w-auto object-contain mb-5"
               data-testid="footer-logo"
             />
-            <p className="text-[#A0B6CD] text-sm leading-relaxed mb-5">
+            <p className="text-[#b0c4d8] text-sm leading-relaxed mb-5">
               Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
             <div className="flex items-center gap-3">
@@ -34,7 +34,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Veracity Technologies on LinkedIn"
-                className="w-9 h-9 flex items-center justify-center border border-[#003B71] bg-[#001A33] text-[#A0B6CD] hover:text-white hover:border-[#0077B3] transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[#0d4a8a] bg-[#0f2340] text-[#b0c4d8] hover:text-white hover:border-[#0077B3] transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -44,7 +44,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Veracity Technologies on YouTube"
-                className="w-9 h-9 flex items-center justify-center border border-[#003B71] bg-[#001A33] text-[#A0B6CD] hover:text-white hover:border-[#0077B3] transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[#0d4a8a] bg-[#0f2340] text-[#b0c4d8] hover:text-white hover:border-[#0077B3] transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Veracity Technologies on Facebook"
-                className="w-9 h-9 flex items-center justify-center border border-[#003B71] bg-[#001A33] text-[#A0B6CD] hover:text-white hover:border-[#0077B3] transition-colors"
+                className="w-9 h-9 flex items-center justify-center border border-[#0d4a8a] bg-[#0f2340] text-[#b0c4d8] hover:text-white hover:border-[#0077B3] transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -63,28 +63,28 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <p className="overline text-[#A0B6CD] mb-4">Navigate</p>
+            <p className="overline text-[#b0c4d8] mb-4">Navigate</p>
             <div className="space-y-2">
-              <button data-testid="footer-link-why" onClick={() => scrollTo("why-it")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Why Specialized IT</button>
-              <button data-testid="footer-link-approach" onClick={() => scrollTo("approach")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Our Approach</button>
-              <button data-testid="footer-link-industries" onClick={() => scrollTo("industries")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Industries</button>
-              <button data-testid="footer-link-ai" onClick={() => scrollTo("ai-service")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">AI as a Service</button>
-              <button data-testid="footer-link-compliance" onClick={() => scrollTo("compliance")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Compliance</button>
-              <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
+              <button data-testid="footer-link-why" onClick={() => scrollTo("why-it")} className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">Why Specialized IT</button>
+              <button data-testid="footer-link-approach" onClick={() => scrollTo("approach")} className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">Our Approach</button>
+              <button data-testid="footer-link-industries" onClick={() => scrollTo("industries")} className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">Industries</button>
+              <button data-testid="footer-link-ai" onClick={() => scrollTo("ai-service")} className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">AI as a Service</button>
+              <button data-testid="footer-link-compliance" onClick={() => scrollTo("compliance")} className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">Compliance</button>
+              <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">FAQ</button>
               <button data-testid="footer-link-audit" onClick={() => scrollTo("audit")} className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Free Audit</button>
-              <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#A0B6CD] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
-              <Link data-testid="footer-link-resources" to="/resources" className="block text-[#A0B6CD] hover:text-white text-sm transition-colors">Resources</Link>
+              <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#b0c4d8] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
+              <Link data-testid="footer-link-resources" to="/resources" className="block text-[#b0c4d8] hover:text-white text-sm transition-colors">Resources</Link>
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <p className="overline text-[#A0B6CD] mb-4">Contact</p>
+            <p className="overline text-[#b0c4d8] mb-4">Contact</p>
             <div className="space-y-3">
               <a
                 data-testid="footer-phone"
                 href="tel:9529417333"
-                className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm transition-colors"
+                className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#0077B3]" />
                 (952) 941-7333
@@ -92,12 +92,12 @@ export default function Footer() {
               <a
                 data-testid="footer-email"
                 href="mailto:info@veracitytech.com"
-                className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm transition-colors"
+                className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm transition-colors"
               >
                 <Mail className="w-4 h-4 text-[#0077B3]" />
                 info@veracitytech.com
               </a>
-              <div className="flex items-start gap-2 text-[#A0B6CD] text-sm">
+              <div className="flex items-start gap-2 text-[#b0c4d8] text-sm">
                 <MapPin className="w-4 h-4 text-[#0077B3] mt-0.5 flex-shrink-0" />
                 <span>Minneapolis-St. Paul, MN</span>
               </div>
@@ -106,28 +106,28 @@ export default function Footer() {
 
           {/* Affiliations */}
           <div>
-            <p className="overline text-[#A0B6CD] mb-4">Credentials</p>
-            <div className="space-y-2 text-sm text-[#A0B6CD]">
+            <p className="overline text-[#b0c4d8] mb-4">Credentials</p>
+            <div className="space-y-2 text-sm text-[#b0c4d8]">
               <p data-testid="footer-credential-0">CMMC Registered Provider</p>
               <p data-testid="footer-credential-1">ISO 27001 Aligned</p>
               <p data-testid="footer-credential-2">CompTIA Security+ Certified</p>
             </div>
-            <Separator className="my-4 bg-[#003B71]" />
-            <p className="overline text-[#A0B6CD] mb-2">Affiliations</p>
-            <div className="space-y-1 text-sm text-[#A0B6CD]">
+            <Separator className="my-4 bg-[#0d4a8a]" />
+            <p className="overline text-[#b0c4d8] mb-2">Affiliations</p>
+            <div className="space-y-1 text-sm text-[#b0c4d8]">
               <p data-testid="footer-affiliation-agc">AGC of America</p>
               <p data-testid="footer-affiliation-abc">ABC (Associated Builders and Contractors)</p>
             </div>
           </div>
         </div>
 
-        <Separator className="bg-[#003B71] mb-6" />
+        <Separator className="bg-[#0d4a8a] mb-6" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p data-testid="footer-copyright" className="text-[#A0B6CD]/60 text-xs">
+          <p data-testid="footer-copyright" className="text-[#b0c4d8]/60 text-xs">
             &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-[#A0B6CD]/60">
+          <div className="flex items-center gap-4 text-xs text-[#b0c4d8]/60">
             <button data-testid="footer-privacy" className="hover:text-white transition-colors">Privacy Policy</button>
             <button data-testid="footer-terms" className="hover:text-white transition-colors">Terms of Service</button>
           </div>
