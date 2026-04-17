@@ -5,7 +5,7 @@ const industryData = [
     icon: "Landmark",
     headline: "Cybersecurity Built for the Speed and Stakes of Finance",
     subhead: "Banks, RIAs, fintech firms, and investment managers trust Veracity to keep their data compliant, their systems secure, and their clients confident.",
-    heroStat: { value: "$4.9M", label: "Average cost of a financial services data breach" },
+    heroStat: { value: "$5.56M", label: "Average cost of a financial services data breach (IBM 2025)" },
     description: "Financial services firms operate under some of the most stringent regulatory frameworks in any industry. From SEC/FINRA requirements to SOC 2 audits and PCI-DSS mandates, a single compliance gap can trigger enforcement actions, client attrition, and reputational damage that takes years to repair. At Veracity Technologies, we don't just understand financial IT — we live it. Our team manages infrastructure for RIAs, hedge funds, banks, and fintech startups across the Twin Cities, ensuring every system, every endpoint, and every data flow meets the standard your regulators — and your clients — expect.",
     challenges: [
       {
@@ -38,7 +38,7 @@ const industryData = [
     icon: "HardHat",
     headline: "Construction IT That Works as Hard as Your Crews",
     subhead: "Job sites don't wait for IT tickets. We keep your crews connected, your bids secure, and your project data protected — rain or shine.",
-    heroStat: { value: "41%", label: "Year-over-year increase in construction ransomware attacks" },
+    heroStat: { value: "24%", label: "Year-over-year increase in construction ransomware attacks (2025)" },
     description: "Construction firms have become prime targets for cybercriminals. The industry's reliance on cloud-based project management, mobile devices on job sites, and complex vendor ecosystems creates vulnerabilities that traditional MSPs simply don't understand. At Veracity Technologies, we've built our construction practice around the tools and workflows your teams use every day. We know that a downed network on pour day costs more than most industries lose in a month. We know that subcontractor portals need security without friction. And we know that your project data — bids, blueprints, change orders — is your competitive advantage.",
     challenges: [
       {
@@ -71,8 +71,8 @@ const industryData = [
     icon: "Factory",
     headline: "Secure the Factory Floor Without Slowing the Line",
     subhead: "When OT meets IT, vulnerabilities multiply. We bridge the gap with security that protects production without disrupting it.",
-    heroStat: { value: "#1", label: "Most-attacked industry by ransomware for 3 consecutive years" },
-    description: "Manufacturing is under siege. Connected machinery, SCADA systems, IoT sensors, and ERP integrations have turned the modern factory into a complex IT environment — often managed by teams with deep operational expertise but limited cybersecurity resources. At Veracity Technologies, we specialize in the OT/IT convergence that defines modern manufacturing. We understand that you can't just 'patch and pray' on a production line that runs 24/7. We understand that a PLC is not a laptop. And we understand that a ransomware attack on your MES system doesn't just cost data — it costs production runs, customer deliveries, and contracts.",
+    heroStat: { value: "#1", label: "Most-attacked industry — 4th consecutive year (56% increase in 2025)" },
+    description: "Manufacturing is under siege. Connected machinery, SCADA systems, IoT sensors, and ERP integrations have turned the modern factory into a complex IT environment — often managed by teams with deep operational expertise but limited cybersecurity resources. At Veracity Technologies, we specialize in the OT/IT convergence that defines modern manufacturing. We understand that you can't just 'patch and pray' on a production line that runs 24/7. We understand that a PLC is not a laptop. And we understand that a ransomware attack on your MES system doesn't just cost data — it costs production runs, customer deliveries, and contracts. Manufacturing now represents 29% of all published ransomware victims globally.",
     challenges: [
       {
         title: "OT/IT Convergence Risk",

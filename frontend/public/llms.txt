@@ -60,11 +60,13 @@ OT/IT convergence security, SCADA protection, network segmentation. Manufacturin
 CMMC, HIPAA, ITAR, NIST 800-171 expertise for defense contractors, healthcare, and government suppliers.
 
 ## Key Statistics
-- 41% year-over-year increase in construction ransomware attacks
-- 75% of security alerts stem from stolen or compromised credentials
-- $4.9M average cost of a data breach in financial services
-- Manufacturing is #1 most-attacked industry by ransomware for 3 years
-- 78% of organizations have no AI security policy in place
+- 83% of organizations lack automated AI security controls (Kiteworks 2025)
+- 59% of confirmed incidents are identity-driven attacks, up 156% since 2023 (eSentire 2026)
+- $5.56M average cost of a data breach in financial services (IBM 2025)
+- Manufacturing is #1 most-attacked industry by ransomware for 4th consecutive year, representing 29% of all victims (2025)
+- Construction ransomware attacks up 24% year-over-year with 443 incidents in 2025
+- Global ransomware attacks rose 32% in 2025 with average ransom payment of $2.3M
+- 68% of employees use unauthorized AI tools without IT approval
 
 ## Free Offer
 Veracity Technologies offers a free Technology & Cyber Risk Audit that includes:

@@ -6,38 +6,38 @@ const HACKER_IMG = "https://images.unsplash.com/photo-1619121951749-4f4ddb5027dd
 const stats = [
   {
     icon: Brain,
-    value: "78",
+    value: "83",
     suffix: "%",
     accentColor: "text-[#0077B3]",
-    label: "of organizations have no AI security policy",
+    label: "of organizations lack automated AI security controls",
     source: {
-      title: "ISACA State of AI 2024 Report",
-      url: "https://www.isaca.org/resources/reports/the-promise-and-reality-of-ai",
-      excerpt: "ISACA's global survey found that 78% of organizations have not implemented any formal AI governance or security policies despite widespread adoption.",
+      title: "Kiteworks AI Security Gap Report 2025",
+      url: "https://www.kiteworks.com/cybersecurity-risk-management/ai-security-gap-2025-organizations-flying-blind/",
+      excerpt: "83% of organizations have no automated Data Loss Prevention controls to block sensitive data from leaking into public AI tools. 86% have zero visibility into AI data flows.",
     },
   },
   {
     icon: ShieldAlert,
-    value: "75",
+    value: "59",
     suffix: "%",
     accentColor: "text-[#FF5722]",
-    label: "of alerts stem from compromised credentials",
+    label: "of confirmed incidents are identity-driven attacks",
     source: {
-      title: "IBM X-Force Threat Intelligence Index 2024",
-      url: "https://www.ibm.com/reports/threat-intelligence",
-      excerpt: "IBM's annual threat report found that credential-based attacks accounted for 75% of initial access vectors, making stolen credentials the #1 attack method.",
+      title: "eSentire Annual Threat Report 2026",
+      url: "https://olytac.com/account-compromise-surge-in-2026-why-stolen-credentials-now-dominate-corporate-cyber-threats-and-how-to-fight-back/",
+      excerpt: "Identity-driven threats reached 59% of confirmed incidents by early 2025, up 156% since 2023. Account compromise via stolen credentials surged 389% year-over-year.",
     },
   },
   {
     icon: DollarSign,
-    value: "$4.9",
+    value: "$5.56",
     suffix: "M",
     accentColor: "text-[#0077B3]",
-    label: "average data breach cost in financial services",
+    label: "average data breach cost in financial services (2025)",
     source: {
-      title: "IBM Cost of a Data Breach Report 2024",
+      title: "IBM Cost of a Data Breach Report 2025",
       url: "https://www.ibm.com/reports/data-breach",
-      excerpt: "Financial services experienced the 2nd highest average breach cost at $4.88M, behind only healthcare ($9.77M). Costs include detection, notification, lost business, and response.",
+      excerpt: "Financial services experienced the 2nd highest average breach cost at $5.56M in 2025, behind healthcare ($7.42M). U.S. breaches averaged a record $10.22M.",
     },
   },
   {
@@ -45,22 +45,22 @@ const stats = [
     value: "#1",
     suffix: "",
     accentColor: "text-[#FF5722]",
-    label: "most-attacked industry: manufacturing (3 yrs running)",
+    label: "most-attacked industry: manufacturing (4th consecutive year)",
     source: {
-      title: "IBM X-Force Threat Intelligence Index 2024",
-      url: "https://www.ibm.com/reports/threat-intelligence",
-      excerpt: "Manufacturing has been the most-targeted industry for ransomware for three consecutive years, surpassing financial services and healthcare.",
+      title: "Industrial Cyber / Global Ransomware Report 2025",
+      url: "https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/",
+      excerpt: "Manufacturing represents 29% of all published ransomware victims globally in 2025, with a 56% year-over-year increase. Ransomware attacks rose 32% overall.",
     },
     expandable: true,
   },
 ];
 
 const topAttackedIndustries = [
-  { rank: 1, name: "Manufacturing", pct: "25.7%", note: "3rd consecutive year at #1" },
-  { rank: 2, name: "Finance & Insurance", pct: "18.2%", note: "Wire fraud + credential theft" },
-  { rank: 3, name: "Professional Services", pct: "15.4%", note: "Law firms, consultancies, MSPs" },
-  { rank: 4, name: "Energy & Utilities", pct: "11.1%", note: "Critical infrastructure targets" },
-  { rank: 5, name: "Healthcare", pct: "6.3%", note: "Highest cost per breach ($9.77M)" },
+  { rank: 1, name: "Manufacturing", pct: "29%", note: "56% YoY increase — 4th consecutive year at #1" },
+  { rank: 2, name: "Finance & Insurance", pct: "18%", note: "$5.56M avg breach cost — SEC/FINRA pressure" },
+  { rank: 3, name: "Professional Services", pct: "15%", note: "Law firms, consultancies, MSPs targeted" },
+  { rank: 4, name: "Construction", pct: "12%", note: "24% YoY increase — wire fraud epidemic" },
+  { rank: 5, name: "Healthcare", pct: "8%", note: "Highest cost per breach ($7.42M)" },
 ];
 
 function SourcePopup({ source, onClose }) {
@@ -80,7 +80,7 @@ function SourcePopup({ source, onClose }) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium hover:text-white transition-colors"
         >
-          View source <ExternalLink className="w-3 h-3" />
+          View full report <ExternalLink className="w-3 h-3" />
         </a>
       </div>
     </div>
@@ -132,23 +132,24 @@ export default function IntroStats() {
               data-testid="intro-description"
               className="text-[#b0c4d8] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8"
             >
-              AI-powered attacks are outpacing traditional security tools. Ransomware, credential theft, 
-              and shadow AI usage are costing organizations millions — while most firms still rely on 
-              reactive, generic IT support.
+              AI-powered attacks are outpacing traditional security tools. Ransomware victims surged 
+              58% in 2025, credential theft is up 389%, and shadow AI usage is leaking sensitive data 
+              daily — while most firms still rely on reactive, generic IT support.
             </p>
             <div className="grid-border-card p-5 border-[#FF5722]/20 animate-fade-in-up stagger-3">
               <p className="text-[#FF5722] text-xs font-semibold uppercase tracking-wider mb-2">The Reality</p>
               <p className="text-[#b0c4d8] text-sm leading-relaxed">
-                The average time to detect a breach is <span className="text-white font-semibold">194 days</span>. The average time to contain it is another <span className="text-white font-semibold">69 days</span>. 
-                That&rsquo;s nearly 9 months of exposure. Our AI monitoring detects threats in <span className="text-[#0077B3] font-semibold">minutes</span>.
+                Global ransomware attacks rose <span className="text-white font-semibold">32% in 2025</span>. 
+                The average ransom payment hit <span className="text-white font-semibold">$2.3 million</span>. 
+                90% of organizations are unprepared for AI-augmented cyber threats.
               </p>
               <a
-                href="https://www.ibm.com/reports/data-breach"
+                href="https://deepstrike.io/blog/ransomware-statistics-2025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-white transition-colors"
               >
-                Source: IBM Cost of a Data Breach 2024 <ExternalLink className="w-2.5 h-2.5" />
+                Source: DeepStrike Ransomware Statistics 2025 <ExternalLink className="w-2.5 h-2.5" />
               </a>
             </div>
           </div>
@@ -171,7 +172,6 @@ export default function IntroStats() {
                 </p>
                 <p className="text-xs text-[#b0c4d8] mt-2 mb-3">{stat.label}</p>
 
-                {/* Source link */}
                 <button
                   data-testid={`stat-source-${i}`}
                   onClick={() => setActiveSource(activeSource === i ? null : i)}
@@ -180,7 +180,6 @@ export default function IntroStats() {
                   View source <ExternalLink className="w-2.5 h-2.5" />
                 </button>
 
-                {/* Expandable ranking for #1 */}
                 {stat.expandable && (
                   <button
                     data-testid="expand-ranking"
@@ -199,7 +198,7 @@ export default function IntroStats() {
         {showRanking && (
           <div data-testid="top-5-ranking" className="mt-6 grid-border-card p-6 animate-fade-in">
             <p className="text-white text-sm font-semibold mb-4" style={{ fontFamily: "Outfit" }}>
-              Top 5 Most-Attacked Industries by Ransomware (2024)
+              Top 5 Most-Attacked Industries by Ransomware (2025)
             </p>
             <div className="space-y-3">
               {topAttackedIndustries.map((ind) => (
@@ -224,12 +223,12 @@ export default function IntroStats() {
               ))}
             </div>
             <a
-              href="https://www.ibm.com/reports/threat-intelligence"
+              href="https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-4 hover:text-white transition-colors"
             >
-              Source: IBM X-Force Threat Intelligence Index 2024 <ExternalLink className="w-2.5 h-2.5" />
+              Source: Industrial Cyber / Global Ransomware Report 2025 <ExternalLink className="w-2.5 h-2.5" />
             </a>
           </div>
         )}
