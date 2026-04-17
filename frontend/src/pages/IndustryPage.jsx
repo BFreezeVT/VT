@@ -1,12 +1,12 @@
 import { useParams, Link } from "react-router-dom";
-import { Phone, ChevronLeft, Shield, Wifi, Clock, Building2, Quote, CheckCircle, Landmark, HardHat, Factory } from "lucide-react";
+import { Phone, ChevronLeft, Shield, Wifi, Clock, Building2, Quote, CheckCircle, Landmark, HardHat, Factory, ShieldCheck } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { useState, useEffect } from "react";
 import industryData from "../data/industryData";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
 
-const iconMap = { Landmark, HardHat, Factory };
+const iconMap = { Landmark, HardHat, Factory, ShieldCheck };
 
 const allTestimonials = [
   { name: "Cody Nuernberg", title: "President", company: "BLD Connection", quote: "Veracity Technologies has helped streamline our company's operations. Their proactive, responsive, and knowledgeable team minimizes downtime and ensures consistent operations." },

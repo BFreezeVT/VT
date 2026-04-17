@@ -26,7 +26,7 @@ const industries = [
   {
     icon: ShieldCheck,
     title: "High-Compliance Industries",
-    slug: null,
+    slug: "high-compliance-it-support",
     desc: "CMMC, HIPAA, ITAR, and NIST 800-171 expertise for defense contractors, healthcare orgs, and government suppliers with zero tolerance for gaps.",
     highlights: ["CMMC / NIST 800-171", "HIPAA & ITAR", "Audit-Ready Documentation"],
   },

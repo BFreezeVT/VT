@@ -4,6 +4,7 @@ import { CheckCircle, ClipboardCheck, Search, Lock, BarChart3, Clock } from "luc
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
 
 const auditIncludes = [
+  { icon: Search, text: "AI readiness assessment" },
   { icon: Search, text: "Full network vulnerability scan" },
   { icon: Lock, text: "Password & access policy review" },
   { icon: BarChart3, text: "Ransomware & threat readiness assessment" },

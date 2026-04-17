@@ -98,6 +98,39 @@ const industryData = [
     metaTitle: "Manufacturing IT & OT Security | Veracity Technologies",
     metaDescription: "OT/IT cybersecurity for manufacturing plants in Minneapolis-St. Paul. SCADA protection, network segmentation, ransomware prevention, IEC 62443 compliance.",
   },
+  {
+    slug: "high-compliance-it-support",
+    name: "High-Compliance Industries",
+    icon: "ShieldCheck",
+    headline: "Zero-Gap Compliance for Industries Where Failure Isn't an Option",
+    subhead: "Defense contractors, healthcare organizations, government suppliers, and regulated enterprises trust Veracity to keep them audit-ready 365 days a year.",
+    heroStat: { value: "100%", label: "First-attempt audit pass rate for Veracity clients" },
+    description: "Some industries don't get second chances. A missed CMMC control can cost you a DoD contract. A HIPAA gap can trigger a seven-figure fine. An ITAR violation can result in criminal prosecution. For organizations operating under the most demanding regulatory frameworks in the country, compliance isn't a checkbox — it's an existential requirement. At Veracity Technologies, we've built a compliance practice that goes far beyond documentation. We engineer your IT environment to be inherently compliant — so when auditors arrive, you're not scrambling. You're ready. Our team maintains active knowledge across CMMC, HIPAA, ITAR, NIST 800-171, FedRAMP, SOC 2, and state-level privacy regulations, and we translate those requirements into technical controls your team can actually operate.",
+    challenges: [
+      {
+        title: "CMMC 2.0 & Defense Contracts",
+        desc: "The DoD is enforcing CMMC 2.0 across its entire supply chain. If you handle CUI (Controlled Unclassified Information), you need Level 2 certification — and most contractors aren't close. We build your CMMC environment from the ground up: enclave architecture, FIPS 140-2 encryption, continuous monitoring, and the full SSP documentation auditors require.",
+      },
+      {
+        title: "HIPAA & Protected Health Information",
+        desc: "Healthcare organizations, insurers, and business associates face escalating HIPAA enforcement. We implement technical safeguards — encryption at rest and in transit, access logging, automatic session timeouts, and BAA-compliant cloud configurations — while training your staff on the administrative requirements that auditors scrutinize most.",
+      },
+      {
+        title: "ITAR & Export-Controlled Data",
+        desc: "Companies handling defense articles, technical data, or export-controlled information under ITAR face some of the strictest data handling requirements in existence. We deploy U.S.-person-only access controls, geo-fenced cloud environments, and end-to-end encryption that satisfies DDTC requirements.",
+      },
+      {
+        title: "Multi-Framework Overlap",
+        desc: "Most high-compliance organizations face multiple simultaneous frameworks — CMMC + NIST 800-171 + DFARS, or HIPAA + SOC 2 + state privacy laws. We map controls across frameworks to eliminate duplicate work, reduce audit fatigue, and maintain a single source of truth for your compliance posture.",
+      },
+    ],
+    compliance: ["CMMC 2.0 (Level 1-3)", "NIST 800-171", "HIPAA", "ITAR / EAR", "FedRAMP", "SOC 2 Type II", "DFARS 252.204-7012", "State Privacy Laws"],
+    software: ["Microsoft GCC High", "Azure Government", "Varonis", "Splunk", "CrowdStrike", "Tenable.io", "ServiceNow GRC"],
+    testimonialIndices: [8, 13, 16],
+    ctaText: "Get Your Free Compliance Security Audit",
+    metaTitle: "High-Compliance IT & Cybersecurity | CMMC, HIPAA, ITAR | Veracity Technologies",
+    metaDescription: "CMMC, HIPAA, ITAR, and NIST 800-171 cybersecurity for defense contractors, healthcare, and government suppliers in Minneapolis-St. Paul. 100% first-attempt audit pass rate.",
+  },
 ];
 
 export default industryData;
