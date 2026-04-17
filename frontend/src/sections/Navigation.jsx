@@ -38,10 +38,9 @@ export default function Navigation() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <button data-testid="nav-why" onClick={() => scrollTo("why-it")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Why Us</button>
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">AI</button>
           <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Approach</button>
           <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Industries</button>
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">AI</button>
           <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">Compliance</button>
           <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-[#A0B6CD] hover:text-white text-sm transition-colors">FAQ</button>
           <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#A0B6CD] hover:text-white text-sm transition-colors">

@@ -3,7 +3,7 @@ import { Phone, MapPin, ArrowRight, Shield, Wifi, Clock, ChevronLeft, Building2,
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Separator } from "../components/ui/separator";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import cityData from "../data/cityData";
 
 const allTestimonials = [
@@ -33,6 +33,19 @@ export default function ServiceAreaPage() {
   const { citySlug } = useParams();
   const city = cityData.find((c) => c.slug === citySlug);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (city) {
+      document.title = `IT Support in ${city.name}, MN | Veracity Technologies`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", `Managed IT services and cybersecurity in ${city.name}, Minnesota. ${city.subhead} Call (952) 941-7333 for a free audit.`);
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", `https://www.veracitytech.com/service-areas/${city.slug}`);
+    }
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+    };
+  }, [city]);
 
   if (!city) {
     return (

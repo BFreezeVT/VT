@@ -1,27 +1,32 @@
-import { HardHat, Landmark, Factory, ShieldCheck } from "lucide-react";
+import { HardHat, Landmark, Factory, ShieldCheck, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const industries = [
   {
     icon: HardHat,
     title: "Construction",
+    slug: "construction-it-support",
     desc: "Job site connectivity, BIM security, Procore and Sage integration, and rapid-response IT for teams that can't afford downtime on pour day.",
     highlights: ["Job Site Networking", "BIM & Cloud Security", "Procore / Sage Support"],
   },
   {
     icon: Landmark,
     title: "Financial Services",
+    slug: "financial-it-support",
     desc: "SOC 2, PCI-DSS, and SEC/FINRA-aligned cybersecurity for banks, RIAs, and fintech firms where a single breach means regulatory action.",
     highlights: ["SOC 2 & PCI-DSS", "SEC / FINRA Compliance", "Encrypted Data at Rest & Transit"],
   },
   {
     icon: Factory,
     title: "Manufacturing",
+    slug: "manufacturing-it-support",
     desc: "OT/IT convergence security, SCADA protection, and network segmentation for plants where connected machinery meets legacy systems.",
     highlights: ["OT / ICS Security", "SCADA Protection", "Network Segmentation"],
   },
   {
     icon: ShieldCheck,
     title: "High-Compliance Industries",
+    slug: null,
     desc: "CMMC, HIPAA, ITAR, and NIST 800-171 expertise for defense contractors, healthcare orgs, and government suppliers with zero tolerance for gaps.",
     highlights: ["CMMC / NIST 800-171", "HIPAA & ITAR", "Audit-Ready Documentation"],
   },
@@ -71,7 +76,7 @@ export default function Industries() {
                 </div>
               </div>
               <p className="text-[#A0B6CD] text-sm leading-relaxed mb-5">{ind.desc}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span
                     key={h}
@@ -81,6 +86,15 @@ export default function Industries() {
                   </span>
                 ))}
               </div>
+              {ind.slug && (
+                <Link
+                  to={`/industries/${ind.slug}`}
+                  data-testid={`industry-link-${ind.slug}`}
+                  className="inline-flex items-center gap-1 text-[#0077B3] text-sm font-medium hover:text-white transition-colors"
+                >
+                  Learn more <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
             </div>
           ))}
         </div>
