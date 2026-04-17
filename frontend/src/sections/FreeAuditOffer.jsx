@@ -63,7 +63,7 @@ export default function FreeAuditOffer() {
               {!submitted ? (
                 <>
                   <div className="flex items-center gap-3 mb-4">
-                    <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity" className="w-8 h-8 object-contain" />
+                    <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity" className="w-10 h-10 object-contain" />
                     <h3
                       className="text-white font-bold text-xl"
                       style={{ fontFamily: "Outfit, sans-serif" }}

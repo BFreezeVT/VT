@@ -60,16 +60,14 @@ export default function Compliance() {
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
           </div>
-          <div className="animate-fade-in-up stagger-2">
-            <div className="flex items-center justify-center p-8 border border-[#003B71] bg-[#001A33]/50">
+          <div className="animate-fade-in-up stagger-2 flex items-center justify-center">
               <img
                 data-testid="compliance-logo"
                 src={LOGO_FULL}
                 alt="Veracity Technologies - Rely On Us"
-                className="w-full max-w-[280px] h-auto"
+                className="w-full max-w-[320px] h-auto brightness-125"
                 loading="lazy"
               />
-            </div>
           </div>
         </div>
 
