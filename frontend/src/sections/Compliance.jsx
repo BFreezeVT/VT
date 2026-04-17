@@ -1,7 +1,7 @@
 import { Shield, FileCheck, HardHat, CreditCard, Server } from "lucide-react";
 
 const TECH_BG = "https://static.prod-images.emergentagent.com/jobs/a4251189-ed5f-43ed-b8ac-224a99473a6d/images/135a01eaf279db78834b25ee533b6a592fa900f14e025322226c4102d084a5db.png";
-const LOCK_IMG = "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbG9jayUyMGN5YmVyc2VjdXJpdHklMjBwcm90ZWN0aW9uJTIwc2hpZWxkfGVufDB8fHx8MTc3NjQ1MDkxM3ww&ixlib=rb-4.1.0&q=85";
+const LOGO_FULL = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png";
 
 const complianceItems = [
   {
@@ -61,15 +61,14 @@ export default function Compliance() {
             </p>
           </div>
           <div className="animate-fade-in-up stagger-2">
-            <div className="relative overflow-hidden border border-[#003B71]">
+            <div className="flex items-center justify-center p-8 border border-[#003B71] bg-[#001A33]/50">
               <img
-                data-testid="compliance-image"
-                src={LOCK_IMG}
-                alt="Physical security padlock representing cybersecurity protection and compliance"
-                className="w-full h-auto object-cover"
+                data-testid="compliance-logo"
+                src={LOGO_FULL}
+                alt="Veracity Technologies - Rely On Us"
+                className="w-full max-w-[280px] h-auto"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020812]/60 to-transparent" />
             </div>
           </div>
         </div>

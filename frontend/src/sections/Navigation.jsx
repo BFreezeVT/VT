@@ -30,10 +30,12 @@ export default function Navigation() {
         <button
           data-testid="nav-logo"
           onClick={() => scrollTo("hero")}
-          className="text-white font-bold text-xl tracking-tight"
-          style={{ fontFamily: "Outfit, sans-serif" }}
+          className="flex items-center gap-2.5"
         >
-          VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
+          <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity Technologies" className="w-8 h-8 object-contain" />
+          <span className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
+            VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
+          </span>
         </button>
 
         {/* Desktop nav */}

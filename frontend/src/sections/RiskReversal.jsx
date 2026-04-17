@@ -36,6 +36,11 @@ export default function RiskReversal() {
           {/* Guarantee card */}
           <div className="animate-fade-in-up stagger-1">
             <div className="grid-border-card p-10 relative">
+              <img
+                src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png"
+                alt="Veracity Technologies"
+                className="w-10 h-10 object-contain absolute top-6 right-6 opacity-30"
+              />
               <div className="w-14 h-14 flex items-center justify-center bg-[#FF5722]/10 border border-[#FF5722]/30 mb-6">
                 <Heart className="w-7 h-7 text-[#FF5722]" />
               </div>

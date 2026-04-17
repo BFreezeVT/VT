@@ -62,12 +62,15 @@ export default function FreeAuditOffer() {
             <div className="grid-border-card p-8 lg:p-10">
               {!submitted ? (
                 <>
-                  <h3
-                    className="text-white font-bold text-xl mb-2"
-                    style={{ fontFamily: "Outfit, sans-serif" }}
-                  >
-                    Schedule Your Free Audit
-                  </h3>
+                  <div className="flex items-center gap-3 mb-4">
+                    <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity" className="w-8 h-8 object-contain" />
+                    <h3
+                      className="text-white font-bold text-xl"
+                      style={{ fontFamily: "Outfit, sans-serif" }}
+                    >
+                      Schedule Your Free Audit
+                    </h3>
+                  </div>
                   <p className="text-[#A0B6CD] text-sm mb-8">
                     Fill in your details and we&rsquo;ll be in touch within one business day.
                   </p>

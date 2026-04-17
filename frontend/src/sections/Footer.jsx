@@ -18,12 +18,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <p
-              className="text-white font-bold text-xl tracking-tight mb-4"
-              style={{ fontFamily: "Outfit, sans-serif" }}
-            >
-              VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
-            </p>
+            <img
+              src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
+              alt="Veracity Technologies - Rely On Us"
+              className="h-16 w-auto object-contain mb-5"
+              data-testid="footer-logo"
+            />
             <p className="text-[#A0B6CD] text-sm leading-relaxed mb-5">
               Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
