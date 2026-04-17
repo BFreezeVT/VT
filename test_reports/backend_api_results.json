@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-17T16:15:41.194499",
+  "timestamp": "2026-04-17T18:25:50.082554",
   "summary": {
     "tests_run": 13,
     "tests_passed": 13,
@@ -41,7 +41,7 @@
       "success": true,
       "response_data": {
         "success": true,
-        "id": "7f56399f-c033-44bb-8746-697b29a0e9fb",
+        "id": "d455f09f-7f4b-4d8e-af8a-66c0aa0f6268",
         "message": "Your audit request has been received."
       },
       "error": null
@@ -55,7 +55,7 @@
       "success": true,
       "response_data": {
         "success": true,
-        "id": "8d66d5cd-069f-43f9-a39c-0570b5b09592",
+        "id": "02284e06-bffe-4f58-a866-e6d25f3aaf0a",
         "message": "Your audit request has been received."
       },
       "error": null
@@ -69,7 +69,7 @@
       "success": true,
       "response_data": {
         "success": true,
-        "id": "b0f6d7ac-1198-4895-bde2-8bc788643271",
+        "id": "ccc14518-db05-4397-8eea-a9ea63a6aeb2",
         "message": "Your audit request has been received."
       },
       "error": null
@@ -82,6 +82,84 @@
       "actual_status": 200,
       "success": true,
       "response_data": [
+        {
+          "id": "ccc14518-db05-4397-8eea-a9ea63a6aeb2",
+          "company": "Test Company Industry",
+          "name": "Bob Johnson",
+          "role": null,
+          "phone": "555-456-7890",
+          "email": "bob@testcompany.com",
+          "source_page": "industry",
+          "source_city": null,
+          "source_industry": "Construction",
+          "created_at": "2026-04-17T18:25:48.998812+00:00",
+          "status": "new"
+        },
+        {
+          "id": "02284e06-bffe-4f58-a866-e6d25f3aaf0a",
+          "company": "Test Company City",
+          "name": "Jane Smith",
+          "role": null,
+          "phone": "555-987-6543",
+          "email": "jane@testcompany.com",
+          "source_page": "city",
+          "source_city": "Minneapolis",
+          "source_industry": null,
+          "created_at": "2026-04-17T18:25:48.895471+00:00",
+          "status": "new"
+        },
+        {
+          "id": "d455f09f-7f4b-4d8e-af8a-66c0aa0f6268",
+          "company": "Test Company Homepage",
+          "name": "John Doe",
+          "role": "IT Director",
+          "phone": "555-123-4567",
+          "email": "john@testcompany.com",
+          "source_page": "homepage",
+          "source_city": null,
+          "source_industry": null,
+          "created_at": "2026-04-17T18:25:48.691158+00:00",
+          "status": "new"
+        },
+        {
+          "id": "1daab5d2-ffbe-4524-850d-896db535392f",
+          "company": "Test Industry Company",
+          "name": "Industry Tester",
+          "role": null,
+          "phone": "555-IND-123",
+          "email": "industry@testcompany.com",
+          "source_page": "industry",
+          "source_city": null,
+          "source_industry": "Financial Services",
+          "created_at": "2026-04-17T16:17:14.863321+00:00",
+          "status": "new"
+        },
+        {
+          "id": "39cb1cc1-9088-4914-a686-861ceeaf7a1e",
+          "company": "Test City Company",
+          "name": "City Tester",
+          "role": null,
+          "phone": "555-CITY-123",
+          "email": "city@testcompany.com",
+          "source_page": "city",
+          "source_city": "Minnetonka",
+          "source_industry": null,
+          "created_at": "2026-04-17T16:17:13.871235+00:00",
+          "status": "new"
+        },
+        {
+          "id": "1f2a4f7c-5a37-4f4d-8721-25bcc0031c7c",
+          "company": "Test Company Frontend",
+          "name": null,
+          "role": "QA Tester",
+          "phone": "555-123-9999",
+          "email": "qa@testcompany.com",
+          "source_page": "homepage",
+          "source_city": null,
+          "source_industry": null,
+          "created_at": "2026-04-17T16:16:13.495192+00:00",
+          "status": "new"
+        },
         {
           "id": "b0f6d7ac-1198-4895-bde2-8bc788643271",
           "company": "Test Company Industry",
@@ -145,7 +223,7 @@
       "actual_status": 200,
       "success": true,
       "response_data": {
-        "count": 4
+        "count": 10
       },
       "error": null
     },

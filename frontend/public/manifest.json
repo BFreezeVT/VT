@@ -1,0 +1,16 @@
+{
+  "short_name": "Veracity Tech",
+  "name": "Veracity Technologies",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#020812",
+  "background_color": "#020812",
+  "description": "AI-powered cybersecurity and managed IT for regulated industries"
+}
