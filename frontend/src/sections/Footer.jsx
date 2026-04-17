@@ -19,8 +19,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
-              alt="Veracity Technologies - Rely On Us"
+              src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png"
+              alt="Veracity Technologies"
               className="h-24 w-auto object-contain mb-5"
               data-testid="footer-logo"
             />
