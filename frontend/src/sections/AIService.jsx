@@ -1,4 +1,4 @@
-import { Brain, ShieldCheck, Bot, Sparkles, Lock, Eye } from "lucide-react";
+import { Brain, ShieldCheck, Bot, Sparkles, Lock, Eye, ExternalLink } from "lucide-react";
 
 const aiServices = [
   {
@@ -76,7 +76,15 @@ export default function AIService() {
                 <p className="stat-number text-3xl sm:text-4xl text-white mb-1">
                   78<span className="text-[#FF5722]">%</span>
                 </p>
-                <p className="text-xs text-[#b0c4d8]">of organizations have no AI security policy in place</p>
+                <p className="text-xs text-[#b0c4d8] mb-2">of organizations have no AI security policy in place</p>
+                <a
+                  href="https://www.isaca.org/resources/reports/the-promise-and-reality-of-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] hover:text-white transition-colors"
+                >
+                  Source: ISACA 2024 <ExternalLink className="w-2.5 h-2.5" />
+                </a>
               </div>
             </div>
           </div>
