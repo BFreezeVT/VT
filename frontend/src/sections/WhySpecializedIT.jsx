@@ -1,6 +1,7 @@
 import { Wifi, Lock, Users, Zap } from "lucide-react";
 
 const TABLET_IMG = "https://images.unsplash.com/photo-1714575600356-6635434699f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwbWFuYWdlciUyMHRhYmxldHxlbnwwfHx8fDE3NzU3NDQxMzR8MA&ixlib=rb-4.1.0&q=85";
+const BREACH_IMG = "https://images.unsplash.com/photo-1623018035782-b269248df916?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYnJlYWNoJTIwcmFuc29td2FyZSUyMHNjcmVlbiUyMHdhcm5pbmd8ZW58MHx8fHwxNzc2NDUwODkxfDA&ixlib=rb-4.1.0&q=85";
 
 const reasons = [
   {
@@ -35,8 +36,8 @@ export default function WhySpecializedIT() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Image */}
-          <div className="animate-fade-in-up stagger-1 order-2 lg:order-1">
+          {/* Left - Image stack */}
+          <div className="animate-fade-in-up stagger-1 order-2 lg:order-1 space-y-4">
             <div className="relative overflow-hidden border border-[#003B71]">
               <img
                 data-testid="why-it-image"
@@ -46,6 +47,18 @@ export default function WhySpecializedIT() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020812]/60 to-transparent" />
+            </div>
+            <div className="relative overflow-hidden border border-[#FF5722]/20">
+              <img
+                data-testid="why-it-breach-image"
+                src={BREACH_IMG}
+                alt="Ransomware warning message on compromised system"
+                className="w-full h-32 object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#020812]/80 to-transparent flex items-center px-5">
+                <p className="text-[#FF5722] text-sm font-semibold">This is what a ransomware attack looks like. We stop it before it starts.</p>
+              </div>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import { Shield, FileCheck, HardHat, CreditCard, Server } from "lucide-react";
 
 const TECH_BG = "https://static.prod-images.emergentagent.com/jobs/a4251189-ed5f-43ed-b8ac-224a99473a6d/images/135a01eaf279db78834b25ee533b6a592fa900f14e025322226c4102d084a5db.png";
+const LOCK_IMG = "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbG9jayUyMGN5YmVyc2VjdXJpdHklMjBwcm90ZWN0aW9uJTIwc2hpZWxkfGVufDB8fHx8MTc3NjQ1MDkxM3ww&ixlib=rb-4.1.0&q=85";
 
 const complianceItems = [
   {
@@ -45,17 +46,33 @@ export default function Compliance() {
       <div className="absolute inset-0 bg-[#001A33]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Compliance &amp; Risk</p>
-        <h2
-          data-testid="compliance-heading"
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
-          style={{ fontFamily: "Outfit, sans-serif" }}
-        >
-          Stay compliant. Stay protected.
-        </h2>
-        <p className="text-[#A0B6CD] text-base max-w-2xl mb-16 animate-fade-in-up stagger-2">
-          From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center mb-16">
+          <div className="lg:col-span-2">
+            <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Compliance &amp; Risk</p>
+            <h2
+              data-testid="compliance-heading"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
+              style={{ fontFamily: "Outfit, sans-serif" }}
+            >
+              Stay compliant. Stay protected.
+            </h2>
+            <p className="text-[#A0B6CD] text-base max-w-2xl animate-fade-in-up stagger-2">
+              From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
+            </p>
+          </div>
+          <div className="animate-fade-in-up stagger-2">
+            <div className="relative overflow-hidden border border-[#003B71]">
+              <img
+                data-testid="compliance-image"
+                src={LOCK_IMG}
+                alt="Physical security padlock representing cybersecurity protection and compliance"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020812]/60 to-transparent" />
+            </div>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {complianceItems.map((item, i) => (

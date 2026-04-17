@@ -1,4 +1,6 @@
-import { Heart } from "lucide-react";
+import { Heart, ShieldAlert } from "lucide-react";
+
+const STRESSED_IMG = "https://images.unsplash.com/photo-1758520144705-b39e11ff32e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxzdHJlc3NlZCUyMGJ1c2luZXNzJTIwcGVyc29uJTIwY29tcHV0ZXIlMjBwcm9ibGVtJTIwb2ZmaWNlfGVufDB8fHx8MTc3NjQ1MDkyMHww&ixlib=rb-4.1.0&q=85";
 
 export default function RiskReversal() {
   return (
@@ -8,26 +10,52 @@ export default function RiskReversal() {
       aria-label="Satisfaction guarantee - $100 charity donation if audit doesn't find 3 actionable improvements"
       className="py-20 lg:py-24 bg-[#020812]"
     >
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="grid-border-card p-10 lg:p-14 relative animate-fade-in-up">
-          <div className="w-14 h-14 mx-auto flex items-center justify-center bg-[#FF5722]/10 border border-[#FF5722]/30 mb-6">
-            <Heart className="w-7 h-7 text-[#FF5722]" />
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* Image - emotional trigger */}
+          <div className="animate-fade-in-up">
+            <div className="relative overflow-hidden border border-[#FF5722]/20">
+              <img
+                data-testid="risk-image"
+                src={STRESSED_IMG}
+                alt="Business professional stressed after discovering a cybersecurity breach"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020812] via-[#020812]/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <ShieldAlert className="w-4 h-4 text-[#FF5722]" />
+                  <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold">Don&rsquo;t let this be you</p>
+                </div>
+                <p className="text-white text-sm">The average breach costs 9 months of exposure and millions in damages. Prevention costs a fraction.</p>
+              </div>
+            </div>
           </div>
-          <h2
-            data-testid="guarantee-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-4"
-            style={{ fontFamily: "Outfit, sans-serif" }}
-          >
-            Our Guarantee
-          </h2>
-          <p
-            data-testid="guarantee-text"
-            className="text-[#A0B6CD] text-base leading-relaxed max-w-2xl mx-auto"
-          >
-            If you don&rsquo;t find at least <span className="text-white font-semibold">three actionable improvements</span> from 
-            our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
-            That&rsquo;s how confident we are in the value we deliver.
-          </p>
+
+          {/* Guarantee card */}
+          <div className="animate-fade-in-up stagger-1">
+            <div className="grid-border-card p-10 relative">
+              <div className="w-14 h-14 flex items-center justify-center bg-[#FF5722]/10 border border-[#FF5722]/30 mb-6">
+                <Heart className="w-7 h-7 text-[#FF5722]" />
+              </div>
+              <h2
+                data-testid="guarantee-heading"
+                className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-4"
+                style={{ fontFamily: "Outfit, sans-serif" }}
+              >
+                Our Guarantee
+              </h2>
+              <p
+                data-testid="guarantee-text"
+                className="text-[#A0B6CD] text-base leading-relaxed"
+              >
+                If you don&rsquo;t find at least <span className="text-white font-semibold">three actionable improvements</span> from 
+                our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
+                That&rsquo;s how confident we are in the value we deliver.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
