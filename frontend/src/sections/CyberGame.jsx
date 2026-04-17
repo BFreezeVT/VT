@@ -85,6 +85,7 @@ export default function CyberGame() {
     setAnswered(false);
     setLastCorrect(null);
     setGameState("playing");
+    if (window.gtag) window.gtag("event", "game_start", { event_category: "phishing_game" });
   }, []);
 
   const handleAnswer = (userSaysPhishing) => {
@@ -99,6 +100,7 @@ export default function CyberGame() {
   const nextEmail = () => {
     if (currentIndex + 1 >= shuffledEmails.length) {
       setGameState("result");
+      if (window.gtag) window.gtag("event", "game_complete", { event_category: "phishing_game", score: score });
     } else {
       setCurrentIndex((i) => i + 1);
       setAnswered(false);

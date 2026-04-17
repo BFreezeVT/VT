@@ -12,8 +12,16 @@ export function useLeadSubmit() {
     try {
       await axios.post(`${API}/leads`, data);
       setSubmitted(true);
+      // GA4 conversion event
+      if (window.gtag) {
+        window.gtag("event", "generate_lead", {
+          event_category: "form_submission",
+          event_label: data.source_page || "homepage",
+          source_city: data.source_city || "",
+          source_industry: data.source_industry || "",
+        });
+      }
     } catch (err) {
-      // Still show success to user (data may have been captured), log error
       console.error("Lead submission error:", err);
       setSubmitted(true);
     } finally {
