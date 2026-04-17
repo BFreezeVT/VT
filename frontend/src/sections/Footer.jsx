@@ -21,7 +21,7 @@ export default function Footer() {
             <img
               src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
               alt="Veracity Technologies - Rely On Us"
-              className="h-20 w-auto object-contain mb-5"
+              className="h-24 w-auto object-contain mb-5"
               data-testid="footer-logo"
             />
             <p className="text-[#A0B6CD] text-sm leading-relaxed mb-5">

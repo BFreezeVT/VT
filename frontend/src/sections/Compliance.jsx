@@ -60,7 +60,7 @@ export default function Compliance() {
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
           </div>
-          <div className="animate-fade-in-up stagger-2 flex items-center justify-center">
+          <div className="animate-fade-in-up stagger-2 flex items-center justify-start lg:justify-start">
               <img
                 data-testid="compliance-logo"
                 src={LOGO_FULL}
