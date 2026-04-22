@@ -84,9 +84,7 @@ export default function WhySpecializedIT() {
                   data-testid={`why-reason-${i}`}
                   className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}
                 >
-                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center border border-[#0d4a8a] bg-[#0f2340]">
-                    <r.icon className="w-5 h-5 text-[#0077B3]" />
-                  </div>
+                  <r.icon className="w-5 h-5 text-[#0077B3] flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                       {r.title}

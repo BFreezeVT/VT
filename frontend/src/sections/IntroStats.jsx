@@ -10,11 +10,7 @@ const stats = [
     suffix: "%",
     accentColor: "text-[#0077B3]",
     label: "of organizations lack automated AI security controls",
-    source: {
-      title: "Kiteworks AI Security Gap Report 2025",
-      url: "https://www.kiteworks.com/cybersecurity-risk-management/ai-security-gap-2025-organizations-flying-blind/",
-      excerpt: "83% of organizations have no automated Data Loss Prevention controls to block sensitive data from leaking into public AI tools. 86% have zero visibility into AI data flows.",
-    },
+    source: { title: "Kiteworks AI Security Gap Report 2025", url: "https://www.kiteworks.com/cybersecurity-risk-management/ai-security-gap-2025-organizations-flying-blind/", excerpt: "83% of organizations have no automated DLP controls to block sensitive data from leaking into public AI tools." },
   },
   {
     icon: ShieldAlert,
@@ -22,11 +18,7 @@ const stats = [
     suffix: "%",
     accentColor: "text-[#FF5722]",
     label: "of confirmed incidents are identity-driven attacks",
-    source: {
-      title: "eSentire Annual Threat Report 2026",
-      url: "https://olytac.com/account-compromise-surge-in-2026-why-stolen-credentials-now-dominate-corporate-cyber-threats-and-how-to-fight-back/",
-      excerpt: "Identity-driven threats reached 59% of confirmed incidents by early 2025, up 156% since 2023. Account compromise via stolen credentials surged 389% year-over-year.",
-    },
+    source: { title: "eSentire Annual Threat Report 2026", url: "https://olytac.com/account-compromise-surge-in-2026-why-stolen-credentials-now-dominate-corporate-cyber-threats-and-how-to-fight-back/", excerpt: "Identity-driven threats reached 59% of confirmed incidents by early 2025, up 156% since 2023. Account compromise via stolen credentials surged 389% YoY." },
   },
   {
     icon: DollarSign,
@@ -34,23 +26,15 @@ const stats = [
     suffix: "M",
     accentColor: "text-[#0077B3]",
     label: "average data breach cost in financial services (2025)",
-    source: {
-      title: "IBM Cost of a Data Breach Report 2025",
-      url: "https://www.ibm.com/reports/data-breach",
-      excerpt: "Financial services experienced the 2nd highest average breach cost at $5.56M in 2025, behind healthcare ($7.42M). U.S. breaches averaged a record $10.22M.",
-    },
+    source: { title: "IBM Cost of a Data Breach Report 2025", url: "https://www.ibm.com/reports/data-breach", excerpt: "Financial services: $5.56M avg breach cost in 2025, behind healthcare ($7.42M). U.S. breaches averaged a record $10.22M." },
   },
   {
     icon: AlertTriangle,
     value: "#1",
     suffix: "",
     accentColor: "text-[#FF5722]",
-    label: "most-attacked industry: manufacturing (4th consecutive year)",
-    source: {
-      title: "Industrial Cyber / Global Ransomware Report 2025",
-      url: "https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/",
-      excerpt: "Manufacturing represents 29% of all published ransomware victims globally in 2025, with a 56% year-over-year increase. Ransomware attacks rose 32% overall.",
-    },
+    label: "most-attacked: manufacturing (4th year)",
+    source: { title: "Industrial Cyber / Global Ransomware Report 2025", url: "https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/", excerpt: "Manufacturing represents 29% of all published ransomware victims globally in 2025, with a 56% YoY increase." },
     expandable: true,
   },
 ];
@@ -69,17 +53,10 @@ function SourcePopup({ source, onClose }) {
       <div className="bg-[#0a1628] border border-[#1a8fd4] p-4 shadow-lg shadow-[#0077B3]/10">
         <div className="flex items-start justify-between gap-3 mb-2">
           <p className="text-white text-sm font-semibold" style={{ fontFamily: "Outfit" }}>{source.title}</p>
-          <button onClick={onClose} className="text-[#b0c4d8] hover:text-white flex-shrink-0">
-            <X className="w-4 h-4" />
-          </button>
+          <button onClick={onClose} className="text-[#b0c4d8] hover:text-white flex-shrink-0"><X className="w-4 h-4" /></button>
         </div>
         <p className="text-[#b0c4d8] text-xs leading-relaxed mb-3">{source.excerpt}</p>
-        <a
-          href={source.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium hover:text-white transition-colors"
-        >
+        <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium hover:text-white transition-colors">
           View full report <ExternalLink className="w-3 h-3" />
         </a>
       </div>
@@ -92,24 +69,13 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section
-      id="intro-stats"
-      data-testid="intro-stats-section"
-      aria-label="Cybersecurity threat statistics across industries"
-      className="py-24 lg:py-32 bg-[#0a1628]"
-    >
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-24 lg:py-32 bg-[#0a1628]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}
           <div className="relative animate-fade-in-up order-2 lg:order-1">
             <div className="relative overflow-hidden border border-[#FF5722]/20">
-              <img
-                data-testid="threat-image"
-                src={HACKER_IMG}
-                alt="Hooded figure representing cybersecurity threat actors targeting businesses"
-                className="w-full h-auto object-cover"
-                loading="lazy"
-              />
+              <img data-testid="threat-image" src={HACKER_IMG} alt="Cybersecurity threat actor" className="w-full h-auto object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold mb-1">Active Threat</p>
@@ -121,57 +87,41 @@ export default function IntroStats() {
           {/* Text */}
           <div className="order-1 lg:order-2">
             <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Why This Matters</p>
-            <h2
-              data-testid="intro-heading"
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1"
-              style={{ fontFamily: "Outfit, sans-serif" }}
-            >
+            <h2 data-testid="intro-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Cyberattacks aren&rsquo;t slowing down. Most defenses are.
             </h2>
-            <p
-              data-testid="intro-description"
-              className="text-[#b0c4d8] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8"
-            >
-              AI-powered attacks are outpacing traditional security tools. Ransomware victims surged 
-              58% in 2025, credential theft is up 389%, and shadow AI usage is leaking sensitive data 
-              daily — while most firms still rely on reactive, generic IT support.
+            <p data-testid="intro-description" className="text-[#b0c4d8] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
+              AI-powered attacks are outpacing traditional security tools. Ransomware victims surged 58% in 2025, credential theft is up 389%, and shadow AI usage is leaking sensitive data daily.
             </p>
-            <div className="grid-border-card p-5 border-[#FF5722]/20 animate-fade-in-up stagger-3">
+            <div className="border-l-2 border-[#FF5722] pl-5 animate-fade-in-up stagger-3">
               <p className="text-[#FF5722] text-xs font-semibold uppercase tracking-wider mb-2">The Reality</p>
               <p className="text-[#b0c4d8] text-sm leading-relaxed">
-                Global ransomware attacks rose <span className="text-white font-semibold">32% in 2025</span>. 
-                The average ransom payment hit <span className="text-white font-semibold">$2.3 million</span>. 
-                90% of organizations are unprepared for AI-augmented cyber threats.
+                Global ransomware attacks rose <span className="text-white font-semibold">32% in 2025</span>. Average ransom: <span className="text-white font-semibold">$2.3 million</span>. 90% of organizations are unprepared for AI-augmented threats.
               </p>
-              <a
-                href="https://deepstrike.io/blog/ransomware-statistics-2025"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-white transition-colors"
-              >
-                Source: DeepStrike Ransomware Statistics 2025 <ExternalLink className="w-2.5 h-2.5" />
+              <a href="https://deepstrike.io/blog/ransomware-statistics-2025" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-white transition-colors">
+                Source: DeepStrike 2025 <ExternalLink className="w-2.5 h-2.5" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Stat cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Stats — open layout with dividers, no boxes */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-[#0d4a8a]/50">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={i}
                 data-testid={`stat-card-${i}`}
-                className={`grid-border-card p-6 relative animate-fade-in-up stagger-${i + 3}`}
+                className={`relative pt-8 pb-6 ${i < 3 ? "border-r border-[#0d4a8a]/30 hidden lg:block" : ""} ${i < 2 ? "max-lg:border-r max-lg:border-[#0d4a8a]/30" : ""} px-6 first:pl-0 last:pr-0 animate-fade-in-up stagger-${i + 3}`}
+                style={{ minWidth: 0 }}
               >
                 {activeSource === i && <SourcePopup source={stat.source} onClose={() => setActiveSource(null)} />}
-                <Icon className={`w-5 h-5 ${stat.accentColor} mb-4`} />
+                <Icon className={`w-4 h-4 ${stat.accentColor} mb-3`} />
                 <p className="stat-number text-4xl sm:text-5xl text-white">
                   {stat.value}<span className={stat.accentColor}>{stat.suffix}</span>
                 </p>
-                <p className="text-xs text-[#b0c4d8] mt-2 mb-3">{stat.label}</p>
-
+                <p className="text-xs text-[#b0c4d8] mt-2 mb-3 leading-relaxed">{stat.label}</p>
                 <button
                   data-testid={`stat-source-${i}`}
                   onClick={() => setActiveSource(activeSource === i ? null : i)}
@@ -179,14 +129,9 @@ export default function IntroStats() {
                 >
                   View source <ExternalLink className="w-2.5 h-2.5" />
                 </button>
-
                 {stat.expandable && (
-                  <button
-                    data-testid="expand-ranking"
-                    onClick={() => setShowRanking(!showRanking)}
-                    className="flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-white transition-colors mt-1"
-                  >
-                    See top 5 industries <ChevronDown className={`w-2.5 h-2.5 transition-transform ${showRanking ? "rotate-180" : ""}`} />
+                  <button data-testid="expand-ranking" onClick={() => setShowRanking(!showRanking)} className="flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-white transition-colors mt-1">
+                    See top 5 <ChevronDown className={`w-2.5 h-2.5 transition-transform ${showRanking ? "rotate-180" : ""}`} />
                   </button>
                 )}
               </div>
@@ -194,41 +139,27 @@ export default function IntroStats() {
           })}
         </div>
 
-        {/* Expanded top 5 ranking */}
+        {/* Top 5 expanded — open layout */}
         {showRanking && (
-          <div data-testid="top-5-ranking" className="mt-6 grid-border-card p-6 animate-fade-in">
-            <p className="text-white text-sm font-semibold mb-4" style={{ fontFamily: "Outfit" }}>
-              Top 5 Most-Attacked Industries by Ransomware (2025)
-            </p>
-            <div className="space-y-3">
+          <div data-testid="top-5-ranking" className="mt-8 pt-8 border-t border-[#0d4a8a]/50 animate-fade-in">
+            <p className="text-white text-sm font-semibold mb-6" style={{ fontFamily: "Outfit" }}>Top 5 Most-Attacked Industries (2025)</p>
+            <div className="space-y-4">
               {topAttackedIndustries.map((ind) => (
                 <div key={ind.rank} className="flex items-center gap-4">
-                  <span className={`stat-number text-lg w-8 ${ind.rank === 1 ? "text-[#FF5722]" : "text-white"}`}>
-                    #{ind.rank}
-                  </span>
+                  <span className={`stat-number text-lg w-8 ${ind.rank === 1 ? "text-[#FF5722]" : "text-[#b0c4d8]"}`}>#{ind.rank}</span>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-white text-sm font-medium">{ind.name}</span>
                       <span className="text-[#0077B3] text-sm font-semibold">{ind.pct}</span>
                     </div>
-                    <div className="w-full bg-[#0a1628] h-1.5">
-                      <div
-                        className={`h-1.5 transition-all duration-700 ${ind.rank === 1 ? "bg-[#FF5722]" : "bg-[#0077B3]"}`}
-                        style={{ width: ind.pct }}
-                      />
-                    </div>
+                    <div className="w-full bg-[#0a1628] h-1"><div className={`h-1 ${ind.rank === 1 ? "bg-[#FF5722]" : "bg-[#0077B3]"}`} style={{ width: ind.pct }} /></div>
                     <p className="text-[#b0c4d8] text-[10px] mt-1">{ind.note}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <a
-              href="https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-4 hover:text-white transition-colors"
-            >
-              Source: Industrial Cyber / Global Ransomware Report 2025 <ExternalLink className="w-2.5 h-2.5" />
+            <a href="https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-4 hover:text-white transition-colors">
+              Source: Industrial Cyber 2025 <ExternalLink className="w-2.5 h-2.5" />
             </a>
           </div>
         )}
