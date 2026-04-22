@@ -18,12 +18,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <img
-              src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
-              alt="Veracity Technologies - Rely On Us"
-              className="w-full max-w-[300px] h-auto object-contain mb-2 brightness-125"
-              data-testid="footer-logo"
-            />
+            <div className="max-w-[300px] overflow-hidden mb-1" style={{ marginBottom: "-8px" }}>
+              <img
+                src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
+                alt="Veracity Technologies - Rely On Us"
+                className="w-full h-auto object-contain brightness-125 scale-110"
+                style={{ marginTop: "-10%", marginBottom: "-15%" }}
+                data-testid="footer-logo"
+              />
+            </div>
             <p className="text-[#b0c4d8] text-sm leading-relaxed mb-4">
               Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
