@@ -27,10 +27,7 @@ export default function Footer() {
                 data-testid="footer-logo"
               />
             </div>
-            <p className="text-[#b0c4d8] text-sm leading-relaxed mb-4">
-              Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
-            </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 mt-2">
               <a
                 data-testid="footer-linkedin"
                 href="https://www.linkedin.com/company/veracity-technologies/"

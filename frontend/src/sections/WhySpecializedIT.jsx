@@ -72,9 +72,12 @@ export default function WhySpecializedIT() {
             >
               Generic tech support can&rsquo;t keep up with regulated, operational industries.
             </h2>
-            <p className="text-[#b0c4d8] text-base leading-relaxed mb-10 animate-fade-in-up stagger-2">
+            <p className="text-[#b0c4d8] text-base leading-relaxed mb-4 animate-fade-in-up stagger-2">
               Your operations move fast, your teams are distributed, and your data is mission-critical. 
               You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace — not just the server room.
+            </p>
+            <p className="text-[#b0c4d8]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
+              Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
 
             <div className="space-y-6">
