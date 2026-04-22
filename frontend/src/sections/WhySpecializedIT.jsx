@@ -77,7 +77,7 @@ export default function WhySpecializedIT() {
               You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace — not just the server room.
             </p>
             <p className="text-[#b0c4d8]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
-              Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
+              Veracity Technologies offer industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
 
             <div className="space-y-6">
