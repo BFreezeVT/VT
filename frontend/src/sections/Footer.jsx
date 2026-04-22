@@ -21,10 +21,10 @@ export default function Footer() {
             <img
               src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
               alt="Veracity Technologies - Rely On Us"
-              className="w-full max-w-[300px] h-auto object-contain mb-5 brightness-125"
+              className="w-full max-w-[300px] h-auto object-contain mb-2 brightness-125"
               data-testid="footer-logo"
             />
-            <p className="text-[#b0c4d8] text-sm leading-relaxed mb-5">
+            <p className="text-[#b0c4d8] text-sm leading-relaxed mb-4">
               Industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
             <div className="flex items-center gap-3">
