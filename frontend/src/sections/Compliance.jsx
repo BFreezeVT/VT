@@ -18,8 +18,7 @@ export default function Compliance() {
       <div className="absolute inset-0 bg-[#0f2340]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start mb-16">
-          <div className="lg:col-span-2">
+        <div className="mb-16">
             <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Compliance &amp; Risk</p>
             <h2 data-testid="compliance-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
@@ -27,10 +26,6 @@ export default function Compliance() {
             <p className="text-[#b0c4d8] text-base max-w-2xl animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
-          </div>
-          <div className="animate-fade-in-up stagger-2 flex items-center justify-start lg:justify-start">
-            <img data-testid="compliance-logo" src={LOGO_FULL} alt="Veracity Technologies - Rely On Us" className="w-full max-w-[320px] h-auto brightness-125" loading="lazy" />
-          </div>
         </div>
 
         {/* Open list layout — no card boxes */}
