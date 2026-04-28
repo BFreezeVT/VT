@@ -236,19 +236,19 @@ export default function CaseStudy() {
         {/* Stats — open divider layout */}
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-[#0d4a8a]/50 pt-8">
           <div data-testid="case-study-metric-0" className="text-center px-4">
-            <p className="stat-number text-4xl text-white">60+</p>
+            <p className="stat-number text-5xl text-white">60+</p>
             <p className="text-xs text-[#b0c4d8] mt-1">Active Clients</p>
           </div>
           <div data-testid="case-study-metric-1" className="text-center px-4 border-l border-[#0d4a8a]/30">
-            <p className="stat-number text-4xl text-white">32</p>
+            <p className="stat-number text-5xl text-white">32</p>
             <p className="text-xs text-[#b0c4d8] mt-1">Years Longest Partnership</p>
           </div>
           <div data-testid="case-study-metric-2" className="text-center px-4 border-l border-[#0d4a8a]/30">
-            <p className="stat-number text-4xl text-[#0077B3]">24/7</p>
+            <p className="stat-number text-5xl text-[#0077B3]">24/7</p>
             <p className="text-xs text-[#b0c4d8] mt-1">Support Availability</p>
           </div>
           <div data-testid="case-study-metric-3" className="text-center px-4 border-l border-[#0d4a8a]/30">
-            <p className="stat-number text-4xl text-white">4.9</p>
+            <p className="stat-number text-5xl text-white">4.9</p>
             <p className="text-xs text-[#b0c4d8] mt-1">Average Client Rating</p>
           </div>
         </div>

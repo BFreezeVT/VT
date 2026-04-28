@@ -31,8 +31,8 @@ export default function AIService() {
           </p>
           <div className="flex items-center gap-6">
             <div>
-              <p className="stat-number text-3xl sm:text-4xl text-white">83<span className="text-[#FF5722]">%</span></p>
-              <p className="text-xs text-[#b0c4d8] mt-1">lack automated AI security controls</p>
+              <p className="stat-number text-3xl sm:text-4xl text-white">90<span className="text-[#FF5722]">%</span></p>
+              <p className="text-xs text-[#b0c4d8] mt-1">unprepared for AI-augmented threats</p>
             </div>
             <div className="w-px h-12 bg-[#0d4a8a]/50" />
             <div>
@@ -40,8 +40,8 @@ export default function AIService() {
               <p className="text-xs text-[#b0c4d8] mt-1">of employees use unauthorized AI tools</p>
             </div>
           </div>
-          <a href="https://www.kiteworks.com/cybersecurity-risk-management/ai-security-gap-2025-organizations-flying-blind/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-3 hover:text-white transition-colors">
-            Sources: Kiteworks 2025, Second Talent 2025 <ExternalLink className="w-2.5 h-2.5" />
+          <a href="https://newsroom.accenture.com/news/2025/only-one-in-10-organizations-globally-are-ready-to-protect-against-ai-augmented-cyber-threats" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-3 hover:text-white transition-colors">
+            Sources: Accenture 2025, Second Talent 2025 <ExternalLink className="w-2.5 h-2.5" />
           </a>
         </div>
 

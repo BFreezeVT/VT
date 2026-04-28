@@ -27,7 +27,7 @@ export default function Footer() {
                 data-testid="footer-logo"
               />
             </div>
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center justify-center gap-3 mt-2 max-w-[300px]">
               <a
                 data-testid="footer-linkedin"
                 href="https://www.linkedin.com/company/veracity-technologies/"
