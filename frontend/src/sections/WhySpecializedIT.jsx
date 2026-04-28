@@ -1,7 +1,7 @@
 import { Wifi, Lock, Users, Zap } from "lucide-react";
 
-const TABLET_IMG = "https://images.unsplash.com/photo-1714575600356-6635434699f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwbWFuYWdlciUyMHRhYmxldHxlbnwwfHx8fDE3NzU3NDQxMzR8MA&ixlib=rb-4.1.0&q=85";
-const BREACH_IMG = "https://images.unsplash.com/photo-1623018035782-b269248df916?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYnJlYWNoJTIwcmFuc29td2FyZSUyMHNjcmVlbiUyMHdhcm5pbmd8ZW58MHx8fHwxNzc2NDUwODkxfDA&ixlib=rb-4.1.0&q=85";
+const MAIN_IMG = "https://images.pexels.com/photos/6804586/pexels-photo-6804586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+const TEAM_IMG = "https://images.pexels.com/photos/5380582/pexels-photo-5380582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 const reasons = [
   {
@@ -41,23 +41,23 @@ export default function WhySpecializedIT() {
             <div className="relative overflow-hidden border border-[#0d4a8a]">
               <img
                 data-testid="why-it-image"
-                src={TABLET_IMG}
-                alt="Professional managing operations on tablet"
+                src={MAIN_IMG}
+                alt="IT specialist handling network cables in a secure server room"
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 to-transparent" />
             </div>
-            <div className="relative overflow-hidden border border-[#FF5722]/20">
+            <div className="relative overflow-hidden border border-[#0d4a8a]">
               <img
-                data-testid="why-it-breach-image"
-                src={BREACH_IMG}
-                alt="Ransomware warning message on compromised system"
+                data-testid="why-it-team-image"
+                src={TEAM_IMG}
+                alt="Cybersecurity professionals monitoring systems in a dark operations room"
                 className="w-full h-32 object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/80 to-transparent flex items-center px-5">
-                <p className="text-[#FF5722] text-sm font-semibold">This is what a ransomware attack looks like. We stop it before it starts.</p>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/70 to-transparent flex items-center px-5">
+                <p className="text-[#0077B3] text-sm font-semibold">Our team monitors, protects, and responds — 24/7/365.</p>
               </div>
             </div>
           </div>
