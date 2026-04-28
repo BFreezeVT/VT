@@ -64,7 +64,7 @@ export default function ServiceAreaPage() {
 
   return (
     <div className="min-h-screen bg-[#0c1e38]" data-testid={`city-page-${city.slug}`}>
-      {/* JSON-LD for this city */}
+      {/* JSON-LD: LocalBusiness for this city */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -98,6 +98,48 @@ export default function ServiceAreaPage() {
               opens: "00:00",
               closes: "23:59",
             },
+          }),
+        }}
+      />
+      {/* JSON-LD: BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.veracitytech.com/service-areas" },
+              { "@type": "ListItem", position: 3, name: `IT Support in ${city.name}`, item: `https://www.veracitytech.com/service-areas/${city.slug}` },
+            ],
+          }),
+        }}
+      />
+      {/* JSON-LD: FAQPage for this city */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `Does Veracity Technologies provide IT support in ${city.name}, Minnesota?`,
+                acceptedAnswer: { "@type": "Answer", text: `Yes. Veracity Technologies provides managed IT services, cybersecurity, AI security, and compliance management to businesses in ${city.name}, MN. We cover ${city.neighborhoods.join(", ")} and surrounding areas. Call (952) 941-7333 for a free audit.` },
+              },
+              {
+                "@type": "Question",
+                name: `What industries does Veracity serve in ${city.name}?`,
+                acceptedAnswer: { "@type": "Answer", text: `In ${city.name}, we serve ${city.localIndustries.join(", ")}. Each engagement is tailored to the specific compliance requirements and operational needs of your industry.` },
+              },
+              {
+                "@type": "Question",
+                name: `What is the biggest IT challenge for businesses in ${city.name}?`,
+                acceptedAnswer: { "@type": "Answer", text: city.localChallenge },
+              },
+            ],
           }),
         }}
       />

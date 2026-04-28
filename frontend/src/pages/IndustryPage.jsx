@@ -63,7 +63,7 @@ export default function IndustryPage() {
 
   return (
     <div className="min-h-screen bg-[#0c1e38]" data-testid={`industry-page-${industry.slug}`}>
-      {/* Page-specific SEO schema */}
+      {/* Service schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -80,6 +80,48 @@ export default function IndustryPage() {
             },
             areaServed: { "@type": "State", name: "Minnesota" },
             serviceType: `${industry.name} Managed IT & Cybersecurity`,
+          }),
+        }}
+      />
+      {/* BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
+              { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.veracitytech.com/#industries" },
+              { "@type": "ListItem", position: 3, name: `${industry.name} IT & Cybersecurity`, item: `https://www.veracitytech.com/industries/${industry.slug}` },
+            ],
+          }),
+        }}
+      />
+      {/* FAQPage for this industry */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: `What cybersecurity services does Veracity provide for ${industry.name.toLowerCase()}?`,
+                acceptedAnswer: { "@type": "Answer", text: `Veracity Technologies provides managed IT, cybersecurity, AI security, and compliance management specifically tailored to ${industry.name.toLowerCase()}. This includes ${industry.compliance.join(", ")} compliance, and support for ${industry.software.slice(0, 3).join(", ")} and other industry platforms.` },
+              },
+              {
+                "@type": "Question",
+                name: `What are the biggest cybersecurity threats facing ${industry.name.toLowerCase()}?`,
+                acceptedAnswer: { "@type": "Answer", text: industry.challenges.map(c => `${c.title}: ${c.desc}`).join(" ") },
+              },
+              {
+                "@type": "Question",
+                name: `Does Veracity Technologies offer a free cybersecurity audit for ${industry.name.toLowerCase()} firms?`,
+                acceptedAnswer: { "@type": "Answer", text: `Yes. Veracity offers a free, non-invasive Technology & Cyber Risk Audit tailored to ${industry.name.toLowerCase()} that includes AI readiness assessment, network vulnerability scan, compliance gap analysis, and disaster recovery plan evaluation. Call (952) 941-7333 to schedule.` },
+              },
+            ],
           }),
         }}
       />

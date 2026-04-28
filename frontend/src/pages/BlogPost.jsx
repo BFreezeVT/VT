@@ -113,10 +113,29 @@ export default function BlogPost() {
             "@type": "Article",
             headline: post.title,
             description: post.excerpt,
-            author: { "@type": "Organization", name: "Veracity Technologies" },
-            publisher: { "@type": "Organization", name: "Veracity Technologies" },
+            author: { "@type": "Organization", name: "Veracity Technologies", url: "https://www.veracitytech.com" },
+            publisher: { "@type": "Organization", name: "Veracity Technologies", url: "https://www.veracitytech.com" },
             datePublished: post.published_date,
+            dateModified: post.published_date,
+            mainEntityOfPage: `https://www.veracitytech.com/resources/${post.slug}`,
             url: `https://www.veracitytech.com/resources/${post.slug}`,
+            inLanguage: "en-US",
+            articleSection: post.category,
+            keywords: post.category,
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
+              { "@type": "ListItem", position: 2, name: "Resources", item: "https://www.veracitytech.com/resources" },
+              { "@type": "ListItem", position: 3, name: post.title, item: `https://www.veracitytech.com/resources/${post.slug}` },
+            ],
           }),
         }}
       />
