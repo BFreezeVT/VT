@@ -1,11 +1,22 @@
 # Veracity Technologies
-> Industry-specialized managed IT services and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in Minneapolis-St. Paul, Minnesota.
+> AI-powered managed IT services and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in Minneapolis-St. Paul, Minnesota. SOC 2 compliant. CMMC Registered Provider. CRN MSP 500. 24/7 AI-driven threat monitoring.
 
 ## Company Overview
-Veracity Technologies is a managed service provider (MSP) that delivers IT infrastructure management and cybersecurity solutions tailored to regulated, operational industries. We serve construction firms, financial services organizations, manufacturing plants, and high-compliance enterprises across the Minneapolis-St. Paul region and beyond.
+Veracity Technologies is a managed service provider (MSP) headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345. We deliver IT infrastructure management, cybersecurity, AI security governance, and compliance solutions tailored to regulated, operational industries. We serve construction firms, financial services organizations, manufacturing plants, and high-compliance enterprises across 36 cities in the Minneapolis-St. Paul metro and Central Minnesota.
 
 Contact: (952) 941-7333 | info@veracitytech.com
-Location: Minneapolis-St. Paul, MN
+Location: 5929 Baker Rd, Suite 420, Minnetonka, MN 55345
+Website: https://www.veracitytech.com
+LinkedIn: https://www.linkedin.com/company/veracity-technologies/
+YouTube: https://www.youtube.com/@VeracityTechnologies
+Facebook: https://www.facebook.com/veracitytech
+
+## What Makes Veracity Different
+- Industry-specialized: We don't do generic IT. Every engagement is built on sector-specific knowledge of regulations, workflows, and threats.
+- AI-powered monitoring: Our SOC uses machine learning models to detect anomalies in real time, 24/7.
+- Compliance-first: SOC 2 compliant provider with CMMC, HIPAA, ITAR, ISO 27001, PCI-DSS, and NIST expertise.
+- Local presence: Headquartered in Minnetonka, MN with on-site response across the Twin Cities metro.
+- 60+ active clients with a 4.9/5 average client rating and partnerships lasting up to 32 years.
 
 ## Core Services
 
@@ -17,96 +28,147 @@ Location: Minneapolis-St. Paul, MN
 - Field and job site connectivity with ruggedized networking
 - Secure remote access via VPN and zero-trust architecture
 - 15-minute SLA for critical issues
+- Help desk support with industry-trained technicians
 
 ### Cybersecurity Services
+- AI-powered threat detection and 24/7 Security Operations Center (SOC)
 - Ransomware prevention and rapid incident response
-- Phishing prevention and employee security training
+- Phishing prevention and employee security awareness training
 - Credential exposure monitoring and remediation
-- Payment fraud prevention with email authentication protocols
-- Network segmentation and endpoint protection
+- Business email compromise (BEC) and wire fraud prevention
+- DMARC, DKIM, SPF email authentication
+- Network segmentation and endpoint detection and response (EDR)
 - BMS/IACS and SCADA system security
+- Penetration testing and vulnerability assessments
 
 ### AI as a Service
 - AI strategy and integration consulting
 - AI security and governance frameworks
-- AI-powered threat detection (ML-based SOC)
-- Shadow AI monitoring and discovery
-- Data loss prevention for LLMs and AI tools
+- AI-powered threat detection (ML-based SOC monitoring)
+- Shadow AI monitoring and discovery (68% of employees use unauthorized AI tools)
+- Data loss prevention for LLMs and AI tools (83% of organizations lack automated AI security controls)
 - AI readiness assessments and adoption roadmaps
+- 90% of organizations are unprepared for AI-augmented cyber threats (Accenture 2025)
 
 ### Compliance Management
-- CMMC (Cybersecurity Maturity Model Certification)
-- SOC 2 Type I and Type II
-- PCI-DSS
-- HIPAA
-- ISO 27001
-- NIST 800-171
-- SEC/FINRA regulations
-- OSHA digital record-keeping
-- ITAR compliance
+- CMMC 2.0 (Levels 1-3) — Cybersecurity Maturity Model Certification for DoD contractors
+- SOC 2 Type I and Type II — System and Organization Controls
+- PCI-DSS — Payment Card Industry Data Security Standard
+- HIPAA — Health Insurance Portability and Accountability Act
+- ISO 27001 — Information Security Management
+- NIST 800-171 — Protecting Controlled Unclassified Information
+- NIST CSF — Cybersecurity Framework
+- SEC/FINRA regulations — Securities and financial compliance
+- OSHA digital record-keeping requirements
+- ITAR / EAR — International Traffic in Arms Regulations / Export Administration Regulations
+- FedRAMP — Federal Risk and Authorization Management Program
+- DFARS 252.204-7012 — Defense Federal Acquisition Regulation Supplement
+- IEC 62443 — Industrial Automation and Control Systems Security
+- TISAX — Trusted Information Security Assessment Exchange (automotive)
+- FDA 21 CFR Part 11 — Electronic Records and Signatures
+- State privacy laws compliance
 
 ## Industries Served
 
 ### Construction
-Job site connectivity, BIM security, Procore and Sage integration, rapid-response IT. Construction ransomware attacks have risen 41% year-over-year.
+Job site connectivity, BIM security, Procore and Sage integration, rapid-response IT. Construction ransomware attacks increased 24% year-over-year in 2025, with 443 recorded incidents (NordStellar 2025). Common threats include payment fraud via spoofed invoices, mobile workforce security gaps, and subcontractor network compromise.
 
 ### Financial Services
-SOC 2, PCI-DSS, and SEC/FINRA-aligned cybersecurity for banks, RIAs, and fintech. Average data breach cost in financial services: $4.9M.
+SOC 2, PCI-DSS, and SEC/FINRA-aligned cybersecurity for banks, RIAs, fintech, and investment firms. Average data breach cost in financial services: $5.56M (IBM Cost of a Data Breach Report 2025). Veracity supports Bloomberg, Salesforce Financial Cloud, Orion, Black Diamond, Schwab, and Fidelity platforms.
 
 ### Manufacturing
-OT/IT convergence security, SCADA protection, network segmentation. Manufacturing is the #1 most-attacked industry by ransomware for 3 consecutive years.
+OT/IT convergence security, SCADA protection, network segmentation for plants with connected machinery. Manufacturing is the #1 most-attacked industry by ransomware for the 4th consecutive year, representing 29% of all published ransomware victims globally with a 56% year-over-year increase (Industrial Cyber 2025). Veracity supports SAP, Siemens SCADA, Rockwell/Allen-Bradley, Epicor, and MES systems.
 
 ### High-Compliance Industries
-CMMC, HIPAA, ITAR, NIST 800-171 expertise for defense contractors, healthcare, and government suppliers.
+CMMC, HIPAA, ITAR, NIST 800-171, FedRAMP expertise for defense contractors, healthcare organizations, and government suppliers. Veracity clients maintain a 100% first-attempt audit pass rate. Supports Microsoft GCC High, Azure Government, Varonis, Splunk, CrowdStrike, and Tenable.io.
 
-## Key Statistics
-- 83% of organizations lack automated AI security controls (Kiteworks 2025)
-- 59% of confirmed incidents are identity-driven attacks, up 156% since 2023 (eSentire 2026)
-- $5.56M average cost of a data breach in financial services (IBM 2025)
-- Manufacturing is #1 most-attacked industry by ransomware for 4th consecutive year, representing 29% of all victims (2025)
-- Construction ransomware attacks up 24% year-over-year with 443 incidents in 2025
-- Global ransomware attacks rose 32% in 2025 with average ransom payment of $2.3M
-- 68% of employees use unauthorized AI tools without IT approval
+## Key Statistics (2025-2026 Sources)
+- 83% of organizations lack automated AI security controls (Kiteworks AI Security Gap Report 2025)
+- 59% of confirmed incidents are identity-driven attacks, up 156% since 2023 (eSentire Annual Threat Report 2026)
+- $5.56M average cost of a data breach in financial services (IBM Cost of a Data Breach Report 2025)
+- Manufacturing is #1 most-attacked industry for 4th consecutive year, 29% of victims, 56% YoY increase (Industrial Cyber 2025)
+- 24% YoY increase in construction ransomware attacks, 443 incidents in 2025 (NordStellar 2025)
+- Global ransomware attacks rose 32% in 2025, average ransom payment $2.3M (DeepStrike 2025)
+- 90% of organizations unprepared for AI-augmented cyber threats (Accenture 2025)
+- 68% of employees use unauthorized AI tools without IT approval (Second Talent 2025)
+- Ransomware victims surged 58% year-over-year to over 7,500 organizations in 2025 (DeepStrike 2025)
+- Top 5 most-attacked industries: Manufacturing (29%), Finance & Insurance (18%), Professional Services (15%), Construction (12%), Healthcare (8%)
 
 ## Free Offer
 Veracity Technologies offers a free Technology & Cyber Risk Audit that includes:
-- Full network vulnerability scan
-- Password and access policy review
-- Ransomware and threat readiness assessment
-- Industry-specific compliance gap analysis
-- Disaster recovery plan evaluation
+1. AI readiness assessment
+2. Full network vulnerability scan
+3. Password and access policy review
+4. Ransomware and threat readiness assessment
+5. Industry-specific compliance gap analysis
+6. Disaster recovery plan evaluation
+
+Process: Submit form → Scheduled within 1 business day → 3-5 day non-invasive assessment → Detailed report within 1 week.
 
 Guarantee: If the audit does not identify at least three actionable improvements, Veracity Technologies will donate $100 to the client's chosen industry charity.
 
 ## Credentials & Affiliations
+- SOC 2 Compliant (Type II)
 - CMMC Registered Provider
 - ISO 27001 Aligned
 - CompTIA Security+ Certified
+- CRN MSP 500 (2026)
+- Channel Partners MSP 501 (2025)
+- MSP Titans of the Industry Finalist (Finance & Banking)
+- Amazon Bestselling Authors: "Mastering AI for Business Success"
 - Member: AGC of America (Associated General Contractors)
 - Member: ABC (Associated Builders and Contractors)
 
 ## Client Results
+- 60+ active clients across the Twin Cities metro
+- 32 years longest client partnership
+- 24/7 support availability
+- 4.9/5 average client rating
+- 100% first-attempt compliance audit pass rate
 - 0 minutes unplanned downtime after implementation
-- 60-day compliance turnaround
 - 80% faster incident response
-- 100% of lingering IT issues resolved
+
+## Service Areas (36 Cities)
+Minnetonka (HQ), Minneapolis, Saint Paul, Bloomington, Brooklyn Park, Plymouth, Maple Grove, Eden Prairie, Woodbury, Eagan, Burnsville, Twin Cities metro, St. Louis Park, Edina, Lakeville, Shakopee, Richfield, Roseville, Coon Rapids, Apple Valley, Chanhassen, Excelsior, Victoria, Waconia, Chaska, Stillwater, Blaine, Anoka, Andover, St. Cloud, Wayzata, Mound, Minnetrista, Elk River, Rogers, Albertville.
 
 ## FAQ
 
+Q: What is Veracity Technologies?
+A: Veracity Technologies is an AI-powered managed IT services and cybersecurity provider headquartered in Minnetonka, Minnesota, specializing in construction, financial services, manufacturing, and high-compliance industries across the Minneapolis-St. Paul metro.
+
 Q: Will a cybersecurity audit disrupt operations?
-A: No. The assessment is non-invasive and uses passive scanning tools that do not interfere with networks or workflows.
+A: No. The assessment is completely non-invasive and uses passive scanning tools that do not interfere with networks, production systems, or workflows.
 
 Q: How long does the audit take?
 A: 3-5 business days, with a comprehensive report delivered within one week.
 
-Q: Is data kept confidential?
+Q: Is data kept confidential during the audit?
 A: Yes. NDAs are signed before engagement, and data handling follows ISO 27001 protocols.
 
 Q: What industries does Veracity Technologies serve?
-A: Construction, financial services, manufacturing, and high-compliance industries including defense, healthcare, and government suppliers.
+A: Construction, financial services, manufacturing, and high-compliance industries including defense contractors, healthcare organizations, and government suppliers.
 
 Q: What compliance frameworks does Veracity support?
-A: CMMC, SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST 800-171, SEC/FINRA, OSHA, and ITAR.
+A: CMMC 2.0, SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST 800-171, NIST CSF, SEC/FINRA, OSHA, ITAR/EAR, FedRAMP, DFARS, IEC 62443, TISAX, and FDA 21 CFR Part 11.
 
-Q: Does Veracity offer AI security?
-A: Yes. Services include AI governance, shadow AI monitoring, data loss prevention for LLMs, AI-powered threat detection, and AI readiness assessments.
+Q: Does Veracity offer AI security services?
+A: Yes. Services include AI governance, shadow AI monitoring, data loss prevention for LLMs, AI-powered threat detection, and AI readiness assessments. 83% of organizations lack automated AI security controls (Kiteworks 2025).
+
+Q: What is the average cost of a data breach?
+A: In financial services, $5.56M (IBM 2025). Healthcare averages $7.42M. U.S. breaches overall average $10.22M. Manufacturing faces the highest attack volume at 29% of all ransomware victims globally.
+
+Q: What is Shadow AI?
+A: Shadow AI is the use of AI tools by employees without IT knowledge or approval. 68% of employees use unauthorized AI tools, creating data leakage and compliance risks. Veracity discovers, assesses, and governs shadow AI across organizations.
+
+Q: What areas does Veracity Technologies serve?
+A: 36 cities across the Minneapolis-St. Paul metro and Central Minnesota, including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, Edina, Wayzata, St. Cloud, and more. Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345.
+
+## Blog / Resources
+- How AI Is Changing the Cybersecurity Threat Landscape in 2025
+- SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide
+- Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week
+- Bridging the OT/IT Gap: A Security Guide for Manufacturing Plants
+- Shadow AI: The Hidden Risk in Your Organization
+- Wire Fraud Prevention for Financial Services Firms
+
+Last updated: December 2025

@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-# AI Crawlers
+# AI & LLM Crawlers — Explicitly Allowed
 User-agent: GPTBot
 Allow: /
 
@@ -15,10 +15,10 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Bingbot
+User-agent: Googlebot
 Allow: /
 
-User-agent: Googlebot
+User-agent: Bingbot
 Allow: /
 
 User-agent: PerplexityBot
@@ -36,8 +36,29 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Sitemap
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# Sitemaps
 Sitemap: https://www.veracitytech.com/sitemap.xml
 
-# LLMs.txt
-# See: https://www.veracitytech.com/llms.txt
+# LLMs.txt — AI-optimized content summary
+# https://www.veracitytech.com/llms.txt
