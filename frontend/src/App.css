@@ -43,16 +43,16 @@
 
 /* Grid border pattern for cards */
 .grid-border-card {
-  border: 1px solid #155a9e;
-  background: #122a4a;
+  border: 1px solid #1e6bb8;
+  background: #1a3355;
   transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-border-card:hover {
   border-color: #1a8fd4;
-  background: #163458;
+  background: #1f3d62;
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 8px 30px rgba(0, 119, 179, 0.12), 0 0 0 1px rgba(0, 119, 179, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 119, 179, 0.15), 0 0 0 1px rgba(0, 119, 179, 0.1);
 }
 
 /* Stat cards large typography */
@@ -76,10 +76,10 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c1e38;
+  background: #112240;
 }
 ::-webkit-scrollbar-thumb {
-  background: #155a9e;
+  background: #1e6bb8;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -88,7 +88,7 @@
 
 /* Hero background overlay */
 .hero-overlay {
-  background: linear-gradient(180deg, rgba(12, 30, 56, 0.72) 0%, rgba(12, 30, 56, 0.90) 100%);
+  background: linear-gradient(180deg, rgba(17, 34, 64, 0.70) 0%, rgba(17, 34, 64, 0.88) 100%);
 }
 
 /* Selection */

@@ -30,15 +30,15 @@ export default function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0c1e38] flex items-center justify-center">
-        <p className="text-[#c0d0e0]">Loading...</p>
+      <div className="min-h-screen bg-[#112240] flex items-center justify-center">
+        <p className="text-[#d0dce8]">Loading...</p>
       </div>
     );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#0c1e38] flex items-center justify-center">
+      <div className="min-h-screen bg-[#112240] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit" }}>Article Not Found</h1>
           <Link to="/resources" className="text-[#0077B3] hover:text-white">Back to Resources</Link>
@@ -69,7 +69,7 @@ export default function BlogPost() {
         return (
           <ul key={i} className="space-y-2 my-4 ml-4">
             {items.map((item, j) => (
-              <li key={j} className="text-[#c0d0e0] text-base leading-relaxed flex items-start gap-2">
+              <li key={j} className="text-[#d0dce8] text-base leading-relaxed flex items-start gap-2">
                 <span className="text-[#0077B3] mt-1.5 flex-shrink-0">&#8226;</span>
                 <span dangerouslySetInnerHTML={{ __html: formatInline(item.replace("- ", "")) }} />
               </li>
@@ -82,7 +82,7 @@ export default function BlogPost() {
         return (
           <ol key={i} className="space-y-2 my-4 ml-4 list-decimal list-inside">
             {items.map((item, j) => (
-              <li key={j} className="text-[#c0d0e0] text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: formatInline(item.replace(/^\d+\.\s*/, "")) }} />
+              <li key={j} className="text-[#d0dce8] text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: formatInline(item.replace(/^\d+\.\s*/, "")) }} />
             ))}
           </ol>
         );
@@ -95,7 +95,7 @@ export default function BlogPost() {
         );
       }
       return (
-        <p key={i} className="text-[#c0d0e0] text-base leading-relaxed my-4" dangerouslySetInnerHTML={{ __html: formatInline(block) }} />
+        <p key={i} className="text-[#d0dce8] text-base leading-relaxed my-4" dangerouslySetInnerHTML={{ __html: formatInline(block) }} />
       );
     });
   };
@@ -107,7 +107,7 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c1e38]" data-testid={`blog-post-${post.slug}`}>
+    <div className="min-h-screen bg-[#112240]" data-testid={`blog-post-${post.slug}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -143,16 +143,16 @@ export default function BlogPost() {
         }}
       />
 
-      <nav className="bg-[#0c1e38]/95 backdrop-blur-md border-b border-[#155a9e] sticky top-0 z-50">
+      <nav className="bg-[#112240]/95 backdrop-blur-md border-b border-[#1e6bb8] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/resources" className="text-[#c0d0e0] hover:text-white text-sm flex items-center gap-1">
+            <Link to="/resources" className="text-[#d0dce8] hover:text-white text-sm flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> All Articles
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#c0d0e0] hover:text-white text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#d0dce8] hover:text-white text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
           </div>
@@ -170,10 +170,10 @@ export default function BlogPost() {
               <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#0077B3]/30 px-2 py-0.5">
                 {post.category}
               </span>
-              <span className="flex items-center gap-1 text-[#c0d0e0]/60 text-xs">
+              <span className="flex items-center gap-1 text-[#d0dce8]/60 text-xs">
                 <Clock className="w-3 h-3" /> {post.read_time}
               </span>
-              <span className="text-[#c0d0e0]/60 text-xs">{post.published_date}</span>
+              <span className="text-[#d0dce8]/60 text-xs">{post.published_date}</span>
             </div>
 
             <h1
@@ -197,7 +197,7 @@ export default function BlogPost() {
               <h3 className="text-white font-bold text-xl mb-3" style={{ fontFamily: "Outfit" }}>
                 Ready to strengthen your security posture?
               </h3>
-              <p className="text-[#c0d0e0] text-sm mb-6">
+              <p className="text-[#d0dce8] text-sm mb-6">
                 Schedule a free technology and cyber risk audit with our team.
               </p>
               <Link to="/#audit">
@@ -209,14 +209,14 @@ export default function BlogPost() {
 
             {/* Related Articles */}
             {relatedPosts.length > 0 && (
-              <div className="mt-16 border-t border-[#155a9e]/50 pt-12">
+              <div className="mt-16 border-t border-[#1e6bb8]/50 pt-12">
                 <h3 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "Outfit" }}>Related Articles</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   {relatedPosts.map((rp) => (
                     <Link key={rp.slug} to={`/resources/${rp.slug}`} className="group">
-                      <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#155a9e]/30 px-2 py-0.5 inline-block mb-2">{rp.category}</span>
+                      <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#1e6bb8]/30 px-2 py-0.5 inline-block mb-2">{rp.category}</span>
                       <p className="text-white text-sm font-semibold group-hover:text-[#0077B3] transition-colors leading-snug">{rp.title}</p>
-                      <p className="text-[#c0d0e0]/60 text-xs mt-1">{rp.read_time}</p>
+                      <p className="text-[#d0dce8]/60 text-xs mt-1">{rp.read_time}</p>
                     </Link>
                   ))}
                 </div>
@@ -224,17 +224,17 @@ export default function BlogPost() {
             )}
 
             {/* Visible last updated */}
-            <p className="mt-10 text-[#c0d0e0]/40 text-xs flex items-center gap-1">
+            <p className="mt-10 text-[#d0dce8]/40 text-xs flex items-center gap-1">
               <CalendarDays className="w-3 h-3" /> Published {post.published_date} &middot; Last reviewed December 2025
             </p>
           </div>
         </article>
       </main>
 
-      <footer className="bg-[#0c1e38] border-t border-[#155a9e] py-8">
+      <footer className="bg-[#112240] border-t border-[#1e6bb8] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#c0d0e0]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies.</p>
-          <div className="flex items-center gap-6 text-sm text-[#c0d0e0]">
+          <p className="text-[#d0dce8]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies.</p>
+          <div className="flex items-center gap-6 text-sm text-[#d0dce8]">
             <Link to="/resources" className="hover:text-white">Resources</Link>
             <Link to="/" className="hover:text-white">Home</Link>
           </div>

@@ -39,7 +39,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center scale-110"
         style={{ backgroundImage: `url(${HERO_BG})` }}
       />
-      <div className="absolute inset-0 bg-[#0c1e38]/85" />
+      <div className="absolute inset-0 bg-[#112240]/85" />
 
       {/* Animated grid overlay */}
       <div
@@ -79,7 +79,7 @@ export default function HeroSection() {
 
           <p
             data-testid="hero-subhead"
-            className="text-base md:text-lg text-[#c0d0e0] leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
+            className="text-base md:text-lg text-[#d0dce8] leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
             AI-driven threat detection. Industry-specialized compliance. 24/7 expert support.
             We protect and power businesses across construction, financial services, manufacturing, 
@@ -90,14 +90,14 @@ export default function HeroSection() {
             <Button
               data-testid="hero-cta-button"
               onClick={() => scrollTo("audit")}
-              className="bg-white text-[#155a9e] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
+              className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
             >
               Get Your Free Security Audit
             </Button>
             <a
               data-testid="hero-phone-link"
               href="tel:9529417333"
-              className="flex items-center gap-2 text-[#c0d0e0] hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 text-[#d0dce8] hover:text-white transition-colors text-sm"
             >
               <Phone className="w-4 h-4" />
               Or call (952) 941-7333
@@ -107,7 +107,7 @@ export default function HeroSection() {
           {/* Trust badges inline */}
           <div className="mt-14 flex flex-wrap items-center gap-6 animate-fade-in-up stagger-5">
             {["SOC 2 Compliant", "CMMC Registered", "24/7 AI Monitoring", "CRN MSP 500"].map((badge) => (
-              <span key={badge} className="text-[10px] uppercase tracking-[0.15em] text-[#c0d0e0]/60 border border-[#155a9e]/50 px-3 py-1.5">
+              <span key={badge} className="text-[10px] uppercase tracking-[0.15em] text-[#d0dce8]/60 border border-[#1e6bb8]/50 px-3 py-1.5">
                 {badge}
               </span>
             ))}
@@ -119,7 +119,7 @@ export default function HeroSection() {
           <button
             data-testid="scroll-indicator"
             onClick={() => scrollTo("intro-stats")}
-            className="text-[#c0d0e0] hover:text-white transition-colors"
+            className="text-[#d0dce8] hover:text-white transition-colors"
             aria-label="Scroll down"
           >
             <ArrowDown className="w-5 h-5" />

@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 210 50% 9%;
+    --background: 210 42% 12%;
     --foreground: 0 0% 100%;
-    --card: 210 40% 16%;
+    --card: 210 35% 19%;
     --card-foreground: 0 0% 100%;
-    --popover: 210 40% 16%;
+    --popover: 210 35% 19%;
     --popover-foreground: 0 0% 100%;
-    --primary: 199 100% 35%;
+    --primary: 199 100% 38%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 45% 28%;
+    --secondary: 210 38% 32%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 16%;
-    --muted-foreground: 210 20% 82%;
+    --muted: 210 35% 19%;
+    --muted-foreground: 210 18% 85%;
     --accent: 14 100% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 45% 28%;
-    --input: 210 45% 28%;
-    --ring: 199 100% 35%;
+    --border: 210 38% 32%;
+    --input: 210 38% 32%;
+    --ring: 199 100% 38%;
     --radius: 0.25rem;
   }
 }
@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#0c1e38] text-white;
+    @apply bg-[#112240] text-white;
     font-family: 'IBM Plex Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

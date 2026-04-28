@@ -8,7 +8,7 @@ export default function RiskReversal() {
       id="risk-reversal"
       data-testid="risk-reversal-section"
       aria-label="Satisfaction guarantee - $100 charity donation if audit doesn't find 3 actionable improvements"
-      className="py-20 lg:py-24 bg-[#0c1e38]"
+      className="py-20 lg:py-24 bg-[#112240]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -22,7 +22,7 @@ export default function RiskReversal() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e38] via-[#0c1e38]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#112240] via-[#112240]/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex items-center gap-2 mb-2">
                   <ShieldAlert className="w-4 h-4 text-[#FF5722]" />
@@ -53,7 +53,7 @@ export default function RiskReversal() {
               </h2>
               <p
                 data-testid="guarantee-text"
-                className="text-[#c0d0e0] text-base leading-relaxed"
+                className="text-[#d0dce8] text-base leading-relaxed"
               >
                 If you don&rsquo;t find at least <span className="text-white font-semibold">three actionable improvements</span> from 
                 our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
