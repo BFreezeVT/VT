@@ -5,18 +5,18 @@ import cityData from "../data/cityData";
 
 export default function ServiceAreasIndex() {
   return (
-    <div className="min-h-screen bg-[#0a1628]" data-testid="service-areas-index">
+    <div className="min-h-screen bg-[#0c1e38]" data-testid="service-areas-index">
       {/* Nav */}
-      <nav className="bg-[#0a1628]/95 backdrop-blur-md border-b border-[#0d4a8a] sticky top-0 z-50">
+      <nav className="bg-[#0c1e38]/95 backdrop-blur-md border-b border-[#155a9e] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" data-testid="areas-nav-home" className="text-[#b0c4d8] hover:text-white text-sm transition-colors flex items-center gap-1">
+            <Link to="/" data-testid="areas-nav-home" className="text-[#c0d0e0] hover:text-white text-sm transition-colors flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> Home
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#c0d0e0] hover:text-white text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
           </div>
@@ -38,11 +38,11 @@ export default function ServiceAreasIndex() {
             >
               IT Support Across the Twin Cities Metro
             </h1>
-            <p className="text-base md:text-lg text-[#b0c4d8] leading-relaxed max-w-3xl mb-4">
+            <p className="text-base md:text-lg text-[#c0d0e0] leading-relaxed max-w-3xl mb-4">
               We provide managed IT services and cybersecurity to {cityData.length} communities across the Minneapolis-St. Paul metro area. 
               Each city page below features localized content specific to the industries, challenges, and opportunities in that community.
             </p>
-            <p className="text-sm text-[#b0c4d8]/60">Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345</p>
+            <p className="text-sm text-[#c0d0e0]/60">Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345</p>
           </div>
         </section>
 
@@ -67,12 +67,12 @@ export default function ServiceAreasIndex() {
                   >
                     IT Support in {city.name}
                   </h2>
-                  <p className="text-[#b0c4d8] text-sm leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-[#c0d0e0] text-sm leading-relaxed mb-4 line-clamp-2">
                     {city.subhead}
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {city.localIndustries.slice(0, 3).map((ind, j) => (
-                      <span key={j} className="text-[10px] text-[#0077B3] border border-[#0d4a8a] px-2 py-0.5">
+                      <span key={j} className="text-[10px] text-[#0077B3] border border-[#155a9e] px-2 py-0.5">
                         {ind}
                       </span>
                     ))}
@@ -88,12 +88,12 @@ export default function ServiceAreasIndex() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#0a1628] border-t border-[#0d4a8a] py-8">
+      <footer className="bg-[#0c1e38] border-t border-[#155a9e] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#b0c4d8]/60 text-xs">
+          <p className="text-[#c0d0e0]/60 text-xs">
             &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-[#b0c4d8]">
+          <div className="flex items-center gap-6 text-sm text-[#c0d0e0]">
             <a href="tel:9529417333" className="hover:text-white transition-colors flex items-center gap-1">
               <Phone className="w-3 h-3" /> (952) 941-7333
             </a>

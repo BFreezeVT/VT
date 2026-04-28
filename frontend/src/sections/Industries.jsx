@@ -38,7 +38,7 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-24 lg:py-32 bg-[#0f2340]/30"
+      className="py-24 lg:py-32 bg-[#122a4a]/30"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -50,7 +50,7 @@ export default function Industries() {
           >
             Deep expertise where compliance isn&rsquo;t optional.
           </h2>
-          <p className="text-[#b0c4d8] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#c0d0e0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             We don&rsquo;t do generic IT. Every engagement is built on sector-specific knowledge of the regulations, workflows, and threats your industry faces.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function Industries() {
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#0d4a8a] bg-[#0a1628] group-hover:border-[#0077B3] transition-colors">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#155a9e] bg-[#0c1e38] group-hover:border-[#0077B3] transition-colors">
                   <ind.icon className="w-6 h-6 text-[#0077B3]" />
                 </div>
                 <div>
@@ -75,12 +75,12 @@ export default function Industries() {
                   </h3>
                 </div>
               </div>
-              <p className="text-[#b0c4d8] text-sm leading-relaxed mb-5">{ind.desc}</p>
+              <p className="text-[#c0d0e0] text-sm leading-relaxed mb-5">{ind.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span
                     key={h}
-                    className="text-xs font-medium text-[#0077B3] border border-[#0d4a8a] bg-[#0077B3]/5 px-3 py-1"
+                    className="text-xs font-medium text-[#0077B3] border border-[#155a9e] bg-[#0077B3]/5 px-3 py-1"
                   >
                     {h}
                   </span>

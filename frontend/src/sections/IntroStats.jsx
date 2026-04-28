@@ -50,12 +50,12 @@ const topAttackedIndustries = [
 function SourcePopup({ source, onClose }) {
   return (
     <div className="absolute z-30 bottom-full left-0 right-0 mb-2 animate-fade-in" data-testid="source-popup">
-      <div className="bg-[#0a1628] border border-[#1a8fd4] p-4 shadow-lg shadow-[#0077B3]/10">
+      <div className="bg-[#0c1e38] border border-[#1a8fd4] p-4 shadow-lg shadow-[#0077B3]/10">
         <div className="flex items-start justify-between gap-3 mb-2">
           <p className="text-white text-sm font-semibold" style={{ fontFamily: "Outfit" }}>{source.title}</p>
-          <button onClick={onClose} className="text-[#b0c4d8] hover:text-white flex-shrink-0"><X className="w-4 h-4" /></button>
+          <button onClick={onClose} className="text-[#c0d0e0] hover:text-white flex-shrink-0"><X className="w-4 h-4" /></button>
         </div>
-        <p className="text-[#b0c4d8] text-xs leading-relaxed mb-3">{source.excerpt}</p>
+        <p className="text-[#c0d0e0] text-xs leading-relaxed mb-3">{source.excerpt}</p>
         <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium hover:text-white transition-colors">
           View full report <ExternalLink className="w-3 h-3" />
         </a>
@@ -69,14 +69,14 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-24 lg:py-32 bg-[#0a1628]">
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-24 lg:py-32 bg-[#0c1e38]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}
           <div className="relative animate-fade-in-up order-2 lg:order-1">
             <div className="relative overflow-hidden border border-[#FF5722]/20">
               <img data-testid="threat-image" src={HACKER_IMG} alt="Cybersecurity threat actor" className="w-full h-auto object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e38] via-[#0c1e38]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold mb-1">Active Threat</p>
                 <p className="text-white text-sm font-medium">Attackers are targeting your industry right now. Is your team ready?</p>
@@ -90,12 +90,12 @@ export default function IntroStats() {
             <h2 data-testid="intro-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Cyberattacks aren&rsquo;t slowing down. Most defenses are.
             </h2>
-            <p data-testid="intro-description" className="text-[#b0c4d8] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
+            <p data-testid="intro-description" className="text-[#c0d0e0] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
               AI-powered attacks are outpacing traditional security tools. Ransomware victims surged 58% in 2025, credential theft is up 389%, and shadow AI usage is leaking sensitive data daily.
             </p>
             <div className="border-l-2 border-[#FF5722] pl-5 animate-fade-in-up stagger-3">
               <p className="text-[#FF5722] text-xs font-semibold uppercase tracking-wider mb-2">The Reality</p>
-              <p className="text-[#b0c4d8] text-sm leading-relaxed">
+              <p className="text-[#c0d0e0] text-sm leading-relaxed">
                 Global ransomware attacks rose <span className="text-white font-semibold">32% in 2025</span>. Average ransom: <span className="text-white font-semibold">$2.3 million</span>. 90% of organizations are unprepared for AI-augmented threats.
               </p>
               <a href="https://deepstrike.io/blog/ransomware-statistics-2025" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-white transition-colors">
@@ -106,14 +106,14 @@ export default function IntroStats() {
         </div>
 
         {/* Stats — open layout with dividers, no boxes */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-[#0d4a8a]/50">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-[#155a9e]/50">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={i}
                 data-testid={`stat-card-${i}`}
-                className={`relative pt-8 pb-6 ${i < 3 ? "border-r border-[#0d4a8a]/30 hidden lg:block" : ""} ${i < 2 ? "max-lg:border-r max-lg:border-[#0d4a8a]/30" : ""} px-6 first:pl-0 last:pr-0 animate-fade-in-up stagger-${i + 3}`}
+                className={`relative pt-8 pb-6 ${i < 3 ? "border-r border-[#155a9e]/30 hidden lg:block" : ""} ${i < 2 ? "max-lg:border-r max-lg:border-[#155a9e]/30" : ""} px-6 first:pl-0 last:pr-0 animate-fade-in-up stagger-${i + 3}`}
                 style={{ minWidth: 0 }}
               >
                 {activeSource === i && <SourcePopup source={stat.source} onClose={() => setActiveSource(null)} />}
@@ -121,7 +121,7 @@ export default function IntroStats() {
                 <p className="stat-number text-4xl sm:text-5xl text-white">
                   {stat.value}<span className={stat.accentColor}>{stat.suffix}</span>
                 </p>
-                <p className="text-xs text-[#b0c4d8] mt-2 mb-3 leading-relaxed">{stat.label}</p>
+                <p className="text-xs text-[#c0d0e0] mt-2 mb-3 leading-relaxed">{stat.label}</p>
                 <button
                   data-testid={`stat-source-${i}`}
                   onClick={() => setActiveSource(activeSource === i ? null : i)}
@@ -141,19 +141,19 @@ export default function IntroStats() {
 
         {/* Top 5 expanded — open layout */}
         {showRanking && (
-          <div data-testid="top-5-ranking" className="mt-8 pt-8 border-t border-[#0d4a8a]/50 animate-fade-in">
+          <div data-testid="top-5-ranking" className="mt-8 pt-8 border-t border-[#155a9e]/50 animate-fade-in">
             <p className="text-white text-sm font-semibold mb-6" style={{ fontFamily: "Outfit" }}>Top 5 Most-Attacked Industries (2025)</p>
             <div className="space-y-4">
               {topAttackedIndustries.map((ind) => (
                 <div key={ind.rank} className="flex items-center gap-4">
-                  <span className={`stat-number text-lg w-8 ${ind.rank === 1 ? "text-[#FF5722]" : "text-[#b0c4d8]"}`}>#{ind.rank}</span>
+                  <span className={`stat-number text-lg w-8 ${ind.rank === 1 ? "text-[#FF5722]" : "text-[#c0d0e0]"}`}>#{ind.rank}</span>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-white text-sm font-medium">{ind.name}</span>
                       <span className="text-[#0077B3] text-sm font-semibold">{ind.pct}</span>
                     </div>
-                    <div className="w-full bg-[#0a1628] h-1"><div className={`h-1 ${ind.rank === 1 ? "bg-[#FF5722]" : "bg-[#0077B3]"}`} style={{ width: ind.pct }} /></div>
-                    <p className="text-[#b0c4d8] text-[10px] mt-1">{ind.note}</p>
+                    <div className="w-full bg-[#0c1e38] h-1"><div className={`h-1 ${ind.rank === 1 ? "bg-[#FF5722]" : "bg-[#0077B3]"}`} style={{ width: ind.pct }} /></div>
+                    <p className="text-[#c0d0e0] text-[10px] mt-1">{ind.note}</p>
                   </div>
                 </div>
               ))}

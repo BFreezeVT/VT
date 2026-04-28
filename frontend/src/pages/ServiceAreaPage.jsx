@@ -50,10 +50,10 @@ export default function ServiceAreaPage() {
 
   if (!city) {
     return (
-      <div className="min-h-screen bg-[#0a1628] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#0c1e38] flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>Page Not Found</h1>
-          <p className="text-[#b0c4d8] mb-8">This service area page doesn't exist.</p>
+          <p className="text-[#c0d0e0] mb-8">This service area page doesn't exist.</p>
           <Link to="/" className="text-[#0077B3] hover:text-white transition-colors">Back to Home</Link>
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function ServiceAreaPage() {
   const cityTestimonials = city.testimonialIndices.map((i) => allTestimonials[i]).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#0a1628]" data-testid={`city-page-${city.slug}`}>
+    <div className="min-h-screen bg-[#0c1e38]" data-testid={`city-page-${city.slug}`}>
       {/* JSON-LD for this city */}
       <script
         type="application/ld+json"
@@ -103,22 +103,22 @@ export default function ServiceAreaPage() {
       />
 
       {/* Nav */}
-      <nav className="bg-[#0a1628]/95 backdrop-blur-md border-b border-[#0d4a8a] sticky top-0 z-50" data-testid="city-nav">
+      <nav className="bg-[#0c1e38]/95 backdrop-blur-md border-b border-[#155a9e] sticky top-0 z-50" data-testid="city-nav">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" data-testid="city-nav-home" className="text-[#b0c4d8] hover:text-white text-sm transition-colors flex items-center gap-1">
+            <Link to="/" data-testid="city-nav-home" className="text-[#c0d0e0] hover:text-white text-sm transition-colors flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> Home
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#c0d0e0] hover:text-white text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
             <Button
               data-testid="city-nav-cta"
               onClick={() => document.getElementById("city-form")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-semibold text-sm px-5"
+              className="bg-white text-[#155a9e] hover:bg-white/90 rounded-sm font-semibold text-sm px-5"
             >
               {city.ctaText}
             </Button>
@@ -148,18 +148,18 @@ export default function ServiceAreaPage() {
             >
               {city.headline}
             </h1>
-            <p data-testid="city-subhead" className="text-base md:text-lg text-[#b0c4d8] leading-relaxed max-w-3xl mb-10">
+            <p data-testid="city-subhead" className="text-base md:text-lg text-[#c0d0e0] leading-relaxed max-w-3xl mb-10">
               {city.subhead}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 data-testid="city-hero-cta"
                 onClick={() => document.getElementById("city-form")?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12"
+                className="bg-white text-[#155a9e] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12"
               >
                 {city.ctaText}
               </Button>
-              <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white transition-colors text-sm h-12 px-4">
+              <a href="tel:9529417333" className="flex items-center gap-2 text-[#c0d0e0] hover:text-white transition-colors text-sm h-12 px-4">
                 <Phone className="w-4 h-4" /> Or call (952) 941-7333
               </a>
             </div>
@@ -167,7 +167,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* About / Description */}
-        <section data-testid="city-about" aria-label={`About IT services in ${city.name}`} className="py-20 bg-[#0f2340]/40">
+        <section data-testid="city-about" aria-label={`About IT services in ${city.name}`} className="py-20 bg-[#122a4a]/40">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
@@ -179,26 +179,26 @@ export default function ServiceAreaPage() {
                 >
                   Why {city.name} businesses choose Veracity
                 </h2>
-                <p data-testid="city-description" className="text-[#b0c4d8] text-base leading-relaxed mb-8">
+                <p data-testid="city-description" className="text-[#c0d0e0] text-base leading-relaxed mb-8">
                   {city.description}
                 </p>
                 <div className="grid-border-card p-5 mb-6">
                   <p className="text-white text-sm font-semibold mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                     The Local Challenge
                   </p>
-                  <p data-testid="city-challenge" className="text-[#b0c4d8] text-sm leading-relaxed">{city.localChallenge}</p>
+                  <p data-testid="city-challenge" className="text-[#c0d0e0] text-sm leading-relaxed">{city.localChallenge}</p>
                 </div>
                 <div className="grid-border-card p-5">
                   <p className="text-[#0077B3] text-sm font-semibold mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                     Did You Know?
                   </p>
-                  <p data-testid="city-fact" className="text-[#b0c4d8] text-sm leading-relaxed">{city.localFact}</p>
+                  <p data-testid="city-fact" className="text-[#c0d0e0] text-sm leading-relaxed">{city.localFact}</p>
                 </div>
               </div>
 
               <div>
                 <div className="grid-border-card p-6 mb-6">
-                  <p className="overline text-[#b0c4d8] mb-4">Key Industries in {city.name}</p>
+                  <p className="overline text-[#c0d0e0] mb-4">Key Industries in {city.name}</p>
                   <div className="space-y-3">
                     {city.localIndustries.map((ind, i) => (
                       <div key={i} data-testid={`city-industry-${i}`} className="flex items-center gap-3">
@@ -209,13 +209,13 @@ export default function ServiceAreaPage() {
                   </div>
                 </div>
                 <div className="grid-border-card p-6">
-                  <p className="overline text-[#b0c4d8] mb-4">Areas We Cover in {city.name}</p>
+                  <p className="overline text-[#c0d0e0] mb-4">Areas We Cover in {city.name}</p>
                   <div className="flex flex-wrap gap-2">
                     {city.neighborhoods.map((n, i) => (
                       <span
                         key={i}
                         data-testid={`city-neighborhood-${i}`}
-                        className="text-xs font-medium text-[#0077B3] border border-[#0d4a8a] bg-[#0077B3]/5 px-3 py-1.5"
+                        className="text-xs font-medium text-[#0077B3] border border-[#155a9e] bg-[#0077B3]/5 px-3 py-1.5"
                       >
                         {n}
                       </span>
@@ -228,7 +228,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Services highlight */}
-        <section data-testid="city-services" aria-label={`IT services offered in ${city.name}`} className="py-20 bg-[#0a1628]">
+        <section data-testid="city-services" aria-label={`IT services offered in ${city.name}`} className="py-20 bg-[#0c1e38]">
           <div className="max-w-7xl mx-auto px-6">
             <h2
               className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12 text-center"
@@ -244,11 +244,11 @@ export default function ServiceAreaPage() {
                 { icon: Building2, title: "Compliance", desc: `CMMC, SOC 2, HIPAA, and industry-specific compliance management for ${city.name} firms.` },
               ].map((svc, i) => (
                 <div key={i} data-testid={`city-service-${i}`} className="grid-border-card p-6 group">
-                  <div className="w-10 h-10 flex items-center justify-center border border-[#0d4a8a] bg-[#0a1628] mb-4 group-hover:border-[#0077B3] transition-colors">
+                  <div className="w-10 h-10 flex items-center justify-center border border-[#155a9e] bg-[#0c1e38] mb-4 group-hover:border-[#0077B3] transition-colors">
                     <svc.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
                   <h3 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
-                  <p className="text-[#b0c4d8] text-sm leading-relaxed">{svc.desc}</p>
+                  <p className="text-[#c0d0e0] text-sm leading-relaxed">{svc.desc}</p>
                 </div>
               ))}
             </div>
@@ -256,7 +256,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Testimonials */}
-        <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#0f2340]/30">
+        <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#122a4a]/30">
           <div className="max-w-7xl mx-auto px-6">
             <h2
               className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12 text-center"
@@ -268,10 +268,10 @@ export default function ServiceAreaPage() {
               {cityTestimonials.map((t, i) => (
                 <div key={i} data-testid={`city-testimonial-${i}`} className="grid-border-card p-6 flex flex-col">
                   <Quote className="w-6 h-6 text-[#0077B3]/20 mb-3" />
-                  <p className="text-[#b0c4d8] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="border-t border-[#0d4a8a] pt-3 mt-auto">
+                  <p className="text-[#c0d0e0] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="border-t border-[#155a9e] pt-3 mt-auto">
                     <p className="text-white font-semibold text-sm">{t.name}</p>
-                    <p className="text-[#b0c4d8] text-xs">{t.title}, {t.company}</p>
+                    <p className="text-[#c0d0e0] text-xs">{t.title}, {t.company}</p>
                   </div>
                 </div>
               ))}
@@ -280,7 +280,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* CTA / Form */}
-        <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#0a1628]">
+        <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#0c1e38]">
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid-border-card p-8 lg:p-10">
               {!submitted ? (
@@ -291,7 +291,7 @@ export default function ServiceAreaPage() {
                   >
                     {city.ctaText}
                   </h2>
-                  <p className="text-[#b0c4d8] text-sm mb-8 text-center">
+                  <p className="text-[#c0d0e0] text-sm mb-8 text-center">
                     Get a comprehensive, non-invasive review of your {city.name} business&rsquo;s IT and cybersecurity posture.
                   </p>
                   <form onSubmit={(e) => {
@@ -308,19 +308,19 @@ export default function ServiceAreaPage() {
                   }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">Company Name</label>
-                      <Input data-testid="city-form-company" id="company" name="company" placeholder="Your company" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="city-form-company" id="company" name="company" placeholder="Your company" className="bg-black/20 border-[#155a9e] text-white placeholder:text-[#c0d0e0]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="name" className="text-white text-sm font-medium mb-1.5 block">Your Name</label>
-                      <Input data-testid="city-form-name" id="name" name="name" placeholder="Full name" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="city-form-name" id="name" name="name" placeholder="Full name" className="bg-black/20 border-[#155a9e] text-white placeholder:text-[#c0d0e0]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="phone" className="text-white text-sm font-medium mb-1.5 block">Phone</label>
-                      <Input data-testid="city-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="city-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-black/20 border-[#155a9e] text-white placeholder:text-[#c0d0e0]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
                       <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">Email</label>
-                      <Input data-testid="city-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-black/20 border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/50 focus:border-[#0077B3] rounded-sm h-11" required />
+                      <Input data-testid="city-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-black/20 border-[#155a9e] text-white placeholder:text-[#c0d0e0]/50 focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div className="sm:col-span-2">
                       <Button data-testid="city-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12 text-base">
@@ -333,7 +333,7 @@ export default function ServiceAreaPage() {
                 <div data-testid="city-form-success" className="text-center py-6">
                   <Shield className="w-12 h-12 text-[#0077B3] mx-auto mb-4" />
                   <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>Thank you!</h3>
-                  <p className="text-[#b0c4d8] text-sm">We'll reach out within one business day to schedule your {city.name} IT audit.</p>
+                  <p className="text-[#c0d0e0] text-sm">We'll reach out within one business day to schedule your {city.name} IT audit.</p>
                 </div>
               )}
             </div>
@@ -341,7 +341,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Other cities */}
-        <section data-testid="city-other-areas" aria-label="Other service areas" className="py-16 bg-[#0f2340]/20">
+        <section data-testid="city-other-areas" aria-label="Other service areas" className="py-16 bg-[#122a4a]/20">
           <div className="max-w-7xl mx-auto px-6">
             <h2
               className="text-xl font-bold text-white mb-8 text-center"
@@ -357,7 +357,7 @@ export default function ServiceAreaPage() {
                     key={c.slug}
                     to={`/service-areas/${c.slug}`}
                     data-testid={`other-city-${c.slug}`}
-                    className="text-xs font-medium text-[#b0c4d8] border border-[#0d4a8a] bg-[#0f2340] hover:border-[#0077B3] hover:text-white px-4 py-2 transition-colors"
+                    className="text-xs font-medium text-[#c0d0e0] border border-[#155a9e] bg-[#122a4a] hover:border-[#0077B3] hover:text-white px-4 py-2 transition-colors"
                   >
                     {c.name}
                   </Link>
@@ -368,12 +368,12 @@ export default function ServiceAreaPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#0a1628] border-t border-[#0d4a8a] py-8">
+      <footer className="bg-[#0c1e38] border-t border-[#155a9e] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#b0c4d8]/60 text-xs">
+          <p className="text-[#c0d0e0]/60 text-xs">
             &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-[#b0c4d8]">
+          <div className="flex items-center gap-6 text-sm text-[#c0d0e0]">
             <a href="tel:9529417333" className="hover:text-white transition-colors flex items-center gap-1">
               <Phone className="w-3 h-3" /> (952) 941-7333
             </a>

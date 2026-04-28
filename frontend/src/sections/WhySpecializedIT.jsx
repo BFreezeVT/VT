@@ -32,13 +32,13 @@ export default function WhySpecializedIT() {
       id="why-it"
       data-testid="why-specialized-section"
       aria-label="Why regulated industries need specialized IT support"
-      className="py-24 lg:py-32 bg-[#0f2340]/40"
+      className="py-24 lg:py-32 bg-[#122a4a]/40"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image stack */}
-          <div className="animate-fade-in-up stagger-1 order-2 lg:order-1 space-y-4">
-            <div className="relative overflow-hidden border border-[#0d4a8a]">
+          <div className="animate-fade-in-up stagger-1 order-2 lg:order-1">
+            <div className="relative overflow-hidden border border-[#155a9e]">
               <img
                 data-testid="why-it-image"
                 src={MAIN_IMG}
@@ -46,19 +46,7 @@ export default function WhySpecializedIT() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 to-transparent" />
-            </div>
-            <div className="relative overflow-hidden border border-[#0d4a8a]">
-              <img
-                data-testid="why-it-team-image"
-                src={TEAM_IMG}
-                alt="Cybersecurity professionals monitoring systems in a dark operations room"
-                className="w-full h-32 object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/70 to-transparent flex items-center px-5">
-                <p className="text-[#0077B3] text-sm font-semibold">Our team monitors, protects, and responds — 24/7/365.</p>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e38]/60 to-transparent" />
             </div>
           </div>
 
@@ -72,11 +60,11 @@ export default function WhySpecializedIT() {
             >
               Generic tech support can&rsquo;t keep up with regulated, operational industries.
             </h2>
-            <p className="text-[#b0c4d8] text-base leading-relaxed mb-4 animate-fade-in-up stagger-2">
+            <p className="text-[#c0d0e0] text-base leading-relaxed mb-4 animate-fade-in-up stagger-2">
               Your operations move fast, your teams are distributed, and your data is mission-critical. 
               You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace — not just the server room.
             </p>
-            <p className="text-[#b0c4d8]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
+            <p className="text-[#c0d0e0]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
               Veracity Technologies offers industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
 
@@ -92,7 +80,7 @@ export default function WhySpecializedIT() {
                     <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                       {r.title}
                     </h3>
-                    <p className="text-[#b0c4d8] text-sm leading-relaxed">{r.desc}</p>
+                    <p className="text-[#c0d0e0] text-sm leading-relaxed">{r.desc}</p>
                   </div>
                 </div>
               ))}

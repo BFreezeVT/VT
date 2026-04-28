@@ -15,7 +15,7 @@ export default function Compliance() {
   return (
     <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
-      <div className="absolute inset-0 bg-[#0f2340]/60" />
+      <div className="absolute inset-0 bg-[#122a4a]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
@@ -23,19 +23,19 @@ export default function Compliance() {
             <h2 data-testid="compliance-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
-            <p className="text-[#b0c4d8] text-base max-w-2xl animate-fade-in-up stagger-2">
+            <p className="text-[#c0d0e0] text-base max-w-2xl animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
         </div>
 
         {/* Open list layout — no card boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-[#0d4a8a]/40 pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-[#155a9e]/40 pt-12">
           {complianceItems.map((item, i) => (
             <div key={item.title} data-testid={`compliance-card-${i}`} className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}>
               <item.icon className="w-5 h-5 text-[#0077B3] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#b0c4d8] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#c0d0e0] text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}

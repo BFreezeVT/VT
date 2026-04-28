@@ -23,7 +23,7 @@ export default function Navigation() {
       role="navigation"
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#0a1628]/95 backdrop-blur-md border-b border-[#0d4a8a]" : "bg-transparent"
+        scrolled ? "bg-[#0c1e38]/95 backdrop-blur-md border-b border-[#155a9e]" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -40,19 +40,19 @@ export default function Navigation() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">AI</button>
-          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">Approach</button>
-          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">Industries</button>
-          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">Compliance</button>
-          <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">FAQ</button>
-          <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm transition-colors">
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#c0d0e0] hover:text-white text-sm transition-colors">AI</button>
+          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#c0d0e0] hover:text-white text-sm transition-colors">Approach</button>
+          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#c0d0e0] hover:text-white text-sm transition-colors">Industries</button>
+          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#c0d0e0] hover:text-white text-sm transition-colors">Compliance</button>
+          <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-[#c0d0e0] hover:text-white text-sm transition-colors">FAQ</button>
+          <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#c0d0e0] hover:text-white text-sm transition-colors">
             <Phone className="w-4 h-4" />
             (952) 941-7333
           </a>
           <Button
             data-testid="nav-cta"
             onClick={() => scrollTo("audit")}
-            className="bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-semibold text-sm px-5"
+            className="bg-white text-[#155a9e] hover:bg-white/90 rounded-sm font-semibold text-sm px-5"
           >
             Schedule Audit
           </Button>
@@ -70,20 +70,20 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div data-testid="mobile-menu" className="md:hidden bg-[#0a1628]/98 backdrop-blur-md border-t border-[#0d4a8a] px-6 py-6 space-y-4 animate-fade-in">
-          <button data-testid="mobile-nav-why" onClick={() => scrollTo("why-it")} className="block text-[#b0c4d8] hover:text-white text-sm">Why Us</button>
-          <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#b0c4d8] hover:text-white text-sm">Approach</button>
-          <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#b0c4d8] hover:text-white text-sm">Industries</button>
-          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#b0c4d8] hover:text-white text-sm">AI</button>
-          <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#b0c4d8] hover:text-white text-sm">Compliance</button>
-          <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#b0c4d8] hover:text-white text-sm">FAQ</button>
-          <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm">
+        <div data-testid="mobile-menu" className="md:hidden bg-[#0c1e38]/98 backdrop-blur-md border-t border-[#155a9e] px-6 py-6 space-y-4 animate-fade-in">
+          <button data-testid="mobile-nav-why" onClick={() => scrollTo("why-it")} className="block text-[#c0d0e0] hover:text-white text-sm">Why Us</button>
+          <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#c0d0e0] hover:text-white text-sm">Approach</button>
+          <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#c0d0e0] hover:text-white text-sm">Industries</button>
+          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#c0d0e0] hover:text-white text-sm">AI</button>
+          <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#c0d0e0] hover:text-white text-sm">Compliance</button>
+          <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#c0d0e0] hover:text-white text-sm">FAQ</button>
+          <a href="tel:9529417333" className="flex items-center gap-2 text-[#c0d0e0] hover:text-white text-sm">
             <Phone className="w-4 h-4" /> (952) 941-7333
           </a>
           <Button
             data-testid="mobile-nav-cta"
             onClick={() => scrollTo("audit")}
-            className="w-full bg-white text-[#0d4a8a] hover:bg-white/90 rounded-sm font-semibold"
+            className="w-full bg-white text-[#155a9e] hover:bg-white/90 rounded-sm font-semibold"
           >
             Schedule Audit
           </Button>
