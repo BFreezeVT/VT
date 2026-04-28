@@ -25,6 +25,22 @@ export default function ServiceAreasIndex() {
 
       <main role="main">
         {/* Hero */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "IT Support Service Areas - Minneapolis-St. Paul Metro",
+          description: "Veracity Technologies provides managed IT services and cybersecurity across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.",
+          url: "https://www.veracitytech.com/service-areas",
+          publisher: { "@type": "Organization", name: "Veracity Technologies" },
+        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
+            { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.veracitytech.com/service-areas" },
+          ],
+        }) }} />
         <section className="py-24 lg:py-32" aria-label="Service areas overview">
           <div className="max-w-7xl mx-auto px-6">
             <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">

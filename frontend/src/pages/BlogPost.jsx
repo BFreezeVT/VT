@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ChevronLeft, Phone, Clock, Tag, ArrowRight } from "lucide-react";
+import { ChevronLeft, Phone, Clock, Tag, ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "../components/ui/button";
 import axios from "axios";
 
@@ -9,17 +9,20 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`${API}/blog/${slug}`)
-      .then((res) => {
-        setPost(res.data);
-        document.title = `${res.data.title} | Veracity Technologies`;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute("content", res.data.excerpt);
-      })
-      .catch(() => setPost(null))
+    Promise.all([
+      axios.get(`${API}/blog/${slug}`),
+      axios.get(`${API}/blog`),
+    ]).then(([postRes, allRes]) => {
+      setPost(postRes.data);
+      document.title = `${postRes.data.title} | Veracity Technologies`;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", postRes.data.excerpt);
+      setRelatedPosts(allRes.data.filter(p => p.slug !== slug).slice(0, 3));
+    }).catch(() => setPost(null))
       .finally(() => setLoading(false));
 
     return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
@@ -203,6 +206,27 @@ export default function BlogPost() {
                 </Button>
               </Link>
             </div>
+
+            {/* Related Articles */}
+            {relatedPosts.length > 0 && (
+              <div className="mt-16 border-t border-[#155a9e]/50 pt-12">
+                <h3 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "Outfit" }}>Related Articles</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  {relatedPosts.map((rp) => (
+                    <Link key={rp.slug} to={`/resources/${rp.slug}`} className="group">
+                      <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#155a9e]/30 px-2 py-0.5 inline-block mb-2">{rp.category}</span>
+                      <p className="text-white text-sm font-semibold group-hover:text-[#0077B3] transition-colors leading-snug">{rp.title}</p>
+                      <p className="text-[#c0d0e0]/60 text-xs mt-1">{rp.read_time}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Visible last updated */}
+            <p className="mt-10 text-[#c0d0e0]/40 text-xs flex items-center gap-1">
+              <CalendarDays className="w-3 h-3" /> Published {post.published_date} &middot; Last reviewed December 2025
+            </p>
           </div>
         </article>
       </main>

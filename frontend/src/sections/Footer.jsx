@@ -125,7 +125,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p data-testid="footer-copyright" className="text-[#c0d0e0]/60 text-xs">
-            &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
+            &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved. &middot; Last updated December 2025
           </p>
           <div className="flex items-center gap-4 text-xs text-[#c0d0e0]/60">
             <button data-testid="footer-privacy" className="hover:text-white transition-colors">Privacy Policy</button>

@@ -318,6 +318,17 @@ export default function ServiceAreaPage() {
                 </div>
               ))}
             </div>
+
+            {/* Industry cross-links */}
+            <div className="mt-12 text-center">
+              <p className="text-[#c0d0e0] text-sm mb-4">Explore our industry expertise:</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link to="/industries/construction-it-support" className="text-xs text-[#0077B3] border border-[#155a9e] hover:border-[#0077B3] px-4 py-2 transition-colors">Construction IT</Link>
+                <Link to="/industries/financial-it-support" className="text-xs text-[#0077B3] border border-[#155a9e] hover:border-[#0077B3] px-4 py-2 transition-colors">Financial Services</Link>
+                <Link to="/industries/manufacturing-it-support" className="text-xs text-[#0077B3] border border-[#155a9e] hover:border-[#0077B3] px-4 py-2 transition-colors">Manufacturing</Link>
+                <Link to="/industries/high-compliance-it-support" className="text-xs text-[#0077B3] border border-[#155a9e] hover:border-[#0077B3] px-4 py-2 transition-colors">High-Compliance</Link>
+              </div>
+            </div>
           </div>
         </section>
 

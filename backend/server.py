@@ -507,6 +507,202 @@ The average BEC loss for financial services firms is $130,000 per incident. For 
 
 *Veracity Technologies helps financial services firms implement comprehensive wire fraud prevention programs. Schedule your free security assessment today.*"""
     },
+    {
+        "slug": "cmmc-compliance-guide-defense-contractors",
+        "title": "CMMC 2.0 Compliance: What Defense Contractors Need to Know in 2026",
+        "excerpt": "The DoD is enforcing CMMC across its entire supply chain. Here's what Level 2 certification requires and how to get there without derailing your operations.",
+        "category": "Compliance",
+        "author": "Veracity Technologies",
+        "published_date": "2025-12-01",
+        "read_time": "8 min read",
+        "content": """CMMC 2.0 (Cybersecurity Maturity Model Certification) is no longer optional for defense contractors. The Department of Defense has begun enforcing certification requirements across its supply chain, and organizations that handle Controlled Unclassified Information (CUI) must achieve Level 2 certification to bid on or maintain DoD contracts.
+
+## What Is CMMC 2.0?
+
+CMMC 2.0 is a streamlined version of the original CMMC framework, reducing the five levels to three:
+
+- **Level 1 (Foundational)**: 17 practices based on FAR 52.204-21. Self-assessment. For organizations handling Federal Contract Information (FCI) only.
+- **Level 2 (Advanced)**: 110 practices aligned with NIST SP 800-171. Third-party assessment required. For organizations handling CUI.
+- **Level 3 (Expert)**: 110+ practices based on NIST SP 800-172. Government-led assessment. For the most sensitive programs.
+
+## Who Needs CMMC?
+
+If your organization is part of the defense industrial base and handles CUI — which includes technical drawings, specifications, contract data, and export-controlled information — you need Level 2 certification. This applies to:
+
+- Prime contractors
+- Subcontractors at any tier
+- Manufacturers producing defense components
+- IT service providers supporting DoD programs
+- Engineering and consulting firms
+
+## The Path to Level 2 Certification
+
+### Phase 1: Gap Assessment
+Evaluate your current environment against all 110 NIST 800-171 controls. Identify what's in place, what's partially implemented, and what's missing entirely.
+
+### Phase 2: System Security Plan (SSP)
+Document your entire security environment — network architecture, access controls, incident response procedures, and continuous monitoring capabilities.
+
+### Phase 3: Plan of Action & Milestones (POA&M)
+For controls not yet fully implemented, create a remediation plan with specific timelines. Note: POA&Ms are now allowed under CMMC 2.0 but must be closed within 180 days.
+
+### Phase 4: Implementation
+Deploy the missing controls — enclave architecture, FIPS 140-2 encryption, multi-factor authentication, continuous monitoring, and audit logging.
+
+### Phase 5: Third-Party Assessment
+A C3PAO (Certified Third-Party Assessment Organization) conducts your official assessment. They review your SSP, test controls, and issue your certification.
+
+## Common Pitfalls
+
+**Underestimating scope.** CUI flows through more systems than you think — email, file shares, collaboration tools, and even personal devices.
+
+**Treating it as a one-time project.** CMMC requires continuous compliance, not just point-in-time certification.
+
+**Ignoring subcontractor flow-down.** If your subs handle CUI, they need CMMC too. Your certification depends on your entire supply chain.
+
+*Veracity Technologies is a CMMC Registered Provider. We build compliant environments from the ground up — contact us for a free gap assessment.*"""
+    },
+    {
+        "slug": "mfa-implementation-guide-business",
+        "title": "MFA Implementation Guide: The Single Most Impactful Security Step for Any Business",
+        "excerpt": "Multi-factor authentication blocks 99.9% of credential-based attacks. Here's how to implement it across your organization without disrupting productivity.",
+        "category": "AI & Cybersecurity",
+        "author": "Veracity Technologies",
+        "published_date": "2025-11-20",
+        "read_time": "5 min read",
+        "content": """59% of confirmed security incidents in 2025 were identity-driven attacks — stolen credentials, password spraying, and session hijacking. Multi-factor authentication (MFA) blocks 99.9% of these attacks, making it the single highest-impact security control any organization can implement.
+
+## What Is MFA?
+
+Multi-factor authentication requires users to provide two or more verification factors to access a resource:
+
+- **Something you know**: Password or PIN
+- **Something you have**: Phone, hardware token, or authenticator app
+- **Something you are**: Fingerprint, face recognition
+
+## Where to Implement MFA (Priority Order)
+
+1. **Email** (Office 365, Google Workspace) — The #1 target for credential theft
+2. **VPN and remote access** — Every remote connection must be verified
+3. **Financial systems** (banking, accounting, payroll) — Wire fraud prevention
+4. **Cloud applications** (Salesforce, Procore, SAP) — SaaS is the new perimeter
+5. **Administrative accounts** — Domain admins, firewall admins, cloud admins
+6. **Help desk and IT tools** — Prevent attackers from impersonating IT
+
+## Implementation Best Practices
+
+**Use authenticator apps, not SMS.** SMS codes can be intercepted via SIM swapping. Microsoft Authenticator, Google Authenticator, or hardware keys (YubiKey) are significantly more secure.
+
+**Enforce conditional access policies.** Require MFA based on risk — new device, unusual location, sensitive application, or elevated privileges.
+
+**Don't make exceptions.** Every exception is an attack vector. Executives, contractors, and temporary staff all need MFA.
+
+**Plan for MFA fatigue attacks.** Attackers now bombard users with MFA prompts hoping they'll approve one accidentally. Use number-matching MFA that requires entering a displayed code.
+
+## The Business Case
+
+The average cost of a credential-based breach is $4.67 million (IBM 2025). MFA implementation costs a fraction of that and can be rolled out in days, not months.
+
+*Veracity Technologies deploys and manages MFA across all major platforms. Contact us for a free security assessment.*"""
+    },
+    {
+        "slug": "hipaa-compliance-small-healthcare-practices",
+        "title": "HIPAA Compliance for Small Healthcare Practices: A No-Nonsense Guide",
+        "excerpt": "Small clinics face the same HIPAA requirements as large hospital systems but with a fraction of the resources. Here's how to stay compliant without a dedicated compliance team.",
+        "category": "Compliance",
+        "author": "Veracity Technologies",
+        "published_date": "2025-10-20",
+        "read_time": "7 min read",
+        "content": """HIPAA enforcement has intensified dramatically. The HHS Office for Civil Rights is conducting more audits, imposing larger fines, and paying particular attention to small and mid-size healthcare practices that assume they're too small to be targeted.
+
+They're not. Small practices are targeted precisely because they typically have weaker security controls.
+
+## The Three HIPAA Safeguard Categories
+
+### Technical Safeguards
+- **Encryption**: All PHI must be encrypted at rest (on hard drives, servers) and in transit (email, file transfers)
+- **Access controls**: Role-based access so staff only see the records they need
+- **Audit logging**: Every access to PHI must be logged and reviewable
+- **Automatic logoff**: Workstations must lock after inactivity
+- **Authentication**: Unique user IDs for every person who accesses PHI
+
+### Physical Safeguards
+- **Facility access**: Locked server rooms, secured workstations
+- **Device controls**: Policies for laptops, phones, and removable media
+- **Workstation security**: Screen positioning, privacy filters
+
+### Administrative Safeguards
+- **Risk assessment**: Annual documented assessment of threats to PHI
+- **Security officer**: A designated person responsible for HIPAA compliance
+- **Training**: All staff trained on PHI handling and security awareness
+- **Business Associate Agreements (BAAs)**: Written agreements with every vendor that touches PHI
+- **Incident response plan**: Documented procedures for breach notification
+
+## Common Violations in Small Practices
+
+- Sending PHI via unencrypted email
+- Staff sharing login credentials
+- No BAA with cloud storage or IT providers
+- Unpatched systems with known vulnerabilities
+- No documented risk assessment (the #1 finding in audits)
+
+## The Cost of Non-Compliance
+
+HIPAA fines range from $100 to $50,000 per violation, with annual maximums of $1.5 million per violation category. Beyond fines, a breach requires notification of every affected patient, HHS, and potentially the media.
+
+*Veracity Technologies makes small healthcare practices HIPAA-compliant without disrupting patient care. Schedule your free compliance assessment.*"""
+    },
+    {
+        "slug": "zero-trust-architecture-explained",
+        "title": "Zero Trust Architecture Explained: Why 'Trust But Verify' Is Dead",
+        "excerpt": "The traditional network perimeter is gone. Zero trust assumes every user, device, and connection is a potential threat until continuously proven otherwise.",
+        "category": "AI & Cybersecurity",
+        "author": "Veracity Technologies",
+        "published_date": "2025-09-01",
+        "read_time": "6 min read",
+        "content": """The traditional security model — a fortified perimeter protecting a trusted internal network — is dead. Cloud computing, remote work, mobile devices, and SaaS applications have dissolved the perimeter. Attackers who breach the edge now move laterally through flat networks with impunity.
+
+Zero Trust Architecture (ZTA) eliminates implicit trust entirely. Every user, device, application, and data flow is verified continuously — regardless of location.
+
+## Core Principles of Zero Trust
+
+### 1. Never Trust, Always Verify
+Every access request is authenticated, authorized, and encrypted — even if it comes from inside the network. An employee at their desk gets the same scrutiny as a contractor on public Wi-Fi.
+
+### 2. Least Privilege Access
+Users get the minimum access needed for their role — nothing more. A project manager doesn't need access to financial systems. An accountant doesn't need access to engineering files.
+
+### 3. Assume Breach
+Design your architecture as if attackers are already inside. Segment networks, monitor lateral movement, and contain incidents before they spread.
+
+### 4. Continuous Verification
+Authentication isn't a one-time event at login. User behavior, device health, location, and risk signals are evaluated continuously throughout the session.
+
+## Zero Trust in Practice
+
+**Identity**: MFA everywhere, conditional access policies, privileged access management
+**Devices**: Endpoint health checks, managed device requirements, mobile device management
+**Network**: Micro-segmentation, encrypted communications, software-defined perimeters
+**Applications**: Application-level access controls, API security, SaaS governance
+**Data**: Classification, encryption, data loss prevention, rights management
+
+## Why It Matters Now
+
+- 59% of incidents are identity-driven (eSentire 2026)
+- Average lateral movement time after breach: 62 minutes
+- Organizations with zero trust report 50% lower breach costs (IBM 2025)
+
+## Getting Started
+
+Zero trust isn't a product you buy — it's an architecture you build incrementally. Start with:
+1. MFA on all accounts
+2. Conditional access for sensitive applications
+3. Network segmentation between departments
+4. Endpoint detection and response on all devices
+5. Regular access reviews and privilege audits
+
+*Veracity Technologies designs and implements zero trust architectures for regulated industries. Contact us for a free assessment of your current security posture.*"""
+    },
 ]
 
 @api_router.get("/blog")

@@ -49,6 +49,23 @@ export default function BlogIndex() {
       </nav>
 
       <main role="main">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Resources & Insights - Cybersecurity Intelligence",
+          description: "Cybersecurity insights, compliance guides, and AI security resources for construction, financial services, and manufacturing from Veracity Technologies.",
+          url: "https://www.veracitytech.com/resources",
+          publisher: { "@type": "Organization", name: "Veracity Technologies" },
+          inLanguage: "en-US",
+        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
+            { "@type": "ListItem", position: 2, name: "Resources", item: "https://www.veracitytech.com/resources" },
+          ],
+        }) }} />
         <section className="py-24 lg:py-32">
           <div className="max-w-7xl mx-auto px-6">
             <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
