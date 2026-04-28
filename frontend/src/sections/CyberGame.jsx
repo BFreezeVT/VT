@@ -171,14 +171,14 @@ export default function CyberGame() {
   const highScore = stored.highScores[difficulty] || 0;
 
   return (
-    <section id="cyber-game" data-testid="cyber-game-section" className="py-24 lg:py-32 bg-[#1a3355]/30">
+    <section id="cyber-game" data-testid="cyber-game-section" className="py-24 lg:py-32 bg-[#003B71]">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Interactive Challenge</p>
           <h2 data-testid="cyber-game-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
             Can you spot the phish?
           </h2>
-          <p className="text-[#d0dce8] text-base max-w-xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#b0c4d8] text-base max-w-xl mx-auto animate-fade-in-up stagger-2">
             Test your cybersecurity instincts across three difficulty levels. Earn badges, beat your high score, and share your results.
           </p>
         </div>
@@ -192,7 +192,7 @@ export default function CyberGame() {
                   <ShieldCheck className="w-8 h-8 text-[#0077B3]" />
                 </div>
                 <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>Choose Your Difficulty</h3>
-                <p className="text-[#d0dce8] text-sm max-w-md mx-auto">
+                <p className="text-[#b0c4d8] text-sm max-w-md mx-auto">
                   Each level increases the challenge with harder emails, a countdown timer, and more questions.
                 </p>
               </div>
@@ -206,11 +206,11 @@ export default function CyberGame() {
                       key={key}
                       data-testid={`game-difficulty-${key}`}
                       onClick={() => startGame(key)}
-                      className={`p-5 border text-left transition-all hover:border-[#0077B3] hover:bg-[#0077B3]/5 ${difficulty === key ? "border-[#0077B3] bg-[#0077B3]/5" : "border-[#1e6bb8] bg-transparent"}`}
+                      className={`p-5 border text-left transition-all hover:border-[#0077B3] hover:bg-[#0077B3]/5 ${difficulty === key ? "border-[#0077B3] bg-[#0077B3]/5" : "border-[#0d4a8a] bg-transparent"}`}
                     >
                       <Icon className={`w-5 h-5 ${cfg.color} mb-3`} />
                       <p className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{cfg.label}</p>
-                      <p className="text-[#d0dce8] text-xs mb-2">
+                      <p className="text-[#b0c4d8] text-xs mb-2">
                         {cfg.count} emails{cfg.timer > 0 ? ` · ${cfg.timer}s timer` : " · No timer"}
                       </p>
                       {hs !== undefined && (
@@ -223,8 +223,8 @@ export default function CyberGame() {
 
               {/* Badges */}
               {stored.badges.length > 0 && (
-                <div className="border-t border-[#1e6bb8] pt-6">
-                  <p className="text-xs text-[#d0dce8] mb-3 uppercase tracking-wider">Your Badges</p>
+                <div className="border-t border-[#0d4a8a] pt-6">
+                  <p className="text-xs text-[#b0c4d8] mb-3 uppercase tracking-wider">Your Badges</p>
                   <div className="flex flex-wrap gap-2">
                     {BADGES.filter((b) => stored.badges.includes(b.id)).map((b) => {
                       const Icon = b.icon;
@@ -236,7 +236,7 @@ export default function CyberGame() {
                       );
                     })}
                   </div>
-                  <p className="text-[10px] text-[#d0dce8]/50 mt-2">{stored.gamesPlayed} games played</p>
+                  <p className="text-[10px] text-[#b0c4d8]/50 mt-2">{stored.gamesPlayed} games played</p>
                 </div>
               )}
             </div>
@@ -247,7 +247,7 @@ export default function CyberGame() {
             <div data-testid="game-playing">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs text-[#d0dce8]">
+                  <span className="text-xs text-[#b0c4d8]">
                     Email {currentIndex + 1}/{shuffledEmails.length}
                   </span>
                   <span className={`text-xs font-medium ${config.color}`}>{config.label}</span>
@@ -270,19 +270,19 @@ export default function CyberGame() {
               </div>
               {config.timer > 0 && !answered && (
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock className={`w-3 h-3 ${timeLeft <= 5 ? "text-[#FF5722] animate-pulse" : "text-[#d0dce8]"}`} />
+                  <Clock className={`w-3 h-3 ${timeLeft <= 5 ? "text-[#FF5722] animate-pulse" : "text-[#b0c4d8]"}`} />
                   <div className="flex-1 bg-[#1e6bb8]/30 h-1">
                     <div
                       className={`h-1 transition-all duration-1000 ${timeLeft <= 5 ? "bg-[#FF5722]" : "bg-[#0077B3]"}`}
                       style={{ width: `${(timeLeft / config.timer) * 100}%` }}
                     />
                   </div>
-                  <span className={`text-xs font-mono ${timeLeft <= 5 ? "text-[#FF5722]" : "text-[#d0dce8]"}`}>{timeLeft}s</span>
+                  <span className={`text-xs font-mono ${timeLeft <= 5 ? "text-[#FF5722]" : "text-[#b0c4d8]"}`}>{timeLeft}s</span>
                 </div>
               )}
 
               {/* Email card */}
-              <div className="bg-[#112240] border border-[#1e6bb8] p-5 sm:p-6 mb-6">
+              <div className="bg-[#002a52] border border-[#0d4a8a] p-5 sm:p-6 mb-6">
                 <div className="flex items-start gap-3 mb-3">
                   <div className="w-8 h-8 flex-shrink-0 rounded-full bg-[#1e6bb8] flex items-center justify-center text-white text-xs font-bold">
                     {current.from[0].toUpperCase()}
@@ -292,18 +292,18 @@ export default function CyberGame() {
                     <p data-testid="email-subject" className="text-white text-base font-semibold mt-1" style={{ fontFamily: "Outfit" }}>{current.subject}</p>
                   </div>
                 </div>
-                <div className="border-t border-[#1e6bb8] pt-4 mt-3">
-                  <p data-testid="email-preview" className="text-[#d0dce8] text-sm leading-relaxed">{current.preview}</p>
+                <div className="border-t border-[#0d4a8a] pt-4 mt-3">
+                  <p data-testid="email-preview" className="text-[#b0c4d8] text-sm leading-relaxed">{current.preview}</p>
                 </div>
               </div>
 
               {/* Buttons or feedback */}
               {!answered ? (
                 <div className="grid grid-cols-2 gap-4">
-                  <Button data-testid="game-btn-legitimate" onClick={() => handleAnswer(false)} className="bg-transparent border border-[#1e6bb8] hover:border-[#0077B3] hover:bg-[#0077B3]/10 text-white rounded-sm h-12 font-semibold">
+                  <Button data-testid="game-btn-legitimate" onClick={() => handleAnswer(false)} className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] hover:bg-[#0077B3]/10 text-white rounded-sm h-12 font-semibold">
                     <ShieldCheck className="w-4 h-4 mr-2" /> Legitimate
                   </Button>
-                  <Button data-testid="game-btn-phishing" onClick={() => handleAnswer(true)} className="bg-transparent border border-[#1e6bb8] hover:border-[#FF5722] hover:bg-[#FF5722]/10 text-white rounded-sm h-12 font-semibold">
+                  <Button data-testid="game-btn-phishing" onClick={() => handleAnswer(true)} className="bg-transparent border border-[#0d4a8a] hover:border-[#FF5722] hover:bg-[#FF5722]/10 text-white rounded-sm h-12 font-semibold">
                     <ShieldAlert className="w-4 h-4 mr-2" /> Phishing
                   </Button>
                 </div>
@@ -316,7 +316,7 @@ export default function CyberGame() {
                         {timeLeft === 0 && config.timer > 0 && !lastCorrect ? "Time's up!" : lastCorrect ? "Correct!" : "Not quite."}{" "}
                         This email is <span className="text-white font-bold">{current.isPhishing ? "PHISHING" : "LEGITIMATE"}</span>.
                       </p>
-                      <p className="text-[#d0dce8] text-sm leading-relaxed">{current.explanation}</p>
+                      <p className="text-[#b0c4d8] text-sm leading-relaxed">{current.explanation}</p>
                     </div>
                   </div>
                   <Button data-testid="game-next-button" onClick={nextEmail} className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm h-11 font-semibold">
@@ -333,7 +333,7 @@ export default function CyberGame() {
               <div className="w-16 h-16 mx-auto flex items-center justify-center bg-[#0077B3]/10 border border-[#0077B3]/30 mb-4">
                 <Trophy className="w-8 h-8 text-[#0077B3]" />
               </div>
-              <p className="text-xs text-[#d0dce8] mb-1">{config.label} Mode</p>
+              <p className="text-xs text-[#b0c4d8] mb-1">{config.label} Mode</p>
               <h3 className="text-white font-bold text-xl mb-1" style={{ fontFamily: "Outfit" }}>Challenge Complete!</h3>
               <p data-testid="game-final-score" className="stat-number text-5xl text-white my-3">
                 {score}<span className="text-[#0077B3]">/{shuffledEmails.length}</span>
@@ -341,17 +341,17 @@ export default function CyberGame() {
 
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-3 mb-6">
-                <div className="bg-[#1a3355] border border-[#1e6bb8] p-3">
+                <div className="bg-[#003B71] border border-[#0d4a8a] p-3">
                   <p className="stat-number text-xl text-white">{Math.round((score / shuffledEmails.length) * 100)}%</p>
-                  <p className="text-[10px] text-[#d0dce8]">Accuracy</p>
+                  <p className="text-[10px] text-[#b0c4d8]">Accuracy</p>
                 </div>
-                <div className="bg-[#1a3355] border border-[#1e6bb8] p-3">
+                <div className="bg-[#003B71] border border-[#0d4a8a] p-3">
                   <p className="stat-number text-xl text-white flex items-center justify-center gap-1">{bestStreak} <Flame className="w-3 h-3 text-[#FF5722]" /></p>
-                  <p className="text-[10px] text-[#d0dce8]">Best Streak</p>
+                  <p className="text-[10px] text-[#b0c4d8]">Best Streak</p>
                 </div>
-                <div className="bg-[#1a3355] border border-[#1e6bb8] p-3">
+                <div className="bg-[#003B71] border border-[#0d4a8a] p-3">
                   <p className="stat-number text-xl text-[#0077B3]">{highScore}%</p>
-                  <p className="text-[10px] text-[#d0dce8]">Personal Best</p>
+                  <p className="text-[10px] text-[#b0c4d8]">Personal Best</p>
                 </div>
               </div>
 
@@ -375,7 +375,7 @@ export default function CyberGame() {
                 </div>
               )}
 
-              <p className="text-[#d0dce8] text-sm mb-6">
+              <p className="text-[#b0c4d8] text-sm mb-6">
                 {score === shuffledEmails.length
                   ? "Flawless. You've got elite instincts."
                   : score >= shuffledEmails.length * 0.7
@@ -384,10 +384,10 @@ export default function CyberGame() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-                <Button data-testid="game-restart-button" onClick={() => setGameState("intro")} className="bg-transparent border border-[#1e6bb8] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
+                <Button data-testid="game-restart-button" onClick={() => setGameState("intro")} className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
                   <RotateCcw className="w-4 h-4 mr-2" /> Play Again
                 </Button>
-                <Button data-testid="game-share-button" onClick={shareResults} className="bg-transparent border border-[#1e6bb8] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
+                <Button data-testid="game-share-button" onClick={shareResults} className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
                   <Share2 className="w-4 h-4 mr-2" /> Share Score
                 </Button>
                 <Button data-testid="game-cta-button" onClick={() => document.getElementById("audit")?.scrollIntoView({ behavior: "smooth" })} className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-semibold px-5 h-10">
