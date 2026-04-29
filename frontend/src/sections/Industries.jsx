@@ -38,19 +38,19 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-24 lg:py-32 bg-white"
+      className="py-24 lg:py-32 bg-[#f4f7fa]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Industries We Serve</p>
           <h2
             data-testid="industries-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#003B71] mb-4 animate-fade-in-up stagger-1"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Deep expertise where compliance isn&rsquo;t optional.
           </h2>
-          <p className="text-[#64748b] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#4a5e78] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             We don&rsquo;t do generic IT. Every engagement is built on sector-specific knowledge of the regulations, workflows, and threats your industry faces.
           </p>
         </div>
@@ -63,24 +63,24 @@ export default function Industries() {
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#e2e8f0] bg-[#f8fafc] group-hover:border-[#0077B3] transition-colors">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#dfe6ee] bg-[#f4f7fa] group-hover:border-[#0077B3] transition-colors">
                   <ind.icon className="w-6 h-6 text-[#0077B3]" />
                 </div>
                 <div>
                   <h3
-                    className="text-[#003B71] font-semibold text-lg"
+                    className="text-[#1a2b42] font-semibold text-lg"
                     style={{ fontFamily: "Outfit, sans-serif" }}
                   >
                     {ind.title}
                   </h3>
                 </div>
               </div>
-              <p className="text-[#64748b] text-sm leading-relaxed mb-5">{ind.desc}</p>
+              <p className="text-[#4a5e78] text-sm leading-relaxed mb-5">{ind.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span
                     key={h}
-                    className="text-xs font-medium text-[#0077B3] border border-[#e2e8f0] bg-[#0077B3]/5 px-3 py-1"
+                    className="text-xs font-medium text-[#0077B3] border border-[#dfe6ee] bg-[#0077B3]/5 px-3 py-1"
                   >
                     {h}
                   </span>
@@ -90,7 +90,7 @@ export default function Industries() {
                 <Link
                   to={`/industries/${ind.slug}`}
                   data-testid={`industry-link-${ind.slug}`}
-                  className="inline-flex items-center gap-1 text-[#0077B3] text-sm font-medium hover:text-[#003B71] transition-colors"
+                  className="inline-flex items-center gap-1 text-[#0077B3] text-sm font-medium hover:text-[#1a2b42] transition-colors"
                 >
                   Learn more <ArrowRight className="w-3 h-3" />
                 </Link>

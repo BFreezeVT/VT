@@ -8,7 +8,7 @@ export default function RiskReversal() {
       id="risk-reversal"
       data-testid="risk-reversal-section"
       aria-label="Satisfaction guarantee - $100 charity donation if audit doesn't find 3 actionable improvements"
-      className="py-20 lg:py-24 bg-white"
+      className="py-20 lg:py-24 bg-[#f4f7fa]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -28,7 +28,7 @@ export default function RiskReversal() {
                   <ShieldAlert className="w-4 h-4 text-[#FF5722]" />
                   <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold">Don&rsquo;t let this be you</p>
                 </div>
-                <p className="text-[#003B71] text-sm">The average breach costs 9 months of exposure and millions in damages. Prevention costs a fraction.</p>
+                <p className="text-[#1a2b42] text-sm">The average breach costs 9 months of exposure and millions in damages. Prevention costs a fraction.</p>
               </div>
             </div>
           </div>
@@ -46,16 +46,16 @@ export default function RiskReversal() {
               </div>
               <h2
                 data-testid="guarantee-heading"
-                className="text-2xl sm:text-3xl font-bold tracking-tight text-[#003B71] mb-4"
+                className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-4"
                 style={{ fontFamily: "Outfit, sans-serif" }}
               >
                 Our Guarantee
               </h2>
               <p
                 data-testid="guarantee-text"
-                className="text-[#64748b] text-base leading-relaxed"
+                className="text-[#4a5e78] text-base leading-relaxed"
               >
-                If you don&rsquo;t find at least <span className="text-[#003B71] font-semibold">three actionable improvements</span> from 
+                If you don&rsquo;t find at least <span className="text-[#1a2b42] font-semibold">three actionable improvements</span> from 
                 our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
                 That&rsquo;s how confident we are in the value we deliver.
               </p>

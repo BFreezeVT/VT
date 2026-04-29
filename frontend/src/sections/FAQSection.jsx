@@ -38,14 +38,14 @@ export default function FAQSection() {
       id="faq"
       data-testid="faq-section"
       aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
-      className="py-24 lg:py-32 bg-[#f8fafc]"
+      className="py-24 lg:py-32 bg-white"
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
           <h2
             data-testid="faq-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#003B71] mb-4 animate-fade-in-up stagger-1"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Common questions, straight answers.
@@ -58,17 +58,17 @@ export default function FAQSection() {
               key={i}
               value={`faq-${i}`}
               data-testid={`faq-item-${i}`}
-              className="border-b border-[#e2e8f0] px-0"
+              className="border-b border-[#dfe6ee] px-0"
             >
               <AccordionTrigger
                 data-testid={`faq-trigger-${i}`}
-                className="text-[#003B71] hover:text-[#0077B3] hover:no-underline text-left py-5 text-base font-medium"
+                className="text-[#1a2b42] hover:text-[#0077B3] hover:no-underline text-left py-5 text-base font-medium"
               >
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent
                 data-testid={`faq-content-${i}`}
-                className="text-[#64748b] text-sm leading-relaxed pb-5"
+                className="text-[#4a5e78] text-sm leading-relaxed pb-5"
               >
                 {faq.a}
               </AccordionContent>

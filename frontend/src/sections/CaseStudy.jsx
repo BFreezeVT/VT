@@ -156,19 +156,19 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-24 lg:py-32 bg-[#f8fafc]"
+      className="py-24 lg:py-32 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">What Our Clients Say</p>
           <h2
             data-testid="case-study-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#003B71] mb-4 animate-fade-in-up stagger-1"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Trusted by businesses across the Twin Cities.
           </h2>
-          <p className="text-[#64748b] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#4a5e78] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             Don&rsquo;t take our word for it. Here&rsquo;s what our clients have to say about partnering with Veracity Technologies.
           </p>
         </div>
@@ -193,27 +193,27 @@ export default function CaseStudy() {
                     className="grid-border-card p-6 h-full flex flex-col"
                   >
                     <Quote className="w-6 h-6 text-[#0077B3]/20 mb-4 flex-shrink-0" />
-                    <p className="text-[#64748b] text-sm leading-relaxed mb-6 flex-1 italic">
+                    <p className="text-[#4a5e78] text-sm leading-relaxed mb-6 flex-1 italic">
                       &ldquo;{t.quote}&rdquo;
                     </p>
-                    <div className="border-t border-[#e2e8f0] pt-4 mt-auto flex items-center gap-3">
+                    <div className="border-t border-[#dfe6ee] pt-4 mt-auto flex items-center gap-3">
                       {t.photo ? (
                         <img
                           src={t.photo}
                           alt={t.name}
-                          className="w-10 h-10 rounded-full object-cover border border-[#e2e8f0]"
+                          className="w-10 h-10 rounded-full object-cover border border-[#dfe6ee]"
                           loading="lazy"
                         />
                       ) : (
-                        <div className="w-10 h-10 rounded-full bg-[#1e6bb8] flex items-center justify-center text-[#003B71] text-sm font-bold flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-[#1e6bb8] flex items-center justify-center text-[#1a2b42] text-sm font-bold flex-shrink-0">
                           {t.name.split(" ").map(n => n[0]).join("")}
                         </div>
                       )}
                       <div>
-                        <p data-testid={`testimonial-author-${i}`} className="text-[#003B71] font-semibold text-sm">
+                        <p data-testid={`testimonial-author-${i}`} className="text-[#1a2b42] font-semibold text-sm">
                           {t.name}
                         </p>
-                        <p className="text-[#64748b] text-xs">
+                        <p className="text-[#4a5e78] text-xs">
                           {t.title}, {t.company}
                         </p>
                       </div>
@@ -224,32 +224,32 @@ export default function CaseStudy() {
             </CarouselContent>
             <CarouselPrevious
               data-testid="carousel-prev"
-              className="border-[#e2e8f0] bg-white text-[#003B71] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#003B71] -left-5 lg:-left-7"
+              className="border-[#dfe6ee] bg-white text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -left-5 lg:-left-7"
             />
             <CarouselNext
               data-testid="carousel-next"
-              className="border-[#e2e8f0] bg-white text-[#003B71] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#003B71] -right-5 lg:-right-7"
+              className="border-[#dfe6ee] bg-white text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -right-5 lg:-right-7"
             />
           </Carousel>
         </div>
 
         {/* Stats — open divider layout */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-[#e2e8f0]/50 pt-8">
+        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-[#dfe6ee]/50 pt-8">
           <div data-testid="case-study-metric-0" className="text-center px-4">
-            <p className="stat-number text-5xl text-[#003B71]">60+</p>
-            <p className="text-xs text-[#64748b] mt-1">Active Clients</p>
+            <p className="stat-number text-5xl text-[#1a2b42]">60+</p>
+            <p className="text-xs text-[#4a5e78] mt-1">Active Clients</p>
           </div>
-          <div data-testid="case-study-metric-1" className="text-center px-4 border-l border-[#e2e8f0]/30">
-            <p className="stat-number text-5xl text-[#003B71]">32</p>
-            <p className="text-xs text-[#64748b] mt-1">Years Longest Partnership</p>
+          <div data-testid="case-study-metric-1" className="text-center px-4 border-l border-[#dfe6ee]/30">
+            <p className="stat-number text-5xl text-[#1a2b42]">32</p>
+            <p className="text-xs text-[#4a5e78] mt-1">Years Longest Partnership</p>
           </div>
-          <div data-testid="case-study-metric-2" className="text-center px-4 border-l border-[#e2e8f0]/30">
+          <div data-testid="case-study-metric-2" className="text-center px-4 border-l border-[#dfe6ee]/30">
             <p className="stat-number text-5xl text-[#0077B3]">24/7</p>
-            <p className="text-xs text-[#64748b] mt-1">Support Availability</p>
+            <p className="text-xs text-[#4a5e78] mt-1">Support Availability</p>
           </div>
-          <div data-testid="case-study-metric-3" className="text-center px-4 border-l border-[#e2e8f0]/30">
-            <p className="stat-number text-5xl text-[#003B71]">4.9</p>
-            <p className="text-xs text-[#64748b] mt-1">Average Client Rating</p>
+          <div data-testid="case-study-metric-3" className="text-center px-4 border-l border-[#dfe6ee]/30">
+            <p className="stat-number text-5xl text-[#1a2b42]">4.9</p>
+            <p className="text-xs text-[#4a5e78] mt-1">Average Client Rating</p>
           </div>
         </div>
       </div>

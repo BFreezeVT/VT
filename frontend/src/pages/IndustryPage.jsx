@@ -49,10 +49,10 @@ export default function IndustryPage() {
 
   if (!industry) {
     return (
-      <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center">
+      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#003B71] mb-4" style={{ fontFamily: "Outfit" }}>Page Not Found</h1>
-          <Link to="/" className="text-[#0077B3] hover:text-[#003B71]">Back to Home</Link>
+          <h1 className="text-4xl font-bold text-[#1a2b42] mb-4" style={{ fontFamily: "Outfit" }}>Page Not Found</h1>
+          <Link to="/" className="text-[#0077B3] hover:text-[#1a2b42]">Back to Home</Link>
         </div>
       </div>
     );
@@ -62,7 +62,7 @@ export default function IndustryPage() {
   const testimonials = industry.testimonialIndices.map((i) => allTestimonials[i]);
 
   return (
-    <div className="min-h-screen bg-[#f8fafc]" data-testid={`industry-page-${industry.slug}`}>
+    <div className="min-h-screen bg-[#f4f7fa]" data-testid={`industry-page-${industry.slug}`}>
       {/* Service schema */}
       <script
         type="application/ld+json"
@@ -127,16 +127,16 @@ export default function IndustryPage() {
       />
 
       {/* Nav */}
-      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#e2e8f0] sticky top-0 z-50">
+      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#dfe6ee] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="text-[#003B71] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
+          <Link to="/" className="text-[#1a2b42] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" data-testid="industry-nav-home" className="text-[#64748b] hover:text-[#003B71] text-sm flex items-center gap-1">
+            <Link to="/" data-testid="industry-nav-home" className="text-[#4a5e78] hover:text-[#1a2b42] text-sm flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> Home
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#64748b] hover:text-[#003B71] text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#1a2b42] text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
             <Button
@@ -154,7 +154,7 @@ export default function IndustryPage() {
         {/* Hero */}
         <section data-testid="industry-hero" aria-label={`${industry.name} IT and cybersecurity services`} className="py-24 lg:py-32">
           <div className="max-w-7xl mx-auto px-6">
-            <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-[#003B71] transition-colors">
+            <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-[#1a2b42] transition-colors">
               <ChevronLeft className="w-3 h-3" /> Back to Home
             </Link>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
@@ -165,12 +165,12 @@ export default function IndustryPage() {
                 </div>
                 <h1
                   data-testid="industry-headline"
-                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-[#003B71] mb-6"
+                  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-[#1a2b42] mb-6"
                   style={{ fontFamily: "Outfit" }}
                 >
                   {industry.headline}
                 </h1>
-                <p data-testid="industry-subhead" className="text-base md:text-lg text-[#64748b] leading-relaxed mb-8 max-w-2xl">
+                <p data-testid="industry-subhead" className="text-base md:text-lg text-[#4a5e78] leading-relaxed mb-8 max-w-2xl">
                   {industry.subhead}
                 </p>
                 <Button
@@ -182,34 +182,34 @@ export default function IndustryPage() {
                 </Button>
               </div>
               <div className="grid-border-card p-8 text-center">
-                <p className="stat-number text-5xl sm:text-6xl text-[#003B71] mb-2">{industry.heroStat.value}</p>
-                <p className="text-sm text-[#64748b]">{industry.heroStat.label}</p>
+                <p className="stat-number text-5xl sm:text-6xl text-[#1a2b42] mb-2">{industry.heroStat.value}</p>
+                <p className="text-sm text-[#4a5e78]">{industry.heroStat.label}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Description */}
-        <section data-testid="industry-about" className="py-20 bg-[#f1f5f9]">
+        <section data-testid="industry-about" className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6">
-            <p data-testid="industry-description" className="text-[#64748b] text-base leading-relaxed">
+            <p data-testid="industry-description" className="text-[#4a5e78] text-base leading-relaxed">
               {industry.description}
             </p>
           </div>
         </section>
 
         {/* Challenges */}
-        <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#f8fafc]">
+        <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#f4f7fa]">
           <div className="max-w-7xl mx-auto px-6">
             <p className="overline text-[#FF5722] mb-4">The Challenges</p>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#003B71] mb-12" style={{ fontFamily: "Outfit" }}>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-12" style={{ fontFamily: "Outfit" }}>
               What keeps {industry.name.toLowerCase()} leaders up at night
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {industry.challenges.map((ch, i) => (
                 <div key={i} data-testid={`industry-challenge-${i}`} className="grid-border-card p-6 group">
-                  <h3 className="text-[#003B71] font-semibold text-base mb-3" style={{ fontFamily: "Outfit" }}>{ch.title}</h3>
-                  <p className="text-[#64748b] text-sm leading-relaxed">{ch.desc}</p>
+                  <h3 className="text-[#1a2b42] font-semibold text-base mb-3" style={{ fontFamily: "Outfit" }}>{ch.title}</h3>
+                  <p className="text-[#4a5e78] text-sm leading-relaxed">{ch.desc}</p>
                 </div>
               ))}
             </div>
@@ -217,31 +217,31 @@ export default function IndustryPage() {
         </section>
 
         {/* Compliance + Software */}
-        <section data-testid="industry-compliance" className="py-20 bg-[#f8fafc]">
+        <section data-testid="industry-compliance" className="py-20 bg-[#f4f7fa]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
                 <p className="overline text-[#0077B3] mb-4">Compliance Frameworks</p>
-                <h2 className="text-2xl font-bold text-[#003B71] mb-6" style={{ fontFamily: "Outfit" }}>
+                <h2 className="text-2xl font-bold text-[#1a2b42] mb-6" style={{ fontFamily: "Outfit" }}>
                   Regulations we manage for {industry.name.toLowerCase()}
                 </h2>
                 <div className="space-y-3">
                   {industry.compliance.map((c, i) => (
                     <div key={i} data-testid={`industry-compliance-${i}`} className="flex items-center gap-3">
                       <CheckCircle className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
-                      <span className="text-[#003B71] text-sm">{c}</span>
+                      <span className="text-[#1a2b42] text-sm">{c}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
                 <p className="overline text-[#0077B3] mb-4">Software We Support</p>
-                <h2 className="text-2xl font-bold text-[#003B71] mb-6" style={{ fontFamily: "Outfit" }}>
+                <h2 className="text-2xl font-bold text-[#1a2b42] mb-6" style={{ fontFamily: "Outfit" }}>
                   Tools your teams rely on daily
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {industry.software.map((s, i) => (
-                    <span key={i} data-testid={`industry-software-${i}`} className="text-xs font-medium text-[#0077B3] border border-[#e2e8f0] bg-[#0077B3]/5 px-3 py-1.5">
+                    <span key={i} data-testid={`industry-software-${i}`} className="text-xs font-medium text-[#0077B3] border border-[#dfe6ee] bg-[#0077B3]/5 px-3 py-1.5">
                       {s}
                     </span>
                   ))}
@@ -252,19 +252,19 @@ export default function IndustryPage() {
         </section>
 
         {/* Testimonials */}
-        <section data-testid="industry-testimonials" className="py-20 bg-[#f8fafc]">
+        <section data-testid="industry-testimonials" className="py-20 bg-[#f4f7fa]">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-2xl font-bold text-[#003B71] mb-10 text-center" style={{ fontFamily: "Outfit" }}>
+            <h2 className="text-2xl font-bold text-[#1a2b42] mb-10 text-center" style={{ fontFamily: "Outfit" }}>
               Trusted by {industry.name.toLowerCase()} professionals
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {testimonials.map((t, i) => (
                 <div key={i} data-testid={`industry-testimonial-${i}`} className="grid-border-card p-6 flex flex-col">
                   <Quote className="w-6 h-6 text-[#0077B3]/20 mb-3" />
-                  <p className="text-[#64748b] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="border-t border-[#e2e8f0] pt-3 mt-auto">
-                    <p className="text-[#003B71] font-semibold text-sm">{t.name}</p>
-                    <p className="text-[#64748b] text-xs">{t.title}, {t.company}</p>
+                  <p className="text-[#4a5e78] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="border-t border-[#dfe6ee] pt-3 mt-auto">
+                    <p className="text-[#1a2b42] font-semibold text-sm">{t.name}</p>
+                    <p className="text-[#4a5e78] text-xs">{t.title}, {t.company}</p>
                   </div>
                 </div>
               ))}
@@ -273,15 +273,15 @@ export default function IndustryPage() {
         </section>
 
         {/* Form */}
-        <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-[#f1f5f9]">
+        <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-white">
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid-border-card p-8 lg:p-10">
               {!submitted ? (
                 <>
-                  <h2 className="text-2xl font-bold text-[#003B71] mb-2 text-center" style={{ fontFamily: "Outfit" }}>
+                  <h2 className="text-2xl font-bold text-[#1a2b42] mb-2 text-center" style={{ fontFamily: "Outfit" }}>
                     {industry.ctaText}
                   </h2>
-                  <p className="text-[#64748b] text-sm mb-8 text-center">
+                  <p className="text-[#4a5e78] text-sm mb-8 text-center">
                     Non-invasive. Confidential. Tailored to {industry.name.toLowerCase()}.
                   </p>
                   <form onSubmit={(e) => {
@@ -297,20 +297,20 @@ export default function IndustryPage() {
                     });
                   }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="company" className="text-[#003B71] text-sm font-medium mb-1.5 block">Company</label>
-                      <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-[#f1f5f9] border-[#e2e8f0] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="company" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Company</label>
+                      <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
-                      <label htmlFor="name" className="text-[#003B71] text-sm font-medium mb-1.5 block">Name</label>
-                      <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-[#f1f5f9] border-[#e2e8f0] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="name" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Name</label>
+                      <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="text-[#003B71] text-sm font-medium mb-1.5 block">Phone</label>
-                      <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-[#f1f5f9] border-[#e2e8f0] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="phone" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Phone</label>
+                      <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
-                      <label htmlFor="email" className="text-[#003B71] text-sm font-medium mb-1.5 block">Email</label>
-                      <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-[#f1f5f9] border-[#e2e8f0] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="email" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Email</label>
+                      <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div className="sm:col-span-2">
                       <Button data-testid="industry-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12">
@@ -322,8 +322,8 @@ export default function IndustryPage() {
               ) : (
                 <div data-testid="industry-form-success" className="text-center py-6">
                   <Shield className="w-12 h-12 text-[#0077B3] mx-auto mb-4" />
-                  <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>Thank you!</h3>
-                  <p className="text-[#64748b] text-sm">We'll reach out within one business day to schedule your {industry.name.toLowerCase()} security audit.</p>
+                  <h3 className="text-[#1a2b42] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>Thank you!</h3>
+                  <p className="text-[#4a5e78] text-sm">We'll reach out within one business day to schedule your {industry.name.toLowerCase()} security audit.</p>
                 </div>
               )}
             </div>
@@ -331,16 +331,16 @@ export default function IndustryPage() {
         </section>
 
         {/* Other industries */}
-        <section className="py-16 bg-[#f8fafc]">
+        <section className="py-16 bg-[#f4f7fa]">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-[#64748b] text-sm mb-4">We also specialize in:</p>
+            <p className="text-[#4a5e78] text-sm mb-4">We also specialize in:</p>
             <div className="flex justify-center gap-4 flex-wrap">
               {industryData.filter((ind) => ind.slug !== industry.slug).map((ind) => (
                 <Link
                   key={ind.slug}
                   to={`/industries/${ind.slug}`}
                   data-testid={`other-industry-${ind.slug}`}
-                  className="text-sm text-[#0077B3] border border-[#e2e8f0] hover:border-[#0077B3] px-5 py-2.5 transition-colors"
+                  className="text-sm text-[#0077B3] border border-[#dfe6ee] hover:border-[#0077B3] px-5 py-2.5 transition-colors"
                 >
                   {ind.name}
                 </Link>
@@ -353,10 +353,10 @@ export default function IndustryPage() {
       {/* Footer */}
       <footer className="bg-[#003B71] border-t border-[#00325f] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#64748b]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.</p>
-          <div className="flex items-center gap-6 text-sm text-[#64748b]">
-            <a href="tel:9529417333" className="hover:text-[#003B71] flex items-center gap-1"><Phone className="w-3 h-3" /> (952) 941-7333</a>
-            <Link to="/" className="hover:text-[#003B71]">Home</Link>
+          <p className="text-[#4a5e78]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.</p>
+          <div className="flex items-center gap-6 text-sm text-[#4a5e78]">
+            <a href="tel:9529417333" className="hover:text-[#1a2b42] flex items-center gap-1"><Phone className="w-3 h-3" /> (952) 941-7333</a>
+            <Link to="/" className="hover:text-[#1a2b42]">Home</Link>
           </div>
         </div>
       </footer>

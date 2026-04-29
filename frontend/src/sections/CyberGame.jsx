@@ -171,7 +171,7 @@ export default function CyberGame() {
   const highScore = stored.highScores[difficulty] || 0;
 
   return (
-    <section id="cyber-game" data-testid="cyber-game-section" className="py-24 lg:py-32 bg-[#003B71]">
+    <section id="cyber-game" data-testid="cyber-game-section" className="py-24 lg:py-32 bg-[#002a52]">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Interactive Challenge</p>
@@ -183,7 +183,7 @@ export default function CyberGame() {
           </p>
         </div>
 
-        <div className="grid-border-card p-6 sm:p-8 lg:p-10 animate-fade-in-up stagger-3">
+        <div className="bg-[#001f3d] border border-[#0d4a8a] rounded-md p-6 sm:p-8 lg:p-10 animate-fade-in-up stagger-3">
           {/* INTRO */}
           {gameState === "intro" && (
             <div data-testid="game-intro">
@@ -206,7 +206,7 @@ export default function CyberGame() {
                       key={key}
                       data-testid={`game-difficulty-${key}`}
                       onClick={() => startGame(key)}
-                      className={`p-5 border text-left transition-all hover:border-[#0077B3] hover:bg-[#0077B3]/5 ${difficulty === key ? "border-[#0077B3] bg-[#0077B3]/5" : "border-[#0d4a8a] bg-transparent"}`}
+                      className={`p-5 border text-left transition-all hover:border-[#0077B3] hover:bg-[#0077B3]/5 ${difficulty === key ? "border-[#0077B3] bg-[#0077B3]/5" : "border-[#0d4a8a] bg-[#002a52]"}`}
                     >
                       <Icon className={`w-5 h-5 ${cfg.color} mb-3`} />
                       <p className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{cfg.label}</p>
@@ -300,10 +300,10 @@ export default function CyberGame() {
               {/* Buttons or feedback */}
               {!answered ? (
                 <div className="grid grid-cols-2 gap-4">
-                  <Button data-testid="game-btn-legitimate" onClick={() => handleAnswer(false)} className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] hover:bg-[#0077B3]/10 text-white rounded-sm h-12 font-semibold">
+                  <Button data-testid="game-btn-legitimate" onClick={() => handleAnswer(false)} className="bg-[#002a52] border border-[#0d4a8a] hover:border-[#0077B3] hover:bg-[#0077B3]/10 text-white rounded-sm h-12 font-semibold">
                     <ShieldCheck className="w-4 h-4 mr-2" /> Legitimate
                   </Button>
-                  <Button data-testid="game-btn-phishing" onClick={() => handleAnswer(true)} className="bg-transparent border border-[#0d4a8a] hover:border-[#FF5722] hover:bg-[#FF5722]/10 text-white rounded-sm h-12 font-semibold">
+                  <Button data-testid="game-btn-phishing" onClick={() => handleAnswer(true)} className="bg-[#002a52] border border-[#0d4a8a] hover:border-[#FF5722] hover:bg-[#FF5722]/10 text-white rounded-sm h-12 font-semibold">
                     <ShieldAlert className="w-4 h-4 mr-2" /> Phishing
                   </Button>
                 </div>
@@ -341,15 +341,15 @@ export default function CyberGame() {
 
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-3 mb-6">
-                <div className="bg-[#003B71] border border-[#0d4a8a] p-3">
+                <div className="bg-[#002a52] border border-[#0d4a8a] p-3">
                   <p className="stat-number text-xl text-white">{Math.round((score / shuffledEmails.length) * 100)}%</p>
                   <p className="text-[10px] text-[#b0c4d8]">Accuracy</p>
                 </div>
-                <div className="bg-[#003B71] border border-[#0d4a8a] p-3">
+                <div className="bg-[#002a52] border border-[#0d4a8a] p-3">
                   <p className="stat-number text-xl text-white flex items-center justify-center gap-1">{bestStreak} <Flame className="w-3 h-3 text-[#FF5722]" /></p>
                   <p className="text-[10px] text-[#b0c4d8]">Best Streak</p>
                 </div>
-                <div className="bg-[#003B71] border border-[#0d4a8a] p-3">
+                <div className="bg-[#002a52] border border-[#0d4a8a] p-3">
                   <p className="stat-number text-xl text-[#0077B3]">{highScore}%</p>
                   <p className="text-[10px] text-[#b0c4d8]">Personal Best</p>
                 </div>
@@ -384,10 +384,10 @@ export default function CyberGame() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-                <Button data-testid="game-restart-button" onClick={() => setGameState("intro")} className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
+                <Button data-testid="game-restart-button" onClick={() => setGameState("intro")} className="bg-[#002a52] border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
                   <RotateCcw className="w-4 h-4 mr-2" /> Play Again
                 </Button>
-                <Button data-testid="game-share-button" onClick={shareResults} className="bg-transparent border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
+                <Button data-testid="game-share-button" onClick={shareResults} className="bg-[#002a52] border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-sm font-semibold px-5 h-10">
                   <Share2 className="w-4 h-4 mr-2" /> Share Score
                 </Button>
                 <Button data-testid="game-cta-button" onClick={() => document.getElementById("audit")?.scrollIntoView({ behavior: "smooth" })} className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-semibold px-5 h-10">

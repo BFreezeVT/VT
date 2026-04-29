@@ -13,29 +13,29 @@ const complianceItems = [
 
 export default function Compliance() {
   return (
-    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 bg-[#f4f7fa] relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
       <div className="absolute inset-0 bg-white/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
             <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Compliance &amp; Risk</p>
-            <h2 data-testid="compliance-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#003B71] mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
+            <h2 data-testid="compliance-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
-            <p className="text-[#64748b] text-base max-w-2xl animate-fade-in-up stagger-2">
+            <p className="text-[#4a5e78] text-base max-w-2xl animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
         </div>
 
         {/* Open list layout — no card boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-[#e2e8f0]/40 pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-[#dfe6ee]/40 pt-12">
           {complianceItems.map((item, i) => (
             <div key={item.title} data-testid={`compliance-card-${i}`} className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}>
               <item.icon className="w-5 h-5 text-[#0077B3] flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="text-[#003B71] font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#64748b] text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-[#1a2b42] font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
+                <p className="text-[#4a5e78] text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}

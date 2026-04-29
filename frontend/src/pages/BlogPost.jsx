@@ -30,18 +30,18 @@ export default function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center">
-        <p className="text-[#64748b]">Loading...</p>
+      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center">
+        <p className="text-[#4a5e78]">Loading...</p>
       </div>
     );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center">
+      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#003B71] mb-4" style={{ fontFamily: "Outfit" }}>Article Not Found</h1>
-          <Link to="/resources" className="text-[#0077B3] hover:text-[#003B71]">Back to Resources</Link>
+          <h1 className="text-4xl font-bold text-[#1a2b42] mb-4" style={{ fontFamily: "Outfit" }}>Article Not Found</h1>
+          <Link to="/resources" className="text-[#0077B3] hover:text-[#1a2b42]">Back to Resources</Link>
         </div>
       </div>
     );
@@ -52,14 +52,14 @@ export default function BlogPost() {
     return text.split("\n\n").map((block, i) => {
       if (block.startsWith("## ")) {
         return (
-          <h2 key={i} className="text-xl sm:text-2xl font-bold text-[#003B71] mt-10 mb-4" style={{ fontFamily: "Outfit" }}>
+          <h2 key={i} className="text-xl sm:text-2xl font-bold text-[#1a2b42] mt-10 mb-4" style={{ fontFamily: "Outfit" }}>
             {block.replace("## ", "")}
           </h2>
         );
       }
       if (block.startsWith("### ")) {
         return (
-          <h3 key={i} className="text-lg font-semibold text-[#003B71] mt-8 mb-3" style={{ fontFamily: "Outfit" }}>
+          <h3 key={i} className="text-lg font-semibold text-[#1a2b42] mt-8 mb-3" style={{ fontFamily: "Outfit" }}>
             {block.replace("### ", "")}
           </h3>
         );
@@ -69,7 +69,7 @@ export default function BlogPost() {
         return (
           <ul key={i} className="space-y-2 my-4 ml-4">
             {items.map((item, j) => (
-              <li key={j} className="text-[#64748b] text-base leading-relaxed flex items-start gap-2">
+              <li key={j} className="text-[#4a5e78] text-base leading-relaxed flex items-start gap-2">
                 <span className="text-[#0077B3] mt-1.5 flex-shrink-0">&#8226;</span>
                 <span dangerouslySetInnerHTML={{ __html: formatInline(item.replace("- ", "")) }} />
               </li>
@@ -82,7 +82,7 @@ export default function BlogPost() {
         return (
           <ol key={i} className="space-y-2 my-4 ml-4 list-decimal list-inside">
             {items.map((item, j) => (
-              <li key={j} className="text-[#64748b] text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: formatInline(item.replace(/^\d+\.\s*/, "")) }} />
+              <li key={j} className="text-[#4a5e78] text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: formatInline(item.replace(/^\d+\.\s*/, "")) }} />
             ))}
           </ol>
         );
@@ -95,19 +95,19 @@ export default function BlogPost() {
         );
       }
       return (
-        <p key={i} className="text-[#64748b] text-base leading-relaxed my-4" dangerouslySetInnerHTML={{ __html: formatInline(block) }} />
+        <p key={i} className="text-[#4a5e78] text-base leading-relaxed my-4" dangerouslySetInnerHTML={{ __html: formatInline(block) }} />
       );
     });
   };
 
   const formatInline = (text) => {
     return text
-      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-[#003B71] font-semibold">$1</strong>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-[#1a2b42] font-semibold">$1</strong>')
       .replace(/\*(.+?)\*/g, '<em>$1</em>');
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc]" data-testid={`blog-post-${post.slug}`}>
+    <div className="min-h-screen bg-[#f4f7fa]" data-testid={`blog-post-${post.slug}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -143,16 +143,16 @@ export default function BlogPost() {
         }}
       />
 
-      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#e2e8f0] sticky top-0 z-50">
+      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#dfe6ee] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="text-[#003B71] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
+          <Link to="/" className="text-[#1a2b42] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/resources" className="text-[#64748b] hover:text-[#003B71] text-sm flex items-center gap-1">
+            <Link to="/resources" className="text-[#4a5e78] hover:text-[#1a2b42] text-sm flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> All Articles
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#64748b] hover:text-[#003B71] text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#1a2b42] text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
           </div>
@@ -162,7 +162,7 @@ export default function BlogPost() {
       <main role="main">
         <article className="py-20 lg:py-28" aria-label={post.title}>
           <div className="max-w-3xl mx-auto px-6">
-            <Link to="/resources" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-8 hover:text-[#003B71] transition-colors">
+            <Link to="/resources" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-8 hover:text-[#1a2b42] transition-colors">
               <ChevronLeft className="w-3 h-3" /> All Articles
             </Link>
 
@@ -170,15 +170,15 @@ export default function BlogPost() {
               <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#0077B3]/30 px-2 py-0.5">
                 {post.category}
               </span>
-              <span className="flex items-center gap-1 text-[#64748b]/60 text-xs">
+              <span className="flex items-center gap-1 text-[#4a5e78]/60 text-xs">
                 <Clock className="w-3 h-3" /> {post.read_time}
               </span>
-              <span className="text-[#64748b]/60 text-xs">{post.published_date}</span>
+              <span className="text-[#4a5e78]/60 text-xs">{post.published_date}</span>
             </div>
 
             <h1
               data-testid="blog-post-title"
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-[#003B71] mb-8"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-[#1a2b42] mb-8"
               style={{ fontFamily: "Outfit" }}
             >
               {post.title}
@@ -194,10 +194,10 @@ export default function BlogPost() {
 
             {/* CTA */}
             <div className="mt-16 grid-border-card p-8 text-center">
-              <h3 className="text-[#003B71] font-bold text-xl mb-3" style={{ fontFamily: "Outfit" }}>
+              <h3 className="text-[#1a2b42] font-bold text-xl mb-3" style={{ fontFamily: "Outfit" }}>
                 Ready to strengthen your security posture?
               </h3>
-              <p className="text-[#64748b] text-sm mb-6">
+              <p className="text-[#4a5e78] text-sm mb-6">
                 Schedule a free technology and cyber risk audit with our team.
               </p>
               <Link to="/#audit">
@@ -209,14 +209,14 @@ export default function BlogPost() {
 
             {/* Related Articles */}
             {relatedPosts.length > 0 && (
-              <div className="mt-16 border-t border-[#e2e8f0]/50 pt-12">
-                <h3 className="text-[#003B71] font-bold text-lg mb-6" style={{ fontFamily: "Outfit" }}>Related Articles</h3>
+              <div className="mt-16 border-t border-[#dfe6ee]/50 pt-12">
+                <h3 className="text-[#1a2b42] font-bold text-lg mb-6" style={{ fontFamily: "Outfit" }}>Related Articles</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   {relatedPosts.map((rp) => (
                     <Link key={rp.slug} to={`/resources/${rp.slug}`} className="group">
-                      <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#e2e8f0]/30 px-2 py-0.5 inline-block mb-2">{rp.category}</span>
-                      <p className="text-[#003B71] text-sm font-semibold group-hover:text-[#0077B3] transition-colors leading-snug">{rp.title}</p>
-                      <p className="text-[#64748b]/60 text-xs mt-1">{rp.read_time}</p>
+                      <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#dfe6ee]/30 px-2 py-0.5 inline-block mb-2">{rp.category}</span>
+                      <p className="text-[#1a2b42] text-sm font-semibold group-hover:text-[#0077B3] transition-colors leading-snug">{rp.title}</p>
+                      <p className="text-[#4a5e78]/60 text-xs mt-1">{rp.read_time}</p>
                     </Link>
                   ))}
                 </div>
@@ -224,7 +224,7 @@ export default function BlogPost() {
             )}
 
             {/* Visible last updated */}
-            <p className="mt-10 text-[#64748b]/40 text-xs flex items-center gap-1">
+            <p className="mt-10 text-[#4a5e78]/40 text-xs flex items-center gap-1">
               <CalendarDays className="w-3 h-3" /> Published {post.published_date} &middot; Last reviewed December 2025
             </p>
           </div>
@@ -233,10 +233,10 @@ export default function BlogPost() {
 
       <footer className="bg-[#003B71] border-t border-[#00325f] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#64748b]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies.</p>
-          <div className="flex items-center gap-6 text-sm text-[#64748b]">
-            <Link to="/resources" className="hover:text-[#003B71]">Resources</Link>
-            <Link to="/" className="hover:text-[#003B71]">Home</Link>
+          <p className="text-[#4a5e78]/60 text-xs">&copy; {new Date().getFullYear()} Veracity Technologies.</p>
+          <div className="flex items-center gap-6 text-sm text-[#4a5e78]">
+            <Link to="/resources" className="hover:text-[#1a2b42]">Resources</Link>
+            <Link to="/" className="hover:text-[#1a2b42]">Home</Link>
           </div>
         </div>
       </footer>
