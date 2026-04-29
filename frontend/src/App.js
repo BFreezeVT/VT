@@ -31,7 +31,7 @@ function ScrollToTop() {
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-[#e9eff6]" data-testid="app-root">
+    <div className="min-h-screen bg-[#0f1d32]" data-testid="app-root">
       <Navigation />
       <main role="main">
         <HeroSection />

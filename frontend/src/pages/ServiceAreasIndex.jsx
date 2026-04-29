@@ -5,18 +5,18 @@ import cityData from "../data/cityData";
 
 export default function ServiceAreasIndex() {
   return (
-    <div className="min-h-screen bg-[#e9eff6]" data-testid="service-areas-index">
+    <div className="min-h-screen bg-[#0f1d32]" data-testid="service-areas-index">
       {/* Nav */}
-      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#dfe6ee] sticky top-0 z-50">
+      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="text-[#1a2b42] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
+          <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" data-testid="areas-nav-home" className="text-[#4a5e78] hover:text-[#1a2b42] text-sm transition-colors flex items-center gap-1">
+            <Link to="/" data-testid="areas-nav-home" className="text-[#94a8be] hover:text-white text-sm transition-colors flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> Home
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#1a2b42] text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#94a8be] hover:text-white text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
           </div>
@@ -43,22 +43,22 @@ export default function ServiceAreasIndex() {
         }) }} />
         <section className="py-24 lg:py-32" aria-label="Service areas overview">
           <div className="max-w-7xl mx-auto px-6">
-            <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-[#1a2b42] transition-colors">
+            <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
               <ChevronLeft className="w-3 h-3" /> Back to Home
             </Link>
             <p className="overline text-[#0077B3] mb-4">Service Areas</p>
             <h1
               data-testid="areas-heading"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-[#1a2b42] mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white mb-6"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               IT Support Across the Twin Cities Metro
             </h1>
-            <p className="text-base md:text-lg text-[#4a5e78] leading-relaxed max-w-3xl mb-4">
+            <p className="text-base md:text-lg text-[#94a8be] leading-relaxed max-w-3xl mb-4">
               We provide managed IT services and cybersecurity to {cityData.length} communities across the Minneapolis-St. Paul metro area. 
               Each city page below features localized content specific to the industries, challenges, and opportunities in that community.
             </p>
-            <p className="text-sm text-[#4a5e78]/60">Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345</p>
+            <p className="text-sm text-[#94a8be]/60">Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345</p>
           </div>
         </section>
 
@@ -78,22 +78,22 @@ export default function ServiceAreasIndex() {
                     <span className="overline text-[#0077B3] text-[10px]">{city.state} {city.zip}</span>
                   </div>
                   <h2
-                    className="text-[#1a2b42] font-bold text-lg mb-2 group-hover:text-[#0077B3] transition-colors"
+                    className="text-white font-bold text-lg mb-2 group-hover:text-[#0077B3] transition-colors"
                     style={{ fontFamily: "Outfit, sans-serif" }}
                   >
                     IT Support in {city.name}
                   </h2>
-                  <p className="text-[#4a5e78] text-sm leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-[#94a8be] text-sm leading-relaxed mb-4 line-clamp-2">
                     {city.subhead}
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {city.localIndustries.slice(0, 3).map((ind, j) => (
-                      <span key={j} className="text-[10px] text-[#0077B3] border border-[#dfe6ee] px-2 py-0.5">
+                      <span key={j} className="text-[10px] text-[#0077B3] border border-white/10 px-2 py-0.5">
                         {ind}
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center gap-1 text-[#0077B3] text-sm font-medium group-hover:text-[#1a2b42] transition-colors">
+                  <div className="flex items-center gap-1 text-[#0077B3] text-sm font-medium group-hover:text-white transition-colors">
                     View {city.name} page <ArrowRight className="w-3 h-3" />
                   </div>
                 </Link>
@@ -106,14 +106,14 @@ export default function ServiceAreasIndex() {
       {/* Footer */}
       <footer className="bg-[#003B71] border-t border-[#00325f] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#4a5e78]/60 text-xs">
+          <p className="text-[#94a8be]/60 text-xs">
             &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-[#4a5e78]">
-            <a href="tel:9529417333" className="hover:text-[#1a2b42] transition-colors flex items-center gap-1">
+          <div className="flex items-center gap-6 text-sm text-[#94a8be]">
+            <a href="tel:9529417333" className="hover:text-white transition-colors flex items-center gap-1">
               <Phone className="w-3 h-3" /> (952) 941-7333
             </a>
-            <Link to="/" className="hover:text-[#1a2b42] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
           </div>
         </div>
       </footer>

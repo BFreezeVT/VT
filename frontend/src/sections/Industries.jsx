@@ -38,19 +38,19 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]"
+      className="py-24 lg:py-32 bg-[#0f1d32]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[#003B71]/20"></div></div><span className="relative bg-[#e9eff6] px-6 text-[#003B71] text-sm font-bold uppercase tracking-[0.2em]">Industries We Serve</span></div>
+          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-sm font-bold uppercase tracking-[0.2em]">Industries We Serve</span></div>
           <h2
             data-testid="industries-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Deep expertise where compliance isn&rsquo;t optional.
           </h2>
-          <p className="text-[#4a5e78] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#94a8be] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             We don&rsquo;t do generic IT. Every engagement is built on sector-specific knowledge of the regulations, workflows, and threats your industry faces.
           </p>
         </div>
@@ -63,24 +63,24 @@ export default function Industries() {
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#dfe6ee] bg-[#e9eff6] border-t border-[#c8d6e5] group-hover:border-[#0077B3] transition-colors">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/10 bg-[#0f1d32] group-hover:border-[#0077B3] transition-colors">
                   <ind.icon className="w-6 h-6 text-[#0077B3]" />
                 </div>
                 <div>
                   <h3
-                    className="text-[#1a2b42] font-semibold text-lg"
+                    className="text-white font-semibold text-lg"
                     style={{ fontFamily: "Outfit, sans-serif" }}
                   >
                     {ind.title}
                   </h3>
                 </div>
               </div>
-              <p className="text-[#4a5e78] text-sm leading-relaxed mb-5">{ind.desc}</p>
+              <p className="text-[#94a8be] text-sm leading-relaxed mb-5">{ind.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span
                     key={h}
-                    className="text-xs font-medium text-[#0077B3] border border-[#dfe6ee] bg-[#0077B3]/5 px-3 py-1"
+                    className="text-xs font-medium text-[#0077B3] border border-white/10 bg-[#0077B3]/5 px-3 py-1"
                   >
                     {h}
                   </span>
@@ -90,7 +90,7 @@ export default function Industries() {
                 <Link
                   to={`/industries/${ind.slug}`}
                   data-testid={`industry-link-${ind.slug}`}
-                  className="inline-flex items-center gap-1 text-[#0077B3] text-sm font-medium hover:text-[#1a2b42] transition-colors"
+                  className="inline-flex items-center gap-1 text-[#0077B3] text-sm font-medium hover:text-white transition-colors"
                 >
                   Learn more <ArrowRight className="w-3 h-3" />
                 </Link>

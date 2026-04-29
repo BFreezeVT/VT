@@ -50,11 +50,11 @@ export default function ServiceAreaPage() {
 
   if (!city) {
     return (
-      <div className="min-h-screen bg-[#e9eff6] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center px-6">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#1a2b42] mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>Page Not Found</h1>
-          <p className="text-[#4a5e78] mb-8">This service area page doesn't exist.</p>
-          <Link to="/" className="text-[#0077B3] hover:text-[#1a2b42] transition-colors">Back to Home</Link>
+          <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>Page Not Found</h1>
+          <p className="text-[#94a8be] mb-8">This service area page doesn't exist.</p>
+          <Link to="/" className="text-[#0077B3] hover:text-white transition-colors">Back to Home</Link>
         </div>
       </div>
     );
@@ -63,7 +63,7 @@ export default function ServiceAreaPage() {
   const cityTestimonials = city.testimonialIndices.map((i) => allTestimonials[i]).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#e9eff6]" data-testid={`city-page-${city.slug}`}>
+    <div className="min-h-screen bg-[#0f1d32]" data-testid={`city-page-${city.slug}`}>
       {/* JSON-LD: LocalBusiness for this city */}
       <script
         type="application/ld+json"
@@ -145,16 +145,16 @@ export default function ServiceAreaPage() {
       />
 
       {/* Nav */}
-      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#dfe6ee] sticky top-0 z-50" data-testid="city-nav">
+      <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50" data-testid="city-nav">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="text-[#1a2b42] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
+          <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/" data-testid="city-nav-home" className="text-[#4a5e78] hover:text-[#1a2b42] text-sm transition-colors flex items-center gap-1">
+            <Link to="/" data-testid="city-nav-home" className="text-[#94a8be] hover:text-white text-sm transition-colors flex items-center gap-1">
               <ChevronLeft className="w-3 h-3" /> Home
             </Link>
-            <a href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#1a2b42] text-sm">
+            <a href="tel:9529417333" className="flex items-center gap-2 text-[#94a8be] hover:text-white text-sm">
               <Phone className="w-4 h-4" /> (952) 941-7333
             </a>
             <Button
@@ -176,7 +176,7 @@ export default function ServiceAreaPage() {
           className="py-24 lg:py-32"
         >
           <div className="max-w-7xl mx-auto px-6">
-            <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-[#1a2b42] transition-colors">
+            <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
               <ChevronLeft className="w-3 h-3" /> All Service Areas
             </Link>
             <div className="flex items-center gap-2 mb-4">
@@ -185,12 +185,12 @@ export default function ServiceAreaPage() {
             </div>
             <h1
               data-testid="city-headline"
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-[#1a2b42] mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white mb-6"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               {city.headline}
             </h1>
-            <p data-testid="city-subhead" className="text-base md:text-lg text-[#4a5e78] leading-relaxed max-w-3xl mb-10">
+            <p data-testid="city-subhead" className="text-base md:text-lg text-[#94a8be] leading-relaxed max-w-3xl mb-10">
               {city.subhead}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -201,7 +201,7 @@ export default function ServiceAreaPage() {
               >
                 {city.ctaText}
               </Button>
-              <a href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#1a2b42] transition-colors text-sm h-12 px-4">
+              <a href="tel:9529417333" className="flex items-center gap-2 text-[#94a8be] hover:text-white transition-colors text-sm h-12 px-4">
                 <Phone className="w-4 h-4" /> Or call (952) 941-7333
               </a>
             </div>
@@ -216,48 +216,48 @@ export default function ServiceAreaPage() {
                 <p className="overline text-[#0077B3] mb-4">IT Support in {city.name}</p>
                 <h2
                   data-testid="city-about-heading"
-                  className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-6"
+                  className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-6"
                   style={{ fontFamily: "Outfit, sans-serif" }}
                 >
                   Why {city.name} businesses choose Veracity
                 </h2>
-                <p data-testid="city-description" className="text-[#4a5e78] text-base leading-relaxed mb-8">
+                <p data-testid="city-description" className="text-[#94a8be] text-base leading-relaxed mb-8">
                   {city.description}
                 </p>
                 <div className="grid-border-card p-5 mb-6">
-                  <p className="text-[#1a2b42] text-sm font-semibold mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
+                  <p className="text-white text-sm font-semibold mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                     The Local Challenge
                   </p>
-                  <p data-testid="city-challenge" className="text-[#4a5e78] text-sm leading-relaxed">{city.localChallenge}</p>
+                  <p data-testid="city-challenge" className="text-[#94a8be] text-sm leading-relaxed">{city.localChallenge}</p>
                 </div>
                 <div className="grid-border-card p-5">
                   <p className="text-[#0077B3] text-sm font-semibold mb-1" style={{ fontFamily: "Outfit, sans-serif" }}>
                     Did You Know?
                   </p>
-                  <p data-testid="city-fact" className="text-[#4a5e78] text-sm leading-relaxed">{city.localFact}</p>
+                  <p data-testid="city-fact" className="text-[#94a8be] text-sm leading-relaxed">{city.localFact}</p>
                 </div>
               </div>
 
               <div>
                 <div className="grid-border-card p-6 mb-6">
-                  <p className="overline text-[#4a5e78] mb-4">Key Industries in {city.name}</p>
+                  <p className="overline text-[#94a8be] mb-4">Key Industries in {city.name}</p>
                   <div className="space-y-3">
                     {city.localIndustries.map((ind, i) => (
                       <div key={i} data-testid={`city-industry-${i}`} className="flex items-center gap-3">
                         <Building2 className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
-                        <span className="text-[#1a2b42] text-sm">{ind}</span>
+                        <span className="text-white text-sm">{ind}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="grid-border-card p-6">
-                  <p className="overline text-[#4a5e78] mb-4">Areas We Cover in {city.name}</p>
+                  <p className="overline text-[#94a8be] mb-4">Areas We Cover in {city.name}</p>
                   <div className="flex flex-wrap gap-2">
                     {city.neighborhoods.map((n, i) => (
                       <span
                         key={i}
                         data-testid={`city-neighborhood-${i}`}
-                        className="text-xs font-medium text-[#0077B3] border border-[#dfe6ee] bg-[#0077B3]/5 px-3 py-1.5"
+                        className="text-xs font-medium text-[#0077B3] border border-white/10 bg-[#0077B3]/5 px-3 py-1.5"
                       >
                         {n}
                       </span>
@@ -270,10 +270,10 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Services highlight */}
-        <section data-testid="city-services" aria-label={`IT services offered in ${city.name}`} className="py-20 bg-[#e9eff6]">
+        <section data-testid="city-services" aria-label={`IT services offered in ${city.name}`} className="py-20 bg-[#0f1d32]">
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-12 text-center"
+              className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12 text-center"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               What we deliver in {city.name}
@@ -286,11 +286,11 @@ export default function ServiceAreaPage() {
                 { icon: Building2, title: "Compliance", desc: `CMMC, SOC 2, HIPAA, and industry-specific compliance management for ${city.name} firms.` },
               ].map((svc, i) => (
                 <div key={i} data-testid={`city-service-${i}`} className="grid-border-card p-6 group">
-                  <div className="w-10 h-10 flex items-center justify-center border border-[#dfe6ee] bg-[#e9eff6] mb-4 group-hover:border-[#0077B3] transition-colors">
+                  <div className="w-10 h-10 flex items-center justify-center border border-white/10 bg-[#0f1d32] mb-4 group-hover:border-[#0077B3] transition-colors">
                     <svc.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
-                  <h3 className="text-[#1a2b42] font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
-                  <p className="text-[#4a5e78] text-sm leading-relaxed">{svc.desc}</p>
+                  <h3 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
+                  <p className="text-[#94a8be] text-sm leading-relaxed">{svc.desc}</p>
                 </div>
               ))}
             </div>
@@ -298,10 +298,10 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Testimonials */}
-        <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#e9eff6]">
+        <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#0f1d32]">
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-12 text-center"
+              className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12 text-center"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               What {city.name}-area clients say
@@ -310,10 +310,10 @@ export default function ServiceAreaPage() {
               {cityTestimonials.map((t, i) => (
                 <div key={i} data-testid={`city-testimonial-${i}`} className="grid-border-card p-6 flex flex-col">
                   <Quote className="w-6 h-6 text-[#0077B3]/20 mb-3" />
-                  <p className="text-[#4a5e78] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="border-t border-[#dfe6ee] pt-3 mt-auto">
-                    <p className="text-[#1a2b42] font-semibold text-sm">{t.name}</p>
-                    <p className="text-[#4a5e78] text-xs">{t.title}, {t.company}</p>
+                  <p className="text-[#94a8be] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="border-t border-white/10 pt-3 mt-auto">
+                    <p className="text-white font-semibold text-sm">{t.name}</p>
+                    <p className="text-[#94a8be] text-xs">{t.title}, {t.company}</p>
                   </div>
                 </div>
               ))}
@@ -321,30 +321,30 @@ export default function ServiceAreaPage() {
 
             {/* Industry cross-links */}
             <div className="mt-12 text-center">
-              <p className="text-[#4a5e78] text-sm mb-4">Explore our industry expertise:</p>
+              <p className="text-[#94a8be] text-sm mb-4">Explore our industry expertise:</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link to="/industries/construction-it-support" className="text-xs text-[#0077B3] border border-[#dfe6ee] hover:border-[#0077B3] px-4 py-2 transition-colors">Construction IT</Link>
-                <Link to="/industries/financial-it-support" className="text-xs text-[#0077B3] border border-[#dfe6ee] hover:border-[#0077B3] px-4 py-2 transition-colors">Financial Services</Link>
-                <Link to="/industries/manufacturing-it-support" className="text-xs text-[#0077B3] border border-[#dfe6ee] hover:border-[#0077B3] px-4 py-2 transition-colors">Manufacturing</Link>
-                <Link to="/industries/high-compliance-it-support" className="text-xs text-[#0077B3] border border-[#dfe6ee] hover:border-[#0077B3] px-4 py-2 transition-colors">High-Compliance</Link>
+                <Link to="/industries/construction-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Construction IT</Link>
+                <Link to="/industries/financial-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Financial Services</Link>
+                <Link to="/industries/manufacturing-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Manufacturing</Link>
+                <Link to="/industries/high-compliance-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">High-Compliance</Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA / Form */}
-        <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#e9eff6]">
+        <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#0f1d32]">
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid-border-card p-8 lg:p-10">
               {!submitted ? (
                 <>
                   <h2
-                    className="text-2xl font-bold text-[#1a2b42] mb-2 text-center"
+                    className="text-2xl font-bold text-white mb-2 text-center"
                     style={{ fontFamily: "Outfit, sans-serif" }}
                   >
                     {city.ctaText}
                   </h2>
-                  <p className="text-[#4a5e78] text-sm mb-8 text-center">
+                  <p className="text-[#94a8be] text-sm mb-8 text-center">
                     Get a comprehensive, non-invasive review of your {city.name} business&rsquo;s IT and cybersecurity posture.
                   </p>
                   <form onSubmit={(e) => {
@@ -360,20 +360,20 @@ export default function ServiceAreaPage() {
                     });
                   }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="company" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Company Name</label>
-                      <Input data-testid="city-form-company" id="company" name="company" placeholder="Your company" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">Company Name</label>
+                      <Input data-testid="city-form-company" id="company" name="company" placeholder="Your company" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
-                      <label htmlFor="name" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Your Name</label>
-                      <Input data-testid="city-form-name" id="name" name="name" placeholder="Full name" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="name" className="text-white text-sm font-medium mb-1.5 block">Your Name</label>
+                      <Input data-testid="city-form-name" id="name" name="name" placeholder="Full name" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Phone</label>
-                      <Input data-testid="city-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="phone" className="text-white text-sm font-medium mb-1.5 block">Phone</label>
+                      <Input data-testid="city-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div>
-                      <label htmlFor="email" className="text-[#1a2b42] text-sm font-medium mb-1.5 block">Email</label>
-                      <Input data-testid="city-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-white border-[#dfe6ee] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                      <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">Email</label>
+                      <Input data-testid="city-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                     </div>
                     <div className="sm:col-span-2">
                       <Button data-testid="city-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12 text-base">
@@ -385,8 +385,8 @@ export default function ServiceAreaPage() {
               ) : (
                 <div data-testid="city-form-success" className="text-center py-6">
                   <Shield className="w-12 h-12 text-[#0077B3] mx-auto mb-4" />
-                  <h3 className="text-[#1a2b42] font-bold text-xl mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>Thank you!</h3>
-                  <p className="text-[#4a5e78] text-sm">We'll reach out within one business day to schedule your {city.name} IT audit.</p>
+                  <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>Thank you!</h3>
+                  <p className="text-[#94a8be] text-sm">We'll reach out within one business day to schedule your {city.name} IT audit.</p>
                 </div>
               )}
             </div>
@@ -397,7 +397,7 @@ export default function ServiceAreaPage() {
         <section data-testid="city-other-areas" aria-label="Other service areas" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              className="text-xl font-bold text-[#1a2b42] mb-8 text-center"
+              className="text-xl font-bold text-white mb-8 text-center"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               We also serve
@@ -410,7 +410,7 @@ export default function ServiceAreaPage() {
                     key={c.slug}
                     to={`/service-areas/${c.slug}`}
                     data-testid={`other-city-${c.slug}`}
-                    className="text-xs font-medium text-[#4a5e78] border border-[#dfe6ee] bg-white hover:border-[#0077B3] hover:text-[#1a2b42] px-4 py-2 transition-colors"
+                    className="text-xs font-medium text-[#94a8be] border border-white/10 bg-white hover:border-[#0077B3] hover:text-white px-4 py-2 transition-colors"
                   >
                     {c.name}
                   </Link>
@@ -423,14 +423,14 @@ export default function ServiceAreaPage() {
       {/* Footer */}
       <footer className="bg-[#003B71] border-t border-[#00325f] py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#4a5e78]/60 text-xs">
+          <p className="text-[#94a8be]/60 text-xs">
             &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-[#4a5e78]">
-            <a href="tel:9529417333" className="hover:text-[#1a2b42] transition-colors flex items-center gap-1">
+          <div className="flex items-center gap-6 text-sm text-[#94a8be]">
+            <a href="tel:9529417333" className="hover:text-white transition-colors flex items-center gap-1">
               <Phone className="w-3 h-3" /> (952) 941-7333
             </a>
-            <Link to="/" className="hover:text-[#1a2b42] transition-colors">Home</Link>
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
           </div>
         </div>
       </footer>

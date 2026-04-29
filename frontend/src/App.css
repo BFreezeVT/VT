@@ -1,4 +1,4 @@
-/* Veracity Technologies — Clean Light Theme */
+/* Veracity Technologies — Modern Dark Professional */
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -23,29 +23,18 @@
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
 
-/* Cards — clean white with subtle border */
+/* Cards */
 .grid-border-card {
-  border: 1px solid #dfe6ee;
-  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 6px;
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .grid-border-card:hover {
   border-color: #0077B3;
+  background: rgba(0, 119, 179, 0.05);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 59, 113, 0.08), 0 0 0 1px rgba(0, 119, 179, 0.12);
-}
-
-/* Section dividers */
-.section-divider {
-  border-top: 2px solid #003B71;
-  width: 60px;
-  margin-bottom: 1rem;
-}
-
-.section-divider-light {
-  border-top: 1px solid #c8d6e5;
-  width: 100%;
+  box-shadow: 0 12px 32px rgba(0, 119, 179, 0.1);
 }
 
 .stat-number {
@@ -62,18 +51,16 @@
   font-weight: 600;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #0f1d32; }
+::-webkit-scrollbar-thumb { background: #1e3a56; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #0077B3; }
 
-/* Hero overlay */
 .hero-overlay {
-  background: linear-gradient(180deg, rgba(0, 42, 82, 0.80) 0%, rgba(0, 20, 40, 0.93) 100%);
+  background: linear-gradient(180deg, rgba(15, 29, 50, 0.75) 0%, rgba(15, 29, 50, 0.92) 100%);
 }
 
 ::selection {
-  background: rgba(0, 119, 179, 0.15);
-  color: #003B71;
+  background: rgba(0, 119, 179, 0.3);
+  color: #fff;
 }

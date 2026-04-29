@@ -38,7 +38,7 @@ export default function FAQSection() {
       id="faq"
       data-testid="faq-section"
       aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
-      className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]"
+      className="py-24 lg:py-32 bg-[#0f1d32]"
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -46,7 +46,7 @@ export default function FAQSection() {
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
           <h2
             data-testid="faq-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Common questions, straight answers.
@@ -59,17 +59,17 @@ export default function FAQSection() {
               key={i}
               value={`faq-${i}`}
               data-testid={`faq-item-${i}`}
-              className="border-b border-[#dfe6ee] px-0"
+              className="border-b border-white/10 px-0"
             >
               <AccordionTrigger
                 data-testid={`faq-trigger-${i}`}
-                className="text-[#1a2b42] hover:text-[#0077B3] hover:no-underline text-left py-5 text-base font-medium"
+                className="text-white hover:text-[#0077B3] hover:no-underline text-left py-5 text-base font-medium"
               >
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent
                 data-testid={`faq-content-${i}`}
-                className="text-[#4a5e78] text-sm leading-relaxed pb-5"
+                className="text-[#94a8be] text-sm leading-relaxed pb-5"
               >
                 {faq.a}
               </AccordionContent>

@@ -13,29 +13,29 @@ const complianceItems = [
 
 export default function Compliance() {
   return (
-    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5] relative overflow-hidden">
+    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 bg-[#0f1d32] relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
-      <div className="absolute inset-0 bg-[#e9eff6]/60" />
+      <div className="absolute inset-0 bg-[#0f1d32]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
-            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[#003B71]/20"></div></div><span className="relative bg-[#e9eff6] px-6 text-[#003B71] text-sm font-bold uppercase tracking-[0.2em]">Compliance &amp; Risk</span></div>
-            <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
+            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-sm font-bold uppercase tracking-[0.2em]">Compliance &amp; Risk</span></div>
+            <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
-            <p className="text-[#4a5e78] text-base max-w-2xl animate-fade-in-up stagger-2">
+            <p className="text-[#94a8be] text-base max-w-2xl animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
         </div>
 
         {/* Open list layout — no card boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-[#dfe6ee]/40 pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-white/10/40 pt-12">
           {complianceItems.map((item, i) => (
             <div key={item.title} data-testid={`compliance-card-${i}`} className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}>
               <item.icon className="w-5 h-5 text-[#0077B3] flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="text-[#1a2b42] font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#4a5e78] text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
+                <p className="text-[#94a8be] text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}

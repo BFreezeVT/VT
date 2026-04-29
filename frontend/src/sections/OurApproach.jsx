@@ -11,16 +11,16 @@ const approaches = [
 
 export default function OurApproach() {
   return (
-    <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5] relative overflow-hidden">
+    <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-24 lg:py-32 bg-[#0f1d32] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="relative flex items-center justify-center mb-12"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-sm font-bold uppercase tracking-[0.2em]">Our Approach</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — content */}
           <div>
-            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[#003B71]/20"></div></div><span className="relative bg-[#e9eff6] px-6 text-[#003B71] text-sm font-bold uppercase tracking-[0.2em]">Our Approach</span></div>
-            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
+            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Proactive protection built for operational industries.
             </h2>
-            <p className="text-[#4a5e78] text-base leading-relaxed mb-12 animate-fade-in-up stagger-2">
+            <p className="text-[#94a8be] text-base leading-relaxed mb-12 animate-fade-in-up stagger-2">
               We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit.
             </p>
 
@@ -28,12 +28,12 @@ export default function OurApproach() {
             <div className="space-y-8">
               {approaches.map((a, i) => (
                 <div key={a.title} data-testid={`approach-card-${i}`} className={`flex items-start gap-5 animate-fade-in-up stagger-${i + 3}`}>
-                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center border border-[#d0dbe8] bg-white mt-0.5">
+                  <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center border border-white/10 bg-white mt-0.5">
                     <a.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
                   <div>
-                    <h3 className="text-[#1a2b42] font-semibold text-base mb-1.5" style={{ fontFamily: "Outfit" }}>{a.title}</h3>
-                    <p className="text-[#4a5e78] text-sm leading-relaxed">{a.desc}</p>
+                    <h3 className="text-white font-semibold text-base mb-1.5" style={{ fontFamily: "Outfit" }}>{a.title}</h3>
+                    <p className="text-[#94a8be] text-sm leading-relaxed">{a.desc}</p>
                   </div>
                 </div>
               ))}
@@ -42,12 +42,12 @@ export default function OurApproach() {
 
           {/* Right — SOC image */}
           <div className="animate-fade-in-up stagger-2 lg:sticky lg:top-24">
-            <div className="relative overflow-hidden border border-[#d0dbe8]">
+            <div className="relative overflow-hidden border border-white/10">
               <img data-testid="soc-image" src={SOC_IMG} alt="Security Operations Center analyst monitoring threat dashboards 24/7" className="w-full h-auto object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#112240]/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <p className="text-[#0077B3] text-xs uppercase tracking-wider font-semibold mb-1">24/7 Monitoring</p>
-                <p className="text-[#1a2b42] text-sm">Our SOC team watches your infrastructure around the clock.</p>
+                <p className="text-white text-sm">Our SOC team watches your infrastructure around the clock.</p>
               </div>
             </div>
           </div>
