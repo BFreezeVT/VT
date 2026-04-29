@@ -69,7 +69,7 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-24 lg:py-32 bg-[#e9eff6]">
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}
@@ -86,8 +86,9 @@ export default function IntroStats() {
 
           {/* Text */}
           <div className="order-1 lg:order-2">
+            <div class="section-divider"></div>
             <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Why This Matters</p>
-            <h2 data-testid="intro-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
+            <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Cyberattacks aren&rsquo;t slowing down. Most defenses are.
             </h2>
             <p data-testid="intro-description" className="text-[#4a5e78] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">

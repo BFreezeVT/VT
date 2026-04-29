@@ -11,13 +11,14 @@ const approaches = [
 
 export default function OurApproach() {
   return (
-    <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-24 lg:py-32 bg-[#e9eff6] relative overflow-hidden">
+    <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — content */}
           <div>
+            <div class="section-divider"></div>
             <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Our Approach</p>
-            <h2 data-testid="approach-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
+            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Proactive protection built for operational industries.
             </h2>
             <p className="text-[#4a5e78] text-base leading-relaxed mb-12 animate-fade-in-up stagger-2">

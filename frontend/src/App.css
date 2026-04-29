@@ -36,6 +36,18 @@
   box-shadow: 0 12px 32px rgba(0, 59, 113, 0.08), 0 0 0 1px rgba(0, 119, 179, 0.12);
 }
 
+/* Section dividers */
+.section-divider {
+  border-top: 2px solid #003B71;
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.section-divider-light {
+  border-top: 1px solid #c8d6e5;
+  width: 100%;
+}
+
 .stat-number {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;

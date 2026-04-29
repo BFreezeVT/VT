@@ -13,14 +13,15 @@ const complianceItems = [
 
 export default function Compliance() {
   return (
-    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 bg-[#e9eff6] relative overflow-hidden">
+    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5] relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
       <div className="absolute inset-0 bg-[#e9eff6]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
+            <div class="section-divider"></div>
             <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Compliance &amp; Risk</p>
-            <h2 data-testid="compliance-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
+            <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
             <p className="text-[#4a5e78] text-base max-w-2xl animate-fade-in-up stagger-2">

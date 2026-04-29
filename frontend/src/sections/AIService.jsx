@@ -11,7 +11,7 @@ const aiServices = [
 
 export default function AIService() {
   return (
-    <section id="ai-service" data-testid="ai-service-section" aria-label="AI as a Service offerings" className="py-24 lg:py-32 bg-[#e9eff6] relative overflow-hidden">
+    <section id="ai-service" data-testid="ai-service-section" aria-label="AI as a Service offerings" className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5] relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0077B3 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -21,9 +21,10 @@ export default function AIService() {
             <div className="w-10 h-10 flex items-center justify-center bg-[#0077B3]/10 border border-[#0077B3]/30">
               <Brain className="w-5 h-5 text-[#0077B3]" />
             </div>
+            <div class="section-divider"></div>
             <p className="overline text-[#0077B3]">AI as a Service</p>
           </div>
-          <h2 data-testid="ai-service-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>
+          <h2 data-testid="ai-service-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>
             AI is transforming your industry. We make sure it doesn&rsquo;t expose you.
           </h2>
           <p className="text-[#4a5e78] text-base leading-relaxed mb-6">

@@ -32,7 +32,7 @@ export default function WhySpecializedIT() {
       id="why-it"
       data-testid="why-specialized-section"
       aria-label="Why regulated industries need specialized IT support"
-      className="py-24 lg:py-32 bg-[#e9eff6]"
+      className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -52,10 +52,11 @@ export default function WhySpecializedIT() {
 
           {/* Right - Content */}
           <div className="order-1 lg:order-2">
+            <div class="section-divider"></div>
             <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Why Specialized IT</p>
             <h2
               data-testid="why-it-heading"
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               Generic tech support can&rsquo;t keep up with regulated, operational industries.

@@ -38,14 +38,15 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-24 lg:py-32 bg-[#e9eff6]"
+      className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
+          <div class="section-divider"></div>
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Industries We Serve</p>
           <h2
             data-testid="industries-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Deep expertise where compliance isn&rsquo;t optional.
@@ -63,7 +64,7 @@ export default function Industries() {
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#dfe6ee] bg-[#e9eff6] group-hover:border-[#0077B3] transition-colors">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#dfe6ee] bg-[#e9eff6] border-t border-[#c8d6e5] group-hover:border-[#0077B3] transition-colors">
                   <ind.icon className="w-6 h-6 text-[#0077B3]" />
                 </div>
                 <div>

@@ -38,14 +38,15 @@ export default function FAQSection() {
       id="faq"
       data-testid="faq-section"
       aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
-      className="py-24 lg:py-32 bg-[#e9eff6]"
+      className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]"
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
+          <div class="section-divider mx-auto"></div>
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
           <h2
             data-testid="faq-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Common questions, straight answers.

@@ -156,14 +156,15 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-24 lg:py-32 bg-[#e9eff6]"
+      className="py-24 lg:py-32 bg-[#e9eff6] border-t border-[#c8d6e5]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
+          <div class="section-divider mx-auto"></div>
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">What Our Clients Say</p>
           <h2
             data-testid="case-study-heading"
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Trusted by businesses across the Twin Cities.
@@ -224,11 +225,11 @@ export default function CaseStudy() {
             </CarouselContent>
             <CarouselPrevious
               data-testid="carousel-prev"
-              className="border-[#dfe6ee] bg-[#e9eff6] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -left-5 lg:-left-7"
+              className="border-[#dfe6ee] bg-[#e9eff6] border-t border-[#c8d6e5] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -left-5 lg:-left-7"
             />
             <CarouselNext
               data-testid="carousel-next"
-              className="border-[#dfe6ee] bg-[#e9eff6] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -right-5 lg:-right-7"
+              className="border-[#dfe6ee] bg-[#e9eff6] border-t border-[#c8d6e5] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -right-5 lg:-right-7"
             />
           </Carousel>
         </div>
