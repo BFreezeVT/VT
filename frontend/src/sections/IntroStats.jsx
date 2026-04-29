@@ -86,7 +86,7 @@ export default function IntroStats() {
 
           {/* Text */}
           <div className="order-1 lg:order-2">
-            <div class="section-divider"></div>
+            
             <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Why This Matters</p>
             <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Cyberattacks aren&rsquo;t slowing down. Most defenses are.

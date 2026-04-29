@@ -16,8 +16,7 @@ export default function OurApproach() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — content */}
           <div>
-            <div class="section-divider"></div>
-            <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Our Approach</p>
+            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[#003B71]/20"></div></div><span className="relative bg-[#e9eff6] px-6 text-[#003B71] text-sm font-bold uppercase tracking-[0.2em]">Our Approach</span></div>
             <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Proactive protection built for operational industries.
             </h2>

@@ -42,7 +42,7 @@ export default function FAQSection() {
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div class="section-divider mx-auto"></div>
+          
           <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
           <h2
             data-testid="faq-heading"

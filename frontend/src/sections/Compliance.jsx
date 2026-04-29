@@ -19,8 +19,7 @@ export default function Compliance() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
-            <div class="section-divider"></div>
-            <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">Compliance &amp; Risk</p>
+            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[#003B71]/20"></div></div><span className="relative bg-[#e9eff6] px-6 text-[#003B71] text-sm font-bold uppercase tracking-[0.2em]">Compliance &amp; Risk</span></div>
             <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#1a2b42] mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
