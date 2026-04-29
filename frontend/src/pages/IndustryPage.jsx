@@ -49,7 +49,7 @@ export default function IndustryPage() {
 
   if (!industry) {
     return (
-      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center">
+      <div className="min-h-screen bg-[#e9eff6] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-[#1a2b42] mb-4" style={{ fontFamily: "Outfit" }}>Page Not Found</h1>
           <Link to="/" className="text-[#0077B3] hover:text-[#1a2b42]">Back to Home</Link>
@@ -62,7 +62,7 @@ export default function IndustryPage() {
   const testimonials = industry.testimonialIndices.map((i) => allTestimonials[i]);
 
   return (
-    <div className="min-h-screen bg-[#f4f7fa]" data-testid={`industry-page-${industry.slug}`}>
+    <div className="min-h-screen bg-[#e9eff6]" data-testid={`industry-page-${industry.slug}`}>
       {/* Service schema */}
       <script
         type="application/ld+json"
@@ -199,7 +199,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Challenges */}
-        <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#f4f7fa]">
+        <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#e9eff6]">
           <div className="max-w-7xl mx-auto px-6">
             <p className="overline text-[#FF5722] mb-4">The Challenges</p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-12" style={{ fontFamily: "Outfit" }}>
@@ -217,7 +217,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Compliance + Software */}
-        <section data-testid="industry-compliance" className="py-20 bg-[#f4f7fa]">
+        <section data-testid="industry-compliance" className="py-20 bg-[#e9eff6]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
@@ -252,7 +252,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Testimonials */}
-        <section data-testid="industry-testimonials" className="py-20 bg-[#f4f7fa]">
+        <section data-testid="industry-testimonials" className="py-20 bg-[#e9eff6]">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-2xl font-bold text-[#1a2b42] mb-10 text-center" style={{ fontFamily: "Outfit" }}>
               Trusted by {industry.name.toLowerCase()} professionals
@@ -331,7 +331,7 @@ export default function IndustryPage() {
         </section>
 
         {/* Other industries */}
-        <section className="py-16 bg-[#f4f7fa]">
+        <section className="py-16 bg-[#e9eff6]">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <p className="text-[#4a5e78] text-sm mb-4">We also specialize in:</p>
             <div className="flex justify-center gap-4 flex-wrap">

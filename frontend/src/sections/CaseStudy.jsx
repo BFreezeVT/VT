@@ -156,7 +156,7 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-24 lg:py-32 bg-[#f8fafb]"
+      className="py-24 lg:py-32 bg-[#e9eff6]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -224,11 +224,11 @@ export default function CaseStudy() {
             </CarouselContent>
             <CarouselPrevious
               data-testid="carousel-prev"
-              className="border-[#dfe6ee] bg-[#f8fafb] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -left-5 lg:-left-7"
+              className="border-[#dfe6ee] bg-[#e9eff6] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -left-5 lg:-left-7"
             />
             <CarouselNext
               data-testid="carousel-next"
-              className="border-[#dfe6ee] bg-[#f8fafb] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -right-5 lg:-right-7"
+              className="border-[#dfe6ee] bg-[#e9eff6] text-[#1a2b42] hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-[#1a2b42] -right-5 lg:-right-7"
             />
           </Carousel>
         </div>

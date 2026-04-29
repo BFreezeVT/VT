@@ -50,7 +50,7 @@ export default function ServiceAreaPage() {
 
   if (!city) {
     return (
-      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#e9eff6] flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-[#1a2b42] mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>Page Not Found</h1>
           <p className="text-[#4a5e78] mb-8">This service area page doesn't exist.</p>
@@ -63,7 +63,7 @@ export default function ServiceAreaPage() {
   const cityTestimonials = city.testimonialIndices.map((i) => allTestimonials[i]).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#f4f7fa]" data-testid={`city-page-${city.slug}`}>
+    <div className="min-h-screen bg-[#e9eff6]" data-testid={`city-page-${city.slug}`}>
       {/* JSON-LD: LocalBusiness for this city */}
       <script
         type="application/ld+json"
@@ -270,7 +270,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Services highlight */}
-        <section data-testid="city-services" aria-label={`IT services offered in ${city.name}`} className="py-20 bg-[#f4f7fa]">
+        <section data-testid="city-services" aria-label={`IT services offered in ${city.name}`} className="py-20 bg-[#e9eff6]">
           <div className="max-w-7xl mx-auto px-6">
             <h2
               className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-12 text-center"
@@ -286,7 +286,7 @@ export default function ServiceAreaPage() {
                 { icon: Building2, title: "Compliance", desc: `CMMC, SOC 2, HIPAA, and industry-specific compliance management for ${city.name} firms.` },
               ].map((svc, i) => (
                 <div key={i} data-testid={`city-service-${i}`} className="grid-border-card p-6 group">
-                  <div className="w-10 h-10 flex items-center justify-center border border-[#dfe6ee] bg-[#f4f7fa] mb-4 group-hover:border-[#0077B3] transition-colors">
+                  <div className="w-10 h-10 flex items-center justify-center border border-[#dfe6ee] bg-[#e9eff6] mb-4 group-hover:border-[#0077B3] transition-colors">
                     <svc.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
                   <h3 className="text-[#1a2b42] font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
@@ -298,7 +298,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* Testimonials */}
-        <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#f4f7fa]">
+        <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#e9eff6]">
           <div className="max-w-7xl mx-auto px-6">
             <h2
               className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a2b42] mb-12 text-center"
@@ -333,7 +333,7 @@ export default function ServiceAreaPage() {
         </section>
 
         {/* CTA / Form */}
-        <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#f4f7fa]">
+        <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#e9eff6]">
           <div className="max-w-3xl mx-auto px-6">
             <div className="grid-border-card p-8 lg:p-10">
               {!submitted ? (

@@ -31,7 +31,7 @@ export default function BlogIndex() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f4f7fa]" data-testid="blog-index">
+    <div className="min-h-screen bg-[#e9eff6]" data-testid="blog-index">
       <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#dfe6ee] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-[#1a2b42] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>

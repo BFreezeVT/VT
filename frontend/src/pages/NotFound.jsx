@@ -4,7 +4,7 @@ import { Button } from "../components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#f4f7fa] flex flex-col" data-testid="not-found-page">
+    <div className="min-h-screen bg-[#e9eff6] flex flex-col" data-testid="not-found-page">
       <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#dfe6ee]">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-[#1a2b42] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>

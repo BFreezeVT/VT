@@ -30,7 +30,7 @@ export default function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center">
+      <div className="min-h-screen bg-[#e9eff6] flex items-center justify-center">
         <p className="text-[#4a5e78]">Loading...</p>
       </div>
     );
@@ -38,7 +38,7 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#f4f7fa] flex items-center justify-center">
+      <div className="min-h-screen bg-[#e9eff6] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-[#1a2b42] mb-4" style={{ fontFamily: "Outfit" }}>Article Not Found</h1>
           <Link to="/resources" className="text-[#0077B3] hover:text-[#1a2b42]">Back to Resources</Link>
@@ -107,7 +107,7 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f7fa]" data-testid={`blog-post-${post.slug}`}>
+    <div className="min-h-screen bg-[#e9eff6]" data-testid={`blog-post-${post.slug}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

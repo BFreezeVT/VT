@@ -8,7 +8,7 @@ export default function RiskReversal() {
       id="risk-reversal"
       data-testid="risk-reversal-section"
       aria-label="Satisfaction guarantee - $100 charity donation if audit doesn't find 3 actionable improvements"
-      className="py-20 lg:py-24 bg-white"
+      className="py-20 lg:py-24 bg-[#e9eff6]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
