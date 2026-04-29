@@ -32,7 +32,7 @@ export default function WhySpecializedIT() {
       id="why-it"
       data-testid="why-specialized-section"
       aria-label="Why regulated industries need specialized IT support"
-      className="py-24 lg:py-32 bg-white"
+      className="py-24 lg:py-32 bg-[#f1f5fa]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

@@ -38,7 +38,7 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-24 lg:py-32 bg-[#f4f7fa]"
+      className="py-24 lg:py-32 bg-[#e9eff6]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
@@ -63,7 +63,7 @@ export default function Industries() {
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#dfe6ee] bg-[#f4f7fa] group-hover:border-[#0077B3] transition-colors">
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-[#dfe6ee] bg-[#e9eff6] group-hover:border-[#0077B3] transition-colors">
                   <ind.icon className="w-6 h-6 text-[#0077B3]" />
                 </div>
                 <div>
