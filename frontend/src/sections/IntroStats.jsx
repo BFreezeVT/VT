@@ -69,7 +69,7 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-24 lg:py-32 bg-[#0f1d32]">
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-16 lg:py-24 bg-[#0f1d32]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}

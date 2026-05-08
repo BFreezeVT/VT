@@ -11,7 +11,7 @@ const aiServices = [
 
 export default function AIService() {
   return (
-    <section id="ai-service" data-testid="ai-service-section" aria-label="AI as a Service offerings" className="py-24 lg:py-32 bg-[#0f1d32] relative overflow-hidden">
+    <section id="ai-service" data-testid="ai-service-section" aria-label="AI as a Service offerings" className="py-16 lg:py-24 bg-[#0f1d32] relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0077B3 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

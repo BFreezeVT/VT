@@ -13,7 +13,7 @@ const complianceItems = [
 
 export default function Compliance() {
   return (
-    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-24 lg:py-32 bg-[#0f1d32] relative overflow-hidden">
+    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-16 lg:py-24 bg-[#0f1d32] relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
       <div className="absolute inset-0 bg-[#0f1d32]/60" />
 

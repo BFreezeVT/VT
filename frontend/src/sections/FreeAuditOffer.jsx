@@ -20,7 +20,7 @@ export default function FreeAuditOffer() {
       id="audit"
       data-testid="audit-section"
       aria-label="Schedule a free technology and cyber risk audit"
-      className="py-24 lg:py-32 bg-white border-t border-b border-[#e2e8f0]"
+      className="py-16 lg:py-24 bg-white border-t border-b border-[#e2e8f0]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -34,7 +34,7 @@ export default function FreeAuditOffer() {
             >
               Free Technology &amp; Cyber Risk Audit
             </h2>
-            <p className="text-[#4a5e78] text-base leading-relaxed mb-10">
+            <p className="text-[#1a2b42] text-base leading-relaxed mb-8">
               Our team will conduct a comprehensive, non-invasive review of your IT infrastructure 
               and cybersecurity posture — tailored to your industry. You&rsquo;ll receive a detailed 
               report with actionable recommendations for your specific compliance and operational needs.
@@ -51,7 +51,7 @@ export default function FreeAuditOffer() {
                   className="flex items-center gap-3"
                 >
                   <item.icon className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
-                  <span className="text-[#4a5e78] text-sm">{item.text}</span>
+                  <span className="text-[#1a2b42] text-sm font-medium">{item.text}</span>
                 </div>
               ))}
             </div>
