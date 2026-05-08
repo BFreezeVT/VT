@@ -27,16 +27,16 @@ export default function Footer() {
                 data-testid="footer-logo"
               />
             </div>
-            <div className="flex items-center justify-center gap-3 mt-2 max-w-[300px]">
+            <div className="flex items-center justify-center gap-4 mt-3 max-w-[300px]">
               <a
                 data-testid="footer-linkedin"
                 href="https://www.linkedin.com/company/veracity-technologies/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Veracity Technologies on LinkedIn"
-                className="w-9 h-9 flex items-center justify-center border border-[#e2e8f0] bg-[#f1f5f9] text-[#4a5e78] hover:text-[#1a2b42] hover:border-[#0077B3] transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-[#0077B3] text-white hover:bg-[#003B71] transition-colors"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-5 h-5" />
               </a>
               <a
                 data-testid="footer-youtube"
@@ -44,9 +44,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Veracity Technologies on YouTube"
-                className="w-9 h-9 flex items-center justify-center border border-[#e2e8f0] bg-[#f1f5f9] text-[#4a5e78] hover:text-[#1a2b42] hover:border-[#0077B3] transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-[#FF0000] text-white hover:bg-[#cc0000] transition-colors"
               >
-                <Youtube className="w-4 h-4" />
+                <Youtube className="w-5 h-5" />
               </a>
               <a
                 data-testid="footer-facebook"
@@ -54,9 +54,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Veracity Technologies on Facebook"
-                className="w-9 h-9 flex items-center justify-center border border-[#e2e8f0] bg-[#f1f5f9] text-[#4a5e78] hover:text-[#1a2b42] hover:border-[#0077B3] transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-[#1877F2] text-white hover:bg-[#0d65d9] transition-colors"
               >
-                <Facebook className="w-4 h-4" />
+                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>

@@ -39,8 +39,8 @@ export default function Navigation() {
         </button>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">AI</button>
+        <div className="hidden md:flex items-center gap-6">
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors ml-4">AI</button>
           <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">Approach</button>
           <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">Industries</button>
           <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#b0c4d8] hover:text-white text-sm transition-colors">Compliance</button>
