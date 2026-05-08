@@ -31,7 +31,17 @@ function ScrollToTop() {
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid="app-root">
+    <div className="min-h-screen bg-[#0f1d32] relative" data-testid="app-root">
+      {/* Background watermark logo */}
+      <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0" style={{ opacity: 0.06 }}>
+        <img
+          src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png"
+          alt=""
+          className="w-[900px] h-[900px] object-contain"
+          aria-hidden="true"
+        />
+      </div>
+      <div className="relative z-10">
       <Navigation />
       <main role="main">
         <HeroSection />
@@ -48,6 +58,7 @@ function HomePage() {
         <FAQSection />
       </main>
       <Footer />
+      </div>
     </div>
   );
 }
