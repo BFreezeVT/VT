@@ -6,7 +6,7 @@ const industryData = [
     headline: "Cybersecurity Built for the Speed and Stakes of Finance",
     subhead: "Banks, RIAs, fintech firms, and investment managers trust Veracity to keep their data compliant, their systems secure, and their clients confident.",
     heroStat: { value: "$5.56M", label: "Average cost of a financial services data breach (IBM 2025)" },
-    description: "Financial services firms operate under some of the most stringent regulatory frameworks in any industry. From SEC/FINRA requirements to SOC 2 audits and PCI-DSS mandates, a single compliance gap can trigger enforcement actions, client attrition, and reputational damage that takes years to repair. At Veracity Technologies, we don't just understand financial IT — we live it. Our team manages infrastructure for RIAs, hedge funds, banks, and fintech startups across the Twin Cities, ensuring every system, every endpoint, and every data flow meets the standard your regulators — and your clients — expect.",
+    description: "Financial services firms operate under some of the most stringent regulatory frameworks in any industry. From SEC/FINRA requirements to SOC 2 audits and PCI-DSS mandates, a single compliance gap can trigger enforcement actions, client attrition, and reputational damage that takes years to repair. At Veracity Technologies, we don't just understand financial IT - we live it. Our team manages infrastructure for RIAs, hedge funds, banks, and fintech startups across the Twin Cities, ensuring every system, every endpoint, and every data flow meets the standard your regulators - and your clients - expect.",
     challenges: [
       {
         title: "SEC/FINRA Compliance Pressure",
@@ -37,13 +37,13 @@ const industryData = [
     name: "Construction",
     icon: "HardHat",
     headline: "Construction IT That Works as Hard as Your Crews",
-    subhead: "Job sites don't wait for IT tickets. We keep your crews connected, your bids secure, and your project data protected — rain or shine.",
+    subhead: "Job sites don't wait for IT tickets. We keep your crews connected, your bids secure, and your project data protected - rain or shine.",
     heroStat: { value: "24%", label: "Year-over-year increase in construction ransomware attacks (2025)" },
-    description: "Construction firms have become prime targets for cybercriminals. The industry's reliance on cloud-based project management, mobile devices on job sites, and complex vendor ecosystems creates vulnerabilities that traditional MSPs simply don't understand. At Veracity Technologies, we've built our construction practice around the tools and workflows your teams use every day. We know that a downed network on pour day costs more than most industries lose in a month. We know that subcontractor portals need security without friction. And we know that your project data — bids, blueprints, change orders — is your competitive advantage.",
+    description: "Construction firms have become prime targets for cybercriminals. The industry's reliance on cloud-based project management, mobile devices on job sites, and complex vendor ecosystems creates vulnerabilities that traditional MSPs simply don't understand. At Veracity Technologies, we've built our construction practice around the tools and workflows your teams use every day. We know that a downed network on pour day costs more than most industries lose in a month. We know that subcontractor portals need security without friction. And we know that your project data - bids, blueprints, change orders - is your competitive advantage.",
     challenges: [
       {
         title: "Job Site Connectivity",
-        desc: "Construction sites are dynamic, dusty, and distributed. Trailers move, crews rotate, and connectivity needs change weekly. We deploy ruggedized networking that adapts to your project phase — from foundation to finish.",
+        desc: "Construction sites are dynamic, dusty, and distributed. Trailers move, crews rotate, and connectivity needs change weekly. We deploy ruggedized networking that adapts to your project phase - from foundation to finish.",
       },
       {
         title: "Ransomware Targeting GCs",
@@ -55,7 +55,7 @@ const industryData = [
       },
       {
         title: "Mobile Workforce Security",
-        desc: "Superintendents, PMs, and field engineers access Procore, Bluebeam, and email from phones and tablets on open networks. We secure every device with MDM, VPN, and conditional access policies — without slowing them down.",
+        desc: "Superintendents, PMs, and field engineers access Procore, Bluebeam, and email from phones and tablets on open networks. We secure every device with MDM, VPN, and conditional access policies - without slowing them down.",
       },
     ],
     compliance: ["CMMC", "OSHA Digital", "NIST 800-171", "DOD Requirements", "Bonding Compliance"],
@@ -71,8 +71,8 @@ const industryData = [
     icon: "Factory",
     headline: "Secure the Factory Floor Without Slowing the Line",
     subhead: "When OT meets IT, vulnerabilities multiply. We bridge the gap with security that protects production without disrupting it.",
-    heroStat: { value: "#1", label: "Most-attacked industry — 4th consecutive year (56% increase in 2025)" },
-    description: "Manufacturing is under siege. Connected machinery, SCADA systems, IoT sensors, and ERP integrations have turned the modern factory into a complex IT environment — often managed by teams with deep operational expertise but limited cybersecurity resources. At Veracity Technologies, we specialize in the OT/IT convergence that defines modern manufacturing. We understand that you can't just 'patch and pray' on a production line that runs 24/7. We understand that a PLC is not a laptop. And we understand that a ransomware attack on your MES system doesn't just cost data — it costs production runs, customer deliveries, and contracts. Manufacturing now represents 29% of all published ransomware victims globally.",
+    heroStat: { value: "#1", label: "Most-attacked industry - 4th consecutive year (56% increase in 2025)" },
+    description: "Manufacturing is under siege. Connected machinery, SCADA systems, IoT sensors, and ERP integrations have turned the modern factory into a complex IT environment - often managed by teams with deep operational expertise but limited cybersecurity resources. At Veracity Technologies, we specialize in the OT/IT convergence that defines modern manufacturing. We understand that you can't just 'patch and pray' on a production line that runs 24/7. We understand that a PLC is not a laptop. And we understand that a ransomware attack on your MES system doesn't just cost data - it costs production runs, customer deliveries, and contracts. Manufacturing now represents 29% of all published ransomware victims globally.",
     challenges: [
       {
         title: "OT/IT Convergence Risk",
@@ -80,7 +80,7 @@ const industryData = [
       },
       {
         title: "Ransomware on the Production Line",
-        desc: "Manufacturing ransomware doesn't just encrypt files — it halts production. A single incident can cost $1M+ in downtime and missed deliveries. We deploy 24/7 AI monitoring that catches lateral movement before it reaches the floor.",
+        desc: "Manufacturing ransomware doesn't just encrypt files - it halts production. A single incident can cost $1M+ in downtime and missed deliveries. We deploy 24/7 AI monitoring that catches lateral movement before it reaches the floor.",
       },
       {
         title: "Supply Chain Cybersecurity",
@@ -88,7 +88,7 @@ const industryData = [
       },
       {
         title: "Legacy System Management",
-        desc: "Windows XP machines running critical equipment. Unsupported firmware on CNC controllers. We manage legacy environments with compensating controls, network isolation, and application whitelisting — keeping them secure without replacing them.",
+        desc: "Windows XP machines running critical equipment. Unsupported firmware on CNC controllers. We manage legacy environments with compensating controls, network isolation, and application whitelisting - keeping them secure without replacing them.",
       },
     ],
     compliance: ["NIST CSF", "IEC 62443", "CMMC", "TISAX", "ISO 27001", "FDA 21 CFR Part 11"],
@@ -105,15 +105,15 @@ const industryData = [
     headline: "Zero-Gap Compliance for Industries Where Failure Isn't an Option",
     subhead: "Defense contractors, healthcare organizations, government suppliers, and regulated enterprises trust Veracity to keep them audit-ready 365 days a year.",
     heroStat: { value: "100%", label: "First-attempt audit pass rate for Veracity clients" },
-    description: "Some industries don't get second chances. A missed CMMC control can cost you a DoD contract. A HIPAA gap can trigger a seven-figure fine. An ITAR violation can result in criminal prosecution. For organizations operating under the most demanding regulatory frameworks in the country, compliance isn't a checkbox — it's an existential requirement. At Veracity Technologies, we've built a compliance practice that goes far beyond documentation. We engineer your IT environment to be inherently compliant — so when auditors arrive, you're not scrambling. You're ready. Our team maintains active knowledge across CMMC, HIPAA, ITAR, NIST 800-171, FedRAMP, SOC 2, and state-level privacy regulations, and we translate those requirements into technical controls your team can actually operate.",
+    description: "Some industries don't get second chances. A missed CMMC control can cost you a DoD contract. A HIPAA gap can trigger a seven-figure fine. An ITAR violation can result in criminal prosecution. For organizations operating under the most demanding regulatory frameworks in the country, compliance isn't a checkbox - it's an existential requirement. At Veracity Technologies, we've built a compliance practice that goes far beyond documentation. We engineer your IT environment to be inherently compliant - so when auditors arrive, you're not scrambling. You're ready. Our team maintains active knowledge across CMMC, HIPAA, ITAR, NIST 800-171, FedRAMP, SOC 2, and state-level privacy regulations, and we translate those requirements into technical controls your team can actually operate.",
     challenges: [
       {
         title: "CMMC 2.0 & Defense Contracts",
-        desc: "The DoD is enforcing CMMC 2.0 across its entire supply chain. If you handle CUI (Controlled Unclassified Information), you need Level 2 certification — and most contractors aren't close. We build your CMMC environment from the ground up: enclave architecture, FIPS 140-2 encryption, continuous monitoring, and the full SSP documentation auditors require.",
+        desc: "The DoD is enforcing CMMC 2.0 across its entire supply chain. If you handle CUI (Controlled Unclassified Information), you need Level 2 certification - and most contractors aren't close. We build your CMMC environment from the ground up: enclave architecture, FIPS 140-2 encryption, continuous monitoring, and the full SSP documentation auditors require.",
       },
       {
         title: "HIPAA & Protected Health Information",
-        desc: "Healthcare organizations, insurers, and business associates face escalating HIPAA enforcement. We implement technical safeguards — encryption at rest and in transit, access logging, automatic session timeouts, and BAA-compliant cloud configurations — while training your staff on the administrative requirements that auditors scrutinize most.",
+        desc: "Healthcare organizations, insurers, and business associates face escalating HIPAA enforcement. We implement technical safeguards - encryption at rest and in transit, access logging, automatic session timeouts, and BAA-compliant cloud configurations - while training your staff on the administrative requirements that auditors scrutinize most.",
       },
       {
         title: "ITAR & Export-Controlled Data",
@@ -121,7 +121,7 @@ const industryData = [
       },
       {
         title: "Multi-Framework Overlap",
-        desc: "Most high-compliance organizations face multiple simultaneous frameworks — CMMC + NIST 800-171 + DFARS, or HIPAA + SOC 2 + state privacy laws. We map controls across frameworks to eliminate duplicate work, reduce audit fatigue, and maintain a single source of truth for your compliance posture.",
+        desc: "Most high-compliance organizations face multiple simultaneous frameworks - CMMC + NIST 800-171 + DFARS, or HIPAA + SOC 2 + state privacy laws. We map controls across frameworks to eliminate duplicate work, reduce audit fatigue, and maintain a single source of truth for your compliance posture.",
       },
     ],
     compliance: ["CMMC 2.0 (Level 1-3)", "NIST 800-171", "HIPAA", "ITAR / EAR", "FedRAMP", "SOC 2 Type II", "DFARS 252.204-7012", "State Privacy Laws"],

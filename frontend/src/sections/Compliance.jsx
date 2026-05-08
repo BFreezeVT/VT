@@ -28,7 +28,7 @@ export default function Compliance() {
             </p>
         </div>
 
-        {/* Open list layout — no card boxes */}
+        {/* Open list layout - no card boxes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-white/10/40 pt-12">
           {complianceItems.map((item, i) => (
             <div key={item.title} data-testid={`compliance-card-${i}`} className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}>

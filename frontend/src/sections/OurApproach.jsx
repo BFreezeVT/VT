@@ -15,7 +15,7 @@ export default function OurApproach() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative flex items-center justify-center mb-12"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-lg font-bold uppercase tracking-[0.15em]">Our Approach</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Left — content */}
+          {/* Left - content */}
           <div>
             <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Proactive protection built for operational industries.
@@ -24,7 +24,7 @@ export default function OurApproach() {
               We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit.
             </p>
 
-            {/* Open list — no boxes */}
+            {/* Open list - no boxes */}
             <div className="space-y-8">
               {approaches.map((a, i) => (
                 <div key={a.title} data-testid={`approach-card-${i}`} className={`flex items-start gap-5 animate-fade-in-up stagger-${i + 3}`}>
@@ -40,7 +40,7 @@ export default function OurApproach() {
             </div>
           </div>
 
-          {/* Right — SOC image */}
+          {/* Right - SOC image */}
           <div className="animate-fade-in-up stagger-2 lg:sticky lg:top-24">
             <div className="relative overflow-hidden border border-white/10">
               <img data-testid="soc-image" src={SOC_IMG} alt="Security Operations Center analyst monitoring threat dashboards 24/7" className="w-full h-auto object-cover" loading="lazy" />

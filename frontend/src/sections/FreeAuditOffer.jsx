@@ -36,7 +36,7 @@ export default function FreeAuditOffer() {
             </h2>
             <p className="text-[#1a2b42] text-base leading-relaxed mb-8">
               Our team will conduct a comprehensive, non-invasive review of your IT infrastructure 
-              and cybersecurity posture — tailored to your industry. You&rsquo;ll receive a detailed 
+              and cybersecurity posture - tailored to your industry. You&rsquo;ll receive a detailed 
               report with actionable recommendations for your specific compliance and operational needs.
             </p>
 

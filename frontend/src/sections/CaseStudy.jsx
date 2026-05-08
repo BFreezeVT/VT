@@ -234,7 +234,7 @@ export default function CaseStudy() {
           </Carousel>
         </div>
 
-        {/* Stats — open divider layout */}
+        {/* Stats - open divider layout */}
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-white/10/50 pt-8">
           <div data-testid="case-study-metric-0" className="text-center px-4">
             <p className="stat-number text-5xl text-white">60+</p>

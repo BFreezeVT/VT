@@ -7,7 +7,7 @@ const reasons = [
   {
     icon: Wifi,
     title: "Field & Site Connectivity",
-    desc: "Ruggedized networking for job sites, branch offices, and factory floors — keeping every device and team online across distributed operations.",
+    desc: "Ruggedized networking for job sites, branch offices, and factory floors - keeping every device and team online across distributed operations.",
   },
   {
     icon: Lock,
@@ -22,7 +22,7 @@ const reasons = [
   {
     icon: Zap,
     title: "Rapid Response SLAs",
-    desc: "15-minute SLA for critical issues. A downed system on production day — whether it's a pour, a trade, or a manufacturing run — costs more than anywhere else.",
+    desc: "15-minute SLA for critical issues. A downed system on production day - whether it's a pour, a trade, or a manufacturing run - costs more than anywhere else.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function WhySpecializedIT() {
             </h2>
             <p className="text-[#94a8be] text-base leading-relaxed mb-4 animate-fade-in-up stagger-2">
               Your operations move fast, your teams are distributed, and your data is mission-critical. 
-              You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace — not just the server room.
+              You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace - not just the server room.
             </p>
             <p className="text-[#94a8be]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
               Veracity Technologies offers industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.

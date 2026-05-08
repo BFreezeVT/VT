@@ -1,11 +1,11 @@
 import { Brain, ShieldCheck, Bot, Sparkles, Lock, Eye, ExternalLink } from "lucide-react";
 
 const aiServices = [
-  { icon: Brain, title: "AI Strategy & Integration", desc: "Adopt AI tools — copilots, chatbots, predictive analytics — securely and in compliance with your industry's regulations." },
+  { icon: Brain, title: "AI Strategy & Integration", desc: "Adopt AI tools - copilots, chatbots, predictive analytics - securely and in compliance with your industry's regulations." },
   { icon: ShieldCheck, title: "AI Security & Governance", desc: "Protect models, training data, and pipelines from prompt injection, data poisoning, and unauthorized access." },
-  { icon: Bot, title: "AI-Powered Threat Detection", desc: "ML models detect anomalies, flag credential abuse, and stop ransomware before execution — 24/7, in real time." },
+  { icon: Bot, title: "AI-Powered Threat Detection", desc: "ML models detect anomalies, flag credential abuse, and stop ransomware before execution - 24/7, in real time." },
   { icon: Eye, title: "Shadow AI Monitoring", desc: "Discover, assess, and govern unsanctioned AI tools employees are already using across your organization." },
-  { icon: Lock, title: "Data Loss Prevention for AI", desc: "Prevent sensitive data — client records, financials, trade secrets — from leaking into public LLMs." },
+  { icon: Lock, title: "Data Loss Prevention for AI", desc: "Prevent sensitive data - client records, financials, trade secrets - from leaking into public LLMs." },
   { icon: Sparkles, title: "AI Readiness Assessments", desc: "Evaluate infrastructure, data hygiene, and compliance posture to build an AI adoption roadmap for your industry." },
 ];
 
@@ -40,7 +40,7 @@ export default function AIService() {
           </a>
         </div>
 
-        {/* Services — alternating open layout */}
+        {/* Services - alternating open layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 border-t border-white/10/50 pt-12">
           {aiServices.map((svc, i) => (
             <div key={svc.title} data-testid={`ai-card-${i}`} className={`animate-fade-in-up stagger-${(i % 6) + 1}`}>

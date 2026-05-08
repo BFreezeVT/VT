@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "What software and platforms do you support?",
-    a: "We have deep expertise across industry-specific platforms — Procore, Sage, and Bluebeam for construction; Bloomberg, Salesforce, and trading platforms for financial services; SAP, SCADA, and MES systems for manufacturing. If your team uses it, we know how to secure and optimize it.",
+    a: "We have deep expertise across industry-specific platforms - Procore, Sage, and Bluebeam for construction; Bloomberg, Salesforce, and trading platforms for financial services; SAP, SCADA, and MES systems for manufacturing. If your team uses it, we know how to secure and optimize it.",
   },
   {
     q: "Can you help with compliance requirements?",

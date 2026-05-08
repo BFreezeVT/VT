@@ -94,7 +94,7 @@ def send_lead_notification(lead: AuditLead):
     notify_email = os.environ.get("NOTIFY_EMAIL", "info@veracitytech.com")
 
     if not all([smtp_host, smtp_user, smtp_pass]):
-        logger.info(f"SMTP not configured — skipping email notification for lead {lead.id}")
+        logger.info(f"SMTP not configured - skipping email notification for lead {lead.id}")
         return False
 
     try:
@@ -189,7 +189,7 @@ BLOG_POSTS = [
     {
         "slug": "ai-cybersecurity-threats-2025",
         "title": "How AI Is Changing the Cybersecurity Threat Landscape in 2025",
-        "excerpt": "AI-powered attacks are outpacing traditional defenses. Here's what businesses in construction, finance, and manufacturing need to know — and do — right now.",
+        "excerpt": "AI-powered attacks are outpacing traditional defenses. Here's what businesses in construction, finance, and manufacturing need to know - and do - right now.",
         "category": "AI & Cybersecurity",
         "author": "Veracity Technologies",
         "published_date": "2025-12-01",
@@ -209,8 +209,8 @@ BLOG_POSTS = [
 1. **Implement AI-powered email security** that analyzes behavioral patterns, not just content signatures
 2. **Establish verbal verification protocols** for any financial transaction over a defined threshold
 3. **Deploy AI-augmented SOC monitoring** that detects lateral movement and anomalous access patterns in real time
-4. **Train employees on AI-specific threats** — traditional phishing training is no longer sufficient
-5. **Audit your AI tool usage** — shadow AI tools may be leaking sensitive data to third-party models
+4. **Train employees on AI-specific threats** - traditional phishing training is no longer sufficient
+5. **Audit your AI tool usage** - shadow AI tools may be leaking sensitive data to third-party models
 
 ## Industry-Specific Risks
 
@@ -222,19 +222,19 @@ BLOG_POSTS = [
 
 ## The Bottom Line
 
-The organizations that will be most resilient in 2025 and beyond are those that adopt AI defensively before they become victims of AI offensively. At Veracity Technologies, our SOC uses machine learning models trained on industry-specific threat data to detect and respond to attacks in real time — 24/7.
+The organizations that will be most resilient in 2025 and beyond are those that adopt AI defensively before they become victims of AI offensively. At Veracity Technologies, our SOC uses machine learning models trained on industry-specific threat data to detect and respond to attacks in real time - 24/7.
 
 *If your business hasn't conducted an AI security assessment, now is the time. Contact us for a free evaluation.*"""
     },
     {
         "slug": "soc-2-compliance-guide-small-business",
         "title": "SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide",
-        "excerpt": "SOC 2 isn't just for enterprises anymore. Here's how smaller firms in the Twin Cities can achieve compliance without breaking the bank — or their operations.",
+        "excerpt": "SOC 2 isn't just for enterprises anymore. Here's how smaller firms in the Twin Cities can achieve compliance without breaking the bank - or their operations.",
         "category": "Compliance",
         "author": "Veracity Technologies",
         "published_date": "2025-11-15",
         "read_time": "9 min read",
-        "content": """SOC 2 compliance was once considered the domain of large enterprises and SaaS companies. Today, it's increasingly required by clients, partners, and regulators across industries — including financial services, professional services, and even construction firms bidding on government-adjacent projects.
+        "content": """SOC 2 compliance was once considered the domain of large enterprises and SaaS companies. Today, it's increasingly required by clients, partners, and regulators across industries - including financial services, professional services, and even construction firms bidding on government-adjacent projects.
 
 ## What Is SOC 2?
 
@@ -249,7 +249,7 @@ SOC 2 (System and Organization Controls 2) is a framework developed by the AICPA
 
 **Insurance premiums are tied to compliance.** Cyber insurance carriers are offering significantly lower premiums to organizations that can demonstrate SOC 2 compliance.
 
-**It forces good hygiene.** The SOC 2 process identifies gaps you didn't know existed — from access control weaknesses to missing backup verification procedures.
+**It forces good hygiene.** The SOC 2 process identifies gaps you didn't know existed - from access control weaknesses to missing backup verification procedures.
 
 ## The Practical Path to SOC 2
 
@@ -257,17 +257,17 @@ SOC 2 (System and Organization Controls 2) is a framework developed by the AICPA
 We evaluate your current environment against SOC 2 Trust Service Criteria. This identifies what you already have in place and what needs to change.
 
 ### Phase 2: Remediation (Weeks 4-10)
-We implement the missing controls — access management, encryption, monitoring, incident response procedures, vendor management, and more. For most small businesses, this involves configuring existing tools properly rather than buying new ones.
+We implement the missing controls - access management, encryption, monitoring, incident response procedures, vendor management, and more. For most small businesses, this involves configuring existing tools properly rather than buying new ones.
 
 ### Phase 3: Evidence Collection (Weeks 11-16)
-For Type II, we help you collect and organize the evidence auditors need — logs, access reviews, change management records, and policy acknowledgments.
+For Type II, we help you collect and organize the evidence auditors need - logs, access reviews, change management records, and policy acknowledgments.
 
 ### Phase 4: Audit (Weeks 17-20)
 We coordinate with your auditor, provide all documentation, and handle questions on your behalf.
 
 ## Common Misconceptions
 
-**"SOC 2 is too expensive for us."** A typical small business SOC 2 engagement costs $15,000-$40,000 — far less than losing a single enterprise client or paying higher insurance premiums for years.
+**"SOC 2 is too expensive for us."** A typical small business SOC 2 engagement costs $15,000-$40,000 - far less than losing a single enterprise client or paying higher insurance premiums for years.
 
 **"We need to overhaul everything."** Most organizations are 60-70% compliant before they start. The gap is usually in documentation and monitoring, not in fundamental infrastructure changes.
 
@@ -275,7 +275,7 @@ We coordinate with your auditor, provide all documentation, and handle questions
 
 ## Veracity's Approach
 
-We've guided dozens of Twin Cities businesses through SOC 2 — from 10-person financial advisory firms to 200-employee manufacturing companies. Our approach minimizes disruption while ensuring you pass your audit on the first attempt.
+We've guided dozens of Twin Cities businesses through SOC 2 - from 10-person financial advisory firms to 200-employee manufacturing companies. Our approach minimizes disruption while ensuring you pass your audit on the first attempt.
 
 *Ready to start? Schedule a free compliance gap assessment with our team.*"""
     },
@@ -287,7 +287,7 @@ We've guided dozens of Twin Cities businesses through SOC 2 — from 10-person f
         "author": "Veracity Technologies",
         "published_date": "2025-11-01",
         "read_time": "6 min read",
-        "content": """Construction firms have seen a 41% year-over-year increase in ransomware attacks. The industry's unique characteristics — distributed job sites, heavy subcontractor reliance, large wire transfers, and time-sensitive project schedules — make it an ideal target for cybercriminals.
+        "content": """Construction firms have seen a 41% year-over-year increase in ransomware attacks. The industry's unique characteristics - distributed job sites, heavy subcontractor reliance, large wire transfers, and time-sensitive project schedules - make it an ideal target for cybercriminals.
 
 Here are five steps you can implement this week to significantly reduce your risk.
 
@@ -300,7 +300,7 @@ This is the single most impactful step you can take. Require MFA on:
 - Financial systems (Sage, QuickBooks)
 - Remote desktop connections
 
-**Time to implement: 1-2 hours.** Most platforms support MFA natively — you just need to turn it on and enforce it.
+**Time to implement: 1-2 hours.** Most platforms support MFA natively - you just need to turn it on and enforce it.
 
 ## 2. Segment Your Network
 
@@ -321,7 +321,7 @@ Payment fraud via spoofed emails is the #1 financial cybercrime in construction.
 
 This prevents attackers from sending emails that appear to come from your domain.
 
-## 4. Test Your Backups — Today
+## 4. Test Your Backups - Today
 
 Having backups isn't enough. You need to verify:
 - Backups are completing successfully (check logs)
@@ -352,13 +352,13 @@ These five steps will significantly reduce your risk, but they're just the begin
         "author": "Veracity Technologies",
         "published_date": "2025-10-15",
         "read_time": "8 min read",
-        "content": """Manufacturing is the #1 most-targeted industry for ransomware attacks — and has been for three consecutive years. The reason is simple: manufacturers can't afford downtime, so they're more likely to pay ransoms. And the convergence of operational technology (OT) with information technology (IT) has created attack surfaces that didn't exist a decade ago.
+        "content": """Manufacturing is the #1 most-targeted industry for ransomware attacks - and has been for three consecutive years. The reason is simple: manufacturers can't afford downtime, so they're more likely to pay ransoms. And the convergence of operational technology (OT) with information technology (IT) has created attack surfaces that didn't exist a decade ago.
 
 ## Understanding the OT/IT Convergence
 
-**Operational Technology (OT)** includes the hardware and software that monitors and controls physical processes — PLCs, SCADA systems, HMIs, DCS controllers, and industrial IoT sensors.
+**Operational Technology (OT)** includes the hardware and software that monitors and controls physical processes - PLCs, SCADA systems, HMIs, DCS controllers, and industrial IoT sensors.
 
-**Information Technology (IT)** includes traditional computing — servers, workstations, email, ERP systems, and cloud applications.
+**Information Technology (IT)** includes traditional computing - servers, workstations, email, ERP systems, and cloud applications.
 
 Historically, these were air-gapped. Today, they're increasingly connected for efficiency: real-time production dashboards, predictive maintenance, quality tracking, and supply chain integration all require OT data to flow into IT systems.
 
@@ -413,13 +413,13 @@ The first step is always visibility: you can't secure what you can't see. A comp
         "author": "Veracity Technologies",
         "published_date": "2025-10-01",
         "read_time": "5 min read",
-        "content": """78% of organizations have no AI security policy in place. Meanwhile, employees across every industry are adopting AI tools daily — ChatGPT, Claude, Copilot, Gemini, and dozens of specialized AI assistants for coding, writing, data analysis, and customer communication.
+        "content": """78% of organizations have no AI security policy in place. Meanwhile, employees across every industry are adopting AI tools daily - ChatGPT, Claude, Copilot, Gemini, and dozens of specialized AI assistants for coding, writing, data analysis, and customer communication.
 
 This is shadow AI, and it's the fastest-growing security blind spot in business today.
 
 ## What Is Shadow AI?
 
-Shadow AI refers to the use of artificial intelligence tools and services by employees without the knowledge, approval, or governance of the IT or security team. It's the AI equivalent of shadow IT — but with significantly higher stakes.
+Shadow AI refers to the use of artificial intelligence tools and services by employees without the knowledge, approval, or governance of the IT or security team. It's the AI equivalent of shadow IT - but with significantly higher stakes.
 
 ## Why It's Dangerous
 
@@ -431,9 +431,9 @@ Shadow AI refers to the use of artificial intelligence tools and services by emp
 
 ## Real-World Examples
 
-- A construction PM pasted an entire bid document into an AI tool to check for errors — exposing proprietary pricing to a third party
-- A financial analyst uploaded client portfolio data to an AI assistant for formatting — violating data handling agreements
-- A manufacturing engineer shared SCADA configurations with an AI chatbot for troubleshooting — revealing network architecture to an unknown entity
+- A construction PM pasted an entire bid document into an AI tool to check for errors - exposing proprietary pricing to a third party
+- A financial analyst uploaded client portfolio data to an AI assistant for formatting - violating data handling agreements
+- A manufacturing engineer shared SCADA configurations with an AI chatbot for troubleshooting - revealing network architecture to an unknown entity
 
 ## What to Do About It
 
@@ -441,7 +441,7 @@ Shadow AI refers to the use of artificial intelligence tools and services by emp
 Deploy network monitoring and endpoint tools that can identify AI service usage. You'll likely be surprised by what you find.
 
 ### 2. Create an AI Acceptable Use Policy
-Define what's allowed and what isn't. Be specific about data classification — what types of data can and cannot be shared with AI tools.
+Define what's allowed and what isn't. Be specific about data classification - what types of data can and cannot be shared with AI tools.
 
 ### 3. Provide Approved Alternatives
 If employees are using AI because it makes them more productive, provide sanctioned tools with proper security controls rather than just banning everything.
@@ -450,7 +450,7 @@ If employees are using AI because it makes them more productive, provide sanctio
 DLP tools can detect and block sensitive data from being transmitted to unauthorized AI services.
 
 ### 5. Train Your Team
-Employees need to understand the risks — not just the rules. When people understand why data shouldn't be shared with AI tools, compliance improves dramatically.
+Employees need to understand the risks - not just the rules. When people understand why data shouldn't be shared with AI tools, compliance improves dramatically.
 
 *Veracity Technologies offers Shadow AI assessments that discover, evaluate, and govern AI tool usage across your organization. Contact us to learn more.*"""
     },
@@ -462,14 +462,14 @@ Employees need to understand the risks — not just the rules. When people under
         "author": "Veracity Technologies",
         "published_date": "2025-09-15",
         "read_time": "6 min read",
-        "content": """Business email compromise (BEC) is the most financially devastating cybercrime affecting financial services firms today. The FBI reports over $2.7 billion in losses annually — and those are just the reported cases.
+        "content": """Business email compromise (BEC) is the most financially devastating cybercrime affecting financial services firms today. The FBI reports over $2.7 billion in losses annually - and those are just the reported cases.
 
 For financial advisors, banks, and investment firms that routinely process wire transfers, the risk is existential. A single compromised email thread can redirect hundreds of thousands of dollars to an attacker's account.
 
 ## How Wire Fraud Attacks Work
 
 ### The Setup
-Attackers gain access to an email account — either through phishing, credential stuffing, or purchasing stolen credentials. They then monitor email conversations silently, sometimes for weeks, learning communication patterns, identifying pending transactions, and mapping relationships.
+Attackers gain access to an email account - either through phishing, credential stuffing, or purchasing stolen credentials. They then monitor email conversations silently, sometimes for weeks, learning communication patterns, identifying pending transactions, and mapping relationships.
 
 ### The Strike
 When a wire transfer is imminent, the attacker either:
@@ -527,7 +527,7 @@ CMMC 2.0 is a streamlined version of the original CMMC framework, reducing the f
 
 ## Who Needs CMMC?
 
-If your organization is part of the defense industrial base and handles CUI — which includes technical drawings, specifications, contract data, and export-controlled information — you need Level 2 certification. This applies to:
+If your organization is part of the defense industrial base and handles CUI - which includes technical drawings, specifications, contract data, and export-controlled information - you need Level 2 certification. This applies to:
 
 - Prime contractors
 - Subcontractors at any tier
@@ -541,26 +541,26 @@ If your organization is part of the defense industrial base and handles CUI — 
 Evaluate your current environment against all 110 NIST 800-171 controls. Identify what's in place, what's partially implemented, and what's missing entirely.
 
 ### Phase 2: System Security Plan (SSP)
-Document your entire security environment — network architecture, access controls, incident response procedures, and continuous monitoring capabilities.
+Document your entire security environment - network architecture, access controls, incident response procedures, and continuous monitoring capabilities.
 
 ### Phase 3: Plan of Action & Milestones (POA&M)
 For controls not yet fully implemented, create a remediation plan with specific timelines. Note: POA&Ms are now allowed under CMMC 2.0 but must be closed within 180 days.
 
 ### Phase 4: Implementation
-Deploy the missing controls — enclave architecture, FIPS 140-2 encryption, multi-factor authentication, continuous monitoring, and audit logging.
+Deploy the missing controls - enclave architecture, FIPS 140-2 encryption, multi-factor authentication, continuous monitoring, and audit logging.
 
 ### Phase 5: Third-Party Assessment
 A C3PAO (Certified Third-Party Assessment Organization) conducts your official assessment. They review your SSP, test controls, and issue your certification.
 
 ## Common Pitfalls
 
-**Underestimating scope.** CUI flows through more systems than you think — email, file shares, collaboration tools, and even personal devices.
+**Underestimating scope.** CUI flows through more systems than you think - email, file shares, collaboration tools, and even personal devices.
 
 **Treating it as a one-time project.** CMMC requires continuous compliance, not just point-in-time certification.
 
 **Ignoring subcontractor flow-down.** If your subs handle CUI, they need CMMC too. Your certification depends on your entire supply chain.
 
-*Veracity Technologies is a CMMC Registered Provider. We build compliant environments from the ground up — contact us for a free gap assessment.*"""
+*Veracity Technologies is a CMMC Registered Provider. We build compliant environments from the ground up - contact us for a free gap assessment.*"""
     },
     {
         "slug": "mfa-implementation-guide-business",
@@ -570,7 +570,7 @@ A C3PAO (Certified Third-Party Assessment Organization) conducts your official a
         "author": "Veracity Technologies",
         "published_date": "2025-11-20",
         "read_time": "5 min read",
-        "content": """59% of confirmed security incidents in 2025 were identity-driven attacks — stolen credentials, password spraying, and session hijacking. Multi-factor authentication (MFA) blocks 99.9% of these attacks, making it the single highest-impact security control any organization can implement.
+        "content": """59% of confirmed security incidents in 2025 were identity-driven attacks - stolen credentials, password spraying, and session hijacking. Multi-factor authentication (MFA) blocks 99.9% of these attacks, making it the single highest-impact security control any organization can implement.
 
 ## What Is MFA?
 
@@ -582,18 +582,18 @@ Multi-factor authentication requires users to provide two or more verification f
 
 ## Where to Implement MFA (Priority Order)
 
-1. **Email** (Office 365, Google Workspace) — The #1 target for credential theft
-2. **VPN and remote access** — Every remote connection must be verified
-3. **Financial systems** (banking, accounting, payroll) — Wire fraud prevention
-4. **Cloud applications** (Salesforce, Procore, SAP) — SaaS is the new perimeter
-5. **Administrative accounts** — Domain admins, firewall admins, cloud admins
-6. **Help desk and IT tools** — Prevent attackers from impersonating IT
+1. **Email** (Office 365, Google Workspace) - The #1 target for credential theft
+2. **VPN and remote access** - Every remote connection must be verified
+3. **Financial systems** (banking, accounting, payroll) - Wire fraud prevention
+4. **Cloud applications** (Salesforce, Procore, SAP) - SaaS is the new perimeter
+5. **Administrative accounts** - Domain admins, firewall admins, cloud admins
+6. **Help desk and IT tools** - Prevent attackers from impersonating IT
 
 ## Implementation Best Practices
 
 **Use authenticator apps, not SMS.** SMS codes can be intercepted via SIM swapping. Microsoft Authenticator, Google Authenticator, or hardware keys (YubiKey) are significantly more secure.
 
-**Enforce conditional access policies.** Require MFA based on risk — new device, unusual location, sensitive application, or elevated privileges.
+**Enforce conditional access policies.** Require MFA based on risk - new device, unusual location, sensitive application, or elevated privileges.
 
 **Don't make exceptions.** Every exception is an attack vector. Executives, contractors, and temporary staff all need MFA.
 
@@ -660,17 +660,17 @@ HIPAA fines range from $100 to $50,000 per violation, with annual maximums of $1
         "author": "Veracity Technologies",
         "published_date": "2025-09-01",
         "read_time": "6 min read",
-        "content": """The traditional security model — a fortified perimeter protecting a trusted internal network — is dead. Cloud computing, remote work, mobile devices, and SaaS applications have dissolved the perimeter. Attackers who breach the edge now move laterally through flat networks with impunity.
+        "content": """The traditional security model - a fortified perimeter protecting a trusted internal network - is dead. Cloud computing, remote work, mobile devices, and SaaS applications have dissolved the perimeter. Attackers who breach the edge now move laterally through flat networks with impunity.
 
-Zero Trust Architecture (ZTA) eliminates implicit trust entirely. Every user, device, application, and data flow is verified continuously — regardless of location.
+Zero Trust Architecture (ZTA) eliminates implicit trust entirely. Every user, device, application, and data flow is verified continuously - regardless of location.
 
 ## Core Principles of Zero Trust
 
 ### 1. Never Trust, Always Verify
-Every access request is authenticated, authorized, and encrypted — even if it comes from inside the network. An employee at their desk gets the same scrutiny as a contractor on public Wi-Fi.
+Every access request is authenticated, authorized, and encrypted - even if it comes from inside the network. An employee at their desk gets the same scrutiny as a contractor on public Wi-Fi.
 
 ### 2. Least Privilege Access
-Users get the minimum access needed for their role — nothing more. A project manager doesn't need access to financial systems. An accountant doesn't need access to engineering files.
+Users get the minimum access needed for their role - nothing more. A project manager doesn't need access to financial systems. An accountant doesn't need access to engineering files.
 
 ### 3. Assume Breach
 Design your architecture as if attackers are already inside. Segment networks, monitor lateral movement, and contain incidents before they spread.
@@ -694,7 +694,7 @@ Authentication isn't a one-time event at login. User behavior, device health, lo
 
 ## Getting Started
 
-Zero trust isn't a product you buy — it's an architecture you build incrementally. Start with:
+Zero trust isn't a product you buy - it's an architecture you build incrementally. Start with:
 1. MFA on all accounts
 2. Conditional access for sensitive applications
 3. Network segmentation between departments

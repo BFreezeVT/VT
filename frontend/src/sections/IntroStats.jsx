@@ -40,10 +40,10 @@ const stats = [
 ];
 
 const topAttackedIndustries = [
-  { rank: 1, name: "Manufacturing", pct: "29%", note: "56% YoY increase — 4th consecutive year at #1" },
-  { rank: 2, name: "Finance & Insurance", pct: "18%", note: "$5.56M avg breach cost — SEC/FINRA pressure" },
+  { rank: 1, name: "Manufacturing", pct: "29%", note: "56% YoY increase - 4th consecutive year at #1" },
+  { rank: 2, name: "Finance & Insurance", pct: "18%", note: "$5.56M avg breach cost - SEC/FINRA pressure" },
   { rank: 3, name: "Professional Services", pct: "15%", note: "Law firms, consultancies, MSPs targeted" },
-  { rank: 4, name: "Construction", pct: "12%", note: "24% YoY increase — wire fraud epidemic" },
+  { rank: 4, name: "Construction", pct: "12%", note: "24% YoY increase - wire fraud epidemic" },
   { rank: 5, name: "Healthcare", pct: "8%", note: "Highest cost per breach ($7.42M)" },
 ];
 
@@ -106,7 +106,7 @@ export default function IntroStats() {
           </div>
         </div>
 
-        {/* Stats — open layout with dividers, no boxes */}
+        {/* Stats - open layout with dividers, no boxes */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-white/10/50">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
@@ -140,7 +140,7 @@ export default function IntroStats() {
           })}
         </div>
 
-        {/* Top 5 expanded — open layout */}
+        {/* Top 5 expanded - open layout */}
         {showRanking && (
           <div data-testid="top-5-ranking" className="mt-8 pt-8 border-t border-white/10/50 animate-fade-in">
             <p className="text-white text-sm font-semibold mb-6" style={{ fontFamily: "Outfit" }}>Top 5 Most-Attacked Industries (2025)</p>
