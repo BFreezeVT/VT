@@ -33,13 +33,10 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-[#0f1d32] relative" data-testid="app-root">
       {/* Background watermark logo */}
-      <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0" style={{ opacity: 0.06 }}>
-        <img
-          src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png"
-          alt=""
-          className="w-[900px] h-[900px] object-contain"
-          aria-hidden="true"
-        />
+      <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0">
+        <svg width="900" height="900" viewBox="0 0 100 100" style={{ opacity: 0.08 }}>
+          <text x="50" y="62" textAnchor="middle" fontFamily="Outfit, sans-serif" fontWeight="900" fontSize="70" fill="white">V</text>
+        </svg>
       </div>
       <div className="relative z-10">
       <Navigation />
