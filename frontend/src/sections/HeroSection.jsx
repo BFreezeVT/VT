@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const HERO_BG = "https://images.unsplash.com/photo-1604011237320-8e0506614fdf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjeWJlcnNlY3VyaXR5JTIwQUklMjB0ZWNobm9sb2d5JTIwZGFyayUyMGFic3RyYWN0fGVufDB8fHxibHVlfDE3NzYyODM4NDJ8MA&ixlib=rb-4.1.0&q=85";
 
-const rotatingWords = ["Cybersecurity", "AI Integration", "Compliance", "IT Infrastructure"];
+const rotatingWords = ["Cyber Secure", "AI Integration", "Compliance", "IT Infrastructure"];
 
 export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
