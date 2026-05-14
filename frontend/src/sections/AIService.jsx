@@ -15,7 +15,7 @@ export default function AIService() {
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0077B3 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative flex items-center justify-center mb-12"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-lg font-bold uppercase tracking-[0.15em]">AI as a Service</span></div>
+        <div className="relative flex items-center justify-center mb-12"><div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-xl font-bold uppercase tracking-[0.15em]">AI as a Service</span></div>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 data-testid="ai-service-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>

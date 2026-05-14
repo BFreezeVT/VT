@@ -43,7 +43,7 @@ export default function FAQSection() {
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           
-          <p className="overline text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
+          <p className="text-base font-bold uppercase tracking-[0.15em] text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
           <h2
             data-testid="faq-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
