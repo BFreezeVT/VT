@@ -18,12 +18,12 @@ export default function Compliance() {
       <div className="absolute inset-0 bg-[#0f1d32]/60" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-16">
+        <div className="mb-16 text-center">
             <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-lg font-bold uppercase tracking-[0.15em]">Compliance &amp; Risk</span></div>
             <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
-            <p className="text-[#94a8be] text-base max-w-2xl animate-fade-in-up stagger-2">
+            <p className="text-[#94a8be] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
         </div>
