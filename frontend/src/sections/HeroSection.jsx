@@ -55,7 +55,7 @@ export default function HeroSection() {
         <div className="max-w-4xl">
           <div className="flex items-center gap-3 mb-8 animate-fade-in-up stagger-1">
             <div className="w-2 h-2 rounded-full bg-[#0077B3] animate-pulse" />
-            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.15em] text-[#0077B3]">
+            <p className="text-base sm:text-lg font-bold uppercase tracking-[0.15em] text-[#00a0e4]">
               AI-Powered Managed IT &amp; Cybersecurity
             </p>
           </div>
