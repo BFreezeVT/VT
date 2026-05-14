@@ -28,17 +28,26 @@ export default function Compliance() {
             </p>
         </div>
 
-        {/* Open list layout - no card boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8 border-t border-white/10/40 pt-12">
-          {complianceItems.map((item, i) => (
-            <div key={item.title} data-testid={`compliance-card-${i}`} className={`flex items-start gap-4 animate-fade-in-up stagger-${i + 3}`}>
-              <item.icon className="w-5 h-5 text-[#0077B3] flex-shrink-0 mt-0.5" />
-              <div>
+        {/* 3 on top, 2 on bottom - centered */}
+        <div className="border-t border-white/10 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {complianceItems.slice(0, 3).map((item, i) => (
+              <div key={item.title} data-testid={`compliance-card-${i}`} className={`text-center animate-fade-in-up stagger-${i + 3}`}>
+                <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
                 <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
                 <p className="text-[#94a8be] text-sm leading-relaxed">{item.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {complianceItems.slice(3).map((item, i) => (
+              <div key={item.title} data-testid={`compliance-card-${i + 3}`} className={`text-center animate-fade-in-up stagger-${i + 6}`}>
+                <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
+                <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
+                <p className="text-[#94a8be] text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
