@@ -9,6 +9,7 @@ import Industries from "./sections/Industries";
 import WhySpecializedIT from "./sections/WhySpecializedIT";
 import Compliance from "./sections/Compliance";
 import CaseStudy from "./sections/CaseStudy";
+import Credentials from "./sections/Credentials";
 import CyberGame from "./sections/CyberGame";
 import FreeAuditOffer from "./sections/FreeAuditOffer";
 import RiskReversal from "./sections/RiskReversal";
@@ -42,6 +43,7 @@ function HomePage() {
         <WhySpecializedIT />
         <Compliance />
         <CaseStudy />
+        <Credentials />
         <CyberGame />
         <FreeAuditOffer />
         <RiskReversal />
