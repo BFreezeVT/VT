@@ -20,6 +20,7 @@ import ServiceAreaPage from "./pages/ServiceAreaPage";
 import IndustryPage from "./pages/IndustryPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
+import CyberRiskScorecard from "./pages/CyberRiskScorecard";
 import NotFound from "./pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -65,6 +66,7 @@ function App() {
         <Route path="/industries/:industrySlug" element={<IndustryPage />} />
         <Route path="/resources" element={<BlogIndex />} />
         <Route path="/resources/:slug" element={<BlogPost />} />
+        <Route path="/cyber-risk-scorecard" element={<CyberRiskScorecard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

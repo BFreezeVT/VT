@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "../components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,6 +46,7 @@ export default function Navigation() {
           <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">Industries</button>
           <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">Compliance</button>
           <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">FAQ</button>
+          <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-white text-sm font-medium transition-colors">Risk Score</Link>
           <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm transition-colors">
             <Phone className="w-4 h-4" />
             (952) 941-7333
