@@ -94,7 +94,7 @@ export default function FreeAuditOffer() {
                         id="company"
                         name="company"
                         placeholder="Your company name"
-                        className="bg-[#003B71] border-[#d0dbe8] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
+                        className="bg-[#f4f7fa] border-[#d0dbe8] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -107,7 +107,7 @@ export default function FreeAuditOffer() {
                         id="role"
                         name="role"
                         placeholder="e.g. IT Director, Owner, PM"
-                        className="bg-[#003B71] border-[#d0dbe8] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
+                        className="bg-[#f4f7fa] border-[#d0dbe8] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -121,7 +121,7 @@ export default function FreeAuditOffer() {
                         name="phone"
                         type="tel"
                         placeholder="(555) 123-4567"
-                        className="bg-[#003B71] border-[#d0dbe8] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
+                        className="bg-[#f4f7fa] border-[#d0dbe8] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
@@ -135,7 +135,7 @@ export default function FreeAuditOffer() {
                         name="email"
                         type="email"
                         placeholder="you@company.com"
-                        className="bg-[#003B71] border-[#d0dbe8] text-[#003B71] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
+                        className="bg-[#f4f7fa] border-[#d0dbe8] text-[#1a2b42] placeholder:text-[#94a3b8] focus:border-[#0077B3] focus:ring-1 focus:ring-[#0077B3] rounded-sm h-11"
                         required
                       />
                     </div>
