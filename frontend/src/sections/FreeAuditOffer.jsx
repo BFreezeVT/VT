@@ -59,7 +59,7 @@ export default function FreeAuditOffer() {
 
           {/* Right - Form */}
           <div className="animate-fade-in-up stagger-2">
-            <div className="grid-border-card p-8 lg:p-10">
+            <div className="border-2 border-[#0077B3] rounded-lg p-8 lg:p-10 bg-[#f4f7fa]">
               {!submitted ? (
                 <>
                   <div className="flex items-center gap-4 mb-6">
