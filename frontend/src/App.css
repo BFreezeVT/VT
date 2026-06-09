@@ -60,6 +60,58 @@
   background: linear-gradient(180deg, rgba(15, 29, 50, 0.75) 0%, rgba(15, 29, 50, 0.92) 100%);
 }
 
+/* Section transition blends */
+.blend-top-dark {
+  position: relative;
+}
+.blend-top-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, #0f1d32 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.blend-bottom-dark {
+  position: relative;
+}
+.blend-bottom-dark::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(0deg, #0f1d32 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.blend-top-white::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, #0f1d32 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.blend-bottom-white::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(0deg, #0f1d32 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 ::selection {
   background: rgba(0, 119, 179, 0.3);
   color: #fff;

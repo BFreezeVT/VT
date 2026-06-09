@@ -3,13 +3,13 @@ import { Heart, Clock, ShieldCheck, Users } from "lucide-react";
 const stats = [
   { icon: Heart, value: "98%", label: "Client Retention Rate", color: "text-[#10b981]" },
   { icon: Clock, value: "<5 min", label: "Average Response Time", color: "text-[#0077B3]" },
-  { icon: Users, value: "60+", label: "Active Clients", color: "text-[#0077B3]" },
-  { icon: ShieldCheck, value: "100+", label: "Years of Combined Experience", color: "text-[#0077B3]" },
+  { icon: Users, value: "100+", label: "Years of Combined Experience", color: "text-[#0077B3]" },
+  { icon: ShieldCheck, value: "24/7", label: "AI-Powered Monitoring", color: "text-[#0077B3]" },
 ];
 
 export default function TrustStats() {
   return (
-    <section data-testid="trust-stats-section" className="py-12 bg-[#0b1626] border-y border-white/5">
+    <section data-testid="trust-stats-section" className="py-12 bg-[#0b1626] relative blend-top-dark blend-bottom-dark">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (

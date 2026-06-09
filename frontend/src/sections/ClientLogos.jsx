@@ -15,7 +15,7 @@ const clients = [
 
 export default function ClientLogos() {
   return (
-    <section data-testid="client-logos-section" className="py-10 bg-[#0f1d32] border-t border-white/5">
+    <section data-testid="client-logos-section" className="py-10 bg-[#0f1d32]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-[#94a8be] text-xs uppercase tracking-[0.2em] mb-6">Clients We Work With</p>
         <div className="flex flex-wrap items-center justify-center gap-8">
