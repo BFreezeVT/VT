@@ -1,7 +1,7 @@
 import { Brain, ShieldAlert, DollarSign, AlertTriangle, ExternalLink, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-const HACKER_IMG = "https://images.unsplash.com/photo-1619121951749-4f4ddb5027dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxoYWNrZXIlMjBjeWJlcnNlY3VyaXR5JTIwdGhyZWF0JTIwZGFya3xlbnwwfHx8Ymx1ZXwxNzc2NDUwODg1fDA&ixlib=rb-4.1.0&q=85";
+const HACKER_IMG = "https://images.unsplash.com/photo-1624969862644-791f3dc98927?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxob29kZWQlMjBoYWNrZXIlMjBsYXB0b3AlMjBkYXJrJTIwcm9vbSUyMHJlYWxpc3RpYyUyMHRocmVhdGVuaW5nJTIwY3liZXJjcmltZXxlbnwwfHx8fDE3ODA5Nzc0OTB8MA&ixlib=rb-4.1.0&q=85";
 
 const stats = [
   {
@@ -69,7 +69,7 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-16 lg:py-24 bg-[#0f1d32]">
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-12 lg:py-18 bg-[#0f1d32]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}

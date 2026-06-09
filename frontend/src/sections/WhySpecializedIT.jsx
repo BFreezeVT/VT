@@ -32,10 +32,10 @@ export default function WhySpecializedIT() {
       id="why-it"
       data-testid="why-specialized-section"
       aria-label="Why regulated industries need specialized IT support"
-      className="py-16 lg:py-24 bg-[#0f1d32]"
+      className="py-12 lg:py-18 bg-[#0f1d32]"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative flex items-center justify-center mb-12"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-xl font-bold uppercase tracking-[0.15em]">Why Specialized IT</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-xl font-bold uppercase tracking-[0.15em]">Why Specialized IT</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image stack */}
           <div className="animate-fade-in-up stagger-1 order-2 lg:order-1">

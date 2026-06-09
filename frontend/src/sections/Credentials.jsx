@@ -37,15 +37,15 @@ export default function Credentials() {
       id="credentials"
       data-testid="credentials-section"
       aria-label="Veracity Technologies honors, awards, and published works"
-      className="py-16 lg:py-24 bg-[#0f1d32]"
+      className="py-12 lg:py-18 bg-[#0f1d32]"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative flex items-center justify-center mb-12">
+        <div className="relative flex items-center justify-center mb-8">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div>
           <span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-xl font-bold uppercase tracking-[0.15em]">Honors &amp; Awards</span>
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2
             data-testid="credentials-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"

@@ -86,10 +86,10 @@ export default function FAQSection() {
       id="faq"
       data-testid="faq-section"
       aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
-      className="py-16 lg:py-24 bg-[#0f1d32]"
+      className="py-12 lg:py-18 bg-[#0f1d32]"
     >
       <div className="max-w-3xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           
           <p className="text-base font-bold uppercase tracking-[0.15em] text-[#0077B3] mb-4 animate-fade-in-up">FAQ</p>
           <h2

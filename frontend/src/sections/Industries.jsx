@@ -38,10 +38,10 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-16 lg:py-24 bg-[#0f1d32]"
+      className="py-12 lg:py-18 bg-[#0f1d32]"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-6 text-[#0077B3] text-xl font-bold uppercase tracking-[0.15em]">Industries We Serve</span></div>
           <h2
             data-testid="industries-heading"

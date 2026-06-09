@@ -167,10 +167,10 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-16 lg:py-24 bg-[#0f1d32]"
+      className="py-12 lg:py-18 bg-[#0f1d32]"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <p className="text-base font-bold uppercase tracking-[0.15em] text-[#0077B3] mb-4 animate-fade-in-up">What Our Clients Say</p>
           <h2
             data-testid="case-study-heading"
