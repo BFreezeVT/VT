@@ -6,7 +6,7 @@ const industries = [
     icon: HardHat,
     title: "Construction",
     slug: "construction-it-support",
-    desc: "Job site connectivity, BIM security, Procore and Sage integration, and rapid-response IT for teams that can't afford downtime on pour day.",
+    desc: "Job site connectivity, BIM security, Procore and Sage integration, and rapid-response IT for teams that can&rsquo;t afford downtime on pour day.",
     highlights: ["Job Site Networking", "BIM & Cloud Security", "Procore / Sage Support"],
   },
   {

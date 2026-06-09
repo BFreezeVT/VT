@@ -1,4 +1,4 @@
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -160,7 +160,11 @@ export default function CaseStudy() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          
+          <div className="flex items-center justify-center gap-1 mb-4">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-5 h-5 fill-[#f59e0b] text-[#f59e0b]" />
+            ))}
+          </div>
           <p className="text-base font-bold uppercase tracking-[0.15em] text-[#0077B3] mb-4 animate-fade-in-up">What Our Clients Say</p>
           <h2
             data-testid="case-study-heading"

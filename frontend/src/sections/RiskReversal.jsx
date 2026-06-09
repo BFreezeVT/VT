@@ -7,7 +7,7 @@ export default function RiskReversal() {
     <section
       id="risk-reversal"
       data-testid="risk-reversal-section"
-      aria-label="Satisfaction guarantee - $100 charity donation if audit doesn't find 3 actionable improvements"
+      aria-label="Satisfaction guarantee - $100 charity donation if audit doesn&rsquo;t find 3 actionable improvements"
       className="py-14 lg:py-20 bg-[#0f1d32]"
     >
       <div className="max-w-7xl mx-auto px-6">

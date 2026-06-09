@@ -2,6 +2,8 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
+import ClientLogos from "./sections/ClientLogos";
+import TrustStats from "./sections/TrustStats";
 import IntroStats from "./sections/IntroStats";
 import AIService from "./sections/AIService";
 import OurApproach from "./sections/OurApproach";
@@ -10,6 +12,7 @@ import WhySpecializedIT from "./sections/WhySpecializedIT";
 import Compliance from "./sections/Compliance";
 import CaseStudy from "./sections/CaseStudy";
 import Credentials from "./sections/Credentials";
+import ProudPartners from "./sections/ProudPartners";
 import CyberGame from "./sections/CyberGame";
 import FreeAuditOffer from "./sections/FreeAuditOffer";
 import RiskReversal from "./sections/RiskReversal";
@@ -37,6 +40,8 @@ function HomePage() {
       <Navigation />
       <main role="main">
         <HeroSection />
+        <ClientLogos />
+        <TrustStats />
         <IntroStats />
         <AIService />
         <OurApproach />
@@ -45,6 +50,7 @@ function HomePage() {
         <Compliance />
         <CaseStudy />
         <Credentials />
+        <ProudPartners />
         <CyberGame />
         <FreeAuditOffer />
         <RiskReversal />

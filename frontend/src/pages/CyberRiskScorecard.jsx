@@ -134,7 +134,7 @@ export default function CyberRiskScorecard() {
                 <Shield className="w-10 h-10 text-[#0077B3]" />
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6" style={{ fontFamily: "Outfit" }}>
-                What's Your Business's<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
+                What&rsquo;s Your Business's<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
               </h1>
               <p className="text-lg text-[#94a8be] max-w-2xl mx-auto mb-10">
                 Answer 12 quick questions and see where your business stands in under 3 minutes.
@@ -281,10 +281,10 @@ export default function CyberRiskScorecard() {
               <div className="bg-white rounded-lg p-8 sm:p-12 mb-12" data-testid="scorecard-conversion">
                 <div className="text-center mb-8">
                   <h2 className="text-2xl sm:text-3xl font-bold text-[#003B71] mb-3" style={{ fontFamily: "Outfit" }}>
-                    Let's Walk Through This Together
+                    Let&rsquo;s Walk Through This Together
                   </h2>
                   <p className="text-[#4a5e78] text-base max-w-xl mx-auto">
-                    We'll review your results, identify your biggest risks, and give you a clear action plan. No sales pressure.
+                    We&rsquo;ll review your results, identify your biggest risks, and give you a clear action plan. No sales pressure.
                   </p>
                 </div>
 
@@ -318,9 +318,9 @@ export default function CyberRiskScorecard() {
                 ) : (
                   <div className="text-center py-6" data-testid="booking-confirmed">
                     <CheckCircle className="w-16 h-16 text-[#10b981] mx-auto mb-4" />
-                    <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>You're Booked!</h3>
+                    <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>You&rsquo;re Booked!</h3>
                     <p className="text-[#4a5e78] text-sm">
-                      {selectedSlot?.day} at {selectedSlot?.time}. We'll send a confirmation and review your scorecard results before the call.
+                      {selectedSlot?.day} at {selectedSlot?.time}. We&rsquo;ll send a confirmation and review your scorecard results before the call.
                     </p>
                   </div>
                 )}

@@ -323,7 +323,7 @@ export default function IndustryPage() {
                 <div data-testid="industry-form-success" className="text-center py-6">
                   <Shield className="w-12 h-12 text-[#0077B3] mx-auto mb-4" />
                   <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>Thank you!</h3>
-                  <p className="text-[#94a8be] text-sm">We'll reach out within one business day to schedule your {industry.name.toLowerCase()} security audit.</p>
+                  <p className="text-[#94a8be] text-sm">We&rsquo;ll reach out within one business day to schedule your {industry.name.toLowerCase()} security audit.</p>
                 </div>
               )}
             </div>

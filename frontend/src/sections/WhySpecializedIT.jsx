@@ -22,7 +22,7 @@ const reasons = [
   {
     icon: Zap,
     title: "Rapid Response SLAs",
-    desc: "15-minute SLA for critical issues. A downed system on production day - whether it's a pour, a trade, or a manufacturing run - costs more than anywhere else.",
+    desc: "15-minute SLA for critical issues. A downed system on production day - whether it&rsquo;s a pour, a trade, or a manufacturing run - costs more than anywhere else.",
   },
 ];
 
