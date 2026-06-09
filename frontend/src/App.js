@@ -18,6 +18,7 @@ import FreeAuditOffer from "./sections/FreeAuditOffer";
 import RiskReversal from "./sections/RiskReversal";
 import FAQSection from "./sections/FAQSection";
 import Footer from "./sections/Footer";
+import EbookPopup from "./sections/EbookPopup";
 import ServiceAreasIndex from "./pages/ServiceAreasIndex";
 import ServiceAreaPage from "./pages/ServiceAreaPage";
 import IndustryPage from "./pages/IndustryPage";
@@ -41,11 +42,11 @@ function HomePage() {
       <main role="main">
         <HeroSection />
         <ClientLogos />
-        <TrustStats />
         <IntroStats />
         <AIService />
         <OurApproach />
         <Industries />
+        <TrustStats />
         <WhySpecializedIT />
         <Compliance />
         <CaseStudy />
@@ -57,6 +58,7 @@ function HomePage() {
         <FAQSection />
       </main>
       <Footer />
+      <EbookPopup />
     </div>
   );
 }

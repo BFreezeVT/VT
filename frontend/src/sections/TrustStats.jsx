@@ -4,7 +4,7 @@ const stats = [
   { icon: Heart, value: "98%", label: "Client Retention Rate", color: "text-[#10b981]" },
   { icon: Clock, value: "<5 min", label: "Average Response Time", color: "text-[#0077B3]" },
   { icon: Users, value: "60+", label: "Active Clients", color: "text-[#0077B3]" },
-  { icon: ShieldCheck, value: "30+", label: "Years of Experience", color: "text-[#0077B3]" },
+  { icon: ShieldCheck, value: "100+", label: "Years of Combined Experience", color: "text-[#0077B3]" },
 ];
 
 export default function TrustStats() {
