@@ -52,11 +52,11 @@ function SourcePopup({ source, onClose }) {
     <div className="absolute z-30 bottom-full left-0 right-0 mb-2 animate-fade-in" data-testid="source-popup">
       <div className="bg-white border border-[#1a8fd4] p-4 shadow-lg shadow-[#0077B3]/10">
         <div className="flex items-start justify-between gap-3 mb-2">
-          <p className="text-white text-sm font-semibold" style={{ fontFamily: "Outfit" }}>{source.title}</p>
-          <button onClick={onClose} className="text-[#94a8be] hover:text-white flex-shrink-0"><X className="w-4 h-4" /></button>
+          <p className="text-[#0f1d32] text-sm font-semibold" style={{ fontFamily: "Outfit" }}>{source.title}</p>
+          <button onClick={onClose} className="text-[#3a5068] hover:text-[#0f1d32] flex-shrink-0"><X className="w-4 h-4" /></button>
         </div>
-        <p className="text-[#94a8be] text-xs leading-relaxed mb-3">{source.excerpt}</p>
-        <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium hover:text-white transition-colors">
+        <p className="text-[#3a5068] text-xs leading-relaxed mb-3">{source.excerpt}</p>
+        <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium hover:text-[#0f1d32] transition-colors">
           View full report <ExternalLink className="w-3 h-3" />
         </a>
       </div>
@@ -69,17 +69,17 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-12 lg:py-18 bg-[#0f1d32]">
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-12 lg:py-18 bg-[#e4ecf4]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}
           <div className="relative animate-fade-in-up order-2 lg:order-1">
             <div className="relative overflow-hidden border border-[#FF5722]/20">
               <img data-testid="threat-image" src={HACKER_IMG} alt="Cybersecurity threat actor" className="w-full h-auto object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#112240] via-[#112240]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#e4ecf4] via-[#112240]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold mb-1">Active Threat</p>
-                <p className="text-white text-sm font-medium">Attackers are targeting your industry right now. Is your team ready?</p>
+                <p className="text-[#0f1d32] text-sm font-medium">Attackers are targeting your industry right now. Is your team ready?</p>
               </div>
             </div>
           </div>
@@ -88,18 +88,18 @@ export default function IntroStats() {
           <div className="order-1 lg:order-2">
             
             <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Why This Matters</p>
-            <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
+            <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0f1d32] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Cyberattacks aren&rsquo;t slowing down. Most defenses are.
             </h2>
-            <p data-testid="intro-description" className="text-[#94a8be] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
+            <p data-testid="intro-description" className="text-[#3a5068] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
               AI-powered attacks are outpacing traditional security tools. Ransomware victims surged 58% in 2025, credential theft is up 389%, and shadow AI usage is leaking sensitive data daily.
             </p>
             <div className="border-l-2 border-[#FF5722] pl-5 animate-fade-in-up stagger-3">
               <p className="text-[#FF5722] text-xs font-semibold uppercase tracking-wider mb-2">The Reality</p>
-              <p className="text-[#94a8be] text-sm leading-relaxed">
-                Global ransomware attacks rose <span className="text-white font-semibold">32% in 2025</span>. Average ransom: <span className="text-white font-semibold">$2.3 million</span>. 90% of organizations are unprepared for AI-augmented threats.
+              <p className="text-[#3a5068] text-sm leading-relaxed">
+                Global ransomware attacks rose <span className="text-[#0f1d32] font-semibold">32% in 2025</span>. Average ransom: <span className="text-[#0f1d32] font-semibold">$2.3 million</span>. 90% of organizations are unprepared for AI-augmented threats.
               </p>
-              <a href="https://deepstrike.io/blog/ransomware-statistics-2025" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-white transition-colors">
+              <a href="https://deepstrike.io/blog/ransomware-statistics-2025" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-[#0f1d32] transition-colors">
                 Source: DeepStrike 2025 <ExternalLink className="w-2.5 h-2.5" />
               </a>
             </div>
@@ -107,31 +107,31 @@ export default function IntroStats() {
         </div>
 
         {/* Stats - open layout with dividers, no boxes */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-white/10/50">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-[#b8c8da]/50">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={i}
                 data-testid={`stat-card-${i}`}
-                className={`relative pt-8 pb-6 ${i < 3 ? "border-r border-white/10/30 hidden lg:block" : ""} ${i < 2 ? "max-lg:border-r max-lg:border-white/10/30" : ""} px-6 first:pl-0 last:pr-0 animate-fade-in-up stagger-${i + 3}`}
+                className={`relative pt-8 pb-6 ${i < 3 ? "border-r border-[#b8c8da]/30 hidden lg:block" : ""} ${i < 2 ? "max-lg:border-r max-lg:border-[#b8c8da]/30" : ""} px-6 first:pl-0 last:pr-0 animate-fade-in-up stagger-${i + 3}`}
                 style={{ minWidth: 0 }}
               >
                 {activeSource === i && <SourcePopup source={stat.source} onClose={() => setActiveSource(null)} />}
                 <Icon className={`w-4 h-4 ${stat.accentColor} mb-3`} />
-                <p className="stat-number text-4xl sm:text-5xl text-white">
+                <p className="stat-number text-4xl sm:text-5xl text-[#0f1d32]">
                   {stat.value}<span className={stat.accentColor}>{stat.suffix}</span>
                 </p>
-                <p className="text-xs text-[#94a8be] mt-2 mb-3 leading-relaxed">{stat.label}</p>
+                <p className="text-xs text-[#3a5068] mt-2 mb-3 leading-relaxed">{stat.label}</p>
                 <button
                   data-testid={`stat-source-${i}`}
                   onClick={() => setActiveSource(activeSource === i ? null : i)}
-                  className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-[#0f1d32] transition-colors"
                 >
                   View source <ExternalLink className="w-2.5 h-2.5" />
                 </button>
                 {stat.expandable && (
-                  <button data-testid="expand-ranking" onClick={() => setShowRanking(!showRanking)} className="flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-white transition-colors mt-1">
+                  <button data-testid="expand-ranking" onClick={() => setShowRanking(!showRanking)} className="flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-[#0f1d32] transition-colors mt-1">
                     See top 5 <ChevronDown className={`w-2.5 h-2.5 transition-transform ${showRanking ? "rotate-180" : ""}`} />
                   </button>
                 )}
@@ -142,24 +142,24 @@ export default function IntroStats() {
 
         {/* Top 5 expanded - open layout */}
         {showRanking && (
-          <div data-testid="top-5-ranking" className="mt-8 pt-8 border-t border-white/10/50 animate-fade-in">
-            <p className="text-white text-sm font-semibold mb-6" style={{ fontFamily: "Outfit" }}>Top 5 Most-Attacked Industries (2025)</p>
+          <div data-testid="top-5-ranking" className="mt-8 pt-8 border-t border-[#b8c8da]/50 animate-fade-in">
+            <p className="text-[#0f1d32] text-sm font-semibold mb-6" style={{ fontFamily: "Outfit" }}>Top 5 Most-Attacked Industries (2025)</p>
             <div className="space-y-4">
               {topAttackedIndustries.map((ind) => (
                 <div key={ind.rank} className="flex items-center gap-4">
-                  <span className={`stat-number text-lg w-8 ${ind.rank === 1 ? "text-[#FF5722]" : "text-[#94a8be]"}`}>#{ind.rank}</span>
+                  <span className={`stat-number text-lg w-8 ${ind.rank === 1 ? "text-[#FF5722]" : "text-[#3a5068]"}`}>#{ind.rank}</span>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-white text-sm font-medium">{ind.name}</span>
+                      <span className="text-[#0f1d32] text-sm font-medium">{ind.name}</span>
                       <span className="text-[#0077B3] text-sm font-semibold">{ind.pct}</span>
                     </div>
                     <div className="w-full bg-white h-1"><div className={`h-1 ${ind.rank === 1 ? "bg-[#FF5722]" : "bg-[#0077B3]"}`} style={{ width: ind.pct }} /></div>
-                    <p className="text-[#94a8be] text-[10px] mt-1">{ind.note}</p>
+                    <p className="text-[#3a5068] text-[10px] mt-1">{ind.note}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <a href="https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-4 hover:text-white transition-colors">
+            <a href="https://industrialcyber.co/reports/global-ransomware-attacks-rose-32-in-2025-as-manufacturers-emerged-as-top-target/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-4 hover:text-[#0f1d32] transition-colors">
               Source: Industrial Cyber 2025 <ExternalLink className="w-2.5 h-2.5" />
             </a>
           </div>

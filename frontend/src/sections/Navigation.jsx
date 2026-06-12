@@ -24,7 +24,7 @@ export default function Navigation() {
       role="navigation"
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#003B71]/95 backdrop-blur-md border-b border-[#003B71]" : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-md border-b border-[#d0dcea]" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -34,20 +34,20 @@ export default function Navigation() {
           className="flex items-center gap-2.5"
         >
           <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity Technologies" className="w-12 h-12 object-contain brightness-150" />
-          <span className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
+          <span className="text-[#0f1d32] font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </span>
         </button>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-white/80 hover:text-white text-sm font-medium transition-colors ml-4">AI</button>
-          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">Approach</button>
-          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">Industries</button>
-          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">Compliance</button>
-          <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-white/80 hover:text-white text-sm font-medium transition-colors">FAQ</button>
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#1e3350] hover:text-[#0077B3] text-sm font-medium transition-colors ml-4">AI</button>
+          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#1e3350] hover:text-[#0077B3] text-sm font-medium transition-colors">Approach</button>
+          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#1e3350] hover:text-[#0077B3] text-sm font-medium transition-colors">Industries</button>
+          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#1e3350] hover:text-[#0077B3] text-sm font-medium transition-colors">Compliance</button>
+          <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-[#1e3350] hover:text-[#0077B3] text-sm font-medium transition-colors">FAQ</button>
           <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-white text-sm font-medium transition-colors">Risk Score</Link>
-          <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm transition-colors">
+          <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#0077B3] text-sm transition-colors">
             <Phone className="w-4 h-4" />
             (952) 941-7333
           </a>
@@ -73,13 +73,13 @@ export default function Navigation() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div data-testid="mobile-menu" className="md:hidden bg-[#003B71]/98 backdrop-blur-md border-t border-[#003B71] px-6 py-6 space-y-4 animate-fade-in">
-          <button data-testid="mobile-nav-why" onClick={() => scrollTo("why-it")} className="block text-[#b0c4d8] hover:text-white text-sm">Why Us</button>
-          <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#b0c4d8] hover:text-white text-sm">Approach</button>
-          <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#b0c4d8] hover:text-white text-sm">Industries</button>
-          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#b0c4d8] hover:text-white text-sm">AI</button>
-          <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#b0c4d8] hover:text-white text-sm">Compliance</button>
-          <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#b0c4d8] hover:text-white text-sm">FAQ</button>
-          <a href="tel:9529417333" className="flex items-center gap-2 text-[#b0c4d8] hover:text-white text-sm">
+          <button data-testid="mobile-nav-why" onClick={() => scrollTo("why-it")} className="block text-[#4a5e78] hover:text-[#0077B3] text-sm">Why Us</button>
+          <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#4a5e78] hover:text-[#0077B3] text-sm">Approach</button>
+          <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#4a5e78] hover:text-[#0077B3] text-sm">Industries</button>
+          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#4a5e78] hover:text-[#0077B3] text-sm">AI</button>
+          <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#4a5e78] hover:text-[#0077B3] text-sm">Compliance</button>
+          <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#4a5e78] hover:text-[#0077B3] text-sm">FAQ</button>
+          <a href="tel:9529417333" className="flex items-center gap-2 text-[#4a5e78] hover:text-[#0077B3] text-sm">
             <Phone className="w-4 h-4" /> (952) 941-7333
           </a>
           <Button

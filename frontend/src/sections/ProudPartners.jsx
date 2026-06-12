@@ -10,7 +10,7 @@ export default function ProudPartners() {
   ];
 
   return (
-    <section data-testid="proud-partners-section" className="py-10 bg-[#0f1d32]">
+    <section data-testid="proud-partners-section" className="py-10 bg-[#091428]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-center text-[#94a8be] text-xs uppercase tracking-[0.2em] mb-6">Proud to Partner With</p>
         <div className="flex flex-wrap items-center justify-center gap-8">

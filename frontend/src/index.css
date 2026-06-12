@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#0f1d32] text-white;
+    @apply bg-[#f0f4f8] text-[#0f1d32];
     font-family: 'IBM Plex Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
