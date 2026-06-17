@@ -19,7 +19,7 @@ export default function Compliance() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-10 text-center">
-            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32] px-8 py-1 rounded-sm text-[#0077B3] text-xl font-extrabold uppercase tracking-[0.15em]">Compliance &amp; Risk</span></div>
+            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Compliance &amp; Risk</span></div>
             <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
