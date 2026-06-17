@@ -86,7 +86,7 @@ export default function FAQSection() {
       id="faq"
       data-testid="faq-section"
       aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
-      className="py-12 lg:py-18 bg-[#040b16]"
+      className="py-12 lg:py-18 bg-gradient-to-b from-[#050c14] to-[#040a10]"
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-10">

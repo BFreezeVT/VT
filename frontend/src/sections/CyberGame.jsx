@@ -171,7 +171,7 @@ export default function CyberGame() {
   const highScore = stored.highScores[difficulty] || 0;
 
   return (
-    <section id="cyber-game" data-testid="cyber-game-section" className="py-12 lg:py-18 bg-[#071122] relative blend-top-dark blend-bottom-dark">
+    <section id="cyber-game" data-testid="cyber-game-section" className="py-12 lg:py-18 bg-gradient-to-b from-[#091422] to-[#07101c] relative">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-8">
           <p className="text-base font-bold uppercase tracking-[0.15em] text-[#FF5722] mb-4 animate-fade-in-up">Interactive Challenge</p>

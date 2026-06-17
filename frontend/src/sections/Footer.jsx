@@ -12,7 +12,7 @@ export default function Footer() {
       data-testid="footer"
       role="contentinfo"
       aria-label="Veracity Technologies contact information, credentials, and affiliations"
-      className="bg-[#030912] border-t border-white/5 pt-16 pb-8"
+      className="bg-[#040a10] border-t border-white/5 pt-16 pb-8"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">

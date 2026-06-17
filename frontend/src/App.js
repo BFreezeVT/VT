@@ -41,7 +41,6 @@ function HomePage() {
       <Navigation />
       <main role="main">
         <HeroSection />
-        <ClientLogos />
         <IntroStats />
         <AIService />
         <OurApproach />

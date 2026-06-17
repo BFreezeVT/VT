@@ -20,7 +20,7 @@ export default function FreeAuditOffer() {
       id="audit"
       data-testid="audit-section"
       aria-label="Schedule a free technology and cyber risk audit"
-      className="py-12 lg:py-18 bg-[#060f1e] relative blend-top-dark blend-bottom-dark"
+      className="py-12 lg:py-18 bg-gradient-to-b from-[#07101c] to-[#060e18] relative"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
