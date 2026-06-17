@@ -62,8 +62,8 @@ export default function HeroSection() {
 
           <h1
             data-testid="hero-headline"
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-8 animate-fade-in-up stagger-2"
-            style={{ fontFamily: "Outfit, sans-serif" }}
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-8 animate-fade-in-up stagger-2 drop-shadow-lg"
+            style={{ fontFamily: "Outfit, sans-serif", textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
             Your Business Runs on Technology.
             <br />
@@ -79,7 +79,7 @@ export default function HeroSection() {
 
           <p
             data-testid="hero-subhead"
-            className="text-base md:text-lg text-[#d0dce8] leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
+            className="text-base md:text-lg text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
             AI-driven threat detection. Industry-specialized compliance. 24/7 expert support.
             We protect and power businesses across construction, financial services, manufacturing, 
@@ -90,14 +90,14 @@ export default function HeroSection() {
             <Button
               data-testid="hero-cta-button"
               onClick={() => scrollTo("audit")}
-              className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
+              className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
             >
               Get Your Free Security Audit
             </Button>
             <a
               data-testid="hero-phone-link"
               href="tel:9529417333"
-              className="flex items-center gap-2 text-[#d0dce8] hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm"
             >
               <Phone className="w-4 h-4" />
               Or call (952) 941-7333
@@ -114,7 +114,7 @@ export default function HeroSection() {
               { label: "ISO 27001", icon: "FileCheck" },
               { label: "CompTIA Security+", icon: "ShieldCheck" },
             ].map((badge) => (
-              <span key={badge.label} className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] text-white/70 border border-white/20 bg-white/5 px-3 py-2 rounded">
+              <span key={badge.label} className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] text-white/90 border border-white/30 bg-white/10 px-3 py-2 rounded">
                 <ShieldCheck className="w-3 h-3 text-[#0077B3]" />
                 {badge.label}
               </span>
@@ -127,7 +127,7 @@ export default function HeroSection() {
           <button
             data-testid="scroll-indicator"
             onClick={() => scrollTo("intro-stats")}
-            className="text-[#d0dce8] hover:text-white transition-colors"
+            className="text-white/80 hover:text-white transition-colors"
             aria-label="Scroll down"
           >
             <ArrowDown className="w-5 h-5" />

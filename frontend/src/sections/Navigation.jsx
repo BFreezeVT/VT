@@ -24,7 +24,7 @@ export default function Navigation() {
       role="navigation"
       aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md border-b border-[#d0dcea]" : "bg-transparent"
+        scrolled ? "bg-white/95 backdrop-blur-md border-b border-[#d0dcea] shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -34,20 +34,20 @@ export default function Navigation() {
           className="flex items-center gap-2.5"
         >
           <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity Technologies" className="w-12 h-12 object-contain brightness-150" />
-          <span className="text-[#0a1220] font-extrabold text-xl tracking-tight" style={{ fontFamily: "Outfit, sans-serif" }}>
+          <span className={`font-extrabold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-[#0a1220]" : "text-white"}`} style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </span>
         </button>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className="text-[#0a1220] hover:text-[#0077B3] text-sm font-semibold transition-colors ml-4">AI</button>
-          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className="text-[#0a1220] hover:text-[#0077B3] text-sm font-semibold transition-colors">Approach</button>
-          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className="text-[#0a1220] hover:text-[#0077B3] text-sm font-semibold transition-colors">Industries</button>
-          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className="text-[#0a1220] hover:text-[#0077B3] text-sm font-semibold transition-colors">Compliance</button>
-          <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className="text-[#0a1220] hover:text-[#0077B3] text-sm font-semibold transition-colors">FAQ</button>
-          <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-[#005f8f] text-sm font-semibold transition-colors">Risk Score</Link>
-          <a data-testid="nav-phone" href="tel:9529417333" className="flex items-center gap-2 text-[#0a1220] hover:text-[#0077B3] text-sm transition-colors">
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className={`text-sm font-semibold transition-colors ml-4 ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>AI</button>
+          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Approach</button>
+          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Industries</button>
+          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Compliance</button>
+          <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>FAQ</button>
+          <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Risk Score</Link>
+          <a data-testid="nav-phone" href="tel:9529417333" className={`flex items-center gap-2 text-sm transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/80 hover:text-white"}`}>
             <Phone className="w-4 h-4" />
             (952) 941-7333
           </a>
@@ -64,7 +64,7 @@ export default function Navigation() {
         <button
           data-testid="mobile-menu-toggle"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white"
+          className={`md:hidden transition-colors ${scrolled ? "text-[#0a1220]" : "text-white"}`}
         >
           {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

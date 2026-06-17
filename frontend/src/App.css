@@ -70,7 +70,7 @@
 ::-webkit-scrollbar-thumb:hover { background: #0077B3; }
 
 .hero-overlay {
-  background: linear-gradient(180deg, rgba(0, 30, 60, 0.85) 0%, rgba(0, 25, 50, 0.90) 70%, rgba(232, 239, 246, 1) 100%);
+  background: linear-gradient(180deg, rgba(0, 15, 35, 0.92) 0%, rgba(0, 20, 45, 0.88) 70%, rgba(232, 239, 246, 1) 100%);
 }
 
 /* Section transition blends - smooth gradients between sections */
