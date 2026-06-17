@@ -42,7 +42,7 @@ export default function Industries() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#3a5a78] px-6 text-[#0077B3] text-xl font-extrabold uppercase tracking-[0.15em]">Industries We Serve</span></div>
+          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#0f1d32] px-8 py-1 rounded-sm text-[#0077B3] text-xl font-extrabold uppercase tracking-[0.15em]">Industries We Serve</span></div>
           <h2
             data-testid="industries-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
