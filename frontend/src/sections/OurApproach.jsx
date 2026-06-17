@@ -13,11 +13,11 @@ export default function OurApproach() {
   return (
     <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-12 lg:py-18 bg-gradient-to-b from-[#c8d6e5] to-[#4a6a88] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/20"></div></div><span className="relative bg-[#8aa4be] px-6 text-white text-xl font-bold uppercase tracking-[0.15em]">Our Approach</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/20"></div></div><span className="relative bg-[#8aa4be] px-6 text-white text-xl font-extrabold uppercase tracking-[0.15em]">Our Approach</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left - content */}
           <div>
-            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
+            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Proactive protection built for operational industries.
             </h2>
             <p className="text-[#dce6f0] text-base leading-relaxed mb-8 animate-fade-in-up stagger-2">

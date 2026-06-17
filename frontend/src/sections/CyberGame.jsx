@@ -174,7 +174,7 @@ export default function CyberGame() {
     <section id="cyber-game" data-testid="cyber-game-section" className="py-12 lg:py-18 bg-gradient-to-b from-[#091422] to-[#07101c] relative">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-8">
-          <p className="text-base font-bold uppercase tracking-[0.15em] text-[#FF5722] mb-4 animate-fade-in-up">Interactive Challenge</p>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4 animate-fade-in-up">Interactive Challenge</p>
           <h2 data-testid="cyber-game-heading" className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
             Can you spot the phish?
           </h2>

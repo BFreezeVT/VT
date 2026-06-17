@@ -26,7 +26,7 @@ export default function FreeAuditOffer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left - Info */}
           <div className="animate-fade-in-up">
-            <p className="text-base font-bold uppercase tracking-[0.15em] text-[#FF5722] mb-4">Limited Availability</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4">Limited Availability</p>
             <h2
               data-testid="audit-heading"
               className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6"

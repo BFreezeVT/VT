@@ -48,7 +48,7 @@ export default function Credentials() {
         <div className="text-center mb-8">
           <h2
             data-testid="credentials-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
             Recognized. Certified. Published.

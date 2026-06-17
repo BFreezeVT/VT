@@ -88,7 +88,7 @@ export default function IntroStats() {
           <div className="order-1 lg:order-2">
             
             <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Why This Matters</p>
-            <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0f1d32] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
+            <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Cyberattacks aren&rsquo;t slowing down. Most defenses are.
             </h2>
             <p data-testid="intro-description" className="text-[#3a5068] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
