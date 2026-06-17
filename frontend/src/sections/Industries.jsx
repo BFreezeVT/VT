@@ -38,7 +38,7 @@ export default function Industries() {
       id="industries"
       data-testid="industries-section"
       aria-label="Industries served: construction, financial services, manufacturing, and high-compliance"
-      className="py-12 lg:py-18 bg-gradient-to-b from-[#4a6a88] to-[#1e3350]"
+      className="py-12 lg:py-18 bg-gradient-to-b from-[#4a6a88] to-[#1e3350] dark-cards"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
@@ -50,7 +50,7 @@ export default function Industries() {
           >
             Deep expertise where compliance isn&rsquo;t optional.
           </h2>
-          <p className="text-[#94a8be] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             We don&rsquo;t do generic IT. Every engagement is built on sector-specific knowledge of the regulations, workflows, and threats your industry faces.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function Industries() {
                   </h3>
                 </div>
               </div>
-              <p className="text-[#94a8be] text-sm leading-relaxed mb-5">{ind.desc}</p>
+              <p className="text-[#c0cfe0] text-sm leading-relaxed mb-5">{ind.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span

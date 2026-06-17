@@ -20,7 +20,7 @@ export default function OurApproach() {
             <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Proactive protection built for operational industries.
             </h2>
-            <p className="text-white/80 text-base leading-relaxed mb-8 animate-fade-in-up stagger-2">
+            <p className="text-[#dce6f0] text-base leading-relaxed mb-8 animate-fade-in-up stagger-2">
               We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit.
             </p>
 
@@ -33,7 +33,7 @@ export default function OurApproach() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-base mb-1.5" style={{ fontFamily: "Outfit" }}>{a.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{a.desc}</p>
+                    <p className="text-[#dce6f0] text-sm leading-relaxed">{a.desc}</p>
                   </div>
                 </div>
               ))}

@@ -167,7 +167,7 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-12 lg:py-18 bg-gradient-to-b from-[#112238] to-[#0e1d30]"
+      className="py-12 lg:py-18 bg-gradient-to-b from-[#112238] to-[#0e1d30] dark-cards"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
@@ -179,7 +179,7 @@ export default function CaseStudy() {
           >
             Trusted by businesses across the Twin Cities.
           </h2>
-          <p className="text-[#94a8be] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             Don&rsquo;t take our word for it. Here&rsquo;s what our clients have to say about partnering with Veracity Technologies.
           </p>
         </div>
@@ -210,10 +210,10 @@ export default function CaseStudy() {
                 >
                   <div
                     data-testid={`testimonial-card-${i}`}
-                    className="grid-border-card p-6 h-full flex flex-col"
+                    className="border border-white/15 bg-white/[0.07] rounded-md p-6 h-full flex flex-col backdrop-blur-sm"
                   >
                     <Quote className="w-6 h-6 text-[#0077B3]/20 mb-4 flex-shrink-0" />
-                    <p className="text-[#94a8be] text-sm leading-relaxed mb-6 flex-1 italic">
+                    <p className="text-[#c0cfe0] text-sm leading-relaxed mb-6 flex-1 italic">
                       &ldquo;{t.quote}&rdquo;
                     </p>
                     <div className="border-t border-white/10 pt-4 mt-auto flex items-center gap-3">
@@ -233,7 +233,7 @@ export default function CaseStudy() {
                         <p data-testid={`testimonial-author-${i}`} className="text-white font-semibold text-sm">
                           {t.name}
                         </p>
-                        <p className="text-[#94a8be] text-xs">
+                        <p className="text-[#c0cfe0] text-xs">
                           {t.title}, {t.company}
                         </p>
                       </div>
@@ -257,19 +257,19 @@ export default function CaseStudy() {
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-0 border-t border-white/10/50 pt-8">
           <div data-testid="case-study-metric-0" className="text-center px-4">
             <p className="stat-number text-5xl text-white">60+</p>
-            <p className="text-xs text-[#94a8be] mt-1">Active Clients</p>
+            <p className="text-xs text-[#c0cfe0] mt-1">Active Clients</p>
           </div>
           <div data-testid="case-study-metric-1" className="text-center px-4 border-l border-white/10/30">
             <p className="stat-number text-5xl text-white">32</p>
-            <p className="text-xs text-[#94a8be] mt-1">Years Longest Partnership</p>
+            <p className="text-xs text-[#c0cfe0] mt-1">Years Longest Partnership</p>
           </div>
           <div data-testid="case-study-metric-2" className="text-center px-4 border-l border-white/10/30">
             <p className="stat-number text-5xl text-[#0077B3]">24/7</p>
-            <p className="text-xs text-[#94a8be] mt-1">Support Availability</p>
+            <p className="text-xs text-[#c0cfe0] mt-1">Support Availability</p>
           </div>
           <div data-testid="case-study-metric-3" className="text-center px-4 border-l border-white/10/30">
             <p className="stat-number text-5xl text-white">4.9</p>
-            <p className="text-xs text-[#94a8be] mt-1">Average Client Rating</p>
+            <p className="text-xs text-[#c0cfe0] mt-1">Average Client Rating</p>
           </div>
         </div>
       </div>

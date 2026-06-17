@@ -12,7 +12,7 @@ export default function ProudPartners() {
   return (
     <section data-testid="proud-partners-section" className="py-10 bg-gradient-to-b from-[#0b1828] to-[#091422]">
       <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-[#94a8be] text-xs uppercase tracking-[0.2em] mb-6">Proud to Partner With</p>
+        <p className="text-center text-[#c0cfe0] text-xs uppercase tracking-[0.2em] mb-6">Proud to Partner With</p>
         <div className="flex flex-wrap items-center justify-center gap-8">
           {partners.map((p) => (
             <a

@@ -21,18 +21,18 @@ export default function AIService() {
           <h2 data-testid="ai-service-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>
             AI is transforming your industry. We make sure it doesn&rsquo;t expose you.
           </h2>
-          <p className="text-[#3a5068] text-base leading-relaxed mb-6">
+          <p className="text-[#1a3050] text-base leading-relaxed mb-6">
             Every organization is racing to adopt AI. But without proper security, governance, and compliance frameworks, AI becomes your biggest attack surface. We help you move fast and stay protected.
           </p>
           <div className="flex items-center justify-center gap-8">
             <div>
               <p className="stat-number text-4xl sm:text-5xl text-[#0f1d32]">90<span className="text-[#FF5722]">%</span></p>
-              <p className="text-xs text-[#3a5068] mt-1">unprepared for AI-augmented threats</p>
+              <p className="text-xs text-[#1a3050] mt-1">unprepared for AI-augmented threats</p>
             </div>
             <div className="w-px h-14 bg-[#0077B3]/30" />
             <div>
               <p className="stat-number text-4xl sm:text-5xl text-[#0f1d32]">68<span className="text-[#0077B3]">%</span></p>
-              <p className="text-xs text-[#3a5068] mt-1">of employees use unauthorized AI tools</p>
+              <p className="text-xs text-[#1a3050] mt-1">of employees use unauthorized AI tools</p>
             </div>
           </div>
           <a href="https://newsroom.accenture.com/news/2025/only-one-in-10-organizations-globally-are-ready-to-protect-against-ai-augmented-cyber-threats" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-3 hover:text-[#0f1d32] transition-colors">
@@ -46,7 +46,7 @@ export default function AIService() {
             <div key={svc.title} data-testid={`ai-card-${i}`} className={`animate-fade-in-up stagger-${(i % 6) + 1}`}>
               <svc.icon className="w-5 h-5 text-[#0077B3] mb-3" />
               <h3 className="text-[#0f1d32] font-semibold text-base mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
-              <p className="text-[#3a5068] text-sm leading-relaxed">{svc.desc}</p>
+              <p className="text-[#1a3050] text-sm leading-relaxed">{svc.desc}</p>
             </div>
           ))}
         </div>

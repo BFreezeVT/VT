@@ -37,6 +37,19 @@
   box-shadow: 0 12px 32px rgba(0, 59, 113, 0.08);
 }
 
+/* Override for dark sections - make cards visible */
+[data-theme="dark"] .grid-border-card,
+.dark-cards .grid-border-card {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+}
+[data-theme="dark"] .grid-border-card:hover,
+.dark-cards .grid-border-card:hover {
+  border-color: #0077B3;
+  background: rgba(0, 119, 179, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 119, 179, 0.12);
+}
+
 .stat-number {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;

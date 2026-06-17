@@ -53,7 +53,7 @@ export default function RiskReversal() {
               </h2>
               <p
                 data-testid="guarantee-text"
-                className="text-[#94a8be] text-base leading-relaxed"
+                className="text-[#c0cfe0] text-base leading-relaxed"
               >
                 If you don&rsquo;t find at least <span className="text-white font-semibold">three actionable improvements</span> from 
                 our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 

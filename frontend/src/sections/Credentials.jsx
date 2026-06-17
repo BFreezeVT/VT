@@ -37,7 +37,7 @@ export default function Credentials() {
       id="credentials"
       data-testid="credentials-section"
       aria-label="Veracity Technologies honors, awards, and published works"
-      className="py-12 lg:py-18 bg-gradient-to-b from-[#0e1d30] to-[#0b1828]"
+      className="py-12 lg:py-18 bg-gradient-to-b from-[#0e1d30] to-[#0b1828] dark-cards"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative flex items-center justify-center mb-8">
@@ -53,7 +53,7 @@ export default function Credentials() {
           >
             Recognized. Certified. Published.
           </h2>
-          <p className="text-[#94a8be] text-base max-w-2xl mx-auto">
+          <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto">
             Industry awards, compliance certifications, and published thought leadership that set Veracity Technologies apart.
           </p>
         </div>
@@ -66,13 +66,13 @@ export default function Credentials() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid={`credential-card-${i}`}
-              className="grid-border-card p-6 text-center group block"
+              className="border border-white/15 bg-white/[0.07] rounded-md p-6 text-center group block hover:border-[#0077B3] hover:bg-white/[0.1] transition-all"
             >
               <cred.icon className="w-8 h-8 text-[#0077B3] mx-auto mb-4 group-hover:text-white transition-colors" />
               <h3 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
                 {cred.title}
               </h3>
-              <p className="text-[#94a8be] text-xs leading-relaxed mb-4">{cred.desc}</p>
+              <p className="text-[#c0cfe0] text-xs leading-relaxed mb-4">{cred.desc}</p>
               <span className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium group-hover:text-white transition-colors">
                 {cred.linkText} <ExternalLink className="w-3 h-3" />
               </span>

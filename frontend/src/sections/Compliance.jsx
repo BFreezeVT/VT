@@ -13,7 +13,7 @@ const complianceItems = [
 
 export default function Compliance() {
   return (
-    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-12 lg:py-18 bg-gradient-to-b from-[#142840] to-[#112238] relative overflow-hidden">
+    <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-12 lg:py-18 bg-gradient-to-b from-[#142840] to-[#112238] dark-cards relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
       <div className="absolute inset-0 bg-gradient-to-b from-[#142840] to-[#112238]/60" />
 
@@ -23,7 +23,7 @@ export default function Compliance() {
             <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
               Stay compliant. Stay protected.
             </h2>
-            <p className="text-[#94a8be] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+            <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
               From federal contracts to payment processing, we help you meet every requirement and stay ahead of emerging threats.
             </p>
         </div>
@@ -35,7 +35,7 @@ export default function Compliance() {
               <div key={item.title} data-testid={`compliance-card-${i}`} className={`text-center animate-fade-in-up stagger-${i + 3}`}>
                 <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
                 <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#94a8be] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -44,7 +44,7 @@ export default function Compliance() {
               <div key={item.title} data-testid={`compliance-card-${i + 3}`} className={`text-center animate-fade-in-up stagger-${i + 6}`}>
                 <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
                 <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#94a8be] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

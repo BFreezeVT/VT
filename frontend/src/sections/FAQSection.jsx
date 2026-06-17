@@ -117,7 +117,7 @@ export default function FAQSection() {
               </AccordionTrigger>
               <AccordionContent
                 data-testid={`faq-content-${i}`}
-                className="text-[#94a8be] text-sm leading-relaxed pb-5"
+                className="text-[#c0cfe0] text-sm leading-relaxed pb-5"
               >
                 {faq.a}
               </AccordionContent>

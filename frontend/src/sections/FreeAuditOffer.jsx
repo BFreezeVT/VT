@@ -20,7 +20,7 @@ export default function FreeAuditOffer() {
       id="audit"
       data-testid="audit-section"
       aria-label="Schedule a free technology and cyber risk audit"
-      className="py-12 lg:py-18 bg-gradient-to-b from-[#07101c] to-[#060e18] relative"
+      className="py-12 lg:py-18 bg-gradient-to-b from-[#07101c] to-[#060e18] dark-cards relative"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -71,7 +71,7 @@ export default function FreeAuditOffer() {
                       Schedule Your Free Audit
                     </h3>
                   </div>
-                  <p className="text-[#94a8be] text-sm mb-8">
+                  <p className="text-[#c0cfe0] text-sm mb-8">
                     Fill in your details and we&rsquo;ll be in touch within one business day.
                   </p>
                   <form onSubmit={(e) => {
@@ -146,7 +146,7 @@ export default function FreeAuditOffer() {
                     >
                       Schedule Your Free Audit
                     </Button>
-                    <p className="text-xs text-[#94a8be]/60 text-center">
+                    <p className="text-xs text-[#c0cfe0]/60 text-center">
                       Non-invasive. Confidential. No obligation.
                     </p>
                   </form>
@@ -160,7 +160,7 @@ export default function FreeAuditOffer() {
                   >
                     Thank you!
                   </h3>
-                  <p className="text-[#94a8be] text-sm">
+                  <p className="text-[#c0cfe0] text-sm">
                     We&rsquo;ve received your request. Our team will reach out within one business day to schedule your free audit.
                   </p>
                 </div>
