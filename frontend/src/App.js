@@ -2,7 +2,6 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
-import ClientLogos from "./sections/ClientLogos";
 import TrustStats from "./sections/TrustStats";
 import IntroStats from "./sections/IntroStats";
 import AIService from "./sections/AIService";
