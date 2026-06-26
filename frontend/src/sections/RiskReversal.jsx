@@ -49,14 +49,14 @@ export default function RiskReversal() {
                 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-4"
                 style={{ fontFamily: "Outfit, sans-serif" }}
               >
-                Our Guarantee
+                Our Commitment
               </h2>
               <p
                 data-testid="guarantee-text"
                 className="text-[#c0cfe0] text-base leading-relaxed"
               >
-                If you don&rsquo;t find at least <span className="text-white font-semibold">three actionable improvements</span> from 
-                our audit, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
+                If we don&rsquo;t identify at least <span className="text-white font-semibold">three actionable improvements</span> to 
+                your operations, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
                 That&rsquo;s how confident we are in the value we deliver.
               </p>
             </div>

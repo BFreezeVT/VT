@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const HERO_BG = "https://images.unsplash.com/photo-1604011237320-8e0506614fdf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjeWJlcnNlY3VyaXR5JTIwQUklMjB0ZWNobm9sb2d5JTIwZGFyayUyMGFic3RyYWN0fGVufDB8fHxibHVlfDE3NzYyODM4NDJ8MA&ixlib=rb-4.1.0&q=85";
 
-const rotatingWords = ["Cyber Secure", "AI Integration", "Compliance", "IT Infrastructure"];
+const rotatingWords = ["AI-Driven", "Automated", "Intelligent", "Optimized"];
 
 export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -56,7 +56,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-3 mb-8 animate-fade-in-up stagger-1">
             <div className="w-2 h-2 rounded-full bg-[#0077B3] animate-pulse" />
             <p className="text-base sm:text-lg font-bold uppercase tracking-[0.15em] text-[#00a0e4]">
-              AI-Powered Managed IT &amp; Cybersecurity
+              AI-Driven Managed Intelligence
             </p>
           </div>
 
@@ -65,25 +65,16 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-8 animate-fade-in-up stagger-2 drop-shadow-lg"
             style={{ fontFamily: "Outfit, sans-serif", textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            Your Business Runs on Technology.
+            Your business should run smarter, safer, and
             <br />
-            <span className="text-[#0077B3]">We Make Sure It&rsquo;s</span>
-            <br />
-            <span
-              data-testid="rotating-word"
-              className={`text-white transition-opacity duration-300 ${fade ? "opacity-100" : "opacity-0"}`}
-            >
-              {rotatingWords[wordIndex]}.
-            </span>
+            <span className="text-[#0077B3]">with less manual drag.</span>
           </h1>
 
           <p
             data-testid="hero-subhead"
             className="text-base md:text-lg text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
-            AI-driven threat detection. Industry-specialized compliance. 24/7 expert support.
-            We protect and power businesses across construction, financial services, manufacturing, 
-            and high-compliance industries.
+            Veracity helps businesses use AI, automation, and intelligent systems to reduce operational risk, improve visibility, and eliminate inefficiency.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
@@ -92,7 +83,7 @@ export default function HeroSection() {
               onClick={() => scrollTo("audit")}
               className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
             >
-              Get Your Free Security Audit
+              Start Your AI Business Intelligence Assessment
             </Button>
             <a
               data-testid="hero-phone-link"
@@ -107,12 +98,12 @@ export default function HeroSection() {
           {/* Trust badges */}
           <div className="mt-14 flex flex-wrap items-center gap-4 animate-fade-in-up stagger-5">
             {[
-              { label: "HIPAA Compliant", icon: "Shield" },
-              { label: "SOC 2 Type I", icon: "ShieldCheck" },
-              { label: "CMMC Registered", icon: "Lock" },
-              { label: "CRN MSP 500", icon: "Award" },
-              { label: "ISO 27001", icon: "FileCheck" },
-              { label: "CompTIA Security+", icon: "ShieldCheck" },
+              { label: "AI Governance Certified" },
+              { label: "SOC 2 Type I" },
+              { label: "HIPAA Compliant" },
+              { label: "CRN MSP 500" },
+              { label: "ISO 27001" },
+              { label: "Amazon Bestselling Authors" },
             ].map((badge) => (
               <span key={badge.label} className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] text-white/90 border border-white/30 bg-white/10 px-3 py-2 rounded">
                 <ShieldCheck className="w-3 h-3 text-[#0077B3]" />

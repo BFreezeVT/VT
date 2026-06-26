@@ -171,16 +171,16 @@ export default function CaseStudy() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4 animate-fade-in-up">What Our Clients Say</p>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4 animate-fade-in-up">What Our Partners Say</p>
           <h2
             data-testid="case-study-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
-            Trusted by businesses across the Twin Cities.
+            Businesses that run smarter trust Veracity.
           </h2>
           <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
-            Don&rsquo;t take our word for it. Here&rsquo;s what our clients have to say about partnering with Veracity Technologies.
+            Hear from the leaders who made the shift from reactive to intelligent.
           </p>
         </div>
 

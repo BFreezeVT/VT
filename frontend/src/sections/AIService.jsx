@@ -1,12 +1,12 @@
 import { Brain, ShieldCheck, Bot, Sparkles, Lock, Eye, ExternalLink } from "lucide-react";
 
 const aiServices = [
-  { icon: Brain, title: "AI Strategy & Integration", desc: "Adopt AI tools - copilots, chatbots, predictive analytics - securely and in compliance with your industry's regulations." },
-  { icon: ShieldCheck, title: "AI Security & Governance", desc: "Protect models, training data, and pipelines from prompt injection, data poisoning, and unauthorized access." },
-  { icon: Bot, title: "AI-Powered Threat Detection", desc: "ML models detect anomalies, flag credential abuse, and stop ransomware before execution - 24/7, in real time." },
-  { icon: Eye, title: "Shadow AI Monitoring", desc: "Discover, assess, and govern unsanctioned AI tools employees are already using across your organization." },
-  { icon: Lock, title: "Data Loss Prevention for AI", desc: "Prevent sensitive data - client records, financials, trade secrets - from leaking into public LLMs." },
-  { icon: Sparkles, title: "AI Readiness Assessments", desc: "Evaluate infrastructure, data hygiene, and compliance posture to build an AI adoption roadmap for your industry." },
+  { icon: Brain, title: "AI Strategy & Roadmapping", desc: "We assess your operations, identify automation opportunities, and build a phased AI adoption plan aligned to your business goals." },
+  { icon: ShieldCheck, title: "AI Governance & Risk Controls", desc: "Deploy guardrails that let your team use AI confidently - without leaking data, violating compliance, or creating shadow tool sprawl." },
+  { icon: Bot, title: "Automated Threat & Anomaly Detection", desc: "ML models monitor your systems 24/7, flagging unusual behavior and stopping threats before they reach your team." },
+  { icon: Eye, title: "Shadow AI Discovery", desc: "Find every unauthorized AI tool your employees are using, assess the risk, and replace chaos with governed alternatives." },
+  { icon: Lock, title: "Data Flow Intelligence", desc: "Map where your sensitive data moves - between people, systems, and AI tools - and close the gaps that create exposure." },
+  { icon: Sparkles, title: "Workflow Automation", desc: "Eliminate repetitive manual tasks across your operations with intelligent automation that scales without adding headcount." },
 ];
 
 export default function AIService() {
@@ -15,14 +15,14 @@ export default function AIService() {
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0077B3 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">AI as a Service</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Intelligent Automation</span></div>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-10">
           <h2 data-testid="ai-service-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>
-            AI is transforming your industry. We make sure it doesn&rsquo;t expose you.
+            Stop reacting. Start automating.
           </h2>
           <p className="text-[#1a3050] text-base leading-relaxed mb-6">
-            Every organization is racing to adopt AI. But without proper security, governance, and compliance frameworks, AI becomes your biggest attack surface. We help you move fast and stay protected.
+            Every manual process is a bottleneck. Every disconnected system is a blind spot. We deploy AI and automation to give your business real-time visibility, faster decisions, and fewer things that require a human to babysit.
           </p>
           <div className="flex items-center justify-center gap-8">
             <div>

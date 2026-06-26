@@ -3,25 +3,25 @@ import { Monitor, ShieldCheck, Layers, Headphones } from "lucide-react";
 const SOC_IMG = "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxoYXBweSUyMGJ1c2luZXNzJTIwcHJvZmVzc2lvbmFsJTIwaGFuZHNoYWtlJTIwc2F0aXNmaWVkJTIwY2xpZW50JTIwbWVldGluZ3xlbnwwfHx8fDE3ODA5Nzc0Nzh8MA&ixlib=rb-4.1.0&q=85";
 
 const approaches = [
-  { icon: Monitor, title: "Proactive Network Monitoring", desc: "24/7 eyes on your infrastructure. We catch and resolve issues before they impact your timeline." },
-  { icon: ShieldCheck, title: "MFA & Disaster Recovery", desc: "Multi-factor authentication across all access points plus tested disaster recovery plans that restore operations in hours." },
-  { icon: Layers, title: "Industry Software Integration", desc: "Seamless integration with Procore, Sage, Bloomberg, SAP, and other tools your teams rely on daily." },
-  { icon: Headphones, title: "24/7 Expert Support", desc: "Our team knows the difference between a submittal, a wire transfer, and a SCADA alert. Real expertise, around the clock." },
+  { icon: Monitor, title: "Continuous Visibility", desc: "24/7 AI-powered monitoring across your entire environment. We see problems forming and resolve them before they impact your operations." },
+  { icon: ShieldCheck, title: "Automated Risk Reduction", desc: "Multi-factor authentication, intelligent access controls, and tested disaster recovery - automated, not manual." },
+  { icon: Layers, title: "System Integration", desc: "We connect your tools - Procore, Sage, Bloomberg, SAP, and more - into a unified, intelligent ecosystem that shares data and reduces friction." },
+  { icon: Headphones, title: "On-Demand Expert Support", desc: "When automation handles 90% of the work, your team only needs us for the 10% that matters. And we&rsquo;re there in minutes." },
 ];
 
 export default function OurApproach() {
   return (
     <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-12 lg:py-18 bg-gradient-to-b from-[#c8d6e5] to-[#4a6a88] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Our Approach</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">How We Deliver</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left - content */}
           <div>
             <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
-              Proactive protection built for operational industries.
+              Proactive systems that run your business forward.
             </h2>
             <p className="text-[#dce6f0] text-base leading-relaxed mb-8 animate-fade-in-up stagger-2">
-              We don&rsquo;t wait for things to break. Our managed IT approach keeps your operation running while eliminating the vulnerabilities that attackers exploit.
+              We don&rsquo;t wait for things to break. We build intelligent infrastructure that monitors, adapts, and resolves - so your team focuses on growth, not firefighting.
             </p>
 
             {/* Open list - no boxes */}
@@ -47,7 +47,7 @@ export default function OurApproach() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#4a6a88]/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <p className="text-[#0077B3] text-xs uppercase tracking-wider font-semibold mb-1">Client Success</p>
-                <p className="text-white text-sm">Businesses partner with Veracity for peace of mind and results they can measure.</p>
+                <p className="text-white text-sm">Businesses that partner with Veracity run smarter, react faster, and scale with confidence.</p>
               </div>
             </div>
           </div>

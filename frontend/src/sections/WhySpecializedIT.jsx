@@ -6,23 +6,23 @@ const TEAM_IMG = "https://images.pexels.com/photos/5380582/pexels-photo-5380582.
 const reasons = [
   {
     icon: Wifi,
-    title: "Field & Site Connectivity",
-    desc: "Ruggedized networking for job sites, branch offices, and factory floors - keeping every device and team online across distributed operations.",
+    title: "Anywhere Connectivity",
+    desc: "Reliable, secure networking for every location - job sites, branch offices, factory floors, and remote teams. No dead zones, no excuses.",
   },
   {
     icon: Lock,
-    title: "Secure Remote Access",
-    desc: "Zero-trust frameworks and VPN solutions so remote teams, vendors, and clients collaborate without exposing sensitive data or financial systems.",
+    title: "Zero-Trust Access",
+    desc: "Every user, device, and connection is verified continuously. Your data stays protected whether your team is in the office or on the road.",
   },
   {
     icon: Users,
-    title: "Vendor & Partner Coordination",
-    desc: "Role-based integrations between your core systems, client portals, and third-party platforms with audit-ready access controls.",
+    title: "Unified Vendor Ecosystem",
+    desc: "We integrate your tools, vendors, and partners into one governed platform - with role-based access controls and full audit visibility.",
   },
   {
     icon: Zap,
-    title: "Rapid Response SLAs",
-    desc: "15-minute SLA for critical issues. A downed system on production day - whether it&rsquo;s a pour, a trade, or a manufacturing run - costs more than anywhere else.",
+    title: "Response in Minutes, Not Days",
+    desc: "15-minute SLA for critical issues. When automation handles the routine, our experts are free to solve the problems that actually matter.",
   },
 ];
 
@@ -35,7 +35,7 @@ export default function WhySpecializedIT() {
       className="py-12 lg:py-18 bg-gradient-to-b from-[#182d48] to-[#142840] dark-cards"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Why Specialized IT</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Why Veracity</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image stack */}
           <div className="animate-fade-in-up stagger-1 order-2 lg:order-1">
@@ -58,14 +58,13 @@ export default function WhySpecializedIT() {
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 animate-fade-in-up stagger-1"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
-              Generic tech support can&rsquo;t keep up with regulated, operational industries.
+              Generic providers manage tickets. We manage outcomes.
             </h2>
             <p className="text-[#c0cfe0] text-base leading-relaxed mb-4 animate-fade-in-up stagger-2">
-              Your operations move fast, your teams are distributed, and your data is mission-critical. 
-              You need IT partners who understand your industry&rsquo;s tools, compliance requirements, and pace - not just the server room.
+              Your operations move fast, your teams are distributed, and your data is mission-critical. You need a partner who understands your business - not just your server room.
             </p>
             <p className="text-[#c0cfe0]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
-              Veracity Technologies offers industry-specialized IT and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
+              Veracity Technologies offers industry-specialized AI, automation, and intelligent systems for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
             </p>
 
             <div className="space-y-6">

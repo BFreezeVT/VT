@@ -4,12 +4,12 @@ import { CheckCircle, ClipboardCheck, Search, Lock, BarChart3, Clock } from "luc
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
 
 const auditIncludes = [
-  { icon: Search, text: "AI readiness assessment" },
-  { icon: Search, text: "Full network vulnerability scan" },
-  { icon: Lock, text: "Password & access policy review" },
-  { icon: BarChart3, text: "Ransomware & threat readiness assessment" },
+  { icon: Search, text: "AI readiness and automation opportunity assessment" },
+  { icon: Search, text: "Operational workflow analysis" },
+  { icon: Lock, text: "Access control and governance review" },
+  { icon: BarChart3, text: "Risk and threat posture evaluation" },
   { icon: ClipboardCheck, text: "Industry-specific compliance gap analysis" },
-  { icon: Clock, text: "Disaster recovery plan evaluation" },
+  { icon: Clock, text: "Business continuity and recovery plan review" },
 ];
 
 export default function FreeAuditOffer() {
@@ -32,12 +32,10 @@ export default function FreeAuditOffer() {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
-              Free Technology &amp; Cyber Risk Audit
+              Free AI Business Intelligence Assessment
             </h2>
             <p className="text-white text-base leading-relaxed mb-8">
-              Our team will conduct a comprehensive, non-invasive review of your IT infrastructure 
-              and cybersecurity posture - tailored to your industry. You&rsquo;ll receive a detailed 
-              report with actionable recommendations for your specific compliance and operational needs.
+              We&rsquo;ll assess your current operations, identify automation opportunities, evaluate your AI readiness, and deliver a clear roadmap to reduce manual work and operational risk.
             </p>
 
             <p className="text-white font-semibold text-sm mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>
@@ -68,7 +66,7 @@ export default function FreeAuditOffer() {
                       className="text-white font-bold text-2xl"
                       style={{ fontFamily: "Outfit, sans-serif" }}
                     >
-                      Schedule Your Free Audit
+                      Start Your Assessment
                     </h3>
                   </div>
                   <p className="text-[#c0cfe0] text-sm mb-8">

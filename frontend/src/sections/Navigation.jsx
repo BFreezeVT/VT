@@ -41,10 +41,10 @@ export default function Navigation() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className={`text-sm font-semibold transition-colors ml-4 ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>AI</button>
-          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Approach</button>
-          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Industries</button>
-          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Compliance</button>
+          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className={`text-sm font-semibold transition-colors ml-4 ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Automation</button>
+          <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>How We Deliver</button>
+          <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Who We Serve</button>
+          <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Governance</button>
           <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>FAQ</button>
           <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Risk Score</Link>
           <a data-testid="nav-phone" href="tel:9529417333" className={`flex items-center gap-2 text-sm transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/80 hover:text-white"}`}>
@@ -74,10 +74,10 @@ export default function Navigation() {
       {mobileOpen && (
         <div data-testid="mobile-menu" className="md:hidden bg-[#003B71]/98 backdrop-blur-md border-t border-[#003B71] px-6 py-6 space-y-4 animate-fade-in">
           <button data-testid="mobile-nav-why" onClick={() => scrollTo("why-it")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Why Us</button>
-          <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Approach</button>
-          <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Industries</button>
-          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI</button>
-          <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Compliance</button>
+          <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">How We Deliver</button>
+          <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Who We Serve</button>
+          <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Automation</button>
+          <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Governance</button>
           <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">FAQ</button>
           <a href="tel:9529417333" className="flex items-center gap-2 text-[#0a1220] hover:text-[#0077B3] text-sm">
             <Phone className="w-4 h-4" /> (952) 941-7333

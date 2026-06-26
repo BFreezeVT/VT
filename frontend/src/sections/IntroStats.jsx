@@ -78,8 +78,8 @@ export default function IntroStats() {
               <img data-testid="threat-image" src={HACKER_IMG} alt="Cybersecurity threat actor" className="w-full h-auto object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#dce6f0] via-[#112240]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold mb-1">Active Threat</p>
-                <p className="text-[#0f1d32] text-sm font-medium">Attackers are targeting your industry right now. Is your team ready?</p>
+                <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold mb-1">Hidden Risk</p>
+                <p className="text-[#0f1d32] text-sm font-medium">Manual processes and blind spots are costing your business more than you think.</p>
               </div>
             </div>
           </div>
@@ -87,20 +87,20 @@ export default function IntroStats() {
           {/* Text */}
           <div className="order-1 lg:order-2">
             
-            <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">Why This Matters</p>
+            <p className="overline text-[#FF5722] mb-4 animate-fade-in-up">The Cost of Staying Manual</p>
             <h2 data-testid="intro-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
-              Cyberattacks aren&rsquo;t slowing down. Most defenses are.
+              Your competitors are automating. Are you keeping up?
             </h2>
             <p data-testid="intro-description" className="text-[#3a5068] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
-              AI-powered attacks are outpacing traditional security tools. Ransomware victims surged 58% in 2025, credential theft is up 389%, and shadow AI usage is leaking sensitive data daily.
+              Businesses running on manual workflows, disconnected systems, and reactive processes are losing time, money, and competitive ground every day. AI and automation aren&rsquo;t coming - they&rsquo;re already here.
             </p>
             <div className="border-l-2 border-[#FF5722] pl-5 animate-fade-in-up stagger-3">
               <p className="text-[#FF5722] text-xs font-semibold uppercase tracking-wider mb-2">The Reality</p>
               <p className="text-[#3a5068] text-sm leading-relaxed">
-                Global ransomware attacks rose <span className="text-[#0f1d32] font-semibold">32% in 2025</span>. Average ransom: <span className="text-[#0f1d32] font-semibold">$2.3 million</span>. 90% of organizations are unprepared for AI-augmented threats.
+                <span className="text-[#0f1d32] font-semibold">83% of organizations</span> lack automated AI controls. <span className="text-[#0f1d32] font-semibold">68% of employees</span> use unauthorized AI tools without oversight. The gap between AI-ready businesses and everyone else is widening fast.
               </p>
-              <a href="https://deepstrike.io/blog/ransomware-statistics-2025" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-[#0f1d32] transition-colors">
-                Source: DeepStrike 2025 <ExternalLink className="w-2.5 h-2.5" />
+              <a href="https://www.kiteworks.com/cybersecurity-risk-management/ai-security-gap-2025-organizations-flying-blind/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-2 hover:text-[#0f1d32] transition-colors">
+                Source: Kiteworks 2025 <ExternalLink className="w-2.5 h-2.5" />
               </a>
             </div>
           </div>

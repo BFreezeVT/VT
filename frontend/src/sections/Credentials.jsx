@@ -54,7 +54,7 @@ export default function Credentials() {
             Recognized. Certified. Published.
           </h2>
           <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto">
-            Industry awards, compliance certifications, and published thought leadership that set Veracity Technologies apart.
+            Industry recognition, compliance certifications, and published thought leadership that demonstrate our commitment to excellence.
           </p>
         </div>
 
