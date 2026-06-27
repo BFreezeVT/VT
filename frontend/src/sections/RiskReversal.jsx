@@ -39,7 +39,7 @@ export default function RiskReversal() {
               <img
                 src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png"
                 alt="Veracity Technologies"
-                className="w-10 h-10 object-contain absolute top-6 right-6 opacity-30"
+                className="w-14 h-14 object-contain absolute top-6 right-6 opacity-50 brightness-150 drop-shadow-[0_0_8px_rgba(0,119,179,0.3)]"
               />
               <div className="w-14 h-14 flex items-center justify-center bg-[#FF5722]/10 border border-[#FF5722]/30 mb-6">
                 <Heart className="w-7 h-7 text-[#FF5722]" />

@@ -22,7 +22,7 @@ export default function Footer() {
               <img
                 src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                 alt="Veracity Technologies - Rely On Us"
-                className="w-full h-auto object-contain brightness-125 scale-110"
+                className="w-full h-auto object-contain brightness-175 scale-110 drop-shadow-[0_0_12px_rgba(0,119,179,0.3)]"
                 style={{ marginTop: "-10%", marginBottom: "-15%" }}
                 data-testid="footer-logo"
               />

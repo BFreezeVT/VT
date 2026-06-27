@@ -33,7 +33,7 @@ export default function Navigation() {
           onClick={() => scrollTo("hero")}
           className="flex items-center gap-2.5"
         >
-          <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity Technologies" className="w-12 h-12 object-contain brightness-150" />
+          <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity Technologies" className="w-14 h-14 object-contain brightness-200 drop-shadow-[0_0_8px_rgba(0,119,179,0.4)]" />
           <span className={`font-extrabold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-[#0a1220]" : "text-white"}`} style={{ fontFamily: "Outfit, sans-serif" }}>
             VERACITY<span className="text-[#0077B3]"> TECHNOLOGIES</span>
           </span>
