@@ -231,7 +231,7 @@ export default function FreeAuditOffer() {
       id="audit"
       data-testid="audit-section"
       aria-label="AI Business Intelligence Assessment"
-      className="py-12 lg:py-18 bg-gradient-to-b from-[#07101c] to-[#060e18]"
+      className="py-12 lg:py-18 bg-transparent"
     >
       <div className="max-w-4xl mx-auto px-6">
 

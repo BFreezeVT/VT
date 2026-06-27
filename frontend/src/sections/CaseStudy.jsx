@@ -167,7 +167,7 @@ export default function CaseStudy() {
       id="case-study"
       data-testid="case-study-section"
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
-      className="py-12 lg:py-18 bg-gradient-to-b from-[#112238] to-[#0e1d30] dark-cards"
+      className="py-12 lg:py-18 bg-transparent dark-cards"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
@@ -244,11 +244,11 @@ export default function CaseStudy() {
             </CarouselContent>
             <CarouselPrevious
               data-testid="carousel-prev"
-              className="border-white/10 bg-gradient-to-b from-[#112238] to-[#0e1d30] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -left-5 lg:-left-7"
+              className="border-white/10 bg-transparent text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -left-5 lg:-left-7"
             />
             <CarouselNext
               data-testid="carousel-next"
-              className="border-white/10 bg-gradient-to-b from-[#112238] to-[#0e1d30] text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -right-5 lg:-right-7"
+              className="border-white/10 bg-transparent text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white -right-5 lg:-right-7"
             />
           </Carousel>
         </div>

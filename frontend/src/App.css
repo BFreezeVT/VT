@@ -23,31 +23,30 @@
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
 
-/* Cards - light sections */
+/* Cards - semi-transparent, works on any gradient position */
 .grid-border-card {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 6px;
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .grid-border-card:hover {
   border-color: #0077B3;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 119, 179, 0.08);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 59, 113, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 59, 113, 0.12);
 }
 
-/* Override for dark sections - make cards visible */
-[data-theme="dark"] .grid-border-card,
-.dark-cards .grid-border-card {
-  border-color: rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
+/* Light zone cards (top of page) */
+.light-zone .grid-border-card {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.5);
 }
-[data-theme="dark"] .grid-border-card:hover,
-.dark-cards .grid-border-card:hover {
-  border-color: #0077B3;
-  background: rgba(0, 119, 179, 0.08);
-  box-shadow: 0 12px 32px rgba(0, 119, 179, 0.12);
+.light-zone .grid-border-card:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 59, 113, 0.08);
 }
 
 .stat-number {
@@ -73,10 +72,10 @@
   background: linear-gradient(180deg, rgba(0, 15, 35, 0.92) 0%, rgba(0, 20, 45, 0.88) 70%, rgba(232, 239, 246, 1) 100%);
 }
 
-/* Section transition blends - smooth gradients between sections */
-.blend-top-dark::before,
-.blend-bottom-dark::after {
-  display: none;
+/* Page gradient - applied via JS scroll tracking */
+.page-gradient {
+  background: #e0e8f2;
+  transition: background-color 0.1s ease;
 }
 
 ::selection {

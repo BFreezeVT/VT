@@ -25,8 +25,32 @@ import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import CyberRiskScorecard from "./pages/CyberRiskScorecard";
 import NotFound from "./pages/NotFound";
-import { useEffect } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+
+// Color stops for the progressive gradient
+const gradientStops = [
+  [224, 235, 244],  // 0% - #e0ebf4 lightest
+  [192, 212, 232],  // 10%
+  [150, 182, 212],  // 20%
+  [100, 148, 190],  // 30%
+  [60, 110, 160],   // 40%
+  [35, 78, 125],    // 50%
+  [22, 56, 95],     // 60%
+  [14, 40, 72],     // 70%
+  [8, 28, 52],      // 80%
+  [4, 16, 34],      // 90%
+  [2, 8, 18],       // 100% - #020812 darkest
+];
+
+function lerpColor(stops, t) {
+  const clamped = Math.max(0, Math.min(1, t));
+  const idx = clamped * (stops.length - 1);
+  const lower = Math.floor(idx);
+  const upper = Math.min(lower + 1, stops.length - 1);
+  const frac = idx - lower;
+  return `rgb(${Math.round(stops[lower][0] + (stops[upper][0] - stops[lower][0]) * frac)},${Math.round(stops[lower][1] + (stops[upper][1] - stops[lower][1]) * frac)},${Math.round(stops[lower][2] + (stops[upper][2] - stops[lower][2]) * frac)})`;
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -34,9 +58,27 @@ function ScrollToTop() {
   return null;
 }
 
+function useScrollGradient(ref) {
+  const handleScroll = useCallback(() => {
+    if (!ref.current) return;
+    const scrollHeight = document.body.scrollHeight - window.innerHeight;
+    const t = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+    ref.current.style.backgroundColor = lerpColor(gradientStops, t);
+  }, [ref]);
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+}
+
 function HomePage() {
+  const pageRef = useRef(null);
+  useScrollGradient(pageRef);
+
   return (
-    <div className="min-h-screen" data-testid="app-root">
+    <div ref={pageRef} className="min-h-screen page-gradient" data-testid="app-root">
       <Navigation />
       <main role="main">
         <HeroSection />

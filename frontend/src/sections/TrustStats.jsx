@@ -9,7 +9,7 @@ const stats = [
 
 export default function TrustStats() {
   return (
-    <section data-testid="trust-stats-section" className="py-12 bg-gradient-to-b from-[#1e3350] to-[#182d48] relative">
+    <section data-testid="trust-stats-section" className="py-12 bg-transparent relative">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((s, i) => (
