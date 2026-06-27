@@ -17,7 +17,7 @@ export default function Compliance() {
     <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-12 lg:py-18 bg-transparent dark-cards relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
       <div className="absolute inset-0 bg-transparent/60" />
-      <img src={LOGO} alt="" aria-hidden="true" className="absolute right-12 bottom-8 w-48 h-48 object-contain opacity-[0.04] brightness-200 pointer-events-none" />
+      <img src={LOGO} alt="" aria-hidden="true" className="absolute -right-20 -bottom-16 w-[500px] h-[500px] object-contain opacity-[0.04] brightness-200 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-10 text-center">

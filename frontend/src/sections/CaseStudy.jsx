@@ -169,7 +169,7 @@ export default function CaseStudy() {
       aria-label="Client testimonials and results from construction, financial services, and manufacturing firms"
       className="py-12 lg:py-18 bg-transparent dark-cards relative overflow-hidden"
     >
-      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute left-8 top-1/2 -translate-y-1/2 w-56 h-56 object-contain opacity-[0.03] brightness-200 pointer-events-none" />
+      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -left-24 top-1/2 -translate-y-1/2 w-[600px] h-[600px] object-contain opacity-[0.035] brightness-200 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4 animate-fade-in-up">What Our Partners Say</p>

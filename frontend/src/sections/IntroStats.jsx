@@ -69,7 +69,8 @@ export default function IntroStats() {
   const [showRanking, setShowRanking] = useState(false);
 
   return (
-    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-12 lg:py-18 bg-transparent light-zone">
+    <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-12 lg:py-18 bg-transparent light-zone relative overflow-hidden">
+      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-24 top-1/2 -translate-y-1/2 w-[550px] h-[550px] object-contain opacity-[0.06] brightness-50 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}

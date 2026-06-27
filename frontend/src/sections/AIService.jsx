@@ -12,6 +12,7 @@ const aiServices = [
 export default function AIService() {
   return (
     <section id="ai-service" data-testid="ai-service-section" aria-label="AI as a Service offerings" className="py-16 lg:py-24 bg-transparent light-zone relative overflow-hidden">
+      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -left-20 -bottom-24 w-[500px] h-[500px] object-contain opacity-[0.05] brightness-50 pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0077B3 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

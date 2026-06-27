@@ -198,7 +198,8 @@ export default function CyberGame() {
   const humanRiskScore = shuffledScenarios.length > 0 ? Math.round((score / shuffledScenarios.length) * 100) : 0;
 
   return (
-    <section id="cyber-game" data-testid="cyber-game-section" className="py-12 lg:py-18 bg-transparent relative">
+    <section id="cyber-game" data-testid="cyber-game-section" className="py-12 lg:py-18 bg-transparent relative overflow-hidden">
+      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -left-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] object-contain opacity-[0.03] brightness-200 pointer-events-none" />
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-8">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4 animate-fade-in-up">Human Risk Simulation</p>

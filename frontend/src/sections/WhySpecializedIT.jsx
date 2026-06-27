@@ -32,8 +32,9 @@ export default function WhySpecializedIT() {
       id="why-it"
       data-testid="why-specialized-section"
       aria-label="Why businesses choose Veracity for operational intelligence"
-      className="py-12 lg:py-18 bg-transparent dark-cards"
+      className="py-12 lg:py-18 bg-transparent dark-cards relative overflow-hidden"
     >
+      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-16 -top-16 w-[500px] h-[500px] object-contain opacity-[0.035] brightness-200 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Why Veracity</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
