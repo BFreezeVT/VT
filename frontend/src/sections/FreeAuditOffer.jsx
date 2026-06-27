@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight } from "lucide-react";
+import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle } from "lucide-react";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
 
 const steps = [
@@ -143,10 +143,42 @@ export default function FreeAuditOffer() {
     return Math.round(((worst - total) / worst) * 100);
   };
 
+  const operationalScore = calcCategoryScore(steps[1].questions);
   const automationScore = calcCategoryScore(steps[2].questions);
   const aiScore = calcCategoryScore(steps[3].questions);
-  const riskScore = calcCategoryScore([...steps[4].questions, ...steps[5].questions]);
-  const overallScore = Math.round((automationScore + aiScore + riskScore) / 3);
+  const accessScore = calcCategoryScore(steps[4].questions);
+  const continuityScore = calcCategoryScore(steps[5].questions);
+  const riskScore = Math.round((accessScore + continuityScore) / 2);
+
+  // Pull Human Risk Score from simulation (localStorage)
+  const getHumanRiskScore = () => {
+    try {
+      const raw = localStorage.getItem("veracity_hri");
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      const scores = Object.values(data.highScores || {});
+      return scores.length > 0 ? Math.max(...scores) : null;
+    } catch(e) { return null; }
+  };
+  const humanRiskScore = getHumanRiskScore();
+
+  // Overall = weighted average of all available scores
+  const allScores = [automationScore, aiScore, riskScore, operationalScore, continuityScore];
+  if (humanRiskScore !== null) allScores.push(humanRiskScore);
+  const overallScore = Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length);
+
+  // Intelligent gap analysis based on lowest scores
+  const allCategories = [
+    { id: "manual", label: "Manual Workflow Dependence", score: operationalScore, desc: "Your team spends excessive time on tasks that should be automated, reducing capacity for strategic work.", opportunity: "Automate repetitive workflows to free up 15-20 hours per employee per month." },
+    { id: "automation", label: "Automation Maturity Gap", score: automationScore, desc: "Disconnected systems and manual handoffs create bottlenecks, errors, and invisible delays.", opportunity: "Implement intelligent workflow automation across your highest-volume processes." },
+    { id: "ai", label: "Uncontrolled AI Usage", score: aiScore, desc: "Employees are using AI tools without governance, risking data leakage and compliance violations.", opportunity: "Deploy governed AI tools with guardrails - increasing productivity while controlling risk." },
+    { id: "access", label: "Access Visibility Gaps", score: accessScore, desc: "Limited visibility into who accesses what data creates audit risk and undetected exposure.", opportunity: "Implement role-based access controls with automated audit trails across all systems." },
+    { id: "continuity", label: "Untested Recovery Plans", score: continuityScore, desc: "If systems went down today, recovery timelines are uncertain or untested.", opportunity: "Build and test automated disaster recovery that restores operations in hours, not days." },
+    { id: "human", label: "Human Decision-Making Risk", score: humanRiskScore ?? 50, desc: "Team members may not recognize sophisticated AI-generated threats, creating entry points for attackers.", opportunity: "Implement behavioral awareness training with simulated real-world threat scenarios." },
+  ];
+
+  const topGaps = [...allCategories].sort((a, b) => a.score - b.score).slice(0, 3);
+  const topOpportunities = [...allCategories].sort((a, b) => a.score - b.score).slice(0, 3);
 
   const selectAnswer = (questionId, option) => {
     const value = typeof option === "string" ? { text: option } : option;
@@ -316,7 +348,7 @@ export default function FreeAuditOffer() {
           </div>
         )}
 
-        {/* RESULTS */}
+        {/* RESULTS - Business Health Dashboard */}
         {stage === "results" && (
           <div data-testid="assessment-results">
             <div className="text-center mb-10">
@@ -327,44 +359,100 @@ export default function FreeAuditOffer() {
               <p className="text-[#c0cfe0] text-sm">{contactInfo.company || "Your organization"}</p>
             </div>
 
-            {/* Score rings */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
-              <ScoreRing score={overallScore} label="Overall" />
-              <ScoreRing score={automationScore} label="Automation" />
-              <ScoreRing score={aiScore} label="AI Readiness" />
-              <ScoreRing score={riskScore} label="Risk Posture" />
+            {/* Primary score - large */}
+            <div className="text-center mb-10">
+              <ScoreRing score={overallScore} size={160} label="Overall Score" />
             </div>
 
-            {/* Category breakdown */}
-            <div className="space-y-3 mb-12">
+            {/* 6 score grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
               {[
-                { label: "Operational Efficiency", score: calcCategoryScore(steps[1].questions) },
-                { label: "Automation Maturity", score: automationScore },
-                { label: "AI Readiness", score: aiScore },
-                { label: "Access & Data Control", score: calcCategoryScore(steps[4].questions) },
-                { label: "Business Continuity", score: calcCategoryScore(steps[5].questions) },
-              ].map((cat, i) => {
-                const s = getScoreLabel(cat.score);
+                { score: automationScore, label: "Automation Maturity", icon: Zap },
+                { score: aiScore, label: "AI Readiness", icon: Brain },
+                { score: riskScore, label: "Operational Risk", icon: Shield },
+                { score: humanRiskScore ?? 50, label: humanRiskScore !== null ? "Human Risk" : "Human Risk (est.)", icon: Eye },
+                { score: continuityScore, label: "Business Continuity", icon: Clock },
+                { score: operationalScore, label: "Operational Efficiency", icon: BarChart3 },
+              ].map((item, i) => {
+                const s = getScoreLabel(item.score);
                 return (
-                  <div key={i} className="flex items-center gap-4">
-                    <span className="text-[#c0cfe0] text-sm w-44 flex-shrink-0">{cat.label}</span>
-                    <div className="flex-1 bg-white/5 h-2 rounded-full">
-                      <div className="h-2 rounded-full transition-all duration-700" style={{ width: `${cat.score}%`, backgroundColor: s.color }} />
-                    </div>
-                    <span className="text-sm font-semibold w-12 text-right" style={{ color: s.color }}>{cat.score}%</span>
+                  <div key={i} className="bg-white/[0.03] border border-white/8 rounded-md p-4 text-center">
+                    <item.icon className="w-4 h-4 mx-auto mb-2" style={{ color: s.color }} />
+                    <p className="stat-number text-2xl text-white">{item.score}</p>
+                    <p className="text-[#c0cfe0] text-xs mt-1">{item.label}</p>
+                    <p className="text-[10px] mt-0.5" style={{ color: s.color }}>{s.label}</p>
                   </div>
                 );
               })}
             </div>
 
+            {/* Top 3 Gaps + Top 3 Opportunities */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2" style={{ fontFamily: "Outfit" }}>
+                  <AlertTriangle className="w-5 h-5 text-[#ef4444]" /> Top Gaps
+                </h3>
+                <div className="space-y-3">
+                  {topGaps.map((gap, i) => (
+                    <div key={i} className="p-4 rounded-md bg-[#ef4444]/5 border border-[#ef4444]/10">
+                      <div className="flex items-center justify-between mb-1">
+                        <p className="text-white text-sm font-medium">{gap.label}</p>
+                        <span className="text-xs font-semibold" style={{ color: getScoreLabel(gap.score).color }}>{gap.score}/100</span>
+                      </div>
+                      <p className="text-[#c0cfe0] text-xs leading-relaxed">{gap.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2" style={{ fontFamily: "Outfit" }}>
+                  <CheckCircle className="w-5 h-5 text-[#10b981]" /> Top Opportunities
+                </h3>
+                <div className="space-y-3">
+                  {topOpportunities.map((opp, i) => (
+                    <div key={i} className="p-4 rounded-md bg-[#10b981]/5 border border-[#10b981]/10">
+                      <p className="text-white text-sm font-medium mb-1">{opp.label}</p>
+                      <p className="text-[#c0cfe0] text-xs leading-relaxed">{opp.opportunity}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Category breakdown bars */}
+            <div className="mb-12">
+              <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wider">Full Breakdown</h3>
+              <div className="space-y-3">
+                {allCategories.map((cat, i) => {
+                  const s = getScoreLabel(cat.score);
+                  return (
+                    <div key={i} className="flex items-center gap-4">
+                      <span className="text-[#c0cfe0] text-xs w-44 flex-shrink-0">{cat.label.replace(" Gap", "").replace(" Dependence", "").replace("Uncontrolled ", "").replace("Untested ", "")}</span>
+                      <div className="flex-1 bg-white/5 h-2 rounded-full">
+                        <div className="h-2 rounded-full transition-all duration-700" style={{ width: `${cat.score}%`, backgroundColor: s.color }} />
+                      </div>
+                      <span className="text-xs font-semibold w-12 text-right" style={{ color: s.color }}>{cat.score}%</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {humanRiskScore === null && (
+              <div className="text-center mb-8 p-4 border border-[#0077B3]/20 bg-[#0077B3]/5 rounded-md">
+                <p className="text-[#0077B3] text-sm font-medium mb-1">Want a more accurate score?</p>
+                <p className="text-[#c0cfe0] text-xs">Complete the Human Risk Simulation above to add real behavioral data to your Business Intelligence Score.</p>
+              </div>
+            )}
+
             {/* CTA */}
             <div className="bg-white rounded-lg p-8 text-center">
               <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="Veracity" className="w-12 h-12 object-contain mx-auto mb-4" />
               <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>
-                Review Results With Veracity
+                Review Your Results With Veracity
               </h3>
               <p className="text-[#4a5e78] text-sm mb-6 max-w-md mx-auto">
-                We&rsquo;ll walk through your scores, identify the highest-impact improvements, and build a clear roadmap to reduce manual work and operational risk.
+                We&rsquo;ll walk through every score, prioritize the highest-impact improvements, and build a clear roadmap to reduce manual work, strengthen AI readiness, and lower operational risk.
               </p>
               <a href="tel:9529417333">
                 <Button className="bg-[#003B71] hover:bg-[#002a52] text-white rounded-md font-semibold px-8 h-12">
