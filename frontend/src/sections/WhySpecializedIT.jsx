@@ -31,7 +31,7 @@ export default function WhySpecializedIT() {
     <section
       id="why-it"
       data-testid="why-specialized-section"
-      aria-label="Why regulated industries need specialized IT support"
+      aria-label="Why businesses choose Veracity for operational intelligence"
       className="py-12 lg:py-18 bg-gradient-to-b from-[#182d48] to-[#142840] dark-cards"
     >
       <div className="max-w-7xl mx-auto px-6">

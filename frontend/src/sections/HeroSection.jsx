@@ -29,7 +29,7 @@ export default function HeroSection() {
     <section
       id="hero"
       data-testid="hero-section"
-      aria-label="Veracity Technologies - AI-Powered Cybersecurity and Managed IT"
+      aria-label="Veracity Technologies - AI-Driven Managed Intelligence"
       className="relative min-h-screen flex items-center justify-start overflow-hidden"
       itemScope
       itemType="https://schema.org/WPHeader"

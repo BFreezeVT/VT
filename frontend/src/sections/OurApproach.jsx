@@ -11,7 +11,7 @@ const approaches = [
 
 export default function OurApproach() {
   return (
-    <section id="approach" data-testid="approach-section" aria-label="Our managed IT approach" className="py-12 lg:py-18 bg-gradient-to-b from-[#c8d6e5] to-[#4a6a88] relative overflow-hidden">
+    <section id="approach" data-testid="approach-section" aria-label="How Veracity delivers operational intelligence" className="py-12 lg:py-18 bg-gradient-to-b from-[#c8d6e5] to-[#4a6a88] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#2a4a68] px-8 py-1 rounded-sm text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">How We Deliver</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

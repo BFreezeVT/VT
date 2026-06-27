@@ -7,76 +7,76 @@ import {
 
 const faqs = [
   {
-    q: "Will this audit disrupt our operations?",
-    a: "Not at all. Our assessment is completely non-invasive. We work around your schedule and use passive scanning tools that won&rsquo;t interfere with your network, production systems, or daily workflows. Most of our review happens in the background while your teams work uninterrupted.",
+    q: "Will the assessment disrupt our operations?",
+    a: "No. The assessment is non-invasive. We work around your schedule using passive tools that don&rsquo;t interfere with your systems or workflows.",
   },
   {
-    q: "How long does the audit take?",
-    a: "The initial assessment typically takes 3-5 business days. You&rsquo;ll receive a comprehensive report with findings and recommendations tailored to your industry within one week of completion.",
+    q: "How long does it take?",
+    a: "The online assessment takes under 3 minutes. A full operational review takes 3-5 business days. You receive a detailed report within one week.",
   },
   {
     q: "Is our data kept confidential?",
-    a: "Absolutely. We sign NDAs before any engagement and follow strict data handling protocols aligned with ISO 27001 standards. Your project data, financial records, intellectual property, and infrastructure details remain completely confidential.",
+    a: "Yes. NDAs signed before any engagement. Data handling follows ISO 27001 protocols. Your records, IP, and infrastructure details stay private.",
   },
   {
     q: "Do you work with our industry?",
-    a: "We specialize in construction, financial services, manufacturing, and high-compliance industries. Our team holds sector-specific certifications and understands the unique regulatory requirements, tools, and threats each industry faces.",
+    a: "We specialize in construction, financial services, manufacturing, and high-compliance industries. Our team holds sector-specific certifications and understands the regulatory requirements and operational realities of each.",
   },
   {
-    q: "What software and platforms do you support?",
-    a: "We have deep expertise across industry-specific platforms - Procore, Sage, and Bluebeam for construction; Bloomberg, Salesforce, and trading platforms for financial services; SAP, SCADA, and MES systems for manufacturing. If your team uses it, we know how to secure and optimize it.",
+    q: "What platforms do you work with?",
+    a: "Procore, Sage, Bluebeam for construction. Bloomberg, Salesforce, trading platforms for financial services. SAP, SCADA, MES systems for manufacturing. If your team uses it, we know how to integrate and secure it.",
   },
   {
-    q: "Can you help with compliance requirements?",
-    a: "That&rsquo;s one of our core strengths. We support CMMC, SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST 800-171, SEC/FINRA regulations, and OSHA digital requirements. We&rsquo;ll identify gaps and build a roadmap to get you audit-ready.",
+    q: "Can you help with compliance?",
+    a: "Core strength. CMMC, SOC 2, PCI-DSS, HIPAA, ISO 27001, NIST 800-171, SEC/FINRA, OSHA. We identify gaps and build a roadmap to get you audit-ready.",
   },
   {
-    q: "How quickly do you respond to IT issues?",
-    a: "We respond to critical issues within 15 minutes under our SLA. Our 24/7 Security Operations Center uses AI-powered monitoring to detect and respond to threats in real time, often resolving issues before your team even notices them.",
+    q: "How fast do you respond to critical issues?",
+    a: "15-minute SLA for critical issues. Our AI-powered systems detect and resolve most issues automatically. When human intervention is needed, we are there in minutes.",
   },
   {
-    q: "What is Shadow AI and should my business be concerned?",
-    a: "Shadow AI refers to employees using unauthorized AI tools like ChatGPT, Claude, or other LLMs without IT approval. 68% of employees use unauthorized AI tools, creating serious risks of data leakage, compliance violations, and intellectual property exposure. Veracity discovers, assesses, and governs Shadow AI across your organization.",
+    q: "What is Shadow AI?",
+    a: "Employees using unauthorized AI tools without approval. 68% of employees do this. It creates data leakage, compliance violations, and IP exposure. We discover, assess, and govern it.",
   },
   {
-    q: "Do you offer AI security and governance services?",
-    a: "Yes. We offer comprehensive AI as a Service including AI strategy and integration, AI security and governance frameworks, AI-powered threat detection, Shadow AI monitoring, data loss prevention for LLMs, and AI readiness assessments. 90% of organizations are unprepared for AI-augmented threats.",
+    q: "Do you offer AI governance?",
+    a: "Yes. AI strategy, security frameworks, automated threat detection, Shadow AI monitoring, data loss prevention for LLMs, and AI readiness assessments. 90% of organizations are unprepared for AI-augmented threats.",
   },
   {
-    q: "What makes Veracity different from other MSPs?",
-    a: "Three things: industry specialization, AI-powered security, and local presence. We don&rsquo;t do generic IT. Every engagement is built on sector-specific knowledge of your industry's regulations, tools, and threats. Our SOC uses machine learning for 24/7 threat detection. And we&rsquo;re headquartered in Minnetonka, MN with on-site response across the Twin Cities metro.",
+    q: "What makes Veracity different?",
+    a: "Industry specialization, AI-first approach, and local presence. Every engagement is built on sector-specific knowledge of your regulations, workflows, and operational risks. Our systems use machine learning for real-time detection. Headquartered in Minnetonka, MN with on-site response across the Twin Cities.",
   },
   {
     q: "What areas do you serve?",
-    a: "We serve 45 cities across the Minneapolis-St. Paul metro and Central Minnesota, including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, Edina, Wayzata, Woodbury, Eagan, St. Cloud, and many more. Our headquarters is at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345.",
+    a: "45 cities across the Minneapolis-St. Paul metro and Central Minnesota, including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, Edina, Wayzata, Woodbury, Eagan, St. Cloud, and more. Headquarters: 5929 Baker Rd, Suite 420, Minnetonka, MN 55345.",
   },
   {
-    q: "How much do your managed IT services cost?",
-    a: "Pricing is customized based on your organization's size, industry, compliance requirements, and IT complexity. We offer a free Technology and Cyber Risk Audit with no obligation to help you understand your needs before committing. Contact us at (952) 941-7333 for a consultation.",
+    q: "How is pricing structured?",
+    a: "Customized based on your organization&rsquo;s size, industry, compliance requirements, and complexity. We offer a free AI Business Intelligence Assessment with no obligation. Call (952) 941-7333 to start a conversation.",
   },
   {
-    q: "What is CMMC and does my business need it?",
-    a: "CMMC (Cybersecurity Maturity Model Certification) is a framework required by the U.S. Department of Defense for contractors handling Controlled Unclassified Information. If your business is part of the defense supply chain or bids on DoD contracts, you need CMMC 2.0 certification. Veracity is a CMMC Registered Provider.",
+    q: "What is CMMC?",
+    a: "Cybersecurity Maturity Model Certification. Required by the DoD for contractors handling Controlled Unclassified Information. If you bid on defense contracts, you need CMMC 2.0. Veracity is a Registered Provider.",
   },
   {
-    q: "Can you help prevent ransomware attacks?",
-    a: "Yes. Ransomware attacks rose 32% globally in 2025 with average payments reaching $2.3 million. Our multi-layered approach includes AI-powered endpoint detection, network segmentation, email authentication (DMARC/DKIM/SPF), tested backups with immutable storage, employee security training, and 24/7 SOC monitoring that catches lateral movement before ransomware executes.",
+    q: "How do you handle ransomware risk?",
+    a: "AI-powered endpoint detection, network segmentation, email authentication, immutable backups, awareness training, and 24/7 monitoring. Multiple layers. No single point of failure.",
   },
   {
-    q: "Do you provide employee cybersecurity training?",
-    a: "Yes. We provide ongoing security awareness training including quarterly phishing simulations, role-specific training for employees who handle financial transactions or sensitive data, AI-specific threat awareness, and real-time coaching when employees encounter suspicious activity. Training is a critical layer of defense since 59% of incidents start with compromised credentials.",
+    q: "Do you train employees on threat awareness?",
+    a: "Ongoing. Quarterly simulations, role-specific training, AI-threat awareness, real-time coaching. 59% of incidents start with compromised credentials. Training closes that gap.",
   },
   {
-    q: "What happens if we experience a security breach?",
-    a: "Our incident response team activates immediately. We contain the threat, preserve forensic evidence, assess the scope of impact, restore operations from tested backups, handle regulatory notification requirements, and conduct a thorough root cause analysis to prevent recurrence. Our 24/7 SOC means response begins in minutes, not hours.",
+    q: "What happens during a security incident?",
+    a: "Our response team activates immediately. We contain the threat, preserve evidence, assess impact, restore operations from tested backups, handle regulatory notifications, and conduct root cause analysis. Response begins in minutes, not hours.",
   },
   {
-    q: "Can you help us transition from our current IT provider?",
-    a: "Absolutely. We handle provider transitions regularly with a structured onboarding process: discovery call, comprehensive network assessment, tool deployment and security hardening, and ongoing unlimited support. Most transitions are completed within 30 days with zero disruption to your operations.",
+    q: "Can you help us transition from our current provider?",
+    a: "Yes. We run structured transitions: discovery, network assessment, tool deployment, security hardening, ongoing support. Most are completed within 30 days with zero disruption to your operations.",
   },
   {
-    q: "Do you support remote and hybrid work environments?",
-    a: "Yes. We deploy secure remote access solutions including VPN, zero-trust architecture, conditional access policies, mobile device management (MDM), and cloud security for Microsoft 365, Google Workspace, and other SaaS platforms. Every remote connection is verified and encrypted regardless of location.",
+    q: "Do you support remote and hybrid teams?",
+    a: "Yes. Zero-trust access, conditional policies, device management, and cloud security for Microsoft 365, Google Workspace, and other platforms. Every connection verified and encrypted regardless of location.",
   },
   {
     q: "What is a Managed Intelligence Provider?",
@@ -95,8 +95,8 @@ const faqs = [
     a: "A behavioral assessment that measures how your team responds to realistic AI-driven threat scenarios - vendor impersonation, payment redirects, credential harvesting, and executive urgency attacks. It produces a Human Risk Score (0-100) that reflects your organizational exposure to social engineering.",
   },
   {
-    q: "How is Veracity different from a traditional MSP?",
-    a: "Traditional MSPs manage tickets and fix things when they break. Veracity is a Managed Intelligence Provider that deploys AI, automation, and intelligent systems to prevent problems, reduce manual work, improve visibility, and drive business outcomes. Based in Minnetonka, Minnesota, serving the Twin Cities metro.",
+    q: "How is Veracity different from a traditional provider?",
+    a: "Traditional providers manage tickets and react when things break. Veracity deploys AI, automation, and intelligent systems to prevent problems, reduce manual work, improve visibility, and drive measurable business outcomes. Minnetonka, Minnesota. Twin Cities metro.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function FAQSection() {
     <section
       id="faq"
       data-testid="faq-section"
-      aria-label="Frequently asked questions about managed IT services and cybersecurity audits"
+      aria-label="Frequently asked questions about AI automation and managed intelligence"
       className="py-12 lg:py-18 bg-gradient-to-b from-[#050c14] to-[#040a10]"
     >
       <div className="max-w-3xl mx-auto px-6">
