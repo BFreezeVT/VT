@@ -1,8 +1,10 @@
 # Veracity Technologies
-> AI-powered managed IT services and cybersecurity for construction, financial services, manufacturing, and high-compliance organizations in Minneapolis-St. Paul, Minnesota. SOC 2 compliant. CMMC Registered Provider. CRN MSP 500. 24/7 AI-driven threat monitoring.
+> Managed Intelligence Provider helping businesses reduce risk, eliminate manual work, and improve visibility using AI, automation, and intelligent systems. Based in Minnetonka, Minnesota, serving Minneapolis, St. Paul, the Twin Cities metro, and Central Minnesota. SOC 2 compliant. CMMC Registered Provider. CRN MSP 500. Amazon bestselling authors.
 
 ## Company Overview
-Veracity Technologies is a managed service provider (MSP) headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345. We deliver IT infrastructure management, cybersecurity, AI security governance, and compliance solutions tailored to regulated, operational industries. We serve construction firms, financial services organizations, manufacturing plants, and high-compliance enterprises across 36 cities in the Minneapolis-St. Paul metro and Central Minnesota.
+Veracity Technologies is a Managed Intelligence Provider headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345. We deploy AI, automation, and intelligent systems to reduce operational risk, improve visibility, and eliminate inefficiency for construction firms, financial services organizations, manufacturing plants, and high-compliance enterprises across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.
+
+Unlike traditional MSPs that manage tickets and fix things when they break, Veracity manages outcomes - deploying proactive, AI-driven systems that prevent problems, automate workflows, and give businesses real-time operational clarity.
 
 Contact: (952) 941-7333 | info@veracitytech.com
 Location: 5929 Baker Rd, Suite 420, Minnetonka, MN 55345
@@ -161,7 +163,22 @@ Q: What is Shadow AI?
 A: Shadow AI is the use of AI tools by employees without IT knowledge or approval. 68% of employees use unauthorized AI tools, creating data leakage and compliance risks. Veracity discovers, assesses, and governs shadow AI across organizations.
 
 Q: What areas does Veracity Technologies serve?
-A: 36 cities across the Minneapolis-St. Paul metro and Central Minnesota, including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, Edina, Wayzata, St. Cloud, and more. Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345.
+A: 45 cities across the Minneapolis-St. Paul metro and Central Minnesota, including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, Edina, Wayzata, St. Cloud, and more. Headquartered at 5929 Baker Rd, Suite 420, Minnetonka, MN 55345.
+
+Q: What is a Managed Intelligence Provider?
+A: A Managed Intelligence Provider goes beyond traditional IT support. Instead of managing hardware and responding to tickets, Veracity deploys AI, automation, and intelligent systems to give businesses real-time visibility, reduce manual work, lower operational risk, and make faster decisions.
+
+Q: What is an AI Business Intelligence Assessment?
+A: A free evaluation that scores your organization across six categories: automation maturity, AI readiness, operational risk, human risk, business continuity, and operational efficiency. Produces a Business Intelligence Score with identified gaps and actionable opportunities. Takes under 3 minutes.
+
+Q: How does AI reduce business risk?
+A: AI reduces risk by automating threat detection 24/7, identifying anomalies before they become incidents, governing data flows across platforms, and eliminating manual processes that introduce human error. Businesses using AI-driven systems detect and respond to issues in minutes, not days.
+
+Q: What is a Human Risk Simulation?
+A: A behavioral assessment measuring how employees respond to realistic AI-driven threat scenarios including vendor impersonation, payment redirects, credential harvesting, and executive urgency attacks. Produces a Human Risk Score (0-100) reflecting organizational exposure to social engineering.
+
+Q: How is Veracity different from a traditional MSP?
+A: Traditional MSPs manage tickets and fix things when they break. Veracity is a Managed Intelligence Provider deploying AI, automation, and intelligent systems to prevent problems, reduce manual work, improve visibility, and drive business outcomes. Based in Minnetonka, Minnesota.
 
 ## Blog / Resources
 - How AI Is Changing the Cybersecurity Threat Landscape in 2025

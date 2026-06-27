@@ -78,6 +78,26 @@ const faqs = [
     q: "Do you support remote and hybrid work environments?",
     a: "Yes. We deploy secure remote access solutions including VPN, zero-trust architecture, conditional access policies, mobile device management (MDM), and cloud security for Microsoft 365, Google Workspace, and other SaaS platforms. Every remote connection is verified and encrypted regardless of location.",
   },
+  {
+    q: "What is a Managed Intelligence Provider?",
+    a: "A Managed Intelligence Provider goes beyond traditional IT support. Instead of managing hardware and responding to tickets, Veracity deploys AI, automation, and intelligent systems to give businesses real-time visibility, reduce manual work, lower operational risk, and make faster decisions. We manage outcomes, not infrastructure.",
+  },
+  {
+    q: "What is an AI Business Intelligence Assessment?",
+    a: "It is a free assessment that scores your organization across six categories: automation maturity, AI readiness, operational risk, human risk, business continuity, and operational efficiency. You receive a Business Intelligence Score with identified gaps and actionable opportunities. Takes under 3 minutes.",
+  },
+  {
+    q: "How does AI reduce business risk?",
+    a: "AI reduces risk by automating threat detection 24/7 without human fatigue, identifying anomalies before they become incidents, governing data flows across platforms, and eliminating manual processes that introduce human error. Businesses using AI-driven systems detect and respond to issues in minutes, not days.",
+  },
+  {
+    q: "What is a Human Risk Simulation?",
+    a: "A behavioral assessment that measures how your team responds to realistic AI-driven threat scenarios - vendor impersonation, payment redirects, credential harvesting, and executive urgency attacks. It produces a Human Risk Score (0-100) that reflects your organizational exposure to social engineering.",
+  },
+  {
+    q: "How is Veracity different from a traditional MSP?",
+    a: "Traditional MSPs manage tickets and fix things when they break. Veracity is a Managed Intelligence Provider that deploys AI, automation, and intelligent systems to prevent problems, reduce manual work, improve visibility, and drive business outcomes. Based in Minnetonka, Minnesota, serving the Twin Cities metro.",
+  },
 ];
 
 export default function FAQSection() {
