@@ -1,6 +1,7 @@
 import { Shield, FileCheck, HardHat, CreditCard, Server, ExternalLink } from "lucide-react";
 
 const TECH_BG = "https://static.prod-images.emergentagent.com/jobs/a4251189-ed5f-43ed-b8ac-224a99473a6d/images/135a01eaf279db78834b25ee533b6a592fa900f14e025322226c4102d084a5db.png";
+const LOGO = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png";
 const LOGO_FULL = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png";
 
 const complianceItems = [
@@ -16,6 +17,7 @@ export default function Compliance() {
     <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-12 lg:py-18 bg-transparent dark-cards relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.06] bg-cover bg-center" style={{ backgroundImage: `url(${TECH_BG})` }} />
       <div className="absolute inset-0 bg-transparent/60" />
+      <img src={LOGO} alt="" aria-hidden="true" className="absolute right-12 bottom-8 w-48 h-48 object-contain opacity-[0.04] brightness-200 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-10 text-center">

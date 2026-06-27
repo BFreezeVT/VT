@@ -1,5 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LogoDivider } from "./sections/LogoBranding";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
 import TrustStats from "./sections/TrustStats";
@@ -83,17 +84,24 @@ function HomePage() {
       <main role="main">
         <HeroSection />
         <IntroStats />
+        <LogoDivider />
         <AIService />
+        <LogoDivider />
         <OurApproach />
         <Industries />
+        <LogoDivider />
         <TrustStats />
         <WhySpecializedIT />
+        <LogoDivider />
         <Compliance />
         <CaseStudy />
+        <LogoDivider />
         <Credentials />
         <ProudPartners />
+        <LogoDivider />
         <CyberGame />
         <FreeAuditOffer />
+        <LogoDivider />
         <RiskReversal />
         <FAQSection />
       </main>
