@@ -78,6 +78,7 @@ export default function ServiceAreaPage() {
             email: "info@veracitytech.com",
             address: {
               "@type": "PostalAddress",
+              streetAddress: "5929 Baker Rd, Suite 420",
               addressLocality: city.name,
               addressRegion: city.state,
               postalCode: city.zip,
@@ -98,6 +99,7 @@ export default function ServiceAreaPage() {
               opens: "00:00",
               closes: "23:59",
             },
+            parentOrganization: { "@id": "https://www.veracitytech.com/#organization" },
           }),
         }}
       />

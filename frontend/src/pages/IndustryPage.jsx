@@ -83,6 +83,21 @@ export default function IndustryPage() {
           }),
         }}
       />
+      {/* WebPage schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: industry.metaTitle,
+            url: `https://www.veracitytech.com/industries/${industry.slug}`,
+            description: industry.metaDescription,
+            isPartOf: { "@id": "https://www.veracitytech.com/#website" },
+            publisher: { "@id": "https://www.veracitytech.com/#organization" },
+          }),
+        }}
+      />
       {/* BreadcrumbList */}
       <script
         type="application/ld+json"

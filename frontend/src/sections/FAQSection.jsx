@@ -121,7 +121,7 @@ export default function FAQSection() {
           </h2>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3 animate-fade-in-up stagger-2">
+        <Accordion type="multiple" defaultValue={["faq-0", "faq-1", "faq-2", "faq-3"]} className="space-y-3 animate-fade-in-up stagger-2">
           {faqs.map((faq, i) => (
             <AccordionItem
               key={i}
