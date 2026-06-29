@@ -43,16 +43,16 @@ export default function Industries() {
       <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -left-20 -bottom-20 w-[550px] h-[550px] object-contain opacity-[0.035] brightness-200 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Who We Serve</span></div>
+          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Industries We Serve</span></div>
           <h2
             data-testid="industries-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"
             style={{ fontFamily: "Outfit, sans-serif" }}
           >
-            Built for industries where downtime costs more than dollars.
+            Managed IT &amp; cybersecurity built for your industry.
           </h2>
           <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
-            We don&rsquo;t do generic. Every engagement is engineered for the specific regulations, workflows, and operational realities of your industry.
+            We specialize in regulated, operational industries where downtime costs more than dollars and compliance isn&rsquo;t optional.
           </p>
         </div>
 

@@ -6,23 +6,23 @@ const TEAM_IMG = "https://images.pexels.com/photos/5380582/pexels-photo-5380582.
 const reasons = [
   {
     icon: Wifi,
-    title: "Anywhere Connectivity",
-    desc: "Reliable, secure networking for every location - job sites, branch offices, factory floors, and remote teams. No dead zones, no excuses.",
+    title: "Connected Everywhere",
+    desc: "Reliable, secure networking for every location - offices, job sites, factory floors, and remote teams. No gaps in coverage or visibility.",
   },
   {
     icon: Lock,
-    title: "Zero-Trust Access",
-    desc: "Every user, device, and connection is verified continuously. Your data stays protected whether your team is in the office or on the road.",
+    title: "Security Built In, Not Bolted On",
+    desc: "Zero-trust access, MFA, and endpoint protection integrated into your daily operations. Security that works without slowing your team down.",
   },
   {
     icon: Users,
-    title: "Unified Vendor Ecosystem",
-    desc: "We integrate your tools, vendors, and partners into one governed platform - with role-based access controls and full audit visibility.",
+    title: "Your Systems, Unified",
+    desc: "We integrate your tools, vendors, and platforms into one managed environment with role-based access and full audit visibility.",
   },
   {
     icon: Zap,
-    title: "Response in Minutes, Not Days",
-    desc: "15-minute SLA for critical issues. When automation handles the routine, our experts are free to solve the problems that actually matter.",
+    title: "Proactive, Not Reactive",
+    desc: "AI detects and resolves issues before your team notices them. When human expertise is needed, we respond in minutes - not hours.",
   },
 ];
 
@@ -59,13 +59,13 @@ export default function WhySpecializedIT() {
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 animate-fade-in-up stagger-1"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
-              Generic providers manage tickets. We manage outcomes.
+              Same services you expect. A fundamentally different approach.
             </h2>
             <p className="text-[#c0cfe0] text-base leading-relaxed mb-4 animate-fade-in-up stagger-2">
-              Your operations move fast, your teams are distributed, and your data is mission-critical. You need a partner who understands your business - not just your server room.
+              We provide managed IT, cybersecurity, compliance, and business continuity - the same services every MSP offers. The difference is how we deliver them: proactive, AI-enhanced, and built around visibility instead of tickets.
             </p>
             <p className="text-[#c0cfe0]/70 text-sm leading-relaxed mb-10 animate-fade-in-up stagger-2">
-              Veracity Technologies offers industry-specialized AI, automation, and intelligent systems for construction, financial services, manufacturing, and high-compliance organizations in the Minneapolis-St. Paul region and beyond.
+              Veracity Technologies is a managed IT and cybersecurity provider serving construction, financial services, manufacturing, and high-compliance organizations in Minnetonka, Minneapolis, St. Paul, and the Twin Cities.
             </p>
 
             <div className="space-y-6">

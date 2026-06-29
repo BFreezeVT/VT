@@ -21,12 +21,12 @@ export default function Compliance() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-10 text-center">
-            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Compliance & Governance</span></div>
+            <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Compliance</span></div>
             <h2 data-testid="compliance-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit" }}>
-              Audit-ready. Always.
+              Compliance that supports growth, not just audits.
             </h2>
             <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
-              Compliance shouldn&rsquo;t be a scramble before an audit. We build it into your systems so you&rsquo;re continuously compliant - not periodically panicked.
+              From CMMC to HIPAA to SOC 2, we build compliance into your systems so you&rsquo;re always audit-ready - reducing exposure while keeping your business moving forward.
             </p>
         </div>
 

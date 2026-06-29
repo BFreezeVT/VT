@@ -56,7 +56,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-3 mb-8 animate-fade-in-up stagger-1">
             <div className="w-2 h-2 rounded-full bg-[#0077B3] animate-pulse" />
             <p className="text-base sm:text-lg font-bold uppercase tracking-[0.15em] text-[#00a0e4]">
-              AI-Driven Managed Intelligence
+              Managed IT &amp; Cybersecurity, Evolved.
             </p>
           </div>
 
@@ -65,16 +65,16 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-8 animate-fade-in-up stagger-2 drop-shadow-lg"
             style={{ fontFamily: "Outfit, sans-serif", textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
           >
-            Your business should run smarter, safer, and
+            Managed IT &amp; Cybersecurity
             <br />
-            <span className="text-[#0077B3]">with less manual drag.</span>
+            <span className="text-[#0077B3]">Built for the AI + Automation World.</span>
           </h1>
 
           <p
             data-testid="hero-subhead"
             className="text-base md:text-lg text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
-            Veracity helps businesses use AI, automation, and intelligent systems to reduce operational risk, improve visibility, and eliminate inefficiency.
+            Helping organizations reduce risk, improve visibility, automate workflows, and leverage technology more strategically.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
@@ -83,7 +83,7 @@ export default function HeroSection() {
               onClick={() => scrollTo("audit")}
               className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
             >
-              Start Your AI Business Intelligence Assessment
+              Start Your Business Technology Assessment
             </Button>
             <a
               data-testid="hero-phone-link"
@@ -98,12 +98,12 @@ export default function HeroSection() {
           {/* Trust badges */}
           <div className="mt-14 flex flex-wrap items-center gap-4 animate-fade-in-up stagger-5">
             {[
-              { label: "AI Governance Certified" },
+              { label: "Managed IT Services" },
+              { label: "Cybersecurity" },
               { label: "SOC 2 Type I" },
               { label: "HIPAA Compliant" },
               { label: "CRN MSP 500" },
-              { label: "ISO 27001" },
-              { label: "Amazon Bestselling Authors" },
+              { label: "AI + Automation" },
             ].map((badge) => (
               <span key={badge.label} className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] text-white/90 border border-white/30 bg-white/10 px-3 py-2 rounded">
                 <ShieldCheck className="w-3 h-3 text-[#0077B3]" />

@@ -230,7 +230,7 @@ export default function FreeAuditOffer() {
     <section
       id="audit"
       data-testid="audit-section"
-      aria-label="AI Business Intelligence Assessment"
+      aria-label="Business Technology Assessment"
       className="py-12 lg:py-18 bg-transparent"
     >
       <div className="max-w-4xl mx-auto px-6">
@@ -238,12 +238,12 @@ export default function FreeAuditOffer() {
         {/* INTRO */}
         {stage === "intro" && (
           <div data-testid="assessment-intro" className="text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4">Limited Availability</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0077B3] mb-4">Free Assessment</p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4" style={{ fontFamily: "Outfit" }}>
-              AI Business Intelligence Assessment
+              Business Technology Assessment
             </h2>
             <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto mb-8">
-              Answer 12 questions across 6 categories. Get your Business Intelligence Score instantly - covering automation maturity, AI readiness, and operational risk.
+              Score your IT, cybersecurity, automation maturity, and operational readiness in under 3 minutes. See where you stand and where the biggest opportunities are.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto mb-8">
               {steps.map((s, i) => (

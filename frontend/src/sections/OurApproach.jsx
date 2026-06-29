@@ -3,10 +3,10 @@ import { Monitor, ShieldCheck, Layers, Headphones } from "lucide-react";
 const SOC_IMG = "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxoYXBweSUyMGJ1c2luZXNzJTIwcHJvZmVzc2lvbmFsJTIwaGFuZHNoYWtlJTIwc2F0aXNmaWVkJTIwY2xpZW50JTIwbWVldGluZ3xlbnwwfHx8fDE3ODA5Nzc0Nzh8MA&ixlib=rb-4.1.0&q=85";
 
 const approaches = [
-  { icon: Monitor, title: "Continuous Visibility", desc: "24/7 AI-powered monitoring across your entire environment. We see problems forming and resolve them before they impact your operations." },
-  { icon: ShieldCheck, title: "Automated Risk Reduction", desc: "Multi-factor authentication, intelligent access controls, and tested disaster recovery - automated, not manual." },
-  { icon: Layers, title: "System Integration", desc: "We connect your tools - Procore, Sage, Bloomberg, SAP, and more - into a unified, intelligent ecosystem that shares data and reduces friction." },
-  { icon: Headphones, title: "On-Demand Expert Support", desc: "When automation handles 90% of the work, your team only needs us for the 10% that matters. And we&rsquo;re there in minutes." },
+  { icon: Monitor, title: "24/7 Managed IT Monitoring", desc: "AI-powered monitoring across your entire environment. We detect and resolve issues before they impact your productivity or operations." },
+  { icon: ShieldCheck, title: "Cybersecurity & Access Controls", desc: "Multi-factor authentication, zero-trust architecture, endpoint protection, and automated threat response. Layered security that adapts in real time." },
+  { icon: Layers, title: "System Integration & Automation", desc: "We connect your tools - Procore, Sage, Bloomberg, SAP, and more - into a unified, automated ecosystem that reduces friction and manual work." },
+  { icon: Headphones, title: "Expert Support, Faster Response", desc: "When automation handles the routine, our experts are free for what matters. 15-minute SLA for critical issues. Real people who know your industry." },
 ];
 
 export default function OurApproach() {
@@ -19,10 +19,10 @@ export default function OurApproach() {
           {/* Left - content */}
           <div>
             <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
-              Proactive systems that run your business forward.
+              Managed IT that prevents problems instead of chasing them.
             </h2>
             <p className="text-[#dce6f0] text-base leading-relaxed mb-8 animate-fade-in-up stagger-2">
-              We don&rsquo;t wait for things to break. We build intelligent infrastructure that monitors, adapts, and resolves - so your team focuses on growth, not firefighting.
+              Traditional providers react when things break. We build proactive systems that monitor, detect, and resolve issues automatically - so your team focuses on the business, not the technology.
             </p>
 
             {/* Open list - no boxes */}
