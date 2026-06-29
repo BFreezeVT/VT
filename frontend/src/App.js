@@ -4,6 +4,7 @@ import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
 import TrustStats from "./sections/TrustStats";
 import IntroStats from "./sections/IntroStats";
+import BusinessReality from "./sections/BusinessReality";
 import AIService from "./sections/AIService";
 import OurApproach from "./sections/OurApproach";
 import Industries from "./sections/Industries";
@@ -83,6 +84,7 @@ function HomePage() {
       <main role="main">
         <HeroSection />
         <IntroStats />
+        <BusinessReality />
         <AIService />
         <OurApproach />
         <Industries />
