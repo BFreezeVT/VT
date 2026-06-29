@@ -56,7 +56,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-3 mb-8 animate-fade-in-up stagger-1">
             <div className="w-2 h-2 rounded-full bg-[#0077B3] animate-pulse" />
             <p className="text-base sm:text-lg font-bold uppercase tracking-[0.15em] text-[#00a0e4]">
-              Managed IT &amp; Cybersecurity, Evolved.
+              The Modern MSP for Organizations Ready to Move Beyond Reactive IT
             </p>
           </div>
 
