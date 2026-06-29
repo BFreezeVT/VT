@@ -2,11 +2,12 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
-import TrustStats from "./sections/TrustStats";
+import CoreServices from "./sections/CoreServices";
 import IntroStats from "./sections/IntroStats";
 import BusinessReality from "./sections/BusinessReality";
 import AIService from "./sections/AIService";
 import OurApproach from "./sections/OurApproach";
+import HowItWorks from "./sections/HowItWorks";
 import Industries from "./sections/Industries";
 import WhySpecializedIT from "./sections/WhySpecializedIT";
 import Compliance from "./sections/Compliance";
@@ -83,14 +84,15 @@ function HomePage() {
       <Navigation />
       <main role="main">
         <HeroSection />
+        <CoreServices />
+        <OurApproach />
         <IntroStats />
         <BusinessReality />
         <AIService />
-        <OurApproach />
         <Industries />
-        <TrustStats />
         <WhySpecializedIT />
         <Compliance />
+        <HowItWorks />
         <CaseStudy />
         <Credentials />
         <ProudPartners />

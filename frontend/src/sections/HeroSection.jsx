@@ -86,12 +86,12 @@ export default function HeroSection() {
               Start Your Business Technology Assessment
             </Button>
             <a
-              data-testid="hero-phone-link"
+              data-testid="hero-secondary-cta"
               href="tel:9529417333"
-              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 border border-white/25 hover:border-white/50 rounded-sm px-6 h-12 text-white text-sm font-semibold transition-all"
             >
               <Phone className="w-4 h-4" />
-              Or call (952) 941-7333
+              Schedule a Strategy Discussion
             </a>
           </div>
 

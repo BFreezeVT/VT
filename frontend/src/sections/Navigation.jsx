@@ -41,7 +41,7 @@ export default function Navigation() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          <button data-testid="nav-ai" onClick={() => scrollTo("ai-service")} className={`text-sm font-semibold transition-colors ml-4 ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Services</button>
+          <button data-testid="nav-ai" onClick={() => scrollTo("core-services")} className={`text-sm font-semibold transition-colors ml-4 ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Services</button>
           <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Approach</button>
           <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Industries</button>
           <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Compliance</button>

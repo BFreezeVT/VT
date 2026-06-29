@@ -38,7 +38,7 @@ function useCountUp(target, duration = 2000, startOnView = true) {
   return { count, ref };
 }
 
-function StatCard({ stat, prefix = "", suffix = "", label, description, source, sourceUrl, delay = 0 }) {
+function StatCard({ stat, prefix = "", suffix = "", label, description, source, sourceUrl, sourceOrg, sourceYear, delay = 0 }) {
   const { count, ref } = useCountUp(stat, 2000);
   return (
     <div
@@ -50,15 +50,19 @@ function StatCard({ stat, prefix = "", suffix = "", label, description, source, 
         {prefix}{typeof stat === "number" ? count : stat}{suffix}
       </p>
       <p className="text-white font-semibold text-sm mb-2">{label}</p>
-      <p className="text-[#94a8be] text-xs leading-relaxed mb-3">{description}</p>
-      <a
-        href={sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-[#00a0e4] transition-colors"
-      >
-        {source} <ExternalLink className="w-2.5 h-2.5" />
-      </a>
+      <p className="text-[#94a8be] text-xs leading-relaxed mb-4">{description}</p>
+      <div className="border-t border-white/[0.06] pt-3">
+        <p className="text-white/60 text-[10px] font-semibold uppercase tracking-wider mb-0.5">{sourceOrg}</p>
+        <p className="text-[#94a8be] text-[10px] mb-1.5">{source} {sourceYear && `(${sourceYear})`}</p>
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] font-medium hover:text-[#00a0e4] transition-colors"
+        >
+          View Source <ArrowRight className="w-2.5 h-2.5" />
+        </a>
+      </div>
     </div>
   );
 }
@@ -69,9 +73,9 @@ const columns = [
     title: "Reduce Risk",
     color: "#ef4444",
     stats: [
-      { stat: 10.22, prefix: "$", suffix: "M", label: "Average Cost of a U.S. Data Breach", description: "The average cost of a U.S. data breach reached $10.22 million.", source: "IBM Cost of a Data Breach Report 2025", sourceUrl: "https://www.ibm.com/reports/data-breach" },
-      { stat: 78, suffix: "%", label: "Of Breaches Involve Unauthorized Access", description: "Most breaches occur because someone gains access they should not have.", source: "Flashpoint Global Threat Report 2025", sourceUrl: "https://www.csoonline.com/article/4032035/ransomware-up-179-credential-theft-up-800-2025s-cyber-onslaught-intensifies.html" },
-      { stat: "1.8B", label: "Credentials Stolen in First Half of 2025", description: "Identity has become the primary attack surface for modern organizations.", source: "Flashpoint Midyear Report 2025", sourceUrl: "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2025/august/flashpoint-midyear-report-2025/" },
+      { stat: 10.22, prefix: "$", suffix: "M", label: "Average Cost of a U.S. Data Breach", description: "The average cost of a U.S. data breach reached $10.22 million.", sourceOrg: "IBM", source: "Cost of a Data Breach Report", sourceYear: "2025", sourceUrl: "https://www.ibm.com/reports/data-breach" },
+      { stat: 78, suffix: "%", label: "Of Breaches Involve Unauthorized Access", description: "Most breaches occur because someone gains access they should not have.", sourceOrg: "Flashpoint", source: "Global Threat Report", sourceYear: "2025", sourceUrl: "https://www.csoonline.com/article/4032035/ransomware-up-179-credential-theft-up-800-2025s-cyber-onslaught-intensifies.html" },
+      { stat: "1.8B", label: "Credentials Stolen in First Half of 2025", description: "Identity has become the primary attack surface for modern organizations.", sourceOrg: "Flashpoint", source: "Midyear Threat Report", sourceYear: "2025", sourceUrl: "https://www.asisonline.org/security-management-magazine/latest-news/today-in-security/2025/august/flashpoint-midyear-report-2025/" },
     ],
   },
   {
@@ -79,9 +83,9 @@ const columns = [
     title: "Improve Visibility",
     color: "#f59e0b",
     stats: [
-      { stat: 81, suffix: "%", label: "Of Employees Use Unapproved AI Tools", description: "AI adoption is occurring faster than governance.", source: "UpGuard State of Shadow AI Report", sourceUrl: "https://www.upguard.com/resources/the-state-of-shadow-ai" },
-      { stat: 68, suffix: "%", label: "Of Employees Use Personal AI Accounts at Work", description: "Many organizations have little visibility into how AI is being used internally.", source: "Menlo Security 2025 AI Report", sourceUrl: "https://www.menlosecurity.com/press-releases/menlo-securitys-2025-report-uncovers-68-surge-in-shadow-generative-ai-usage-in-the-modern-enterprise" },
-      { stat: 670, prefix: "$", suffix: "K", label: "Additional Cost from Shadow AI Incidents", description: "Unmanaged AI usage increases both security and compliance exposure.", source: "IBM Cost of a Data Breach Research", sourceUrl: "https://deepstrike.io/blog/compromised-credential-statistics-2025" },
+      { stat: 81, suffix: "%", label: "Of Employees Use Unapproved AI Tools", description: "AI adoption is occurring faster than governance.", sourceOrg: "UpGuard", source: "State of Shadow AI Report", sourceYear: "2025", sourceUrl: "https://www.upguard.com/resources/the-state-of-shadow-ai" },
+      { stat: 68, suffix: "%", label: "Of Employees Use Personal AI Accounts at Work", description: "Many organizations have little visibility into how AI is being used internally.", sourceOrg: "Menlo Security", source: "2025 AI Report", sourceYear: "2025", sourceUrl: "https://www.menlosecurity.com/press-releases/menlo-securitys-2025-report-uncovers-68-surge-in-shadow-generative-ai-usage-in-the-modern-enterprise" },
+      { stat: 670, prefix: "$", suffix: "K", label: "Additional Cost from Shadow AI Incidents", description: "Unmanaged AI usage increases both security and compliance exposure.", sourceOrg: "IBM", source: "Cost of a Data Breach Research", sourceYear: "2025", sourceUrl: "https://deepstrike.io/blog/compromised-credential-statistics-2025" },
     ],
   },
   {
@@ -89,9 +93,9 @@ const columns = [
     title: "Increase Efficiency",
     color: "#10b981",
     stats: [
-      { stat: 74, suffix: "%", label: "Of Employees Say Automation Helps Them Work Faster", description: "Automation is quickly becoming a competitive necessity.", source: "Vena Solutions Automation Statistics 2025", sourceUrl: "https://www.venasolutions.com/blog/automation-statistics" },
-      { stat: 77, suffix: "%", label: "Reduction in Workflow Cycle Times", description: "Automated workflows significantly accelerate business operations.", source: "Workflow Automation Trends 2025", sourceUrl: "https://psglobalconsulting.com/blog/2025-workflow-automation-trends-key-statistics-and-insights-for-success" },
-      { stat: "60-95%", label: "Reduction in Repetitive Administrative Tasks", description: "Automation allows teams to focus on higher-value work.", source: "Workflow Automation Trends 2025", sourceUrl: "https://psglobalconsulting.com/blog/2025-workflow-automation-trends-key-statistics-and-insights-for-success" },
+      { stat: 74, suffix: "%", label: "Of Employees Say Automation Helps Them Work Faster", description: "Automation is quickly becoming a competitive necessity.", sourceOrg: "Vena Solutions", source: "Automation Statistics", sourceYear: "2025", sourceUrl: "https://www.venasolutions.com/blog/automation-statistics" },
+      { stat: 77, suffix: "%", label: "Reduction in Workflow Cycle Times", description: "Automated workflows significantly accelerate business operations.", sourceOrg: "PS Global Consulting", source: "Workflow Automation Trends", sourceYear: "2025", sourceUrl: "https://psglobalconsulting.com/blog/2025-workflow-automation-trends-key-statistics-and-insights-for-success" },
+      { stat: "60-95%", label: "Reduction in Repetitive Administrative Tasks", description: "Automation allows teams to focus on higher-value work.", sourceOrg: "PS Global Consulting", source: "Workflow Automation Trends", sourceYear: "2025", sourceUrl: "https://psglobalconsulting.com/blog/2025-workflow-automation-trends-key-statistics-and-insights-for-success" },
     ],
   },
 ];
@@ -159,10 +163,10 @@ export default function BusinessReality() {
         {/* CTA */}
         <div className="text-center max-w-2xl mx-auto">
           <h3 className="text-white font-bold text-2xl sm:text-3xl mb-3" style={{ fontFamily: "Outfit" }}>
-            What Could Your Organization Improve?
+            See How Your Organization Compares
           </h3>
           <p className="text-[#94a8be] text-sm mb-8">
-            Assess your organization&rsquo;s technology maturity, operational efficiency, cybersecurity posture, and AI readiness in minutes.
+            Assess your organization&rsquo;s technology maturity, cybersecurity posture, operational efficiency, and AI readiness.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
