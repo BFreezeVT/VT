@@ -18,12 +18,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="max-w-[300px] overflow-hidden mb-1" style={{ marginBottom: "-8px" }}>
+            <div className="max-w-[300px] overflow-hidden mb-1 relative" style={{ marginBottom: "-8px" }}>
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ filter: "blur(25px)" }}>
+                <img
+                  src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="w-full h-auto object-contain scale-110 brightness-[3] opacity-50"
+                  style={{ marginTop: "-10%", marginBottom: "-15%" }}
+                />
+              </div>
               <img
                 src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                 alt="Veracity Technologies - Rely On Us"
-                className="w-full h-auto object-contain brightness-175 scale-110 drop-shadow-[0_0_12px_rgba(0,119,179,0.3)]"
-                style={{ marginTop: "-10%", marginBottom: "-15%" }}
+                className="w-full h-auto object-contain brightness-[2.5] scale-110 relative z-10"
+                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "drop-shadow(0 0 8px rgba(0,119,179,0.6)) drop-shadow(0 0 20px rgba(0,119,179,0.3)) drop-shadow(0 0 40px rgba(0,119,179,0.15))" }}
                 data-testid="footer-logo"
               />
             </div>
