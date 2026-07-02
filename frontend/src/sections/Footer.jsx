@@ -31,8 +31,8 @@ export default function Footer() {
               <img
                 src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                 alt="Veracity Technologies - Rely On Us"
-                className="w-full h-auto object-contain brightness-[3] scale-110 relative z-10"
-                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "drop-shadow(0 0 6px rgba(0,160,228,0.7)) drop-shadow(0 0 15px rgba(0,119,179,0.4)) drop-shadow(0 0 30px rgba(0,119,179,0.2))" }}
+                className="w-full h-auto object-contain brightness-[4] scale-110 relative z-10 saturate-150"
+                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "brightness(4) saturate(1.5) drop-shadow(0 0 4px rgba(255,255,255,0.8)) drop-shadow(0 0 12px rgba(0,160,228,0.6)) drop-shadow(0 0 25px rgba(0,119,179,0.3))" }}
                 data-testid="footer-logo"
               />
             </div>
