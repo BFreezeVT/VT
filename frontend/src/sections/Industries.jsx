@@ -51,7 +51,7 @@ export default function Industries() {
           >
             Managed IT &amp; cybersecurity built for your industry.
           </h2>
-          <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
+          <p className="text-white/80 text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             We specialize in regulated, operational industries where downtime costs more than dollars and compliance isn&rsquo;t optional.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function Industries() {
                   </h3>
                 </div>
               </div>
-              <p className="text-[#c0cfe0] text-sm leading-relaxed mb-5">{ind.desc}</p>
+              <p className="text-white/80 text-sm leading-relaxed mb-5">{ind.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span

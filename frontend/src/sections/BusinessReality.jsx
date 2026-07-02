@@ -50,10 +50,10 @@ function StatCard({ stat, prefix = "", suffix = "", label, description, source, 
         {prefix}{typeof stat === "number" ? count : stat}{suffix}
       </p>
       <p className="text-white font-semibold text-sm mb-2">{label}</p>
-      <p className="text-[#94a8be] text-xs leading-relaxed mb-4">{description}</p>
+      <p className="text-white/65 text-xs leading-relaxed mb-4">{description}</p>
       <div className="border-t border-white/[0.06] pt-3">
-        <p className="text-white/60 text-[10px] font-semibold uppercase tracking-wider mb-0.5">{sourceOrg}</p>
-        <p className="text-[#94a8be] text-[10px] mb-1.5">{source} {sourceYear && `(${sourceYear})`}</p>
+        <p className="text-white/70 text-[10px] font-semibold uppercase tracking-wider mb-0.5">{sourceOrg}</p>
+        <p className="text-white/55 text-[10px] mb-1.5">{source} {sourceYear && `(${sourceYear})`}</p>
         <a
           href={sourceUrl}
           target="_blank"
@@ -123,7 +123,7 @@ export default function BusinessReality() {
           >
             The Business Reality of AI, Automation &amp; Cyber Risk
           </h2>
-          <p className="text-[#94a8be] text-base max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/75 text-base max-w-3xl mx-auto leading-relaxed">
             The organizations that thrive over the next decade will be the ones that reduce risk, improve visibility, and automate intelligently. The data is clear.
           </p>
         </div>
@@ -165,7 +165,7 @@ export default function BusinessReality() {
           <h3 className="text-white font-bold text-2xl sm:text-3xl mb-3" style={{ fontFamily: "Outfit" }}>
             See How Your Organization Compares
           </h3>
-          <p className="text-[#94a8be] text-sm mb-8">
+          <p className="text-white/70 text-sm mb-8">
             Assess your organization&rsquo;s technology maturity, cybersecurity posture, operational efficiency, and AI readiness.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
