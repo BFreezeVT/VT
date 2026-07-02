@@ -64,8 +64,8 @@ export default function Industries() {
               className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
             >
               <div className="flex items-start gap-4 mb-5">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/10 bg-white/5 group-hover:border-[#0077B3] transition-colors">
-                  <ind.icon className="w-6 h-6 text-[#0077B3]" />
+                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/15 bg-white/[0.06] group-hover:border-[#0077B3] transition-colors">
+                  <ind.icon className="w-6 h-6 text-[#3ab8e8]" />
                 </div>
                 <div>
                   <h3
@@ -91,7 +91,7 @@ export default function Industries() {
                 <Link
                   to={`/industries/${ind.slug}`}
                   data-testid={`industry-link-${ind.slug}`}
-                  className="inline-flex items-center gap-1 text-[#0077B3] text-sm font-medium hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 text-[#3ab8e8] text-sm font-medium hover:text-white transition-colors"
                 >
                   Learn more <ArrowRight className="w-3 h-3" />
                 </Link>

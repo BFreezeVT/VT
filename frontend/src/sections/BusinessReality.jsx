@@ -50,10 +50,10 @@ function StatCard({ stat, prefix = "", suffix = "", label, description, source, 
         {prefix}{typeof stat === "number" ? count : stat}{suffix}
       </p>
       <p className="text-white font-semibold text-sm mb-2">{label}</p>
-      <p className="text-white/65 text-xs leading-relaxed mb-4">{description}</p>
+      <p className="text-white/80 text-xs leading-relaxed mb-4">{description}</p>
       <div className="border-t border-white/[0.06] pt-3">
-        <p className="text-white/70 text-[10px] font-semibold uppercase tracking-wider mb-0.5">{sourceOrg}</p>
-        <p className="text-white/55 text-[10px] mb-1.5">{source} {sourceYear && `(${sourceYear})`}</p>
+        <p className="text-white/80 text-[10px] font-semibold uppercase tracking-wider mb-0.5">{sourceOrg}</p>
+        <p className="text-white/65 text-[10px] mb-1.5">{source} {sourceYear && `(${sourceYear})`}</p>
         <a
           href={sourceUrl}
           target="_blank"
@@ -123,7 +123,7 @@ export default function BusinessReality() {
           >
             The Business Reality of AI, Automation &amp; Cyber Risk
           </h2>
-          <p className="text-white/75 text-base max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/90 text-base max-w-3xl mx-auto leading-relaxed">
             The organizations that thrive over the next decade will be the ones that reduce risk, improve visibility, and automate intelligently. The data is clear.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function BusinessReality() {
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${col.color}15`, border: `1px solid ${col.color}30` }}>
                   <col.icon className="w-5 h-5" style={{ color: col.color }} />
                 </div>
-                <h3 className="text-white font-bold text-lg" style={{ fontFamily: "Outfit" }}>{col.title}</h3>
+                <h3 className="text-white font-bold text-xl" style={{ fontFamily: "Outfit" }}>{col.title}</h3>
               </div>
 
               {/* Stat cards */}
