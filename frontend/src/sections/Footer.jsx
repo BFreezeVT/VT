@@ -24,15 +24,15 @@ export default function Footer() {
                   src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                   alt=""
                   aria-hidden="true"
-                  className="w-full h-auto object-contain scale-110 brightness-[4] opacity-60"
+                  className="w-full h-auto object-contain scale-110 brightness-[2] opacity-70"
                   style={{ marginTop: "-10%", marginBottom: "-15%" }}
                 />
               </div>
               <img
                 src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                 alt="Veracity Technologies - Rely On Us"
-                className="w-full h-auto object-contain brightness-[4] scale-110 relative z-10 saturate-150"
-                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "brightness(4) saturate(1.5) drop-shadow(0 0 4px rgba(255,255,255,0.8)) drop-shadow(0 0 12px rgba(0,160,228,0.6)) drop-shadow(0 0 25px rgba(0,119,179,0.3))" }}
+                className="w-full h-auto object-contain scale-110 relative z-10"
+                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "brightness(2) drop-shadow(0 0 3px rgba(0,119,179,0.9)) drop-shadow(0 0 10px rgba(0,119,179,0.5)) drop-shadow(0 0 25px rgba(0,119,179,0.25))" }}
                 data-testid="footer-logo"
               />
             </div>
