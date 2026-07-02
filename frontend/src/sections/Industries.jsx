@@ -61,7 +61,7 @@ export default function Industries() {
             <div
               key={ind.title}
               data-testid={`industry-card-${i}`}
-              className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3}`}
+              className={`grid-border-card p-8 group animate-fade-in-up stagger-${i + 3} !bg-white/[0.08] !border-white/[0.15]`}
             >
               <div className="flex items-start gap-4 mb-5">
                 <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/15 bg-white/[0.06] group-hover:border-[#0077B3] transition-colors">
@@ -76,12 +76,12 @@ export default function Industries() {
                   </h3>
                 </div>
               </div>
-              <p className="text-white/80 text-sm leading-relaxed mb-5">{ind.desc}</p>
+              <p className="text-white/90 text-sm leading-relaxed mb-5">{ind.desc}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {ind.highlights.map((h) => (
                   <span
                     key={h}
-                    className="text-xs font-medium text-[#0077B3] border border-white/10 bg-[#0077B3]/5 px-3 py-1"
+                    className="text-xs font-semibold text-white bg-white/10 border border-white/20 px-3 py-1.5 rounded"
                   >
                     {h}
                   </span>
@@ -91,7 +91,7 @@ export default function Industries() {
                 <Link
                   to={`/industries/${ind.slug}`}
                   data-testid={`industry-link-${ind.slug}`}
-                  className="inline-flex items-center gap-1 text-[#3ab8e8] text-sm font-medium hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 text-[#5cc0e8] text-sm font-bold hover:text-white transition-colors"
                 >
                   Learn more <ArrowRight className="w-3 h-3" />
                 </Link>
