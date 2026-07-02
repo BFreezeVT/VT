@@ -24,7 +24,7 @@ export default function Footer() {
                   src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                   alt=""
                   aria-hidden="true"
-                  className="w-full h-auto object-contain scale-110 brightness-[2] opacity-70"
+                  className="w-full h-auto object-contain scale-110 opacity-60"
                   style={{ marginTop: "-10%", marginBottom: "-15%" }}
                 />
               </div>
@@ -32,7 +32,7 @@ export default function Footer() {
                 src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
                 alt="Veracity Technologies - Rely On Us"
                 className="w-full h-auto object-contain scale-110 relative z-10"
-                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "brightness(2) drop-shadow(0 0 3px rgba(0,119,179,0.9)) drop-shadow(0 0 10px rgba(0,119,179,0.5)) drop-shadow(0 0 25px rgba(0,119,179,0.25))" }}
+                style={{ marginTop: "-10%", marginBottom: "-15%", filter: "drop-shadow(0 0 4px rgba(100,200,220,0.7)) drop-shadow(0 0 12px rgba(100,200,220,0.4)) drop-shadow(0 0 25px rgba(100,200,220,0.2))" }}
                 data-testid="footer-logo"
               />
             </div>
