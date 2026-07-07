@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
+from blog_data import BLOG_POSTS_EXTENDED
 
 
 ROOT_DIR = Path(__file__).parent
@@ -705,16 +706,24 @@ Zero trust isn't a product you buy - it's an architecture you build incrementall
     },
 ]
 
+# Combine original (with full content) + extended (excerpt only) blog posts
+ALL_BLOG_POSTS = BLOG_POSTS + [
+    {**post, "content": post["excerpt"], "author": "Veracity Technologies"}
+    for post in BLOG_POSTS_EXTENDED
+    if post["slug"] not in [p["slug"] for p in BLOG_POSTS]
+]
+ALL_BLOG_POSTS.sort(key=lambda x: x.get("published_date", ""), reverse=True)
+
 @api_router.get("/blog")
 async def get_blog_posts():
     return [
         {k: v for k, v in post.items() if k != "content"}
-        for post in BLOG_POSTS
+        for post in ALL_BLOG_POSTS
     ]
 
 @api_router.get("/blog/{slug}")
 async def get_blog_post(slug: str):
-    for post in BLOG_POSTS:
+    for post in ALL_BLOG_POSTS:
         if post["slug"] == slug:
             return post
     raise HTTPException(status_code=404, detail="Post not found")
