@@ -40,7 +40,7 @@ export default function IndustryPage() {
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", industry.metaDescription);
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute("href", `https://www.veracitytech.com/industries/${industry.slug}`);
+      if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/industries/${industry.slug}`);
     }
     return () => {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
@@ -72,7 +72,7 @@ export default function IndustryPage() {
             "@type": "Service",
             name: `${industry.name} IT & Cybersecurity Services`,
             description: industry.description,
-            url: `https://www.veracitytech.com/industries/${industry.slug}`,
+            url: `https://www.veracitytechmn.com/industries/${industry.slug}`,
             provider: {
               "@type": "Organization",
               name: "Veracity Technologies",
@@ -91,10 +91,10 @@ export default function IndustryPage() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             name: industry.metaTitle,
-            url: `https://www.veracitytech.com/industries/${industry.slug}`,
+            url: `https://www.veracitytechmn.com/industries/${industry.slug}`,
             description: industry.metaDescription,
-            isPartOf: { "@id": "https://www.veracitytech.com/#website" },
-            publisher: { "@id": "https://www.veracitytech.com/#organization" },
+            isPartOf: { "@id": "https://www.veracitytechmn.com/#website" },
+            publisher: { "@id": "https://www.veracitytechmn.com/#organization" },
           }),
         }}
       />
@@ -106,9 +106,9 @@ export default function IndustryPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
-              { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.veracitytech.com/#industries" },
-              { "@type": "ListItem", position: 3, name: `${industry.name} IT & Cybersecurity`, item: `https://www.veracitytech.com/industries/${industry.slug}` },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytechmn.com/" },
+              { "@type": "ListItem", position: 2, name: "Industries", item: "https://www.veracitytechmn.com/#industries" },
+              { "@type": "ListItem", position: 3, name: `${industry.name} IT & Cybersecurity`, item: `https://www.veracitytechmn.com/industries/${industry.slug}` },
             ],
           }),
         }}

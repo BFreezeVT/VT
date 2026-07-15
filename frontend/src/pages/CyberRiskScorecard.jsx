@@ -112,7 +112,7 @@ export default function CyberRiskScorecard() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="cyber-risk-scorecard">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", name: "Cyber Risk Scorecard", description: "Free interactive cybersecurity risk assessment tool. Answer 12 questions and get your business risk score instantly.", url: "https://www.veracitytech.com/cyber-risk-scorecard", applicationCategory: "SecurityApplication", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, provider: { "@type": "Organization", name: "Veracity Technologies" } }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebApplication", name: "Cyber Risk Scorecard", description: "Free interactive cybersecurity risk assessment tool. Answer 12 questions and get your business risk score instantly.", url: "https://www.veracitytechmn.com/cyber-risk-scorecard", applicationCategory: "SecurityApplication", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, provider: { "@type": "Organization", name: "Veracity Technologies" } }) }} />
 
       {/* Nav */}
       <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-[#003B71] sticky top-0 z-50">

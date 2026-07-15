@@ -54,7 +54,7 @@ export default function BlogIndex() {
           "@type": "CollectionPage",
           name: "Resources & Insights - Cybersecurity Intelligence",
           description: "Cybersecurity insights, compliance guides, and AI security resources for construction, financial services, and manufacturing from Veracity Technologies.",
-          url: "https://www.veracitytech.com/resources",
+          url: "https://www.veracitytechmn.com/resources",
           publisher: { "@type": "Organization", name: "Veracity Technologies" },
           inLanguage: "en-US",
         }) }} />
@@ -62,8 +62,8 @@ export default function BlogIndex() {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
-            { "@type": "ListItem", position: 2, name: "Resources", item: "https://www.veracitytech.com/resources" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytechmn.com/" },
+            { "@type": "ListItem", position: 2, name: "Resources", item: "https://www.veracitytechmn.com/resources" },
           ],
         }) }} />
         <section className="py-24 lg:py-32">

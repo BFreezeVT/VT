@@ -41,7 +41,7 @@ export default function ServiceAreaPage() {
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", `Managed IT services and cybersecurity in ${city.name}, Minnesota. ${city.subhead} Call (952) 941-7333 for a free audit.`);
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute("href", `https://www.veracitytech.com/service-areas/${city.slug}`);
+      if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/service-areas/${city.slug}`);
     }
     return () => {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
@@ -73,7 +73,7 @@ export default function ServiceAreaPage() {
             "@type": "LocalBusiness",
             name: `Veracity Technologies - ${city.name} IT Support`,
             description: city.description,
-            url: `https://www.veracitytech.com/service-areas/${city.slug}`,
+            url: `https://www.veracitytechmn.com/service-areas/${city.slug}`,
             telephone: "+1-952-941-7333",
             email: "info@veracitytech.com",
             address: {
@@ -99,7 +99,7 @@ export default function ServiceAreaPage() {
               opens: "00:00",
               closes: "23:59",
             },
-            parentOrganization: { "@id": "https://www.veracitytech.com/#organization" },
+            parentOrganization: { "@id": "https://www.veracitytechmn.com/#organization" },
           }),
         }}
       />
@@ -111,9 +111,9 @@ export default function ServiceAreaPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
-              { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.veracitytech.com/service-areas" },
-              { "@type": "ListItem", position: 3, name: `IT Support in ${city.name}`, item: `https://www.veracitytech.com/service-areas/${city.slug}` },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytechmn.com/" },
+              { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.veracitytechmn.com/service-areas" },
+              { "@type": "ListItem", position: 3, name: `IT Support in ${city.name}`, item: `https://www.veracitytechmn.com/service-areas/${city.slug}` },
             ],
           }),
         }}

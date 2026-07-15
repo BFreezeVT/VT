@@ -1,5 +1,5 @@
 # Veracity Technologies - robots.txt
-# https://www.veracitytech.com/robots.txt
+# https://www.veracitytechmn.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -58,7 +58,7 @@ User-agent: DeepSeekBot
 Allow: /
 
 # Sitemaps
-Sitemap: https://www.veracitytech.com/sitemap.xml
+Sitemap: https://www.veracitytechmn.com/sitemap.xml
 
 # LLMs.txt — AI-optimized content summary
-# https://www.veracitytech.com/llms.txt
+# https://www.veracitytechmn.com/llms.txt

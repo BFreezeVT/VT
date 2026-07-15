@@ -30,15 +30,15 @@ export default function ServiceAreasIndex() {
           "@type": "CollectionPage",
           name: "IT Support Service Areas - Minneapolis-St. Paul Metro",
           description: "Veracity Technologies provides managed IT services and cybersecurity across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.",
-          url: "https://www.veracitytech.com/service-areas",
+          url: "https://www.veracitytechmn.com/service-areas",
           publisher: { "@type": "Organization", name: "Veracity Technologies" },
         }) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytech.com/" },
-            { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.veracitytech.com/service-areas" },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veracitytechmn.com/" },
+            { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.veracitytechmn.com/service-areas" },
           ],
         }) }} />
         <section className="py-24 lg:py-32" aria-label="Service areas overview">
