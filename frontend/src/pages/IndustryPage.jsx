@@ -309,6 +309,8 @@ export default function IndustryPage() {
                       email: fd.get("email"),
                       source_page: "industry",
                       source_industry: industry.name,
+                      situation: fd.get("situation") || "",
+                      contact_preference: fd.get("contact_preference") || "call",
                     });
                   }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
@@ -326,6 +328,16 @@ export default function IndustryPage() {
                     <div>
                       <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">Email</label>
                       <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                    </div>
+                    <div className="sm:col-span-2">
+                      <textarea name="situation" placeholder="Tell us about your current situation or challenges..." rows={2} className="w-full bg-white/5 border border-white/10 text-white placeholder:text-[#94a3b8] rounded-sm px-3 py-2 text-sm resize-none focus:outline-none focus:border-[#0077B3]" />
+                    </div>
+                    <div className="sm:col-span-2">
+                      <p className="text-white/70 text-xs mb-2">Preferred contact method:</p>
+                      <div className="flex gap-4">
+                        <label className="flex items-center gap-2 cursor-pointer"><input type="radio" name="contact_preference" value="call" defaultChecked className="accent-[#0077B3]" /><span className="text-white text-sm">Call me</span></label>
+                        <label className="flex items-center gap-2 cursor-pointer"><input type="radio" name="contact_preference" value="email" className="accent-[#0077B3]" /><span className="text-white text-sm">Email me</span></label>
+                      </div>
                     </div>
                     <div className="sm:col-span-2">
                       <Button data-testid="industry-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12">

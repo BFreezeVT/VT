@@ -213,6 +213,8 @@ export default function FreeAuditOffer() {
       phone: fd.get("phone"),
       email: fd.get("email"),
       source_page: "ai-business-assessment",
+      situation: fd.get("situation") || "",
+      contact_preference: fd.get("contact_preference") || "call",
     };
     setContactInfo(data);
     await submitLead(data);
@@ -340,6 +342,20 @@ export default function FreeAuditOffer() {
               <Input name="name" placeholder="Your name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
               <Input name="phone" type="tel" placeholder="Phone" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
               <Input name="email" type="email" placeholder="Email" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
+              <textarea name="situation" placeholder="Tell us a little about your current situation or challenges..." rows={3} className="w-full bg-white/5 border border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md px-3 py-2 text-sm resize-none focus:outline-none focus:border-[#0077B3]" />
+              <div>
+                <p className="text-[#c0cfe0] text-xs mb-2">Preferred contact method:</p>
+                <div className="flex gap-3">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="contact_preference" value="call" defaultChecked className="accent-[#0077B3]" />
+                    <span className="text-white text-sm">Call me</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="contact_preference" value="email" className="accent-[#0077B3]" />
+                    <span className="text-white text-sm">Email me</span>
+                  </label>
+                </div>
+              </div>
               <Button type="submit" className="w-full bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-md font-semibold h-12">
                 Show My Results <ArrowRight className="w-4 h-4 ml-1" />
               </Button>

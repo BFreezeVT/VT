@@ -57,6 +57,8 @@ class AuditLeadCreate(BaseModel):
     source_page: Optional[str] = "homepage"
     source_city: Optional[str] = None
     source_industry: Optional[str] = None
+    situation: Optional[str] = None
+    contact_preference: Optional[str] = "call"
 
 class AuditLead(BaseModel):
     model_config = ConfigDict(extra="ignore")
@@ -69,6 +71,8 @@ class AuditLead(BaseModel):
     source_page: str = "homepage"
     source_city: Optional[str] = None
     source_industry: Optional[str] = None
+    situation: Optional[str] = None
+    contact_preference: Optional[str] = "call"
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     status: str = "new"
 
@@ -117,19 +121,23 @@ Name: {lead.name or lead.role or 'N/A'}
 Phone: {lead.phone}
 Email: {lead.email}
 Source: {source}
+Contact Preference: {lead.contact_preference or 'Call'}
+Situation: {lead.situation or 'Not provided'}
 Submitted: {lead.created_at}
 """
         html = f"""
 <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020812;color:#fff;padding:32px;border:1px solid #003B71;">
-  <h2 style="color:#0077B3;margin:0 0 16px;">New Audit Lead</h2>
+  <h2 style="color:#0077B3;margin:0 0 16px;">New Lead</h2>
   <table style="width:100%;border-collapse:collapse;">
     <tr><td style="padding:8px 0;color:#A0B6CD;width:120px;">Company</td><td style="color:#fff;">{lead.company}</td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Name</td><td style="color:#fff;">{lead.name or lead.role or 'N/A'}</td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Phone</td><td style="color:#fff;">{lead.phone}</td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Email</td><td style="color:#fff;"><a href="mailto:{lead.email}" style="color:#0077B3;">{lead.email}</a></td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Source</td><td style="color:#fff;">{source}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Prefers</td><td style="color:#fff;"><strong style="color:#0077B3;">{(lead.contact_preference or 'call').upper()}</strong></td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Submitted</td><td style="color:#fff;">{lead.created_at}</td></tr>
   </table>
+  {f'<div style="margin-top:16px;padding:16px;background:#001A33;border-left:3px solid #0077B3;"><p style="color:#A0B6CD;margin:0 0 4px;font-size:12px;">SITUATION</p><p style="color:#fff;margin:0;font-size:14px;">{lead.situation}</p></div>' if lead.situation else ''}
 </div>
 """
         msg.attach(MIMEText(text, "plain"))
