@@ -1,6 +1,10 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { Button } from "../components/ui/button";
-import { ShieldCheck, ShieldAlert, RotateCcw, CheckCircle, XCircle, Trophy, ChevronRight, Clock, Flame, Share2, Zap, Target, Crown, Eye, AlertTriangle, ThumbsUp } from "lucide-react";
+import { Input } from "../components/ui/input";
+import { ShieldCheck, ShieldAlert, RotateCcw, CheckCircle, XCircle, Trophy, ChevronRight, Clock, Flame, Share2, Zap, Target, Crown, Eye, AlertTriangle, ThumbsUp, Send } from "lucide-react";
+import axios from "axios";
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 // Scenarios reframed as AI-driven threat simulations
 const scenarios = [
@@ -78,6 +82,7 @@ export default function CyberGame() {
   const [answerTime, setAnswerTime] = useState(0);
   const [stored, setStored] = useState(getStoredData());
   const [newBadges, setNewBadges] = useState([]);
+  const [gameEmailSent, setGameEmailSent] = useState(false);
   const timerRef = useRef(null);
   const questionStartRef = useRef(null);
 
@@ -124,6 +129,7 @@ export default function CyberGame() {
     setLastCorrect(null);
     setLastAction(null);
     setNewBadges([]);
+    setGameEmailSent(false);
     setGameState("playing");
     if (window.gtag) window.gtag("event", "hri_start", { event_category: "human_risk_simulation", difficulty: d });
   }, [difficulty]);
@@ -396,6 +402,47 @@ export default function CyberGame() {
                   : humanRiskScore >= 50 ? "Moderate exposure. Some decisions would put your organization at risk in a real scenario."
                   : "High exposure. These response patterns leave your organization vulnerable to AI-driven threats."}
               </p>
+
+              {/* Lead capture */}
+              {!gameEmailSent ? (
+                <form onSubmit={async (e) => {
+                  e.preventDefault();
+                  const fd = new FormData(e.target);
+                  try {
+                    await axios.post(`${API}/leads`, {
+                      company: fd.get("company") || "",
+                      name: fd.get("name") || "",
+                      email: fd.get("email"),
+                      phone: "",
+                      source_page: "human-risk-simulation",
+                      situation: `Human Risk Score: ${humanRiskScore}/100 (${config.label} level). Best streak: ${bestStreak}.`,
+                      contact_preference: fd.get("contact_preference") || "call",
+                    });
+                  } catch(err) { /* best effort */ }
+                  setGameEmailSent(true);
+                }} className="mb-6 p-4 border border-[#0d4a8a] rounded-md bg-[#0c1a2e]">
+                  <p className="text-white text-sm font-semibold mb-3 text-center">Get your results and a personalized action plan:</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
+                    <Input name="name" placeholder="Your name" className="bg-[#002a52] border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/40 rounded-md h-9 text-sm" />
+                    <Input name="email" type="email" placeholder="Email" required className="bg-[#002a52] border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/40 rounded-md h-9 text-sm" />
+                    <Input name="company" placeholder="Company" className="bg-[#002a52] border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/40 rounded-md h-9 text-sm" />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-3">
+                      <label className="flex items-center gap-1.5 cursor-pointer"><input type="radio" name="contact_preference" value="call" defaultChecked className="accent-[#0077B3]" /><span className="text-[#b0c4d8] text-xs">Call me</span></label>
+                      <label className="flex items-center gap-1.5 cursor-pointer"><input type="radio" name="contact_preference" value="email" className="accent-[#0077B3]" /><span className="text-[#b0c4d8] text-xs">Email me</span></label>
+                    </div>
+                    <Button type="submit" className="bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-md font-semibold px-4 h-9 text-sm">
+                      <Send className="w-3 h-3 mr-1" /> Send Results
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <div className="mb-6 p-4 border border-[#0077B3]/30 bg-[#0077B3]/5 rounded-md text-center">
+                  <CheckCircle className="w-5 h-5 text-[#0077B3] mx-auto mb-1" />
+                  <p className="text-[#0077B3] text-sm font-medium">Sent! We will be in touch.</p>
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button data-testid="game-restart-button" onClick={() => setGameState("intro")} className="bg-[#002a52] border border-[#0d4a8a] hover:border-[#0077B3] text-white rounded-md font-semibold px-5 h-10">

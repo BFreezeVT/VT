@@ -88,9 +88,20 @@ export default function CyberRiskScorecard() {
     }
   };
 
-  const bookSlot = (day, time) => {
+  const bookSlot = async (day, time) => {
     setSelectedSlot({ day, time });
     setBooked(true);
+    try {
+      await axios.post(`${API}/leads`, {
+        company: "",
+        name: "Discovery Call Request",
+        email: "",
+        phone: "",
+        source_page: "cyber-risk-scorecard-booking",
+        situation: `Booked discovery call: ${day} at ${time}. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
+        contact_preference: "call",
+      });
+    } catch(e) { /* best effort */ }
     if (window.gtag) window.gtag("event", "scorecard_book", { event_category: "cyber_risk_scorecard" });
   };
 
@@ -104,8 +115,10 @@ export default function CyberRiskScorecard() {
         email: fd.get("email"),
         phone: "",
         source_page: "cyber-risk-scorecard",
+        situation: `Requested email report. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
+        contact_preference: "email",
       });
-    } catch {}
+    } catch(err) { /* best effort */ }
     setEmailSent(true);
     if (window.gtag) window.gtag("event", "scorecard_email", { event_category: "cyber_risk_scorecard" });
   };
@@ -134,7 +147,7 @@ export default function CyberRiskScorecard() {
                 <Shield className="w-10 h-10 text-[#0077B3]" />
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6" style={{ fontFamily: "Outfit" }}>
-                What&rsquo;s Your Business's<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
+                What&rsquo;s Your Business&rsquo;s<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
               </h1>
               <p className="text-lg text-[#94a8be] max-w-2xl mx-auto mb-10">
                 Answer 12 quick questions and see where your business stands in under 3 minutes.
