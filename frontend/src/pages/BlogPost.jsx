@@ -6,13 +6,14 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import { getBlogRelatedLinks } from "../lib/contentLinks";
 import industryData from "../data/industryData";
+import RelatedArticlesCarousel from "../sections/RelatedArticlesCarousel";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
-  const [relatedPosts, setRelatedPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function BlogPost() {
       document.title = `${postRes.data.title} | Veracity Technologies`;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", postRes.data.excerpt);
-      setRelatedPosts(allRes.data.filter(p => p.slug !== slug).slice(0, 3));
+      setAllPosts(allRes.data);
     }).catch(() => setPost(null))
       .finally(() => setLoading(false));
 
@@ -230,21 +231,8 @@ export default function BlogPost() {
               );
             })()}
 
-            {/* Related Articles */}
-            {relatedPosts.length > 0 && (
-              <div className="mt-16 border-t border-white/10/50 pt-12">
-                <h3 className="text-white font-bold text-lg mb-6" style={{ fontFamily: "Outfit" }}>Related Articles</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                  {relatedPosts.map((rp) => (
-                    <Link key={rp.slug} to={`/resources/${rp.slug}`} className="group">
-                      <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-white/10/30 px-2 py-0.5 inline-block mb-2">{rp.category}</span>
-                      <p className="text-white text-sm font-semibold group-hover:text-[#0077B3] transition-colors leading-snug">{rp.title}</p>
-                      <p className="text-[#94a8be]/60 text-xs mt-1">{rp.read_time}</p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
+            {/* Related Articles - carousel, prioritizing same category */}
+            <RelatedArticlesCarousel currentSlug={post.slug} category={post.category} allPosts={allPosts} />
 
             {/* Visible last updated */}
             <p className="mt-10 text-[#94a8be]/40 text-xs flex items-center gap-1">
