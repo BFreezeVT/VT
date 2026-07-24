@@ -70,6 +70,37 @@ Per user's detailed spec (update-in-place, not overhaul):
   scroll gradient (gave both solid dark `#0f1d32` backgrounds instead of `bg-transparent`)
 - Tested via `testing_agent_v4_fork` (iteration_13.json) — 100% pass, zero bugs found
 
+### Session 3 (Feb 2026) — Code quality/security hardening pass
+Third-party static analysis flagged 23 XSS/dangerouslySetInnerHTML instances, 17 React hook
+dependency warnings, 44 array-index-key instances, silent error handling, missing useMemo, large
+component sizes, and 26.7% backend type-hint coverage. After investigation, most findings were
+false positives for this codebase's actual patterns/data-scale; applied only genuinely valid fixes:
+- **XSS**: Installed DOMPurify. Sanitized the only 3 real content-rendering `dangerouslySetInnerHTML`
+  calls (`BlogPost.jsx` `formatInline()`, whitelisted to `<strong>`/`<em>`). The other 20 flagged
+  instances are JSON-LD `<script type="application/ld+json">` schema tags (static, developer-authored,
+  inert to the browser) — intentionally left untouched since DOMPurify would corrupt valid JSON with
+  zero security benefit.
+- **Hook dependencies**: Reviewed all 7 flagged locations individually (`CyberGame.jsx`, `App.js`,
+  `Navigation.jsx`, `HeroSection.jsx`, `BlogPost.jsx`, `BlogIndex.jsx`) — all were false positives
+  (module-level constants, refs, or stable setState functions incorrectly flagged as missing deps).
+  No changes made to avoid pure churn/risk.
+- **Silent error handling**: Added `console.error`/`console.warn` logging to previously-silent
+  `catch` blocks in `CyberGame.jsx` (lead submit, localStorage) and `CyberRiskScorecard.jsx`
+  (booking, email report) — visibility only, no behavior change.
+- **Array-index-keys**: Swapped `key={i}` → natural stable value where genuinely available and
+  static-array risk was real (`FAQSection.jsx` → `faq.q`, `CoreServices.jsx` → feature text/`item.label`,
+  `CaseStudy.jsx` → `t.company`, `ServiceAreaPage.jsx` → industry/neighborhood string,
+  `CyberRiskScorecard.jsx` → `q.id`/rec text). Left decorative/already-correct instances (e.g. star
+  ratings, city/blog lists already keyed by slug) untouched.
+- **useMemo**: Skipped — flagged filter/map operations run on arrays of 4-45 items, not a real
+  performance concern; would add complexity for zero benefit.
+- **Component decomposition / backend full type-hint coverage**: Deferred as separate, larger
+  initiatives — added safe additive return-type hints to all `server.py` route handlers (no logic
+  change) but did not split the 5 large-but-working React components, given regression risk on a
+  live production site without dedicated refactor testing budget.
+- Tested via `testing_agent_v4_fork` (iteration_14.json) — 100% pass, zero regressions. New
+  regression test file added: `/app/backend/tests/test_leads_blog_regression.py`
+
 ## Backlog / Next Tasks
 - **P1**: Scrape full article content for the 131 migrated blog posts (currently excerpt-only)
 - **P2 (known, pre-existing, not a regression)**: CoreServices section (and possibly a couple
