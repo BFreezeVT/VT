@@ -124,8 +124,37 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   each) given real regression risk vs. a static-analysis line-count/complexity metric with no
   associated functional bug.
 
+### Session 5 (Feb 2026) — Blog content migration completion + component refactor
+- **Blog content migration COMPLETE**: All 131 blog posts in `blog_data.py` now have full
+  substantive article content (1500-2700 chars each, `## Heading` markdown format matching
+  existing style), replacing thin excerpts. Content for the final 52 posts (picked up from
+  post 64/131 handoff point) tailored toward Financial Services, Commercial Construction, and
+  Manufacturing decision-makers in Minneapolis-St. Paul, MN per user's explicit direction
+  ("AEO/SEO/GEO searchability trumps tone"). Verified via Python script (0 missing, min content
+  length 1584 chars, all unique slugs) + `testing_agent_v4` (iteration_16.json) — 100% pass.
+- **Component decomposition** (previously deferred "open decision" from Session 4, user approved
+  proceeding): split all 4 large flagged components into smaller sub-components with extracted
+  data/lib files, with zero behavior/visual change:
+  - `sections/CyberGame.jsx` (465 lines) → `sections/CyberGame/{index,GameIntro,GamePlaying,
+    GameResults}.jsx` + `data/cyberGameData.js`
+  - `pages/CyberRiskScorecard.jsx` (392 lines) → `pages/CyberRiskScorecard/{index,ScorecardHero,
+    ScorecardQuiz,ScorecardResults}.jsx` + `data/cyberRiskScorecardData.js`
+  - `pages/ServiceAreaPage.jsx` (502 lines) → `pages/ServiceAreaPage/{index,CityHero,CityAbout,
+    CityServices,CityTestimonials,CityFormSection}.jsx` + `data/cityTestimonials.js` +
+    `lib/cityStructuredData.js`
+  - `pages/IndustryPage.jsx` (426 lines) → `pages/IndustryPage/{index,IndustryHero,
+    IndustryChallenges,IndustryComplianceSoftware,IndustryAICTA,IndustryTestimonials,
+    IndustryFormSection}.jsx` + `data/industryTestimonials.js` + `lib/industryStructuredData.js`
+  - Reviewed all `useEffect`/`useCallback` hook dependency arrays codebase-wide — all complete,
+    no missing-deps bugs found (no `eslint-disable` comments anywhere in the codebase either)
+  - Tested via `testing_agent_v4` (iteration_17.json) — 100% pass, zero regressions across
+    CyberGame flow, Scorecard flow, 3 city pages, all 4 industry pages, JSON-LD schema output
+- **Perf fix** (flagged by testing agent as minor, pre-existing): `POST /api/leads` was
+  synchronously sending SMTP email in the request handler (3-8s response latency on every lead
+  form across the site). Moved to FastAPI `BackgroundTasks` — response now ~0.2s, email still
+  sends reliably ~3s later in the background. Verified via curl timing + backend log confirmation.
+
 ## Backlog / Next Tasks
-- **P1**: Scrape full article content for the 131 migrated blog posts (currently excerpt-only)
 - **P2 (known, pre-existing, not a regression)**: CoreServices section (and possibly a couple
   other early-homepage sections) have mild white-text-on-light-gradient contrast at their
   scroll position — pre-existing since original build, out of scope for this session per user's

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -182,7 +182,7 @@ async def health_check() -> dict:
 
 # Lead capture
 @api_router.post("/leads")
-async def create_lead(input_data: AuditLeadCreate) -> dict:
+async def create_lead(input_data: AuditLeadCreate, background_tasks: BackgroundTasks) -> dict:
     lead = AuditLead(**input_data.model_dump())
     doc = lead.model_dump()
     await db.leads.insert_one(doc)
@@ -190,11 +190,8 @@ async def create_lead(input_data: AuditLeadCreate) -> dict:
     doc.pop("_id", None)
     logger.info(f"New lead captured: {lead.company} ({lead.email}) from {lead.source_page}")
 
-    # Send email notification (non-blocking best-effort)
-    try:
-        send_lead_notification(lead)
-    except Exception as e:
-        logger.error(f"Email notification failed: {e}")
+    # Send email notification in the background so the API responds immediately
+    background_tasks.add_task(send_lead_notification, lead)
 
     return {"success": True, "id": lead.id, "message": "Your audit request has been received."}
 
