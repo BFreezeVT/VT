@@ -56,10 +56,10 @@ function getStoredData() {
   try {
     const raw = localStorage.getItem("veracity_hri");
     return raw ? JSON.parse(raw) : { highScores: {}, badges: [], gamesPlayed: 0, modesCompleted: [] };
-  } catch(e) { return { highScores: {}, badges: [], gamesPlayed: 0, modesCompleted: [] }; }
+  } catch(e) { console.warn("Failed to read stored game data:", e); return { highScores: {}, badges: [], gamesPlayed: 0, modesCompleted: [] }; }
 }
 function storeData(data) {
-  try { localStorage.setItem("veracity_hri", JSON.stringify(data)); } catch(e) { /* ignore */ }
+  try { localStorage.setItem("veracity_hri", JSON.stringify(data)); } catch(e) { console.warn("Failed to persist game data:", e); }
 }
 
 function getCorrectAction(scenario) {
@@ -418,7 +418,7 @@ export default function CyberGame() {
                       situation: `Human Risk Score: ${humanRiskScore}/100 (${config.label} level). Best streak: ${bestStreak}.`,
                       contact_preference: fd.get("contact_preference") || "call",
                     });
-                  } catch(err) { /* best effort */ }
+                  } catch(err) { console.error("Failed to submit Human Risk Simulation lead:", err); }
                   setGameEmailSent(true);
                 }} className="mb-6 p-4 border border-[#0d4a8a] rounded-md bg-[#0c1a2e]">
                   <p className="text-white text-sm font-semibold mb-3 text-center">Get your results and a personalized action plan:</p>

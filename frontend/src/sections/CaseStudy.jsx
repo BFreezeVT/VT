@@ -206,7 +206,7 @@ export default function CaseStudy() {
             <CarouselContent className="-ml-6">
               {testimonials.map((t, i) => (
                 <CarouselItem
-                  key={i}
+                  key={t.company}
                   className="pl-6 basis-full sm:basis-1/2 lg:basis-1/3"
                 >
                   <div

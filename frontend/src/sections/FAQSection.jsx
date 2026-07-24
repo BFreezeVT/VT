@@ -125,7 +125,7 @@ export default function FAQSection() {
         <Accordion type="multiple" defaultValue={["faq-0", "faq-1", "faq-2", "faq-3"]} className="space-y-3 animate-fade-in-up stagger-2">
           {faqs.map((faq, i) => (
             <AccordionItem
-              key={i}
+              key={faq.q}
               value={`faq-${i}`}
               data-testid={`faq-item-${i}`}
               className="border-b border-white/10 px-0"

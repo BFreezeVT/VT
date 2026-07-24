@@ -90,7 +90,7 @@ class BlogPostOut(BaseModel):
 
 # ─── Email notification ──────────────────────────────────────
 
-def send_lead_notification(lead: AuditLead):
+def send_lead_notification(lead: AuditLead) -> bool:
     """Send email notification for new lead. Requires SMTP_* env vars."""
     smtp_host = os.environ.get("SMTP_HOST")
     smtp_port = int(os.environ.get("SMTP_PORT", "587"))
@@ -158,16 +158,16 @@ Submitted: {lead.created_at}
 # ─── Routes ──────────────────────────────────────────────────
 
 @api_router.get("/")
-async def root():
+async def root() -> dict:
     return {"message": "Veracity Technologies API"}
 
 @api_router.get("/health")
-async def health_check():
+async def health_check() -> dict:
     return {"status": "healthy", "service": "Veracity Technologies API", "version": "1.0.0"}
 
 # Lead capture
 @api_router.post("/leads")
-async def create_lead(input_data: AuditLeadCreate):
+async def create_lead(input_data: AuditLeadCreate) -> dict:
     lead = AuditLead(**input_data.model_dump())
     doc = lead.model_dump()
     await db.leads.insert_one(doc)
@@ -184,12 +184,12 @@ async def create_lead(input_data: AuditLeadCreate):
     return {"success": True, "id": lead.id, "message": "Your audit request has been received."}
 
 @api_router.get("/leads")
-async def get_leads():
+async def get_leads() -> List[dict]:
     leads = await db.leads.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
     return leads
 
 @api_router.get("/leads/count")
-async def get_lead_count():
+async def get_lead_count() -> dict:
     count = await db.leads.count_documents({})
     return {"count": count}
 
@@ -723,14 +723,14 @@ ALL_BLOG_POSTS = BLOG_POSTS + [
 ALL_BLOG_POSTS.sort(key=lambda x: x.get("published_date", ""), reverse=True)
 
 @api_router.get("/blog")
-async def get_blog_posts():
+async def get_blog_posts() -> List[dict]:
     return [
         {k: v for k, v in post.items() if k != "content"}
         for post in ALL_BLOG_POSTS
     ]
 
 @api_router.get("/blog/{slug}")
-async def get_blog_post(slug: str):
+async def get_blog_post(slug: str) -> dict:
     for post in ALL_BLOG_POSTS:
         if post["slug"] == slug:
             return post
@@ -739,7 +739,7 @@ async def get_blog_post(slug: str):
 
 # Legacy routes
 @api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
+async def create_status_check(input: StatusCheckCreate) -> StatusCheck:
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
     doc = status_obj.model_dump()
@@ -748,7 +748,7 @@ async def create_status_check(input: StatusCheckCreate):
     return status_obj
 
 @api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
+async def get_status_checks() -> List[dict]:
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
     for check in status_checks:
         if isinstance(check['timestamp'], str):
@@ -768,5 +768,5 @@ app.add_middleware(
 )
 
 @app.on_event("shutdown")
-async def shutdown_db_client():
+async def shutdown_db_client() -> None:
     client.close()

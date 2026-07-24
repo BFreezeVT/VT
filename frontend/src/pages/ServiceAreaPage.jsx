@@ -263,7 +263,7 @@ export default function ServiceAreaPage() {
                   <p className="overline text-[#0077B3] mb-4">Key Industries in {city.name}</p>
                   <div className="space-y-3">
                     {city.localIndustries.map((ind, i) => (
-                      <div key={i} data-testid={`city-industry-${i}`} className="flex items-center gap-3">
+                      <div key={ind} data-testid={`city-industry-${i}`} className="flex items-center gap-3">
                         <Building2 className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
                         <span className="text-white text-sm font-medium">{ind}</span>
                       </div>
@@ -275,7 +275,7 @@ export default function ServiceAreaPage() {
                   <div className="flex flex-wrap gap-2">
                     {city.neighborhoods.map((n, i) => (
                       <span
-                        key={i}
+                        key={n}
                         data-testid={`city-neighborhood-${i}`}
                         className="text-xs font-medium text-[#0077B3] border border-[#0077B3]/30 bg-[#0077B3]/10 px-3 py-1.5 rounded"
                       >

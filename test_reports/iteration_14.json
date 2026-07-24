@@ -1,0 +1,41 @@
+{
+  "summary": "Regression testing of code-quality/security hardening pass: DOMPurify sanitization in BlogPost.jsx, array-key changes (index -> value-based) in CyberGame, CyberRiskScorecard, FAQSection, CoreServices, CaseStudy, ServiceAreaPage, and Python return type hints added to backend/server.py. All 9 backend pytest tests passed (100%). All frontend flows from the review request were manually verified via Playwright with zero functional regressions found.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "Backend: /api/health, /api/leads (POST success, 422 on missing email, persistence verified via GET, count endpoint), /api/blog (list excludes content field), /api/blog/{slug} (returns markdown content with ** and ## markers), 404 on invalid slug - all 9 pytest cases passed",
+    "BlogPost.jsx at /resources/ai-cybersecurity-threats-2025: renders <h2> headings, <strong> bold text, <ol> numbered lists correctly via DOMPurify-sanitized formatInline(); no raw '**' markdown leaked into visible text; zero console errors",
+    "Homepage FreeAuditOffer (#audit, id=audit) - full 6-step assessment completed end-to-end, contact form submitted, POST /api/leads returned 200, Business Intelligence Score results screen rendered correctly with score rings, top gaps/opportunities, and full breakdown bars",
+    "CyberGame (#cyber-game): played full 'Awareness' round (5 scenarios via 'Verify' action), reached results screen with correct Human Risk Score (50/100), badges rendered (First Assessment, Sharp Instincts, Quick Thinker), lead capture form submitted (POST /api/leads -> 200) and 'Sent! We will be in touch.' confirmation displayed",
+    "CyberRiskScorecard (/cyber-risk-scorecard): completed all 12 questions both low-risk (score 0/120, 'No major risks identified' shown) and high-risk (score 120/120) paths; Top Risks (q.id keys) and Recommended Actions (rec-text keys) lists rendered correctly with no duplicate-key warnings; booked a discovery call slot (booking-confirmed shown) and submitted 'Email me my full report' form (Report sent! confirmation shown); both leads endpoints returned 200",
+    "FAQSection (#faq): 23 unique FAQ items (faq.q used as key, no collisions found); accordion item 10 ('What areas do you serve?') toggled open/closed correctly with correct Q&A content displayed",
+    "CoreServices (#core-services): all 5 service cards render with correct feature bullet lists (feature-text keys); 4-item stat strip (<5 min, 98%, 100+, Dedicated) renders correctly with item.label keys",
+    "CaseStudy (#case-study) testimonial carousel: auto-rotates every 4s (verified cards changed from Cody/Ryan/Lauren to Lauren/Mike/Kaitie after wait) with t.company as CarouselItem key; author/company/quote text correct on visible cards",
+    "ServiceAreaPage (/service-areas/minneapolis-it-services-support): Key Industries (5 items) and Areas We Cover (5 neighborhoods) lists render all items correctly with string-value keys",
+    "General smoke check: homepage, /ai-governance, /business-technology-assessment all load with zero console errors and correct H1/title rendering"
+  ],
+  "test_report_links": ["/app/backend/tests/test_leads_blog_regression.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "None required for this review's scope - no regressions found in any of the targeted array-key changes, DOMPurify sanitization, error-logging additions, or backend type hints.",
+    "Unrelated observation (not in scope, pre-existing): an EbookPopup modal (data-testid='ebook-popup') appears on the homepage during scroll/timer and can intercept clicks on underlying elements (e.g. FAQ accordion triggers) if not dismissed first. This did not cause any functional bug in tested features but could mildly frustrate real users if it repeatedly reappears - worth a quick UX check by main agent at their discretion, not a regression from this round's changes."
+  ],
+  "critical_code_review_comments": [
+    "BlogPost.jsx formatInline() correctly restricts DOMPurify ALLOWED_TAGS to strong/em and ALLOWED_ATTR to class - sound whitelist approach, matches the stated only-3-real-dangerouslySetInnerHTML-calls scope.",
+    "Array key changes (faq.q, feature text, item.label, t.company, q.id, rec text, city.localIndustries/neighborhoods string values) were checked for potential duplicate-key React warnings by scanning source data - no duplicates found in any of the modified arrays, so the key changes are safe.",
+    "server.py return type hints are additive only (-> dict, -> bool, -> List[dict]) and did not alter any function logic - verified via passing regression tests on /api/leads and /api/blog.",
+    "No file size, DRY, or async/await issues observed in the reviewed files."
+  ],
+  "updated_files": ["/app/backend/tests/test_leads_blog_regression.py"],
+  "success_rate": {"backend": "100% (9/9)", "frontend": "100%"},
+  "seed_data_creation": "Several TEST_-prefixed / test_-prefixed leads were created in the leads collection during regression testing (audit offer, cybergame, scorecard booking/email, city form not submitted). This is expected test data, not production data.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "This was a clean regression pass following iteration_13 (100% pass, large SEO/AEO/GEO content update). All array-key changes, DOMPurify sanitization, error-logging additions, and backend type hints from this round were verified with zero functional or visual regressions. Note: homepage has an EbookPopup overlay that can intercept Playwright clicks during scroll-triggered appearances - future testing agents should proactively check for and dismiss '[data-testid=\"ebook-popup\"]' before clicking scroll-dependent elements like FAQ triggers or game buttons, as done in this round's test scripts."
+}

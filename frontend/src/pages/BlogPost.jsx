@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, Phone, Clock, Tag, ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "../components/ui/button";
 import axios from "axios";
+import DOMPurify from "dompurify";
 import { getBlogRelatedLinks } from "../lib/contentLinks";
 import industryData from "../data/industryData";
 
@@ -103,9 +104,10 @@ export default function BlogPost() {
   };
 
   const formatInline = (text) => {
-    return text
+    const html = text
       .replace(/\*\*(.+?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
       .replace(/\*(.+?)\*/g, '<em>$1</em>');
+    return DOMPurify.sanitize(html, { ALLOWED_TAGS: ["strong", "em"], ALLOWED_ATTR: ["class"] });
   };
 
   return (

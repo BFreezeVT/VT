@@ -80,8 +80,8 @@ export default function CoreServices() {
               <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
               <ul className="space-y-2">
-                {svc.features.map((f, j) => (
-                  <li key={j} className="flex items-start gap-2 text-[#94a8be] text-xs">
+                {svc.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-[#94a8be] text-xs">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
                     {f}
                   </li>
@@ -101,8 +101,8 @@ export default function CoreServices() {
               <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
               <ul className="space-y-2">
-                {svc.features.map((f, j) => (
-                  <li key={j} className="flex items-start gap-2 text-[#94a8be] text-xs">
+                {svc.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-[#94a8be] text-xs">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
                     {f}
                   </li>
@@ -119,8 +119,8 @@ export default function CoreServices() {
             { value: "98%", label: "Client Retention" },
             { value: "100+", label: "Years Combined Experience" },
             { value: "Dedicated", label: "Account Manager for Every Client" },
-          ].map((item, i) => (
-            <div key={i} className="text-center p-4 border border-white/[0.06] rounded-lg bg-white/[0.02]">
+          ].map((item) => (
+            <div key={item.label} className="text-center p-4 border border-white/[0.06] rounded-lg bg-white/[0.02]">
               <p className="stat-number text-2xl text-white mb-1">{item.value}</p>
               <p className="text-[#94a8be] text-[10px] uppercase tracking-wider">{item.label}</p>
             </div>

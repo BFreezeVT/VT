@@ -101,7 +101,7 @@ export default function CyberRiskScorecard() {
         situation: `Booked discovery call: ${day} at ${time}. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
         contact_preference: "call",
       });
-    } catch(e) { /* best effort */ }
+    } catch(e) { console.error("Failed to submit discovery call booking lead:", e); }
     if (window.gtag) window.gtag("event", "scorecard_book", { event_category: "cyber_risk_scorecard" });
   };
 
@@ -118,7 +118,7 @@ export default function CyberRiskScorecard() {
         situation: `Requested email report. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
         contact_preference: "email",
       });
-    } catch(err) { /* best effort */ }
+    } catch(err) { console.error("Failed to submit Cyber Risk Scorecard email report lead:", err); }
     setEmailSent(true);
     if (window.gtag) window.gtag("event", "scorecard_email", { event_category: "cyber_risk_scorecard" });
   };
@@ -260,8 +260,8 @@ export default function CyberRiskScorecard() {
                     <ShieldAlert className="w-5 h-5 text-[#ef4444]" /> Your Top Risks
                   </h3>
                   <div className="space-y-3">
-                    {topRisks.length > 0 ? topRisks.map((q, i) => (
-                      <div key={i} className="flex items-start gap-3 p-4 rounded-md bg-[#ef4444]/5 border border-[#ef4444]/10">
+                    {topRisks.length > 0 ? topRisks.map((q) => (
+                      <div key={q.id} className="flex items-start gap-3 p-4 rounded-md bg-[#ef4444]/5 border border-[#ef4444]/10">
                         <XCircle className="w-4 h-4 text-[#ef4444] flex-shrink-0 mt-0.5" />
                         <div>
                           <p className="text-white text-sm font-medium capitalize">{q.risk}</p>
@@ -278,8 +278,8 @@ export default function CyberRiskScorecard() {
                     <ShieldCheck className="w-5 h-5 text-[#0077B3]" /> Recommended Actions
                   </h3>
                   <div className="space-y-3">
-                    {topRecs.length > 0 ? topRecs.map((rec, i) => (
-                      <div key={i} className="flex items-start gap-3 p-4 rounded-md bg-[#0077B3]/5 border border-[#0077B3]/10">
+                    {topRecs.length > 0 ? topRecs.map((rec) => (
+                      <div key={rec} className="flex items-start gap-3 p-4 rounded-md bg-[#0077B3]/5 border border-[#0077B3]/10">
                         <CheckCircle className="w-4 h-4 text-[#0077B3] flex-shrink-0 mt-0.5" />
                         <p className="text-white text-sm font-medium">{rec}</p>
                       </div>
