@@ -101,6 +101,29 @@ false positives for this codebase's actual patterns/data-scale; applied only gen
 - Tested via `testing_agent_v4_fork` (iteration_14.json) — 100% pass, zero regressions. New
   regression test file added: `/app/backend/tests/test_leads_blog_regression.py`
 
+### Session 4 (Feb 2026) — Code quality hardening, round 2
+Same static analysis tool re-scanned and surfaced additional array-index-key locations not
+covered in round 1, plus repeated flags on items already resolved/assessed as false positives.
+- **Array-index-keys**: Fixed 14 more instances with genuinely-available stable keys:
+  `FreeAuditOffer.jsx` (6: category/option-text/item.label/gap.id/opp.id/cat.id),
+  `ServiceAreaPage.jsx` (3 more: svc.title/t.company/anchor text), `IndustryPage.jsx`
+  (4: ch.title/compliance string/software string/link.slug), `BusinessReality.jsx` (1: stat.label)
+- **Backend complexity**: Extracted `send_lead_notification`'s email-body construction into 3 pure
+  helper functions (`_resolve_lead_source`, `_build_lead_text_body`, `_build_lead_html_body`) —
+  zero logic change, verified via live email-send test.
+- **Re-confirmed false positives** (no change needed, doubly verified across 2 rounds): all 20
+  JSON-LD `dangerouslySetInnerHTML` "XSS" flags (static SEO schema, not user content — the 3 real
+  ones in BlogPost.jsx remain sanitized via DOMPurify from round 1); all hook-dependency flags
+  including 2 new files this round (`EbookPopup.jsx`, `BusinessReality.jsx`) — confirmed using
+  local variables/browser globals/refs, not real stale closures; `useMemo` flags — arrays are
+  4-45 items, not a real perf concern.
+- Tested via `testing_agent_v4_fork` (iteration_15.json) — 100% pass, zero regressions, zero
+  React duplicate-key console warnings.
+- **Open decision (asked user)**: whether to proceed with the repeatedly-flagged large component
+  decomposition (CyberGame, CyberRiskScorecard, ServiceAreaPage, IndustryPage — 300-460 lines
+  each) given real regression risk vs. a static-analysis line-count/complexity metric with no
+  associated functional bug.
+
 ## Backlog / Next Tasks
 - **P1**: Scrape full article content for the 131 migrated blog posts (currently excerpt-only)
 - **P2 (known, pre-existing, not a regression)**: CoreServices section (and possibly a couple
