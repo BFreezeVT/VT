@@ -153,6 +153,13 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   synchronously sending SMTP email in the request handler (3-8s response latency on every lead
   form across the site). Moved to FastAPI `BackgroundTasks` — response now ~0.2s, email still
   sends reliably ~3s later in the background. Verified via curl timing + backend log confirmation.
+- **Related Articles carousel** (user-requested enhancement): replaced the old static 3-post,
+  no-category-logic "Related Articles" grid in `BlogPost.jsx` (which also had a broken
+  `border-white/10/50` invalid Tailwind class) with a new `sections/RelatedArticlesCarousel.jsx`
+  built on the existing shadcn/embla `Carousel` component. Prioritizes same-category articles
+  first (falls back to other categories to fill up to 8 cards), dynamic "More on {Category}"
+  heading, prev/next arrow navigation, responsive (1 card mobile / 2-3 desktop). Tested via
+  `testing_agent_v4` (iteration_18.json) — 100% pass across 4 categories, zero bugs.
 
 ## Backlog / Next Tasks
 - **P2 (known, pre-existing, not a regression)**: CoreServices section (and possibly a couple
