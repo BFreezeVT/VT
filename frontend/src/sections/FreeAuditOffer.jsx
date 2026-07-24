@@ -249,7 +249,7 @@ export default function FreeAuditOffer() {
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto mb-8">
               {steps.map((s, i) => (
-                <div key={i} className="flex items-center gap-2 text-[#c0cfe0] text-xs">
+                <div key={s.category} className="flex items-center gap-2 text-[#c0cfe0] text-xs">
                   <s.icon className="w-3.5 h-3.5 text-[#0077B3]" />
                   <span>{s.category}</span>
                 </div>
@@ -295,7 +295,7 @@ export default function FreeAuditOffer() {
                       const isSelected = answers[q.id]?.text === optText;
                       return (
                         <button
-                          key={i}
+                          key={optText}
                           data-testid={`q-${q.id}-opt-${i}`}
                           onClick={() => selectAnswer(q.id, opt)}
                           className={`w-full text-left p-4 rounded-md border transition-all text-sm ${
@@ -392,7 +392,7 @@ export default function FreeAuditOffer() {
               ].map((item, i) => {
                 const s = getScoreLabel(item.score);
                 return (
-                  <div key={i} className="bg-white/[0.03] border border-white/8 rounded-md p-4 text-center">
+                  <div key={item.label} className="bg-white/[0.03] border border-white/8 rounded-md p-4 text-center">
                     <item.icon className="w-4 h-4 mx-auto mb-2" style={{ color: s.color }} />
                     <p className="stat-number text-2xl text-white">{item.score}</p>
                     <p className="text-[#c0cfe0] text-xs mt-1">{item.label}</p>
@@ -410,7 +410,7 @@ export default function FreeAuditOffer() {
                 </h3>
                 <div className="space-y-3">
                   {topGaps.map((gap, i) => (
-                    <div key={i} className="p-4 rounded-md bg-[#ef4444]/5 border border-[#ef4444]/10">
+                    <div key={gap.id} className="p-4 rounded-md bg-[#ef4444]/5 border border-[#ef4444]/10">
                       <div className="flex items-center justify-between mb-1">
                         <p className="text-white text-sm font-medium">{gap.label}</p>
                         <span className="text-xs font-semibold" style={{ color: getScoreLabel(gap.score).color }}>{gap.score}/100</span>
@@ -426,7 +426,7 @@ export default function FreeAuditOffer() {
                 </h3>
                 <div className="space-y-3">
                   {topOpportunities.map((opp, i) => (
-                    <div key={i} className="p-4 rounded-md bg-[#10b981]/5 border border-[#10b981]/10">
+                    <div key={opp.id} className="p-4 rounded-md bg-[#10b981]/5 border border-[#10b981]/10">
                       <p className="text-white text-sm font-medium mb-1">{opp.label}</p>
                       <p className="text-[#c0cfe0] text-xs leading-relaxed">{opp.opportunity}</p>
                     </div>
@@ -442,7 +442,7 @@ export default function FreeAuditOffer() {
                 {allCategories.map((cat, i) => {
                   const s = getScoreLabel(cat.score);
                   return (
-                    <div key={i} className="flex items-center gap-4">
+                    <div key={cat.id} className="flex items-center gap-4">
                       <span className="text-[#c0cfe0] text-xs w-44 flex-shrink-0">{cat.label.replace(" Gap", "").replace(" Dependence", "").replace("Uncontrolled ", "").replace("Untested ", "")}</span>
                       <div className="flex-1 bg-white/5 h-2 rounded-full">
                         <div className="h-2 rounded-full transition-all duration-700" style={{ width: `${cat.score}%`, backgroundColor: s.color }} />

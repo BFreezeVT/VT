@@ -90,6 +90,53 @@ class BlogPostOut(BaseModel):
 
 # ─── Email notification ──────────────────────────────────────
 
+def _resolve_lead_source(lead: AuditLead) -> str:
+    """Determine the human-readable source label for a lead."""
+    if lead.source_city:
+        return f"City: {lead.source_city}"
+    if lead.source_industry:
+        return f"Industry: {lead.source_industry}"
+    return lead.source_page
+
+
+def _build_lead_text_body(lead: AuditLead, source: str) -> str:
+    return f"""New lead from Veracity Technologies website:
+
+Company: {lead.company}
+Name: {lead.name or lead.role or 'N/A'}
+Phone: {lead.phone}
+Email: {lead.email}
+Source: {source}
+Contact Preference: {lead.contact_preference or 'Call'}
+Situation: {lead.situation or 'Not provided'}
+Submitted: {lead.created_at}
+"""
+
+
+def _build_lead_html_body(lead: AuditLead, source: str) -> str:
+    situation_block = (
+        f'<div style="margin-top:16px;padding:16px;background:#001A33;border-left:3px solid #0077B3;">'
+        f'<p style="color:#A0B6CD;margin:0 0 4px;font-size:12px;">SITUATION</p>'
+        f'<p style="color:#fff;margin:0;font-size:14px;">{lead.situation}</p></div>'
+        if lead.situation else ""
+    )
+    return f"""
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020812;color:#fff;padding:32px;border:1px solid #003B71;">
+  <h2 style="color:#0077B3;margin:0 0 16px;">New Lead</h2>
+  <table style="width:100%;border-collapse:collapse;">
+    <tr><td style="padding:8px 0;color:#A0B6CD;width:120px;">Company</td><td style="color:#fff;">{lead.company}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Name</td><td style="color:#fff;">{lead.name or lead.role or 'N/A'}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Phone</td><td style="color:#fff;">{lead.phone}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Email</td><td style="color:#fff;"><a href="mailto:{lead.email}" style="color:#0077B3;">{lead.email}</a></td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Source</td><td style="color:#fff;">{source}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Prefers</td><td style="color:#fff;"><strong style="color:#0077B3;">{(lead.contact_preference or 'call').upper()}</strong></td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Submitted</td><td style="color:#fff;">{lead.created_at}</td></tr>
+  </table>
+  {situation_block}
+</div>
+"""
+
+
 def send_lead_notification(lead: AuditLead) -> bool:
     """Send email notification for new lead. Requires SMTP_* env vars."""
     smtp_host = os.environ.get("SMTP_HOST")
@@ -103,45 +150,13 @@ def send_lead_notification(lead: AuditLead) -> bool:
         return False
 
     try:
+        source = _resolve_lead_source(lead)
         msg = MIMEMultipart("alternative")
         msg["Subject"] = f"New Audit Lead: {lead.company}"
         msg["From"] = smtp_user
         msg["To"] = notify_email
-
-        source = lead.source_page
-        if lead.source_city:
-            source = f"City: {lead.source_city}"
-        elif lead.source_industry:
-            source = f"Industry: {lead.source_industry}"
-
-        text = f"""New lead from Veracity Technologies website:
-
-Company: {lead.company}
-Name: {lead.name or lead.role or 'N/A'}
-Phone: {lead.phone}
-Email: {lead.email}
-Source: {source}
-Contact Preference: {lead.contact_preference or 'Call'}
-Situation: {lead.situation or 'Not provided'}
-Submitted: {lead.created_at}
-"""
-        html = f"""
-<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020812;color:#fff;padding:32px;border:1px solid #003B71;">
-  <h2 style="color:#0077B3;margin:0 0 16px;">New Lead</h2>
-  <table style="width:100%;border-collapse:collapse;">
-    <tr><td style="padding:8px 0;color:#A0B6CD;width:120px;">Company</td><td style="color:#fff;">{lead.company}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Name</td><td style="color:#fff;">{lead.name or lead.role or 'N/A'}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Phone</td><td style="color:#fff;">{lead.phone}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Email</td><td style="color:#fff;"><a href="mailto:{lead.email}" style="color:#0077B3;">{lead.email}</a></td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Source</td><td style="color:#fff;">{source}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Prefers</td><td style="color:#fff;"><strong style="color:#0077B3;">{(lead.contact_preference or 'call').upper()}</strong></td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Submitted</td><td style="color:#fff;">{lead.created_at}</td></tr>
-  </table>
-  {f'<div style="margin-top:16px;padding:16px;background:#001A33;border-left:3px solid #0077B3;"><p style="color:#A0B6CD;margin:0 0 4px;font-size:12px;">SITUATION</p><p style="color:#fff;margin:0;font-size:14px;">{lead.situation}</p></div>' if lead.situation else ''}
-</div>
-"""
-        msg.attach(MIMEText(text, "plain"))
-        msg.attach(MIMEText(html, "html"))
+        msg.attach(MIMEText(_build_lead_text_body(lead, source), "plain"))
+        msg.attach(MIMEText(_build_lead_html_body(lead, source), "html"))
 
         with smtplib.SMTP(smtp_host, smtp_port) as server:
             server.starttls()

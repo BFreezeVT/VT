@@ -222,7 +222,7 @@ export default function IndustryPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {industry.challenges.map((ch, i) => (
-                <div key={i} data-testid={`industry-challenge-${i}`} className="grid-border-card p-6 group">
+                <div key={ch.title} data-testid={`industry-challenge-${i}`} className="grid-border-card p-6 group">
                   <h3 className="text-white font-semibold text-base mb-3" style={{ fontFamily: "Outfit" }}>{ch.title}</h3>
                   <p className="text-[#94a8be] text-sm leading-relaxed">{ch.desc}</p>
                 </div>
@@ -242,7 +242,7 @@ export default function IndustryPage() {
                 </h2>
                 <div className="space-y-3">
                   {industry.compliance.map((c, i) => (
-                    <div key={i} data-testid={`industry-compliance-${i}`} className="flex items-center gap-3">
+                    <div key={c} data-testid={`industry-compliance-${i}`} className="flex items-center gap-3">
                       <CheckCircle className="w-4 h-4 text-[#0077B3] flex-shrink-0" />
                       <span className="text-white text-sm">{c}</span>
                     </div>
@@ -256,7 +256,7 @@ export default function IndustryPage() {
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {industry.software.map((s, i) => (
-                    <span key={i} data-testid={`industry-software-${i}`} className="text-xs font-medium text-[#0077B3] border border-white/10 bg-[#0077B3]/5 px-3 py-1.5">
+                    <span key={s} data-testid={`industry-software-${i}`} className="text-xs font-medium text-[#0077B3] border border-white/10 bg-[#0077B3]/5 px-3 py-1.5">
                       {s}
                     </span>
                   ))}
@@ -275,7 +275,7 @@ export default function IndustryPage() {
             </h2>
             <div className="flex justify-center gap-3 flex-wrap mb-8">
               {industry.aiLinks.map((link, i) => (
-                <Link key={i} to={`/${link.slug}`} data-testid={`industry-ai-link-${i}`} className="text-sm text-[#0077B3] border border-[#0077B3]/30 hover:bg-[#0077B3]/5 px-4 py-2 transition-colors">
+                <Link key={link.slug} to={`/${link.slug}`} data-testid={`industry-ai-link-${i}`} className="text-sm text-[#0077B3] border border-[#0077B3]/30 hover:bg-[#0077B3]/5 px-4 py-2 transition-colors">
                   {link.label}
                 </Link>
               ))}

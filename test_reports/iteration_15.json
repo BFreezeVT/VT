@@ -1,0 +1,38 @@
+{
+  "summary": "Regression testing of round-2 code-review fixes: additional array-key changes in FreeAuditOffer.jsx (6 fixes), ServiceAreaPage.jsx (3 more), IndustryPage.jsx (4), BusinessReality.jsx (1), and backend send_lead_notification refactor into 3 helper functions (_resolve_lead_source, _build_lead_text_body, _build_lead_html_body). All 9 backend pytest tests passed (100%). Verified via curl that the refactored email function still logs 'Lead notification email sent' with zero regression. All frontend flows manually verified via Playwright with zero functional/visual regressions and zero console errors or React duplicate-key warnings.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "Backend: all 9 existing pytest cases in test_leads_blog_regression.py passed (health, leads CRUD/persistence/count, 422 validation, blog list/detail/404)",
+    "Backend regression: POST /api/leads with source_page='ai-business-assessment' returned 200, and backend logs confirmed 'New lead captured' followed by 'Lead notification email sent for TEST_RoundTwo Co' - refactored _resolve_lead_source/_build_lead_text_body/_build_lead_html_body helper functions work correctly with zero logic change",
+    "FreeAuditOffer (#audit) full 6-step assessment: intro category icons row rendered, all option buttons clickable across all 6 steps, contact form submitted successfully, results screen rendered 6-score grid (6 cards), 3 Top Gaps items, 3 Top Opportunities items, and 6 Full Breakdown bars - all correct with no missing/duplicate entries (verified visually via screenshot)",
+    "BusinessReality (#business-reality): all 3 columns (Reduce Risk, Improve Visibility, Increase Efficiency) rendered exactly 9 total stat cards (3x3) with no missing cards",
+    "IndustryPage (/industries/financial-it-support): Challenges grid (4 cards), Compliance Frameworks (5 items), Software We Support tags (6 items), AI Readiness links (2, both clickable with correct href), Other industries links (3) - all rendered correctly with zero console errors/warnings",
+    "ServiceAreaPage (/service-areas/minneapolis-it-services-support): 'What we deliver' services grid (4 cards), testimonials grid (3 cards), 3 distinct rotating Business Technology Assessment anchor links ('Technology Risk Assessment', 'Business Technology Review', 'Cybersecurity Readiness Assessment') at bottom - all rendered correctly, city form submission succeeded with 'Thank you!' confirmation shown",
+    "General smoke check: scrolled full homepage top-to-bottom (0-20000px in 1000px increments) plus industry and city pages - zero console errors, zero React 'duplicate key' / 'same key' warnings detected in devtools console across all tested pages"
+  ],
+  "test_report_links": ["/app/backend/tests/test_leads_blog_regression.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "None required - no regressions found in any of the round-2 array-key changes or the backend send_lead_notification refactor."
+  ],
+  "critical_code_review_comments": [
+    "FreeAuditOffer.jsx: gap.id/opp.id/cat.id keys all derive from the same allCategories array with 6 hardcoded unique ids (manual, automation, ai, access, continuity, human) - confirmed unique, safe for React keys.",
+    "ServiceAreaPage.jsx anchor key: btaAnchors uses anchorFor(city.slug, 0/1/2) which are 3 consecutive modulo offsets into a 12-item array - guaranteed distinct per city, so anchor text is a safe React key.",
+    "IndustryPage.jsx and cityData.js: manually verified all challenges/compliance/software arrays and testimonialIndices arrays across sampled industries/cities contain no duplicate values within a single array, confirming the string/id-based keys are safe.",
+    "backend/server.py: _resolve_lead_source, _build_lead_text_body, _build_lead_html_body are pure extractions with identical logic to the original inline code - verified via live curl test and backend log inspection showing correct email subject/body construction and successful send.",
+    "No file size, DRY, or async/await issues observed in the reviewed files this round."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100% (9/9)", "frontend": "100%"},
+  "seed_data_creation": "Several TEST_-prefixed leads were created in the leads collection during this round's regression testing (audit offer, city form). Expected test data, not production data.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "This is round 2 of the array-key code review regression, following iteration_14 (round 1, 100% pass). All new array-key changes (FreeAuditOffer 6 fixes, ServiceAreaPage 3 more, IndustryPage 4, BusinessReality 1) and the backend send_lead_notification extraction were verified with zero functional/visual regressions and zero console warnings. EbookPopup scroll-triggered overlay is still present (pre-existing, non-blocking with data-testid='ebook-popup-close' to dismiss) - future agents should dismiss it before interacting with scroll-dependent elements."
+}

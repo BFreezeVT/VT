@@ -305,7 +305,7 @@ export default function ServiceAreaPage() {
                 { icon: Clock, title: "24/7 Support", desc: "Round-the-clock expert support with 15-minute critical response SLAs." },
                 { icon: Building2, title: "Compliance", desc: `CMMC, SOC 2, HIPAA, and industry-specific compliance management for ${city.name} firms.` },
               ].map((svc, i) => (
-                <div key={i} data-testid={`city-service-${i}`} className="grid-border-card p-6 group">
+                <div key={svc.title} data-testid={`city-service-${i}`} className="grid-border-card p-6 group">
                   <div className="w-10 h-10 flex items-center justify-center border border-white/10 bg-[#0f1d32] mb-4 group-hover:border-[#0077B3] transition-colors">
                     <svc.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
@@ -335,7 +335,7 @@ export default function ServiceAreaPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {cityTestimonials.map((t, i) => (
-                <div key={i} data-testid={`city-testimonial-${i}`} className="grid-border-card p-6 flex flex-col">
+                <div key={t.company} data-testid={`city-testimonial-${i}`} className="grid-border-card p-6 flex flex-col">
                   <Quote className="w-6 h-6 text-[#0077B3]/20 mb-3" />
                   <p className="text-[#94a8be] text-sm leading-relaxed mb-4 flex-1 italic">&ldquo;{t.quote}&rdquo;</p>
                   <div className="border-t border-white/10 pt-3 mt-auto">
@@ -373,7 +373,7 @@ export default function ServiceAreaPage() {
               <p className="text-[#94a8be] text-sm mb-4">Find out where {city.name} businesses stand today:</p>
               <div className="flex flex-wrap justify-center gap-3">
                 {btaAnchors.map((anchor, i) => (
-                  <Link key={i} to="/business-technology-assessment" data-testid={`city-bta-link-${i}`} className="text-xs font-semibold text-white bg-[#0077B3] hover:bg-[#005f8f] px-4 py-2 transition-colors">
+                  <Link key={anchor} to="/business-technology-assessment" data-testid={`city-bta-link-${i}`} className="text-xs font-semibold text-white bg-[#0077B3] hover:bg-[#005f8f] px-4 py-2 transition-colors">
                     {anchor}
                   </Link>
                 ))}

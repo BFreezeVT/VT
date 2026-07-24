@@ -144,7 +144,7 @@ export default function BusinessReality() {
               <div className="space-y-4">
                 {col.stats.map((stat, si) => (
                   <StatCard
-                    key={si}
+                    key={stat.label}
                     stat={stat.stat}
                     prefix={stat.prefix || ""}
                     suffix={stat.suffix || ""}
