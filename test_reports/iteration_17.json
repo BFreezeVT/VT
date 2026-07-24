@@ -1,0 +1,31 @@
+{
+  "summary": "Regression-tested the 4 refactored React component areas (pure structural split, no intended behavior change): CyberGame (sections/CyberGame/index+GameIntro+GamePlaying+GameResults), CyberRiskScorecard page (pages/CyberRiskScorecard/index+ScorecardHero+ScorecardQuiz+ScorecardResults), ServiceAreaPage (index+CityHero+CityAbout+CityServices+CityTestimonials+CityFormSection) for 3 cities, and IndustryPage (index+IndustryHero+...+IndustryFormSection) for all 4 industries. All flows work end-to-end and identically to pre-refactor behavior described in the review request: CyberGame difficulty select -> 5 scenarios with Trust/Verify/Report/Ignore actions -> feedback -> Next -> results screen with score/accuracy/streak/badges -> lead form submit (200, /api/leads) -> Run Again resets to intro. Scorecard: Start -> 12 questions with Previous-question back-nav -> results with score circle/risk badge (tested LOW risk path) -> slot booking -> email report form -> Retake resets. Service area pages (Minneapolis, St Paul, Bloomington): hero/about/industries/neighborhoods/services render, JSON-LD includes LocalBusiness/BreadcrumbList/FAQPage @types, lead form (city-form-*) submits to /api/leads (200) and shows Thank-you success state, 40+ other-city links present. Industry pages (all 4 slugs): hero/challenges/compliance/AI-CTA/testimonials render, JSON-LD includes Service/WebPage/BreadcrumbList/FAQPage, lead form submits successfully with Thank-you state, other-industry links (3) and BTA CTA link present. Regression smoke test: homepage, BTA page, blog listing (/resources) and a blog post detail page all load with zero console errors - no regression from this refactor.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "POST /api/leads", "issue": "Response latency is ~3-8 seconds (confirmed via curl: 3.27s), likely due to synchronous SMTP email sending in the request handler. Not a regression from this refactor (pre-existing backend behavior), but worth noting as it makes lead forms feel slow/unresponsive to users with no loading spinner feedback observed on button while awaiting response - recommend making email sending async/background task."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Consider making the /api/leads SMTP email send asynchronous (background task) to reduce the 3-8s perceived form submission delay across all lead capture forms (CyberGame, Scorecard, City pages, Industry pages) - pre-existing issue, not caused by this refactor."
+  ],
+  "critical_code_review_comments": [
+    "Refactor is clean: each sub-component (GameIntro/GamePlaying/GameResults, ScorecardHero/Quiz/Results, City*/Industry* sections) has clear data-testid attributes matching the original spec exactly, and prop-drilling is straightforward and easy to follow.",
+    "useLeadSubmit hook (frontend/src/hooks/useLeadSubmit.js) is a nice DRY extraction shared across ServiceAreaPage, IndustryPage, and FreeAuditOffer - consistent lead capture behavior including graceful setSubmitted(true) even on API error (shows success UI regardless, which hides transient backend errors from the user - acceptable for lead-gen UX but worth noting).",
+    "EbookPopup.jsx (unrelated pre-existing component, not part of this refactor) triggers on 25% scroll and its dismissed state is only session-scoped; testers should be aware it can re-render on top of the CyberGame/city page content on scroll and needs to be explicitly dismissed via its data-testid='ebook-popup-close' button (Escape key does NOT close it since there's no keydown handler) - flagging only because it complicated automated test navigation, not a functional bug."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "None required - all tested pages/forms are public",
+  "seed_data_creation": "Several TEST_-prefixed / test_qa_ prefixed leads created via public lead capture forms during testing (CyberGame, Scorecard, city page, industry page) - no DELETE /api/leads endpoint exists so these remain in the leads collection as harmless test data.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "This iteration confirms the 4-area component refactor (CyberGame, CyberRiskScorecard, ServiceAreaPage, IndustryPage) introduced ZERO regressions - all interactive flows, JSON-LD structured data, and lead capture forms work identically to pre-refactor. The only friction during testing was: (1) an unrelated EbookPopup that appears on 25% page scroll and needs explicit close via its own data-testid button, and (2) /api/leads taking 3-8s to respond (pre-existing, likely synchronous SMTP) which testers must account for with longer waits after form submission. Blog content (iteration_16) and broader site sections (iterations 13-15) remain unaffected per this test - no need to deep re-test those areas again unless new changes touch them.",
+  "rca_of_the_issue": "No bugs found in the refactor itself. Initial test attempts appeared to fail (game flow stuck, city/industry form showing empty fields with no API call) but root cause was test-script related: (1) generic get_by_role('button', name='Next') matched an unrelated testimonial carousel arrow instead of the game's data-testid='game-next-button'; (2) initial placeholder-based form selectors were ambiguous/wrong; (3) not waiting long enough (only 2s) for the slow /api/leads response before checking for the success state. All resolved by using proper data-testid selectors and adequate wait times - confirming the actual application code works correctly."
+}

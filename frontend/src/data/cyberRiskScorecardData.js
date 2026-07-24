@@ -1,0 +1,22 @@
+export const questions = [
+  { id: 1, text: "Do you require Multi-Factor Authentication (MFA)?", options: [{ text: "Yes, company-wide", points: 0 }, { text: "Some users", points: 5 }, { text: "No", points: 10 }], risk: "account compromise", rec: "Enforce MFA across all users and systems" },
+  { id: 2, text: "Are your systems monitored 24/7?", options: [{ text: "Yes", points: 0 }, { text: "During business hours", points: 5 }, { text: "No", points: 10 }], risk: "undetected breaches", rec: "Implement 24/7 AI-powered monitoring" },
+  { id: 3, text: "Are your backups tested regularly?", options: [{ text: "Yes", points: 0 }, { text: "Occasionally", points: 5 }, { text: "Not sure", points: 10 }], risk: "ransomware data loss", rec: "Implement and test monitored backups" },
+  { id: 4, text: "How quickly could you recover from a ransomware attack?", options: [{ text: "Within hours", points: 0 }, { text: "1-2 days", points: 5 }, { text: "Longer or unsure", points: 10 }], risk: "extended downtime", rec: "Build and test a disaster recovery plan" },
+  { id: 5, text: "Do employees receive cybersecurity training?", options: [{ text: "Regular training", points: 0 }, { text: "Once per year", points: 5 }, { text: "None", points: 10 }], risk: "employee-caused breaches", rec: "Provide regular security awareness training" },
+  { id: 6, text: "How confident are you your team can spot phishing emails?", options: [{ text: "Very confident", points: 0 }, { text: "Somewhat", points: 5 }, { text: "Not confident", points: 10 }], risk: "phishing vulnerability", rec: "Deploy phishing simulations and training" },
+  { id: 7, text: "Do you have compliance requirements (financial, manufacturing, etc)?", options: [{ text: "Yes and we are compliant", points: 0 }, { text: "Yes but unsure", points: 5 }, { text: "No or not sure", points: 10 }], risk: "compliance violations", rec: "Conduct a compliance gap assessment" },
+  { id: 8, text: "Has your cyber insurance increased requirements recently?", options: [{ text: "Yes and we meet them", points: 0 }, { text: "Yes and we struggle", points: 5 }, { text: "Not sure", points: 10 }], risk: "insurance coverage gaps", rec: "Align security controls with insurance requirements" },
+  { id: 9, text: "Who manages your IT?", options: [{ text: "Dedicated managed provider", points: 0 }, { text: "Internal IT", points: 5 }, { text: "Reactive or break/fix", points: 10 }], risk: "reactive IT management", rec: "Partner with a proactive managed IT provider" },
+  { id: 10, text: "How often do IT issues impact your business?", options: [{ text: "Rarely", points: 0 }, { text: "Monthly", points: 5 }, { text: "Weekly", points: 10 }], risk: "operational disruption", rec: "Implement proactive network monitoring" },
+  { id: 11, text: "Do you know your current security vulnerabilities?", options: [{ text: "Yes clearly", points: 0 }, { text: "Somewhat", points: 5 }, { text: "No", points: 10 }], risk: "unknown attack surface", rec: "Run a full vulnerability assessment" },
+  { id: 12, text: "How confident are you that your business is protected from cyber threats?", options: [{ text: "Very confident", points: 0 }, { text: "Somewhat", points: 5 }, { text: "Not confident", points: 10 }], risk: "overall security posture gaps", rec: "Schedule a comprehensive security audit" },
+];
+
+export const timeSlots = [
+  { day: "Monday", times: ["9:00 AM", "11:00 AM", "2:00 PM"] },
+  { day: "Tuesday", times: ["10:00 AM", "1:00 PM", "3:00 PM"] },
+  { day: "Wednesday", times: ["9:00 AM", "11:00 AM", "2:00 PM"] },
+  { day: "Thursday", times: ["10:00 AM", "1:00 PM", "3:00 PM"] },
+  { day: "Friday", times: ["9:00 AM", "11:00 AM"] },
+];
