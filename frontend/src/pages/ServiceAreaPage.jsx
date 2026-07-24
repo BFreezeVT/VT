@@ -5,7 +5,10 @@ import { Input } from "../components/ui/input";
 import { Separator } from "../components/ui/separator";
 import { useState, useEffect } from "react";
 import cityData from "../data/cityData";
+import industryData from "../data/industryData";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
+import { anchorFor, industryForCity, aiPagesFor } from "../lib/contentLinks";
+import TechMaturityTable from "../components/TechMaturityTable";
 
 const allTestimonials = [
   { name: "Cody Nuernberg", title: "President", company: "BLD Connection", quote: "Veracity Technologies has helped streamline our company's operations. Their proactive, responsive, and knowledgeable team minimizes downtime and ensures consistent operations." },
@@ -61,6 +64,11 @@ export default function ServiceAreaPage() {
   }
 
   const cityTestimonials = city.testimonialIndices.map((i) => allTestimonials[i]).slice(0, 3);
+
+  const relatedIndustrySlug = city ? industryForCity(city) : null;
+  const relatedIndustry = industryData.find((ind) => ind.slug === relatedIndustrySlug);
+  const relatedAIPages = city ? aiPagesFor(city.slug, 2) : [];
+  const btaAnchors = city ? [anchorFor(city.slug, 0), anchorFor(city.slug, 1), anchorFor(city.slug, 2)] : [];
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid={`city-page-${city.slug}`}>
@@ -140,6 +148,16 @@ export default function ServiceAreaPage() {
                 "@type": "Question",
                 name: `What is the biggest IT challenge for businesses in ${city.name}?`,
                 acceptedAnswer: { "@type": "Answer", text: city.localChallenge },
+              },
+              {
+                "@type": "Question",
+                name: `Does Veracity Technologies offer a Business Technology Assessment in ${city.name}?`,
+                acceptedAnswer: { "@type": "Answer", text: `Yes. Veracity Technologies offers a free Business Technology Assessment to ${city.name} businesses, scoring technology infrastructure, cybersecurity readiness, compliance readiness, AI readiness, and automation maturity. Call (952) 941-7333 or visit veracitytechmn.com/business-technology-assessment to get started.` },
+              },
+              {
+                "@type": "Question",
+                name: `What AI readiness services does Veracity provide in ${city.name}?`,
+                acceptedAnswer: { "@type": "Answer", text: `Veracity Technologies provides AI readiness assessments, AI governance frameworks, and Microsoft Copilot readiness reviews to ${city.name} organizations, helping them adopt AI safely without creating compliance or data exposure risk.` },
               },
             ],
           }),
@@ -299,6 +317,13 @@ export default function ServiceAreaPage() {
           </div>
         </section>
 
+        {/* Technology Maturity comparison table (GEO) */}
+        <section data-testid="city-maturity-table" aria-label={`Technology maturity levels for ${city.name} businesses`} className="py-20 bg-[#0f1d32]">
+          <div className="max-w-4xl mx-auto px-6">
+            <TechMaturityTable title={`Where Does Your ${city.name} Business Stand?`} />
+          </div>
+        </section>
+
         {/* Testimonials */}
         <section data-testid="city-testimonials" aria-label={`Client testimonials from ${city.name} area`} className="py-20 bg-[#0f1d32]">
           <div className="max-w-7xl mx-auto px-6">
@@ -321,14 +346,37 @@ export default function ServiceAreaPage() {
               ))}
             </div>
 
-            {/* Industry cross-links */}
+            {/* Industry + AI + Business Technology Assessment cross-links */}
             <div className="mt-12 text-center">
               <p className="text-[#94a8be] text-sm mb-4">Explore our industry expertise:</p>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
                 <Link to="/industries/construction-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Construction IT</Link>
                 <Link to="/industries/financial-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Financial Services</Link>
                 <Link to="/industries/manufacturing-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Manufacturing</Link>
                 <Link to="/industries/high-compliance-it-support" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">High-Compliance</Link>
+              </div>
+              {relatedIndustry && relatedAIPages.length > 0 && (
+                <>
+                  <p className="text-[#94a8be] text-sm mb-4">AI readiness resources for {city.name} organizations:</p>
+                  <div data-testid="city-seo-links" className="flex flex-wrap justify-center gap-3 mb-8">
+                    <Link to={`/industries/${relatedIndustry.slug}`} data-testid="city-related-industry-link" className="text-xs text-[#94a8be] border border-white/10 hover:border-[#0077B3] hover:text-white px-4 py-2 transition-colors">
+                      IT for {relatedIndustry.name} in {city.name}
+                    </Link>
+                    {relatedAIPages.map((p, i) => (
+                      <Link key={p.slug} to={`/${p.slug}`} data-testid={`city-related-ai-link-${i}`} className="text-xs text-[#94a8be] border border-white/10 hover:border-[#0077B3] hover:text-white px-4 py-2 transition-colors">
+                        {p.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              )}
+              <p className="text-[#94a8be] text-sm mb-4">Find out where {city.name} businesses stand today:</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {btaAnchors.map((anchor, i) => (
+                  <Link key={i} to="/business-technology-assessment" data-testid={`city-bta-link-${i}`} className="text-xs font-semibold text-white bg-[#0077B3] hover:bg-[#005f8f] px-4 py-2 transition-colors">
+                    {anchor}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

@@ -45,6 +45,7 @@ export default function Navigation() {
           <button data-testid="nav-approach" onClick={() => scrollTo("approach")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Approach</button>
           <button data-testid="nav-industries" onClick={() => scrollTo("industries")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Industries</button>
           <button data-testid="nav-compliance" onClick={() => scrollTo("compliance")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Compliance</button>
+          <Link to="/business-technology-assessment" data-testid="nav-bta" className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Assessment</Link>
           <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>FAQ</button>
           <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Risk Score</Link>
           <a data-testid="nav-phone" href="tel:9529417333" className={`flex items-center gap-2 text-sm transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/80 hover:text-white"}`}>
@@ -78,6 +79,7 @@ export default function Navigation() {
           <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Industries</button>
           <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Services</button>
           <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Compliance</button>
+          <Link to="/business-technology-assessment" data-testid="mobile-nav-bta" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Business Technology Assessment</Link>
           <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">FAQ</button>
           <a href="tel:9529417333" className="flex items-center gap-2 text-[#0a1220] hover:text-[#0077B3] text-sm">
             <Phone className="w-4 h-4" /> (952) 941-7333

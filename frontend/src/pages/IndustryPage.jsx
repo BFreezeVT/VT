@@ -266,6 +266,28 @@ export default function IndustryPage() {
           </div>
         </section>
 
+        {/* Related AI Solutions + Mid-page BTA CTA */}
+        <section data-testid="industry-ai-cta" className="py-16 bg-white">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <p className="overline text-[#0077B3] mb-4">AI Readiness for {industry.name}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit" }}>
+              See how {industry.name.toLowerCase()} firms are scoring on AI readiness
+            </h2>
+            <div className="flex justify-center gap-3 flex-wrap mb-8">
+              {industry.aiLinks.map((link, i) => (
+                <Link key={i} to={`/${link.slug}`} data-testid={`industry-ai-link-${i}`} className="text-sm text-[#0077B3] border border-[#0077B3]/30 hover:bg-[#0077B3]/5 px-4 py-2 transition-colors">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <Link to="/business-technology-assessment" data-testid="industry-mid-cta">
+              <Button className="bg-[#003B71] hover:bg-[#002a52] text-white rounded-sm font-semibold px-8 h-11">
+                Take the Business Technology Assessment
+              </Button>
+            </Link>
+          </div>
+        </section>
+
         {/* Testimonials */}
         <section data-testid="industry-testimonials" className="py-20 bg-[#0f1d32]">
           <div className="max-w-7xl mx-auto px-6">
@@ -284,6 +306,18 @@ export default function IndustryPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Bottom BTA CTA */}
+        <section data-testid="industry-bottom-bta" className="py-14 bg-[#0f1d32] text-center">
+          <div className="max-w-2xl mx-auto px-6">
+            <p className="text-[#94a8be] text-sm mb-4">Want the full picture beyond this audit?</p>
+            <Link to="/business-technology-assessment" data-testid="industry-bottom-cta">
+              <Button className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold px-8 h-11">
+                Start Your Business Technology Assessment
+              </Button>
+            </Link>
           </div>
         </section>
 

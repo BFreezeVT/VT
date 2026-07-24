@@ -28,6 +28,10 @@ const industryData = [
     compliance: ["SOC 2 Type I & II", "PCI-DSS", "SEC/FINRA", "NIST CSF", "GLBA"],
     software: ["Bloomberg Terminal", "Salesforce Financial Cloud", "Orion", "Black Diamond", "Schwab Advisor Center", "Fidelity WealthCentral"],
     testimonialIndices: [12, 16, 13],
+    aiLinks: [
+      { slug: "ai-governance", label: "AI Governance for Financial Firms" },
+      { slug: "microsoft-copilot-readiness", label: "Microsoft Copilot for Financial Services" },
+    ],
     ctaText: "Get Your Free Financial Services Security Audit",
     metaTitle: "Financial Services IT & Cybersecurity | Veracity Technologies",
     metaDescription: "SOC 2 compliant managed IT and cybersecurity for banks, RIAs, fintech, and investment firms in Minneapolis-St. Paul. SEC/FINRA aligned. 24/7 AI threat monitoring.",
@@ -61,6 +65,10 @@ const industryData = [
     compliance: ["CMMC", "OSHA Digital", "NIST 800-171", "DOD Requirements", "Bonding Compliance"],
     software: ["Procore", "Sage 300 CRE", "Bluebeam Revu", "PlanGrid", "Autodesk BIM 360", "Viewpoint Vista"],
     testimonialIndices: [0, 1, 14],
+    aiLinks: [
+      { slug: "ai-automation-consulting", label: "AI Automation for Contractors" },
+      { slug: "ai-adoption-strategy", label: "AI Readiness for Construction Companies" },
+    ],
     ctaText: "Get Your Free Construction IT Audit",
     metaTitle: "Construction IT & Cybersecurity | Veracity Technologies",
     metaDescription: "Construction-specialized managed IT and cybersecurity in Minneapolis-St. Paul. Job site connectivity, Procore integration, ransomware protection, CMMC compliance.",
@@ -94,6 +102,10 @@ const industryData = [
     compliance: ["NIST CSF", "IEC 62443", "CMMC", "TISAX", "ISO 27001", "FDA 21 CFR Part 11"],
     software: ["SAP ERP", "Siemens SCADA", "Rockwell/Allen-Bradley", "Epicor", "MES Systems", "Wonderware InTouch"],
     testimonialIndices: [4, 9, 17],
+    aiLinks: [
+      { slug: "ai-security-assessment", label: "AI Security for Manufacturing" },
+      { slug: "shadow-ai-risk-assessment", label: "Shadow AI Risk for Manufacturers" },
+    ],
     ctaText: "Get Your Free Manufacturing Security Audit",
     metaTitle: "Manufacturing IT & OT Security | Veracity Technologies",
     metaDescription: "OT/IT cybersecurity for manufacturing plants in Minneapolis-St. Paul. SCADA protection, network segmentation, ransomware prevention, IEC 62443 compliance.",
@@ -127,6 +139,10 @@ const industryData = [
     compliance: ["CMMC 2.0 (Level 1-3)", "NIST 800-171", "HIPAA", "ITAR / EAR", "FedRAMP", "SOC 2 Type II", "DFARS 252.204-7012", "State Privacy Laws"],
     software: ["Microsoft GCC High", "Azure Government", "Varonis", "Splunk", "CrowdStrike", "Tenable.io", "ServiceNow GRC"],
     testimonialIndices: [8, 13, 16],
+    aiLinks: [
+      { slug: "ai-risk-assessment", label: "AI Risk Assessment for Regulated Firms" },
+      { slug: "responsible-ai-consulting", label: "Responsible AI for High-Compliance Orgs" },
+    ],
     ctaText: "Get Your Free Compliance Security Audit",
     metaTitle: "High-Compliance IT & Cybersecurity | CMMC, HIPAA, ITAR | Veracity Technologies",
     metaDescription: "CMMC, HIPAA, ITAR, and NIST 800-171 cybersecurity for defense contractors, healthcare, and government suppliers in Minneapolis-St. Paul. 100% first-attempt audit pass rate.",

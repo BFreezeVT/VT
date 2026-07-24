@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { ChevronLeft, Phone, Clock, Tag, ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "../components/ui/button";
 import axios from "axios";
+import { getBlogRelatedLinks } from "../lib/contentLinks";
+import industryData from "../data/industryData";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -206,6 +208,25 @@ export default function BlogPost() {
                 </Button>
               </Link>
             </div>
+
+            {/* Related Resources - funnels to service, industry, AI page, and Business Technology Assessment */}
+            {(() => {
+              const { industrySlug, aiSlug, aiName } = getBlogRelatedLinks(post.category, post.slug);
+              const industry = industryData.find((ind) => ind.slug === industrySlug);
+              return (
+                <div data-testid="blog-related-resources" className="mt-10 border-t border-white/10 pt-8">
+                  <p className="text-[#94a8be] text-xs uppercase tracking-wider mb-4">Related Resources</p>
+                  <div className="flex flex-wrap gap-3">
+                    <Link to="/#core-services" data-testid="blog-related-service" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">Managed IT & Cybersecurity Services</Link>
+                    {industry && (
+                      <Link to={`/industries/${industry.slug}`} data-testid="blog-related-industry" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">{industry.name} IT Support</Link>
+                    )}
+                    <Link to={`/${aiSlug}`} data-testid="blog-related-ai" className="text-xs text-[#0077B3] border border-white/10 hover:border-[#0077B3] px-4 py-2 transition-colors">{aiName}</Link>
+                    <Link to="/business-technology-assessment" data-testid="blog-related-bta" className="text-xs font-semibold text-white bg-[#0077B3] hover:bg-[#005f8f] px-4 py-2 transition-colors">Business Technology Assessment</Link>
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Related Articles */}
             {relatedPosts.length > 0 && (

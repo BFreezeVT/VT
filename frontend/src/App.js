@@ -2,6 +2,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
+import TrustIndicators from "./sections/TrustIndicators";
 import CoreServices from "./sections/CoreServices";
 import IntroStats from "./sections/IntroStats";
 import BusinessReality from "./sections/BusinessReality";
@@ -23,6 +24,8 @@ import EbookPopup from "./sections/EbookPopup";
 import ServiceAreasIndex from "./pages/ServiceAreasIndex";
 import ServiceAreaPage from "./pages/ServiceAreaPage";
 import IndustryPage from "./pages/IndustryPage";
+import BusinessTechAssessment from "./pages/BusinessTechAssessment";
+import AIPage from "./pages/AIPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import CyberRiskScorecard from "./pages/CyberRiskScorecard";
@@ -84,12 +87,14 @@ function HomePage() {
       <Navigation />
       <main role="main">
         <HeroSection />
+        <TrustIndicators />
+        <FreeAuditOffer />
         <CoreServices />
         <OurApproach />
-        <IntroStats />
-        <BusinessReality />
         <AIService />
         <Industries />
+        <IntroStats />
+        <BusinessReality />
         <WhySpecializedIT />
         <Compliance />
         <HowItWorks />
@@ -97,7 +102,6 @@ function HomePage() {
         <Credentials />
         <ProudPartners />
         <CyberGame />
-        <FreeAuditOffer />
         <RiskReversal />
         <FAQSection />
       </main>
@@ -116,9 +120,11 @@ function App() {
         <Route path="/service-areas" element={<ServiceAreasIndex />} />
         <Route path="/service-areas/:citySlug" element={<ServiceAreaPage />} />
         <Route path="/industries/:industrySlug" element={<IndustryPage />} />
+        <Route path="/business-technology-assessment" element={<BusinessTechAssessment />} />
         <Route path="/resources" element={<BlogIndex />} />
         <Route path="/resources/:slug" element={<BlogPost />} />
         <Route path="/cyber-risk-scorecard" element={<CyberRiskScorecard />} />
+        <Route path="/:aiSlug" element={<AIPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

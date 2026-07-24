@@ -1,5 +1,4 @@
-import { Phone, ArrowDown, ShieldCheck } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { ArrowDown, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const HERO_BG = "https://images.unsplash.com/photo-1604011237320-8e0506614fdf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjeWJlcnNlY3VyaXR5JTIwQUklMjB0ZWNobm9sb2d5JTIwZGFyayUyMGFic3RyYWN0fGVufDB8fHxibHVlfDE3NzYyODM4NDJ8MA&ixlib=rb-4.1.0&q=85";
@@ -74,25 +73,24 @@ export default function HeroSection() {
             data-testid="hero-subhead"
             className="text-base md:text-lg text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
-            Helping organizations reduce risk, improve visibility, automate workflows, and leverage technology more strategically.
+            Helping organizations reduce risk, improve visibility, strengthen cybersecurity, leverage AI responsibly, modernize operations, and make smarter technology decisions.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
-            <Button
-              data-testid="hero-cta-button"
-              onClick={() => scrollTo("audit")}
-              className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow"
-            >
-              Start Your Business Technology Assessment
-            </Button>
             <a
-              data-testid="hero-secondary-cta"
+              data-testid="hero-cta-button"
               href="tel:9529417333"
-              className="flex items-center gap-2 border border-white/25 hover:border-white/50 rounded-sm px-6 h-12 text-white text-sm font-semibold transition-all"
+              className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow inline-flex items-center justify-center"
             >
-              <Phone className="w-4 h-4" />
               Schedule a Strategy Discussion
             </a>
+            <button
+              data-testid="hero-secondary-cta"
+              onClick={() => scrollTo("audit")}
+              className="flex items-center gap-2 border border-white/25 hover:border-white/50 rounded-sm px-6 h-12 text-white text-sm font-semibold transition-all"
+            >
+              Take the Business Technology Assessment
+            </button>
           </div>
 
           {/* Trust badges */}

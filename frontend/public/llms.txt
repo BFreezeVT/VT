@@ -188,4 +188,33 @@ A: Traditional MSPs manage tickets and fix things when they break. Veracity is a
 - Shadow AI: The Hidden Risk in Your Organization
 - Wire Fraud Prevention for Financial Services Firms
 
-Last updated: December 2025
+## Business Technology Assessment (Central Authority Page)
+https://www.veracitytechmn.com/business-technology-assessment
+A free, comprehensive assessment scoring 12 areas: Technology Infrastructure, Managed IT Maturity, Cybersecurity Readiness, Compliance Readiness, AI Readiness, AI Governance, AI Security, AI Risk Management, Microsoft Copilot Readiness, Workflow Automation, Business Continuity, and Strategic Technology Planning. This is the primary conversion page and internal linking hub across the entire site.
+
+## AI Readiness Content Cluster
+- AI Readiness Assessment: https://www.veracitytechmn.com/ai-readiness-assessment
+- AI Governance: https://www.veracitytechmn.com/ai-governance
+- AI Risk Assessment: https://www.veracitytechmn.com/ai-risk-assessment
+- AI Security Assessment: https://www.veracitytechmn.com/ai-security-assessment
+- Microsoft Copilot Readiness: https://www.veracitytechmn.com/microsoft-copilot-readiness
+- AI Policy Development: https://www.veracitytechmn.com/ai-policy-development
+- AI Data Governance: https://www.veracitytechmn.com/ai-data-governance
+- Shadow AI Risk Assessment: https://www.veracitytechmn.com/shadow-ai-risk-assessment
+- AI Automation Consulting: https://www.veracitytechmn.com/ai-automation-consulting
+- AI Adoption Strategy: https://www.veracitytechmn.com/ai-adoption-strategy
+- Responsible AI Consulting: https://www.veracitytechmn.com/responsible-ai-consulting
+Every page in this cluster funnels back to the Business Technology Assessment.
+
+## FAQ
+
+Q: What is a Business Technology Assessment?
+A: A free, structured evaluation covering technology infrastructure, cybersecurity readiness, compliance readiness, AI readiness, AI governance, AI security, workflow automation, business continuity, and strategic technology planning. It produces a maturity score and prioritized roadmap.
+
+Q: Is Microsoft Copilot secure?
+A: Copilot's security depends on the underlying SharePoint/OneDrive permission structure - it surfaces any content a user technically has access to. A Microsoft Copilot Readiness Assessment audits permissions and sensitivity labeling before rollout.
+
+Q: What AI policies should businesses have?
+A: An approved AI tools list, a data classification policy, an acceptable use policy for AI-generated content, an incident reporting process, and a periodic review cycle - enforced through technical controls, not just documentation.
+
+Last updated: February 2026
