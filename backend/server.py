@@ -729,9 +729,9 @@ Zero trust isn't a product you buy - it's an architecture you build incrementall
     },
 ]
 
-# Combine original (with full content) + extended (excerpt only) blog posts
+# Combine original (with full content) + extended (full content where migrated, excerpt fallback otherwise)
 ALL_BLOG_POSTS = BLOG_POSTS + [
-    {**post, "content": post["excerpt"], "author": "Veracity Technologies"}
+    {**post, "content": post.get("content", post["excerpt"]), "author": "Veracity Technologies"}
     for post in BLOG_POSTS_EXTENDED
     if post["slug"] not in [p["slug"] for p in BLOG_POSTS]
 ]
