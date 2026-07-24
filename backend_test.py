@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 class APITester:
-    def __init__(self, base_url="https://jobsite-it-secure.preview.emergentagent.com/api"):
+    def __init__(self, base_url="https://veracity-ai-managed.preview.emergentagent.com/api"):
         self.base_url = base_url
         self.tests_run = 0
         self.tests_passed = 0

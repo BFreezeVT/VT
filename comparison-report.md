@@ -210,5 +210,5 @@ GEO optimizes content to be referenced by large language models (LLMs) like Chat
 ---
 
 *Generated from live site analysis — April 2026*
-*New site preview: https://jobsite-it-secure.preview.emergentagent.com*
+*New site preview: https://veracity-ai-managed.preview.emergentagent.com*
 *Current site: https://www.veracitytech.com*
