@@ -162,13 +162,51 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   `testing_agent_v4` (iteration_18.json) — 100% pass across 4 categories, zero bugs.
 
 ## Backlog / Next Tasks
-- **P2 (known, pre-existing, not a regression)**: CoreServices section (and possibly a couple
-  other early-homepage sections) have mild white-text-on-light-gradient contrast at their
-  scroll position — pre-existing since original build, out of scope for this session per user's
-  "update not overhaul" instruction. Worth a future pass if user wants visual polish.
-- Deployment: previously passed deployment_agent health check; user was mid-way through
-  GoDaddy DNS / Search Console setup for veracitytechmn.com — pick up from there if user returns
-  to deployment.
+- **P2 (known, pre-existing, not a regression)**: A couple of light-background success/thank-you
+  cards (industry page "Thank you!" heading, and previously-noted CoreServices section) have mild
+  white-text-on-near-white-background contrast. Pre-existing, cosmetic, low priority — worth a
+  future visual polish pass if user wants it.
+- Deployment: user confirmed GoDaddy DNS / Search Console are good to go for veracitytechmn.com.
+
+### Session 6 (Feb 2026) — Code review + fixes, related articles carousel
+- **Related Articles carousel** (user-requested): replaced static 3-post "Related Articles" grid
+  in `BlogPost.jsx` with `sections/RelatedArticlesCarousel.jsx` (shadcn/embla Carousel),
+  prioritizing same-category articles. Tested via `testing_agent_v4` (iteration_18.json) — 100%
+  pass across 4 categories.
+- **Production bug fix — Google Search Console VideoObject error**: user uploaded a GSC "Videos
+  Issue" report flagging invalid `uploadDate` on a global `VideoObject` JSON-LD block in
+  `frontend/public/index.html` (present on every page). Root cause: the VideoObject didn't
+  describe real video content (contentUrl was just a YouTube channel link, no actual video
+  exists on the site) — removed the block entirely rather than patching the date. Tested via
+  `testing_agent_v4` (iteration_19.json) — 100% pass. **Requires redeploy to reach production.**
+- **Full code review + fix batch** (user said "fix everything"):
+  - **HIGH**: `GET /api/leads` and `GET /api/leads/count` had zero auth, exposing all captured
+    lead PII to anyone. Secured with a simple `X-Admin-Key` header (APIKeyHeader +
+    `hmac.compare_digest`), stored in `backend/.env` as `ADMIN_API_KEY`. `POST /api/leads`
+    (public form submission) intentionally remains unauthenticated. User confirmed they only
+    need Gmail email notifications for leads, not a dashboard — no login UI was built.
+  - **MEDIUM**: added `timeout=10` to the SMTP connection; fixed CORS `allow_credentials` from
+    `True` to `False` (app uses no cookies anywhere, so `*` + credentials was an invalid,
+    ineffective combo); fixed all 4 lead-capture flows (city/industry forms, Cyber Risk
+    Scorecard booking + email report, Human Risk Simulation game email form, Business
+    Technology Assessment) that were showing a fake "success" state even when the backend save
+    failed — now show a proper error banner and keep `submitted=false` on failure via a shared
+    `error` state in `hooks/useLeadSubmit.js` and equivalent local state in the 3 other flows.
+  - **MEDIUM (SEO/structured data)**: removed self-authored `aggregateRating`/`review` arrays
+    from 2 JSON-LD blocks in `index.html` (Google disallows self-serving reviews — risk of a
+    manual action); fixed `lib/cityStructuredData.js` which incorrectly claimed the same
+    Minnetonka HQ street address physically exists in all 45 different cities with each city's
+    own zip code — now uses the real single HQ address consistently, with city-specific
+    lat/lng correctly nested under `areaServed.geo` instead of the top-level `geo` field.
+  - **LOW**: fixed "36 cities" → "45 cities" copy inconsistency in `index.html`; replaced a
+    biased `sort(() => Math.random() - 0.5)` shuffle in `CyberGame/index.jsx` with a proper
+    Fisher-Yates shuffle; moved side effects (clearInterval, setState calls) out of the
+    `setTimeLeft` functional updater into a separate `useEffect` watching `timeLeft === 0` to
+    avoid a React state-update-in-updater anti-pattern.
+  - Tested via `testing_agent_v4` (iteration_20.json) — 100% pass (9/9 backend pytest, all
+    frontend success-path flows). New regression test file:
+    `/app/backend/tests/test_leads_admin_security.py`. Cleaned up 17 TEST_-prefixed leads
+    created during testing from the live `leads` collection afterward (45 real leads intact).
 
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
