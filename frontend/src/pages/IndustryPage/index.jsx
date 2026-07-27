@@ -18,7 +18,7 @@ const iconMap = { Landmark, HardHat, Factory, ShieldCheck };
 export default function IndustryPage() {
   const { industrySlug } = useParams();
   const industry = industryData.find((ind) => ind.slug === industrySlug);
-  const { submitted, submitLead } = useLeadSubmit();
+  const { submitted, error, submitLead } = useLeadSubmit();
 
   useEffect(() => {
     if (industry) {
@@ -106,7 +106,7 @@ export default function IndustryPage() {
           </div>
         </section>
 
-        <IndustryFormSection industry={industry} submitted={submitted} submitLead={submitLead} />
+        <IndustryFormSection industry={industry} submitted={submitted} error={error} submitLead={submitLead} />
 
         {/* Other industries */}
         <section className="py-16 bg-[#0f1d32]">

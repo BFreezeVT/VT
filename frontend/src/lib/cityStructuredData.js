@@ -7,22 +7,24 @@ export function buildCityStructuredData(city) {
     url: `https://www.veracitytechmn.com/service-areas/${city.slug}`,
     telephone: "+1-952-941-7333",
     email: "info@veracitytech.com",
+    // Real, single headquarters address - NOT a per-city location. The
+    // company is not physically present in every city it serves.
     address: {
       "@type": "PostalAddress",
       streetAddress: "5929 Baker Rd, Suite 420",
-      addressLocality: city.name,
-      addressRegion: city.state,
-      postalCode: city.zip,
+      addressLocality: "Minnetonka",
+      addressRegion: "MN",
+      postalCode: "55345",
       addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: city.lat,
-      longitude: city.lng,
     },
     areaServed: {
       "@type": "City",
       name: city.name,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: city.lat,
+        longitude: city.lng,
+      },
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",

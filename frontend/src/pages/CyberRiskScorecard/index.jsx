@@ -16,7 +16,9 @@ export default function CyberRiskScorecard() {
   const [animating, setAnimating] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [booked, setBooked] = useState(false);
+  const [bookingError, setBookingError] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState(false);
 
   useEffect(() => {
     document.title = "Cyber Risk Scorecard | Veracity Technologies";
@@ -73,7 +75,7 @@ export default function CyberRiskScorecard() {
 
   const bookSlot = async (day, time) => {
     setSelectedSlot({ day, time });
-    setBooked(true);
+    setBookingError(false);
     try {
       await axios.post(`${API}/leads`, {
         company: "",
@@ -84,13 +86,18 @@ export default function CyberRiskScorecard() {
         situation: `Booked discovery call: ${day} at ${time}. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
         contact_preference: "call",
       });
-    } catch (e) { console.error("Failed to submit discovery call booking lead:", e); }
-    if (window.gtag) window.gtag("event", "scorecard_book", { event_category: "cyber_risk_scorecard" });
+      setBooked(true);
+      if (window.gtag) window.gtag("event", "scorecard_book", { event_category: "cyber_risk_scorecard" });
+    } catch (e) {
+      console.error("Failed to submit discovery call booking lead:", e);
+      setBookingError(true);
+    }
   };
 
   const submitEmail = async (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
+    setEmailError(false);
     try {
       await axios.post(`${API}/leads`, {
         company: fd.get("company") || "",
@@ -101,9 +108,12 @@ export default function CyberRiskScorecard() {
         situation: `Requested email report. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
         contact_preference: "email",
       });
-    } catch (err) { console.error("Failed to submit Cyber Risk Scorecard email report lead:", err); }
-    setEmailSent(true);
-    if (window.gtag) window.gtag("event", "scorecard_email", { event_category: "cyber_risk_scorecard" });
+      setEmailSent(true);
+      if (window.gtag) window.gtag("event", "scorecard_email", { event_category: "cyber_risk_scorecard" });
+    } catch (err) {
+      console.error("Failed to submit Cyber Risk Scorecard email report lead:", err);
+      setEmailError(true);
+    }
   };
 
   const retake = () => {
@@ -111,7 +121,9 @@ export default function CyberRiskScorecard() {
     setCurrent(0);
     setAnswers({});
     setBooked(false);
+    setBookingError(false);
     setEmailSent(false);
+    setEmailError(false);
     setSelectedSlot(null);
   };
 
@@ -141,8 +153,8 @@ export default function CyberRiskScorecard() {
           <ScorecardResults
             animating={animating} totalScore={totalScore} maxScore={maxScore} pct={pct}
             riskLevel={riskLevel} riskColor={riskColor} topRisks={topRisks} topRecs={topRecs}
-            booked={booked} selectedSlot={selectedSlot} bookSlot={bookSlot}
-            emailSent={emailSent} submitEmail={submitEmail} retake={retake}
+            booked={booked} bookingError={bookingError} selectedSlot={selectedSlot} bookSlot={bookSlot}
+            emailSent={emailSent} emailError={emailError} submitEmail={submitEmail} retake={retake}
           />
         )}
       </main>

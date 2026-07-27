@@ -29,23 +29,25 @@ export default function CyberGame() {
       setTimeLeft(config.timer);
       questionStartRef.current = Date.now();
       timerRef.current = setInterval(() => {
-        setTimeLeft((t) => {
-          if (t <= 1) {
-            clearInterval(timerRef.current);
-            setLastCorrect(false);
-            setLastAction("timeout");
-            setStreak(0);
-            setAnswered(true);
-            return 0;
-          }
-          return t - 1;
-        });
+        setTimeLeft((t) => Math.max(0, t - 1));
       }, 1000);
       return () => clearInterval(timerRef.current);
     } else if (config.timer === 0 && gameState === "playing" && !answered) {
       questionStartRef.current = Date.now();
     }
   }, [currentIndex, gameState, answered, config.timer]);
+
+  // Handles the moment the countdown reaches zero (kept separate from the
+  // setTimeLeft updater above so side effects never run inside a state updater)
+  useEffect(() => {
+    if (gameState === "playing" && config.timer > 0 && !answered && timeLeft === 0) {
+      clearInterval(timerRef.current);
+      setLastCorrect(false);
+      setLastAction("timeout");
+      setStreak(0);
+      setAnswered(true);
+    }
+  }, [timeLeft, gameState, answered, config.timer]);
 
   const startGame = useCallback((diff) => {
     const d = diff || difficulty;
@@ -54,8 +56,14 @@ export default function CyberGame() {
     if (cfg.pool === "easy") pool = scenarios.filter((s) => s.difficulty === "easy" || s.difficulty === "medium");
     else if (cfg.pool === "hard") pool = scenarios.filter((s) => s.difficulty === "medium" || s.difficulty === "hard");
     else pool = [...scenarios];
-    const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, cfg.count);
-    setShuffledScenarios(shuffled);
+    // Fisher-Yates shuffle for unbiased randomization
+    const shuffled = [...pool];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    const selected = shuffled.slice(0, cfg.count);
+    setShuffledScenarios(selected);
     setDifficulty(d);
     setCurrentIndex(0);
     setScore(0);

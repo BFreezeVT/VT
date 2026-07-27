@@ -1,8 +1,10 @@
-from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks
+from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks, Depends, status
+from fastapi.security import APIKeyHeader
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
+import hmac
 import logging
 import smtplib
 from email.mime.text import MIMEText
@@ -22,6 +24,21 @@ load_dotenv(ROOT_DIR / '.env')
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
+
+ADMIN_API_KEY = os.environ['ADMIN_API_KEY']
+admin_api_key_header = APIKeyHeader(name="X-Admin-Key", auto_error=False)
+
+
+def verify_admin_api_key(api_key: Optional[str] = Depends(admin_api_key_header)) -> str:
+    """Guards admin-only endpoints (e.g. viewing captured leads) behind a shared secret key."""
+    if not api_key or not hmac.compare_digest(api_key, ADMIN_API_KEY):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Missing or invalid admin API key",
+            headers={"WWW-Authenticate": "API-Key"},
+        )
+    return api_key
+
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -158,7 +175,7 @@ def send_lead_notification(lead: AuditLead) -> bool:
         msg.attach(MIMEText(_build_lead_text_body(lead, source), "plain"))
         msg.attach(MIMEText(_build_lead_html_body(lead, source), "html"))
 
-        with smtplib.SMTP(smtp_host, smtp_port) as server:
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=10) as server:
             server.starttls()
             server.login(smtp_user, smtp_pass)
             server.sendmail(smtp_user, notify_email, msg.as_string())
@@ -196,12 +213,12 @@ async def create_lead(input_data: AuditLeadCreate, background_tasks: BackgroundT
     return {"success": True, "id": lead.id, "message": "Your audit request has been received."}
 
 @api_router.get("/leads")
-async def get_leads() -> List[dict]:
+async def get_leads(api_key: str = Depends(verify_admin_api_key)) -> List[dict]:
     leads = await db.leads.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
     return leads
 
 @api_router.get("/leads/count")
-async def get_lead_count() -> dict:
+async def get_lead_count(api_key: str = Depends(verify_admin_api_key)) -> dict:
     count = await db.leads.count_documents({})
     return {"count": count}
 
@@ -773,7 +790,7 @@ app.include_router(api_router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_credentials=True,
+    allow_credentials=False,
     allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
     allow_methods=["*"],
     allow_headers=["*"],

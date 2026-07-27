@@ -6,7 +6,7 @@ import { timeSlots } from "../../data/cyberRiskScorecardData";
 
 export default function ScorecardResults({
   animating, totalScore, maxScore, pct, riskLevel, riskColor, topRisks, topRecs,
-  booked, selectedSlot, bookSlot, emailSent, submitEmail, retake,
+  booked, bookingError, selectedSlot, bookSlot, emailSent, emailError, submitEmail, retake,
 }) {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
@@ -114,6 +114,11 @@ export default function ScorecardResults({
                 <p className="text-[#ef4444] text-xs font-medium flex items-center justify-center gap-1">
                   <Clock className="w-3 h-3" /> We only take a limited number of assessments each week.
                 </p>
+                {bookingError && (
+                  <p data-testid="booking-error" className="text-[#ef4444] text-xs font-medium mt-3">
+                    Something went wrong saving your booking. Please try selecting a time again, or call us directly at (952) 941-7333.
+                  </p>
+                )}
               </div>
             </div>
           ) : (
@@ -136,6 +141,11 @@ export default function ScorecardResults({
           )}
           {showEmailForm && !emailSent && (
             <div className="max-w-md mx-auto mt-6">
+              {emailError && (
+                <p data-testid="email-report-error" className="text-[#ef4444] text-xs font-medium mb-3">
+                  We couldn&rsquo;t send your report just now. Please try again, or call us at (952) 941-7333.
+                </p>
+              )}
               <form onSubmit={handleEmailSubmit} className="grid grid-cols-2 gap-3">
                 <Input name="firstName" placeholder="First name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
                 <Input name="lastName" placeholder="Last name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />

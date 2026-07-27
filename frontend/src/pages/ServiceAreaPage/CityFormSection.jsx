@@ -2,7 +2,7 @@ import { Shield } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 
-export default function CityFormSection({ city, submitted, submitLead }) {
+export default function CityFormSection({ city, submitted, error, submitLead }) {
   return (
     <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#0f1d32]">
       <div className="max-w-3xl mx-auto px-6">
@@ -18,6 +18,11 @@ export default function CityFormSection({ city, submitted, submitLead }) {
               <p className="text-[#94a8be] text-sm mb-8 text-center">
                 Get a comprehensive, non-invasive review of your {city.name} business&rsquo;s IT and cybersecurity posture.
               </p>
+              {error && (
+                <p data-testid="city-form-error" className="text-[#FF5722] text-sm font-medium mb-4 text-center">
+                  Something went wrong submitting your request. Please try again, or call us directly at (952) 941-7333.
+                </p>
+              )}
               <form onSubmit={(e) => {
                 e.preventDefault();
                 const fd = new FormData(e.target);

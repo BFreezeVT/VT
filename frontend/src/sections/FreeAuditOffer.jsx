@@ -124,7 +124,7 @@ function ScoreRing({ score, size = 120, label }) {
 }
 
 export default function FreeAuditOffer() {
-  const { submitted, submitting, submitLead } = useLeadSubmit();
+  const { submitted, submitting, error, submitLead } = useLeadSubmit();
   const [stage, setStage] = useState("intro"); // intro, assess, contact, results
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -374,6 +374,14 @@ export default function FreeAuditOffer() {
               </h2>
               <p className="text-[#c0cfe0] text-sm">{contactInfo.company || "Your organization"}</p>
             </div>
+
+            {error && (
+              <div data-testid="assessment-submit-error" className="max-w-xl mx-auto mb-8 text-center p-4 border border-[#FF5722]/30 bg-[#FF5722]/5 rounded-md">
+                <p className="text-[#FF5722] text-sm font-medium">
+                  We couldn&rsquo;t save your contact info automatically. Your results below are still valid - please call us at (952) 941-7333 so we can make sure we follow up with you.
+                </p>
+              </div>
+            )}
 
             {/* Primary score - large */}
             <div className="text-center mb-10">

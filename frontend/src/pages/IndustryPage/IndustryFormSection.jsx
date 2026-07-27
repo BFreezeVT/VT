@@ -2,7 +2,7 @@ import { Shield } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 
-export default function IndustryFormSection({ industry, submitted, submitLead }) {
+export default function IndustryFormSection({ industry, submitted, error, submitLead }) {
   return (
     <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-6">
@@ -15,6 +15,11 @@ export default function IndustryFormSection({ industry, submitted, submitLead })
               <p className="text-[#94a8be] text-sm mb-8 text-center">
                 Non-invasive. Confidential. Tailored to {industry.name.toLowerCase()}.
               </p>
+              {error && (
+                <p data-testid="industry-form-error" className="text-[#FF5722] text-sm font-medium mb-4 text-center">
+                  Something went wrong submitting your request. Please try again, or call us directly at (952) 941-7333.
+                </p>
+              )}
               <form onSubmit={(e) => {
                 e.preventDefault();
                 const fd = new FormData(e.target);

@@ -17,7 +17,7 @@ import CityFormSection from "./CityFormSection";
 export default function ServiceAreaPage() {
   const { citySlug } = useParams();
   const city = cityData.find((c) => c.slug === citySlug);
-  const { submitted, submitLead } = useLeadSubmit();
+  const { submitted, error, submitLead } = useLeadSubmit();
 
   useEffect(() => {
     if (city) {
@@ -89,7 +89,7 @@ export default function ServiceAreaPage() {
           city={city} cityTestimonials={cityTestimonials} relatedIndustry={relatedIndustry}
           relatedAIPages={relatedAIPages} btaAnchors={btaAnchors}
         />
-        <CityFormSection city={city} submitted={submitted} submitLead={submitLead} />
+        <CityFormSection city={city} submitted={submitted} error={error} submitLead={submitLead} />
 
         {/* Other cities */}
         <section data-testid="city-other-areas" aria-label="Other service areas" className="py-16 bg-white">

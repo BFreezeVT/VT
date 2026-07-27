@@ -11,11 +11,13 @@ export default function GameResults({
   difficulty, humanRiskScore, bestStreak, highScore, newBadges, shareResults, setGameState,
 }) {
   const [gameEmailSent, setGameEmailSent] = useState(false);
+  const [gameEmailError, setGameEmailError] = useState(false);
   const config = DIFFICULTIES[difficulty];
 
   const submitEmail = async (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
+    setGameEmailError(false);
     try {
       await axios.post(`${API}/leads`, {
         company: fd.get("company") || "",
@@ -26,8 +28,11 @@ export default function GameResults({
         situation: `Human Risk Score: ${humanRiskScore}/100 (${config.label} level). Best streak: ${bestStreak}.`,
         contact_preference: fd.get("contact_preference") || "call",
       });
-    } catch (err) { console.error("Failed to submit Human Risk Simulation lead:", err); }
-    setGameEmailSent(true);
+      setGameEmailSent(true);
+    } catch (err) {
+      console.error("Failed to submit Human Risk Simulation lead:", err);
+      setGameEmailError(true);
+    }
   };
 
   return (
@@ -88,6 +93,11 @@ export default function GameResults({
       {!gameEmailSent ? (
         <form onSubmit={submitEmail} className="mb-6 p-4 border border-[#0d4a8a] rounded-md bg-[#0c1a2e]">
           <p className="text-white text-sm font-semibold mb-3 text-center">Get your results and a personalized action plan:</p>
+          {gameEmailError && (
+            <p data-testid="game-email-error" className="text-[#FF5722] text-xs font-medium mb-3 text-center">
+              Something went wrong sending your results. Please try again, or call us at (952) 941-7333.
+            </p>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
             <Input name="name" placeholder="Your name" className="bg-[#002a52] border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/40 rounded-md h-9 text-sm" />
             <Input name="email" type="email" placeholder="Email" required className="bg-[#002a52] border-[#0d4a8a] text-white placeholder:text-[#b0c4d8]/40 rounded-md h-9 text-sm" />
