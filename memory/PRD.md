@@ -161,12 +161,38 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   heading, prev/next arrow navigation, responsive (1 card mobile / 2-3 desktop). Tested via
   `testing_agent_v4` (iteration_18.json) — 100% pass across 4 categories, zero bugs.
 
+### Session 7 (Feb 2026) — Security audit fix batch
+- **Full security audit** requested by user, all 3 findings fixed ("Fix everything"):
+  - **MEDIUM**: Email/header injection risk — raw user-submitted form fields (company,
+    situation description, etc.) were interpolated unescaped into the internal lead
+    notification HTML email, letting a submitted form value inject markup into the email
+    your staff opens. Fixed with `html.escape()` on every user-controlled field in
+    `_build_lead_html_body()`, plus `_sanitize_header_value()` stripping CR/LF from the
+    email Subject line (header injection prevention).
+  - **MEDIUM**: No rate limiting on public `POST /api/leads` — added `check_lead_rate_limit()`
+    dependency (5 submissions per IP per hour, tracked in a new `lead_submission_log`
+    MongoDB collection with a TTL index auto-created on startup so it never grows unbounded).
+    Uses `X-Forwarded-For` with fallback to `request.client.host`.
+  - **LOW**: Removed unused, unauthenticated leftover `GET`/`POST /api/status` scaffolding
+    endpoints and their `StatusCheck`/`StatusCheckCreate` models entirely (confirmed unused
+    anywhere in the frontend before removal).
+  - Tested via `testing_agent_v4` (iteration_21.json) — 100% pass (8/8 backend, 5/5 frontend
+    smoke flows), test artifacts self-cleaned by testing agent.
+  - Noted but NOT fixed (pre-existing, out of scope, non-blocking): an e-book download modal
+    on the homepage can intermittently overlay/block interaction with lower sections
+    including the Human Risk Simulation game — flagged for a future UX pass if desired.
+
 ## Backlog / Next Tasks
+- **P2**: E-book download modal on homepage can overlay/block the Human Risk Simulation game
+  section — pre-existing UX friction, noted by testing agent, not yet fixed.
 - **P2 (known, pre-existing, not a regression)**: A couple of light-background success/thank-you
   cards (industry page "Thank you!" heading, and previously-noted CoreServices section) have mild
   white-text-on-near-white-background contrast. Pre-existing, cosmetic, low priority — worth a
   future visual polish pass if user wants it.
 - Deployment: user confirmed GoDaddy DNS / Search Console are good to go for veracitytechmn.com.
+  All fixes from Sessions 5-7 (blog content, refactors, related articles carousel, VideoObject
+  removal, code-review fix batch, security-audit fix batch) are in PREVIEW only and need a
+  redeploy to reach production.
 
 ### Session 6 (Feb 2026) — Code review + fixes, related articles carousel
 - **Related Articles carousel** (user-requested): replaced static 3-post "Related Articles" grid
