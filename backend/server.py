@@ -1,10 +1,11 @@
-from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks, Depends, status
+from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks, Depends, status, Request
 from fastapi.security import APIKeyHeader
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import hmac
+import html
 import logging
 import smtplib
 from email.mime.text import MIMEText
@@ -13,7 +14,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from blog_data import BLOG_POSTS_EXTENDED
 
 
@@ -40,6 +41,31 @@ def verify_admin_api_key(api_key: Optional[str] = Depends(admin_api_key_header))
     return api_key
 
 
+LEAD_RATE_LIMIT_MAX = 5
+LEAD_RATE_LIMIT_WINDOW_SECONDS = 3600
+
+
+def _get_client_ip(request: Request) -> str:
+    forwarded = request.headers.get("x-forwarded-for")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return request.client.host if request.client else "unknown"
+
+
+async def check_lead_rate_limit(request: Request) -> None:
+    """Limits public lead-form submissions to LEAD_RATE_LIMIT_MAX per IP per window,
+    protecting the form from spam floods and Gmail sending-limit exhaustion."""
+    ip = _get_client_ip(request)
+    window_start = datetime.now(timezone.utc) - timedelta(seconds=LEAD_RATE_LIMIT_WINDOW_SECONDS)
+    recent_count = await db.lead_submission_log.count_documents({"ip": ip, "timestamp": {"$gte": window_start}})
+    if recent_count >= LEAD_RATE_LIMIT_MAX:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Too many submissions from this address. Please try again later or call us at (952) 941-7333.",
+        )
+    await db.lead_submission_log.insert_one({"ip": ip, "timestamp": datetime.now(timezone.utc)})
+
+
 # Create the main app without a prefix
 app = FastAPI()
 
@@ -55,15 +81,6 @@ logger = logging.getLogger(__name__)
 
 
 # ─── Models ───────────────────────────────────────────────────
-
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-
-class StatusCheckCreate(BaseModel):
-    client_name: str
 
 class AuditLeadCreate(BaseModel):
     company: str
@@ -116,6 +133,12 @@ def _resolve_lead_source(lead: AuditLead) -> str:
     return lead.source_page
 
 
+def _sanitize_header_value(value: str) -> str:
+    """Strips CR/LF from a value before it is used in an email header (Subject, To, From)
+    to prevent header-injection attacks from user-supplied form fields."""
+    return str(value).replace("\r", " ").replace("\n", " ").strip()
+
+
 def _build_lead_text_body(lead: AuditLead, source: str) -> str:
     return f"""New lead from Veracity Technologies website:
 
@@ -131,22 +154,32 @@ Submitted: {lead.created_at}
 
 
 def _build_lead_html_body(lead: AuditLead, source: str) -> str:
+    # All user-supplied fields are HTML-escaped before interpolation so a submitted
+    # form value can never inject markup/links into the internal notification email.
+    company = html.escape(lead.company)
+    name = html.escape(lead.name or lead.role or "N/A")
+    phone = html.escape(lead.phone)
+    email_addr = html.escape(lead.email)
+    situation = html.escape(lead.situation) if lead.situation else ""
+    source = html.escape(source)
+    contact_pref = html.escape((lead.contact_preference or "call").upper())
+
     situation_block = (
         f'<div style="margin-top:16px;padding:16px;background:#001A33;border-left:3px solid #0077B3;">'
         f'<p style="color:#A0B6CD;margin:0 0 4px;font-size:12px;">SITUATION</p>'
-        f'<p style="color:#fff;margin:0;font-size:14px;">{lead.situation}</p></div>'
-        if lead.situation else ""
+        f'<p style="color:#fff;margin:0;font-size:14px;">{situation}</p></div>'
+        if situation else ""
     )
     return f"""
 <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020812;color:#fff;padding:32px;border:1px solid #003B71;">
   <h2 style="color:#0077B3;margin:0 0 16px;">New Lead</h2>
   <table style="width:100%;border-collapse:collapse;">
-    <tr><td style="padding:8px 0;color:#A0B6CD;width:120px;">Company</td><td style="color:#fff;">{lead.company}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Name</td><td style="color:#fff;">{lead.name or lead.role or 'N/A'}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Phone</td><td style="color:#fff;">{lead.phone}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Email</td><td style="color:#fff;"><a href="mailto:{lead.email}" style="color:#0077B3;">{lead.email}</a></td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;width:120px;">Company</td><td style="color:#fff;">{company}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Name</td><td style="color:#fff;">{name}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Phone</td><td style="color:#fff;">{phone}</td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Email</td><td style="color:#fff;"><a href="mailto:{email_addr}" style="color:#0077B3;">{email_addr}</a></td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Source</td><td style="color:#fff;">{source}</td></tr>
-    <tr><td style="padding:8px 0;color:#A0B6CD;">Prefers</td><td style="color:#fff;"><strong style="color:#0077B3;">{(lead.contact_preference or 'call').upper()}</strong></td></tr>
+    <tr><td style="padding:8px 0;color:#A0B6CD;">Prefers</td><td style="color:#fff;"><strong style="color:#0077B3;">{contact_pref}</strong></td></tr>
     <tr><td style="padding:8px 0;color:#A0B6CD;">Submitted</td><td style="color:#fff;">{lead.created_at}</td></tr>
   </table>
   {situation_block}
@@ -169,7 +202,7 @@ def send_lead_notification(lead: AuditLead) -> bool:
     try:
         source = _resolve_lead_source(lead)
         msg = MIMEMultipart("alternative")
-        msg["Subject"] = f"New Audit Lead: {lead.company}"
+        msg["Subject"] = f"New Audit Lead: {_sanitize_header_value(lead.company)}"
         msg["From"] = smtp_user
         msg["To"] = notify_email
         msg.attach(MIMEText(_build_lead_text_body(lead, source), "plain"))
@@ -199,7 +232,11 @@ async def health_check() -> dict:
 
 # Lead capture
 @api_router.post("/leads")
-async def create_lead(input_data: AuditLeadCreate, background_tasks: BackgroundTasks) -> dict:
+async def create_lead(
+    input_data: AuditLeadCreate,
+    background_tasks: BackgroundTasks,
+    _rate_limit: None = Depends(check_lead_rate_limit),
+) -> dict:
     lead = AuditLead(**input_data.model_dump())
     doc = lead.model_dump()
     await db.leads.insert_one(doc)
@@ -766,25 +803,6 @@ async def get_blog_post(slug: str) -> dict:
     raise HTTPException(status_code=404, detail="Post not found")
 
 
-# Legacy routes
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate) -> StatusCheck:
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
-
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks() -> List[dict]:
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    return status_checks
-
-
 # Include the router in the main app
 app.include_router(api_router)
 
@@ -795,6 +813,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.on_event("startup")
+async def create_indexes() -> None:
+    # TTL index so rate-limit tracking entries auto-expire and never grow unbounded
+    await db.lead_submission_log.create_index("timestamp", expireAfterSeconds=LEAD_RATE_LIMIT_WINDOW_SECONDS)
 
 @app.on_event("shutdown")
 async def shutdown_db_client() -> None:
