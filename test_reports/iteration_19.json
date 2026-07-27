@@ -1,0 +1,38 @@
+{
+  "summary": "Verified removal of invalid VideoObject JSON-LD (uploadDate/timezone GSC error) from frontend/public/index.html. Static file confirmed clean (10 valid JSON-LD blocks, no VideoObject/uploadDate strings). Initially the LIVE preview still served the OLD index.html with VideoObject (11 blocks) because the CRA dev server had not reloaded the public/index.html static file after the edit - this was fixed by restarting the frontend supervisor process. After restart, live site confirmed clean across all flagged URLs.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "IMPORTANT: When editing frontend/public/index.html (static template, not hot-reloaded by CRA dev server the same way as src/), a `sudo supervisorctl restart frontend` is required to actually serve the updated file - otherwise stale content is served to users despite the file being correctly edited on disk. Confirm this restart happens as part of deployment for this fix, or that production build process picks up the change (production builds always re-read public/index.html at build time so this is a preview-environment-only caveat).",
+    "No code changes needed - fix is verified correct once frontend was restarted."
+  ],
+  "critical_code_review_comments": [
+    "The other 10 remaining JSON-LD blocks (Organization, LocalBusiness, WebPage+BreadcrumbList, ItemList/Service, FAQPage, Offer, WebSite, ProfessionalService, HowTo, DefinedTermSet) all parse as valid JSON - confirmed via python json.loads on each block.",
+    "Industry pages (/industries/*), /cyber-risk-scorecard, and /service-areas inject additional page-specific JSON-LD via React (likely react-helmet) on top of the 10 global blocks - this is expected/pre-existing behavior, unrelated to the VideoObject fix, and none of those dynamically injected blocks contain VideoObject/uploadDate either."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (no backend changes)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Fix confirmed working. If main agent needs to verify similar static public/index.html edits in the future, always restart frontend supervisor process after editing files under frontend/public/ since CRA dev server does not auto-reload those the same way as src/ hot-reload.",
+  "test_results_detail": {
+    "static_file_check": "frontend/public/index.html contains exactly 10 JSON-LD <script> blocks, zero occurrences of 'VideoObject' or 'uploadDate' strings anywhere in file",
+    "routes_verified": {
+      "/": "renders correctly, 0 console errors, 10 ld+json blocks, no VideoObject",
+      "/industries/manufacturing-it-support": "renders correctly, 0 console errors, no VideoObject",
+      "/industries/financial-it-support": "renders correctly, 0 console errors, no VideoObject",
+      "/industries/high-compliance-it-support": "renders correctly, 0 console errors, no VideoObject",
+      "/cyber-risk-scorecard": "renders correctly (hero, Start Your Risk Score CTA visible), 0 console errors, no VideoObject",
+      "/service-areas": "valid route (ServiceAreasIndex component in App.js), renders correctly, 0 console errors, no VideoObject"
+    }
+  }
+}
