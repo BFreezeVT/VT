@@ -29,6 +29,7 @@ import AIPage from "./pages/AIPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPost from "./pages/BlogPost";
 import CyberRiskScorecard from "./pages/CyberRiskScorecard";
+import AIROIPreview from "./pages/AIROIPreview";
 import NotFound from "./pages/NotFound";
 import { useEffect, useRef, useCallback } from "react";
 import { useLocation } from "react-router-dom";
@@ -124,6 +125,7 @@ function App() {
         <Route path="/resources" element={<BlogIndex />} />
         <Route path="/resources/:slug" element={<BlogPost />} />
         <Route path="/cyber-risk-scorecard" element={<CyberRiskScorecard />} />
+        <Route path="/ai-roi-preview" element={<AIROIPreview />} />
         <Route path="/:aiSlug" element={<AIPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
