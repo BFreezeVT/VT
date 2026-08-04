@@ -259,6 +259,13 @@ async def get_lead_count(api_key: str = Depends(verify_admin_api_key)) -> dict:
     count = await db.leads.count_documents({})
     return {"count": count}
 
+@api_router.get("/stats/assessments-completed")
+async def get_assessments_completed_count() -> dict:
+    """Public, PII-free count of completed Business Technology Assessments, used for
+    an on-site social proof indicator. Safe to expose - returns only an integer."""
+    count = await db.leads.count_documents({"source_page": "ai-business-assessment"})
+    return {"count": count}
+
 # Blog posts
 BLOG_POSTS = [
     {

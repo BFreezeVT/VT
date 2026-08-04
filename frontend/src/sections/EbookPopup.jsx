@@ -15,10 +15,19 @@ export default function EbookPopup() {
 
     const handleScroll = () => {
       const scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      if (scrollPct >= 0.25 && !dismissed) {
-        setShow(true);
-        window.removeEventListener("scroll", handleScroll);
+      if (scrollPct < 0.25 || dismissed) return;
+
+      // Don't interrupt an active Human Risk Simulation game session - wait until
+      // that section has scrolled out of view before showing the popup.
+      const gameSection = document.getElementById("cyber-game");
+      if (gameSection) {
+        const rect = gameSection.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) return;
       }
+
+      setShow(true);
+      window.removeEventListener("scroll", handleScroll);
     };
 
     window.addEventListener("scroll", handleScroll);

@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle } from "lucide-react";
+import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users } from "lucide-react";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
+import axios from "axios";
+
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const MIN_COUNT_TO_DISPLAY = 5; // avoid displaying a sparse-looking count
 
 const steps = [
   {
@@ -130,6 +134,13 @@ export default function FreeAuditOffer() {
   const [answers, setAnswers] = useState({});
   const [animating, setAnimating] = useState(false);
   const [contactInfo, setContactInfo] = useState({ company: "", name: "", phone: "", email: "" });
+  const [completedCount, setCompletedCount] = useState(0);
+
+  useEffect(() => {
+    axios.get(`${API}/stats/assessments-completed`)
+      .then((res) => setCompletedCount(res.data?.count || 0))
+      .catch((err) => console.error("Failed to load assessment completion count:", err));
+  }, []);
 
   const totalScoredQuestions = steps.flatMap(s => s.questions).filter(q => q.options[0]?.score !== undefined);
   const maxScore = totalScoredQuestions.length * 10;
@@ -263,6 +274,11 @@ export default function FreeAuditOffer() {
               Start Assessment <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
             <p className="text-[#c0cfe0]/40 text-xs mt-4">Takes under 3 minutes. No sales pressure.</p>
+            {completedCount >= MIN_COUNT_TO_DISPLAY && (
+              <p data-testid="assessments-completed-ticker" className="inline-flex items-center gap-1.5 text-[#0077B3] text-xs font-medium mt-4 border border-[#0077B3]/20 bg-[#0077B3]/5 rounded-full px-4 py-1.5">
+                <Users className="w-3 h-3" /> Joined by {completedCount}+ businesses who&rsquo;ve already completed theirs
+              </p>
+            )}
           </div>
         )}
 

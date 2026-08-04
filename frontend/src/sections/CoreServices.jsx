@@ -111,21 +111,6 @@ export default function CoreServices() {
             </div>
           ))}
         </div>
-
-        {/* What sets us apart strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { value: "<5 min", label: "Response Time" },
-            { value: "98%", label: "Client Retention" },
-            { value: "100+", label: "Years Combined Experience" },
-            { value: "Dedicated", label: "Account Manager for Every Client" },
-          ].map((item) => (
-            <div key={item.label} className="text-center p-4 border border-white/[0.06] rounded-lg bg-white/[0.02]">
-              <p className="stat-number text-2xl text-white mb-1">{item.value}</p>
-              <p className="text-[#94a8be] text-[10px] uppercase tracking-wider">{item.label}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

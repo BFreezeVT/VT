@@ -40,6 +40,7 @@ export default function ROICalculator({ teamSize, setTeamSize, manualHours, setM
               data-testid="team-size-slider"
               value={[teamSize]}
               onValueChange={(v) => setTeamSize(v[0])}
+              onValueCommit={(v) => { if (window.gtag) window.gtag("event", "roi_calculator_adjust", { event_category: "ai_roi_calculator", field: "team_size", value: v[0] }); }}
               min={1}
               max={150}
               step={1}
@@ -62,6 +63,7 @@ export default function ROICalculator({ teamSize, setTeamSize, manualHours, setM
               data-testid="manual-hours-slider"
               value={[manualHours]}
               onValueChange={(v) => setManualHours(v[0])}
+              onValueCommit={(v) => { if (window.gtag) window.gtag("event", "roi_calculator_adjust", { event_category: "ai_roi_calculator", field: "manual_hours", value: v[0] }); }}
               min={1}
               max={25}
               step={1}
@@ -97,7 +99,7 @@ export default function ROICalculator({ teamSize, setTeamSize, manualHours, setM
               These are directional sample estimates based on industry-average assumptions (~${AVG_HOURLY_LABOR_COST}/hr fully-loaded labor cost, {Math.round(AUTOMATION_EFFICIENCY_RATE * 100)}% average automation efficiency gain) - not a quote or guarantee. Your actual ROI depends on your specific workflows and systems.
             </p>
             <div className="text-center">
-              <Link to="/business-technology-assessment" data-testid="roi-primary-cta">
+              <Link to="/business-technology-assessment" data-testid="roi-primary-cta" onClick={() => { if (window.gtag) window.gtag("event", "roi_calculator_cta_click", { event_category: "ai_roi_calculator", cta_position: "mid_page", team_size: teamSize, manual_hours: manualHours, estimated_savings: annualSavings }); }}>
                 <Button className="bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-md font-bold text-base px-8 h-12">
                   Get Your Personalized ROI & Readiness Report <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>

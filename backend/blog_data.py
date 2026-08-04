@@ -1739,7 +1739,9 @@ If you don't know (and they can't easily tell you) your current patch compliance
 Proactive IT includes forward-looking planning, not just reactive maintenance. No roadmap suggests a purely reactive relationship.
 
 *Veracity Technologies provides Minneapolis-St. Paul businesses with genuinely proactive managed IT, backed by regular reporting and quarterly strategic reviews. See the difference with a free assessment.*"""},
-    {"slug": "what-is-soc-2-compliance", "title": "What Is SOC 2 Compliance?", "excerpt": "SOC 2 compliance demonstrates your organization meets the highest standards for security and availability.", "category": "Compliance", "published_date": "2025-09-22", "read_time": "6 min read", "content": """SOC 2 compliance has become an increasingly common requirement for businesses working with clients who need assurance about how their data is protected - particularly in B2B software, financial services, and professional services.
+    {"slug": "what-is-soc-2-compliance", "title": "What Is SOC 2 Compliance?", "excerpt": "SOC 2 compliance demonstrates your organization meets the highest standards for security and availability.", "category": "Compliance", "published_date": "2025-09-22", "read_time": "6 min read", "content": """In plain terms: SOC 2 is an independent audit that proves - with real evidence, not just a promise - that a company handles the data entrusted to it securely and responsibly.
+
+SOC 2 compliance has become an increasingly common requirement for businesses working with clients who need assurance about how their data is protected - particularly in B2B software, financial services, and professional services.
 
 ## What SOC 2 Actually Evaluates
 
@@ -1767,6 +1769,31 @@ A Type I report evaluates whether appropriate controls are in place at a single 
 SOC 2 preparation typically takes several months to a year depending on current security maturity. Starting with a gap assessment against the specific trust service criteria relevant to your business is the most efficient first step.
 
 *Veracity Technologies helps Minneapolis-St. Paul businesses prepare for SOC 2 compliance with gap assessments and implementation of the required security controls.*"""},
+    {"slug": "what-is-cmmc-compliance", "title": "What Is CMMC Compliance?", "excerpt": "CMMC compliance is required for many defense contractors and subcontractors. Here is what it actually means in plain terms.", "category": "Compliance", "published_date": "2025-09-25", "read_time": "6 min read", "content": """In plain terms: CMMC is the Department of Defense's way of checking that companies working on defense contracts are actually protecting the sensitive information they handle - not just saying they do on paper.
+
+## What CMMC Actually Is
+
+Cybersecurity Maturity Model Certification (CMMC) is a framework the Department of Defense created to verify that contractors and subcontractors handling Controlled Unclassified Information (CUI) or Federal Contract Information (FCI) have real, working security controls in place - not just a written policy sitting in a drawer.
+
+## Who Actually Needs It
+
+If your business bids on or supports DoD contracts - directly or as a subcontractor to a prime contractor - you likely need to meet a specific CMMC level to keep or win that work. This affects a wide range of Minnesota manufacturers, engineering firms, and suppliers in the defense supply chain, including smaller companies several tiers removed from the DoD itself.
+
+## The Three CMMC Levels
+
+- **Level 1 (Foundational)**: Basic safeguarding practices for FCI, verified through an annual self-assessment.
+- **Level 2 (Advanced)**: Aligns with NIST SP 800-171, required for most contractors handling CUI, and typically requires a third-party assessment.
+- **Level 3 (Expert)**: Reserved for the highest-risk programs, adding a government-led assessment on top of Level 2 requirements.
+
+## Why It Matters Beyond the Contract
+
+Preparing for CMMC usually closes real security gaps - multi-factor authentication, access controls, activity monitoring, and incident response - that reduce your actual risk of a breach, not just your paperwork risk on an audit.
+
+## Getting Started
+
+Most businesses start with a gap assessment against the NIST 800-171 controls to see where they stand relative to the CMMC level their contracts require, then build a prioritized remediation plan from there.
+
+*Veracity Technologies helps Minnesota manufacturers and defense contractors prepare for CMMC compliance with gap assessments and implementation of the required security controls.*"""},
     {"slug": "cyber-incident-in-st.paul-prompts-statewide-emergency", "title": "Cyber Incident in St. Paul Prompts Statewide Emergency", "excerpt": "A real cyber incident in St. Paul that prompted a statewide emergency response.", "category": "Cybersecurity", "published_date": "2025-09-18", "read_time": "5 min read", "content": """A significant cyberattack affecting St. Paul city systems drew statewide attention, disrupting municipal services and prompting an emergency response - a stark, local reminder that no organization, public or private, is too small or too local to be targeted.
 
 ## What the Incident Revealed
