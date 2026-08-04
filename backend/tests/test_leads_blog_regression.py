@@ -10,6 +10,7 @@ import requests
 import pytest
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL').rstrip('/')
+ADMIN_API_KEY = os.environ.get('ADMIN_API_KEY', 'HLv501_nmDY8cVEwyNKfk3f1QhBnIEMj4u46gVV1g94')
 
 
 @pytest.fixture
@@ -61,7 +62,7 @@ class TestLeads:
         assert create_resp.status_code == 200
         lead_id = create_resp.json()["id"]
 
-        get_resp = api_client.get(f"{BASE_URL}/api/leads")
+        get_resp = api_client.get(f"{BASE_URL}/api/leads", headers={"X-Admin-Key": ADMIN_API_KEY})
         assert get_resp.status_code == 200
         leads = get_resp.json()
         assert isinstance(leads, list)
@@ -72,7 +73,7 @@ class TestLeads:
         assert "_id" not in matching[0]
 
     def test_leads_count_endpoint(self, api_client):
-        resp = api_client.get(f"{BASE_URL}/api/leads/count")
+        resp = api_client.get(f"{BASE_URL}/api/leads/count", headers={"X-Admin-Key": ADMIN_API_KEY})
         assert resp.status_code == 200
         data = resp.json()
         assert "count" in data

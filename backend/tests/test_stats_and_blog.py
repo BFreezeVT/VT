@@ -1,7 +1,10 @@
 """
 Tests for:
 - New public GET /api/stats/assessments-completed endpoint (no auth required)
-- New blog posts: what-is-cmmc-compliance, what-is-soc-2-compliance (In plain terms opener)
+- Blog posts: soc-2-compliance-guide-small-business, cmmc-compliance-guide-defense-contractors
+  (comprehensive posts with an "In plain terms:" opener merged in during Session 12 - the
+  "what-is-soc-2-compliance"/"what-is-cmmc-compliance" duplicate posts these tests originally
+  targeted were intentionally deleted that same session; these slugs are the real ones)
 - Regression: /api/leads still requires auth
 """
 import os
@@ -36,17 +39,17 @@ class TestLeadsAuthRegression:
 
 class TestBlogPosts:
     def test_soc2_post_exists_with_plain_terms(self):
-        resp = requests.get(f"{BASE_URL}/api/blog/what-is-soc-2-compliance")
+        resp = requests.get(f"{BASE_URL}/api/blog/soc-2-compliance-guide-small-business")
         assert resp.status_code == 200
         data = resp.json()
-        assert data["slug"] == "what-is-soc-2-compliance"
+        assert data["slug"] == "soc-2-compliance-guide-small-business"
         assert data["content"].strip().startswith("In plain terms:")
 
     def test_cmmc_post_exists_with_plain_terms(self):
-        resp = requests.get(f"{BASE_URL}/api/blog/what-is-cmmc-compliance")
+        resp = requests.get(f"{BASE_URL}/api/blog/cmmc-compliance-guide-defense-contractors")
         assert resp.status_code == 200
         data = resp.json()
-        assert data["title"] == "What Is CMMC Compliance?"
+        assert "CMMC" in data["title"]
         assert data["content"].strip().startswith("In plain terms:")
         assert "CMMC" in data["content"]
 

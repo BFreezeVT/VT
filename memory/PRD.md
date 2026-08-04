@@ -206,6 +206,26 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 17 (Feb 2026) — Test suite cleanup: stale slugs + cross-file quota isolation
+- **Fixed 2 stale blog-slug tests**: `test_stats_and_blog.py` was still targeting
+  `what-is-soc-2-compliance`/`what-is-cmmc-compliance`, the duplicate posts that were
+  intentionally deleted back in Session 12 when their "In plain terms:" openers were merged
+  into the real comprehensive posts. Repointed to the correct, live slugs
+  (`soc-2-compliance-guide-small-business`, `cmmc-compliance-guide-defense-contractors`) -
+  both verified live via curl to actually start with "In plain terms:".
+- **Added cross-file rate-limit quota isolation**: new `backend/tests/conftest.py` with an
+  autouse, module-scoped fixture that resets `lead_submission_log` + `rate_limit_global_log`
+  before every test FILE runs. Several test files intentionally exhaust the 5/hour per-IP
+  lead/report-email budget to prove the 429 behavior works - without this, that exhaustion
+  leaked across files (all sharing the same test-runner IP within the same hour) and caused
+  unrelated tests in later files to fail with 429 instead of their real expected result.
+- **Fixed a genuinely stale admin-auth gap in `test_leads_blog_regression.py`**: two `GET
+  /api/leads`/`GET /api/leads/count` calls predated the Session 6 admin-key requirement and
+  never sent the `X-Admin-Key` header - added it, matching the pattern already used in
+  `test_leads_admin_security.py`/`test_security_audit.py`.
+- **Verified**: full `pytest tests/` run (54 tests, all 6 files) now passes 100% end-to-end,
+  confirmed twice in a row with zero manual state pre-clearing between runs.
+
 ### Session 16 (Feb 2026) — Security audit + fix (mail-relay abuse vector)
 - **Full security audit requested by user** (`security_audit_agent`) on the codebase deployed to
   Preview. Result: **FAIL - ACTION REQUIRED**, 1 HIGH finding, rest hardening-level.
