@@ -206,6 +206,14 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 12 (Feb 2026) — Content dedup fix, industry ROI, PDF export parity, real email delivery
+- **Content audit + fixed a self-introduced duplication bug**: discovered that "soc-2-compliance-guide-small-business" and "cmmc-compliance-guide-defense-contractors" (comprehensive guides) already existed in `server.py`'s BLOG_POSTS before Session 9 mistakenly assumed they were broken sitemap links and created shorter duplicate posts (`what-is-soc-2-compliance`, `what-is-cmmc-compliance`). Fixed by merging the "In plain terms:" plain-language opener into the original comprehensive posts, deleting the duplicates, and repointing all links (TrustIndicators, Compliance, sitemap.xml) to the originals. Also confirmed the `BlogPost.jsx` heading+list render fix (Session 11) resolved all 7 affected posts site-wide.
+- **Industry-based ROI**: `lib/roiCalculator.js` now uses an `INDUSTRY_HOURLY_RATES` map (Construction $42, Financial Services $45, Manufacturing $38, Healthcare $40, Professional Services $48) keyed off the assessment's existing `industry` answer, instead of a flat $38/hr - verified with a live differential test producing genuinely different $ outputs per industry.
+- **Scorecard PDF export parity**: extracted shared `lib/pdfReportHelpers.js` (branded header/score-block/ROI-block/list-section/footer) used by both `generateAssessmentPDF.js` and the new `generateScorecardPDF.js`, so the Cyber Risk Scorecard now has the same "Download Executive ROI & Readiness Report" capability as the Assessment.
+- **Real email delivery for both PDF reports**: new `POST /api/reports/email` backend endpoint (EmailStr validation, base64 PDF attachment via MIMEApplication, shares the existing `check_lead_rate_limit` guard with `/leads`) - wired into a new "Email Me This Report" button on the Assessment results, and into the Cyber Risk Scorecard's pre-existing "Email me my full report" flow, which previously only captured a lead without actually sending anything (now genuinely emails a PDF attachment).
+- Tested via `testing_agent_v4` (iteration_26.json) — 100% backend (4/4 pytest) and 100% frontend,
+  zero bugs; confirmed real SMTP delivery and real shared rate-limiting end-to-end.
+
 ### Session 11 (Feb 2026) — Dynamic assessment ROI, executive PDF report, content render bug fix
 - **Assessment ROI integration**: `FreeAuditOffer.jsx`'s "Operational Efficiency" step gained a new
   unscored follow-up question ("weekly_manual_hours" - hours/week/person on manual tasks) that
