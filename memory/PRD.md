@@ -206,6 +206,30 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 10 (Feb 2026) — Contrast bug fix, compliance links expansion, combined Scorecard+ROI
+- **Real contrast/functionality bug fixed**: `IndustryFormSection.jsx` had a `bg-white` section
+  wrapping a dark-themed card design with `text-white` labels/headings (invisible), AND both
+  `IndustryFormSection.jsx` and `CityFormSection.jsx` had lead-capture `Input` fields with literal
+  `bg-white ... text-white` (typed text was invisible on every industry/city page form — a real
+  conversion-impacting bug, not just cosmetic). Fixed section bg to `bg-[#0f1d32]` and Input bg to
+  `bg-white/5` across both files, matching the working pattern used elsewhere on the site.
+- **Compliance section expanded to 6 linked cards**: added a new HIPAA Compliance card (previously
+  didn't exist as a card) and "Learn more" links for ISO 27001 and OSHA, alongside the existing
+  CMMC link. Wrote 2 new plain-language "What Is X?" blog posts to back these
+  (`what-is-iso-27001`, `what-is-osha-digital-recordkeeping-compliance`); HIPAA links to the
+  existing `hipaa-compliance-small-healthcare-practices` post. Added both new posts to sitemap.xml.
+- **Combined Cyber Risk Scorecard + ROI Calculator** (user-requested, replacing a separate
+  "promote ROI calculator" idea): `pages/CyberRiskScorecard/ScorecardROI.jsx` is a new section
+  rendered directly in the scorecard results flow (between Top Risks/Recommendations and the
+  booking calendar) — completing the 12-question quiz now shows BOTH the risk score AND a sample
+  ROI estimate (2 sliders: Team Size, Manual Hours) where the automation-efficiency assumption
+  scales with the user's own risk score (`0.35 + risk% × 0.25`), directly tying "higher risk =
+  more to gain from fixing it." CTA scrolls down to the existing booking section and reinforces
+  Veracity as "Minnesota's premier managed IT partner for growing businesses." Added a light
+  cross-link from `/ai-roi-preview` to `/cyber-risk-scorecard`.
+- Tested via `testing_agent_v4` (iteration_24.json) — 100% frontend, zero bugs, confirmed via
+  actual typing into form fields and full quiz completion.
+
 ### Session 6 (Feb 2026) — Code review + fixes, related articles carousel
 - **Related Articles carousel** (user-requested): replaced static 3-post "Related Articles" grid
   in `BlogPost.jsx` with `sections/RelatedArticlesCarousel.jsx` (shadcn/embla Carousel),
