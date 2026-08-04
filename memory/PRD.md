@@ -205,16 +205,6 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
     regression clean, no console errors.
 
 ## Backlog / Next Tasks
-- **P2**: E-book download modal on homepage can overlay/block the Human Risk Simulation game
-  section — pre-existing UX friction, noted by testing agent, not yet fixed.
-- **P2 (known, pre-existing, not a regression)**: A couple of light-background success/thank-you
-  cards (industry page "Thank you!" heading, and previously-noted CoreServices section) have mild
-  white-text-on-near-white-background contrast. Pre-existing, cosmetic, low priority — worth a
-  future visual polish pass if user wants it.
-- Deployment: user confirmed GoDaddy DNS / Search Console are good to go for veracitytechmn.com.
-  All fixes from Sessions 5-7 (blog content, refactors, related articles carousel, VideoObject
-  removal, code-review fix batch, security-audit fix batch) are in PREVIEW only and need a
-  redeploy to reach production.
 
 ### Session 6 (Feb 2026) — Code review + fixes, related articles carousel
 - **Related Articles carousel** (user-requested): replaced static 3-post "Related Articles" grid
@@ -256,10 +246,45 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
     `/app/backend/tests/test_leads_admin_security.py`. Cleaned up 17 TEST_-prefixed leads
     created during testing from the live `leads` collection afterward (45 real leads intact).
 
+### Session 9 (Feb 2026) — Homepage stat dedup, SOC2/CMMC/AI explainer links, social proof ticker,
+UX fix, ROI calculator analytics
+- **Homepage stat de-duplication**: removed the duplicate "What sets us apart" 4-stat strip
+  (Response Time/Client Retention/Years Combined Experience/Account Manager) from the bottom of
+  `CoreServices.jsx` — these stats are already shown once in `TrustIndicators.jsx` near the top.
+  Also deleted `sections/TrustStats.jsx` (unused dead code duplicating the same 4 stats).
+- **SOC2/CMMC/AI+Automation explainer links**: the 3 "Expertise" badges in `TrustIndicators.jsx`
+  (previously plain, non-clickable text) now link to plain-language explainer content with a
+  visible "Learn more" hint: SOC 2 → `/resources/what-is-soc-2-compliance` (existing post, added
+  an "In plain terms:" opening sentence), CMMC → `/resources/what-is-cmmc-compliance` (**new blog
+  post created** in `blog_data.py`, same "What Is X?" plain-language format), AI+Automation →
+  `/resources/how-ai-automation-are-transforming-small-businesses-in-minneapolis` (existing post).
+  Also added a "What is CMMC?" link on the CMMC card in `Compliance.jsx`.
+  - Fixed 2 pre-existing broken sitemap.xml entries (`soc-2-compliance-guide-small-business` and
+    `cmmc-compliance-guide-defense-contractors` — blog slugs that never actually existed in
+    `blog_data.py`) to point to the real, working URLs, plus added the AI automation post URL.
+- **Social Proof Ticker** (previously deferred pending real numbers): rather than hardcode a
+  number, added a new public, PII-free `GET /api/stats/assessments-completed` endpoint (counts
+  `db.leads` where `source_page == "ai-business-assessment"`, no auth) and a ticker badge in
+  `FreeAuditOffer.jsx`'s intro stage that only renders once the live count reaches 5+
+  (`MIN_COUNT_TO_DISPLAY`) — always accurate, never a fake number, and will activate itself
+  automatically once production traffic passes that threshold.
+- **UX fix**: `EbookPopup.jsx`'s scroll-triggered popup now checks `getBoundingClientRect()` on
+  `#cyber-game` before showing — it no longer appears while the Human Risk Simulation game
+  section is anywhere in the viewport, resolving the previously-noted overlap with game buttons.
+- **ROI Calculator analytics**: added GA4 events on `/ai-roi-preview` — `roi_calculator_adjust`
+  (fires via Radix `onValueCommit` when either slider is released) and `roi_calculator_cta_click`
+  (fires on both CTA buttons, includes current slider values + estimated savings).
+- Tested via `testing_agent_v4` (iteration_23.json) — 100% backend (7/7 new pytest,
+  `backend/tests/test_stats_and_blog.py`) and 100% frontend, zero bugs found.
+- **Note**: "Search Console Check" (validating the earlier VideoObject fix) remains a user action
+  in Google Search Console itself, not a dev task — no code change needed once redeployed.
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
 - `GET /api/leads`, `GET /api/blog`, `GET /api/blog/:slug`
+- `GET /api/stats/assessments-completed` — public, PII-free count used by the homepage social
+  proof ticker
 
 ## Credentials
 See `/app/memory/test_credentials.md` — no auth on this app (public marketing site); SMTP
