@@ -10,12 +10,13 @@ This autouse, module-scoped fixture gives every test FILE its own fresh rate-lim
 regardless of what ran before it or what order pytest collects files in.
 """
 import os
+from pathlib import Path
 
 import pymongo
 import pytest
 from dotenv import load_dotenv
 
-load_dotenv('/app/backend/.env')
+load_dotenv(str(Path(__file__).resolve().parent.parent / ".env"))
 MONGO_URL = os.environ['MONGO_URL']
 DB_NAME = os.environ['DB_NAME']
 _mongo_client = pymongo.MongoClient(MONGO_URL)

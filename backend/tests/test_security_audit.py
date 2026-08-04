@@ -10,20 +10,21 @@ import html
 import pytest
 import requests
 import pymongo
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv('/app/backend/.env')
+load_dotenv(str(Path(__file__).resolve().parent.parent / ".env"))
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL')
 if not BASE_URL:
-    # fallback read from frontend/.env
-    with open('/app/frontend/.env') as f:
+    # fallback read from frontend/.env for local runs where it wasn't exported
+    with open(str(Path(__file__).resolve().parent.parent.parent / "frontend" / ".env")) as f:
         for line in f:
             if line.startswith('REACT_APP_BACKEND_URL'):
                 BASE_URL = line.strip().split('=', 1)[1]
 BASE_URL = BASE_URL.rstrip('/')
 
-ADMIN_API_KEY = os.environ.get('ADMIN_API_KEY', 'HLv501_nmDY8cVEwyNKfk3f1QhBnIEMj4u46gVV1g94')
+ADMIN_API_KEY = os.environ['ADMIN_API_KEY']
 MONGO_URL = os.environ['MONGO_URL']
 DB_NAME = os.environ['DB_NAME']
 

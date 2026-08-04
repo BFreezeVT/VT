@@ -6,12 +6,16 @@ Covers: POST /api/leads (public, no auth), GET /api/leads and GET /api/leads/cou
 import os
 import time
 import uuid
+from pathlib import Path
 
 import pytest
 import requests
+from dotenv import load_dotenv
+
+load_dotenv(str(Path(__file__).resolve().parent.parent / ".env"))
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL').rstrip('/')
-ADMIN_KEY = "HLv501_nmDY8cVEwyNKfk3f1QhBnIEMj4u46gVV1g94"
+ADMIN_KEY = os.environ['ADMIN_API_KEY']
 
 
 @pytest.fixture

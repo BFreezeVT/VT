@@ -6,11 +6,16 @@ Regression test suite for the code-quality/security hardening pass:
   (used to render BlogPost.jsx with new DOMPurify-sanitized formatInline())
 """
 import os
+from pathlib import Path
+
 import requests
 import pytest
+from dotenv import load_dotenv
+
+load_dotenv(str(Path(__file__).resolve().parent.parent / ".env"))
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL').rstrip('/')
-ADMIN_API_KEY = os.environ.get('ADMIN_API_KEY', 'HLv501_nmDY8cVEwyNKfk3f1QhBnIEMj4u46gVV1g94')
+ADMIN_API_KEY = os.environ['ADMIN_API_KEY']
 
 
 @pytest.fixture

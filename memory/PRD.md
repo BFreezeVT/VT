@@ -206,6 +206,30 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 18 (Feb 2026) — GitHub Actions CI wired up + hardcoded-secret cleanup
+- **Added `.github/workflows/backend-tests.yml`**: runs the full 54-test backend pytest suite
+  automatically on every push/PR (user confirmed the repo is already linked to GitHub via
+  "Save to GitHub"). Spins up a real MongoDB service container + a real running FastAPI
+  instance, then runs `pytest tests/ -v`. Optional GitHub secrets (`ADMIN_API_KEY`,
+  `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `NOTIFY_EMAIL`) enable full email-flow coverage; the
+  one test that requires a real SMTP send skips gracefully if they're not configured, so the
+  rest of the suite still runs green out of the box.
+- **[Fixed] Real secret was hardcoded in 3 test files**: the actual production `ADMIN_API_KEY`
+  value was hardcoded as a literal/fallback-default string in `test_leads_admin_security.py`,
+  `test_leads_blog_regression.py`, and `test_security_audit.py` - about to become visible in a
+  GitHub-hosted repo. All three now require `ADMIN_API_KEY` from the environment (loaded via
+  `.env` locally, via the workflow's `env:`/secrets in CI) with no hardcoded fallback.
+- **[Fixed] Hardcoded absolute path (`/app/backend/.env`) in test/conftest files** - caught by
+  actually simulating a fresh checkout in `/tmp` with a fake `.env`, which is exactly what
+  exposed both this bug and the one above (the sim showed the wrong `.env` being silently
+  loaded, and stale rate-limit state leaking from the wrong Mongo DB). Now resolved relative to
+  each test file's own location (`Path(__file__).resolve().parent.parent / ".env"`), portable
+  to any checkout path including GitHub Actions' runner path.
+- **Verified 3x**: (1) full real-Preview run, 54/54 pass; (2) simulated fresh checkout with NO
+  SMTP secrets and a throwaway Mongo DB, 53 pass + 1 correctly skipped; (3) final real-Preview
+  confirmation run, 54/54 pass again. Test artifacts and simulation databases cleaned up after
+  each run.
+
 ### Session 17 (Feb 2026) — Test suite cleanup: stale slugs + cross-file quota isolation
 - **Fixed 2 stale blog-slug tests**: `test_stats_and_blog.py` was still targeting
   `what-is-soc-2-compliance`/`what-is-cmmc-compliance`, the duplicate posts that were
