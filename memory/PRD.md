@@ -182,6 +182,28 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
     on the homepage can intermittently overlay/block interaction with lower sections
     including the Human Risk Simulation game — flagged for a future UX pass if desired.
 
+### Session 8 (Feb 2026) — New AI ROI Calculator SEO landing page
+- **New page `/ai-roi-preview`** (user-requested SEO landing page):
+  - `pages/AIROIPreview/{index,ROICalculator,ROIContent}.jsx` — client-side only, no backend calls
+  - Interactive sample calculator: Team Size slider (1-150, default 20) + Manual Hours per
+    employee per week slider (1-25, default 8), using shadcn `Slider`. Live calc using
+    transparent industry-average assumptions (avg $38/hr fully-loaded labor cost, 45% average
+    automation efficiency gain, 52 weeks/year) → "Hours reclaimed / year" + "Estimated annual
+    savings", both under an explicit "Sample Estimates" label + assumptions disclosure note.
+  - Primary CTA "Get Your Personalized ROI & Readiness Report" → `/business-technology-assessment`
+    (both mid-page and bottom-of-page)
+  - ~400-word SEO section "The Business Case for Managed AI and IT ROI" (H2 + 4 H3s), includes
+    keywords "Managed IT savings", "AI automation ROI", "Operational efficiency for small business"
+  - `document.title` = "AI ROI Calculator for Businesses | Veracity AI" + cost-savings meta
+    description, set/reset via `useEffect` matching existing page pattern
+  - Added to desktop nav (`nav-roi-calculator`), mobile nav (`mobile-nav-roi-calculator`), footer
+    (`footer-link-roi-calculator`), route in `App.js`, and `sitemap.xml`
+  - Styled consistent with existing assessment/tool pages (dark `#0f1d32`, `#0077B3` accent,
+    Outfit headings, `grid-border-card`)
+  - Tested via `testing_agent_v4` (iteration_22.json) — 100% pass: sliders work via both keyboard
+    and mouse drag, results recalculate live, CTAs/copy/meta tags exact match, nav/footer/sitemap
+    regression clean, no console errors.
+
 ## Backlog / Next Tasks
 - **P2**: E-book download modal on homepage can overlay/block the Human Risk Simulation game
   section — pre-existing UX friction, noted by testing agent, not yet fixed.
