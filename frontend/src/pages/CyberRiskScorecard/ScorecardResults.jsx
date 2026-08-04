@@ -80,7 +80,7 @@ export default function ScorecardResults({
         </div>
 
         {/* Potential ROI from closing the gaps above - ties Risk Score to real business value */}
-        <ScorecardROI pct={pct} riskLevel={riskLevel} riskColor={riskColor} />
+        <ScorecardROI pct={pct} riskLevel={riskLevel} riskColor={riskColor} totalScore={totalScore} maxScore={maxScore} topRisks={topRisks} topRecs={topRecs} />
 
         {/* CONVERSION SECTION */}
         <div id="scorecard-booking" className="bg-white rounded-lg p-8 sm:p-12 mb-12" data-testid="scorecard-conversion">

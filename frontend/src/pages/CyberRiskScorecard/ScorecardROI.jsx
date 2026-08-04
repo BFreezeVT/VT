@@ -1,30 +1,31 @@
 import { Slider } from "../../components/ui/slider";
 import { Button } from "../../components/ui/button";
-import { Info, ArrowRight, TrendingUp } from "lucide-react";
+import { Info, ArrowRight, TrendingUp, Download } from "lucide-react";
 import { useState } from "react";
+import { generateScorecardPDF } from "../../lib/generateScorecardPDF";
+import { calculateScorecardROI, AVG_HOURLY_LABOR_COST } from "../../lib/scorecardRoiCalculator";
 
-// Same transparent, industry-average assumptions used on the standalone /ai-roi-preview
-// calculator, but the automation-efficiency assumption scales with the business's own risk
-// score - a higher risk score implies more manual, unmanaged, unmonitored processes, and
-// therefore more time/cost recoverable by closing those gaps with managed IT + AI automation.
-const AVG_HOURLY_LABOR_COST = 38;
-const WEEKS_PER_YEAR = 52;
-const BASE_EFFICIENCY_RATE = 0.35;
-const MAX_RISK_EFFICIENCY_BONUS = 0.25;
-
-export default function ScorecardROI({ pct, riskLevel, riskColor }) {
+export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, maxScore, topRisks, topRecs }) {
   const [teamSize, setTeamSize] = useState(20);
   const [manualHours, setManualHours] = useState(8);
 
-  const riskAdjustedEfficiency = BASE_EFFICIENCY_RATE + (pct / 100) * MAX_RISK_EFFICIENCY_BONUS;
-  const weeklyManualHoursTotal = teamSize * manualHours;
-  const weeklyHoursReclaimed = weeklyManualHoursTotal * riskAdjustedEfficiency;
-  const annualHoursReclaimed = Math.round(weeklyHoursReclaimed * WEEKS_PER_YEAR);
-  const annualSavings = Math.round(annualHoursReclaimed * AVG_HOURLY_LABOR_COST);
+  const { riskAdjustedEfficiency, annualHoursReclaimed, annualSavings, monthlySavings } = calculateScorecardROI(pct, teamSize, manualHours);
 
   const scrollToBooking = () => {
     document.getElementById("scorecard-booking")?.scrollIntoView({ behavior: "smooth" });
     if (window.gtag) window.gtag("event", "scorecard_roi_cta_click", { event_category: "cyber_risk_scorecard", risk_level: riskLevel, estimated_savings: annualSavings });
+  };
+
+  const handleDownloadReport = () => {
+    generateScorecardPDF({
+      riskLevel,
+      totalScore,
+      maxScore,
+      topRisks,
+      topRecs,
+      roi: { teamSize, weeklyHoursPerPerson: manualHours, hourlyRate: AVG_HOURLY_LABOR_COST, annualHoursReclaimed, monthlySavingsForecast: monthlySavings },
+    });
+    if (window.gtag) window.gtag("event", "scorecard_report_download", { event_category: "cyber_risk_scorecard", risk_level: riskLevel });
   };
 
   return (
@@ -101,6 +102,11 @@ export default function ScorecardROI({ pct, riskLevel, riskColor }) {
             See How Veracity Can Close These Gaps <ArrowRight className="w-4 h-4 ml-1" />
           </Button>
           <p className="text-[#94a8be]/60 text-xs mt-3">Minnesota&rsquo;s premier managed IT partner for growing businesses.</p>
+          <div className="mt-4">
+            <button data-testid="scorecard-download-report-btn" onClick={handleDownloadReport} className="inline-flex items-center gap-2 text-[#94a8be] hover:text-white text-sm transition-colors">
+              <Download className="w-3.5 h-3.5" /> Download Executive ROI & Readiness Report
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,32 @@
+{
+  "summary": "Tested this round's 4 features: content audit fix, email-PDF (assessment + scorecard), scorecard PDF export, and industry-based ROI. All verified working end-to-end against the real backend (real SMTP sends, real rate-limiting). Zero console errors on regression smoke tests (homepage, /ai-roi-preview). Backend pytest suite for new /api/reports/email endpoint: 4/4 passed.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "verified_working": [
+    "Content fix: /resources/hipaa-compliance-small-healthcare-practices, /resources/soc-2-compliance-guide-small-business, /resources/cmmc-compliance-guide-defense-contractors, /resources/zero-trust-architecture-explained all return 200 with raw '**bold**' markdown correctly rendered as <strong> (verified via rendered markdown extraction, no literal asterisks in output) - heading+list rendering fix confirmed",
+    "Old duplicate slugs /resources/what-is-soc-2-compliance and /resources/what-is-cmmc-compliance correctly removed from backend (404), confirmed absent from blog_data.py",
+    "TrustIndicators trust-credential-0 (SOC2) and trust-credential-1 (CMMC) hrefs correctly point to /resources/soc-2-compliance-guide-small-business and /resources/cmmc-compliance-guide-defense-contractors; clicked through, no 404",
+    "Compliance section compliance-card-link-0 (CMMC) correctly points to /resources/cmmc-compliance-guide-defense-contractors",
+    "INDUSTRY ROI: completed assessment twice with identical team_size/weekly_manual_hours, only industry answer changed - Financial Services run produced $219,206/mo forecast vs Manufacturing run's $185,108/mo, proving industry-aware (non-flat) hourly-rate calc ($45/hr vs $38/hr) is genuinely wired into roiCalculator.js",
+    "Assessment Email PDF flow: after contact form submit, clicked email-report-btn, real POST /api/reports/email call succeeded, email-report-success message displayed 'Sent! Check your inbox at test_reports_qa@example.com.' referencing the exact email entered in the contact form",
+    "Cyber Risk Scorecard PDF download: completed 12-question quiz, scorecard-download-report-btn under the ROI section triggered a real PDF download (veracity-risk-roi-report-your-organization.pdf, 9,321 bytes)",
+    "Cyber Risk Scorecard Email flow: 'Email me my full report instead' form (First/Last/Email/Company) submitted successfully, showed 'Report sent! Check your inbox.' - confirmed this triggers both the pre-existing POST /api/leads AND the new POST /api/reports/email call",
+    "Backend POST /api/reports/email: invalid email format ('not-an-email') correctly rejected with 422; missing pdf_base64 also 422",
+    "Backend rate-limiting is genuinely shared between /api/leads and /api/reports/email via check_lead_rate_limit - exhausting the 5/hour budget via /api/leads calls caused a subsequent /api/reports/email call from the same IP to return 429 (verified in pytest AND incidentally reproduced during UI testing when my own prior pytest run had exhausted the shared budget, causing a live assessment run's lead-save + email-report to both fail with the expected UI error states, then succeeded again after clearing the rate-limit collection)",
+    "Regression: homepage (200, zero console errors), /ai-roi-preview (200, zero console errors, sliders/calculator visible) all functioning correctly"
+  ],
+  "test_report_links": ["/app/backend/tests/test_reports_email.py", "/app/test_reports/pytest/pytest_results_reports_email.xml"],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "server.py email_report endpoint is clean: proper EmailStr validation, base64 validation with try/except, size cap, CR/LF header sanitization, HTML-escaping of user-supplied name/company - no injection or validation gaps found",
+    "roiCalculator.js INDUSTRY_HOURLY_RATES map is correctly keyed and consumed by calculateAssessmentROI - confirmed via live differential test, not just code inspection",
+    "Minor observation (not a bug): the shared rate limiter's 1-hour window is quite easy to exhaust with combined /leads + /reports/email traffic during heavy QA testing sessions (5 total across both endpoints) - this is a reasonable production anti-abuse tradeoff, just worth being aware of during future testing rounds (clear lead_submission_log between test runs, as done here)."
+  ],
+  "updated_files": ["/app/backend/tests/test_reports_email.py"],
+  "success_rate": {"backend": "100% (4/4 new tests)", "frontend": "100%"},
+  "seed_data_creation": "None persisted - all test leads (TEST_ prefixed) and rate-limit log entries created during testing were cleaned up post-test. Final leads count: 23 (pre-existing real leads untouched, 0 TEST_ prefixed remain, rate_limit log cleared to 0).",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "This round (content audit fix, email-PDF for both Assessment and Scorecard, scorecard PDF export, industry-based ROI) fully verified working end-to-end with real SMTP and real rate-limiting, no bugs found. Note for future agents: /api/leads and /api/reports/email share a 5-req/hour/IP rate limit - if running heavy UI automation immediately after backend pytest hits on this endpoint pair, you may see transient 429s in the UI (this is correct behavior, not a bug) - clear db.lead_submission_log between test phases if you need a fresh budget, as done here.",
+  "rca_of_transient_failure_during_testing": "Mid-session, an assessment run's lead-save and email-report both failed with the app's own correct error UI states ('We couldn't save your contact info...' / 'Couldn't send that email...'). RCA: this was not an app bug - my own earlier pytest run (test_shared_rate_limit_exhausts_and_blocks_both_endpoints) had already inserted 5 lead_submission_log entries for this environment's shared egress IP within the same hour, so the app correctly rate-limited the subsequent browser-driven requests from the same IP. Cleared the collection and re-ran; both flows then succeeded normally, confirming the app's behavior (and the shared limiter) is correct."
+}

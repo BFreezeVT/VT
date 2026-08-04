@@ -9,8 +9,8 @@ const stats = [
 ];
 
 const credentials = [
-  { icon: ShieldCheck, value: "SOC 2", label: "Expertise", link: "/resources/what-is-soc-2-compliance" },
-  { icon: FileCheck, value: "CMMC", label: "Expertise", link: "/resources/what-is-cmmc-compliance" },
+  { icon: ShieldCheck, value: "SOC 2", label: "Expertise", link: "/resources/soc-2-compliance-guide-small-business" },
+  { icon: FileCheck, value: "CMMC", label: "Expertise", link: "/resources/cmmc-compliance-guide-defense-contractors" },
   { icon: Bot, value: "AI+Automation", label: "Expertise", link: "/resources/how-ai-automation-are-transforming-small-businesses-in-minneapolis" },
   { icon: HeartPulse, value: "HIPAA", label: "Expertise", link: "/resources/hipaa-compliance-small-healthcare-practices" },
   { icon: FileCheck, value: "ISO 27001", label: "Expertise", link: "/resources/what-is-iso-27001" },

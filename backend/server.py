@@ -11,10 +11,12 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
+import base64
 from datetime import datetime, timezone, timedelta
+from email.mime.application import MIMEApplication
 from blog_data import BLOG_POSTS_EXTENDED
 
 
@@ -122,6 +124,17 @@ class BlogPostOut(BaseModel):
     content: str
 
 
+class EmailReportRequest(BaseModel):
+    recipient_email: EmailStr
+    recipient_name: Optional[str] = None
+    company_name: Optional[str] = None
+    report_title: str = "Executive ROI & Readiness Report"
+    pdf_base64: str
+
+
+MAX_PDF_BASE64_CHARS = 8_000_000  # generous ceiling (~6MB decoded) for a text-based report PDF
+
+
 # ─── Email notification ──────────────────────────────────────
 
 def _resolve_lead_source(lead: AuditLead) -> str:
@@ -226,6 +239,68 @@ def send_lead_notification(lead: AuditLead) -> bool:
 async def root() -> dict:
     return {"message": "Veracity Technologies API"}
 
+@api_router.post("/reports/email", dependencies=[Depends(check_lead_rate_limit)])
+async def email_report(payload: EmailReportRequest) -> dict:
+    """Emails a client-generated PDF report (Assessment or Cyber Risk Scorecard results) as an
+    attachment to the requester's own email. Rate-limited by IP (same guard as /leads) since this
+    endpoint sends outbound email through our SMTP relay."""
+    if len(payload.pdf_base64) > MAX_PDF_BASE64_CHARS:
+        raise HTTPException(status_code=413, detail="Report file is too large to email.")
+    try:
+        pdf_bytes = base64.b64decode(payload.pdf_base64, validate=True)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid report file.")
+
+    smtp_host = os.environ.get("SMTP_HOST")
+    smtp_port = int(os.environ.get("SMTP_PORT", "587"))
+    smtp_user = os.environ.get("SMTP_USER")
+    smtp_pass = os.environ.get("SMTP_PASS")
+    if not all([smtp_host, smtp_user, smtp_pass]):
+        raise HTTPException(status_code=503, detail="Email delivery is not configured. Please download the report instead.")
+
+    recipient = _sanitize_header_value(payload.recipient_email)
+    title = _sanitize_header_value(payload.report_title)
+    display_name = html.escape(payload.recipient_name or "there")
+    display_company = html.escape(payload.company_name or "your business")
+
+    msg = MIMEMultipart("mixed")
+    msg["Subject"] = f"Your {title} from Veracity Technologies"
+    msg["From"] = smtp_user
+    msg["To"] = recipient
+
+    body_alt = MIMEMultipart("alternative")
+    body_alt.attach(MIMEText(
+        f"Hi {payload.recipient_name or 'there'},\n\nAttached is your {payload.report_title} for {payload.company_name or 'your business'}. "
+        f"If you'd like to walk through it with our team, call us at (952) 941-7333.\n\n- Veracity Technologies",
+        "plain",
+    ))
+    body_alt.attach(MIMEText(
+        f'<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020812;color:#fff;padding:32px;border:1px solid #003B71;">'
+        f'<h2 style="color:#0077B3;margin:0 0 12px;">Your {html.escape(title)}</h2>'
+        f'<p style="color:#fff;">Hi {display_name},</p>'
+        f'<p style="color:#A0B6CD;">Attached is your personalized report for {display_company}. If you&rsquo;d like to walk through it with our team, call us at '
+        f'<a href="tel:9529417333" style="color:#0077B3;">(952) 941-7333</a>.</p>'
+        f'<p style="color:#A0B6CD;">- Veracity Technologies</p></div>',
+        "html",
+    ))
+    msg.attach(body_alt)
+
+    attachment = MIMEApplication(pdf_bytes, _subtype="pdf")
+    filename = title.lower().replace(" ", "-") + ".pdf"
+    attachment.add_header("Content-Disposition", "attachment", filename=filename)
+    msg.attach(attachment)
+
+    try:
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=15) as server:
+            server.starttls()
+            server.login(smtp_user, smtp_pass)
+            server.sendmail(smtp_user, recipient, msg.as_string())
+    except Exception as e:
+        logger.error(f"Failed to email report to {recipient}: {e}")
+        raise HTTPException(status_code=502, detail="Failed to send the email. Please try downloading the report instead.")
+
+    return {"success": True}
+
 @api_router.get("/health")
 async def health_check() -> dict:
     return {"status": "healthy", "service": "Veracity Technologies API", "version": "1.0.0"}
@@ -316,7 +391,9 @@ The organizations that will be most resilient in 2025 and beyond are those that 
         "author": "Veracity Technologies",
         "published_date": "2025-11-15",
         "read_time": "9 min read",
-        "content": """SOC 2 compliance was once considered the domain of large enterprises and SaaS companies. Today, it's increasingly required by clients, partners, and regulators across industries - including financial services, professional services, and even construction firms bidding on government-adjacent projects.
+        "content": """In plain terms: SOC 2 is an independent audit that proves - with real evidence, not just a promise - that a company handles the data entrusted to it securely and responsibly.
+
+SOC 2 compliance was once considered the domain of large enterprises and SaaS companies. Today, it's increasingly required by clients, partners, and regulators across industries - including financial services, professional services, and even construction firms bidding on government-adjacent projects.
 
 ## What Is SOC 2?
 
@@ -597,7 +674,9 @@ The average BEC loss for financial services firms is $130,000 per incident. For 
         "author": "Veracity Technologies",
         "published_date": "2025-12-01",
         "read_time": "8 min read",
-        "content": """CMMC 2.0 (Cybersecurity Maturity Model Certification) is no longer optional for defense contractors. The Department of Defense has begun enforcing certification requirements across its supply chain, and organizations that handle Controlled Unclassified Information (CUI) must achieve Level 2 certification to bid on or maintain DoD contracts.
+        "content": """In plain terms: CMMC is the Department of Defense's way of checking that companies working on defense contracts are actually protecting the sensitive information they handle - not just saying they do on paper.
+
+CMMC 2.0 (Cybersecurity Maturity Model Certification) is no longer optional for defense contractors. The Department of Defense has begun enforcing certification requirements across its supply chain, and organizations that handle Controlled Unclassified Information (CUI) must achieve Level 2 certification to bid on or maintain DoD contracts.
 
 ## What Is CMMC 2.0?
 

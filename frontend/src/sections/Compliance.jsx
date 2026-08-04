@@ -5,7 +5,7 @@ const LOGO = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/ar
 const LOGO_FULL = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png";
 
 const complianceItems = [
-  { icon: Shield, title: "CMMC Compliance", desc: "Cybersecurity Maturity Model Certification for DoD-connected contracts.", link: "/resources/what-is-cmmc-compliance", linkText: "What is CMMC?" },
+  { icon: Shield, title: "CMMC Compliance", desc: "Cybersecurity Maturity Model Certification for DoD-connected contracts.", link: "/resources/cmmc-compliance-guide-defense-contractors", linkText: "What is CMMC?" },
   { icon: FileCheck, title: "ISO 27001", desc: "International information security management standards.", link: "/resources/what-is-iso-27001", linkText: "What is ISO 27001?" },
   { icon: HeartPulse, title: "HIPAA Compliance", desc: "Privacy and security requirements for handling protected health information.", link: "/resources/hipaa-compliance-small-healthcare-practices", linkText: "What is HIPAA?" },
   { icon: HardHat, title: "OSHA Requirements", desc: "Digital record-keeping and safety system compliance.", link: "/resources/what-is-osha-digital-recordkeeping-compliance", linkText: "What is OSHA compliance?" },

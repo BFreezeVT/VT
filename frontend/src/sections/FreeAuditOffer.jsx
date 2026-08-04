@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users, Download } from "lucide-react";
+import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users, Download, Mail } from "lucide-react";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
 import { calculateAssessmentROI } from "../lib/roiCalculator";
-import { generateAssessmentPDF } from "../lib/generateAssessmentPDF";
+import { generateAssessmentPDF, getAssessmentPDFBase64 } from "../lib/generateAssessmentPDF";
+import { emailReport } from "../lib/emailReport";
 import EfficiencyForecast from "./EfficiencyForecast";
 import ROIAnalysisSection from "./ROIAnalysisSection";
 import axios from "axios";
@@ -257,17 +258,44 @@ export default function FreeAuditOffer() {
     { score: operationalScore, label: "Operational Efficiency", icon: BarChart3 },
   ];
 
+  const [emailingReport, setEmailingReport] = useState(false);
+  const [reportEmailStatus, setReportEmailStatus] = useState(null); // null, "sent", "error"
+
+  const buildPDFPayload = () => ({
+    companyName: contactInfo.company,
+    overallScore,
+    scoreLabel: getScoreLabel(overallScore).label,
+    subScores: subScoreItems.map(({ label, score }) => ({ label, score })),
+    topGaps,
+    topOpportunities,
+    roi,
+  });
+
   const handleDownloadReport = () => {
-    generateAssessmentPDF({
-      companyName: contactInfo.company,
-      overallScore,
-      scoreLabel: getScoreLabel(overallScore).label,
-      subScores: subScoreItems.map(({ label, score }) => ({ label, score })),
-      topGaps,
-      topOpportunities,
-      roi,
-    });
+    generateAssessmentPDF(buildPDFPayload());
     if (window.gtag) window.gtag("event", "assessment_report_download", { event_category: "ai_assessment", overall_score: overallScore });
+  };
+
+  const handleEmailReport = async () => {
+    setEmailingReport(true);
+    setReportEmailStatus(null);
+    try {
+      const pdfBase64 = getAssessmentPDFBase64(buildPDFPayload());
+      await emailReport({
+        recipientEmail: contactInfo.email,
+        recipientName: contactInfo.name,
+        companyName: contactInfo.company,
+        reportTitle: "Executive ROI & Readiness Report",
+        pdfBase64,
+      });
+      setReportEmailStatus("sent");
+      if (window.gtag) window.gtag("event", "assessment_report_email", { event_category: "ai_assessment", overall_score: overallScore });
+    } catch (err) {
+      console.error("Failed to email assessment report:", err);
+      setReportEmailStatus("error");
+    } finally {
+      setEmailingReport(false);
+    }
   };
 
   return (
@@ -444,9 +472,20 @@ export default function FreeAuditOffer() {
             </div>
 
             <div className="text-center mb-10">
-              <Button data-testid="download-report-btn" onClick={handleDownloadReport} className="bg-white/5 border border-[#0077B3]/30 hover:bg-[#0077B3]/10 text-white rounded-md font-semibold text-sm px-6 h-11">
-                <Download className="w-4 h-4 mr-2" /> Download Executive ROI & Readiness Report
-              </Button>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button data-testid="download-report-btn" onClick={handleDownloadReport} className="bg-white/5 border border-[#0077B3]/30 hover:bg-[#0077B3]/10 text-white rounded-md font-semibold text-sm px-6 h-11">
+                  <Download className="w-4 h-4 mr-2" /> Download Executive ROI & Readiness Report
+                </Button>
+                <Button data-testid="email-report-btn" onClick={handleEmailReport} disabled={emailingReport} variant="ghost" className="text-[#94a8be] hover:text-white text-sm h-11 px-4">
+                  <Mail className="w-4 h-4 mr-2" /> {emailingReport ? "Sending..." : "Email Me This Report"}
+                </Button>
+              </div>
+              {reportEmailStatus === "sent" && (
+                <p data-testid="email-report-success" className="text-[#10b981] text-sm mt-3">Sent! Check your inbox at {contactInfo.email}.</p>
+              )}
+              {reportEmailStatus === "error" && (
+                <p data-testid="email-report-error" className="text-[#ef4444] text-sm mt-3">Couldn&rsquo;t send that email - please use the Download button instead.</p>
+              )}
             </div>
 
             {/* 6 score grid */}

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Phone } from "lucide-react";
 import axios from "axios";
 import { questions } from "../../data/cyberRiskScorecardData";
+import { calculateScorecardROI, AVG_HOURLY_LABOR_COST } from "../../lib/scorecardRoiCalculator";
+import { getScorecardPDFBase64 } from "../../lib/generateScorecardPDF";
+import { emailReport } from "../../lib/emailReport";
 import ScorecardHero from "./ScorecardHero";
 import ScorecardQuiz from "./ScorecardQuiz";
 import ScorecardResults from "./ScorecardResults";
@@ -97,21 +100,40 @@ export default function CyberRiskScorecard() {
   const submitEmail = async (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
+    const email = fd.get("email");
+    const name = `${fd.get("firstName")} ${fd.get("lastName")}`;
+    const company = fd.get("company") || "";
     setEmailError(false);
     try {
       await axios.post(`${API}/leads`, {
-        company: fd.get("company") || "",
-        name: `${fd.get("firstName")} ${fd.get("lastName")}`,
-        email: fd.get("email"),
+        company,
+        name,
+        email,
         phone: "",
         source_page: "cyber-risk-scorecard",
         situation: `Requested email report. Risk score: ${riskLevel} (${totalScore}/${maxScore}).`,
         contact_preference: "email",
       });
+
+      // Actually generate and send the real PDF report - default assumptions (20-person team,
+      // 8 manual hrs/week/person) since the ROI sliders above live in a separate section; the
+      // user can always get their live-adjusted numbers via the Download button up there.
+      const roi = calculateScorecardROI(pct, 20, 8);
+      const pdfBase64 = getScorecardPDFBase64({
+        companyName: company,
+        riskLevel,
+        totalScore,
+        maxScore,
+        topRisks,
+        topRecs,
+        roi: { teamSize: 20, weeklyHoursPerPerson: 8, hourlyRate: AVG_HOURLY_LABOR_COST, annualHoursReclaimed: roi.annualHoursReclaimed, monthlySavingsForecast: roi.monthlySavings },
+      });
+      await emailReport({ recipientEmail: email, recipientName: name, companyName: company, reportTitle: "Cyber Risk & ROI Readiness Report", pdfBase64 });
+
       setEmailSent(true);
       if (window.gtag) window.gtag("event", "scorecard_email", { event_category: "cyber_risk_scorecard" });
     } catch (err) {
-      console.error("Failed to submit Cyber Risk Scorecard email report lead:", err);
+      console.error("Failed to email Cyber Risk Scorecard report:", err);
       setEmailError(true);
     }
   };
