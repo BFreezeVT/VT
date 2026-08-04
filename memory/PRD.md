@@ -206,6 +206,44 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 16 (Feb 2026) — Security audit + fix (mail-relay abuse vector)
+- **Full security audit requested by user** (`security_audit_agent`) on the codebase deployed to
+  Preview. Result: **FAIL - ACTION REQUIRED**, 1 HIGH finding, rest hardening-level.
+- **[HIGH] Fixed - SEC-001, spoofable rate limit turned `/api/reports/email` into an open mail
+  relay**: `_get_client_ip()` trusts the client-suppliable `X-Forwarded-For` header, so an
+  attacker could rotate it per-request to get a fresh "IP" every time, completely bypassing the
+  5/hour per-IP limiter on `/api/reports/email` - an endpoint that sends real outbound email
+  through the company's Gmail account to an attacker-chosen recipient with an attacker-suppliable
+  attachment (branded subject/body). Fixed with a new **tamper-proof site-wide cap**
+  (`_check_global_rate_limit`, independent of any client-controlled header) on top of the
+  existing per-IP guard - `GLOBAL_REPORT_EMAIL_LIMIT = 50/hour` for `/api/reports/email`,
+  `GLOBAL_LEAD_SUBMIT_LIMIT = 200/hour` for `/api/leads` (same P3 hardening applied there too).
+  New `rate_limit_global_log` Mongo collection with its own TTL index. Also gave `/api/leads`
+  and `/api/reports/email` **independent per-IP buckets** (tagged by an `action` field) instead
+  of one shared bucket, so exhausting one endpoint's quota no longer blocks the other.
+- **[Hardening] Fixed - PDF magic-byte validation**: `/api/reports/email` now rejects any
+  attachment whose decoded bytes don't start with `%PDF`, closing off the "arbitrary file to
+  arbitrary recipient" file-dropper angle the audit noted alongside the relay risk.
+- **[P3 hardening, noted but not changed]**: wildcard CORS (`CORS_ORIGINS=*`) - low actual risk
+  since `allow_credentials=False` (no cookies anywhere in this app), left as-is to avoid breaking
+  legitimate cross-domain access (prod + preview + future domains) for a low-severity finding.
+  Rotating `SMTP_PASS`/`ADMIN_API_KEY` if ever shared is an owner action, not a code fix.
+- **Verified via direct testing** (not full `testing_agent_v4` - backend-only, narrowly-scoped
+  fix): live curl test proving 3 different spoofed `X-Forwarded-For` values all increment the
+  SAME global counter (confirmed via direct Mongo inspection) rather than getting fresh per-IP
+  quotas; PDF magic-byte rejection confirmed (400 for non-PDF payload); updated
+  `backend/tests/test_reports_email.py` (added `test_non_pdf_attachment_rejected`, replaced the
+  old test that asserted the *removed* shared-bucket behavior with
+  `test_leads_rate_limit_does_not_block_reports_email` +
+  `test_reports_email_has_its_own_independent_rate_limit`) - all 6 pass in isolation; existing
+  `test_security_audit.py`/`test_leads_admin_security.py` (17 tests) still pass in isolation.
+- **Known pre-existing test-suite limitation** (not a security issue, not touched): running ALL
+  backend test files in one pytest session cumulatively exceeds the 5/hour per-IP lead quota
+  (no shared setup fixture resets state between files) and 2 unrelated blog tests reference
+  `what-is-soc-2-compliance`/`what-is-cmmc-compliance` slugs that were intentionally merged into
+  their comprehensive counterparts back in Session 12 - test files were never updated to match.
+  Neither is a regression from this session; flagged for a future test-suite cleanup pass if desired.
+
 ### Session 15 (Feb 2026) — Industry insight blurb brought to Cyber Risk Scorecard
 - Moved `INDUSTRY_INSIGHTS` (the one-line "why this matters" note per industry) from
   `FreeAuditOffer.jsx` into the shared `lib/roiCalculator.js` alongside `INDUSTRY_OPTIONS` /

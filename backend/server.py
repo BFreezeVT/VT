@@ -45,6 +45,12 @@ def verify_admin_api_key(api_key: Optional[str] = Depends(admin_api_key_header))
 
 LEAD_RATE_LIMIT_MAX = 5
 LEAD_RATE_LIMIT_WINDOW_SECONDS = 3600
+# Site-wide caps, independent of client IP. The X-Forwarded-For header used by the per-IP
+# guard below is client-suppliable and can be spoofed to a fresh value on every request,
+# bypassing the per-IP limit entirely - these global caps are the real backstop that bounds
+# worst-case abuse (e.g. using /api/reports/email as a mail relay to arbitrary recipients).
+GLOBAL_LEAD_SUBMIT_LIMIT = 200
+GLOBAL_REPORT_EMAIL_LIMIT = 50
 
 
 def _get_client_ip(request: Request) -> str:
@@ -54,18 +60,44 @@ def _get_client_ip(request: Request) -> str:
     return request.client.host if request.client else "unknown"
 
 
-async def check_lead_rate_limit(request: Request) -> None:
-    """Limits public lead-form submissions to LEAD_RATE_LIMIT_MAX per IP per window,
-    protecting the form from spam floods and Gmail sending-limit exhaustion."""
+async def _check_ip_rate_limit(request: Request, action: str, max_count: int) -> None:
     ip = _get_client_ip(request)
     window_start = datetime.now(timezone.utc) - timedelta(seconds=LEAD_RATE_LIMIT_WINDOW_SECONDS)
-    recent_count = await db.lead_submission_log.count_documents({"ip": ip, "timestamp": {"$gte": window_start}})
-    if recent_count >= LEAD_RATE_LIMIT_MAX:
+    recent_count = await db.lead_submission_log.count_documents({"ip": ip, "action": action, "timestamp": {"$gte": window_start}})
+    if recent_count >= max_count:
         raise HTTPException(
             status_code=status.HTTP_429_TOO_MANY_REQUESTS,
             detail="Too many submissions from this address. Please try again later or call us at (952) 941-7333.",
         )
-    await db.lead_submission_log.insert_one({"ip": ip, "timestamp": datetime.now(timezone.utc)})
+    await db.lead_submission_log.insert_one({"ip": ip, "action": action, "timestamp": datetime.now(timezone.utc)})
+
+
+async def _check_global_rate_limit(action: str, max_count: int) -> None:
+    """Tamper-proof site-wide cap that cannot be bypassed by header spoofing - see comment on
+    the GLOBAL_* constants above."""
+    window_start = datetime.now(timezone.utc) - timedelta(seconds=LEAD_RATE_LIMIT_WINDOW_SECONDS)
+    recent_count = await db.rate_limit_global_log.count_documents({"action": action, "timestamp": {"$gte": window_start}})
+    if recent_count >= max_count:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="This service is temporarily at capacity. Please try again later or call us at (952) 941-7333.",
+        )
+    await db.rate_limit_global_log.insert_one({"action": action, "timestamp": datetime.now(timezone.utc)})
+
+
+async def check_lead_rate_limit(request: Request) -> None:
+    """Limits public lead-form submissions to LEAD_RATE_LIMIT_MAX per IP per window (plus a
+    site-wide cap), protecting the form from spam floods and Gmail sending-limit exhaustion."""
+    await _check_ip_rate_limit(request, "leads", LEAD_RATE_LIMIT_MAX)
+    await _check_global_rate_limit("leads", GLOBAL_LEAD_SUBMIT_LIMIT)
+
+
+async def check_report_email_rate_limit(request: Request) -> None:
+    """Rate limit for /api/reports/email. This endpoint sends outbound email through our SMTP
+    account to an attacker-choosable recipient with an attacker-suppliable attachment, so the
+    site-wide cap here (not just the per-IP one) is the control that actually bounds abuse."""
+    await _check_ip_rate_limit(request, "reports_email", LEAD_RATE_LIMIT_MAX)
+    await _check_global_rate_limit("reports_email", GLOBAL_REPORT_EMAIL_LIMIT)
 
 
 # Create the main app without a prefix
@@ -248,16 +280,19 @@ def send_lead_notification(lead: AuditLead) -> bool:
 async def root() -> dict:
     return {"message": "Veracity Technologies API"}
 
-@api_router.post("/reports/email", dependencies=[Depends(check_lead_rate_limit)])
+@api_router.post("/reports/email", dependencies=[Depends(check_report_email_rate_limit)])
 async def email_report(payload: EmailReportRequest) -> dict:
     """Emails a client-generated PDF report (Assessment or Cyber Risk Scorecard results) as an
-    attachment to the requester's own email. Rate-limited by IP (same guard as /leads) since this
-    endpoint sends outbound email through our SMTP relay."""
+    attachment to the requester's own email. Rate-limited by IP + a site-wide cap (see
+    check_report_email_rate_limit) since this endpoint sends outbound email through our SMTP
+    relay to a recipient the caller controls."""
     if len(payload.pdf_base64) > MAX_PDF_BASE64_CHARS:
         raise HTTPException(status_code=413, detail="Report file is too large to email.")
     try:
         pdf_bytes = base64.b64decode(payload.pdf_base64, validate=True)
     except Exception:
+        raise HTTPException(status_code=400, detail="Invalid report file.")
+    if not pdf_bytes.startswith(b"%PDF"):
         raise HTTPException(status_code=400, detail="Invalid report file.")
 
     smtp_host = os.environ.get("SMTP_HOST")
@@ -911,8 +946,9 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def create_indexes() -> None:
-    # TTL index so rate-limit tracking entries auto-expire and never grow unbounded
+    # TTL indexes so rate-limit tracking entries auto-expire and never grow unbounded
     await db.lead_submission_log.create_index("timestamp", expireAfterSeconds=LEAD_RATE_LIMIT_WINDOW_SECONDS)
+    await db.rate_limit_global_log.create_index("timestamp", expireAfterSeconds=LEAD_RATE_LIMIT_WINDOW_SECONDS)
 
 @app.on_event("shutdown")
 async def shutdown_db_client() -> None:
