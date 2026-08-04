@@ -1,13 +1,14 @@
-import { Shield, FileCheck, HardHat, CreditCard, Server, ArrowRight } from "lucide-react";
+import { Shield, FileCheck, HardHat, CreditCard, Server, ArrowRight, HeartPulse } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const LOGO = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png";
 const LOGO_FULL = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png";
 
 const complianceItems = [
-  { icon: Shield, title: "CMMC Compliance", desc: "Cybersecurity Maturity Model Certification for DoD-connected contracts.", link: "/resources/what-is-cmmc-compliance" },
-  { icon: FileCheck, title: "ISO 27001", desc: "International information security management standards." },
-  { icon: HardHat, title: "OSHA Requirements", desc: "Digital record-keeping and safety system compliance." },
+  { icon: Shield, title: "CMMC Compliance", desc: "Cybersecurity Maturity Model Certification for DoD-connected contracts.", link: "/resources/what-is-cmmc-compliance", linkText: "What is CMMC?" },
+  { icon: FileCheck, title: "ISO 27001", desc: "International information security management standards.", link: "/resources/what-is-iso-27001", linkText: "What is ISO 27001?" },
+  { icon: HeartPulse, title: "HIPAA Compliance", desc: "Privacy and security requirements for handling protected health information.", link: "/resources/hipaa-compliance-small-healthcare-practices", linkText: "What is HIPAA?" },
+  { icon: HardHat, title: "OSHA Requirements", desc: "Digital record-keeping and safety system compliance.", link: "/resources/what-is-osha-digital-recordkeeping-compliance", linkText: "What is OSHA compliance?" },
   { icon: CreditCard, title: "Payment Fraud Prevention", desc: "Email authentication and financial controls against wire fraud." },
   { icon: Server, title: "BMS/IACS Security", desc: "Building management and industrial control system protection." },
 ];
@@ -28,7 +29,7 @@ export default function Compliance() {
             </p>
         </div>
 
-        {/* 3 on top, 2 on bottom - centered */}
+        {/* 3 on top, 3 on bottom */}
         <div className="border-t border-white/10 pt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {complianceItems.slice(0, 3).map((item, i) => (
@@ -38,18 +39,23 @@ export default function Compliance() {
                 <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
                 {item.link && (
                   <Link to={item.link} data-testid={`compliance-card-link-${i}`} className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium mt-2 hover:text-white transition-colors">
-                    What is CMMC? <ArrowRight className="w-3 h-3" />
+                    {item.linkText} <ArrowRight className="w-3 h-3" />
                   </Link>
                 )}
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {complianceItems.slice(3).map((item, i) => (
               <div key={item.title} data-testid={`compliance-card-${i + 3}`} className={`text-center animate-fade-in-up stagger-${i + 6}`}>
                 <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
                 <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
                 <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
+                {item.link && (
+                  <Link to={item.link} data-testid={`compliance-card-link-${i + 3}`} className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium mt-2 hover:text-white transition-colors">
+                    {item.linkText} <ArrowRight className="w-3 h-3" />
+                  </Link>
+                )}
               </div>
             ))}
           </div>

@@ -1794,6 +1794,48 @@ Preparing for CMMC usually closes real security gaps - multi-factor authenticati
 Most businesses start with a gap assessment against the NIST 800-171 controls to see where they stand relative to the CMMC level their contracts require, then build a prioritized remediation plan from there.
 
 *Veracity Technologies helps Minnesota manufacturers and defense contractors prepare for CMMC compliance with gap assessments and implementation of the required security controls.*"""},
+    {"slug": "what-is-iso-27001", "title": "What Is ISO 27001?", "excerpt": "ISO 27001 certifies that a company has an ongoing system for managing information security, not just a one-time checklist.", "category": "Compliance", "published_date": "2025-09-28", "read_time": "5 min read", "content": """In plain terms: ISO 27001 is an internationally recognized standard that proves a company has a real, ongoing system for managing information security - not just a one-time checklist it passed once.
+
+## What ISO 27001 Actually Certifies
+
+ISO 27001 certifies that an organization has established an Information Security Management System (ISMS) - a structured, ongoing process for identifying risks, implementing controls, and continuously improving how it protects data.
+
+## How It's Different From a Single Audit
+
+Unlike a point-in-time security review, ISO 27001 requires ongoing risk assessments, documented policies, and regular internal audits, verified through periodic third-party surveillance audits to maintain certification over time.
+
+## Why Businesses Pursue ISO 27001
+
+- **International credibility**: Widely recognized outside the U.S., useful for companies working with international clients or parent companies.
+- **Structured risk management**: Forces a disciplined, repeatable approach to identifying and addressing security gaps.
+- **Competitive differentiation**: Signals security maturity to security-conscious clients and partners during vendor reviews.
+
+## Getting Started
+
+Most organizations begin with a gap assessment against the ISO 27001 Annex A controls, then build the required Information Security Management System documentation and controls before pursuing certification.
+
+*Veracity Technologies helps Minnesota businesses build the security controls and documentation needed to pursue ISO 27001 certification.*"""},
+    {"slug": "what-is-osha-digital-recordkeeping-compliance", "title": "What Is OSHA Digital Recordkeeping Compliance?", "excerpt": "OSHA requires certain employers to track and submit workplace injury data electronically - which means IT, not just safety teams, is part of staying compliant.", "category": "Compliance", "published_date": "2025-09-30", "read_time": "5 min read", "content": """In plain terms: OSHA requires certain employers to track workplace injuries and illnesses electronically and submit that data securely - which means your IT systems, not just your safety team, are part of staying compliant.
+
+## What OSHA Digital Recordkeeping Actually Requires
+
+Employers meeting certain size and industry thresholds must maintain OSHA Forms 300, 300A, and 301 electronically and submit designated data through OSHA's Injury Tracking Application (ITA) each year.
+
+## Where IT Fits In
+
+- **Secure storage**: Injury and illness records contain sensitive employee health information that must be protected and access-controlled.
+- **System reliability**: Recordkeeping systems - and any connected safety or building management platforms - need to stay available and backed up.
+- **Data integrity**: Records must be accurate, auditable, and retained for the required period (typically 5 years).
+
+## Why This Matters for Manufacturing and Construction
+
+Manufacturers and contractors face some of the highest OSHA reporting thresholds and inspection rates, making reliable, secure digital recordkeeping systems a genuine operational requirement, not just paperwork.
+
+## Getting Started
+
+A quick way to check your exposure is reviewing where your safety and recordkeeping data lives today, who can access it, and whether it's backed up and retained per OSHA's requirements.
+
+*Veracity Technologies helps Minnesota manufacturers and contractors secure the digital systems behind their OSHA recordkeeping and safety compliance.*"""},
     {"slug": "cyber-incident-in-st.paul-prompts-statewide-emergency", "title": "Cyber Incident in St. Paul Prompts Statewide Emergency", "excerpt": "A real cyber incident in St. Paul that prompted a statewide emergency response.", "category": "Cybersecurity", "published_date": "2025-09-18", "read_time": "5 min read", "content": """A significant cyberattack affecting St. Paul city systems drew statewide attention, disrupting municipal services and prompting an emergency response - a stark, local reminder that no organization, public or private, is too small or too local to be targeted.
 
 ## What the Incident Revealed

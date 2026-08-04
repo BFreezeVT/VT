@@ -3,6 +3,7 @@ import { CheckCircle, AlertTriangle, XCircle, Clock, Calendar, Send, ShieldCheck
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { timeSlots } from "../../data/cyberRiskScorecardData";
+import ScorecardROI from "./ScorecardROI";
 
 export default function ScorecardResults({
   animating, totalScore, maxScore, pct, riskLevel, riskColor, topRisks, topRecs,
@@ -78,8 +79,11 @@ export default function ScorecardResults({
           </div>
         </div>
 
+        {/* Potential ROI from closing the gaps above - ties Risk Score to real business value */}
+        <ScorecardROI pct={pct} riskLevel={riskLevel} riskColor={riskColor} />
+
         {/* CONVERSION SECTION */}
-        <div className="bg-white rounded-lg p-8 sm:p-12 mb-12" data-testid="scorecard-conversion">
+        <div id="scorecard-booking" className="bg-white rounded-lg p-8 sm:p-12 mb-12" data-testid="scorecard-conversion">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#003B71] mb-3" style={{ fontFamily: "Outfit" }}>
               Let&rsquo;s Walk Through This Together

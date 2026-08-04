@@ -4,7 +4,7 @@ import { Input } from "../../components/ui/input";
 
 export default function IndustryFormSection({ industry, submitted, error, submitLead }) {
   return (
-    <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-white">
+    <section id="industry-form" data-testid="industry-form-section" className="py-20 bg-[#0f1d32]">
       <div className="max-w-3xl mx-auto px-6">
         <div className="grid-border-card p-8 lg:p-10">
           {!submitted ? (
@@ -36,19 +36,19 @@ export default function IndustryFormSection({ industry, submitted, error, submit
               }} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="company" className="text-white text-sm font-medium mb-1.5 block">Company</label>
-                  <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                  <Input data-testid="industry-form-company" id="company" name="company" placeholder="Your company" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                 </div>
                 <div>
                   <label htmlFor="name" className="text-white text-sm font-medium mb-1.5 block">Name</label>
-                  <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                  <Input data-testid="industry-form-name" id="name" name="name" placeholder="Full name" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                 </div>
                 <div>
                   <label htmlFor="phone" className="text-white text-sm font-medium mb-1.5 block">Phone</label>
-                  <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                  <Input data-testid="industry-form-phone" id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                 </div>
                 <div>
                   <label htmlFor="email" className="text-white text-sm font-medium mb-1.5 block">Email</label>
-                  <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-white border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
+                  <Input data-testid="industry-form-email" id="email" name="email" type="email" placeholder="you@company.com" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a3b8] focus:border-[#0077B3] rounded-sm h-11" required />
                 </div>
                 <div className="sm:col-span-2">
                   <textarea name="situation" placeholder="Tell us about your current situation or challenges..." rows={2} className="w-full bg-white/5 border border-white/10 text-white placeholder:text-[#94a3b8] rounded-sm px-3 py-2 text-sm resize-none focus:outline-none focus:border-[#0077B3]" />

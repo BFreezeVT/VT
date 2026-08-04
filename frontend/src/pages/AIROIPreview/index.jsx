@@ -75,6 +75,9 @@ export default function AIROIPreview() {
             <p data-testid="roi-subhead" className="text-base md:text-lg text-[#94a8be] leading-relaxed max-w-2xl mx-auto">
               Slide to your team size and manual workload below to see a sample estimate of the hours and dollars managed AI and IT automation could reclaim every year.
             </p>
+            <Link to="/cyber-risk-scorecard" data-testid="roi-scorecard-crosslink" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mt-4 hover:text-white transition-colors">
+              Want your cybersecurity risk score too? Take the free Cyber Risk Scorecard <ArrowRight className="w-3 h-3" />
+            </Link>
           </div>
         </section>
 

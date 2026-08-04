@@ -4,7 +4,7 @@ import { Shield } from "lucide-react";
 
 const HOW_IT_WORKS = [
   { num: "1", title: "Answer a few simple questions", desc: "12 quick questions about your current IT and security setup." },
-  { num: "2", title: "Get your risk score instantly", desc: "See your score, top risks, and actionable recommendations." },
+  { num: "2", title: "Get your risk score and ROI", desc: "See your score, top risks, potential savings from fixing them, and actionable recommendations." },
   { num: "3", title: "Review with our team (optional)", desc: "Book a free risk review to get a clear action plan." },
 ];
 
@@ -19,7 +19,7 @@ export default function ScorecardHero({ onStart }) {
           What&rsquo;s Your Business&rsquo;s<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
         </h1>
         <p className="text-lg text-[#94a8be] max-w-2xl mx-auto mb-10">
-          Answer 12 quick questions and see where your business stands in under 3 minutes.
+          Answer 12 quick questions and see where your business stands - plus your potential ROI from closing the gaps - in under 3 minutes.
         </p>
         <Button data-testid="start-assessment" onClick={onStart} className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-md font-bold text-lg px-10 h-14 animate-pulse-glow">
           Start Your Risk Score <ChevronRight className="w-5 h-5 ml-1" />
