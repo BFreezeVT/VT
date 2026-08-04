@@ -13,16 +13,47 @@ import axios from "axios";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const MIN_COUNT_TO_DISPLAY = 5; // avoid displaying a sparse-looking count
 
-const steps = [
-  {
-    category: "Business Context",
-    icon: BarChart3,
-    questions: [
-      { id: "industry", text: "What industry is your business in?", options: ["Construction", "Financial Services", "Manufacturing", "Healthcare", "Professional Services", "Other"] },
-      { id: "team_size", text: "How many people are on your team?", options: ["1-10", "11-50", "51-200", "200+"] },
-    ],
-  },
-  {
+const INDUSTRY_SPECIFIC_QUESTIONS = {
+  "Financial Services": { id: "industry_specific", text: "How audit-ready is your compliance documentation (SOC 2, GLBA, etc.)?", options: [
+    { text: "Fully documented and audit-ready", score: 0 },
+    { text: "Some documentation, but gaps exist", score: 5 },
+    { text: "Not audit-ready / no formal process", score: 10 },
+  ]},
+  "Construction": { id: "industry_specific", text: "How connected are your job sites to your central systems?", options: [
+    { text: "Fully connected - real-time data from every site", score: 0 },
+    { text: "Partially connected - some sites lack connectivity", score: 5 },
+    { text: "Disconnected - manual updates from the field", score: 10 },
+  ]},
+  "Manufacturing": { id: "industry_specific", text: "How well are your OT/production systems (PLCs, SCADA, machinery) protected from cyber risk?", options: [
+    { text: "Segmented and actively monitored", score: 0 },
+    { text: "Some protections, not fully segmented", score: 5 },
+    { text: "Little to no OT security", score: 10 },
+  ]},
+  "Healthcare": { id: "industry_specific", text: "How confident are you in your HIPAA compliance and PHI protection?", options: [
+    { text: "Fully compliant with regular audits", score: 0 },
+    { text: "Mostly compliant, some gaps remain", score: 5 },
+    { text: "Not confident / no formal HIPAA program", score: 10 },
+  ]},
+  "Professional Services": { id: "industry_specific", text: "How well do you protect client confidentiality and sensitive case/project data?", options: [
+    { text: "Strong access controls and encryption", score: 0 },
+    { text: "Basic protections in place", score: 5 },
+    { text: "Minimal protections", score: 10 },
+  ]},
+};
+
+function getSteps(answers) {
+  const industrySpecific = INDUSTRY_SPECIFIC_QUESTIONS[answers.industry?.text];
+  return [
+    {
+      category: "Business Context",
+      icon: BarChart3,
+      questions: [
+        { id: "industry", text: "What industry is your business in?", options: ["Construction", "Financial Services", "Manufacturing", "Healthcare", "Professional Services", "Other"] },
+        { id: "team_size", text: "How many people are on your team?", options: ["1-10", "11-50", "51-200", "200+"] },
+        ...(industrySpecific ? [industrySpecific] : []),
+      ],
+    },
+    {
     category: "Operational Efficiency",
     icon: Zap,
     questions: [
