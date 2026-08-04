@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users } from "lucide-react";
+import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users, Download } from "lucide-react";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
+import { calculateAssessmentROI } from "../lib/roiCalculator";
+import { generateAssessmentPDF } from "../lib/generateAssessmentPDF";
+import EfficiencyForecast from "./EfficiencyForecast";
+import ROIAnalysisSection from "./ROIAnalysisSection";
 import axios from "axios";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
@@ -30,6 +34,9 @@ const steps = [
         { text: "Yes - unified dashboards", score: 0 },
         { text: "Partially - some tools connected", score: 5 },
         { text: "No - siloed systems everywhere", score: 10 },
+      ]},
+      { id: "weekly_manual_hours", text: "On average, how many hours per week does each team member spend on manual, repetitive tasks (data entry, scheduling, reporting, etc.)?", options: [
+        "Less than 5 hours", "5-10 hours", "10-20 hours", "20+ hours",
       ]},
     ],
   },
@@ -191,6 +198,8 @@ export default function FreeAuditOffer() {
   const topGaps = [...allCategories].sort((a, b) => a.score - b.score).slice(0, 3);
   const topOpportunities = [...allCategories].sort((a, b) => a.score - b.score).slice(0, 3);
 
+  const roi = calculateAssessmentROI(answers, automationScore);
+
   const selectAnswer = (questionId, option) => {
     const value = typeof option === "string" ? { text: option } : option;
     setAnswers({ ...answers, [questionId]: value });
@@ -237,6 +246,28 @@ export default function FreeAuditOffer() {
       ai_score: aiScore,
       risk_score: riskScore,
     });
+  };
+
+  const subScoreItems = [
+    { score: automationScore, label: "Automation Maturity", icon: Zap },
+    { score: aiScore, label: "AI Readiness", icon: Brain },
+    { score: riskScore, label: "Operational Risk", icon: Shield },
+    { score: humanRiskScore ?? 50, label: humanRiskScore !== null ? "Human Risk" : "Human Risk (est.)", icon: Eye },
+    { score: continuityScore, label: "Business Continuity", icon: Clock },
+    { score: operationalScore, label: "Operational Efficiency", icon: BarChart3 },
+  ];
+
+  const handleDownloadReport = () => {
+    generateAssessmentPDF({
+      companyName: contactInfo.company,
+      overallScore,
+      scoreLabel: getScoreLabel(overallScore).label,
+      subScores: subScoreItems.map(({ label, score }) => ({ label, score })),
+      topGaps,
+      topOpportunities,
+      roi,
+    });
+    if (window.gtag) window.gtag("event", "assessment_report_download", { event_category: "ai_assessment", overall_score: overallScore });
   };
 
   return (
@@ -399,21 +430,28 @@ export default function FreeAuditOffer() {
               </div>
             )}
 
-            {/* Primary score - large */}
+            {/* Primary score + Personalized Efficiency Forecast */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
+              <div className="text-center">
+                <ScoreRing score={overallScore} size={160} label="Overall Score" />
+              </div>
+              <EfficiencyForecast
+                annualHoursReclaimed={roi.annualHoursReclaimed}
+                monthlySavingsForecast={roi.monthlySavingsForecast}
+                teamSize={roi.teamSize}
+                weeklyHoursPerPerson={roi.weeklyHoursPerPerson}
+              />
+            </div>
+
             <div className="text-center mb-10">
-              <ScoreRing score={overallScore} size={160} label="Overall Score" />
+              <Button data-testid="download-report-btn" onClick={handleDownloadReport} className="bg-white/5 border border-[#0077B3]/30 hover:bg-[#0077B3]/10 text-white rounded-md font-semibold text-sm px-6 h-11">
+                <Download className="w-4 h-4 mr-2" /> Download Executive ROI & Readiness Report
+              </Button>
             </div>
 
             {/* 6 score grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
-              {[
-                { score: automationScore, label: "Automation Maturity", icon: Zap },
-                { score: aiScore, label: "AI Readiness", icon: Brain },
-                { score: riskScore, label: "Operational Risk", icon: Shield },
-                { score: humanRiskScore ?? 50, label: humanRiskScore !== null ? "Human Risk" : "Human Risk (est.)", icon: Eye },
-                { score: continuityScore, label: "Business Continuity", icon: Clock },
-                { score: operationalScore, label: "Operational Efficiency", icon: BarChart3 },
-              ].map((item, i) => {
+              {subScoreItems.map((item, i) => {
                 const s = getScoreLabel(item.score);
                 return (
                   <div key={item.label} className="bg-white/[0.03] border border-white/8 rounded-md p-4 text-center">
@@ -484,6 +522,8 @@ export default function FreeAuditOffer() {
                 <p className="text-[#c0cfe0] text-xs">Complete the Human Risk Simulation above to add real behavioral data to your Business Intelligence Score.</p>
               </div>
             )}
+
+            <ROIAnalysisSection annualHoursReclaimed={roi.annualHoursReclaimed} monthlySavingsForecast={roi.monthlySavingsForecast} />
 
             {/* CTA */}
             <div className="bg-white rounded-lg p-8 text-center">

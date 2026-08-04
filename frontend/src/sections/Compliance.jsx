@@ -13,6 +13,21 @@ const complianceItems = [
   { icon: Server, title: "BMS/IACS Security", desc: "Building management and industrial control system protection." },
 ];
 
+function ComplianceCard({ item, index }) {
+  return (
+    <div data-testid={`compliance-card-${index}`} className={`text-center animate-fade-in-up stagger-${(index % 3) + 3}`}>
+      <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
+      <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
+      <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
+      {item.link && (
+        <Link to={item.link} data-testid={`compliance-card-link-${index}`} className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium mt-2 hover:text-white transition-colors">
+          {item.linkText} <ArrowRight className="w-3 h-3" />
+        </Link>
+      )}
+    </div>
+  );
+}
+
 export default function Compliance() {
   return (
     <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-12 lg:py-18 bg-transparent relative overflow-hidden">
@@ -29,36 +44,8 @@ export default function Compliance() {
             </p>
         </div>
 
-        {/* 3 on top, 3 on bottom */}
-        <div className="border-t border-white/10 pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {complianceItems.slice(0, 3).map((item, i) => (
-              <div key={item.title} data-testid={`compliance-card-${i}`} className={`text-center animate-fade-in-up stagger-${i + 3}`}>
-                <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
-                <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
-                {item.link && (
-                  <Link to={item.link} data-testid={`compliance-card-link-${i}`} className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium mt-2 hover:text-white transition-colors">
-                    {item.linkText} <ArrowRight className="w-3 h-3" />
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {complianceItems.slice(3).map((item, i) => (
-              <div key={item.title} data-testid={`compliance-card-${i + 3}`} className={`text-center animate-fade-in-up stagger-${i + 6}`}>
-                <item.icon className="w-6 h-6 text-[#0077B3] mx-auto mb-3" />
-                <h3 className="text-white font-semibold text-sm mb-1" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
-                <p className="text-[#c0cfe0] text-sm leading-relaxed">{item.desc}</p>
-                {item.link && (
-                  <Link to={item.link} data-testid={`compliance-card-link-${i + 3}`} className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium mt-2 hover:text-white transition-colors">
-                    {item.linkText} <ArrowRight className="w-3 h-3" />
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
+        <div className="border-t border-white/10 pt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {complianceItems.map((item, i) => <ComplianceCard key={item.title} item={item} index={i} />)}
         </div>
       </div>
     </section>
