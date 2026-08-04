@@ -23,6 +23,18 @@ export const INDUSTRY_HOURLY_RATES = {
 // Scorecard's industry selector - single source of truth for the dropdown options.
 export const INDUSTRY_OPTIONS = ["Construction", "Financial Services", "Manufacturing", "Healthcare", "Professional Services", "Other"];
 
+// One-line "why this matters" note shown right after picking an industry, on both the
+// Assessment and the Cyber Risk Scorecard's industry step - ties the tool directly to the
+// visitor's world before they answer anything else.
+export const INDUSTRY_INSIGHTS = {
+  "Financial Services": "Financial services firms face growing compliance pressure (SOC 2, GLBA) - this assessment will flag your biggest audit-readiness gaps.",
+  "Construction": "Construction firms often lose the most time to disconnected job sites and manual field updates - we'll size up how much that's costing you.",
+  "Manufacturing": "Manufacturers increasingly face cyber risk on OT/production systems (PLCs, SCADA) - we'll check how exposed yours are.",
+  "Healthcare": "Healthcare practices carry outsized risk around HIPAA compliance and PHI protection - this assessment will surface where you stand.",
+  "Professional Services": "For professional services firms, client confidentiality and data protection directly drive trust and retention - let's see how solid yours is.",
+  "Other": "Every business has its own mix of technology risks and opportunities - let's find yours.",
+};
+
 // Team size question answers are ranges - use representative midpoints for the math.
 export const TEAM_SIZE_MIDPOINTS = { "1-10": 5, "11-50": 30, "51-200": 125, "200+": 250 };
 

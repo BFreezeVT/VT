@@ -206,6 +206,15 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 15 (Feb 2026) — Industry insight blurb brought to Cyber Risk Scorecard
+- Moved `INDUSTRY_INSIGHTS` (the one-line "why this matters" note per industry) from
+  `FreeAuditOffer.jsx` into the shared `lib/roiCalculator.js` alongside `INDUSTRY_OPTIONS` /
+  `INDUSTRY_HOURLY_RATES` - single source of truth now used by both tools.
+  `pages/CyberRiskScorecard/ScorecardIndustryStep.jsx` now shows the same tailored blurb
+  (`data-testid="scorecard-industry-insight-note"`) right after an industry is selected, for
+  consistency with the Assessment. Verified via Playwright `wait_for_selector` after clicking
+  "Construction" on the scorecard's industry step.
+
 ### Session 14 (Feb 2026) — Follow-up lead alerts + industry insight blurb
 - **Follow-Up Lead Alerts**: Cyber Risk Scorecard "Yes, follow up with me" leads (`source_page ==
   "cyber-risk-scorecard-followup"`) now get a distinct email subject line ("Follow-Up Requested:

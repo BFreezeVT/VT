@@ -1,7 +1,7 @@
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { INDUSTRY_OPTIONS } from "../../lib/roiCalculator";
+import { INDUSTRY_OPTIONS, INDUSTRY_INSIGHTS } from "../../lib/roiCalculator";
 
 export default function ScorecardIndustryStep({ industry, otherIndustry, onSelectIndustry, onOtherIndustryChange, onContinue }) {
   const canContinue = industry && (industry !== "Other" || otherIndustry.trim().length > 0);
@@ -30,6 +30,12 @@ export default function ScorecardIndustryStep({ industry, otherIndustry, onSelec
             </button>
           ))}
         </div>
+
+        {industry && (
+          <p data-testid="scorecard-industry-insight-note" className="mb-4 text-[#0077B3] text-xs bg-[#0077B3]/5 border border-[#0077B3]/20 rounded-md px-3 py-2 leading-relaxed">
+            {INDUSTRY_INSIGHTS[industry] || INDUSTRY_INSIGHTS["Other"]}
+          </p>
+        )}
 
         {industry === "Other" && (
           <div className="mb-6">

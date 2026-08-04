@@ -3,7 +3,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users, Download, Mail } from "lucide-react";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
-import { calculateAssessmentROI, INDUSTRY_OPTIONS } from "../lib/roiCalculator";
+import { calculateAssessmentROI, INDUSTRY_OPTIONS, INDUSTRY_INSIGHTS } from "../lib/roiCalculator";
 import { generateAssessmentPDF, getAssessmentPDFBase64 } from "../lib/generateAssessmentPDF";
 import { emailReport } from "../lib/emailReport";
 import EfficiencyForecast from "./EfficiencyForecast";
@@ -31,17 +31,6 @@ const INDUSTRY_SPECIFIC_QUESTIONS = {
     { text: "Some protections, not fully segmented", score: 5 },
     { text: "Little to no OT security", score: 10 },
   ]},
-};
-
-// One-line "why this matters" note shown right after picking an industry - ties the assessment
-// directly to the visitor's world before they even reach the tailored/universal questions.
-const INDUSTRY_INSIGHTS = {
-  "Financial Services": "Financial services firms face growing compliance pressure (SOC 2, GLBA) - this assessment will flag your biggest audit-readiness gaps.",
-  "Construction": "Construction firms often lose the most time to disconnected job sites and manual field updates - we'll size up how much that's costing you.",
-  "Manufacturing": "Manufacturers increasingly face cyber risk on OT/production systems (PLCs, SCADA) - we'll check how exposed yours are.",
-  "Healthcare": "Healthcare practices carry outsized risk around HIPAA compliance and PHI protection - this assessment will surface where you stand.",
-  "Professional Services": "For professional services firms, client confidentiality and data protection directly drive trust and retention - let's see how solid yours is.",
-  "Other": "Every business has its own mix of technology risks and opportunities - let's find yours.",
 };
 
 function getSteps(answers) {
