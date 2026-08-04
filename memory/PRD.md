@@ -206,7 +206,38 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
-### Session 10 (Feb 2026) — Contrast bug fix, compliance links expansion, combined Scorecard+ROI
+### Session 11 (Feb 2026) — Dynamic assessment ROI, executive PDF report, content render bug fix
+- **Assessment ROI integration**: `FreeAuditOffer.jsx`'s "Operational Efficiency" step gained a new
+  unscored follow-up question ("weekly_manual_hours" - hours/week/person on manual tasks) that
+  feeds `lib/roiCalculator.js` (`calculateAssessmentROI`) alongside the existing `team_size`
+  answer, scaled by the user's own automation-maturity gap - same pattern as the Scorecard's
+  risk-scaled ROI.
+- **Personalized Efficiency Forecast**: results page now shows a 2-column row - Overall Score ring
+  next to a new `EfficiencyForecast.jsx` card (Annual Hours Reclaimed + Monthly Savings Forecast).
+- **Executive PDF report**: "Download Executive ROI & Readiness Report" button generates a
+  branded multi-section PDF client-side via `lib/generateAssessmentPDF.js` (newly installed
+  `jspdf` package) - score, ROI math, top gaps/opportunities, next steps + contact info. No backend
+  call needed.
+- **ROI Analysis content**: new `sections/ROIAnalysisSection.jsx` (~280 words, 3 H4 sub-sections,
+  personalized with the user's own forecast numbers) rendered below the results, above the final
+  CTA.
+- **Compliance.jsx DRY cleanup**: extracted a `ComplianceCard` sub-component, merged the two
+  duplicated slice(0,3)/slice(3) render blocks into a single `.map()` - no visual/functional change.
+- **TrustIndicators HIPAA/ISO/OSHA**: restructured into a `stats` row (4 unchanged) + a new
+  "Certified & Compliant" `credentials` row (6 linked badges: SOC2, CMMC, AI+Automation, HIPAA,
+  ISO 27001, OSHA).
+- **Site-wide content-rendering bug found + fixed**: `BlogPost.jsx`'s markdown-to-JSX renderer
+  merged a `## `/`### ` heading with any list items immediately following it on the next line
+  (single `\n`, no blank line) into one broken block, rendering the whole thing as raw unformatted
+  heading text (literal `**bold**` visible). This affected the HIPAA post (and likely other
+  pre-existing posts with the same authoring pattern) - fixed by splitting the first line off as
+  the heading and recursively rendering the remainder. Verified fixed on the HIPAA post and
+  confirmed no regression on an already-correct post (CMMC).
+- Tested via `testing_agent_v4` (iteration_25.json) — 100% frontend, zero bugs; dynamic ROI
+  verified with two contrasting answer sets producing correctly scaled results; PDF download
+  verified as a real, non-empty file.
+
+### Session 10 (Feb 2026)
 - **Real contrast/functionality bug fixed**: `IndustryFormSection.jsx` had a `bg-white` section
   wrapping a dark-themed card design with `text-white` labels/headings (invisible), AND both
   `IndustryFormSection.jsx` and `CityFormSection.jsx` had lead-capture `Input` fields with literal
