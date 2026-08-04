@@ -206,6 +206,18 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 14 (Feb 2026) — Follow-up lead alerts + industry insight blurb
+- **Follow-Up Lead Alerts**: Cyber Risk Scorecard "Yes, follow up with me" leads (`source_page ==
+  "cyber-risk-scorecard-followup"`) now get a distinct email subject line ("Follow-Up Requested:
+  {company or name}") instead of the generic "New Audit Lead: {company}" - new
+  `_build_lead_subject()` helper in `server.py`. Verified via a live curl POST + backend log
+  confirming a real send with no errors.
+- **Industry Insight Blurb**: right after picking an industry in the Business Technology
+  Assessment (`FreeAuditOffer.jsx`), a one-line "why this matters" note appears
+  (`data-testid="industry-insight-note"`) tailored per industry (all 5 known verticals +
+  generic fallback for Other), via a new `INDUSTRY_INSIGHTS` map. Verified rendering via
+  Playwright `wait_for_selector` after selecting an industry option.
+
 ### Session 13 (Feb 2026) — Assessment flow reorder + Cyber Scorecard industry-aware ROI + calendar removal
 - **Fixed a build-breaking bug inherited from the previous session**: `FreeAuditOffer.jsx` had an
   unclosed `getSteps(answers)` function (missing closing brace) and the function was never invoked

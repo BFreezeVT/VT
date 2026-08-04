@@ -200,6 +200,15 @@ def _build_lead_html_body(lead: AuditLead, source: str) -> str:
 """
 
 
+def _build_lead_subject(lead: AuditLead) -> str:
+    """Distinct subject line for high-intent 'Yes, follow up with me' scorecard leads so the
+    team can spot and prioritize them ahead of generic form-fill leads."""
+    if lead.source_page == "cyber-risk-scorecard-followup":
+        who = lead.company or lead.name or "New Lead"
+        return f"Follow-Up Requested: {_sanitize_header_value(who)}"
+    return f"New Audit Lead: {_sanitize_header_value(lead.company)}"
+
+
 def send_lead_notification(lead: AuditLead) -> bool:
     """Send email notification for new lead. Requires SMTP_* env vars."""
     smtp_host = os.environ.get("SMTP_HOST")
@@ -215,7 +224,7 @@ def send_lead_notification(lead: AuditLead) -> bool:
     try:
         source = _resolve_lead_source(lead)
         msg = MIMEMultipart("alternative")
-        msg["Subject"] = f"New Audit Lead: {_sanitize_header_value(lead.company)}"
+        msg["Subject"] = _build_lead_subject(lead)
         msg["From"] = smtp_user
         msg["To"] = notify_email
         msg.attach(MIMEText(_build_lead_text_body(lead, source), "plain"))

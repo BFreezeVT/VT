@@ -33,6 +33,17 @@ const INDUSTRY_SPECIFIC_QUESTIONS = {
   ]},
 };
 
+// One-line "why this matters" note shown right after picking an industry - ties the assessment
+// directly to the visitor's world before they even reach the tailored/universal questions.
+const INDUSTRY_INSIGHTS = {
+  "Financial Services": "Financial services firms face growing compliance pressure (SOC 2, GLBA) - this assessment will flag your biggest audit-readiness gaps.",
+  "Construction": "Construction firms often lose the most time to disconnected job sites and manual field updates - we'll size up how much that's costing you.",
+  "Manufacturing": "Manufacturers increasingly face cyber risk on OT/production systems (PLCs, SCADA) - we'll check how exposed yours are.",
+  "Healthcare": "Healthcare practices carry outsized risk around HIPAA compliance and PHI protection - this assessment will surface where you stand.",
+  "Professional Services": "For professional services firms, client confidentiality and data protection directly drive trust and retention - let's see how solid yours is.",
+  "Other": "Every business has its own mix of technology risks and opportunities - let's find yours.",
+};
+
 function getSteps(answers) {
   const industrySpecific = INDUSTRY_SPECIFIC_QUESTIONS[answers.industry?.text];
   return [
@@ -414,6 +425,11 @@ export default function FreeAuditOffer() {
                       );
                     })}
                   </div>
+                  {q.id === "industry" && answers.industry?.text && (
+                    <p data-testid="industry-insight-note" className="mt-3 text-[#0077B3] text-xs bg-[#0077B3]/5 border border-[#0077B3]/20 rounded-md px-3 py-2 leading-relaxed">
+                      {INDUSTRY_INSIGHTS[answers.industry.text] || INDUSTRY_INSIGHTS["Other"]}
+                    </p>
+                  )}
                   {q.id === "industry" && answers.industry?.text === "Other" && (
                     <div className="mt-3">
                       <Input
