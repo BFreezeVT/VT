@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { CheckCircle, AlertTriangle, XCircle, Clock, Calendar, Send, ShieldCheck, ShieldAlert, Mail } from "lucide-react";
+import { CheckCircle, AlertTriangle, XCircle, Send, ShieldCheck, ShieldAlert, Mail } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
-import { timeSlots } from "../../data/cyberRiskScorecardData";
 import ScorecardROI from "./ScorecardROI";
 
 export default function ScorecardResults({
   animating, totalScore, maxScore, pct, riskLevel, riskColor, topRisks, topRecs,
-  booked, bookingError, selectedSlot, bookSlot, emailSent, emailError, submitEmail, retake,
+  hourlyRate, industryLabel,
+  followUpChoice, followUpSubmitted, followUpError, chooseFollowUp, submitFollowUp,
+  emailSent, emailError, submitEmail, retake,
 }) {
   const [showEmailForm, setShowEmailForm] = useState(false);
 
@@ -80,58 +81,61 @@ export default function ScorecardResults({
         </div>
 
         {/* Potential ROI from closing the gaps above - ties Risk Score to real business value */}
-        <ScorecardROI pct={pct} riskLevel={riskLevel} riskColor={riskColor} totalScore={totalScore} maxScore={maxScore} topRisks={topRisks} topRecs={topRecs} />
+        <ScorecardROI pct={pct} riskLevel={riskLevel} riskColor={riskColor} totalScore={totalScore} maxScore={maxScore} topRisks={topRisks} topRecs={topRecs} hourlyRate={hourlyRate} industryLabel={industryLabel} />
 
-        {/* CONVERSION SECTION */}
-        <div id="scorecard-booking" className="bg-white rounded-lg p-8 sm:p-12 mb-12" data-testid="scorecard-conversion">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#003B71] mb-3" style={{ fontFamily: "Outfit" }}>
-              Let&rsquo;s Walk Through This Together
-            </h2>
-            <p className="text-[#4a5e78] text-base max-w-xl mx-auto">
-              We&rsquo;ll review your results, identify your biggest risks, and give you a clear action plan. No sales pressure.
-            </p>
-          </div>
-
-          {!booked ? (
-            <div>
-              <p className="text-[#003B71] font-semibold text-sm mb-4 text-center" style={{ fontFamily: "Outfit" }}>Choose a time that works for you:</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
-                {timeSlots.map((slot) => (
-                  slot.times.map((time) => (
-                    <button
-                      key={`${slot.day}-${time}`}
-                      data-testid={`slot-${slot.day}-${time}`}
-                      onClick={() => bookSlot(slot.day, time)}
-                      className="flex items-center justify-between p-3 rounded-md border border-[#e2e8f0] hover:border-[#0077B3] hover:bg-[#0077B3]/5 transition-all text-left"
-                    >
-                      <div>
-                        <p className="text-[#003B71] text-sm font-medium">{slot.day}</p>
-                        <p className="text-[#4a5e78] text-xs">{time}</p>
-                      </div>
-                      <Calendar className="w-4 h-4 text-[#0077B3]" />
-                    </button>
-                  ))
-                ))}
-              </div>
-              <div className="text-center">
-                <p className="text-[#ef4444] text-xs font-medium flex items-center justify-center gap-1">
-                  <Clock className="w-3 h-3" /> We only take a limited number of assessments each week.
-                </p>
-                {bookingError && (
-                  <p data-testid="booking-error" className="text-[#ef4444] text-xs font-medium mt-3">
-                    Something went wrong saving your booking. Please try selecting a time again, or call us directly at (952) 941-7333.
-                  </p>
-                )}
+        {/* FOLLOW-UP: simple yes/no instead of a calendar booking flow */}
+        <div id="scorecard-followup" className="bg-white rounded-lg p-8 sm:p-12 mb-12" data-testid="scorecard-followup">
+          {followUpChoice === null && (
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#003B71] mb-3" style={{ fontFamily: "Outfit" }}>
+                Would you like someone from Veracity to follow up with you about these results?
+              </h2>
+              <p className="text-[#4a5e78] text-base max-w-xl mx-auto mb-8">
+                No sales pressure - just a quick conversation about your biggest risks and how to close them.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button data-testid="scorecard-followup-yes-btn" onClick={() => chooseFollowUp("yes")} className="bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-md font-semibold px-8 h-12">
+                  Yes, follow up with me
+                </Button>
+                <button data-testid="scorecard-followup-no-btn" onClick={() => chooseFollowUp("no")} className="text-[#4a5e78] hover:text-[#003B71] text-sm font-medium px-4 h-12">
+                  No thanks, just exploring
+                </button>
               </div>
             </div>
-          ) : (
-            <div className="text-center py-6" data-testid="booking-confirmed">
+          )}
+
+          {followUpChoice === "yes" && !followUpSubmitted && (
+            <div>
+              <h3 className="text-[#003B71] font-bold text-xl mb-4 text-center" style={{ fontFamily: "Outfit" }}>Great - how should we reach you?</h3>
+              {followUpError && (
+                <p data-testid="scorecard-followup-error" className="text-[#ef4444] text-xs font-medium mb-3 text-center">
+                  Something went wrong submitting your request. Please try again, or call us at (952) 941-7333.
+                </p>
+              )}
+              <form onSubmit={submitFollowUp} className="max-w-md mx-auto grid grid-cols-1 gap-3">
+                <Input name="name" placeholder="Your name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+                <Input name="email" type="email" placeholder="Email" required className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+                <Input name="phone" type="tel" placeholder="Phone" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+                <Input name="company" placeholder="Company" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+                <Button type="submit" className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-md font-semibold">
+                  Request Follow-Up
+                </Button>
+              </form>
+            </div>
+          )}
+
+          {followUpChoice === "yes" && followUpSubmitted && (
+            <div className="text-center py-6" data-testid="scorecard-followup-confirmed">
               <CheckCircle className="w-16 h-16 text-[#10b981] mx-auto mb-4" />
-              <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>You&rsquo;re Booked!</h3>
-              <p className="text-[#4a5e78] text-sm">
-                {selectedSlot?.day} at {selectedSlot?.time}. We&rsquo;ll send a confirmation and review your scorecard results before the call.
-              </p>
+              <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>You&rsquo;re All Set!</h3>
+              <p className="text-[#4a5e78] text-sm">We&rsquo;ll reach out shortly to walk through your results.</p>
+            </div>
+          )}
+
+          {followUpChoice === "no" && (
+            <div className="text-center py-6" data-testid="scorecard-followup-declined">
+              <CheckCircle className="w-10 h-10 text-[#94a8be] mx-auto mb-4" />
+              <p className="text-[#4a5e78] text-base">No problem! Feel free to email yourself a copy of the report below, or retake the assessment anytime.</p>
             </div>
           )}
         </div>

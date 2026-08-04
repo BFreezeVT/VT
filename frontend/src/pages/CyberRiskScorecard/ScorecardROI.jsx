@@ -3,16 +3,18 @@ import { Button } from "../../components/ui/button";
 import { Info, ArrowRight, TrendingUp, Download } from "lucide-react";
 import { useState } from "react";
 import { generateScorecardPDF } from "../../lib/generateScorecardPDF";
-import { calculateScorecardROI, AVG_HOURLY_LABOR_COST } from "../../lib/scorecardRoiCalculator";
+import { calculateScorecardROI } from "../../lib/scorecardRoiCalculator";
+import { DEFAULT_HOURLY_LABOR_COST } from "../../lib/roiCalculator";
 
-export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, maxScore, topRisks, topRecs }) {
+export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, maxScore, topRisks, topRecs, hourlyRate, industryLabel }) {
   const [teamSize, setTeamSize] = useState(20);
   const [manualHours, setManualHours] = useState(8);
+  const rate = hourlyRate || DEFAULT_HOURLY_LABOR_COST;
 
-  const { riskAdjustedEfficiency, annualHoursReclaimed, annualSavings, monthlySavings } = calculateScorecardROI(pct, teamSize, manualHours);
+  const { riskAdjustedEfficiency, annualHoursReclaimed, annualSavings, monthlySavings } = calculateScorecardROI(pct, teamSize, manualHours, rate);
 
   const scrollToBooking = () => {
-    document.getElementById("scorecard-booking")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("scorecard-followup")?.scrollIntoView({ behavior: "smooth" });
     if (window.gtag) window.gtag("event", "scorecard_roi_cta_click", { event_category: "cyber_risk_scorecard", risk_level: riskLevel, estimated_savings: annualSavings });
   };
 
@@ -23,7 +25,7 @@ export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, ma
       maxScore,
       topRisks,
       topRecs,
-      roi: { teamSize, weeklyHoursPerPerson: manualHours, hourlyRate: AVG_HOURLY_LABOR_COST, annualHoursReclaimed, monthlySavingsForecast: monthlySavings },
+      roi: { teamSize, weeklyHoursPerPerson: manualHours, hourlyRate: rate, annualHoursReclaimed, monthlySavingsForecast: monthlySavings },
     });
     if (window.gtag) window.gtag("event", "scorecard_report_download", { event_category: "cyber_risk_scorecard", risk_level: riskLevel });
   };
@@ -95,7 +97,7 @@ export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, ma
         </div>
         <p data-testid="scorecard-roi-assumptions-note" className="flex items-start gap-2 text-[#94a8be]/50 text-xs max-w-xl mx-auto text-center mb-8">
           <Info className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
-          Directional sample estimate using industry-average assumptions (~${AVG_HOURLY_LABOR_COST}/hr fully-loaded labor cost, {Math.round(riskAdjustedEfficiency * 100)}% automation efficiency gain scaled to your risk score) - not a quote or guarantee.
+          Directional sample estimate using industry-average assumptions (~${rate}/hr fully-loaded labor cost{industryLabel ? ` for the ${industryLabel} industry` : ""}, {Math.round(riskAdjustedEfficiency * 100)}% automation efficiency gain scaled to your risk score) - not a quote or guarantee.
         </p>
         <div className="text-center">
           <Button data-testid="scorecard-roi-cta" onClick={scrollToBooking} className="bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-md font-bold text-base px-8 h-12">

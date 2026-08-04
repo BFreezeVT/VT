@@ -3,7 +3,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { CheckCircle, ChevronRight, ChevronLeft, Brain, Zap, Shield, Eye, BarChart3, Clock, ArrowRight, AlertTriangle, Users, Download, Mail } from "lucide-react";
 import { useLeadSubmit } from "../hooks/useLeadSubmit";
-import { calculateAssessmentROI } from "../lib/roiCalculator";
+import { calculateAssessmentROI, INDUSTRY_OPTIONS } from "../lib/roiCalculator";
 import { generateAssessmentPDF, getAssessmentPDFBase64 } from "../lib/generateAssessmentPDF";
 import { emailReport } from "../lib/emailReport";
 import EfficiencyForecast from "./EfficiencyForecast";
@@ -13,6 +13,8 @@ import axios from "axios";
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const MIN_COUNT_TO_DISPLAY = 5; // avoid displaying a sparse-looking count
 
+// Only the three core verticals get a tailored follow-up question; everyone else (including
+// Other/custom industries) proceeds straight into the universal assessment questions.
 const INDUSTRY_SPECIFIC_QUESTIONS = {
   "Financial Services": { id: "industry_specific", text: "How audit-ready is your compliance documentation (SOC 2, GLBA, etc.)?", options: [
     { text: "Fully documented and audit-ready", score: 0 },
@@ -29,16 +31,6 @@ const INDUSTRY_SPECIFIC_QUESTIONS = {
     { text: "Some protections, not fully segmented", score: 5 },
     { text: "Little to no OT security", score: 10 },
   ]},
-  "Healthcare": { id: "industry_specific", text: "How confident are you in your HIPAA compliance and PHI protection?", options: [
-    { text: "Fully compliant with regular audits", score: 0 },
-    { text: "Mostly compliant, some gaps remain", score: 5 },
-    { text: "Not confident / no formal HIPAA program", score: 10 },
-  ]},
-  "Professional Services": { id: "industry_specific", text: "How well do you protect client confidentiality and sensitive case/project data?", options: [
-    { text: "Strong access controls and encryption", score: 0 },
-    { text: "Basic protections in place", score: 5 },
-    { text: "Minimal protections", score: 10 },
-  ]},
 };
 
 function getSteps(answers) {
@@ -48,7 +40,7 @@ function getSteps(answers) {
       category: "Business Context",
       icon: BarChart3,
       questions: [
-        { id: "industry", text: "What industry is your business in?", options: ["Construction", "Financial Services", "Manufacturing", "Healthcare", "Professional Services", "Other"] },
+        { id: "industry", text: "What industry is your business in?", options: INDUSTRY_OPTIONS },
         { id: "team_size", text: "How many people are on your team?", options: ["1-10", "11-50", "51-200", "200+"] },
         ...(industrySpecific ? [industrySpecific] : []),
       ],
@@ -136,7 +128,8 @@ function getSteps(answers) {
       ]},
     ],
   },
-];
+  ];
+}
 
 function getScoreLabel(pct) {
   if (pct >= 80) return { label: "Strong", color: "#10b981" };
@@ -180,6 +173,8 @@ export default function FreeAuditOffer() {
       .then((res) => setCompletedCount(res.data?.count || 0))
       .catch((err) => console.error("Failed to load assessment completion count:", err));
   }, []);
+
+  const steps = getSteps(answers);
 
   const totalScoredQuestions = steps.flatMap(s => s.questions).filter(q => q.options[0]?.score !== undefined);
   const maxScore = totalScoredQuestions.length * 10;
@@ -254,7 +249,11 @@ export default function FreeAuditOffer() {
     }
   };
 
-  const canProceed = steps[currentStep].questions.every(q => answers[q.id] !== undefined);
+  const canProceed = steps[currentStep].questions.every(q => {
+    if (answers[q.id] === undefined) return false;
+    if (q.id === "industry" && answers.industry?.text === "Other") return !!answers.other_industry?.text?.trim();
+    return true;
+  });
 
   const handleContactSubmit = async (e) => {
     e.preventDefault();
@@ -415,6 +414,17 @@ export default function FreeAuditOffer() {
                       );
                     })}
                   </div>
+                  {q.id === "industry" && answers.industry?.text === "Other" && (
+                    <div className="mt-3">
+                      <Input
+                        data-testid="other-industry-input"
+                        placeholder="Tell us your industry"
+                        value={answers.other_industry?.text || ""}
+                        onChange={(e) => selectAnswer("other_industry", e.target.value)}
+                        className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11"
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
 

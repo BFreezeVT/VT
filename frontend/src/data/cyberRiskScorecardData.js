@@ -13,10 +13,3 @@ export const questions = [
   { id: 12, text: "How confident are you that your business is protected from cyber threats?", options: [{ text: "Very confident", points: 0 }, { text: "Somewhat", points: 5 }, { text: "Not confident", points: 10 }], risk: "overall security posture gaps", rec: "Schedule a comprehensive security audit" },
 ];
 
-export const timeSlots = [
-  { day: "Monday", times: ["9:00 AM", "11:00 AM", "2:00 PM"] },
-  { day: "Tuesday", times: ["10:00 AM", "1:00 PM", "3:00 PM"] },
-  { day: "Wednesday", times: ["9:00 AM", "11:00 AM", "2:00 PM"] },
-  { day: "Thursday", times: ["10:00 AM", "1:00 PM", "3:00 PM"] },
-  { day: "Friday", times: ["9:00 AM", "11:00 AM"] },
-];

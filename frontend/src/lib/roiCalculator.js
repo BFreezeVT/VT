@@ -19,6 +19,10 @@ export const INDUSTRY_HOURLY_RATES = {
   "Other": DEFAULT_HOURLY_LABOR_COST,
 };
 
+// Shared industry list used by both the Business Technology Assessment and the Cyber Risk
+// Scorecard's industry selector - single source of truth for the dropdown options.
+export const INDUSTRY_OPTIONS = ["Construction", "Financial Services", "Manufacturing", "Healthcare", "Professional Services", "Other"];
+
 // Team size question answers are ranges - use representative midpoints for the math.
 export const TEAM_SIZE_MIDPOINTS = { "1-10": 5, "11-50": 30, "51-200": 125, "200+": 250 };
 
