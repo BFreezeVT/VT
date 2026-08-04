@@ -206,6 +206,44 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 13 (Feb 2026) — Assessment flow reorder + Cyber Scorecard industry-aware ROI + calendar removal
+- **Fixed a build-breaking bug inherited from the previous session**: `FreeAuditOffer.jsx` had an
+  unclosed `getSteps(answers)` function (missing closing brace) and the function was never invoked
+  (component still referenced an undefined `steps` variable) — frontend failed to compile entirely.
+  Fixed the brace, added `const steps = getSteps(answers);` in the component body.
+- **Assessment flow reorder** (`FreeAuditOffer.jsx`): Business Context step now asks Industry
+  question FIRST, Team Size SECOND, in that fixed order — matches the user's required flow.
+  Selecting "Other" reveals a custom industry text input (`other-industry-input`); Next stays
+  disabled until it's filled. Trimmed `INDUSTRY_SPECIFIC_QUESTIONS` from 5 industries down to the
+  3 confirmed core verticals only (Financial Services, Construction, Manufacturing) — Healthcare
+  and Professional Services now correctly skip straight to the universal questions with no
+  tailored follow-up, per user's explicit choice.
+- **Shared `INDUSTRY_OPTIONS` constant**: moved the industry name list into `lib/roiCalculator.js`
+  (single source of truth, also exports `INDUSTRY_HOURLY_RATES`) so both the Assessment and the
+  new Cyber Scorecard industry selector stay in sync.
+- **Cyber Risk Scorecard — new Industry step**: new `pages/CyberRiskScorecard/ScorecardIndustryStep.jsx`
+  inserted as a new `stage: "industry"` between the hero and the (unchanged) 12-question quiz —
+  same 6 industry options + Other custom text field. Selected industry now drives the ROI hourly
+  rate via `scorecardRoiCalculator.js`'s `calculateScorecardROI(pct, teamSize, manualHours, hourlyRate)`
+  (4th param added, defaults to `DEFAULT_HOURLY_LABOR_COST` for safety), threaded through
+  `ScorecardROI.jsx`, the results page ROI assumptions note (now names the industry + its actual
+  $/hr), the downloadable PDF, and the emailed PDF report.
+- **Removed the calendar/time-slot booking UI entirely** (user-requested simplification):
+  deleted the old "Let's Walk Through This Together" day/time picker section, the unused
+  `timeSlots` export from `cyberRiskScorecardData.js`, and all related `booked`/`bookSlot`/
+  `selectedSlot`/`bookingError` state. Replaced with a simple Yes/No question — "Would you like
+  someone from Veracity to follow up with you about these results?" — Yes reveals a lightweight
+  contact form (name/email/phone/company) that posts a real lead (`source_page:
+  "cyber-risk-scorecard-followup"`) and shows a confirmation state; No shows a polite decline
+  message with no form. The existing separate "Email me my full report" flow is untouched.
+- The 12 existing Cyber Risk Scorecard questions (`data/cyberRiskScorecardData.js`) are byte-for-byte
+  unchanged, per user's explicit constraint.
+- Tested via `testing_agent_v4` (iteration_27.json) — 100% pass, zero bugs. Verified live
+  differential ROI math (Construction $955/mo vs Financial Services $1023/mo, identical
+  team-size/manual-hours inputs, ratio exactly matches the $42/$45 rate difference). Test leads
+  (TestCo, TestCo2, test@example.com, followup@example.com) cleaned from the `leads` collection
+  after testing.
+
 ### Session 12 (Feb 2026) — Content dedup fix, industry ROI, PDF export parity, real email delivery
 - **Content audit + fixed a self-introduced duplication bug**: discovered that "soc-2-compliance-guide-small-business" and "cmmc-compliance-guide-defense-contractors" (comprehensive guides) already existed in `server.py`'s BLOG_POSTS before Session 9 mistakenly assumed they were broken sitemap links and created shorter duplicate posts (`what-is-soc-2-compliance`, `what-is-cmmc-compliance`). Fixed by merging the "In plain terms:" plain-language opener into the original comprehensive posts, deleting the duplicates, and repointing all links (TrustIndicators, Compliance, sitemap.xml) to the originals. Also confirmed the `BlogPost.jsx` heading+list render fix (Session 11) resolved all 7 affected posts site-wide.
 - **Industry-based ROI**: `lib/roiCalculator.js` now uses an `INDUSTRY_HOURLY_RATES` map (Construction $42, Financial Services $45, Manufacturing $38, Healthcare $40, Professional Services $48) keyed off the assessment's existing `industry` answer, instead of a flat $38/hr - verified with a live differential test producing genuinely different $ outputs per industry.
