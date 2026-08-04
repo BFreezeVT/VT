@@ -46,11 +46,11 @@ export default function TrustIndicators() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-6 pb-6 border-b border-white/[0.06]">
-          {stats.map((item, i) => <IndicatorItem key={i} item={item} index={i} testidPrefix="trust-indicator" />)}
+          {stats.map((item, i) => <IndicatorItem key={item.label} item={item} index={i} testidPrefix="trust-indicator" />)}
         </div>
         <p className="text-center text-[#94a8be]/40 text-[10px] uppercase tracking-[0.15em] mb-5">Certified &amp; Compliant</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-          {credentials.map((item, i) => <IndicatorItem key={i} item={item} index={i} testidPrefix="trust-credential" />)}
+          {credentials.map((item, i) => <IndicatorItem key={item.value} item={item} index={i} testidPrefix="trust-credential" />)}
         </div>
       </div>
     </section>

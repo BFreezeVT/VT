@@ -113,7 +113,7 @@ export default function IntroStats() {
             const Icon = stat.icon;
             return (
               <div
-                key={i}
+                key={stat.label}
                 data-testid={`stat-card-${i}`}
                 className={`relative pt-8 pb-6 ${i < 3 ? "border-r border-[#c0cfe0]/30 hidden lg:block" : ""} ${i < 2 ? "max-lg:border-r max-lg:border-[#c0cfe0]/30" : ""} px-6 first:pl-0 last:pr-0 animate-fade-in-up stagger-${i + 3}`}
                 style={{ minWidth: 0 }}

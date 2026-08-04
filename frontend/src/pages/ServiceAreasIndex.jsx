@@ -88,7 +88,7 @@ export default function ServiceAreasIndex() {
                   </p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {city.localIndustries.slice(0, 3).map((ind, j) => (
-                      <span key={j} className="text-[10px] text-[#0077B3] border border-white/10 px-2 py-0.5">
+                      <span key={ind} className="text-[10px] text-[#0077B3] border border-white/10 px-2 py-0.5">
                         {ind}
                       </span>
                     ))}

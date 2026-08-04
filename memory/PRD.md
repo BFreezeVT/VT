@@ -206,6 +206,42 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 19 (Feb 2026) — Code quality report review (mostly false positives, 13 real key fixes applied)
+- Reviewed an external code-quality report against actual code before changing anything (per
+  user's approval of "safe fixes only, skip structural refactors"). Findings:
+  - **XSS via `dangerouslySetInnerHTML` (20 flagged instances, 0 real issues)**: 17/20 are
+    static `<script type="application/ld+json">` structured-data blocks (author-controlled
+    JSON, not rendered as HTML - sanitizing them with an HTML sanitizer would corrupt the JSON
+    and isn't a real XSS vector). The remaining 3 (`BlogPost.jsx` lines 84/96/111) already run
+    through `formatInline()` → `DOMPurify.sanitize(html, { ALLOWED_TAGS: ["strong","em"] })`
+    before rendering - already safe. No changes needed.
+  - **React hook dependencies (7 flagged components, 0 real issues)**: every flagged "missing
+    dependency" was either a React state setter (guaranteed stable, never needs to be a dep), a
+    module-level constant/function (`DIFFICULTIES`, `rotatingWords`, `gradientStops`,
+    `lerpColor`, `API`, `axios`), or a variable declared inside the effect/callback itself
+    (`handleScroll`, `interval`, `scrollHeight`, `gameSection`, `inView`) - none of these can go
+    stale. Existing dependency arrays were already correct. No changes made (adding these would
+    have added noise or risked infinite re-render loops for no benefit).
+  - **`is` vs `==` in tests (7 files flagged, 0 real issues)**: all instances are `assert x is
+    True`/`is False` - this is the Pythonic, PEP 8-recommended way to compare against boolean
+    singletons (pylint's own `singleton-comparison` rule flags `== True` as the anti-pattern,
+    not `is True`). Left as-is; the report's general "is vs ==" advice doesn't apply to
+    singleton comparisons.
+  - **Array index as key (14 flagged, 13 real fixes applied + 2 were already using stable keys)**:
+    fixed `BusinessTechAssessment.jsx` (2 spots), `AIPage.jsx` (2), `TrustIndicators.jsx` (2),
+    `IntroStats.jsx`, `HowItWorks.jsx`, `ServiceAreasIndex.jsx` (inner industry-tag loop),
+    `CyberRiskScorecard/ScorecardQuiz.jsx`, `TechMaturityTable.jsx`, and `BlogPost.jsx` (2 list
+    spots) - all switched from `key={index}` to a stable field from the data (`.label`, `.q`,
+    `.title`, `.num`, `.name`, or the item's own text). `CaseStudy.jsx` and the main
+    `ServiceAreasIndex.jsx` city grid were already using `key={t.company}`/`key={city.slug}` -
+    the report's line numbers didn't match the actual current code there.
+- **Structural refactors** (splitting `CyberRiskScorecard`, `BlogPost`, `AIPage`,
+  `BusinessTechAssessment`, backend `email_report()` into smaller pieces): explicitly skipped
+  per user's decision - not bugs, just reorganizing already-working, already-tested code with
+  real regression risk on a live revenue site for no user-facing benefit.
+- Verified: frontend compiles clean, homepage/BTA/Scorecard screenshot smoke-tested (12-Areas
+  grid, trust indicators render correctly with new keys), full backend suite still 54/54.
+
 ### Session 18 (Feb 2026) — GitHub Actions CI wired up + hardcoded-secret cleanup
 - **Added `.github/workflows/backend-tests.yml`**: runs the full 54-test backend pytest suite
   automatically on every push/PR (user confirmed the repo is already linked to GitHub via

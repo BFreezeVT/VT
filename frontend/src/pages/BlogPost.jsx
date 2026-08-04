@@ -79,7 +79,7 @@ export default function BlogPost() {
       return [(
         <ul key={key} className="space-y-2 my-4 ml-4">
           {items.map((item, j) => (
-            <li key={j} className="text-[#94a8be] text-base leading-relaxed flex items-start gap-2">
+            <li key={item} className="text-[#94a8be] text-base leading-relaxed flex items-start gap-2">
               <span className="text-[#0077B3] mt-1.5 flex-shrink-0">&#8226;</span>
               <span dangerouslySetInnerHTML={{ __html: formatInline(item.replace("- ", "")) }} />
             </li>
@@ -93,7 +93,7 @@ export default function BlogPost() {
       return [(
         <ol key={key} className="space-y-2 my-4 ml-4 list-decimal list-inside">
           {items.map((item, j) => (
-            <li key={j} className="text-[#94a8be] text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: formatInline(item.replace(/^\d+\.\s*/, "")) }} />
+            <li key={item} className="text-[#94a8be] text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: formatInline(item.replace(/^\d+\.\s*/, "")) }} />
           ))}
         </ol>
       )];

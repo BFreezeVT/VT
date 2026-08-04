@@ -61,7 +61,7 @@ export default function TechMaturityTable({ title = "Where Does Your Organizatio
         </thead>
         <tbody>
           {levels.map((lvl, i) => (
-            <tr key={i} data-testid={`maturity-row-${i}`} className={`border-b border-white/5 ${i === levels.length - 1 ? "bg-[#0077B3]/5" : ""}`}>
+            <tr key={lvl.name} data-testid={`maturity-row-${i}`} className={`border-b border-white/5 ${i === levels.length - 1 ? "bg-[#0077B3]/5" : ""}`}>
               <td className="py-4 pr-4">
                 <p className="text-white font-semibold">{lvl.name}</p>
                 <p className="text-[#94a8be] text-xs mt-0.5">{lvl.subtitle}</p>

@@ -135,7 +135,7 @@ export default function AIPage() {
             </h2>
             <div className={`grid grid-cols-1 sm:grid-cols-2 ${page.frameworkItems.length > 4 ? "lg:grid-cols-5" : "lg:grid-cols-4"} gap-6`}>
               {page.frameworkItems.map((item, i) => (
-                <div key={i} data-testid={`ai-framework-item-${i}`} className="grid-border-card p-6">
+                <div key={item.title} data-testid={`ai-framework-item-${i}`} className="grid-border-card p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="stat-number text-lg text-[#0077B3]">{String(i + 1).padStart(2, "0")}</span>
                     <h3 className="text-white font-semibold text-sm" style={{ fontFamily: "Outfit" }}>{item.title}</h3>
@@ -156,7 +156,7 @@ export default function AIPage() {
             </h2>
             <div className="space-y-6">
               {page.faqs.map((f, i) => (
-                <div key={i} data-testid={`ai-page-faq-${i}`} className="border-b border-white/10 pb-6">
+                <div key={f.q} data-testid={`ai-page-faq-${i}`} className="border-b border-white/10 pb-6">
                   <p className="text-white font-semibold text-base mb-2 flex items-start gap-2">
                     <HelpCircle className="w-4 h-4 text-[#0077B3] mt-0.5 flex-shrink-0" /> {f.q}
                   </p>

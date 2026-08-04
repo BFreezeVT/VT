@@ -27,7 +27,7 @@ export default function ScorecardQuiz({ current, animating, answers, selectAnswe
           <div className="space-y-4">
             {question.options.map((opt, i) => (
               <button
-                key={i}
+                key={opt.text}
                 data-testid={`answer-${i}`}
                 onClick={() => selectAnswer(opt.points)}
                 className={`w-full text-left p-5 rounded-md border transition-all duration-200 hover:border-[#0077B3] hover:bg-[#0077B3]/5 ${

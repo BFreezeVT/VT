@@ -121,7 +121,7 @@ export default function BusinessTechAssessment() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {assessmentAreas.map((area, i) => (
-                <div key={i} data-testid={`bta-area-${i}`} className="border border-[#0077B3]/15 bg-[#0077B3]/5 rounded-md p-4 text-center">
+                <div key={area} data-testid={`bta-area-${i}`} className="border border-[#0077B3]/15 bg-[#0077B3]/5 rounded-md p-4 text-center">
                   <p className="text-[#0f1d32] text-sm font-semibold">{area}</p>
                 </div>
               ))}
@@ -145,7 +145,7 @@ export default function BusinessTechAssessment() {
             </h2>
             <div className="space-y-8">
               {answerBoxes.map((a, i) => (
-                <div key={i} data-testid={`bta-answer-${i}`} className="border-l-4 border-[#0077B3] pl-6">
+                <div key={a.q} data-testid={`bta-answer-${i}`} className="border-l-4 border-[#0077B3] pl-6">
                   <p className="text-[#0f1d32] font-bold text-lg mb-2 flex items-start gap-2" style={{ fontFamily: "Outfit" }}>
                     <HelpCircle className="w-4 h-4 text-[#0077B3] mt-1.5 flex-shrink-0" /> {a.q}
                   </p>

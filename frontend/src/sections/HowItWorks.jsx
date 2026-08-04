@@ -50,7 +50,7 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {steps.map((step, i) => (
             <div
-              key={i}
+              key={step.num}
               data-testid={`step-${i}`}
               className="text-center group"
             >
