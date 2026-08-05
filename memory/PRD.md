@@ -750,6 +750,17 @@ UX fix, ROI calculator analytics
 - **All items from the last two rounds of "Next Action Items" backlog are now complete** except the Industry
   Comparison Tool (not started) and confirming GitHub Actions runs green (user-side check, not agent-actionable).
 
+### Session 29 (Feb 2026) - Homepage hero visual refresh
+- Generated a custom Minneapolis skyline + glowing cyan network-overlay hero background image (replacing a generic
+  Unsplash stock photo) to match the visual language of the Core Service page hero graphics from the previous
+  session, reinforcing both local (Minnesota) identity and AI/tech authority in one image.
+  - `sections/HeroSection.jsx`: swapped `HERO_BG` URL, changed the flat dark overlay to a `bg-gradient-to-t`
+    (darker at bottom for text contrast, lighter at top to let the skyline show through) - no other logic touched.
+  - Tested via `testing_agent_v4` (iteration_36.json) - 100% pass, zero bugs, contrast/readability confirmed on both
+    desktop and mobile, both CTAs and scroll indicator functional, zero regressions on the rest of the homepage.
+- **Industry Comparison Tool**: user chose to hold off on this for now (paused, not started, still in backlog).
+- **User confirmed GitHub Actions is running green** with the rotated secrets - CI/CD loop fully closed.
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
