@@ -2,6 +2,7 @@ const aiPagesData = [
   {
     slug: "ai-readiness-assessment",
     name: "AI Readiness Assessment",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/dff014802a65ebe030b594c808588f35dc585824250290af927b662780c35216.jpeg",
     headline: "Is Your Organization Actually Ready for AI?",
     subhead: "Most businesses adopt AI tools before they're ready to govern them. An AI Readiness Assessment tells you exactly where you stand before you invest.",
     heroStat: { value: "90%", label: "of organizations are unprepared for AI-augmented threats (Accenture 2025)" },
@@ -28,6 +29,7 @@ const aiPagesData = [
   {
     slug: "ai-governance",
     name: "AI Governance",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/46759bde0af892d8b3f5f30fcc530201a9e5a13e9d2f8ddb6dd2ecc184324559.jpeg",
     headline: "AI Governance Frameworks Built for Regulated Industries",
     subhead: "AI without governance is a liability. We help organizations deploy AI safely with policies, controls, and oversight that satisfy regulators and protect data.",
     heroStat: { value: "83%", label: "of organizations lack automated AI security controls (Kiteworks 2025)" },
@@ -53,6 +55,7 @@ const aiPagesData = [
   {
     slug: "ai-risk-assessment",
     name: "AI Risk Assessment",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/d74479f1adc1c0a023b9a1f3fa22f0c985c69d96c1ae0e9da028f41a38ee87b2.jpeg",
     headline: "Find Your AI Risk Before It Finds You",
     subhead: "An AI Risk Assessment identifies where artificial intelligence introduces exposure to your data, compliance posture, and operations - before it becomes an incident.",
     heroStat: { value: "59%", label: "of confirmed security incidents are identity-driven attacks (eSentire 2026)" },
@@ -78,6 +81,7 @@ const aiPagesData = [
   {
     slug: "ai-security-assessment",
     name: "AI Security Assessment",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/bb221130289cfc915943539c05cdc2b5125606a7c24df45ee904c0439c5086a8.jpeg",
     headline: "Is Your AI Stack Actually Secure?",
     subhead: "AI tools introduce new attack surfaces - data leakage, model manipulation, and unauthorized access. An AI Security Assessment finds the gaps before attackers do.",
     heroStat: { value: "68%", label: "of employees use unauthorized AI tools at work (Second Talent 2025)" },
@@ -103,6 +107,7 @@ const aiPagesData = [
   {
     slug: "microsoft-copilot-readiness",
     name: "Microsoft Copilot Readiness",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/6358d402c08b17990a20783116fcba4fbe2a0f3eba9ec7f4a587fdab8a9311a8.jpeg",
     headline: "Is Your Organization Ready for Microsoft Copilot?",
     subhead: "Copilot is only as secure as the permissions structure underneath it. A Microsoft Copilot Readiness Assessment ensures your data is properly governed before rollout.",
     heroStat: { value: "90%", label: "of organizations are unprepared for AI-augmented threats (Accenture 2025)" },
@@ -128,6 +133,7 @@ const aiPagesData = [
   {
     slug: "ai-policy-development",
     name: "AI Policy Development",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/e435914e1bd5203aad69095e27d1411c54795ae81e166b7f85a2ef1f915cb100.jpeg",
     headline: "AI Policies That Actually Get Followed",
     subhead: "A written AI policy only works if it's enforceable, specific, and built around how your team actually works. We write policies your employees can follow and your auditors can verify.",
     heroStat: { value: "68%", label: "of employees use AI tools without approval when no clear policy exists (Second Talent 2025)" },
@@ -153,6 +159,7 @@ const aiPagesData = [
   {
     slug: "ai-data-governance",
     name: "AI Data Governance",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/158152494f4e09d845cea6f08e20470fe0330ab34fdf4e1c65c9d51251c719a0.jpeg",
     headline: "Know Where Your Data Goes When AI Touches It",
     subhead: "AI Data Governance ensures every piece of data that flows into an AI system is classified, tracked, and protected - so productivity gains don't become compliance liabilities.",
     heroStat: { value: "83%", label: "of organizations lack automated DLP controls for AI (Kiteworks 2025)" },
@@ -178,6 +185,7 @@ const aiPagesData = [
   {
     slug: "shadow-ai-risk-assessment",
     name: "Shadow AI Risk Assessment",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/c6e92aa5e95a2b47cf5861216539927c9b221f63db703733f24e36dafc2f3104.jpeg",
     headline: "Find the AI Tools Your Team Is Already Using",
     subhead: "68% of employees use AI tools without approval. A Shadow AI Risk Assessment discovers every unauthorized tool in your environment - and the data flowing through it.",
     heroStat: { value: "68%", label: "of employees use unauthorized AI tools at work (Second Talent 2025)" },
@@ -203,6 +211,7 @@ const aiPagesData = [
   {
     slug: "ai-automation-consulting",
     name: "AI Automation Consulting",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/31a3a63151bd11ce4b58082656ebe23de61b419c29d7cafc75dddbee595ee6f7.jpeg",
     headline: "Automate the Work, Not the Risk",
     subhead: "AI automation consulting that identifies your highest-impact workflows, builds automation that actually works, and keeps security and compliance intact along the way.",
     heroStat: { value: "68%", label: "of employees still turn to unauthorized AI tools when automation gaps exist (Second Talent 2025)" },
@@ -228,6 +237,7 @@ const aiPagesData = [
   {
     slug: "ai-adoption-strategy",
     name: "AI Adoption Strategy",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/d36f917dd1397eac50f365e9ed9d089b80a15d539784e2f8a8e078c5703aa4eb.jpeg",
     headline: "A Roadmap for AI Adoption, Not Just a Tool List",
     subhead: "Most AI adoption fails because it starts with picking tools instead of understanding readiness, risk, and business priorities. We build the roadmap first.",
     heroStat: { value: "90%", label: "unprepared for AI-augmented threats without a structured adoption plan (Accenture 2025)" },
@@ -253,6 +263,7 @@ const aiPagesData = [
   {
     slug: "responsible-ai-consulting",
     name: "Responsible AI Consulting",
+    heroImage: "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/3578b9a5114dbcb02e50e992cf96e805adeef13a551a1c0d79c44df287b2eca1.jpeg",
     headline: "AI That Reflects Your Values, Not Just Your Tools",
     subhead: "Responsible AI consulting ensures your organization's use of artificial intelligence is fair, transparent, accountable, and aligned with the standards your clients and regulators expect.",
     heroStat: { value: "83%", label: "of organizations lack the controls needed for responsible AI use (Kiteworks 2025)" },
