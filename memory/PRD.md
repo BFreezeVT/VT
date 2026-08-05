@@ -310,6 +310,21 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - Verified via full backend pytest suite (70/70 passing) + live curl re-test of the widened-window fix + a smoke
   screenshot of an article page. Test leads (including directly-inserted backdated test records) cleaned from Mongo.
 
+### Session 34 (Feb 2026) - Deployment readiness check
+- Ran `deployment_agent` health check ahead of a Production redeploy. Result: PASS with 2 non-blocking warnings.
+- **Fixed**: added a root-level `@app.get("/health")` directly on the FastAPI `app` instance (outside the `/api`
+  router) in `backend/server.py` - the existing `/api/health` remains unchanged, but some deployment-platform
+  liveness/readiness probes target `/health` directly without the `/api` prefix. Verified both `/health` and
+  `/api/health` return 200 locally; full backend suite re-confirmed 70/70 passing after the change.
+- **Investigated, no change needed**: the agent twice reported "no .gitignore exists, secrets at risk of being
+  committed" - verified false via direct file inspection: `/app/.gitignore` (144 lines) already excludes `.env`,
+  `.env.*`, and `memory/test_credentials.md` at the repo root (patterns apply at any depth, so `backend/.env` and
+  `frontend/.env` are already covered). This appears to be a blind spot in the scanning tool, not an actual gap -
+  no action taken since the protection was already correctly in place.
+- **Deployment status: READY.** Redeploy Preview -> Production to pick up the `/health` fix (and all prior
+  unshipped sessions since the last deploy - category blog images, share buttons, SEC-001 recipient-binding fix,
+  dependency cleanup, code-review fixes).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
