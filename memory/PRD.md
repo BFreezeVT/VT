@@ -670,6 +670,32 @@ UX fix, ROI calculator analytics
   Procore/Sage, jobsite connectivity specifics), Phase 4 (technical SEO pass: breadcrumb UI, full metadata/internal-
   link audit), plus the deferred "Service Page Visuals" enhancement (custom hero graphic per Core Service page).
 
+### Session 25 (Feb 2026) - SEO/AEO/GEO expansion Phase 3: deeper industry-specific technical content
+- Added a new "Technical Deep Dive" section to all 4 existing industry pages (`data/industryData.js` new `deepDive`
+  array field per industry + new `pages/IndustryPage/IndustryDeepDive.jsx` component, rendered between the existing
+  Compliance/Software and AI CTA sections - all pre-existing sections, challenges, compliance/software lists, and
+  testimonials left completely untouched) covering the exact specific subtopics from the original request that were
+  previously only summary-level or missing entirely:
+  - Financial Services (4 items): SOC 2 Compliance, Vendor & Third-Party Risk Management, AI Governance for Advisory
+    Firms, Business Continuity for Trading Operations
+  - Construction (3 items): BIM Security & Model Data Protection, Procore & Sage Integration Security, Business
+    Continuity for Active Job Sites
+  - Manufacturing (3 items): ERP System Security, Industrial IoT Device Management, Network Segmentation Architecture
+  - High-Compliance (3 items): PCI-DSS for Regulated Payment Processing, CMMC Level 2 Enclave Architecture, Multi-
+    Framework Documentation Strategy
+  - Added a matching 4th FAQ question to each industry page's existing `FAQPage` JSON-LD schema
+    (`lib/industryStructuredData.js`), built dynamically from the new deepDive content, for direct AEO/GEO value.
+  - **Bug caught and fixed mid-session**: the initial edit adding `deepDive` silently failed to apply to the
+    Manufacturing industry object only, causing a hard React crash (blank page, "Cannot read properties of undefined
+    (reading 'map')") on `/industries/manufacturing-it-support`. Caught via screenshot+console log inspection before
+    handoff to testing, re-applied the edit, and verified fixed.
+  - Tested via `testing_agent_v4` (iteration_31.json) - 100% pass, zero bugs, zero console errors on all 4 industry
+    pages including manufacturing (crash fix independently re-verified by the testing agent), zero regressions on
+    spot-checked homepage/Phase 1/Phase 2 pages.
+- **Remaining phase (user to confirm priority next)**: Phase 4 (technical SEO pass: visible breadcrumb UI site-wide,
+  full metadata/internal-link audit), plus previously deferred enhancements (Resources index search/filter, Service
+  Page hero visuals).
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
