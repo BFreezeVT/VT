@@ -236,12 +236,12 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - **This completes the category-level image request. Requires a Preview -> Production redeploy to go live.**
 
 ### Session 30 (Feb 2026) - Social share buttons on article pages
-- New `pages/BlogPost/ShareButtons.jsx` - a "Share" row (LinkedIn + Email icon buttons) rendered right after the
-  excerpt/before the article content on every resource article page. LinkedIn button opens
-  `linkedin.com/sharing/share-offsite` with the canonical production article URL in a new tab; Email button opens a
-  pre-filled `mailto:` link (subject = article title, body = title + canonical URL) - both one-click, no backend call.
-  `data-testid="share-linkedin-button"` / `share-email-button"`, verified rendering + correctly-encoded URLs via
-  screenshot + a manual URL-encoding check (self-tested, small additive change - no new state/API surface).
+- New `pages/BlogPost/ShareButtons.jsx` - a "Share" row (LinkedIn + X + Email icon buttons) rendered right after the
+  excerpt/before the article content on every resource article page. LinkedIn opens `linkedin.com/sharing/share-offsite`,
+  X opens `twitter.com/intent/tweet` (pre-filled with the article title), both with the canonical production article
+  URL in a new tab; Email opens a pre-filled `mailto:` link (subject = article title, body = title + canonical URL) -
+  all one-click, no backend call. `data-testid="share-linkedin-button"` / `"share-twitter-button"` / `"share-email-button"`,
+  verified rendering + correctly-encoded URLs via screenshot (self-tested, small additive change - no new state/API surface).
 
 ## Backlog / Next Tasks
 

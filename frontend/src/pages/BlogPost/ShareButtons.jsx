@@ -1,8 +1,9 @@
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, X } from "lucide-react";
 
 export default function ShareButtons({ post }) {
   const canonicalUrl = `https://www.veracitytechmn.com/resources/${post.slug}`;
   const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}`;
+  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(post.title)}`;
   const emailSubject = encodeURIComponent(post.title);
   const emailBody = encodeURIComponent(`Thought you'd find this useful: ${post.title}\n\n${canonicalUrl}`);
   const mailtoUrl = `mailto:?subject=${emailSubject}&body=${emailBody}`;
@@ -19,6 +20,16 @@ export default function ShareButtons({ post }) {
         className="w-9 h-9 flex items-center justify-center border border-white/10 rounded-sm text-[#94a8be] hover:text-white hover:border-[#0077B3] hover:bg-[#0077B3]/10 transition-colors"
       >
         <Linkedin className="w-4 h-4" />
+      </a>
+      <a
+        href={twitterShareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Share on X"
+        data-testid="share-twitter-button"
+        className="w-9 h-9 flex items-center justify-center border border-white/10 rounded-sm text-[#94a8be] hover:text-white hover:border-[#0077B3] hover:bg-[#0077B3]/10 transition-colors"
+      >
+        <X className="w-4 h-4" />
       </a>
       <a
         href={mailtoUrl}
