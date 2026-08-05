@@ -726,6 +726,17 @@ UX fix, ROI calculator analytics
 - **Deferred enhancements (not part of the original SEO ask, suggested as follow-ups, none started)**: Resources
   index search/filter UI, per-Core-Service-page hero visuals, an industry comparison tool.
 
+### Session 27 (Feb 2026) - Resources index search & category filter
+- Added a live search bar (title+excerpt match, case-insensitive) and category filter chips to `pages/BlogIndex.jsx`
+  (`/resources`, 147 articles) - categories derived dynamically via `useMemo` from the actual fetched post data (no
+  hardcoded list to maintain), combined search+category filtering, result count, and an empty state with a "Clear
+  filters" reset. Also swapped the old plain "Back to Home" link for the shared `Breadcrumbs` component (Home >
+  Resources) for consistency with the Phase 4 rollout.
+  - Tested via `testing_agent_v4` (iteration_34.json) - 100% pass, zero bugs, zero regressions (article card
+    navigation, breadcrumb, sticky nav/footer all confirmed working).
+- **All requested SEO/AEO/GEO phases (1-4) plus this enhancement are now complete.** Remaining deferred items from
+  the backlog: Service Page hero visuals, an industry comparison tool.
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
