@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
-import { ChevronLeft } from "lucide-react";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { Button } from "../../components/ui/button";
 
 export default function IndustryHero({ industry, Icon }) {
   return (
     <section data-testid="industry-hero" aria-label={`${industry.name} IT and cybersecurity services`} className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
-          <ChevronLeft className="w-3 h-3" /> Back to Home
-        </Link>
+        <Breadcrumbs items={[{ label: "Industries", to: "/#industries" }, { label: industry.name }]} />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">

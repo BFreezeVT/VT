@@ -1,14 +1,13 @@
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "../../components/ui/button";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default function AIPageHero({ page }) {
   return (
     <section data-testid="ai-page-hero" aria-label={page.headline} className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
-          <ChevronLeft className="w-3 h-3" /> Back to Home
-        </Link>
+        <Breadcrumbs items={[{ label: "Business Technology Assessment", to: "/business-technology-assessment" }, { label: page.name }]} />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">

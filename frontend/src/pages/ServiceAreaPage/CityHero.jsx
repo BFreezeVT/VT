@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { Phone, MapPin, ChevronLeft } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { Button } from "../../components/ui/button";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default function CityHero({ city }) {
   return (
@@ -10,9 +10,7 @@ export default function CityHero({ city }) {
       className="py-24 lg:py-32"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
-          <ChevronLeft className="w-3 h-3" /> All Service Areas
-        </Link>
+        <Breadcrumbs items={[{ label: "Service Areas", to: "/service-areas" }, { label: `IT Support in ${city.name}` }]} />
         <div className="flex items-center gap-2 mb-4">
           <MapPin className="w-4 h-4 text-[#0077B3]" />
           <p className="overline text-[#0077B3]">{city.name}, {city.state} {city.zip}</p>

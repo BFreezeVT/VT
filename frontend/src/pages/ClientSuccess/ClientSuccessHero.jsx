@@ -1,13 +1,13 @@
-import { ChevronLeft, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Star } from "lucide-react";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default function ClientSuccessHero() {
   return (
     <section data-testid="client-success-hero" className="py-24 lg:py-28">
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <Link to="/" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-6 hover:text-white transition-colors">
-          <ChevronLeft className="w-3 h-3" /> Back to Home
-        </Link>
+        <div className="flex justify-center">
+          <Breadcrumbs items={[{ label: "Client Success Stories" }]} />
+        </div>
         <p className="overline text-[#0077B3] mb-4">Client Success</p>
         <h1 data-testid="client-success-headline" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white mb-6" style={{ fontFamily: "Outfit" }}>
           Real Results, Real Minnesota Businesses

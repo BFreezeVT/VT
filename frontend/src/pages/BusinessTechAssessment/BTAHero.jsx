@@ -1,10 +1,14 @@
 import { Phone } from "lucide-react";
 import { Button } from "../../components/ui/button";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 export default function BTAHero() {
   return (
     <section data-testid="bta-hero" aria-label="Business Technology Assessment" className="py-24 lg:py-28">
       <div className="max-w-5xl mx-auto px-6 text-center">
+        <div className="flex justify-center">
+          <Breadcrumbs items={[{ label: "Business Technology Assessment" }]} />
+        </div>
         <p className="overline text-[#0077B3] mb-4">The Central Authority Page</p>
         <h1 data-testid="bta-headline" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6" style={{ fontFamily: "Outfit" }}>
           How Mature Is Your Organization&rsquo;s Technology, Cybersecurity, Compliance, and AI Strategy?

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ChevronLeft, Clock, CalendarDays } from "lucide-react";
+import { Clock, CalendarDays } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import axios from "axios";
 import RelatedArticlesCarousel from "../../sections/RelatedArticlesCarousel";
+import Breadcrumbs from "../../components/Breadcrumbs";
 import { renderContent } from "./blogContentRenderer";
 import { buildArticleSchema, buildBreadcrumbSchema } from "./blogPostSchemas";
 import BlogPostNav from "./BlogPostNav";
@@ -63,9 +64,7 @@ export default function BlogPost() {
       <main role="main">
         <article className="py-20 lg:py-28" aria-label={post.title}>
           <div className="max-w-3xl mx-auto px-6">
-            <Link to="/resources" className="inline-flex items-center gap-1 text-[#0077B3] text-sm mb-8 hover:text-white transition-colors">
-              <ChevronLeft className="w-3 h-3" /> All Articles
-            </Link>
+            <Breadcrumbs items={[{ label: "Resources", to: "/resources" }, { label: post.title }]} />
 
             <div className="flex items-center gap-4 mb-6">
               <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#0077B3]/30 px-2 py-0.5">
