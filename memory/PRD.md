@@ -274,6 +274,14 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - Verified via direct curl testing + full backend pytest suite (68/68 passing) - not a full `testing_agent_v4` pass,
   this was a backend-only security fix with no frontend surface. Test leads/rate-limit data cleaned from Mongo after.
 
+### Session 32 (Feb 2026) - Unused dependency cleanup (from Session 31 security audit)
+- Removed 5 confirmed-unused packages from `backend/requirements.txt`: `pyjwt`, `passlib`, `python-jose` (flagged
+  directly by the security audit as dead supply-chain weight - no auth/JWT system exists in this app), plus `pandas`
+  and `numpy` (also zero direct imports anywhere in the codebase, confirmed via `grep`, and only present as pandas's
+  own transitive dependency). Uninstalled all 5 from the venv and removed their lines from requirements.txt.
+- Verified: full backend pytest suite still 68/68 passing, backend restarts clean, live `/api/` and `/api/blog`
+  health checks return 200. No code changes needed elsewhere (nothing in the codebase imported any of these 5).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
