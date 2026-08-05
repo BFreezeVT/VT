@@ -574,6 +574,36 @@ UX fix, ROI calculator analytics
 - **Note**: "Search Console Check" (validating the earlier VideoObject fix) remains a user action
   in Google Search Console itself, not a dev task — no code change needed once redeployed.
 
+### Session 22 (Feb 2026) — Client-success image swap + leaked credential rotation
+- **Homepage image replacement**: `sections/OurApproach.jsx` "Client Success" panel (right column
+  of the "How We Deliver" section) now shows the user's uploaded branded infographic
+  (`data-testid="client-success-image"`, replacing the old `data-testid="soc-image"` stock
+  handshake photo). Since the new asset has its own baked-in captions/testimonials, switched
+  `object-cover` → `object-contain` and removed the old text-overlay gradient/caption block.
+  Verified: diff review, new image URL returns HTTP 200 (valid PNG), frontend compiles clean.
+  Visual on-page confirmation blocked by a tool-side screenshot/Playwright bug this session
+  (coroutine object returned from `scroll_into_view_if_needed`/`bounding_box` regardless of
+  environment) — user should still eyeball `https://veracitytechmn.com` "How We Deliver" section
+  once redeployed.
+- **[SECURITY] Rotated leaked credentials**: a prior session had exposed the real `ADMIN_API_KEY`
+  and Gmail `SMTP_PASS` app password in chat. Both rotated this session:
+  - New `ADMIN_API_KEY` generated (`secrets.token_urlsafe(32)`), updated in Preview
+    `backend/.env`. Verified: old key → 401, new key → 200, on both Preview and Production
+    (`GET /api/leads` via curl with `X-Admin-Key`).
+  - New Gmail app password (user-generated, revoked old one in their Google Account). Updated
+    Preview `backend/.env` `SMTP_PASS`. Verified via a real test lead submission on Preview (log
+    confirmed "Lead notification email sent", no error) and a second real test lead on
+    **Production** (user confirmed receiving the notification email).
+  - User updated the same two values in Production's Deploy → Environment Variables (redeployed)
+    and was walked through where to find that screen (`support_agent`).
+  - Test leads (`credrotationtest@example.com` on Preview, `TEST_ProdSMTPVerification /
+    TEST_DoNotContact` on Production) — Preview one cleaned from Mongo; the Production one could
+    not be cleaned (no DB access to Production) — clearly labeled "TEST_DoNotContact" for the
+    user to ignore/manually delete if desired.
+  - **Outstanding**: user still needs to update the same `ADMIN_API_KEY`/`SMTP_PASS` values in
+    GitHub repo secrets (Settings → Secrets and variables → Actions) for the CI workflow
+    (`.github/workflows/backend-tests.yml`) to keep working with the new credentials.
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
