@@ -1,6 +1,6 @@
 import { Monitor, ShieldCheck, Layers, Headphones } from "lucide-react";
 
-const SOC_IMG = "https://images.unsplash.com/photo-1698047682091-782b1e5c6536?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxoYXBweSUyMGJ1c2luZXNzJTIwcHJvZmVzc2lvbmFsJTIwaGFuZHNoYWtlJTIwc2F0aXNmaWVkJTIwY2xpZW50JTIwbWVldGluZ3xlbnwwfHx8fDE3ODA5Nzc0Nzh8MA&ixlib=rb-4.1.0&q=85";
+const CLIENT_SUCCESS_IMG = "https://customer-assets-agu9un31.emergentagent.net/job_a66d851c-ab3d-4669-9a37-bc99f9119744/artifacts/zce5q1xq_Designer%20%2827%29.png";
 
 const approaches = [
   { icon: Monitor, title: "24/7 Managed IT Monitoring", desc: "AI-powered monitoring across your entire environment. We detect and resolve issues before they impact your productivity or operations." },
@@ -41,15 +41,10 @@ export default function OurApproach() {
             </div>
           </div>
 
-          {/* Right - SOC image */}
+          {/* Right - Client Success infographic (wide 3:2 image with its own baked-in captions) */}
           <div className="animate-fade-in-up stagger-2 lg:sticky lg:top-24">
-            <div className="relative overflow-hidden border border-[#90a4b8]">
-              <img data-testid="soc-image" src={SOC_IMG} alt="Satisfied business client shaking hands with Veracity Technologies IT consultant" className="w-full h-auto object-cover" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#4a6a88]/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="text-[#0077B3] text-xs uppercase tracking-wider font-semibold mb-1">Client Success</p>
-                <p className="text-white text-sm">Businesses that partner with Veracity run smarter, react faster, and scale with confidence.</p>
-              </div>
+            <div className="relative overflow-hidden border border-[#90a4b8] bg-[#0f1d32]">
+              <img data-testid="client-success-image" src={CLIENT_SUCCESS_IMG} alt="Veracity Technologies client success overview: partnership, measurable business impact, and scalable growth, with testimonials from a VP of Operations, CFO, and CEO" className="w-full h-auto object-contain" loading="lazy" />
             </div>
           </div>
         </div>
