@@ -108,6 +108,14 @@ async def check_report_email_rate_limit(request: Request) -> None:
 # Create the main app without a prefix
 app = FastAPI()
 
+
+@app.get("/health")
+async def root_health_check() -> dict:
+    """Root-level liveness/readiness probe (outside the /api router) - some deployment
+    platform health checks target /health directly rather than /api/health."""
+    return {"status": "healthy", "service": "Veracity Technologies API", "version": "1.0.0"}
+
+
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
