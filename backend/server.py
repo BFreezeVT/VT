@@ -7,6 +7,7 @@ import os
 import hmac
 import html
 import logging
+import re
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -45,10 +46,14 @@ def verify_admin_api_key(api_key: Optional[str] = Depends(admin_api_key_header))
 
 LEAD_RATE_LIMIT_MAX = 5
 LEAD_RATE_LIMIT_WINDOW_SECONDS = 3600
-# Site-wide caps, independent of client IP. The X-Forwarded-For header used by the per-IP
-# guard below is client-suppliable and can be spoofed to a fresh value on every request,
-# bypassing the per-IP limit entirely - these global caps are the real backstop that bounds
-# worst-case abuse (e.g. using /api/reports/email as a mail relay to arbitrary recipients).
+# Site-wide caps, independent of client IP. Live testing on this hosting platform confirmed the
+# X-Forwarded-For header reaching this app is not a trustworthy per-visitor signal - it is
+# fully client-suppliable (any value a caller sends is passed through verbatim) and, even
+# without spoofing, its leading values are platform-infrastructure IPs rather than the real
+# visitor's IP. The per-IP check below is therefore best-effort/advisory only; these global
+# caps are the real, tamper-proof backstop that bounds worst-case abuse. /api/reports/email
+# additionally requires recipient_email to match a genuinely-captured recent lead (see
+# _recipient_has_recent_lead) so it cannot be used as an open mail relay to arbitrary recipients.
 GLOBAL_LEAD_SUBMIT_LIMIT = 200
 GLOBAL_REPORT_EMAIL_LIMIT = 50
 
@@ -165,6 +170,23 @@ class EmailReportRequest(BaseModel):
 
 
 MAX_PDF_BASE64_CHARS = 8_000_000  # generous ceiling (~6MB decoded) for a text-based report PDF
+REPORT_EMAIL_LEAD_WINDOW_SECONDS = 1800  # 30 min - matches the real UI flow (lead is always
+# submitted immediately before the "Email Report" button becomes reachable in the Assessment /
+# Cyber Risk Scorecard results screens)
+
+
+async def _recipient_has_recent_lead(email: str) -> bool:
+    """Verifies recipient_email matches a lead genuinely captured via POST /api/leads within
+    the last REPORT_EMAIL_LEAD_WINDOW_SECONDS. Without this check, /api/reports/email could be
+    called directly (bypassing the site's UI entirely) to relay an attacker-chosen PDF from our
+    trusted mailbox to any arbitrary third-party recipient - this ties every report-email send to
+    a real, auditable lead record instead."""
+    cutoff = (datetime.now(timezone.utc) - timedelta(seconds=REPORT_EMAIL_LEAD_WINDOW_SECONDS)).isoformat()
+    match = await db.leads.find_one({
+        "email": {"$regex": f"^{re.escape(email)}$", "$options": "i"},
+        "created_at": {"$gte": cutoff},
+    })
+    return match is not None
 
 
 # ─── Email notification ──────────────────────────────────────
@@ -353,8 +375,15 @@ def _send_smtp_message(smtp_host: str, smtp_port: int, smtp_user: str, smtp_pass
 async def email_report(payload: EmailReportRequest) -> dict:
     """Emails a client-generated PDF report (Assessment or Cyber Risk Scorecard results) as an
     attachment to the requester's own email. Rate-limited by IP + a site-wide cap (see
-    check_report_email_rate_limit) since this endpoint sends outbound email through our SMTP
-    relay to a recipient the caller controls."""
+    check_report_email_rate_limit), and requires recipient_email to match a lead genuinely
+    captured via POST /api/leads in the last 30 minutes (see _recipient_has_recent_lead) - this
+    endpoint sends outbound email through our SMTP relay, so it must not be usable as an open
+    mail relay to arbitrary third-party recipients."""
+    if not await _recipient_has_recent_lead(payload.recipient_email):
+        raise HTTPException(
+            status_code=403,
+            detail="We couldn't verify this request. Please submit the form on our site to receive your report by email.",
+        )
     pdf_bytes = _decode_and_validate_report_pdf(payload)
     smtp_host, smtp_port, smtp_user, smtp_pass = _get_smtp_credentials()
     msg, recipient = _build_report_email_message(payload, smtp_user, pdf_bytes)

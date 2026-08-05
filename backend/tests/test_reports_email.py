@@ -1,8 +1,11 @@
 """
 Tests for POST /api/reports/email - emails a client-generated PDF report (Assessment or
 Cyber Risk Scorecard) as an attachment via SMTP. Covers: EmailStr validation (422 on bad
-email), successful send with a real minimal PDF, and rate-limiting (per-IP + a tamper-proof
-site-wide cap via check_report_email_rate_limit - see security audit fix in server.py).
+email), successful send with a real minimal PDF, rate-limiting (per-IP + a tamper-proof
+site-wide cap via check_report_email_rate_limit - see security audit fix in server.py), and
+recipient-binding (recipient_email must match a lead genuinely captured via POST /api/leads
+in the last 30 min - closes the open-mail-relay-to-arbitrary-recipient risk found in the
+2026-08-05 security audit, see _recipient_has_recent_lead in server.py).
 /api/leads and /api/reports/email now have INDEPENDENT per-IP buckets (each keyed by its own
 "action" tag) precisely so that exhausting one does not block the other, while a header-spoof-
 proof global cap on /api/reports/email closes the mail-relay-abuse risk that a per-IP-only
@@ -10,8 +13,10 @@ limiter (bypassable via a forged X-Forwarded-For) could not.
 """
 import base64
 import os
+import time
 from pathlib import Path
 
+import pymongo
 import pytest
 import requests
 from dotenv import load_dotenv
@@ -19,6 +24,8 @@ from dotenv import load_dotenv
 load_dotenv(str(Path(__file__).resolve().parent.parent / ".env"))
 
 BASE_URL = os.environ.get('REACT_APP_BACKEND_URL').rstrip('/')
+_mongo_client = pymongo.MongoClient(os.environ['MONGO_URL'])
+_db = _mongo_client[os.environ['DB_NAME']]
 
 # Minimal valid (tiny) PDF byte content, base64-encoded, so decode + MIMEApplication succeeds.
 MINI_PDF_BYTES = b"%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj\n3 0 obj<</Type/Page/Parent 2 0 R>>endobj\ntrailer<</Root 1 0 R>>"
@@ -35,6 +42,20 @@ def api_client():
     session = requests.Session()
     session.headers.update({"Content-Type": "application/json"})
     return session
+
+
+def _create_matching_lead(api_client, email):
+    """Mirrors the real UI flow (Assessment/Scorecard results screen) where a lead is always
+    submitted via POST /api/leads immediately before the "Email Report" button becomes
+    reachable - required for /api/reports/email's recipient-binding check to allow the send."""
+    r = api_client.post(f"{BASE_URL}/api/leads", json={
+        "company": "TEST_QA Co",
+        "name": "QA Tester",
+        "phone": "555-000-0000",
+        "email": email,
+        "source_page": "ai-business-assessment",
+    })
+    assert r.status_code in (200, 429), f"Unexpected status creating prerequisite lead: {r.status_code}: {r.text}"
 
 
 class TestEmailReportValidation:
@@ -57,16 +78,51 @@ class TestEmailReportValidation:
     def test_non_pdf_attachment_rejected(self, api_client):
         """Security fix: attachment bytes must start with the %PDF magic header, closing off
         this endpoint as a generic arbitrary-file-to-arbitrary-recipient relay."""
-        payload = {"recipient_email": "test_reports_qa@example.com", "pdf_base64": NOT_A_PDF_B64}
+        email = "test_nonpdf_qa@example.com"
+        _create_matching_lead(api_client, email)
+        payload = {"recipient_email": email, "pdf_base64": NOT_A_PDF_B64}
         r = api_client.post(f"{BASE_URL}/api/reports/email", json=payload)
         assert r.status_code == 400, f"Expected 400 for a non-PDF attachment, got {r.status_code}: {r.text}"
 
 
+class TestEmailReportRecipientBinding:
+    """Security fix (2026-08-05 audit, SEC-001): recipient_email must match a lead genuinely
+    captured via POST /api/leads in the last 30 min, so this endpoint can't be called directly
+    to relay an attacker-chosen PDF from our trusted mailbox to an arbitrary third party."""
+
+    def test_recipient_with_no_prior_lead_rejected_403(self, api_client):
+        never_registered_email = f"test_no_lead_{int(time.time())}@example.com"
+        payload = {"recipient_email": never_registered_email, "pdf_base64": MINI_PDF_B64}
+        r = api_client.post(f"{BASE_URL}/api/reports/email", json=payload)
+        assert r.status_code == 403, f"Expected 403 for a recipient with no matching lead, got {r.status_code}: {r.text}"
+
+    def test_recipient_with_recent_lead_passes_binding_check(self, api_client):
+        """After creating a matching lead, the recipient-binding check itself should pass -
+        the request should get past the 403 (it may still 200/502/503 depending on SMTP
+        config in this environment, but must NOT be blocked as an unverified recipient)."""
+        email = f"test_recipient_bound_{int(time.time())}@example.com"
+        _create_matching_lead(api_client, email)
+        payload = {"recipient_email": email, "pdf_base64": MINI_PDF_B64}
+        r = api_client.post(f"{BASE_URL}/api/reports/email", json=payload)
+        assert r.status_code != 403, f"A recipient with a genuine recent lead should pass the binding check, got {r.status_code}: {r.text}"
+
+
 class TestEmailReportSendAndRateLimit:
+    @pytest.fixture(autouse=True)
+    def _fresh_rate_limit_quota(self):
+        """This class deliberately manages the reports_email 5/hour per-IP budget down to the
+        wire (the last test intentionally exhausts it to prove 429 behavior) - give it a clean
+        slate regardless of what earlier classes in this file already consumed."""
+        _db.lead_submission_log.delete_many({})
+        _db.rate_limit_global_log.delete_many({})
+        yield
+
     @pytest.mark.skipif(not SMTP_CONFIGURED, reason="SMTP credentials not configured in this environment")
     def test_valid_email_report_send_success(self, api_client):
+        email = "test_reports_qa@example.com"
+        _create_matching_lead(api_client, email)
         payload = {
-            "recipient_email": "test_reports_qa@example.com",
+            "recipient_email": email,
             "recipient_name": "QA Tester",
             "company_name": "TEST_QA Co",
             "report_title": "Executive ROI & Readiness Report",

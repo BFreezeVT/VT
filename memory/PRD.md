@@ -243,6 +243,37 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   all one-click, no backend call. `data-testid="share-linkedin-button"` / `"share-twitter-button"` / `"share-email-button"`,
   verified rendering + correctly-encoded URLs via screenshot (self-tested, small additive change - no new state/API surface).
 
+### Session 31 (Feb 2026) - Security audit + fixes (SEC-001 mail-relay binding, SEC-002 documentation)
+- **Full security audit requested by user** (`security_audit_agent`) on the current Preview deployment. Verdict:
+  CONDITIONAL PASS - NEEDS ATTENTION, 2 MEDIUM findings (no criticals/highs). Core controls (admin-key auth, HTML
+  escaping, header-injection sanitization, DOMPurify, CORS/no-cookies, no hardcoded secrets) all reconfirmed intact.
+- **[MEDIUM] Fixed - SEC-001, `/api/reports/email` usable as an open mail relay to arbitrary recipients**: the
+  endpoint let any anonymous caller send an email (with an attacker-chosen PDF attachment) from Veracity's trusted
+  Gmail mailbox to ANY recipient, with no check that the recipient was the actual requester - a brand-abuse/phishing-
+  distribution vector. Fixed with a new `_recipient_has_recent_lead()` check: `recipient_email` must now match a
+  lead genuinely captured via `POST /api/leads` within the last 30 minutes (matches the real UI flow in both
+  `FreeAuditOffer.jsx` and `useScorecardFlow.js`, which always submit a lead with the same email immediately before
+  the "Email Report" button becomes reachable) - returns 403 otherwise. Verified live: unbound recipient -> 403;
+  recipient with a matching just-created lead -> 200/success. Updated `test_reports_email.py` with 2 new regression
+  tests (`TestEmailReportRecipientBinding`) plus a class-scoped rate-limit-reset fixture (existing tests needed a
+  matching lead created first, and the added test volume required per-test quota isolation to avoid self-contaminating
+  the file's own deliberate 429-exhaustion tests) - full suite 68/68 passing.
+- **[MEDIUM] Investigated - SEC-002, spoofable `X-Forwarded-For` per-IP rate limit**: live-tested by sending
+  requests with attacker-forged `X-Forwarded-For` values - confirmed the header is passed through completely
+  unverified, AND (further finding beyond the audit) even the "clean" no-spoof header chain on this Preview hosting
+  architecture contains only static platform-infrastructure IPs, not the real visitor's IP, at any position - so
+  per-IP identification is not a reliable signal on this platform at the application-code level (an infra-level
+  constraint, not fixable by repositioning which XFF index is trusted). Documented this honestly in code comments;
+  the tamper-proof site-wide global cap (200/hr leads, 50/hr reports) remains the real backstop, and the SEC-001 fix
+  above substantially reduces the practical impact of exhausting it (recipient-binding means abuse now always leaves
+  a traceable lead record, closing the "anonymous, zero-cost" mail-relay angle even if the per-IP gate is bypassed).
+- **[P3, deferred, no change made]**: CORS wildcard (already accepted low-risk since `allow_credentials=False`, per
+  Session 16 precedent); unused `pyjwt`/`passlib`/`python-jose`/`pandas` in `requirements.txt` (confirmed zero imports
+  anywhere in the codebase, genuine dead weight/supply-chain surface, but removing deps carries its own regression
+  risk for a P3/hardening-only finding - deferred to a dedicated cleanup pass if desired, not fixed this session).
+- Verified via direct curl testing + full backend pytest suite (68/68 passing) - not a full `testing_agent_v4` pass,
+  this was a backend-only security fix with no frontend surface. Test leads/rate-limit data cleaned from Mongo after.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
