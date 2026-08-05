@@ -645,6 +645,31 @@ UX fix, ROI calculator analytics
   Phase 3 (deepen existing industry pages with OT/SCADA, Procore/Sage, jobsite connectivity specifics), Phase 4
   (technical SEO pass: breadcrumb UI everywhere, full metadata/internal-link audit).
 
+### Session 24 (Feb 2026) - SEO/AEO/GEO expansion Phase 2: Resource Center content gaps
+- Wrote the 5 missing Resource Center articles identified in the original audit, added to `backend/blog_data.py`
+  `BLOG_POSTS_EXTENDED` (147 total posts now, zero duplicate slugs): `managed-it-pricing-guide-minnesota-businesses`,
+  `msp-vs-break-fix-it-support`, `internal-it-vs-managed-service-provider`, `co-managed-it-vs-fully-managed-it`,
+  `microsoft-copilot-vs-chatgpt-for-business`. Each follows the existing post format (direct-answer opener, ##
+  headings, FAQ section with bolded inline Q&A pairs, closing italic CTA) - no new markdown syntax needed, matches
+  what `blogContentRenderer.jsx` already supports.
+- **Site-wide internal linking improvement**: the "Related Resources" block on every blog post (`BlogRelatedResources.jsx`,
+  shared template across all 147 posts) previously linked its service card to the homepage `/#core-services` anchor.
+  Added `categoryServiceMap` to `lib/contentLinks.js` (Managed IT/Cybersecurity/Business Continuity/Compliance/
+  Financial Services/Manufacturing/AI & Automation -> their matching Phase 1 dedicated `/services/:slug` page, safe
+  fallback to managed-it-services) so every post now links to a real, specific service page instead of a generic
+  anchor - direct continuation of the original "improve internal linking" ask, applies automatically to all existing
+  and future posts with zero risk (additive fields only, one link target changed).
+  - Added the 5 new URLs to `sitemap.xml`'s curated featured-resources list, and updated `llms.txt` with new Core
+    Services/Human Risk Simulation/Client Success sections, the 5 new article titles, and 4 new FAQ pairs matching
+    the new comparison content (direct AEO/GEO citation value).
+  - Tested via `testing_agent_v4` (iteration_30.json) - 100% pass (12/12 backend tests, all frontend flows), zero
+    bugs. Confirmed the service-link change works correctly across 3 pre-existing posts of different categories, not
+    just the 5 new ones. Only note: `/resources` index page has no search/category filter UI - pre-existing gap, out
+    of Phase 2 scope, not a regression.
+- **Remaining phases (user to confirm priority next)**: Phase 3 (deepen existing industry pages with OT/SCADA,
+  Procore/Sage, jobsite connectivity specifics), Phase 4 (technical SEO pass: breadcrumb UI, full metadata/internal-
+  link audit), plus the deferred "Service Page Visuals" enhancement (custom hero graphic per Core Service page).
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
