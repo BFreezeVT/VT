@@ -6,7 +6,7 @@ export default function AIPageFAQ({ page }) {
       <div className="max-w-3xl mx-auto px-6">
         <p className="overline text-[#0077B3] mb-4 text-center">FAQ</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-10 text-center" style={{ fontFamily: "Outfit" }}>
-          Common questions about {page.name.toLowerCase()}
+          Common questions about {page.name}
         </h2>
         <div className="space-y-6">
           {page.faqs.map((f, i) => (

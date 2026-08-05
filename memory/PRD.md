@@ -206,6 +206,21 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
+- Fixed the lowercase, slug-derived heading bug the testing agent flagged:
+  `AIPageFAQ.jsx`/`AIPageCTA.jsx` called `.toLowerCase()` on `page.name` (e.g. "AI Readiness
+  Assessment"), which incorrectly lowercased the "AI" prefix too ("ai readiness assessment").
+  `page.name` is already correctly cased in `aiPagesData.js` for all 11 AI pages, so both
+  headings now just use `page.name` directly - "Common questions about AI Readiness
+  Assessment" / "See where AI Readiness Assessment fits...". Verified live via Playwright text
+  content extraction on `/ai-readiness-assessment`.
+- Checked for the same pattern elsewhere (`IndustryPage/*`, `industryStructuredData.js`,
+  `ProudPartners.jsx`) - all other `.toLowerCase()` usages are on plain industry names
+  ("Financial Services", "Construction") with no embedded acronyms, so lowercasing reads
+  naturally there and is not the same bug. No further changes needed.
+- Search Console Recheck remains a manual action on the user's end (Google Search Console
+  dashboard) - not something fixable from this codebase.
+
 ### Session 20 (Feb 2026) — Structural refactors executed (behavior-preserving, zero regressions)
 - User approved executing the "structural refactor" items from the earlier code-quality report
   after production deployment. All 7 items completed as pure reorganization - no functional or
