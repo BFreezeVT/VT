@@ -761,6 +761,25 @@ UX fix, ROI calculator analytics
 - **Industry Comparison Tool**: user chose to hold off on this for now (paused, not started, still in backlog).
 - **User confirmed GitHub Actions is running green** with the rotated secrets - CI/CD loop fully closed.
 
+### Session 30 (Feb 2026) - Distinct hero graphics for all 11 AI cluster pages
+- Extended the same hero-image treatment (image stacked above stat card in `grid-border-card`) from the Core Service
+  pages to all 11 AI cluster pages, completing a fully consistent visual identity site-wide across every major page
+  template (homepage, 5 services, 11 AI pages).
+  - Generated 11 unique dark-navy/glowing-cyan abstract illustrations matching each page's specific concept:
+    staircase+nodes (AI Readiness), network in hexagonal frame (Governance), radar scan with flagged risk points
+    (Risk Assessment), shielded network core (Security Assessment), AI orb with layered access rings (Copilot
+    Readiness), documents becoming circuit pathways (Policy Development), data streams through filter gates (Data
+    Governance), scanning beam revealing hidden nodes (Shadow AI), interlocking gears with flowing nodes
+    (Automation Consulting), winding path with milestones (Adoption Strategy), balanced scale with AI nodes
+    (Responsible AI).
+  - Added `heroImage` field to each of the 11 objects in `data/aiPagesData.js`; restructured
+    `pages/AIPage/AIPageHero.jsx` right column identically to `ServiceHero.jsx`.
+  - Tested via `testing_agent_v4` (iteration_37.json) - 100% pass, all 11 images confirmed unique (verified via
+    distinct `src` + `naturalWidth`) and topically correct, zero regressions, zero console errors.
+- **Visual consistency initiative is now complete**: homepage hero (session 29), 5 Core Service pages (session 28),
+  and 11 AI cluster pages (this session) all share the same dark-navy/glowing-cyan custom illustration style instead
+  of generic stock photos.
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
