@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, Phone, Clock, ArrowRight, Search, X } from "lucide-react";
 import axios from "axios";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { getBlogCategoryImage } from "../data/blogCategoryImages";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -171,8 +172,16 @@ export default function BlogIndex() {
                     key={post.slug}
                     to={`/resources/${post.slug}`}
                     data-testid={`blog-card-${i}`}
-                    className="grid-border-card p-6 group hover:border-[#0077B3] transition-colors block flex flex-col"
+                    className="grid-border-card overflow-hidden group hover:border-[#0077B3] transition-colors block flex flex-col"
                   >
+                    <img
+                      src={getBlogCategoryImage(post.category)}
+                      alt={`${post.category} illustration`}
+                      data-testid={`blog-card-image-${i}`}
+                      className="w-full h-32 object-cover"
+                      loading="lazy"
+                    />
+                    <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 mb-4">
                       <span className={`text-[10px] uppercase tracking-wider border px-2 py-0.5 ${categoryColors[post.category] || "text-[#0077B3] border-white/10"}`}>
                         {post.category}
@@ -195,6 +204,7 @@ export default function BlogIndex() {
                       <span className="text-[#0077B3] text-sm font-medium flex items-center gap-1 group-hover:text-white transition-colors">
                         Read <ArrowRight className="w-3 h-3" />
                       </span>
+                    </div>
                     </div>
                   </Link>
                 ))}

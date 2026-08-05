@@ -5,6 +5,7 @@ import { Button } from "../../components/ui/button";
 import axios from "axios";
 import RelatedArticlesCarousel from "../../sections/RelatedArticlesCarousel";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import { getBlogCategoryImage } from "../../data/blogCategoryImages";
 import { renderContent } from "./blogContentRenderer";
 import { buildArticleSchema, buildBreadcrumbSchema } from "./blogPostSchemas";
 import BlogPostNav from "./BlogPostNav";
@@ -28,11 +29,41 @@ export default function BlogPost() {
       document.title = `${postRes.data.title} | Veracity Technologies`;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", postRes.data.excerpt);
+
+      const categoryImage = getBlogCategoryImage(postRes.data.category);
+      const ogTags = [
+        ['meta[property="og:image"]', "content", categoryImage],
+        ['meta[property="og:image:alt"]', "content", `${postRes.data.title} - ${postRes.data.category}`],
+        ['meta[property="og:title"]', "content", postRes.data.title],
+        ['meta[property="og:description"]', "content", postRes.data.excerpt],
+        ['meta[name="twitter:image"]', "content", categoryImage],
+        ['meta[name="twitter:image:alt"]', "content", `${postRes.data.title} - ${postRes.data.category}`],
+        ['meta[name="twitter:title"]', "content", postRes.data.title],
+        ['meta[name="twitter:description"]', "content", postRes.data.excerpt],
+      ];
+      ogTags.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
+
       setAllPosts(allRes.data);
     }).catch(() => setPost(null))
       .finally(() => setLoading(false));
 
-    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      const defaults = [
+        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
+        ['meta[property="og:title"]', "content", "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"],
+        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
+      ];
+      defaults.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
+    };
   }, [slug]);
 
   if (loading) {
@@ -65,6 +96,14 @@ export default function BlogPost() {
         <article className="py-20 lg:py-28" aria-label={post.title}>
           <div className="max-w-3xl mx-auto px-6">
             <Breadcrumbs items={[{ label: "Resources", to: "/resources" }, { label: post.title }]} />
+
+            <img
+              src={getBlogCategoryImage(post.category)}
+              alt={`${post.category} illustration`}
+              data-testid="blog-post-hero-image"
+              className="w-full h-52 sm:h-64 object-contain bg-[#0a1220] rounded-sm mb-8"
+              loading="lazy"
+            />
 
             <div className="flex items-center gap-4 mb-6">
               <span className="text-[10px] uppercase tracking-wider text-[#0077B3] border border-[#0077B3]/30 px-2 py-0.5">

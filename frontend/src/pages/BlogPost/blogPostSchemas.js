@@ -1,4 +1,5 @@
 // JSON-LD structured data builders for a blog post page.
+import { getBlogCategoryImage } from "../../data/blogCategoryImages";
 
 export function buildArticleSchema(post) {
   return {
@@ -6,6 +7,7 @@ export function buildArticleSchema(post) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
+    image: getBlogCategoryImage(post.category),
     author: { "@type": "Organization", name: "Veracity Technologies", url: "https://www.veracitytechmn.com" },
     publisher: { "@type": "Organization", name: "Veracity Technologies", url: "https://www.veracitytechmn.com" },
     datePublished: post.published_date,
