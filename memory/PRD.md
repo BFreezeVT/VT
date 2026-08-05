@@ -737,6 +737,19 @@ UX fix, ROI calculator analytics
 - **All requested SEO/AEO/GEO phases (1-4) plus this enhancement are now complete.** Remaining deferred items from
   the backlog: Service Page hero visuals, an industry comparison tool.
 
+### Session 28 (Feb 2026) - Distinct hero graphics per Core Service page
+- Generated 5 unique, on-brand abstract tech illustrations (dark navy/glowing cyan, matching the site's visual
+  language) via `image_generation_tool`, one per Core Service page topic: network/nodes (Managed IT), shield
+  deflecting threat particles (Cybersecurity), circular recovery arrows around a database (Disaster Recovery),
+  glowing staircase/roadmap (IT Consulting & vCIO), shield with checklist (Compliance).
+  - Added `heroImage` URL field to each service object in `data/coreServicesData.js`.
+  - Restructured `pages/ServicePage/ServiceHero.jsx` right column: image now displays above the existing stat card
+    within the same bordered container, hero headline/subhead/CTA/breadcrumb unchanged.
+  - Tested via `testing_agent_v4` (iteration_35.json) - 100% pass, all 5 images confirmed unique and topically
+    correct, zero regressions on the rest of each service page.
+- **All items from the last two rounds of "Next Action Items" backlog are now complete** except the Industry
+  Comparison Tool (not started) and confirming GitHub Actions runs green (user-side check, not agent-actionable).
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
