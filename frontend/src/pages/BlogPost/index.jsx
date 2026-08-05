@@ -55,7 +55,7 @@ export default function BlogPost() {
       const defaults = [
         ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
         ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
-        ['meta[property="og:title"]', "content", "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"],
+        ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
         ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
         ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
       ];

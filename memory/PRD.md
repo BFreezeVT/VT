@@ -204,6 +204,37 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
     and mouse drag, results recalculate live, CTAs/copy/meta tags exact match, nav/footer/sitemap
     regression clean, no console errors.
 
+### Session 29 (Feb 2026) - Category-level blog hero images + per-post social/SEO metadata
+- User requested a cost-conscious alternative to generating a unique hero image for all 147 blog posts ("do category
+  level version then lets be done. make sure meta tags are imbedded within the images as well obviously" - interpreted
+  as category-level reusable images + per-post social/SEO metadata pointing to them, since browser image files don't
+  literally carry HTML meta tags).
+- Generated 9 category-level hero images (`image_generation_tool`), reusing on-brand dark-navy/cyan tech illustrations
+  matching the site's existing established visual style, mapped 1:1 to all 9 categories used across the 147 published
+  posts (verified zero gaps via live `/api/blog` check): Managed IT, Cybersecurity, Business Continuity, Compliance,
+  AI & Automation, AI & Cybersecurity, Construction, Financial Services, Manufacturing.
+  - New `data/blogCategoryImages.js` - `getBlogCategoryImage(category)` with a `DEFAULT_BLOG_IMAGE` safety fallback.
+  - `pages/BlogIndex.jsx` - every resource card now shows its category image (`data-testid="blog-card-image-{i}"`).
+  - `pages/BlogPost/index.jsx` - visible article hero image (`data-testid="blog-post-hero-image"`, `object-contain`
+    on a dark bg so the square illustration isn't cropped in the wide hero slot); dynamic `og:image`/`og:image:alt`/
+    `og:title`/`og:description`/`twitter:image`/`twitter:title`/`twitter:description` set on load via
+    `document.querySelector` + `setAttribute` (no react-helmet in this codebase), reset back to site-wide defaults
+    on unmount.
+  - `pages/BlogPost/blogPostSchemas.js` - Article JSON-LD `image` field now uses the category image.
+- **Known limitation (flagged to user, accepted as-is)**: metadata is set client-side via JS, which works for browsers
+  and JS-aware crawlers but a non-JS social bot could still see the generic site-wide default image/title from
+  `index.html` on first fetch. True guaranteed coverage for every crawler would need server-side rendering/prerendering
+  - out of scope for this session, user chose to proceed without it (option A).
+- Tested via `testing_agent_v4` (iteration_38.json) - 100% pass, zero bugs. Verified: all 9 category filters render
+  correct images with zero broken images, search/filter/empty-state no regression, 3 article pages across different
+  categories render hero images correctly, JSON-LD Article `image` field correct, and (critically) metadata
+  cleanup-on-unmount correctly reverts to site defaults on real SPA navigation (verified via actual Link click, not
+  `page.goto()` which bypasses React cleanup and gives a false signal).
+  - One cosmetic-only finding fixed: the hardcoded `og:title` fallback string in the unmount cleanup didn't exactly
+    match `index.html`'s real site-wide default - aligned to `"Managed IT & Cybersecurity Built for AI + Automation |
+    Veracity Technologies"` for brand consistency across pages.
+- **This completes the category-level image request. Requires a Preview -> Production redeploy to go live.**
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
