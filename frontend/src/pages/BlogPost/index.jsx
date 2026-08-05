@@ -11,6 +11,7 @@ import { buildArticleSchema, buildBreadcrumbSchema } from "./blogPostSchemas";
 import BlogPostNav from "./BlogPostNav";
 import BlogPostFooter from "./BlogPostFooter";
 import BlogRelatedResources from "./BlogRelatedResources";
+import ShareButtons from "./ShareButtons";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -126,6 +127,8 @@ export default function BlogPost() {
             <p className="text-[#0077B3] text-lg leading-relaxed mb-10 border-l-2 border-[#0077B3] pl-5">
               {post.excerpt}
             </p>
+
+            <ShareButtons post={post} />
 
             <div data-testid="blog-post-content" className="prose-custom">
               {renderContent(post.content)}

@@ -235,6 +235,14 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
     Veracity Technologies"` for brand consistency across pages.
 - **This completes the category-level image request. Requires a Preview -> Production redeploy to go live.**
 
+### Session 30 (Feb 2026) - Social share buttons on article pages
+- New `pages/BlogPost/ShareButtons.jsx` - a "Share" row (LinkedIn + Email icon buttons) rendered right after the
+  excerpt/before the article content on every resource article page. LinkedIn button opens
+  `linkedin.com/sharing/share-offsite` with the canonical production article URL in a new tab; Email button opens a
+  pre-filled `mailto:` link (subject = article title, body = title + canonical URL) - both one-click, no backend call.
+  `data-testid="share-linkedin-button"` / `share-email-button"`, verified rendering + correctly-encoded URLs via
+  screenshot + a manual URL-encoding check (self-tested, small additive change - no new state/API surface).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
