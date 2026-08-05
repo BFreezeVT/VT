@@ -180,6 +180,21 @@ A: A behavioral assessment measuring how employees respond to realistic AI-drive
 Q: How is Veracity different from a traditional MSP?
 A: Traditional MSPs manage tickets and fix things when they break. Veracity is a Managed Intelligence Provider deploying AI, automation, and intelligent systems to prevent problems, reduce manual work, improve visibility, and drive business outcomes. Based in Minnetonka, Minnesota.
 
+## Core Services (Dedicated Pages)
+- Managed IT Services: https://www.veracitytechmn.com/services/managed-it-services
+- Cybersecurity Services: https://www.veracitytechmn.com/services/cybersecurity-services
+- Disaster Recovery & Business Continuity: https://www.veracitytechmn.com/services/disaster-recovery-business-continuity
+- IT Consulting & vCIO: https://www.veracitytechmn.com/services/it-consulting-vcio
+- Compliance Services: https://www.veracitytechmn.com/services/compliance-services
+
+## Human Risk Simulation (Dedicated Page)
+https://www.veracitytechmn.com/human-risk-simulation
+A free, interactive tool testing employee decision-making against AI-driven phishing and social engineering across three levels (Awareness, Decision-Maker, Executive). Produces a Human Risk Score. Also embedded as an interactive game on the homepage.
+
+## Client Success Stories
+https://www.veracitytechmn.com/client-success
+Testimonials organized by Financial Services, Manufacturing, Construction, and general MSP success stories.
+
 ## Blog / Resources
 - How AI Is Changing the Cybersecurity Threat Landscape in 2025
 - SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide
@@ -187,6 +202,11 @@ A: Traditional MSPs manage tickets and fix things when they break. Veracity is a
 - Bridging the OT/IT Gap: A Security Guide for Manufacturing Plants
 - Shadow AI: The Hidden Risk in Your Organization
 - Wire Fraud Prevention for Financial Services Firms
+- How Much Do Managed IT Services Cost? A Minnesota Pricing Guide
+- MSP vs. Break-Fix IT Support: Which Is Right for Your Business?
+- Internal IT vs. Managed Service Provider: How to Decide
+- Co-Managed IT vs. Fully Managed IT: What's the Difference?
+- Microsoft Copilot vs. ChatGPT for Business: Which Should You Use?
 
 ## Business Technology Assessment (Central Authority Page)
 https://www.veracitytechmn.com/business-technology-assessment
@@ -216,5 +236,17 @@ A: Copilot's security depends on the underlying SharePoint/OneDrive permission s
 
 Q: What AI policies should businesses have?
 A: An approved AI tools list, a data classification policy, an acceptable use policy for AI-generated content, an incident reporting process, and a periodic review cycle - enforced through technical controls, not just documentation.
+
+Q: How much do managed IT services cost?
+A: Managed IT services in Minnesota typically cost $100-$250 per user per month, depending on scope, compliance requirements, and infrastructure complexity. Full pricing breakdown: https://www.veracitytechmn.com/resources/managed-it-pricing-guide-minnesota-businesses
+
+Q: What is the difference between an MSP and break-fix IT support?
+A: Break-fix bills per incident after something breaks with no ongoing monitoring. An MSP charges a flat monthly fee for continuous monitoring and maintenance that prevents most incidents before they happen.
+
+Q: What is the difference between co-managed IT and fully managed IT?
+A: Co-managed IT means internal IT staff and an outsourced MSP share responsibility for the technology environment. Fully managed IT means the MSP handles all IT functions with no internal IT staff required.
+
+Q: Should my business use Microsoft Copilot or ChatGPT for Business?
+A: Microsoft Copilot works inside your existing Microsoft 365 apps under your existing security and compliance controls, making it the faster path for organizations already on Microsoft 365. ChatGPT for Business is a standalone assistant with its own separate governance model and broader general-purpose flexibility. Many organizations use both under a clear AI governance policy.
 
 Last updated: February 2026

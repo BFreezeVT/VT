@@ -86,11 +86,21 @@ const categoryAIMap = {
   "Managed IT": "ai-readiness-assessment",
   "AI & Automation": "ai-adoption-strategy",
 };
+const categoryServiceMap = {
+  "Managed IT": { slug: "managed-it-services", name: "Managed IT Services" },
+  "Cybersecurity": { slug: "cybersecurity-services", name: "Cybersecurity Services" },
+  "Business Continuity": { slug: "disaster-recovery-business-continuity", name: "Disaster Recovery & Business Continuity" },
+  "Compliance": { slug: "compliance-services", name: "Compliance Services" },
+  "Financial Services": { slug: "cybersecurity-services", name: "Cybersecurity Services" },
+  "Manufacturing": { slug: "cybersecurity-services", name: "Cybersecurity Services" },
+  "AI & Automation": { slug: "it-consulting-vcio", name: "IT Consulting & vCIO" },
+};
 
 export function getBlogRelatedLinks(category, slug) {
   const seed = hashString(slug || category || "post");
   const industrySlug = categoryIndustryMap[category] || industrySlugs[seed % industrySlugs.length];
   const aiSlug = categoryAIMap[category] || aiPageSlugMeta[seed % aiPageSlugMeta.length].slug;
   const aiEntry = aiPageSlugMeta.find((a) => a.slug === aiSlug) || aiPageSlugMeta[0];
-  return { industrySlug, aiSlug: aiEntry.slug, aiName: aiEntry.name };
+  const service = categoryServiceMap[category] || { slug: "managed-it-services", name: "Managed IT Services" };
+  return { industrySlug, aiSlug: aiEntry.slug, aiName: aiEntry.name, serviceSlug: service.slug, serviceName: service.name };
 }
