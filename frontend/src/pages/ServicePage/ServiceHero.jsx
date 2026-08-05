@@ -29,9 +29,18 @@ export default function ServiceHero({ svc }) {
               </Button>
             </Link>
           </div>
-          <div className="grid-border-card p-8 text-center">
-            <p className="stat-number text-4xl sm:text-5xl text-white mb-2">{svc.heroStat.value}</p>
-            <p className="text-sm text-[#94a8be]">{svc.heroStat.label}</p>
+          <div className="grid-border-card overflow-hidden">
+            <img
+              src={svc.heroImage}
+              alt={`${svc.name} illustration`}
+              data-testid="service-page-hero-image"
+              className="w-full h-48 sm:h-56 object-cover"
+              loading="lazy"
+            />
+            <div className="p-8 text-center border-t border-white/10">
+              <p className="stat-number text-4xl sm:text-5xl text-white mb-2">{svc.heroStat.value}</p>
+              <p className="text-sm text-[#94a8be]">{svc.heroStat.label}</p>
+            </div>
           </div>
         </div>
       </div>
