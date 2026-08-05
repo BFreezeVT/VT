@@ -1,0 +1,31 @@
+{
+  "summary": "Smoke+regression tested the category-level blog hero image feature and per-post SEO/social metadata. Tested /resources index (all 9 category filters, search, empty state), article pages across 3 categories (Managed IT, Financial Services, Construction), JSON-LD Article schema, and metadata cleanup-on-unmount via true SPA navigation (not full page reload). All core flows pass with zero broken images.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "BlogPost metadata cleanup default value (frontend/src/pages/BlogPost/index.jsx line 58)",
+        "issues": ["The hardcoded og:title fallback in the unmount cleanup ('Veracity Technologies | AI-Powered Cybersecurity & Managed IT') does not match the site-wide default og:title defined in public/index.html ('Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies'). Not a functional bug (cleanup does correctly reset og:image/og:title/twitter:image away from the stale article values on real SPA navigation), just a brand-copy inconsistency worth aligning for social preview consistency across pages."]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional: align the og:title fallback string in BlogPost/index.jsx's cleanup function with the actual index.html default ('Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies') for consistency, though not user-facing/blocking."
+  ],
+  "critical_code_review_comments": [
+    "blogCategoryImages.js, BlogIndex.jsx, BlogPost/index.jsx, blogPostSchemas.js are all clean, small, and well-structured. getBlogCategoryImage() has a sane DEFAULT_BLOG_IMAGE fallback for unmapped categories.",
+    "Metadata mutation via document.querySelector + setAttribute (no react-helmet) works correctly with React Router client-side navigation cleanup, verified via actual Link click (not page.goto, which bypasses SPA cleanup entirely and gave a false impression of a bug during initial testing)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A - not tested per request", "frontend": "100%"},
+  "seed_data_creation": "None - used existing 147 published blog posts.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Feature is fully working: (1) All 9 category filter chips on /resources render correct category images (naturalWidth=1024, correct alt text, zero broken images) for cards 0-5 and for filtered results in each of the 9 categories. (2) Search bar + 'Clear filters' + empty state work with no regression. (3) Article hero images verified across msp-vs-break-fix-it-support (Managed IT), why-minneapolis-financial-firms-are-prime-targets-for-cyberattacks... (Financial Services), and ransomware-protection-construction-firms (Construction) - all render correctly with object-contain on dark bg. (4) document.title, meta description, og:image, og:title, twitter:image all correctly reflect the current post on load. (5) JSON-LD Article schema 'image' field correctly matches the category image URL for each tested post. (6) IMPORTANT gotcha for future testing: cleanup-on-unmount for meta tags ONLY works correctly when tested via real SPA navigation (page.click on an in-app Link/Button), NOT via page.goto() which triggers a full document reload and just resets everything to the raw index.html defaults, giving a misleading false-positive/false-negative signal. Verified with an actual click on 'All Articles' nav link: og:image/og:title/twitter:image correctly revert to site defaults, document.title correctly reverts to 'Resources & Insights | Veracity Technologies'. No bugs found in this feature."
+}
