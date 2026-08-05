@@ -1,7 +1,7 @@
 import { ArrowDown, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const HERO_BG = "https://images.unsplash.com/photo-1604011237320-8e0506614fdf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2MzR8MHwxfHNlYXJjaHwyfHxjeWJlcnNlY3VyaXR5JTIwQUklMjB0ZWNobm9sb2d5JTIwZGFyayUyMGFic3RyYWN0fGVufDB8fHxibHVlfDE3NzYyODM4NDJ8MA&ixlib=rb-4.1.0&q=85";
+const HERO_BG = "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/2f29bcce375d4712b5aa01938a4096d1602abc943eee9db99360a5fcce4fb3c8.jpeg";
 
 const rotatingWords = ["AI-Driven", "Automated", "Intelligent", "Optimized"];
 
@@ -38,7 +38,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center scale-110"
         style={{ backgroundImage: `url(${HERO_BG})` }}
       />
-      <div className="absolute inset-0 bg-[#112240]/85" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/95 via-[#0f1d32]/75 to-[#0f1d32]/50" />
 
       {/* Animated grid overlay */}
       <div
