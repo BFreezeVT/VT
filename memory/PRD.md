@@ -206,6 +206,46 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 20 (Feb 2026) — Structural refactors executed (behavior-preserving, zero regressions)
+- User approved executing the "structural refactor" items from the earlier code-quality report
+  after production deployment. All 7 items completed as pure reorganization - no functional or
+  visual changes intended or found:
+  - **`CyberRiskScorecard/index.jsx`** (was 229 lines/complexity 34): extracted all state +
+    business logic into a new `useScorecardFlow.js` custom hook; extracted `ScorecardNav.jsx` /
+    `ScorecardFooter.jsx`. `index.jsx` is now a thin stage-based composition layer.
+  - **`ScorecardResults.jsx`** (was 185 lines/complexity 22): split into
+    `ScorecardScoreDisplay.jsx`, `ScorecardRisksAndRecs.jsx`, `ScorecardFollowUp.jsx`,
+    `ScorecardEmailReport.jsx`.
+  - **`BlogPost.jsx`** (was 269 lines/complexity 14): converted to a folder
+    (`pages/BlogPost/index.jsx`) with `blogContentRenderer.jsx` (markdown→JSX, including the
+    heading+list edge-case fix from an earlier session), `blogPostSchemas.js` (JSON-LD),
+    `BlogPostNav.jsx`, `BlogPostFooter.jsx`, `BlogRelatedResources.jsx`. Old single file deleted.
+  - **`lib/contentLinks.js` `industryForCity()`** (complexity 16): converted the 4-branch
+    if/else keyword-matching chain into a data-driven `industryKeywordMap` array + `.find()`,
+    identical output for identical input.
+  - **`AIPage.jsx`** (was 225 lines): converted to a folder (`pages/AIPage/index.jsx`) with
+    `aiPageSchemas.js` + `AIPageNav/Hero/AnswerBox/Framework/FAQ/CTA/Related/Footer.jsx`. Old
+    single file deleted.
+  - **`BusinessTechAssessment.jsx`** (was 205 lines): converted to a folder
+    (`pages/BusinessTechAssessment/index.jsx`) with `businessTechAssessmentData.js` (moved
+    `assessmentAreas`/`answerBoxes` out), `businessTechAssessmentSchemas.js`, and
+    `BTANav/Hero/AreasGrid/AnswerBoxes/RelatedLinks/Footer.jsx`. Old single file deleted.
+  - **Backend `server.py` `email_report()`** (was 62 lines/complexity 11): split into
+    `_decode_and_validate_report_pdf()`, `_get_smtp_credentials()`,
+    `_build_report_email_message()`, `_send_smtp_message()`; the route handler is now a
+    4-line orchestrator with identical validation order/status codes.
+  - All import paths (`./pages/BlogPost`, `./pages/AIPage`, `./pages/BusinessTechAssessment` in
+    `App.js`) resolve transparently to the new folder `index.jsx` files - no route changes.
+- **Verified**: compiled clean after each file group, screenshot-checked BlogPost/AIPage/BTA
+  individually mid-refactor, full backend pytest suite (54/54) re-passed after the
+  `email_report()` split, then a full `testing_agent_v4` regression pass (iteration_28.json)
+  covering all 4 frontend flows + backend end-to-end - **100%/100%, zero regressions found**.
+  Test leads created during testing cleaned from the `leads` collection afterward.
+- Minor pre-existing (not-a-regression) cosmetic note from the testing agent: AI page FAQ
+  section heading derives its industry name from the slug and renders lowercase (e.g. "Common
+  questions about ai readiness assessment") rather than title-cased - not touched this session,
+  candidate for a future polish pass if desired.
+
 ### Session 19 (Feb 2026) — Code quality report review (mostly false positives, 13 real key fixes applied)
 - Reviewed an external code-quality report against actual code before changing anything (per
   user's approval of "safe fixes only, skip structural refactors"). Findings:
