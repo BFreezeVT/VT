@@ -48,6 +48,7 @@ export default function Navigation() {
           <Link to="/business-technology-assessment" data-testid="nav-bta" className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Assessment</Link>
           <button data-testid="nav-faq" onClick={() => scrollTo("faq")} className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>FAQ</button>
           <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Risk Score</Link>
+          <Link to="/human-risk-simulation" data-testid="nav-human-risk-simulation" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Human Risk</Link>
           <Link to="/ai-roi-preview" data-testid="nav-roi-calculator" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">ROI Calculator</Link>
           <a data-testid="nav-phone" href="tel:9529417333" className={`flex items-center gap-2 text-sm transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/80 hover:text-white"}`}>
             <Phone className="w-4 h-4" />
@@ -81,6 +82,7 @@ export default function Navigation() {
           <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Services</button>
           <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Compliance</button>
           <Link to="/business-technology-assessment" data-testid="mobile-nav-bta" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Business Technology Assessment</Link>
+          <Link to="/human-risk-simulation" data-testid="mobile-nav-human-risk-simulation" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Human Risk Simulation</Link>
           <Link to="/ai-roi-preview" data-testid="mobile-nav-roi-calculator" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI ROI Calculator</Link>
           <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">FAQ</button>
           <a href="tel:9529417333" className="flex items-center gap-2 text-[#0a1220] hover:text-[#0077B3] text-sm">

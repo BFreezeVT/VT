@@ -15,7 +15,7 @@ export default function Footer() {
       className="bg-[#020812] border-t border-white/5 pt-16 pb-8"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div>
             <div className="max-w-[300px] overflow-hidden mb-1 relative" style={{ marginBottom: "-8px" }}>
@@ -67,6 +67,20 @@ export default function Footer() {
               >
                 <Facebook className="w-5 h-5" />
               </a>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <p className="overline text-[#94a8be] mb-4">Services</p>
+            <div className="space-y-2">
+              <Link data-testid="footer-link-service-managed-it" to="/services/managed-it-services" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Managed IT Services</Link>
+              <Link data-testid="footer-link-service-cybersecurity" to="/services/cybersecurity-services" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Cybersecurity Services</Link>
+              <Link data-testid="footer-link-service-disaster-recovery" to="/services/disaster-recovery-business-continuity" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Disaster Recovery</Link>
+              <Link data-testid="footer-link-service-vcio" to="/services/it-consulting-vcio" className="block text-[#94a8be] hover:text-white text-sm transition-colors">IT Consulting & vCIO</Link>
+              <Link data-testid="footer-link-service-compliance" to="/services/compliance-services" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Compliance Services</Link>
+              <Link data-testid="footer-link-human-risk-simulation" to="/human-risk-simulation" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Human Risk Simulation</Link>
+              <Link data-testid="footer-link-client-success" to="/client-success" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Client Success Stories</Link>
             </div>
           </div>
 

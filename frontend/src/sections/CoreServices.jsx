@@ -1,41 +1,42 @@
 import { Monitor, Shield, RefreshCw, Lightbulb, FileCheck, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 const services = [
   {
     icon: Monitor,
     title: "Managed IT Services",
     outcome: "Improved productivity, system visibility, and operational efficiency.",
     features: ["24/7 monitoring and help desk", "Dedicated account manager", "Proactive issue prevention", "Under 5-minute response time", "AI-enhanced automation"],
-    link: null,
+    link: "/services/managed-it-services",
   },
   {
     icon: Shield,
     title: "Cybersecurity",
     outcome: "Risk reduction, operational resilience, and threat prevention.",
     features: ["Endpoint detection and response", "Email security and phishing prevention", "Zero-trust access architecture", "AI-powered threat detection", "Security awareness training"],
-    link: null,
+    link: "/services/cybersecurity-services",
   },
   {
     icon: RefreshCw,
     title: "Disaster Recovery",
     outcome: "Business continuity, tested backups, and rapid recovery.",
     features: ["Automated backup verification", "Tested recovery procedures", "Cloud and hybrid recovery", "Ransomware recovery planning", "Recovery time under 4 hours"],
-    link: null,
+    link: "/services/disaster-recovery-business-continuity",
   },
   {
     icon: Lightbulb,
     title: "IT Consulting & vCIO",
     outcome: "Strategic technology planning aligned to business goals.",
     features: ["Quarterly business reviews", "Technology roadmapping", "Budget planning and optimization", "Vendor management", "AI readiness assessments"],
-    link: null,
+    link: "/services/it-consulting-vcio",
   },
   {
     icon: FileCheck,
     title: "Compliance Services",
     outcome: "Reducing exposure while supporting growth.",
     features: ["SOC 2 Type I & II", "CMMC / NIST 800-171", "HIPAA / PCI-DSS", "Audit preparation and evidence", "Continuous compliance monitoring"],
-    link: null,
+    link: "/services/compliance-services",
   },
 ];
 
@@ -71,15 +72,16 @@ export default function CoreServices() {
         {/* Services grid - 3 top, 2 bottom centered */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {services.slice(0, 3).map((svc, i) => (
-            <div
+            <Link
               key={svc.title}
+              to={svc.link}
               data-testid={`core-service-${i}`}
-              className="group p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#0077B3]/40 hover:bg-[#0077B3]/[0.03] transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#0077B3]/40 hover:bg-[#0077B3]/[0.03] transition-all duration-300 hover:-translate-y-1 block"
             >
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
               <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-4">
                 {svc.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-[#94a8be] text-xs">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
@@ -87,20 +89,24 @@ export default function CoreServices() {
                   </li>
                 ))}
               </ul>
-            </div>
+              <span className="text-[#0077B3] text-xs font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+                Learn more <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
           ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto mb-10">
           {services.slice(3).map((svc, i) => (
-            <div
+            <Link
               key={svc.title}
+              to={svc.link}
               data-testid={`core-service-${i + 3}`}
-              className="group p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#0077B3]/40 hover:bg-[#0077B3]/[0.03] transition-all duration-300 hover:-translate-y-1"
+              className="group p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#0077B3]/40 hover:bg-[#0077B3]/[0.03] transition-all duration-300 hover:-translate-y-1 block"
             >
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
               <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-4">
                 {svc.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-[#94a8be] text-xs">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
@@ -108,7 +114,10 @@ export default function CoreServices() {
                   </li>
                 ))}
               </ul>
-            </div>
+              <span className="text-[#0077B3] text-xs font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+                Learn more <ArrowRight className="w-3 h-3" />
+              </span>
+            </Link>
           ))}
         </div>
       </div>

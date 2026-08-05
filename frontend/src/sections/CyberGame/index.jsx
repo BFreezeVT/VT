@@ -1,4 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { scenarios, DIFFICULTIES, getStoredData, storeData, getCorrectAction } from "../../data/cyberGameData";
 import GameIntro from "./GameIntro";
 import GamePlaying from "./GamePlaying";
@@ -158,6 +160,13 @@ export default function CyberGame() {
           <p className="text-[#b0c4d8] text-base max-w-xl mx-auto animate-fade-in-up stagger-2">
             Test behavioral decision-making across realistic scenarios. Choose how to respond - your Human Risk Score reveals your organizational exposure.
           </p>
+          <Link
+            to="/human-risk-simulation"
+            data-testid="cyber-game-learn-more"
+            className="inline-flex items-center gap-1 text-[#0077B3] hover:text-white text-sm font-semibold mt-3 transition-colors"
+          >
+            Learn more about Human Risk Simulation <ArrowRight className="w-3 h-3" />
+          </Link>
         </div>
 
         <div className="bg-[#001f3d] border border-[#0d4a8a] rounded-md p-6 sm:p-8 lg:p-10 animate-fade-in-up stagger-3">

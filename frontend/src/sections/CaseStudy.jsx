@@ -1,4 +1,5 @@
-import { Quote, Star } from "lucide-react";
+import { Quote, Star, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useEffect, useCallback, useState } from "react";
 import {
   Carousel,
@@ -183,6 +184,13 @@ export default function CaseStudy() {
           <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
             Hear from the leaders who made the shift from reactive to intelligent.
           </p>
+          <Link
+            to="/client-success"
+            data-testid="case-study-view-all-link"
+            className="inline-flex items-center gap-1 text-[#0077B3] hover:text-white text-sm font-semibold mt-3 transition-colors animate-fade-in-up stagger-2"
+          >
+            View All Client Success Stories <ArrowRight className="w-3 h-3" />
+          </Link>
         </div>
 
         {/* 5 stars right above the cards */}
