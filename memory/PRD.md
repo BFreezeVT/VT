@@ -696,6 +696,36 @@ UX fix, ROI calculator analytics
   full metadata/internal-link audit), plus previously deferred enhancements (Resources index search/filter, Service
   Page hero visuals).
 
+### Session 26 (Feb 2026) - SEO/AEO/GEO expansion Phase 4 (final phase): technical SEO pass
+- Added a shared, visible `components/Breadcrumbs.jsx` navigation trail (previously breadcrumbs only existed as
+  invisible JSON-LD schema) to all 8 major page templates, matching each page's existing schema breadcrumb hierarchy
+  exactly, replacing the old single "Back to Home"/"All Articles"/"All Service Areas" link in each hero:
+  - Industry pages: Home > Industries > {Industry Name}
+  - Service pages: Home > Services > {Service Name}
+  - AI cluster pages: Home > Business Technology Assessment > {AI Page Name}
+  - Blog posts: Home > Resources > {Article Title}
+  - City/service-area pages: Home > Service Areas > IT Support in {City}
+  - Business Technology Assessment, Human Risk Simulation, Client Success: Home > {Page Name} (single-level)
+  - Files touched: `IndustryHero.jsx`, `ServiceHero.jsx`, `AIPageHero.jsx`, `CityHero.jsx`, `BTAHero.jsx`,
+    `HRSHero.jsx`, `ClientSuccessHero.jsx`, `BlogPost/index.jsx`.
+  - **Bug found by testing agent and fixed**: the "Industries"/"Services" mid-trail links (`/#industries`,
+    `/#core-services`) navigated correctly but didn't scroll to the target homepage section (App.js's global
+    `ScrollToTop` forced `scrollTo(0,0)` on every route change regardless of hash, and no hash-scroll handler existed
+    anywhere). Fixed by making `ScrollToTop` hash-aware: if `location.hash` is present, `scrollIntoView({behavior:
+    "smooth"})` on the matching element via `requestAnimationFrame`; otherwise falls back to the original
+    scroll-to-top. Retested and confirmed working (iteration_33.json, 100% pass, scrollY verified >0 and landing on
+    the correct section; normal no-hash navigation still correctly resets to scrollY=0).
+  - Tested via `testing_agent_v4`: initial pass iteration_32.json (90%, one bug), retest iteration_33.json (100%,
+    zero bugs) after the fix.
+- **This completes all 4 phases of the original SEO/AEO/GEO expansion request.** Summary of the full initiative
+  across sessions 23-26: 5 new Core Service pages, `/human-risk-simulation`, `/client-success` (Phase 1); 5 new
+  Resource Center articles + site-wide internal-linking improvement on all 147 blog posts (Phase 2); deeper
+  industry-specific technical content on all 4 industry pages (Phase 3); visible breadcrumb navigation site-wide
+  (Phase 4) - all built as net-new/additive content with zero removal of existing pages, URLs, schema, or internal
+  links, per the user's explicit preservation constraint.
+- **Deferred enhancements (not part of the original SEO ask, suggested as follow-ups, none started)**: Resources
+  index search/filter UI, per-Core-Service-page hero visuals, an industry comparison tool.
+
 ## Key API Endpoints
 - `POST /api/leads` — captures form data (incl. new BTA/city/industry/blog funnel sources),
   stores in Mongo, fires SMTP email
