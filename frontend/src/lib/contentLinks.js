@@ -34,13 +34,17 @@ export const industrySlugs = [
   "high-compliance-it-support",
 ];
 
+const industryKeywordMap = [
+  { slug: "financial-it-support", keywords: ["financ", "wealth", "bank", "advisory", "insurance", "investment"] },
+  { slug: "construction-it-support", keywords: ["construction"] },
+  { slug: "manufacturing-it-support", keywords: ["manufactur"] },
+  { slug: "high-compliance-it-support", keywords: ["government", "healthcare", "medical", "legal", "compliance", "education"] },
+];
+
 export function industryForCity(city) {
   const text = (city.localIndustries || []).join(" ").toLowerCase();
-  if (text.includes("financ") || text.includes("wealth") || text.includes("bank") || text.includes("advisory") || text.includes("insurance") || text.includes("investment")) return "financial-it-support";
-  if (text.includes("construction")) return "construction-it-support";
-  if (text.includes("manufactur")) return "manufacturing-it-support";
-  if (text.includes("government") || text.includes("healthcare") || text.includes("medical") || text.includes("legal") || text.includes("compliance") || text.includes("education")) return "high-compliance-it-support";
-  return industrySlugs[hashString(city.slug) % industrySlugs.length];
+  const match = industryKeywordMap.find(({ keywords }) => keywords.some((kw) => text.includes(kw)));
+  return match ? match.slug : industrySlugs[hashString(city.slug) % industrySlugs.length];
 }
 
 export const aiPageSlugMeta = [

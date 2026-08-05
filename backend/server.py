@@ -280,12 +280,7 @@ def send_lead_notification(lead: AuditLead) -> bool:
 async def root() -> dict:
     return {"message": "Veracity Technologies API"}
 
-@api_router.post("/reports/email", dependencies=[Depends(check_report_email_rate_limit)])
-async def email_report(payload: EmailReportRequest) -> dict:
-    """Emails a client-generated PDF report (Assessment or Cyber Risk Scorecard results) as an
-    attachment to the requester's own email. Rate-limited by IP + a site-wide cap (see
-    check_report_email_rate_limit) since this endpoint sends outbound email through our SMTP
-    relay to a recipient the caller controls."""
+def _decode_and_validate_report_pdf(payload: EmailReportRequest) -> bytes:
     if len(payload.pdf_base64) > MAX_PDF_BASE64_CHARS:
         raise HTTPException(status_code=413, detail="Report file is too large to email.")
     try:
@@ -294,14 +289,20 @@ async def email_report(payload: EmailReportRequest) -> dict:
         raise HTTPException(status_code=400, detail="Invalid report file.")
     if not pdf_bytes.startswith(b"%PDF"):
         raise HTTPException(status_code=400, detail="Invalid report file.")
+    return pdf_bytes
 
+
+def _get_smtp_credentials() -> tuple[str, int, str, str]:
     smtp_host = os.environ.get("SMTP_HOST")
     smtp_port = int(os.environ.get("SMTP_PORT", "587"))
     smtp_user = os.environ.get("SMTP_USER")
     smtp_pass = os.environ.get("SMTP_PASS")
     if not all([smtp_host, smtp_user, smtp_pass]):
         raise HTTPException(status_code=503, detail="Email delivery is not configured. Please download the report instead.")
+    return smtp_host, smtp_port, smtp_user, smtp_pass
 
+
+def _build_report_email_message(payload: EmailReportRequest, smtp_user: str, pdf_bytes: bytes) -> tuple[MIMEMultipart, str]:
     recipient = _sanitize_header_value(payload.recipient_email)
     title = _sanitize_header_value(payload.report_title)
     display_name = html.escape(payload.recipient_name or "there")
@@ -334,6 +335,10 @@ async def email_report(payload: EmailReportRequest) -> dict:
     attachment.add_header("Content-Disposition", "attachment", filename=filename)
     msg.attach(attachment)
 
+    return msg, recipient
+
+
+def _send_smtp_message(smtp_host: str, smtp_port: int, smtp_user: str, smtp_pass: str, recipient: str, msg: MIMEMultipart) -> None:
     try:
         with smtplib.SMTP(smtp_host, smtp_port, timeout=15) as server:
             server.starttls()
@@ -343,6 +348,17 @@ async def email_report(payload: EmailReportRequest) -> dict:
         logger.error(f"Failed to email report to {recipient}: {e}")
         raise HTTPException(status_code=502, detail="Failed to send the email. Please try downloading the report instead.")
 
+
+@api_router.post("/reports/email", dependencies=[Depends(check_report_email_rate_limit)])
+async def email_report(payload: EmailReportRequest) -> dict:
+    """Emails a client-generated PDF report (Assessment or Cyber Risk Scorecard results) as an
+    attachment to the requester's own email. Rate-limited by IP + a site-wide cap (see
+    check_report_email_rate_limit) since this endpoint sends outbound email through our SMTP
+    relay to a recipient the caller controls."""
+    pdf_bytes = _decode_and_validate_report_pdf(payload)
+    smtp_host, smtp_port, smtp_user, smtp_pass = _get_smtp_credentials()
+    msg, recipient = _build_report_email_message(payload, smtp_user, pdf_bytes)
+    _send_smtp_message(smtp_host, smtp_port, smtp_user, smtp_pass, recipient, msg)
     return {"success": True}
 
 @api_router.get("/health")
