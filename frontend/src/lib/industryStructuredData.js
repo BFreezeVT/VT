@@ -53,6 +53,11 @@ export function buildIndustryStructuredData(industry) {
         name: `Does Veracity Technologies offer a free cybersecurity audit for ${industry.name.toLowerCase()} firms?`,
         acceptedAnswer: { "@type": "Answer", text: `Yes. Veracity offers a free, non-invasive Technology & Cyber Risk Audit tailored to ${industry.name.toLowerCase()} that includes AI readiness assessment, network vulnerability scan, compliance gap analysis, and disaster recovery plan evaluation. Call (952) 941-7333 to schedule.` },
       },
+      {
+        "@type": "Question",
+        name: `What specialized technical services does Veracity provide for ${industry.name.toLowerCase()}?`,
+        acceptedAnswer: { "@type": "Answer", text: industry.deepDive.map((d) => `${d.title}: ${d.body}`).join(" ") },
+      },
     ],
   };
 

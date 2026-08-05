@@ -27,6 +27,12 @@ const industryData = [
     ],
     compliance: ["SOC 2 Type I & II", "PCI-DSS", "SEC/FINRA", "NIST CSF", "GLBA"],
     software: ["Bloomberg Terminal", "Salesforce Financial Cloud", "Orion", "Black Diamond", "Schwab Advisor Center", "Fidelity WealthCentral"],
+    deepDive: [
+      { title: "SOC 2 Compliance for Financial Firms", body: "SOC 2 Type II attestation demonstrates ongoing controls around security, availability, and confidentiality - increasingly required by institutional clients, custodians, and partners before they'll share data or integrate systems. We build and maintain the technical controls, access logging, and evidence collection needed to pass a SOC 2 audit without a last-minute scramble, and map overlapping requirements against SEC/FINRA and GLBA to avoid duplicate work." },
+      { title: "Vendor & Third-Party Risk Management", body: "Financial firms depend on dozens of vendors - custodians, portfolio management platforms, CRM providers - each representing a potential point of compromise. We maintain vendor risk assessments, monitor for fourth-party exposure, and ensure every integration meets the same security bar as your internal systems, satisfying the vendor due diligence documentation regulators now expect during examinations." },
+      { title: "AI Governance for Advisory Firms", body: "Advisors are adopting AI tools for research, communications, and portfolio analysis faster than compliance teams can review them. We help financial firms build an AI governance framework - an approved tools list, data classification rules for client PII, and audit logging - so AI adoption accelerates productivity without creating an unmonitored compliance gap." },
+      { title: "Business Continuity for Trading Operations", body: "A financial firm's continuity plan has to account for market-hours-sensitive operations: a four-hour outage during trading hours carries very different stakes than the same outage overnight. We build recovery time objectives around your actual trading and settlement windows, with tested failover for the systems that can't afford to be down when markets are open." },
+    ],
     testimonialIndices: [12, 16, 13],
     aiLinks: [
       { slug: "ai-governance", label: "AI Governance for Financial Firms" },
@@ -64,6 +70,11 @@ const industryData = [
     ],
     compliance: ["CMMC", "OSHA Digital", "NIST 800-171", "DOD Requirements", "Bonding Compliance"],
     software: ["Procore", "Sage 300 CRE", "Bluebeam Revu", "PlanGrid", "Autodesk BIM 360", "Viewpoint Vista"],
+    deepDive: [
+      { title: "BIM Security & Model Data Protection", body: "Building Information Models contain detailed structural, mechanical, and security-relevant data about a project - information that's valuable to competitors and, on sensitive projects, a genuine security concern if it's exposed. We secure BIM 360 and similar platforms with role-based model access, audit logging of who's viewed or exported models, and encryption for models in transit and at rest." },
+      { title: "Procore & Sage Integration Security", body: "Procore and Sage 300 CRE are the operational backbone of most construction firms, connecting field data, financials, and subcontractor communication in one place - which makes their access controls and integration points critical. We harden Procore and Sage permissions, secure API integrations between the two platforms and other tools, and monitor for unusual access patterns like off-hours financial exports." },
+      { title: "Business Continuity for Active Job Sites", body: "A ransomware event or outage doesn't just threaten your office - it can halt bidding, payment processing, and field communication mid-project. We build continuity plans specific to active job sites: offline-capable field access to critical documents, tested backup restoration for project data, and a documented plan for keeping crews connected even if your primary systems are down." },
+    ],
     testimonialIndices: [0, 1, 14],
     aiLinks: [
       { slug: "ai-automation-consulting", label: "AI Automation for Contractors" },
@@ -101,6 +112,11 @@ const industryData = [
     ],
     compliance: ["NIST CSF", "IEC 62443", "CMMC", "TISAX", "ISO 27001", "FDA 21 CFR Part 11"],
     software: ["SAP ERP", "Siemens SCADA", "Rockwell/Allen-Bradley", "Epicor", "MES Systems", "Wonderware InTouch"],
+    deepDive: [
+      { title: "ERP System Security", body: "SAP, Epicor, and other ERP platforms sit at the center of manufacturing operations - production scheduling, inventory, financials - which makes them a high-value target and a single point of failure if compromised. We secure ERP access with role-based permissions, monitor for anomalous data exports, and ensure ERP backups are tested independently from your broader IT backup strategy." },
+      { title: "Industrial IoT Device Management", body: "Connected sensors on production equipment generate valuable operational data, but each one is a network endpoint that's rarely patched and often shipped with default credentials. We inventory every IoT device on your network, enforce credential rotation where supported, and isolate IoT traffic on its own segmented network so a compromised sensor can't become a path into your ERP or SCADA systems." },
+      { title: "Network Segmentation Architecture", body: "The single most effective control against production-halting ransomware is proper network segmentation - separating IT (email, ERP, office systems) from OT (PLCs, SCADA, HMIs) with firewalls and a demilitarized zone (DMZ) that inspects traffic between the two. We design segmentation architecture around the IEC 62443 zones-and-conduits model, so a phishing email in the front office can never reach the production line." },
+    ],
     testimonialIndices: [4, 9, 17],
     aiLinks: [
       { slug: "ai-security-assessment", label: "AI Security for Manufacturing" },
@@ -138,6 +154,11 @@ const industryData = [
     ],
     compliance: ["CMMC 2.0 (Level 1-3)", "NIST 800-171", "HIPAA", "ITAR / EAR", "FedRAMP", "SOC 2 Type II", "DFARS 252.204-7012", "State Privacy Laws"],
     software: ["Microsoft GCC High", "Azure Government", "Varonis", "Splunk", "CrowdStrike", "Tenable.io", "ServiceNow GRC"],
+    deepDive: [
+      { title: "PCI-DSS for Regulated Payment Processing", body: "Organizations handling cardholder data - even indirectly, through a payment processor integration - fall under PCI-DSS requirements covering network segmentation, encryption, and access control for anything touching payment data. We scope your cardholder data environment (CDE), implement the required segmentation and monitoring, and maintain the documentation needed for your Self-Assessment Questionnaire (SAQ) or QSA audit." },
+      { title: "CMMC Level 2 Enclave Architecture", body: "For organizations handling Controlled Unclassified Information (CUI), CMMC Level 2 typically requires isolating CUI in a dedicated, FIPS-validated enclave rather than securing your entire network to the same standard - a faster and less disruptive path to certification. We design and deploy CUI enclaves using Microsoft GCC High or equivalent government cloud environments, scoped precisely to minimize what falls under assessment." },
+      { title: "Multi-Framework Documentation Strategy", body: "Organizations facing CMMC, HIPAA, and state privacy laws simultaneously often duplicate work maintaining separate documentation for each. We build a single control matrix mapping technical and administrative controls across every framework you're subject to, so one piece of evidence - an access log, an encryption policy - can satisfy multiple auditors without being recreated three times." },
+    ],
     testimonialIndices: [8, 13, 16],
     aiLinks: [
       { slug: "ai-risk-assessment", label: "AI Risk Assessment for Regulated Firms" },

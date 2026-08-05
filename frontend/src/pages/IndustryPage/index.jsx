@@ -9,6 +9,7 @@ import { buildIndustryStructuredData } from "../../lib/industryStructuredData";
 import IndustryHero from "./IndustryHero";
 import IndustryChallenges from "./IndustryChallenges";
 import IndustryComplianceSoftware from "./IndustryComplianceSoftware";
+import IndustryDeepDive from "./IndustryDeepDive";
 import IndustryAICTA from "./IndustryAICTA";
 import IndustryTestimonials from "./IndustryTestimonials";
 import IndustryFormSection from "./IndustryFormSection";
@@ -91,6 +92,7 @@ export default function IndustryPage() {
 
         <IndustryChallenges industry={industry} />
         <IndustryComplianceSoftware industry={industry} />
+        <IndustryDeepDive industry={industry} />
         <IndustryAICTA industry={industry} />
         <IndustryTestimonials industry={industry} testimonials={testimonials} />
 
