@@ -170,9 +170,12 @@ class EmailReportRequest(BaseModel):
 
 
 MAX_PDF_BASE64_CHARS = 8_000_000  # generous ceiling (~6MB decoded) for a text-based report PDF
-REPORT_EMAIL_LEAD_WINDOW_SECONDS = 1800  # 30 min - matches the real UI flow (lead is always
+REPORT_EMAIL_LEAD_WINDOW_SECONDS = 10800  # 3 hours - matches the real UI flow (lead is always
 # submitted immediately before the "Email Report" button becomes reachable in the Assessment /
-# Cyber Risk Scorecard results screens)
+# Cyber Risk Scorecard results screens). Wide enough that a visitor who leaves the results
+# screen open for a while and reads before clicking "Email Report" doesn't get an incorrect
+# 403 (code-review finding, 2026-08-05) - this check's purpose is proving the send is tied to a
+# genuine prior lead capture, not enforcing a tight time boundary.
 
 
 async def _recipient_has_recent_lead(email: str) -> bool:
@@ -307,8 +310,8 @@ def _decode_and_validate_report_pdf(payload: EmailReportRequest) -> bytes:
         raise HTTPException(status_code=413, detail="Report file is too large to email.")
     try:
         pdf_bytes = base64.b64decode(payload.pdf_base64, validate=True)
-    except Exception:
-        raise HTTPException(status_code=400, detail="Invalid report file.")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail="Invalid report file.") from e
     if not pdf_bytes.startswith(b"%PDF"):
         raise HTTPException(status_code=400, detail="Invalid report file.")
     return pdf_bytes
@@ -368,7 +371,7 @@ def _send_smtp_message(smtp_host: str, smtp_port: int, smtp_user: str, smtp_pass
             server.sendmail(smtp_user, recipient, msg.as_string())
     except Exception as e:
         logger.error(f"Failed to email report to {recipient}: {e}")
-        raise HTTPException(status_code=502, detail="Failed to send the email. Please try downloading the report instead.")
+        raise HTTPException(status_code=502, detail="Failed to send the email. Please try downloading the report instead.") from e
 
 
 @api_router.post("/reports/email", dependencies=[Depends(check_report_email_rate_limit)])

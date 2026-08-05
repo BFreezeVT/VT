@@ -4,7 +4,7 @@ Cyber Risk Scorecard) as an attachment via SMTP. Covers: EmailStr validation (42
 email), successful send with a real minimal PDF, rate-limiting (per-IP + a tamper-proof
 site-wide cap via check_report_email_rate_limit - see security audit fix in server.py), and
 recipient-binding (recipient_email must match a lead genuinely captured via POST /api/leads
-in the last 30 min - closes the open-mail-relay-to-arbitrary-recipient risk found in the
+in the last 3 hours - closes the open-mail-relay-to-arbitrary-recipient risk found in the
 2026-08-05 security audit, see _recipient_has_recent_lead in server.py).
 /api/leads and /api/reports/email now have INDEPENDENT per-IP buckets (each keyed by its own
 "action" tag) precisely so that exhausting one does not block the other, while a header-spoof-
@@ -14,6 +14,7 @@ limiter (bypassable via a forged X-Forwarded-For) could not.
 import base64
 import os
 import time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pymongo
@@ -87,14 +88,52 @@ class TestEmailReportValidation:
 
 class TestEmailReportRecipientBinding:
     """Security fix (2026-08-05 audit, SEC-001): recipient_email must match a lead genuinely
-    captured via POST /api/leads in the last 30 min, so this endpoint can't be called directly
+    captured via POST /api/leads in the last 3 hours, so this endpoint can't be called directly
     to relay an attacker-chosen PDF from our trusted mailbox to an arbitrary third party."""
+
+    @pytest.fixture(autouse=True)
+    def _fresh_rate_limit_quota(self):
+        """This class makes several reports/email calls in a row - give each test a clean
+        per-IP quota slate so an earlier test's call doesn't push a later one into a 429
+        instead of its expected 403/non-403 result."""
+        _db.lead_submission_log.delete_many({})
+        _db.rate_limit_global_log.delete_many({})
+        yield
 
     def test_recipient_with_no_prior_lead_rejected_403(self, api_client):
         never_registered_email = f"test_no_lead_{int(time.time())}@example.com"
         payload = {"recipient_email": never_registered_email, "pdf_base64": MINI_PDF_B64}
         r = api_client.post(f"{BASE_URL}/api/reports/email", json=payload)
         assert r.status_code == 403, f"Expected 403 for a recipient with no matching lead, got {r.status_code}: {r.text}"
+
+    def test_recipient_with_lead_2_hours_old_still_passes_binding_check(self, api_client):
+        """Code-review fix (2026-08-05): a visitor who leaves the Assessment/Scorecard results
+        screen open for a while before clicking "Email Report" must not get an incorrect 403.
+        The window was widened from 30 min to 3 hours - a lead from 2 hours ago must still pass."""
+        email = f"test_2h_old_lead_{int(time.time())}@example.com"
+        backdated_time = (datetime.now(timezone.utc) - timedelta(hours=2)).isoformat()
+        _db.leads.insert_one({
+            "id": f"test-{int(time.time())}", "company": "TEST_QA Co", "name": "QA Tester",
+            "phone": "555-000-0000", "email": email, "source_page": "ai-business-assessment",
+            "created_at": backdated_time, "status": "new",
+        })
+        payload = {"recipient_email": email, "pdf_base64": MINI_PDF_B64}
+        r = api_client.post(f"{BASE_URL}/api/reports/email", json=payload)
+        assert r.status_code != 403, f"A 2-hour-old lead should still pass the 3-hour binding window, got {r.status_code}: {r.text}"
+
+    def test_recipient_with_lead_4_hours_old_rejected_403(self, api_client):
+        """A lead older than the 3-hour window must still be rejected - the window is generous,
+        not unbounded."""
+        email = f"test_4h_old_lead_{int(time.time())}@example.com"
+        backdated_time = (datetime.now(timezone.utc) - timedelta(hours=4)).isoformat()
+        _db.leads.insert_one({
+            "id": f"test-{int(time.time())}", "company": "TEST_QA Co", "name": "QA Tester",
+            "phone": "555-000-0000", "email": email, "source_page": "ai-business-assessment",
+            "created_at": backdated_time, "status": "new",
+        })
+        payload = {"recipient_email": email, "pdf_base64": MINI_PDF_B64}
+        r = api_client.post(f"{BASE_URL}/api/reports/email", json=payload)
+        assert r.status_code == 403, f"A 4-hour-old lead is outside the 3-hour window and should be rejected, got {r.status_code}: {r.text}"
 
     def test_recipient_with_recent_lead_passes_binding_check(self, api_client):
         """After creating a matching lead, the recipient-binding check itself should pass -

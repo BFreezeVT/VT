@@ -282,6 +282,34 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - Verified: full backend pytest suite still 68/68 passing, backend restarts clean, live `/api/` and `/api/blog`
   health checks return 200. No code changes needed elsewhere (nothing in the codebase imported any of these 5).
 
+### Session 33 (Feb 2026) - Code review + fixes (report-email window, meta cleanup, exception chaining)
+- **Full functional code review requested by user** (`code_review_agent`) on the Preview deployment, focused on
+  recently-unreviewed features (category blog images/OG tags, ShareButtons, SEC-001 recipient-binding fix). Verdict:
+  READY WITH FIXES, 2 MEDIUM (LIKELY) findings + 3 LOW.
+- **[MEDIUM] Fixed - report-email recipient-binding window too tight for slow readers**: the SEC-001 fix (Session 31)
+  bound `/api/reports/email`'s recipient to a lead captured in the last 30 minutes, but a visitor who leaves the
+  Assessment/Scorecard results screen open longer than that before clicking "Email Report" would get an incorrect
+  403. Widened `REPORT_EMAIL_LEAD_WINDOW_SECONDS` from 1800s (30 min) to 10800s (3 hours) - the check's purpose is
+  proving a genuine prior lead capture happened, not enforcing a tight time boundary, so a generous window carries
+  no meaningful security downside. Chose this over re-submitting a fresh lead at email-click time (which would have
+  double-counted the GA4 `generate_lead` conversion event and sent the business a duplicate internal notification
+  email every time a user re-requested their report - worse side effects than the bug itself). Added 2 new boundary
+  tests using directly-inserted backdated lead records (`test_recipient_with_lead_2_hours_old_still_passes_binding_check`,
+  `test_recipient_with_lead_4_hours_old_rejected_403`) plus per-test rate-limit-quota isolation on that test class.
+- **[MEDIUM] Re-confirmed, not changed - per-post OG/Twitter meta tags invisible to non-JS social crawlers**: the
+  reviewer independently re-surfaced the same limitation already disclosed to and accepted by the user when the
+  category-image feature shipped (Session 29) - this is a CRA/no-SSR architectural constraint, not a quick fix.
+  Not touched this session; flagged again below for the user's awareness in case they want the lightweight
+  bot-user-agent-detection middleware option now that a dedicated review has called it out a second time.
+- **[LOW] Fixed**: `BlogPost/index.jsx` unmount cleanup was resetting `og:image`/`og:title`/`twitter:image` but not
+  `og:description`/`twitter:title`/`twitter:description` (also mutated on load) - now resets the full matching set
+  back to `index.html`'s real site-wide defaults, plus the meta description tag. `server.py`'s two bare
+  `raise HTTPException(...)` inside `except` blocks now use `from e` for proper exception chaining/traceability.
+- **[LOW, deferred]**: minor lint hygiene (unsorted imports in test files, long lines in blog content strings) -
+  cosmetic only, no behavior impact, not touched.
+- Verified via full backend pytest suite (70/70 passing) + live curl re-test of the widened-window fix + a smoke
+  screenshot of an article page. Test leads (including directly-inserted backdated test records) cleaned from Mongo.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
