@@ -340,6 +340,25 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   confirms no regression to page rendering (favicon itself lives in browser tab chrome, not visible in
   screenshots, but file-serving + markup wiring confirmed correct).
 
+### Session 36 (Feb 2026) - New resource post: "Cybersecurity Predictions for 2027"
+- User supplied full ready-to-publish article content (a "2027 threat outlook" piece based on Field Effect's
+  2026 report - identity-based attacks, trusted-tool abuse, AI-powered attacks, edge infrastructure, Zero Trust).
+  Published it as a new post in `backend/blog_data.py` (`BLOG_POSTS_EXTENDED`), matching the exact schema/markdown
+  conventions used by all 147 existing posts: slug `cybersecurity-predictions-2027`, category `Cybersecurity`
+  (existing category, already has a mapped hero image, zero gaps), used the user's suggested SEO meta title as the
+  post's title/H1, their suggested meta description as the excerpt (auto-feeds page meta description + OG tags),
+  `##` headings, `- ` bullet lists, and a closing italic soft-CTA line (existing hardcoded "Get Your Free Audit" CTA
+  card already appears after every post's content - no duplicate CTA needed in the body). Removed the raw
+  `[fieldeffect.com]`-style inline citation brackets from the user's draft for a clean, professional final read
+  (no other published post has this pattern) - kept the "Field Effect's 2026 Cyber Threat Outlook" attribution
+  inline in prose instead.
+- Total posts: 147 -> 148. Added the new URL to `sitemap.xml` and one new Q&A entry to `llms.txt` for AEO/GEO
+  discoverability, matching precedent from prior new-post sessions.
+- Verified: post loads via `/api/blog/cybersecurity-predictions-2027` (200), total count via `/api/blog` = 148,
+  full article page screenshot confirms hero image/breadcrumbs/title/excerpt/share buttons/content render
+  correctly, Resources index shows "Showing 148 of 148 articles". Full backend suite re-confirmed 70/70 passing
+  (no test hardcodes the old 147 count).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
