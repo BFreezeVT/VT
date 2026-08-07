@@ -385,6 +385,45 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   `useEffect` reacting to the hook's `submitted`/`error` state rather than an unreliable post-await stale-closure
   check). Re-verified compiles cleanly and full backend suite still 70/70 passing (no backend changes this session).
 
+### Session 38 (Feb 2026) - Code Quality Report remediation (mostly false positives, 5 real low-risk fixes)
+- User submitted a new Code Quality Report covering: 28 `dangerouslySetInnerHTML` "XSS" flags, a backend
+  `pdf_bytes` "undefined variable" flag (`server.py:325`), 27 React hook dependency warnings, long-function/
+  complexity flags on `useScorecardFlow.js`/`BlogIndex.jsx`/`ChecklistDownload.jsx`, 2 array-index-key flags,
+  and 3 missing-`useMemo` flags. Investigated every single finding against the real code before changing
+  anything; user approved the resulting scoped plan (fix only genuinely real, low-risk items; skip broad
+  refactors of working revenue-critical flows).
+- **Verified FALSE POSITIVE - backend `pdf_bytes`**: `_decode_and_validate_report_pdf()` (server.py:316-325)
+  defines `pdf_bytes` inside a `try` block; the `except` branch raises `HTTPException` before any use, so it
+  can never be read undefined. No change made.
+- **Verified FALSE POSITIVE - all 28 `dangerouslySetInnerHTML` instances**: 25 are static `<script
+  type="application/ld+json">` SEO schema tags built from `JSON.stringify()` of developer-authored data
+  (industry/city/blog/service page configs), not user input or HTML rendering. The remaining 3 (in
+  `blogContentRenderer.jsx`) already run through `formatInline()` -> `DOMPurify.sanitize(html, { ALLOWED_TAGS:
+  ["strong","em"] })` before rendering - confirmed already safe. No change made (re-confirms Session 3/4/19
+  findings on the same recurring scanner pattern).
+- **Verified FALSE POSITIVE - all "27" hook dependency warnings**: manually audited every single
+  `useEffect`/`useCallback`/`useMemo` in the entire frontend codebase (23 total, all of `sections/`, `pages/`,
+  `hooks/`) - every dependency array was already complete and correct (module constants, refs, and stable
+  setters correctly omitted; all changing values correctly included, including deliberately-over-included
+  ones like `currentIndex` in `CyberGame/index.jsx` to force a per-question timer reset). `yarn build` also
+  shows zero ESLint hook warnings. No changes made.
+- **Fixed - 2 array-index-key instances**: `CaseStudy.jsx` and `ClientSuccessHero.jsx`'s decorative 5-star
+  rating rows (`[...Array(5)].map((_, i) => <Star key={i} />)`) replaced with 5 hardcoded `<Star />` elements
+  each - removes the index-key pattern entirely rather than substituting a different index-based key.
+- **Fixed - 3 useMemo additions**: `IndustryPage/index.jsx` (`otherIndustries`) and `ServiceAreaPage/index.jsx`
+  (`otherCities`) now memoize their "other X" footer-link filter, declared *before* the early not-found return
+  and guarded with a ternary (`industry ? ... : []`) to stay rules-of-hooks compliant; `CyberGame/GameIntro.jsx`
+  now memoizes `earnedBadges` (`BADGES.filter(...)`) keyed on `stored.badges`.
+- **Explicitly skipped per user approval**: broad complexity/long-function refactors of `useScorecardFlow.js`,
+  `BlogIndex.jsx`, `ChecklistDownload.jsx` - working, tested, revenue-critical flows with no functional benefit
+  to a line-count-driven rewrite.
+- Verified: `yarn build` compiles clean with zero ESLint warnings/errors (first attempt caught a real
+  rules-of-hooks violation from the useMemo placement, fixed immediately, confirmed clean on rebuild); full
+  backend pytest suite 70/70 passing. Tested via `testing_agent_v4` (iteration_10.json) - 100% backend/100%
+  frontend, zero regressions, zero console errors, zero React key/hook warnings across homepage carousel,
+  `/client-success`, an industry page, a service area page, cyber game intro, and resources/blog. One TEST_QA
+  lead created during testing cleaned from Mongo afterward.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
