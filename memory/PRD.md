@@ -359,6 +359,32 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   correctly, Resources index shows "Showing 148 of 148 articles". Full backend suite re-confirmed 70/70 passing
   (no test hardcodes the old 147 count).
 
+### Session 37 (Feb 2026) - Checklist download lead magnet (on the new 2027 predictions post)
+- Built a gated "checklist" lead magnet for the new `/resources/cybersecurity-predictions-2027` post per the user's
+  request: form (company/name/phone/email) -> creates a real lead via `POST /api/leads` -> unlocks an instant
+  client-side branded PDF download + an "Email me a copy" option (reuses the existing `/api/reports/email` +
+  SEC-001 recipient-binding, since the lead was just created).
+  - New `data/blogChecklists.js` - `getChecklistForPost(slug)` config lookup, returns `null` for every other post
+    (feature is scoped to this one post only, per the user's request - not a generic multi-post system).
+  - New `lib/generateChecklistPDF.js` - reuses the existing shared `lib/pdfReportHelpers.js` (same branded-PDF
+    building blocks already used by the Assessment/Scorecard reports) - one-page checklist, 4 sections (Identity &
+    Access, Social Engineering & Trusted Tools, Infrastructure & Patch Management, Zero Trust Readiness), ~15 items
+    consolidated from the article's own action-item bullet lists.
+  - New `pages/BlogPost/ChecklistDownload.jsx` - mirrors the exact proven form pattern from `sections/FreeAuditOffer.jsx`
+    (uncontrolled `<Input>` + `FormData` + `useLeadSubmit()` hook). Rendered conditionally in `pages/BlogPost/index.jsx`
+    right after the article content, only when `getChecklistForPost(post.slug)` returns a config.
+- Investigated a suspected bug (lead never appeared in Mongo when tested via my own quick screenshot-automation
+  script, despite an identical curl payload working) - escalated to `testing_agent_v4` for a definitive, network-
+  verified test. **Verdict: NOT a real bug** - their properly-instrumented Playwright test confirmed the POST
+  request fires correctly and the lead persists 2/2 times; root cause was a quirk isolated to my own ad-hoc script
+  tool (confirmed independently afterward via a `page.on("request")` listener showing zero requests dispatched by
+  my script's interaction pattern specifically - not present in the real component).
+- Applied one low-priority improvement flagged by the testing agent: surface a visible error message
+  (`data-testid="checklist-form-error"`) if lead submission genuinely fails, instead of silently unlocking the
+  download UI regardless of outcome (previously matched `FreeAuditOffer.jsx`'s existing gap - fixed here via a
+  `useEffect` reacting to the hook's `submitted`/`error` state rather than an unreliable post-await stale-closure
+  check). Re-verified compiles cleanly and full backend suite still 70/70 passing (no backend changes this session).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix

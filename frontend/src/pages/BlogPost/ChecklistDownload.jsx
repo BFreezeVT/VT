@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ClipboardCheck, Download, Mail, ArrowRight } from "lucide-react";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
@@ -9,11 +9,20 @@ import { generateChecklistPDF, getChecklistPDFBase64 } from "../../lib/generateC
 /** Gated "checklist" lead magnet embedded in a resource article. Collects a lead, then
  * unlocks an instant client-side PDF download + an optional "email me a copy" action. */
 export default function ChecklistDownload({ checklist, post }) {
-  const { submitLead } = useLeadSubmit();
+  const { submitLead, submitted, error: leadSubmitError } = useLeadSubmit();
   const [stage, setStage] = useState("form"); // form, unlocked
   const [contactInfo, setContactInfo] = useState({ company: "", name: "", phone: "", email: "" });
   const [emailingReport, setEmailingReport] = useState(false);
   const [reportEmailStatus, setReportEmailStatus] = useState(null); // null, "sent", "error"
+
+  // Reacts to the hook's own state (rather than checking right after `await submitLead()`,
+  // which would read a stale closure value from before this submission resolved).
+  useEffect(() => {
+    if (submitted) {
+      setStage("unlocked");
+      if (window.gtag) window.gtag("event", "checklist_download_unlock", { event_category: "lead_magnet", post_slug: post.slug });
+    }
+  }, [submitted, post.slug]);
 
   const buildPDFPayload = () => ({
     companyName: contactInfo.company,
@@ -34,8 +43,6 @@ export default function ChecklistDownload({ checklist, post }) {
     };
     setContactInfo(data);
     await submitLead(data);
-    setStage("unlocked");
-    if (window.gtag) window.gtag("event", "checklist_download_unlock", { event_category: "lead_magnet", post_slug: post.slug });
   };
 
   const handleDownload = () => {
@@ -84,6 +91,9 @@ export default function ChecklistDownload({ checklist, post }) {
           <Button type="submit" data-testid="checklist-unlock-button" className="sm:col-span-2 bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-sm font-semibold h-11">
             Get the Free Checklist <ArrowRight className="w-4 h-4 ml-1" />
           </Button>
+          {leadSubmitError && (
+            <p data-testid="checklist-form-error" className="sm:col-span-2 text-[#ef4444] text-xs text-center">Something went wrong submitting your info. Please try again.</p>
+          )}
           <p className="sm:col-span-2 text-[#94a8be]/40 text-xs text-center">No spam. Just the checklist.</p>
         </form>
       )}
