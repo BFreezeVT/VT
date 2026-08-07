@@ -6,12 +6,14 @@ import axios from "axios";
 import RelatedArticlesCarousel from "../../sections/RelatedArticlesCarousel";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { getBlogCategoryImage } from "../../data/blogCategoryImages";
+import { getChecklistForPost } from "../../data/blogChecklists";
 import { renderContent } from "./blogContentRenderer";
 import { buildArticleSchema, buildBreadcrumbSchema } from "./blogPostSchemas";
 import BlogPostNav from "./BlogPostNav";
 import BlogPostFooter from "./BlogPostFooter";
 import BlogRelatedResources from "./BlogRelatedResources";
 import ShareButtons from "./ShareButtons";
+import ChecklistDownload from "./ChecklistDownload";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -138,6 +140,10 @@ export default function BlogPost() {
             <div data-testid="blog-post-content" className="prose-custom">
               {renderContent(post.content)}
             </div>
+
+            {getChecklistForPost(post.slug) && (
+              <ChecklistDownload checklist={getChecklistForPost(post.slug)} post={post} />
+            )}
 
             {/* CTA */}
             <div className="mt-16 grid-border-card p-8 text-center">
