@@ -325,6 +325,21 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   unshipped sessions since the last deploy - category blog images, share buttons, SEC-001 recipient-binding fix,
   dependency cleanup, code-review fixes).
 
+### Session 35 (Feb 2026) - Real favicon (was a generic placeholder)
+- User asked what's needed to get "the logo icon" showing in the upper-left (browser tab favicon). The site's
+  navbar logo was already real (the "V" pinwheel mark, uploaded asset), but `public/favicon.svg` was still a
+  generic placeholder (a plain navy square with a text "V") never replaced with the real brand mark - nothing
+  needed from the user, the real logo image already existed.
+- Generated a full favicon set directly from the existing navbar logo asset: trimmed transparent padding, re-
+  centered on a square canvas, produced `favicon.ico` (16/32/48 multi-res), `favicon-16x16.png`, `favicon-32x32.png`,
+  `favicon-192x192.png`, `favicon-512x512.png` (transparent bg), and `apple-touch-icon.png` (180x180, composited
+  onto the brand's dark navy `#020812` background since iOS renders transparent PNG icons as black). Removed the
+  old placeholder `favicon.svg`. Updated `index.html` `<link rel="icon">`/`apple-touch-icon` tags and
+  `manifest.json`'s `icons` array to reference the new files.
+- Verified via curl: all new favicon/manifest files serve 200 with correct content-types; homepage screenshot
+  confirms no regression to page rendering (favicon itself lives in browser tab chrome, not visible in
+  screenshots, but file-serving + markup wiring confirmed correct).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
