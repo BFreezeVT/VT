@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Phone, ChevronLeft, Shield, Landmark, HardHat, Factory, ShieldCheck } from "lucide-react";
 import { Button } from "../../components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import industryData from "../../data/industryData";
 import { allTestimonials } from "../../data/industryTestimonials";
 import { useLeadSubmit } from "../../hooks/useLeadSubmit";
@@ -20,6 +20,10 @@ export default function IndustryPage() {
   const { industrySlug } = useParams();
   const industry = industryData.find((ind) => ind.slug === industrySlug);
   const { submitted, error, submitLead } = useLeadSubmit();
+  const otherIndustries = useMemo(
+    () => (industry ? industryData.filter((ind) => ind.slug !== industry.slug) : []),
+    [industry]
+  );
 
   useEffect(() => {
     if (industry) {
@@ -115,7 +119,7 @@ export default function IndustryPage() {
           <div className="max-w-7xl mx-auto px-6 text-center">
             <p className="text-[#94a8be] text-sm mb-4">We also specialize in:</p>
             <div className="flex justify-center gap-4 flex-wrap">
-              {industryData.filter((ind) => ind.slug !== industry.slug).map((ind) => (
+              {otherIndustries.map((ind) => (
                 <Link
                   key={ind.slug}
                   to={`/industries/${ind.slug}`}

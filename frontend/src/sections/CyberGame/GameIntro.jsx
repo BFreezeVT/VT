@@ -1,7 +1,13 @@
+import { useMemo } from "react";
 import { ShieldCheck } from "lucide-react";
 import { DIFFICULTIES, BADGES } from "../../data/cyberGameData";
 
 export default function GameIntro({ stored, difficulty, startGame }) {
+  const earnedBadges = useMemo(
+    () => BADGES.filter((b) => stored.badges.includes(b.id)),
+    [stored.badges]
+  );
+
   return (
     <div data-testid="game-intro">
       <div className="text-center mb-8">
@@ -34,7 +40,7 @@ export default function GameIntro({ stored, difficulty, startGame }) {
         <div className="border-t border-[#0d4a8a] pt-6">
           <p className="text-xs text-[#b0c4d8] mb-3 uppercase tracking-wider">Your Badges</p>
           <div className="flex flex-wrap gap-2">
-            {BADGES.filter((b) => stored.badges.includes(b.id)).map((b) => {
+            {earnedBadges.map((b) => {
               const Icon = b.icon;
               return (
                 <div key={b.id} data-testid={`badge-${b.id}`} className="flex items-center gap-2 bg-[#0077B3]/10 border border-[#0077B3]/30 px-3 py-1.5 rounded" title={b.desc}>

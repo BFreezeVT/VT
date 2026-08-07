@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Phone, ChevronLeft } from "lucide-react";
 import { Button } from "../../components/ui/button";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import cityData from "../../data/cityData";
 import industryData from "../../data/industryData";
 import { allTestimonials } from "../../data/cityTestimonials";
@@ -18,6 +18,10 @@ export default function ServiceAreaPage() {
   const { citySlug } = useParams();
   const city = cityData.find((c) => c.slug === citySlug);
   const { submitted, error, submitLead } = useLeadSubmit();
+  const otherCities = useMemo(
+    () => (city ? cityData.filter((c) => c.slug !== city.slug) : []),
+    [city]
+  );
 
   useEffect(() => {
     if (city) {
@@ -101,8 +105,7 @@ export default function ServiceAreaPage() {
               We also serve
             </h2>
             <div className="flex flex-wrap justify-center gap-3">
-              {cityData
-                .filter((c) => c.slug !== city.slug)
+              {otherCities
                 .map((c) => (
                   <Link
                     key={c.slug}
