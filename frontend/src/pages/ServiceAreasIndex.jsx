@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, ArrowRight, ChevronLeft } from "lucide-react";
+import { useEffect } from "react";
 import { Button } from "../components/ui/button";
 import cityData from "../data/cityData";
 
 export default function ServiceAreasIndex() {
+  useEffect(() => {
+    document.title = "IT Support Service Areas - Minneapolis-St. Paul Metro | Veracity Technologies";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Veracity Technologies provides managed IT services and cybersecurity across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.");
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/service-areas");
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="service-areas-index">
       {/* Nav */}

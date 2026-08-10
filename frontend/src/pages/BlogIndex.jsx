@@ -29,13 +29,18 @@ export default function BlogIndex() {
     document.title = "Resources & Insights | Veracity Technologies";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", "Cybersecurity insights, compliance guides, and AI security resources for construction, financial services, and manufacturing from Veracity Technologies.");
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/resources");
 
     axios.get(`${API}/blog`)
       .then((res) => setPosts(res.data))
       .catch(() => setPosts([]))
       .finally(() => setLoading(false));
 
-    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+    };
   }, []);
 
   const categories = useMemo(() => {

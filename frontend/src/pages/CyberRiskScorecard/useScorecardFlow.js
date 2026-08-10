@@ -31,7 +31,12 @@ export function useScorecardFlow() {
     document.title = "Cyber Risk Scorecard | Veracity Technologies";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Take the free Cyber Risk Scorecard assessment. Answer 12 questions in under 3 minutes and get your business's cybersecurity risk score plus a sample ROI estimate for closing the gaps. Instant results.");
-    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/cyber-risk-scorecard");
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+    };
   }, []);
 
   const totalScore = Object.values(answers).reduce((sum, pts) => sum + pts, 0);

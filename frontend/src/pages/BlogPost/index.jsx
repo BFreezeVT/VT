@@ -32,6 +32,8 @@ export default function BlogPost() {
       document.title = `${postRes.data.title} | Veracity Technologies`;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", postRes.data.excerpt);
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/resources/${slug}`);
 
       const categoryImage = getBlogCategoryImage(postRes.data.category);
       const ogTags = [
@@ -57,6 +59,8 @@ export default function BlogPost() {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", "Managed IT services and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. SOC 2 compliant. CMMC registered. Serving Minnetonka, Minneapolis, St. Paul, and the Twin Cities. Free business technology assessment.");
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
       const defaults = [
         ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
         ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],

@@ -424,6 +424,31 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   `/client-success`, an industry page, a service area page, cyber game intro, and resources/blog. One TEST_QA
   lead created during testing cleaned from Mongo afterward.
 
+### Session 39 (Feb 2026) - Fixed Search Console "Alternate page with proper canonical tag" indexing issue
+- User received a Google Search Console email flagging 19 pages (all `/resources/*` blog posts + resources
+  index) as not indexed due to "Alternate page with proper canonical tag". Requested the specific affected
+  URLs from the user, then traced root cause in code (not a www vs non-www issue, despite the example URLs
+  mixing both domain variants).
+- **Root cause confirmed**: `public/index.html` has a static site-wide `<link rel="canonical"
+  href="https://www.veracitytechmn.com/">` (pointing at the homepage). Every other page type
+  (Service/Industry/AI/City/Assessment/etc.) overrides this via a `useEffect` that sets the correct
+  page-specific canonical on mount and resets it back to the homepage on unmount - but `pages/BlogPost/index.jsx`
+  and `pages/BlogIndex.jsx` never did this. Every one of the 148 blog posts (`/resources/:slug`) and the
+  `/resources` index itself was telling Google "the canonical/real version of this page is the homepage",
+  so Google correctly excluded them from its index per the canonical tag - exactly matching the reported issue.
+- **Fixed**: added the same canonical-set/reset pattern already used elsewhere to `BlogPost/index.jsx`
+  (-> `https://www.veracitytechmn.com/resources/{slug}`) and `BlogIndex.jsx` (-> `.../resources`).
+- **Found + fixed the same gap on 2 more pages** (not in the reported 19, but same root cause, proactively
+  fixed for consistency): `CyberRiskScorecard` (`useScorecardFlow.js` had title/meta but no canonical -> now
+  sets `.../cyber-risk-scorecard`) and `ServiceAreasIndex.jsx` (`/service-areas` had ZERO dynamic
+  title/meta/canonical at all before this fix - now sets all three -> `.../service-areas`).
+- Verified via direct DOM inspection (Playwright script reading the live `<link rel="canonical">` href) on
+  all 4 fixed routes plus confirming it correctly resets to the homepage URL on navigating away - 5/5 correct.
+  `yarn build` compiles clean, full backend suite still 70/70 (no backend changes this session).
+- **Requires a Preview -> Production redeploy to take effect**, then the user should use Search Console's
+  "Validate Fix" button on the issue (or manually request re-indexing on a few URLs) - Google re-crawls on
+  its own schedule after that, re-indexing isn't instant.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
