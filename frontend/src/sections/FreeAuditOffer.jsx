@@ -133,7 +133,7 @@ function getSteps(answers) {
 
 function getScoreLabel(pct) {
   if (pct >= 80) return { label: "Strong", color: "#10b981" };
-  if (pct >= 50) return { label: "Developing", color: "#f59e0b" };
+  if (pct >= 50) return { label: "Developing", color: "#eab308" };
   return { label: "Needs Attention", color: "#ef4444" };
 }
 
@@ -497,8 +497,8 @@ export default function FreeAuditOffer() {
             </div>
 
             {error && (
-              <div data-testid="assessment-submit-error" className="max-w-xl mx-auto mb-8 text-center p-4 border border-[#FF5722]/30 bg-[#FF5722]/5 rounded-md">
-                <p className="text-[#FF5722] text-sm font-medium">
+              <div data-testid="assessment-submit-error" className="max-w-xl mx-auto mb-8 text-center p-4 border border-[#ef4444]/30 bg-[#ef4444]/5 rounded-md">
+                <p className="text-[#ef4444] text-sm font-medium">
                   We couldn&rsquo;t save your contact info automatically. Your results below are still valid - please call us at (952) 941-7333 so we can make sure we follow up with you.
                 </p>
               </div>

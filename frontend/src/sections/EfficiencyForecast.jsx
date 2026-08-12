@@ -17,7 +17,7 @@ export default function EfficiencyForecast({ annualHoursReclaimed, monthlySaving
           <p className="text-[#c0cfe0] text-[11px] mt-1">Monthly Savings Forecast</p>
         </div>
       </div>
-      <p className="flex items-start gap-1.5 text-[#c0cfe0]/40 text-[10px] leading-relaxed text-left">
+      <p className="flex items-start gap-1.5 text-[#c0cfe0] text-[10px] leading-relaxed text-left">
         <Info className="w-3 h-3 flex-shrink-0 mt-0.5" />
         Sample estimate based on a team of {teamSize} and ~{weeklyHoursPerPerson} manual hours/person/week from your answers - not a guarantee.
       </p>

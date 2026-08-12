@@ -448,6 +448,37 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - **Requires a Preview -> Production redeploy to take effect**, then the user should use Search Console's
   "Validate Fix" button on the issue (or manually request re-indexing on a few URLs) - Google re-crawls on
   its own schedule after that, re-indexing isn't instant.
+- **Follow-up (same session)**: user shared more example URLs from the same 19-page list, then a separate
+  batch of ~30 URLs under a *different* GSC status, "Crawled - currently not indexed" (9 city pages, 2 AI
+  cluster pages, several blog posts). Investigated and ruled out any technical cause (no robots.txt block, no
+  `noindex` tags, content isn't thin - checked actual word counts, some flagged posts are among the longest on
+  the site). Concluded this is a normal indexing-priority/authority pattern for a newer domain with a large
+  page count (148 posts + 45 cities + 11 AI pages), not a code bug - advised the user it's not urgent to
+  "fix" and recommended letting it resolve naturally over weeks as the domain builds authority, revisiting
+  only if the same pages are still stuck after ~4-6 weeks. Ran `deployment_agent` (PASS, no blockers) ahead of
+  the user's planned redeploy to push the canonical fix live.
+
+### Session 40 (Feb 2026) - Assessment results screen contrast fix (low-contrast text + bright orange removed)
+- User reported (on Preview, confirmed via source review, not yet redeployed): the Business Technology
+  Assessment results screen (homepage-embedded `sections/FreeAuditOffer.jsx`, `data-testid="assessment-results"`
+  - not the separate `/cyber-risk-scorecard` page) had text that was hard to read, and asked to remove any
+  bright orange text on that screen.
+- **Fixed - low contrast**: `EfficiencyForecast.jsx`'s small "Sample estimate..." disclaimer note was
+  `text-[#c0cfe0]/40` (light blue-gray at 40% opacity) at only 10px - genuinely low contrast on the dark card.
+  Changed to full-opacity `text-[#c0cfe0]`.
+- **Fixed - bright orange text (2 spots)**: `getScoreLabel()`'s mid-tier "Developing" score band (50-79%)
+  used amber/orange `#f59e0b` for its status text/icons (ScoreRing label, 6-score grid cards, Top Gaps score
+  numbers, Full Breakdown bar % labels) - changed to `#eab308` (clearly yellow/gold, not orange). Also the
+  conditional lead-submission-error banner (only shows if the background lead save fails) used `#FF5722`
+  (bright orange) - changed to `#ef4444` (red), matching the existing error-text convention already used
+  elsewhere on the same results screen (e.g. the "Couldn't send that email" message).
+- Verified via `testing_agent_v4` (iteration_40.json) - completed the full 6-category assessment + contact
+  form end-to-end, confirmed via computed CSS color extraction that `rgb(234,179,8)` (#eab308) now appears
+  everywhere the old amber did with zero `#f59e0b`/`#FF5722` orange remaining on the results screen, and all
+  other text on that screen (score ring, forecast card, top gaps/opportunities, full breakdown, closing CTA)
+  is legible. No regression in the intro/question/contact steps. One TEST_QA lead created during testing
+  cleaned from Mongo afterward.
+- **This is a Preview-only fix - requires a redeploy to reach production.**
 
 ## Backlog / Next Tasks
 
