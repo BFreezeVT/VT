@@ -480,6 +480,29 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   cleaned from Mongo afterward.
 - **This is a Preview-only fix - requires a redeploy to reach production.**
 
+### Session 41 (Feb 2026) - Fixed real root-cause contrast bug: "light-zone" sections rendering on wrong (dark/blue) background
+- User sent a screenshot after Session 40's fix showing the `IntroStats.jsx` section ("The threat landscape
+  has changed...") with dark navy text (#0f1d32/#3a5068) nearly unreadable against a medium-blue background -
+  a different, more significant bug than the assessment-results contrast issue fixed in Session 40.
+- **Root cause**: the homepage uses a single continuous scroll-based background gradient
+  (`useScrollGradient`/`gradientStops` in `App.js`) applied to the outer page container, going from light
+  blue `rgb(224,235,244)` at the top to near-black `rgb(2,8,18)` at the bottom, purely based on
+  `window.scrollY / scrollHeight`. Most sections use `bg-transparent` so this gradient shows through, with a
+  `light-zone` or `dark-cards` marker class used only for minor child-element styling (per `App.css`), NOT for
+  controlling the section's own background. Two sections - `AIService.jsx` and `IntroStats.jsx` - are tagged
+  `light-zone` (dark navy text, assuming a light backdrop) but sit deep enough in the page (~26%/~38% scroll
+  depth) that the linear gradient has already progressed to a medium-saturated blue by then - producing dark
+  text on a medium-blue background with poor contrast, exactly matching the screenshot. (Sections that
+  legitimately need to stay dark/light regardless of scroll position, like `FreeAuditOffer`/`TrustIndicators`,
+  already correctly use an explicit opaque background instead of relying on the gradient - `AIService`/
+  `IntroStats` were the only 2 sections in the whole codebase using the `light-zone` marker without one.)
+- **Fixed**: gave both sections an explicit opaque `bg-[#e0ebf4]` (matching the gradient's own lightest stop)
+  instead of `bg-transparent`, so they're no longer dependent on scroll position for legibility.
+- Verified visually via direct screenshots of both sections before/after - confirmed crisp, clearly readable
+  dark text on a clean light background matching the design intent. Backend suite still 70/70 (no backend
+  changes). Build compiles clean.
+- **Preview-only fix - requires a redeploy to reach production**, same as Session 39/40's fixes.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
