@@ -553,6 +553,16 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - After redeploying, user can verify with `curl -I https://www.veracitytechmn.com/resources/<any-slug>` and
   check the returned HTML has the correct page-specific title/canonical, then use Search Console's "Validate
   Fix" on the Soft 404 / Alternate-canonical issues.
+- **Follow-up (same session)**: confirmed the earlier-deferred "per-article LinkedIn/X social card" request
+  is now solved as a side effect of prerendering - blog posts already set `og:title`/`og:image`/
+  `og:description`/`twitter:*` dynamically via `useEffect` (category-level images), and since prerendering
+  captures the DOM *after* that effect runs, the correct per-post image/title/description are now baked into
+  the static file social crawlers fetch. Found and fixed one related gap while verifying: `og:url` and
+  `twitter:url` were never updated per-post (always showed the homepage URL, even though `canonical` was
+  correct) - added those to `BlogPost/index.jsx`'s existing og-tag update/reset arrays. Note: the same
+  og:title/og:image/og:url gap likely still exists on `ServicePage`/`IndustryPage`/`ServiceAreaPage`/`AIPage`
+  (they only update `canonical`+title+description, never og:*/twitter:* tags) - not fixed yet, flagged as a
+  possible follow-up if the user wants social cards for those page types too.
 
 ## Backlog / Next Tasks
 
