@@ -16,6 +16,13 @@ import IndustryFormSection from "./IndustryFormSection";
 
 const iconMap = { Landmark, HardHat, Factory, ShieldCheck };
 
+const industryOgImages = {
+  "financial-it-support": "https://images.unsplash.com/photo-1758519289074-9de36003622b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBzZXJ2aWNlcyUyMG9mZmljZSUyMHByb2Zlc3Npb25hbHN8ZW58MHx8fHwxNzg2OTkxNTU5fDA&ixlib=rb-4.1.0&q=85",
+  "construction-it-support": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwd29ya2Vyc3xlbnwwfHx8fDE3ODY5OTE1NTl8MA&ixlib=rb-4.1.0&q=85",
+  "manufacturing-it-support": "https://images.unsplash.com/photo-1720036236697-018370867320?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDV8MHwxfHNlYXJjaHwxfHxtYW51ZmFjdHVyaW5nJTIwZmFjdG9yeSUyMGZsb29yJTIwaW5kdXN0cmlhbHxlbnwwfHx8fDE3ODY5OTE1NTl8MA&ixlib=rb-4.1.0&q=85",
+  "high-compliance-it-support": "https://images.unsplash.com/photo-1653566031535-bcf33e1c2893?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwY29tcGxpYW5jZSUyMHByb2Zlc3Npb25hbCUyMG1lZXRpbmd8ZW58MHx8fHwxNzg2OTkxNTU5fDA&ixlib=rb-4.1.0&q=85",
+};
+
 export default function IndustryPage() {
   const { industrySlug } = useParams();
   const industry = industryData.find((ind) => ind.slug === industrySlug);
@@ -31,10 +38,46 @@ export default function IndustryPage() {
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", industry.metaDescription);
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/industries/${industry.slug}`);
+      const industryUrl = `https://www.veracitytechmn.com/industries/${industry.slug}`;
+      if (canonical) canonical.setAttribute("href", industryUrl);
+      const ogImage = industryOgImages[industry.slug] || "https://www.veracitytechmn.com/og-image.png";
+      const ogTags = [
+        ['meta[property="og:url"]', "content", industryUrl],
+        ['meta[property="og:image"]', "content", ogImage],
+        ['meta[property="og:image:alt"]', "content", industry.name],
+        ['meta[property="og:title"]', "content", industry.metaTitle],
+        ['meta[property="og:description"]', "content", industry.metaDescription],
+        ['meta[name="twitter:url"]', "content", industryUrl],
+        ['meta[name="twitter:image"]', "content", ogImage],
+        ['meta[name="twitter:image:alt"]', "content", industry.name],
+        ['meta[name="twitter:title"]', "content", industry.metaTitle],
+        ['meta[name="twitter:description"]', "content", industry.metaDescription],
+      ];
+      ogTags.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
     }
     return () => {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+      const defaults = [
+        ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
+        ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
+        ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
+        ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
+        ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
+        ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],
+      ];
+      defaults.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
     };
   }, [industry]);
 

@@ -564,6 +564,19 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   (they only update `canonical`+title+description, never og:*/twitter:* tags) - not fixed yet, flagged as a
   possible follow-up if the user wants social cards for those page types too.
 
+### Session 43 (Feb 2026) - Extended og:title/og:image fix to service, AI, industry, and city pages
+- Extended the same og:title/og:image/og:url/twitter:* fix to `ServicePage`, `AIPage`, `IndustryPage`, and
+  `ServiceAreaPage` (city pages) at the user's request. `ServicePage`/`AIPage` already had a `heroImage` field
+  per entry in their data files, reused directly. `IndustryPage` had no image field, so added a small
+  `industryOgImages` slug->URL map (4 industries, fetched relevant stock photos via `image_selector_tool`:
+  financial services, construction, manufacturing, healthcare/compliance). `cityData.js` has no per-city
+  imagery (45 templated pages, deliberately no unique photography per earlier cost discipline), so city pages
+  share one Minneapolis-St. Paul skyline image for `og:image` - still a major improvement over the previous
+  homepage-image/title fallback. All 4 follow the same og:title/description/url/image + twitter:* update-on-
+  mount/reset-on-unmount pattern as `BlogPost/index.jsx`.
+- Verified via a full rebuild + prerender: og:title/og:image correctly baked into a sample service, AI,
+  industry, and city page's static HTML (spot-checked all 4). Backend unaffected, still 70/70.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix

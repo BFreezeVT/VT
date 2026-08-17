@@ -14,6 +14,8 @@ import CityServices from "./CityServices";
 import CityTestimonials from "./CityTestimonials";
 import CityFormSection from "./CityFormSection";
 
+const CITY_OG_IMAGE = "https://images.unsplash.com/photo-1585168121124-bc4c43c0251b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxNaW5uZWFwb2xpcyUyMFN0JTIwUGF1bCUyME1pbm5lc290YSUyMHNreWxpbmV8ZW58MHx8fHwxNzg2OTkxNTU5fDA&ixlib=rb-4.1.0&q=85";
+
 export default function ServiceAreaPage() {
   const { citySlug } = useParams();
   const city = cityData.find((c) => c.slug === citySlug);
@@ -27,12 +29,49 @@ export default function ServiceAreaPage() {
     if (city) {
       document.title = `IT Support in ${city.name}, MN | Veracity Technologies`;
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute("content", `Managed IT services and cybersecurity in ${city.name}, Minnesota. ${city.subhead} Call (952) 941-7333 for a free audit.`);
+      const desc = `Managed IT services and cybersecurity in ${city.name}, Minnesota. ${city.subhead} Call (952) 941-7333 for a free audit.`;
+      if (metaDesc) metaDesc.setAttribute("content", desc);
       const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/service-areas/${city.slug}`);
+      const cityUrl = `https://www.veracitytechmn.com/service-areas/${city.slug}`;
+      if (canonical) canonical.setAttribute("href", cityUrl);
+      const cityTitle = `IT Support in ${city.name}, MN | Veracity Technologies`;
+      const ogTags = [
+        ['meta[property="og:url"]', "content", cityUrl],
+        ['meta[property="og:image"]', "content", CITY_OG_IMAGE],
+        ['meta[property="og:image:alt"]', "content", `IT services in ${city.name}, Minnesota`],
+        ['meta[property="og:title"]', "content", cityTitle],
+        ['meta[property="og:description"]', "content", desc],
+        ['meta[name="twitter:url"]', "content", cityUrl],
+        ['meta[name="twitter:image"]', "content", CITY_OG_IMAGE],
+        ['meta[name="twitter:image:alt"]', "content", `IT services in ${city.name}, Minnesota`],
+        ['meta[name="twitter:title"]', "content", cityTitle],
+        ['meta[name="twitter:description"]', "content", desc],
+      ];
+      ogTags.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
     }
     return () => {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+      const defaults = [
+        ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
+        ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
+        ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
+        ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
+        ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
+        ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],
+      ];
+      defaults.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
     };
   }, [city]);
 
