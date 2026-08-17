@@ -503,6 +503,57 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   changes). Build compiles clean.
 - **Preview-only fix - requires a redeploy to reach production**, same as Session 39/40's fixes.
 
+### Session 42 (Feb 2026) - Static SEO prerendering (fixes Soft 404 root cause across the entire site)
+- User reported a Google Search Console "Soft 404" issue on 3 blog post URLs. Investigation confirmed this is
+  the true root cause behind ALL prior GSC issues this session (alternate canonical, soft 404, and likely
+  contributing to "crawled - not indexed" too): this is a pure client-side-rendered React SPA with a single
+  static `index.html`. A raw HTML fetch (no JS execution) - which is how a meaningful part of Google's
+  indexing pipeline works - returns the HOMEPAGE's title/description/canonical for literally every route on
+  the site (blog posts, city pages, industry pages, AI pages, service pages), since all per-page metadata is
+  set via client-side `useEffect` after JS loads. My earlier canonical-tag fixes (Sessions 39-40) only take
+  effect for crawlers that fully render JS and wait - not for the faster raw-HTML crawl pass, which is
+  precisely the mismatch (URL claims to be article X, declared metadata says "homepage") that triggers "Soft
+  404".
+- Confirmed via Emergent Support that production hosting does **exact-file-lookup before SPA fallback**: a
+  request to `/resources/some-slug` will serve `build/resources/some-slug/index.html` if it exists, before
+  falling back to the generic root `build/index.html`. This unlocked a real fix.
+- **Built `frontend/scripts/prerender.js`**, wired as a `postbuild` script in `package.json` (runs
+  automatically after every `yarn build`, including on Emergent's deployment pipeline - no extra Emergent
+  config needed). It:
+  1. Enumerates all ~221 content routes: 8 static pages, 45 city pages (`cityData.js`), 4 industry pages
+     (`industryData.js`), 5 service pages (`coreServicesData.js`), 11 AI pages (`aiPagesData.js`), and 148 blog
+     posts (fetched live from `/api/blog`).
+  2. Spins up a temporary local static server serving the fresh `build/` output with SPA fallback (mimicking
+     production's un-prerendered behavior, so it crawls the *original* single-shell app).
+  3. Uses `puppeteer-core` (added as a devDependency, `yarn add -D puppeteer-core@23` - v23 needed since the
+     latest major requires Node >=22.12, this environment has Node 20) driving the existing system Chrome
+     binary (no bundled Chromium download) to visit each route, wait for network-idle (letting the existing
+     `useEffect`-based title/meta/canonical logic and data fetching complete), and capture the fully-rendered
+     `document.documentElement.outerHTML`.
+  4. Writes each route's snapshot to `build/<route>/index.html` (folder-style, matching the pattern Support
+     confirmed), overwriting the root `build/index.html` only for `/`.
+- **Hardened for deployment safety**: the script auto-detects a Chrome binary across common paths (or
+  `PUPPETEER_EXECUTABLE_PATH` env override) with a top-level catch-all - if Chrome isn't available in the
+  actual deployment build environment, or any other unexpected error occurs, it logs a warning and exits
+  cleanly (exit code 0) rather than failing the build, so this SEO enhancement can never block a deployment;
+  worst case, production silently falls back to the current (already-working) plain SPA behavior.
+- Since `createRoot()` (not `hydrateRoot()`) is used in `src/index.js`, prerendered static markup is safely
+  fully replaced by React on load with zero hydration-mismatch risk - real users get an instant correct
+  initial paint, then full client-side interactivity exactly as before.
+- Verified end-to-end: ran a full clean `yarn build` (which auto-triggers the postbuild prerender step) -
+  221/221 routes rendered successfully in ~5.5 minutes total. Spot-checked a blog post, a city page, an AI
+  page, and a service page's generated static HTML - each has the correct page-specific `<title>`,
+  `<meta name="description">`, `<link rel="canonical">`, and full article/page body content baked in (no
+  more "Loading..." placeholder), while still including the same hashed JS bundle `<script>` tag so
+  client-side hydration/interactivity is unaffected. Homepage (`build/index.html`) still gets its own correct
+  default metadata. Backend suite unaffected, still 70/70.
+- **Preview-only build-time change - takes effect automatically on the next Production redeploy** (no manual
+  step needed beyond the user clicking Deploy, since `postbuild` runs as part of the standard `yarn build`
+  Emergent already runs).
+- After redeploying, user can verify with `curl -I https://www.veracitytechmn.com/resources/<any-slug>` and
+  check the returned HTML has the correct page-specific title/canonical, then use Search Console's "Validate
+  Fix" on the Soft 404 / Alternate-canonical issues.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
