@@ -646,6 +646,24 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - **Requires a Preview -> Production redeploy** for the user to see both the Breach Ticker and the FAQ/Hero
   changes that were apparently never live.
 
+### Session 46 (Feb 2026) - Removed Breach Ticker, fixed CoreServices/OurApproach readability
+- User asked to remove the Session 45 Breach Ticker (already have a similar stat section mid-page) and fix
+  hard-to-read text in "Our Services" (`CoreServices.jsx`) and "How We Deliver" (`OurApproach.jsx`).
+- **Removed**: `BreachTicker` import/usage from `App.js` (file kept on disk, unused, in case it's wanted later).
+- **Root cause of readability complaint**: both sections used `bg-transparent` (relying on the page's scroll-based
+  gradient background), but sit early enough in the page that the gradient is still light-toned there - white/
+  light text on a light background, same bug pattern as the earlier IntroStats/AIService fix (Session 41) but
+  inverted (too light instead of too dark). Fixed by giving both an explicit opaque `bg-[#0f1d32]` (same dark
+  navy already used by `TrustIndicators`/`FreeAuditOffer`). Also bumped `CoreServices` feature bullet text
+  `text-xs`/`#94a8be` -> `text-sm`/`#c0cfe0` for legibility.
+- Tested via `testing_agent` (iteration_43.json) - 100% pass: Breach Ticker confirmed fully removed from DOM,
+  both sections confirmed solid `#0f1d32` bg with high-contrast text via live screenshots, no gap left behind,
+  full section order/scroll gradient regression clean.
+- **Non-blocking design note from testing agent (not fixed, flagged only)**: TrustIndicators+FreeAuditOffer+
+  CoreServices+OurApproach now form one continuous ~2000px opaque dark block, creating a visibly hard color
+  seam where it meets the next light `light-zone` section (AIService). Cosmetic only - revisit if user wants a
+  smoother transition.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix

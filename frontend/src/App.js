@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
 import TrustIndicators from "./sections/TrustIndicators";
-import BreachTicker from "./sections/BreachTicker";
 import CoreServices from "./sections/CoreServices";
 import IntroStats from "./sections/IntroStats";
 import BusinessReality from "./sections/BusinessReality";
@@ -107,7 +106,6 @@ function HomePage() {
       <main role="main">
         <HeroSection />
         <TrustIndicators />
-        <BreachTicker />
         <FreeAuditOffer />
         <CoreServices />
         <OurApproach />

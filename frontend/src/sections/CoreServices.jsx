@@ -46,7 +46,7 @@ export default function CoreServices() {
       id="core-services"
       data-testid="core-services-section"
       aria-label="Managed IT services, cybersecurity, disaster recovery, IT consulting, and compliance services in Minneapolis"
-      className="py-14 lg:py-20 bg-transparent relative overflow-hidden"
+      className="py-14 lg:py-20 bg-[#0f1d32] relative overflow-hidden"
     >
       <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] object-contain opacity-[0.03] brightness-200 pointer-events-none" />
 
@@ -81,15 +81,15 @@ export default function CoreServices() {
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
               <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2.5 mb-4">
                 {svc.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-[#94a8be] text-xs">
+                  <li key={f} className="flex items-start gap-2 text-[#c0cfe0] text-sm leading-snug">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <span className="text-[#0077B3] text-xs font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
                 Learn more <ArrowRight className="w-3 h-3" />
               </span>
             </Link>
@@ -106,15 +106,15 @@ export default function CoreServices() {
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
               <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2.5 mb-4">
                 {svc.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-[#94a8be] text-xs">
+                  <li key={f} className="flex items-start gap-2 text-[#c0cfe0] text-sm leading-snug">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <span className="text-[#0077B3] text-xs font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
                 Learn more <ArrowRight className="w-3 h-3" />
               </span>
             </Link>
