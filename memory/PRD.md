@@ -682,6 +682,28 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   (`border-white/15`) is invisible on the light bg - same as already-existing behavior on AIService/IntroStats,
   not fixed for consistency.
 
+### Session 48 (Feb 2026) - Deepened scroll gradient descent effect (with a regression caught + fixed pre-ship)
+- User asked to extend the light-to-dark scroll gradient further down the page so later sections darken more
+  smoothly (their words: "like going down into a hole"), rather than reaching near-black too early.
+- **First attempt (caught by testing agent, reverted)**: applied a global ease-in curve
+  (`Math.pow(rawT, 1.6)`) to the gradient's scroll fraction in `App.js`'s `useScrollGradient()`. `testing_agent`
+  (iteration_45.json) caught this as a HIGH-priority regression - it made the background too light in the
+  0.2-0.6 scroll range, dropping heading contrast to 1.33:1-2.56:1 (nearly invisible white text) on Industries,
+  BusinessReality, and WhySpecializedIT (all `bg-transparent` sections whose white text assumes the pre-existing
+  darker gradient there), plus a borderline hit on Compliance.
+- **Fixed with a piecewise curve**: `t = rawT <= 0.6 ? rawT : 0.6 + Math.pow((rawT-0.6)/0.4, 1.4) * 0.4` - keeps
+  the first 60% of scroll EXACTLY the original linear gradient (zero change, so Industries/BusinessReality/
+  WhySpecializedIT/Compliance/HowItWorks keep their pre-existing contrast untouched), and only eases the final
+  40% (where CaseStudy/Credentials/ProudPartners/CyberGame/RiskReversal/FAQSection already had 7-16:1 contrast
+  margin) so the darkening spreads more gradually instead of plateauing near-black early.
+- Verified via `testing_agent` (iteration_46.json) - 100% pass: all 11 downstream sections re-measured at
+  3.52:1-17.64:1 contrast (zero regressions vs iteration_45's failures), first 60% of scroll matches the raw
+  `gradientStops` exactly, final 40% now darkens smoothly/continuously through 5 sampled points instead of an
+  abrupt plateau.
+- Minor non-blocking notes from testing agent (not fixed): EbookPopup auto-opens on scroll and can obscure
+  visual verification (pre-existing, unrelated); `useScrollGradient` reads `scrollHeight` every scroll frame
+  (fine at current scale, flagged for future perf review only).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix

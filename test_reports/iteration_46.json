@@ -1,0 +1,60 @@
+{
+  "summary": "Verification of piecewise gradient easing fix in useScrollGradient (App.js line 93: `const t = rawT <= 0.6 ? rawT : 0.6 + Math.pow((rawT - 0.6) / 0.4, 1.4) * 0.4;`). Re-measured computed background-color of [data-testid=app-root] and heading contrast at the same 11 sections tested in iteration_45. RESULT: PASS — all 11 sections have contrast >= 3.5:1 against their white headings. The HIGH-priority regressions from iteration_45 (Industries 1.33, BusinessReality 1.55, WhySpecializedIT 2.56) and the MEDIUM regression (Compliance 3.91) are FULLY RESOLVED. Late-third descent (rawT 0.6->1.0) still darkens smoothly and continuously through rgb(22,56,95) -> rgb(2,8,18) without abrupt plateau.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "computed_gradient_data": {
+    "note": "Section rawT values are slightly HIGHER than iteration_45 baseline because DOM had slight layout differences (ebook popup CSS, viewport, etc.), but position within gradient is what matters and all headings now sit on sufficiently dark backgrounds.",
+    "target_sections_bg_and_contrast": [
+      {"section": "Industries",       "scrollY": 4739,  "rawT": 0.315, "bg": "rgb(93,141,184)", "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 3.52,  "pass_AA_large": true},
+      {"section": "BusinessReality",  "scrollY": 6477,  "rawT": 0.431, "bg": "rgb(52,100,149)", "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 6.17,  "pass_AA_large": true},
+      {"section": "WhySpecializedIT", "scrollY": 7913,  "rawT": 0.526, "bg": "rgb(32,72,117)",  "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 9.35,  "pass_AA_large": true},
+      {"section": "Compliance",       "scrollY": 8955,  "rawT": 0.594, "bg": "rgb(23,57,96)",   "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 11.73, "pass_AA_large": true},
+      {"section": "HowItWorks",       "scrollY": 9605,  "rawT": 0.637, "bg": "rgb(21,54,92)",   "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 12.25, "pass_AA_large": true},
+      {"section": "CaseStudy",        "scrollY": 10261, "rawT": 0.680, "bg": "rgb(19,49,85)",   "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 13.14, "pass_AA_large": true},
+      {"section": "Credentials",      "scrollY": 11105, "rawT": 0.736, "bg": "rgb(15,42,75)",   "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 14.45, "pass_AA_large": true},
+      {"section": "ProudPartners",    "scrollY": 11661, "rawT": 0.773, "bg": "rgb(13,37,67)",   "heading_color": "n/a (no h1/h2)",   "font_size": "n/a",  "contrast": null,  "pass_AA_large": true},
+      {"section": "CyberGame",        "scrollY": 11809, "rawT": 0.783, "bg": "rgb(12,36,65)",   "heading_color": "rgb(255,255,255)", "font_size": "36px", "contrast": 15.62, "pass_AA_large": true},
+      {"section": "RiskReversal",     "scrollY": 12574, "rawT": 0.834, "bg": "rgb(9,29,54)",    "heading_color": "rgb(255,255,255)", "font_size": "30px", "contrast": 16.93, "pass_AA_large": true},
+      {"section": "FAQSection",       "scrollY": 13006, "rawT": 0.862, "bg": "rgb(7,25,48)",    "heading_color": "rgb(255,255,255)", "font_size": "48px", "contrast": 17.64, "pass_AA_large": true}
+    ],
+    "evenly_spaced_scroll_stops": [
+      {"stop": 0,  "y": 0,     "rawT": 0.0, "bg": "rgb(224,235,244)"},
+      {"stop": 1,  "y": 1508,  "rawT": 0.1, "bg": "rgb(192,212,232)"},
+      {"stop": 2,  "y": 3016,  "rawT": 0.2, "bg": "rgb(150,182,212)"},
+      {"stop": 3,  "y": 4525,  "rawT": 0.3, "bg": "rgb(100,148,190)"},
+      {"stop": 4,  "y": 6033,  "rawT": 0.4, "bg": "rgb(60,110,160)"},
+      {"stop": 5,  "y": 7542,  "rawT": 0.5, "bg": "rgb(35,78,125)"},
+      {"stop": 6,  "y": 9050,  "rawT": 0.6, "bg": "rgb(22,56,95)"},
+      {"stop": 7,  "y": 10558, "rawT": 0.7, "bg": "rgb(17,47,82)"},
+      {"stop": 8,  "y": 12067, "rawT": 0.8, "bg": "rgb(11,34,62)"},
+      {"stop": 9,  "y": 13575, "rawT": 0.9, "bg": "rgb(5,20,40)"},
+      {"stop": 10, "y": 15084, "rawT": 1.0, "bg": "rgb(2,8,18)"}
+    ],
+    "descent_pacing_assessment": "First 60% (rawT 0-0.6) is EXACTLY the original linear gradient stops as intended (0.1->rgb(192,212,232) matches stops[1], 0.2->rgb(150,182,212) matches stops[2], ..., 0.6->rgb(22,56,95) matches stops[6]). Final 40% is eased so the interpolation SLOWS down: at rawT=0.7 the color is rgb(17,47,82) instead of stops[7] rgb(14,40,72) — subtle but keeps the descent visually gradual rather than dropping straight to near-black. At rawT=1.0 it still reaches the final rgb(2,8,18) darkest stop. Descent is smooth and continuous through all 5 sampled points (0.65,0.75,0.85,0.95,1.0)."
+  },
+  "comparison_to_iteration_45": {
+    "Industries": {"before": {"bg": "rgb(210,225,239)", "contrast": 1.33, "pass": false}, "after": {"bg": "rgb(93,141,184)", "contrast": 3.52, "pass": true}},
+    "BusinessReality": {"before": {"bg": "rgb(189,210,231)", "contrast": 1.55, "pass": false}, "after": {"bg": "rgb(52,100,149)", "contrast": 6.17, "pass": true}},
+    "WhySpecializedIT": {"before": {"bg": "rgb(127,166,202)", "contrast": 2.56, "pass": false}, "after": {"bg": "rgb(32,72,117)", "contrast": 9.35, "pass": true}},
+    "Compliance": {"before": {"bg": "rgb(84,133,178)", "contrast": 3.91, "pass": "borderline"}, "after": {"bg": "rgb(23,57,96)", "contrast": 11.73, "pass": true}}
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Piecewise easing curve is well-chosen — keeps linear behavior in the critical 0-60% zone where content-dense white-text sections live, and only applies gentle ease to the trailing 40% where sections already have huge contrast margin (7+:1).",
+    "Ebook popup (EbookPopup) auto-opens on scroll and covers ~35% of viewport; not related to this test but persistently blocks visual verification of section contrasts in screenshots. Consider requiring explicit user trigger or delaying to onExitIntent only.",
+    "useScrollGradient still reads document.body.scrollHeight on every scroll frame — fine for perf but consider throttling via rAF if perf becomes a concern on low-end devices (also noted iteration_45).",
+    "scroll-behavior:smooth on html can interfere with programmatic scrollTo in tests; tests can override, but if this hurts SPA anchor UX consider scoping to specific anchor links only."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100% — all 11 target sections pass AA large contrast against their white headings; late-third descent visually smooth"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Gradient regression from iteration_45 is FULLY RESOLVED by piecewise formula on App.js:93. All 11 downstream bg-transparent sections (Industries, BusinessReality, WhySpecializedIT, Compliance, HowItWorks, CaseStudy, Credentials, ProudPartners, CyberGame, RiskReversal, FAQSection) now have contrast 3.52 to 17.64 — well above WCAG AA large threshold (3.0). Even-spaced scroll stops match the raw gradientStops array 1:1 for rawT<=0.6 and reach the darkest stop rgb(2,8,18) at rawT=1.0. If future changes touch the easing formula or gradientStops, re-run the same measurement approach (scroll each of the 11 sections to top-of-viewport, read [data-testid=app-root] backgroundColor, compute contrast vs the section's h2 color). Ebook popup auto-opens on scroll — dismiss it or ignore for gradient measurements (it doesn't affect app-root bg color).",
+  "rca of the issue": "N/A — iteration_45 issue is resolved. Root cause of the iter_45 regression was Math.pow(rawT,1.6) globally, which flattened the color-lookup domain in the first ~60% and left middle sections with white text on light-blue bg. Current piecewise fix preserves linear behavior exactly where the white-text sections live (rawT 0.3-0.6) and only eases the trailing dark zone."
+}

@@ -85,7 +85,12 @@ function useScrollGradient(ref) {
   const handleScroll = useCallback(() => {
     if (!ref.current) return;
     const scrollHeight = document.body.scrollHeight - window.innerHeight;
-    const t = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+    const rawT = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+    // Keep the first 60% linear (unchanged) so white-text sections that already rely on it
+    // (Industries, BusinessReality, WhySpecializedIT, Compliance, HowItWorks) keep their
+    // existing contrast. Ease the final 40% so it darkens more gradually instead of
+    // plateauing near-black too early, deepening the "descent" feel toward the bottom.
+    const t = rawT <= 0.6 ? rawT : 0.6 + Math.pow((rawT - 0.6) / 0.4, 1.4) * 0.4;
     ref.current.style.backgroundColor = lerpColor(gradientStops, t);
   }, [ref]);
 
