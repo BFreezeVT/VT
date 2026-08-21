@@ -664,6 +664,24 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   seam where it meets the next light `light-zone` section (AIService). Cosmetic only - revisit if user wants a
   smoother transition.
 
+### Session 47 (Feb 2026) - Reworked CoreServices/OurApproach to light-zone (user wanted light top, gradual descent into dark)
+- User said Session 46's fix made the top of the page "too dark" - their intended design is light at the top,
+  gradually darkening on scroll ("like going down into a hole"), but said readability mattered more if that
+  effect was hard to preserve.
+- **Reworked** (superseding Session 46's solid-dark-navy version): converted `CoreServices.jsx` and
+  `OurApproach.jsx` to the same `light-zone` pattern already proven on `AIService.jsx`/`IntroStats.jsx` -
+  explicit light `bg-[#e0ebf4]` with dark-navy `#0f1d32` headings/titles and `#3a5068` body/list text (was
+  white/light text on dark navy). This restores a light tone right after the intentionally-dark Hero/
+  TrustIndicators/FreeAuditOffer block, giving back part of the light-top narrative while keeping guaranteed-
+  legible fixed colors (not dependent on the dynamic scroll gradient, which was the original bug's root cause).
+  Card backgrounds/borders lightened to match (`bg-white/60`, `border-[#0f1d32]/10`).
+- Tested via `testing_agent` (iteration_44.json) - 100% pass: both sections confirmed light `#e0ebf4` bg with
+  dark legible text, zero white-on-light regressions, scroll narrative now reads dark Hero/TrustIndicators/
+  FreeAuditOffer -> light CoreServices -> light OurApproach -> light AIService (continuing down). One cosmetic
+  note (pre-existing pattern, not new): the decorative divider line under each section's badge pill
+  (`border-white/15`) is invisible on the light bg - same as already-existing behavior on AIService/IntroStats,
+  not fixed for consistency.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix

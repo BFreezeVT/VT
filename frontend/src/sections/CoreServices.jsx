@@ -46,25 +46,25 @@ export default function CoreServices() {
       id="core-services"
       data-testid="core-services-section"
       aria-label="Managed IT services, cybersecurity, disaster recovery, IT consulting, and compliance services in Minneapolis"
-      className="py-14 lg:py-20 bg-[#0f1d32] relative overflow-hidden"
+      className="py-14 lg:py-20 bg-[#e0ebf4] light-zone relative overflow-hidden"
     >
-      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] object-contain opacity-[0.03] brightness-200 pointer-events-none" />
+      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] object-contain opacity-[0.05] brightness-50 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative flex items-center justify-center mb-10">
-          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div>
+          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div>
           <span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Our Services</span>
         </div>
 
         <div className="text-center mb-12">
           <h2
             data-testid="services-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-4"
             style={{ fontFamily: "Outfit" }}
           >
             Managed IT &amp; Cybersecurity Services
           </h2>
-          <p className="text-[#94a8be] text-base max-w-2xl mx-auto">
+          <p className="text-[#3a5068] text-base max-w-2xl mx-auto">
             The core services your business depends on - delivered with AI-enhanced automation, proactive monitoring, and dedicated expertise.
           </p>
         </div>
@@ -76,20 +76,20 @@ export default function CoreServices() {
               key={svc.title}
               to={svc.link}
               data-testid={`core-service-${i}`}
-              className="group p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#0077B3]/40 hover:bg-[#0077B3]/[0.03] transition-all duration-300 hover:-translate-y-1 block"
+              className="group p-6 rounded-lg border border-[#0f1d32]/10 bg-white/60 hover:border-[#0077B3]/40 hover:bg-white transition-all duration-300 hover:-translate-y-1 block"
             >
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
-              <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
+              <h3 className="text-[#0f1d32] font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
               <ul className="space-y-2.5 mb-4">
                 {svc.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-[#c0cfe0] text-sm leading-snug">
+                  <li key={f} className="flex items-start gap-2 text-[#3a5068] text-sm leading-snug">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-[#0f1d32] transition-colors">
                 Learn more <ArrowRight className="w-3 h-3" />
               </span>
             </Link>
@@ -101,20 +101,20 @@ export default function CoreServices() {
               key={svc.title}
               to={svc.link}
               data-testid={`core-service-${i + 3}`}
-              className="group p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#0077B3]/40 hover:bg-[#0077B3]/[0.03] transition-all duration-300 hover:-translate-y-1 block"
+              className="group p-6 rounded-lg border border-[#0f1d32]/10 bg-white/60 hover:border-[#0077B3]/40 hover:bg-white transition-all duration-300 hover:-translate-y-1 block"
             >
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
-              <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
+              <h3 className="text-[#0f1d32] font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
               <ul className="space-y-2.5 mb-4">
                 {svc.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-[#c0cfe0] text-sm leading-snug">
+                  <li key={f} className="flex items-start gap-2 text-[#3a5068] text-sm leading-snug">
                     <span className="text-[#0077B3] mt-0.5 flex-shrink-0">&#10003;</span>
                     {f}
                   </li>
                 ))}
               </ul>
-              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-white transition-colors">
+              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-[#0f1d32] transition-colors">
                 Learn more <ArrowRight className="w-3 h-3" />
               </span>
             </Link>
