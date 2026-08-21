@@ -47,8 +47,8 @@ export default function ScorecardFollowUp({ followUpChoice, followUpSubmitted, f
       {followUpChoice === "yes" && followUpSubmitted && (
         <div className="text-center py-6" data-testid="scorecard-followup-confirmed">
           <CheckCircle className="w-16 h-16 text-[#10b981] mx-auto mb-4" />
-          <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>You&rsquo;re All Set!</h3>
-          <p className="text-[#4a5e78] text-sm">We&rsquo;ll reach out shortly to walk through your results.</p>
+          <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>You’re All Set!</h3>
+          <p className="text-[#4a5e78] text-sm">We’ll reach out shortly to walk through your results.</p>
         </div>
       )}
 

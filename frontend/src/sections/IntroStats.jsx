@@ -93,7 +93,7 @@ export default function IntroStats() {
               The threat landscape has changed. Has your IT provider?
             </h2>
             <p data-testid="intro-description" className="text-[#3a5068] text-base leading-relaxed animate-fade-in-up stagger-2 mb-8">
-              Ransomware, credential theft, shadow AI, and operational downtime are costing businesses millions. Traditional reactive IT can&rsquo;t keep up. Modern managed IT uses AI and automation to detect, prevent, and resolve issues before they impact your business.
+              Ransomware, credential theft, shadow AI, and operational downtime are costing businesses millions. Traditional reactive IT can’t keep up. Modern managed IT uses AI and automation to detect, prevent, and resolve issues before they impact your business.
             </p>
             <div className="border-l-2 border-[#FF5722] pl-5 animate-fade-in-up stagger-3">
               <p className="text-[#FF5722] text-xs font-semibold uppercase tracking-wider mb-2">The Reality</p>

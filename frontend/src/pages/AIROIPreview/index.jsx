@@ -93,7 +93,7 @@ export default function AIROIPreview() {
               Ready for a number built on your actual numbers?
             </h2>
             <p className="text-[#94a8be] text-base mb-8 max-w-xl mx-auto">
-              The Business Technology Assessment scores your organization&rsquo;s AI readiness, automation maturity, cybersecurity, and compliance - and turns this sample estimate into a personalized ROI and readiness report.
+              The Business Technology Assessment scores your organization’s AI readiness, automation maturity, cybersecurity, and compliance - and turns this sample estimate into a personalized ROI and readiness report.
             </p>
             <Link to="/business-technology-assessment" data-testid="roi-bottom-cta-btn" onClick={() => { if (window.gtag) window.gtag("event", "roi_calculator_cta_click", { event_category: "ai_roi_calculator", cta_position: "bottom_page", team_size: teamSize, manual_hours: manualHours }); }}>
               <Button className="bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-sm font-bold text-base px-8 h-12">

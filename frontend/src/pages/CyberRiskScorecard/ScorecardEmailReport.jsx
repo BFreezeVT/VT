@@ -17,7 +17,7 @@ export default function ScorecardEmailReport({ emailSent, emailError, submitEmai
         <div className="max-w-md mx-auto mt-6">
           {emailError && (
             <p data-testid="email-report-error" className="text-[#ef4444] text-xs font-medium mb-3">
-              We couldn&rsquo;t send your report just now. Please try again, or call us at (952) 941-7333.
+              We couldn’t send your report just now. Please try again, or call us at (952) 941-7333.
             </p>
           )}
           <form onSubmit={submitEmail} className="grid grid-cols-2 gap-3">

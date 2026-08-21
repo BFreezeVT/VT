@@ -16,7 +16,7 @@ export default function CityFormSection({ city, submitted, error, submitLead }) 
                 {city.ctaText}
               </h2>
               <p className="text-[#94a8be] text-sm mb-8 text-center">
-                Get a comprehensive, non-invasive review of your {city.name} business&rsquo;s IT and cybersecurity posture.
+                Get a comprehensive, non-invasive review of your {city.name} business’s IT and cybersecurity posture.
               </p>
               {error && (
                 <p data-testid="city-form-error" className="text-[#FF5722] text-sm font-medium mb-4 text-center">
@@ -74,7 +74,7 @@ export default function CityFormSection({ city, submitted, error, submitLead }) 
             <div data-testid="city-form-success" className="text-center py-6">
               <Shield className="w-12 h-12 text-[#0077B3] mx-auto mb-4" />
               <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>Thank you!</h3>
-              <p className="text-[#94a8be] text-sm">We&rsquo;ll reach out within one business day to schedule your {city.name} IT audit.</p>
+              <p className="text-[#94a8be] text-sm">We’ll reach out within one business day to schedule your {city.name} IT audit.</p>
             </div>
           )}
         </div>

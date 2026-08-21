@@ -7,7 +7,7 @@ export default function RiskReversal() {
     <section
       id="risk-reversal"
       data-testid="risk-reversal-section"
-      aria-label="Satisfaction guarantee - $100 charity donation if audit doesn&rsquo;t find 3 actionable improvements"
+      aria-label="Satisfaction guarantee - $100 charity donation if audit doesn’t find 3 actionable improvements"
       className="py-14 lg:py-12 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -26,7 +26,7 @@ export default function RiskReversal() {
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex items-center gap-2 mb-2">
                   <ShieldAlert className="w-4 h-4 text-[#FF5722]" />
-                  <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold">Don&rsquo;t let this be you</p>
+                  <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold">Don’t let this be you</p>
                 </div>
                 <p className="text-white text-sm">The average breach costs 9 months of exposure and millions in damages. Prevention costs a fraction.</p>
               </div>
@@ -55,9 +55,9 @@ export default function RiskReversal() {
                 data-testid="guarantee-text"
                 className="text-[#c0cfe0] text-base leading-relaxed"
               >
-                If we don&rsquo;t identify at least <span className="text-white font-semibold">three actionable improvements</span> to 
-                your operations, we&rsquo;ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
-                That&rsquo;s how confident we are in the value we deliver.
+                If we don’t identify at least <span className="text-white font-semibold">three actionable improvements</span> to 
+                your operations, we’ll donate <span className="text-[#0077B3] font-bold">$100</span> to your favorite industry charity. 
+                That’s how confident we are in the value we deliver.
               </p>
             </div>
           </div>

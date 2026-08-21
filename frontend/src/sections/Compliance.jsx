@@ -40,7 +40,7 @@ export default function Compliance() {
               Compliance that supports growth, not just audits.
             </h2>
             <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
-              From CMMC to HIPAA to SOC 2, we build compliance into your systems so you&rsquo;re always audit-ready - reducing exposure while keeping your business moving forward.
+              From CMMC to HIPAA to SOC 2, we build compliance into your systems so you’re always audit-ready - reducing exposure while keeping your business moving forward.
             </p>
         </div>
 

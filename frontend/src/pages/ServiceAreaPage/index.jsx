@@ -80,7 +80,7 @@ export default function ServiceAreaPage() {
       <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>Page Not Found</h1>
-          <p className="text-[#94a8be] mb-8">This service area page doesn&rsquo;t exist.</p>
+          <p className="text-[#94a8be] mb-8">This service area page doesn’t exist.</p>
           <Link to="/" className="text-[#0077B3] hover:text-white transition-colors">Back to Home</Link>
         </div>
       </div>

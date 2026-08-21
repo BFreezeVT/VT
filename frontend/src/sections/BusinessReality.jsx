@@ -166,7 +166,7 @@ export default function BusinessReality() {
             See How Your Organization Compares
           </h3>
           <p className="text-white/70 text-sm mb-8">
-            Assess your organization&rsquo;s technology maturity, cybersecurity posture, operational efficiency, and AI readiness.
+            Assess your organization’s technology maturity, cybersecurity posture, operational efficiency, and AI readiness.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

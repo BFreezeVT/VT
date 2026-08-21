@@ -626,6 +626,26 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
   afterward, and separately check their own Cloudflare dashboard for the 403/bot-blocking issue (unresolved,
   needs user action, not something this agent can access or fix).
 
+### Session 45 (Feb 2026) - Verified FAQ/Hero already correct (stale Production) + new Breach Ticker section
+- User reported FAQ answers 5-23 missing, FAQ categories not grouped, hero CTA hierarchy wrong, stray "Book Your
+  Free Discovery Call". Source inspection showed all 4 items were ALREADY correctly implemented in Preview
+  (23 FAQs w/ answers across 4 categories; hero primary/secondary CTA hierarchy correct; 3 trust badges not 6;
+  single intentional "Book Your Free Discovery Call" CTA in `HowItWorks.jsx`). User unsure if viewing
+  Prod vs Preview. Confirmed via `testing_agent` (iteration_42.json) - 100% pass, all correct on Preview.
+  **Conclusion: user was almost certainly viewing stale Production - needs a redeploy to see these.**
+- **New "Breach Ticker" section** (`sections/BreachTicker.jsx`): static-data animated stat strip placed between
+  `TrustIndicators` and `FreeAuditOffer` in `App.js`. 5 stats (2,328 cyberattacks/day, $4.88M avg breach cost,
+  32% ransomware rise, 194 days avg detection time, 68% shadow AI usage) each with source citation. Count-up
+  animation via `IntersectionObserver` + `requestAnimationFrame` (vanilla JS, no libs), fires once per page load.
+  Dark `#0a1220` bg, `#ef4444` red numbers, pulsing red dot next to "The Threat Landscape Right Now" heading.
+  Grid: 5-col w/ dividers on desktop, 2-col on mobile. 100% static - no API calls.
+- Tested via `testing_agent` (iteration_42.json) - 100% pass: correct placement/values/labels/sources, animation
+  verified via live count capture (fires once, doesn't re-trigger), responsive grid confirmed both breakpoints,
+  FAQ/Hero regression re-confirmed correct. Minor non-blocking suggestions (add data-testid to hero trust badges,
+  move breach stat years to a dated config) - not fixed, cosmetic/future polish only.
+- **Requires a Preview -> Production redeploy** for the user to see both the Breach Ticker and the FAQ/Hero
+  changes that were apparently never live.
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix

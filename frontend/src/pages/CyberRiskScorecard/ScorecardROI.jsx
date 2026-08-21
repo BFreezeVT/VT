@@ -41,7 +41,7 @@ export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, ma
           Your Potential ROI From Closing These Gaps
         </h3>
         <p className="text-[#94a8be] text-sm max-w-xl mx-auto">
-          Based on your <span style={{ color: riskColor }} className="font-semibold">{riskLevel} risk</span> profile, here&rsquo;s a sample estimate of what fixing these gaps could be worth for a team your size.
+          Based on your <span style={{ color: riskColor }} className="font-semibold">{riskLevel} risk</span> profile, here’s a sample estimate of what fixing these gaps could be worth for a team your size.
         </p>
       </div>
 
@@ -103,7 +103,7 @@ export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, ma
           <Button data-testid="scorecard-roi-cta" onClick={scrollToBooking} className="bg-[#0077B3] hover:bg-[#005f8f] text-white rounded-md font-bold text-base px-8 h-12">
             See How Veracity Can Close These Gaps <ArrowRight className="w-4 h-4 ml-1" />
           </Button>
-          <p className="text-[#94a8be]/60 text-xs mt-3">Minnesota&rsquo;s premier managed IT partner for growing businesses.</p>
+          <p className="text-[#94a8be]/60 text-xs mt-3">Minnesota’s premier managed IT partner for growing businesses.</p>
           <div className="mt-4">
             <button data-testid="scorecard-download-report-btn" onClick={handleDownloadReport} className="inline-flex items-center gap-2 text-[#94a8be] hover:text-white text-sm transition-colors">
               <Download className="w-3.5 h-3.5" /> Download Executive ROI & Readiness Report

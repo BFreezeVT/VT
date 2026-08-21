@@ -23,7 +23,7 @@ export default function AIService() {
             AI and automation that strengthen your IT and cybersecurity.
           </h2>
           <p className="text-[#1a3050] text-base leading-relaxed mb-6">
-            We don&rsquo;t replace managed IT with AI. We use AI to make managed IT faster, smarter, and more proactive. Every automation strengthens your security, visibility, and operational efficiency.
+            We don’t replace managed IT with AI. We use AI to make managed IT faster, smarter, and more proactive. Every automation strengthens your security, visibility, and operational efficiency.
           </p>
           <div className="flex items-center justify-center gap-8">
             <div>

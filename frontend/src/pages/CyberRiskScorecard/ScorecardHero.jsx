@@ -16,7 +16,7 @@ export default function ScorecardHero({ onStart }) {
           <Shield className="w-10 h-10 text-[#0077B3]" />
         </div>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6" style={{ fontFamily: "Outfit" }}>
-          What&rsquo;s Your Business&rsquo;s<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
+          What’s Your Business’s<br /><span className="text-[#0077B3]">Cyber Risk Score?</span>
         </h1>
         <p className="text-lg text-[#94a8be] max-w-2xl mx-auto mb-10">
           Answer 12 quick questions and see where your business stands - plus your potential ROI from closing the gaps - in under 3 minutes.

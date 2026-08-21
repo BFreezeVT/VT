@@ -9,7 +9,7 @@ export default function ROIAnalysisSection({ annualHoursReclaimed, monthlySaving
         <div>
           <h4 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit" }}>Where the Hours Actually Go</h4>
           <p>
-            Your answers point to {annualHoursReclaimed.toLocaleString()} hours a year currently absorbed by manual, repetitive work - data entry, scheduling, status reporting, and system handoffs that exist only because your tools don&rsquo;t talk to each other automatically. That figure translates to roughly ${monthlySavingsForecast.toLocaleString()} a month in fully-loaded labor cost that&rsquo;s effectively invisible on a P&amp;L, because it&rsquo;s buried inside salaries rather than itemized as a line item. Most leadership teams underestimate this number precisely because it never shows up as a single expense - it&rsquo;s distributed across every employee who spends part of their week on work a system should be doing instead.
+            Your answers point to {annualHoursReclaimed.toLocaleString()} hours a year currently absorbed by manual, repetitive work - data entry, scheduling, status reporting, and system handoffs that exist only because your tools don’t talk to each other automatically. That figure translates to roughly ${monthlySavingsForecast.toLocaleString()} a month in fully-loaded labor cost that’s effectively invisible on a P&amp;L, because it’s buried inside salaries rather than itemized as a line item. Most leadership teams underestimate this number precisely because it never shows up as a single expense - it’s distributed across every employee who spends part of their week on work a system should be doing instead.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function ROIAnalysisSection({ annualHoursReclaimed, monthlySaving
         <div>
           <h4 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit" }}>From Estimate to Executed Plan</h4>
           <p>
-            These figures are a sample estimate built from your assessment answers and industry-average labor costs - directionally accurate, not a signed proposal. Converting them into a defensible number requires mapping your actual workflows, systems, and team structure. That&rsquo;s exactly what a review with Veracity Technologies does: prioritize the automation opportunities with the fastest payback, and sequence them into a roadmap your team can actually execute without disrupting daily operations.
+            These figures are a sample estimate built from your assessment answers and industry-average labor costs - directionally accurate, not a signed proposal. Converting them into a defensible number requires mapping your actual workflows, systems, and team structure. That’s exactly what a review with Veracity Technologies does: prioritize the automation opportunities with the fastest payback, and sequence them into a roadmap your team can actually execute without disrupting daily operations.
           </p>
         </div>
       </div>

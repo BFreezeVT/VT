@@ -6,7 +6,7 @@ const industries = [
     icon: HardHat,
     title: "Construction",
     slug: "construction-it-support",
-    desc: "Job site connectivity, BIM security, Procore and Sage integration, and rapid-response IT for teams that can&rsquo;t afford downtime on pour day.",
+    desc: "Job site connectivity, BIM security, Procore and Sage integration, and rapid-response IT for teams that can’t afford downtime on pour day.",
     highlights: ["Job Site Networking", "BIM & Cloud Security", "Procore / Sage Support"],
   },
   {
@@ -52,7 +52,7 @@ export default function Industries() {
             Managed IT &amp; cybersecurity built for your industry.
           </h2>
           <p className="text-white/80 text-base max-w-2xl mx-auto animate-fade-in-up stagger-2">
-            We specialize in regulated, operational industries where downtime costs more than dollars and compliance isn&rsquo;t optional.
+            We specialize in regulated, operational industries where downtime costs more than dollars and compliance isn’t optional.
           </p>
         </div>
 

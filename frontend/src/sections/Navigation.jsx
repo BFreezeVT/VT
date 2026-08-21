@@ -57,9 +57,9 @@ export default function Navigation() {
           <Button
             data-testid="nav-cta"
             onClick={() => scrollTo("audit")}
-            className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-semibold text-sm px-5"
+            className="bg-[#00a0e4] text-[#0a1220] hover:bg-[#33b5ea] rounded-sm font-bold text-sm px-5 shadow-[0_0_16px_rgba(0,160,228,0.45)]"
           >
-            Schedule Audit
+            Get Free Assessment
           </Button>
         </div>
 
@@ -91,9 +91,9 @@ export default function Navigation() {
           <Button
             data-testid="mobile-nav-cta"
             onClick={() => scrollTo("audit")}
-            className="w-full bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-semibold"
+            className="w-full bg-[#00a0e4] text-[#0a1220] hover:bg-[#33b5ea] rounded-sm font-bold"
           >
-            Schedule Audit
+            Get Free Assessment
           </Button>
         </div>
       )}

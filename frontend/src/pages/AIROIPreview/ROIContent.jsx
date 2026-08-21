@@ -33,7 +33,7 @@ export default function ROIContent() {
               Operational Efficiency for Small Business Growth
             </h3>
             <p>
-              Operational efficiency for small business isn&rsquo;t just about cutting costs - it&rsquo;s about freeing skilled employees from repetitive tasks so they can focus on higher-value work like client relationships, sales, and strategy. Combining managed IT with governed AI automation gives leadership visibility into where time and money are actually going, instead of relying on guesswork. Businesses in Minnesota&rsquo;s financial services, commercial construction, and manufacturing sectors face this challenge acutely, since compliance requirements and thin operational margins leave little room for wasted labor hours.
+              Operational efficiency for small business isn’t just about cutting costs - it’s about freeing skilled employees from repetitive tasks so they can focus on higher-value work like client relationships, sales, and strategy. Combining managed IT with governed AI automation gives leadership visibility into where time and money are actually going, instead of relying on guesswork. Businesses in Minnesota’s financial services, commercial construction, and manufacturing sectors face this challenge acutely, since compliance requirements and thin operational margins leave little room for wasted labor hours.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export default function ROIContent() {
               Turning a Sample Estimate Into a Real Number
             </h3>
             <p>
-              The figures above are intentionally labeled sample estimates - they&rsquo;re meant to show the scale of opportunity, not a guaranteed outcome. Turning that estimate into an accurate, defensible number requires a closer look at your infrastructure, workflows, and team structure. That&rsquo;s exactly what Veracity Technologies&rsquo; Business Technology Assessment is built to do: a free, structured evaluation that produces a personalized ROI and AI readiness report specific to your organization.
+              The figures above are intentionally labeled sample estimates - they’re meant to show the scale of opportunity, not a guaranteed outcome. Turning that estimate into an accurate, defensible number requires a closer look at your infrastructure, workflows, and team structure. That’s exactly what Veracity Technologies’ Business Technology Assessment is built to do: a free, structured evaluation that produces a personalized ROI and AI readiness report specific to your organization.
             </p>
           </div>
         </div>

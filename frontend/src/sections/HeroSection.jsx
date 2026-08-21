@@ -77,30 +77,27 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
-            <a
-              data-testid="hero-cta-button"
-              href="tel:9529417333"
-              className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow inline-flex items-center justify-center"
-            >
-              Schedule a Strategy Discussion
-            </a>
             <button
-              data-testid="hero-secondary-cta"
+              data-testid="hero-cta-button"
               onClick={() => scrollTo("audit")}
-              className="flex items-center gap-2 border border-white/25 hover:border-white/50 rounded-sm px-6 h-12 text-white text-sm font-semibold transition-all"
+              className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow inline-flex items-center justify-center"
             >
               Take the Business Technology Assessment
             </button>
+            <a
+              data-testid="hero-secondary-cta"
+              href="tel:9529417333"
+              className="flex items-center gap-2 border border-white/25 hover:border-white/50 rounded-sm px-6 h-12 text-white text-sm font-semibold transition-all"
+            >
+              Schedule a Strategy Discussion
+            </a>
           </div>
 
           {/* Trust badges */}
           <div className="mt-14 flex flex-wrap items-center gap-4 animate-fade-in-up stagger-5">
             {[
-              { label: "Managed IT Services" },
               { label: "Cybersecurity" },
               { label: "SOC 2 Type I" },
-              { label: "HIPAA Compliant" },
-              { label: "CRN MSP 500" },
               { label: "AI + Automation" },
             ].map((badge) => (
               <span key={badge.label} className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] text-white/90 border border-white/30 bg-white/10 px-3 py-2 rounded">

@@ -113,7 +113,7 @@ export default function ChecklistDownload({ checklist, post }) {
             <p data-testid="checklist-email-success" className="text-[#0077B3] text-sm mt-3">Sent! Check your inbox at {contactInfo.email}.</p>
           )}
           {reportEmailStatus === "error" && (
-            <p data-testid="checklist-email-error" className="text-[#ef4444] text-sm mt-3">Couldn&rsquo;t send that email - please use the Download button instead.</p>
+            <p data-testid="checklist-email-error" className="text-[#ef4444] text-sm mt-3">Couldn’t send that email - please use the Download button instead.</p>
           )}
         </div>
       )}

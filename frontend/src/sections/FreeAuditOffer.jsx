@@ -365,7 +365,7 @@ export default function FreeAuditOffer() {
             <p className="text-[#c0cfe0]/40 text-xs mt-4">Takes under 3 minutes. No sales pressure.</p>
             {completedCount >= MIN_COUNT_TO_DISPLAY && (
               <p data-testid="assessments-completed-ticker" className="inline-flex items-center gap-1.5 text-[#0077B3] text-xs font-medium mt-4 border border-[#0077B3]/20 bg-[#0077B3]/5 rounded-full px-4 py-1.5">
-                <Users className="w-3 h-3" /> Joined by {completedCount}+ businesses who&rsquo;ve already completed theirs
+                <Users className="w-3 h-3" /> Joined by {completedCount}+ businesses who’ve already completed theirs
               </p>
             )}
           </div>
@@ -499,7 +499,7 @@ export default function FreeAuditOffer() {
             {error && (
               <div data-testid="assessment-submit-error" className="max-w-xl mx-auto mb-8 text-center p-4 border border-[#ef4444]/30 bg-[#ef4444]/5 rounded-md">
                 <p className="text-[#ef4444] text-sm font-medium">
-                  We couldn&rsquo;t save your contact info automatically. Your results below are still valid - please call us at (952) 941-7333 so we can make sure we follow up with you.
+                  We couldn’t save your contact info automatically. Your results below are still valid - please call us at (952) 941-7333 so we can make sure we follow up with you.
                 </p>
               </div>
             )}
@@ -530,7 +530,7 @@ export default function FreeAuditOffer() {
                 <p data-testid="email-report-success" className="text-[#10b981] text-sm mt-3">Sent! Check your inbox at {contactInfo.email}.</p>
               )}
               {reportEmailStatus === "error" && (
-                <p data-testid="email-report-error" className="text-[#ef4444] text-sm mt-3">Couldn&rsquo;t send that email - please use the Download button instead.</p>
+                <p data-testid="email-report-error" className="text-[#ef4444] text-sm mt-3">Couldn’t send that email - please use the Download button instead.</p>
               )}
             </div>
 
@@ -617,7 +617,7 @@ export default function FreeAuditOffer() {
                 Review Your Results With Veracity
               </h3>
               <p className="text-[#4a5e78] text-sm mb-6 max-w-md mx-auto">
-                We&rsquo;ll walk through every score, prioritize the highest-impact improvements, and build a clear roadmap to reduce manual work, strengthen AI readiness, and lower operational risk.
+                We’ll walk through every score, prioritize the highest-impact improvements, and build a clear roadmap to reduce manual work, strengthen AI readiness, and lower operational risk.
               </p>
               <a href="tel:9529417333">
                 <Button className="bg-[#003B71] hover:bg-[#002a52] text-white rounded-md font-semibold px-8 h-12">

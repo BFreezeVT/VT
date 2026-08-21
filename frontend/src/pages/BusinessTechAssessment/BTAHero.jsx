@@ -11,7 +11,7 @@ export default function BTAHero() {
         </div>
         <p className="overline text-[#0077B3] mb-4">The Central Authority Page</p>
         <h1 data-testid="bta-headline" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6" style={{ fontFamily: "Outfit" }}>
-          How Mature Is Your Organization&rsquo;s Technology, Cybersecurity, Compliance, and AI Strategy?
+          How Mature Is Your Organization’s Technology, Cybersecurity, Compliance, and AI Strategy?
         </h1>
         <p data-testid="bta-subhead" className="text-base md:text-lg text-[#94a8be] leading-relaxed max-w-3xl mx-auto mb-10">
           Receive a comprehensive assessment evaluating technology maturity, cybersecurity posture, compliance readiness, AI readiness, operational efficiency, automation opportunities, and business risk.

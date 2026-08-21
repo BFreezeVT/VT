@@ -26,7 +26,7 @@ export default function NotFound() {
             Page Not Found
           </h1>
           <p className="text-[#94a8be] text-sm mb-8">
-            This page doesn&rsquo;t exist or may have been moved. Let&rsquo;s get you back on track.
+            This page doesn’t exist or may have been moved. Let’s get you back on track.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/">
