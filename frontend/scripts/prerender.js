@@ -6,6 +6,7 @@ const https = require("https");
 const puppeteer = require("puppeteer-core");
 
 const BUILD_DIR = path.join(__dirname, "..", "build");
+const PUBLIC_DIR = path.join(__dirname, "..", "public");
 const SRC_DATA_DIR = path.join(__dirname, "..", "src", "data");
 const PORT = 5055;
 
@@ -109,14 +110,20 @@ async function main() {
       await new Promise((r) => setTimeout(r, 400));
       const html = await page.content();
 
-      let outPath;
       if (route === "/") {
-        outPath = path.join(BUILD_DIR, "index.html");
+        fs.writeFileSync(path.join(BUILD_DIR, "index.html"), html);
       } else {
-        outPath = path.join(BUILD_DIR, route, "index.html");
-        fs.mkdirSync(path.dirname(outPath), { recursive: true });
+        const buildOutPath = path.join(BUILD_DIR, route, "index.html");
+        fs.mkdirSync(path.dirname(buildOutPath), { recursive: true });
+        fs.writeFileSync(buildOutPath, html);
+
+        // Also write into public/ (source-controlled) so plain `yarn build` on any
+        // environment - even without a Chrome binary at build time - still serves the
+        // correct prerendered HTML for this route, since CRA copies public/ verbatim.
+        const publicOutPath = path.join(PUBLIC_DIR, route, "index.html");
+        fs.mkdirSync(path.dirname(publicOutPath), { recursive: true });
+        fs.writeFileSync(publicOutPath, html);
       }
-      fs.writeFileSync(outPath, html);
       success++;
     } catch (err) {
       failed.push({ route, error: err.message });

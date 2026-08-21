@@ -577,6 +577,55 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 - Verified via a full rebuild + prerender: og:title/og:image correctly baked into a sample service, AI,
   industry, and city page's static HTML (spot-checked all 4). Backend unaffected, still 70/70.
 
+### Session 44 (Feb 2026) - CRITICAL FIX: prerendering didn't actually take effect on production - moved to committed static files instead of deploy-time generation
+- User deployed Sessions 39-43's fixes, then got a new Search Console email: "Blocked - 403 Forbidden" (1
+  page), "Crawled - not indexed" (same page), "Alternate canonical" (45 pages), "Pages with redirect" (62
+  pages), and validation failed on everything except the 403 one.
+- Investigated directly against production (`curl` against `www.veracitytechmn.com`, allowed - this is just
+  a public HTTP request, not accessing the managed environment):
+  - **Root cause found**: `curl`ing the exact reported HIPAA blog post's raw HTML on production still showed
+    the generic homepage title/canonical - my Session 42 `postbuild` prerendering script had NOT actually
+    taken effect. It depends on a Chrome/Chromium binary being present *in the production build environment
+    at deploy time*, which this Preview container has (used for the screenshot tool) but which the actual
+    production build server evidently does not - so the script's own graceful-skip hardening silently did
+    exactly what it was designed to do (skip without breaking the build), just not what was actually needed.
+  - "Pages with redirect" (62) and the underlying non-www->www 308 redirect were confirmed **working
+    correctly and NOT an issue** - Google logging old/alternate non-www URLs correctly redirecting to the
+    canonical www version is expected, not a defect.
+  - "Blocked - 403 Forbidden": confirmed NOT reproducible from this agent's network (page loads 200 fine).
+    Site is fronted by **Cloudflare** (visible in response headers) - most likely cause is Cloudflare's Bot
+    Fight Mode / Security Level / a WAF rule blocking Googlebot's crawler specifically. This is **outside
+    Emergent's platform and this agent's access** - the user needs to check their own Cloudflare dashboard
+    (Security settings) to ensure Googlebot isn't being challenged/blocked. Flagged to user, not yet resolved
+    (needs user's own Cloudflare-side action).
+- **Fixed the prerendering reliability gap**: restructured `frontend/scripts/prerender.js` to write each
+  route's rendered snapshot to **both** `build/<route>/index.html` (immediate effect on the current build)
+  **and** `public/<route>/index.html` (skipping the homepage `/`, since `public/index.html` is CRA's special
+  template file and must stay untouched). Since Create React App copies everything under `public/` verbatim
+  into `build/` on every `yarn build` - with zero dependency on Puppeteer/Chrome being available at that
+  time - the committed `public/<route>/index.html` files are now the **reliable, primary** mechanism; the
+  `postbuild` Puppeteer step becomes an optional "refresh if Chrome happens to be available" bonus, not a
+  requirement.
+- **Verified the fix rigorously**: ran the crawler once here (Chrome confirmed available in Preview) to
+  generate and commit ~220 static files into `frontend/public/` (~22MB added to the repo, one-time). Then, to
+  prove the deploy-time dependency is truly gone, **physically renamed both `/usr/bin/google-chrome` and
+  `/usr/bin/chromium` out of the way** and ran a completely fresh `yarn build` from scratch: the prerender
+  script correctly logged "Browser was not found... SEO enhancement skipped" and the build still completed,
+  AND `build/resources/hipaa-compliance-small-healthcare-practices/index.html` still had the fully correct
+  post-specific title baked in - proving the committed `public/` files are what actually gets served,
+  independent of Chrome availability. Restored both binaries afterward. Backend suite unaffected, still 70/70.
+- **Important caveat for future work**: these ~220 static snapshots are now a point-in-time capture. If blog
+  posts/cities/industries/AI pages/services are added or edited going forward, this crawl must be re-run and
+  the updated `public/<route>/index.html` files re-committed - it is NOT automatic/self-updating in the
+  reliable path (the optional `postbuild` refresh only helps on environments that happen to have Chrome,
+  which production has now been shown not to). Any future agent adding/editing content in these categories
+  should re-run `node scripts/prerender.js` (needs a prior `yarn build` to exist) and redeploy.
+- **This requires another Production redeploy** to actually take effect this time - the committed `public/`
+  files are the fix, so the next deploy's build should produce the correct static HTML at each route
+  regardless of that build server's Chrome availability. User should re-run Search Console's "Validate Fix"
+  afterward, and separately check their own Cloudflare dashboard for the 403/bot-blocking issue (unresolved,
+  needs user action, not something this agent can access or fix).
+
 ## Backlog / Next Tasks
 
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
