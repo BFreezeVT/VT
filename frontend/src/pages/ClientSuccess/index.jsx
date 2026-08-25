@@ -17,7 +17,11 @@ export default function ClientSuccess() {
     if (metaDesc) metaDesc.setAttribute("content", "Real client success stories from financial services, manufacturing, and construction companies partnered with Veracity Technologies.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/client-success");
-    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      if (metaDesc) metaDesc.setAttribute("content", "Managed IT & cybersecurity for Minnesota businesses, powered by AI and automation. SOC 2 compliant, CMMC registered. Free assessment available.");
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+    };
   }, []);
 
   const featuredIndustries = FEATURED_INDUSTRY_SLUGS.map((slug) => industryData.find((ind) => ind.slug === slug)).filter(Boolean);

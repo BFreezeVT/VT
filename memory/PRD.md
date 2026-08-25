@@ -706,6 +706,31 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 53 (Feb 2026) - Code review + fixes, Cloudflare CSV delivered, deployment confirmed live
+- User deployed to Production, then asked for a code review of the app.
+- `code_review_agent` found no CRITICAL/HIGH/MEDIUM issues. Recent bulk edits (45 city slugs, 148 blog
+  excerpts, legacy redirect map) were confirmed data-clean and internally consistent. Fixed the LOW items:
+  - **Meta cleanup gap**: `AIROIPreview`, `BusinessTechAssessment`, `HumanRiskSimulation`, `ClientSuccess`,
+    `CyberRiskScorecard` only reset `document.title` on unmount, not the canonical/description they'd set on
+    mount - meaning an SPA nav from one of these back to Home could briefly leave a stale canonical/description
+    showing. Fixed all 5 to mirror the full reset pattern already used by `ServiceAreaPage`/`BlogPost`.
+  - **Docstring/const mismatch**: `server.py`'s `/api/reports/email` docstring said "last 30 minutes", actual
+    `REPORT_EMAIL_LEAD_WINDOW_SECONDS` is 3 hours (10800s) - corrected the comment.
+  - **Not changed** (reviewed and confirmed intentional): `CORS_ORIGINS="*"` is explicitly set in `backend/.env`
+    (not an unset fallback); the 45 old-slug redirect-stub folders under `public/service-areas/` are a
+    deliberate defense-in-depth fallback from Session 49, not dead code - kept in place.
+- **Cloudflare CSV delivery**: user couldn't access `/app/memory/` to download the CSV from Session 51/52 -
+  pasted the full 45-row CSV content directly in chat for them to copy into a local file and import.
+- User hit a Cloudflare UI message ("Redirect POST requests? ...use 307/308") while setting up the Bulk
+  Redirect rule - confirmed this is just an informational Cloudflare toggle, not an error; safe to ignore/leave
+  default 301 since no form on these city pages POSTs to the page URL itself (`useLeadSubmit` posts to
+  `/api/leads`, not to `/service-areas/*`).
+- Ran `deployment_agent` before the user's redeploy - PASS, no blockers (also corrected the tool's own false
+  claim that `.gitignore` doesn't exist; it does, at `/app/.gitignore`, and already excludes `.env`/
+  `test_credentials.md`).
+- **Status: user has deployed to Production.** This session's meta-cleanup fix is Preview-only so far and
+  needs a follow-up redeploy to go live (very low priority/impact - only affects SPA-nav-away transitions).
+
 ### Session 52 (Feb 2026) - Fixed all 148 blog excerpt lengths + added missing Scorecard meta description
 - User asked to complete the two items flagged in Session 51: fix the 131 out-of-range blog excerpts, and add
   a dedicated meta description to the Cyber Risk Scorecard page.

@@ -17,7 +17,11 @@ export default function BusinessTechAssessment() {
     if (metaDesc) metaDesc.setAttribute("content", "Free Business Technology Assessment scoring your IT infrastructure, cybersecurity, compliance, and AI readiness for Minneapolis-St. Paul businesses.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/business-technology-assessment");
-    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      if (metaDesc) metaDesc.setAttribute("content", "Managed IT & cybersecurity for Minnesota businesses, powered by AI and automation. SOC 2 compliant, CMMC registered. Free assessment available.");
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+    };
   }, []);
 
   return (

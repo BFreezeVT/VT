@@ -16,7 +16,11 @@ export default function CyberRiskScorecard() {
     if (metaDesc) metaDesc.setAttribute("content", "Take Veracity Technologies free Cyber Risk Scorecard - answer 12 quick questions to get your risk score and a personalized ROI estimate.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/cyber-risk-scorecard");
-    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+    return () => {
+      document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
+      if (metaDesc) metaDesc.setAttribute("content", "Managed IT & cybersecurity for Minnesota businesses, powered by AI and automation. SOC 2 compliant, CMMC registered. Free assessment available.");
+      if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+    };
   }, []);
 
   return (
