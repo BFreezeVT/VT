@@ -1,0 +1,24 @@
+{
+  "summary": "Frontend-only regression for the 45-city URL slug shortening + legacy-redirect map. All acceptance criteria verified via Playwright against the Preview URL: (1) 5 new short-slug city pages (bloomington-mn, eden-prairie-mn, minneapolis-mn, st-paul-mn, twin-cities-mn) load with correct data-testid=city-page-{slug}, correct H1, correct title 'IT Support in {City}, MN | Veracity Technologies', and correct canonical to https://www.veracitytechmn.com/service-areas/{slug}. (2) React-level legacy redirect via <Navigate replace> confirmed working via SPA navigation: /service-areas/bloomington-mn-it-services-support and /service-areas/eden-prairie-mn-it-services-support both re-route (url replaced) to the new short slug and render the new city page. (3) 'We also serve' section on bloomington-mn contained 44 other-city links, ALL pointing to new short-slug URLs (zero legacy `it-services-support` occurrences). (4) /service-areas index page renders 45 unique city links, all short-slug format, no legacy slugs. (5) /service-areas/totally-fake-city-xyz correctly shows the ServiceAreaPage 'Page Not Found' fallback with no redirect loop. (6) Regression: homepage title and /resources (blog index) load correctly. NOTE: When the OLD long-slug URL is hit via a FULL HTTP request (not SPA nav), the Preview environment IS serving the built static redirect-stub files under public/service-areas/{old-slug}/index.html (contrary to the user's assumption that Preview runs dev server only). These stubs redirect via meta-refresh + JS to the PRODUCTION domain https://www.veracitytechmn.com/service-areas/{new-slug} — which is the intended production behavior, but means a Preview-only visitor hitting an old URL gets bounced off Preview and onto production. This is not a bug in the URL restructure work itself; it is a side-effect of the prerender build being served in Preview. Data-only slug source verified: grep confirms 45/45 slugs shortened and 0 references to legacy `it-services-support` in cityData.js.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional/informational: If you want the Preview environment to exercise the React-level <Navigate> redirect path when hitting old URLs directly (not just via SPA nav), you'd need the Preview to NOT serve the prerendered static stubs and fall through to index.html. Right now Preview serves those stubs (their meta refresh points at production www.veracitytechmn.com), so a direct HTTP hit to an old URL in Preview bounces the user to production. This appears intentional for production but is worth noting."
+  ],
+  "critical_code_review_comments": [
+    "ServiceAreaPage/index.jsx: legacyCityRedirects lookup is placed AFTER a useEffect that references `city` (undefined for legacy slugs). Logic is safe because the effect body checks `if (city)`, but for cleanliness the legacy-redirect Navigate could be moved BEFORE the useEffect to avoid running the effect at all on redirect renders. Minor.",
+    "legacyCityRedirects.js has 45 entries matching cityData.js's 45 cities — verified 1:1 with grep. No orphans."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a (skipped per request)", "frontend": "100% of URL-restructure acceptance criteria"},
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "URL slug shortening from 45 city pages verified. New short slugs (`{city}-mn`) work; React-level legacyCityRedirects Navigate works via SPA nav; static stubs served in Preview redirect to production URL (expected production behavior). Sitemap+other-city links+index page all reference new short slugs only. cityData.js name for st-paul-mn is `Saint Paul` (not `St. Paul`) — intentional.",
+  "rca of the issue": "n/a — no bugs found in this iteration's scope"
+}

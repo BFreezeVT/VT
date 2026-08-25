@@ -1,6 +1,6 @@
 const cityData = [
   {
-    slug: "minnetonka-it-services-support",
+    slug: "minnetonka-mn",
     name: "Minnetonka",
     state: "MN",
     zip: "55345",
@@ -18,7 +18,7 @@ const cityData = [
     testimonialIndices: [0, 5, 7],
   },
   {
-    slug: "minneapolis-it-services-support",
+    slug: "minneapolis-mn",
     name: "Minneapolis",
     state: "MN",
     zip: "55401",
@@ -36,7 +36,7 @@ const cityData = [
     testimonialIndices: [1, 8, 14],
   },
   {
-    slug: "st-paul-it-services-support",
+    slug: "st-paul-mn",
     name: "Saint Paul",
     state: "MN",
     zip: "55101",
@@ -54,7 +54,7 @@ const cityData = [
     testimonialIndices: [2, 11, 16],
   },
   {
-    slug: "bloomington-mn-it-services-support",
+    slug: "bloomington-mn",
     name: "Bloomington",
     state: "MN",
     zip: "55431",
@@ -72,7 +72,7 @@ const cityData = [
     testimonialIndices: [3, 9, 17],
   },
   {
-    slug: "brooklyn-park-mn-it-services-support",
+    slug: "brooklyn-park-mn",
     name: "Brooklyn Park",
     state: "MN",
     zip: "55445",
@@ -90,7 +90,7 @@ const cityData = [
     testimonialIndices: [4, 10, 15],
   },
   {
-    slug: "plymouth-mn-it-services-support",
+    slug: "plymouth-mn",
     name: "Plymouth",
     state: "MN",
     zip: "55441",
@@ -108,7 +108,7 @@ const cityData = [
     testimonialIndices: [6, 12, 18],
   },
   {
-    slug: "maple-grove-mn-it-services-support",
+    slug: "maple-grove-mn",
     name: "Maple Grove",
     state: "MN",
     zip: "55369",
@@ -126,7 +126,7 @@ const cityData = [
     testimonialIndices: [0, 7, 18],
   },
   {
-    slug: "eden-prairie-mn-it-services-support",
+    slug: "eden-prairie-mn",
     name: "Eden Prairie",
     state: "MN",
     zip: "55344",
@@ -144,7 +144,7 @@ const cityData = [
     testimonialIndices: [1, 5, 13],
   },
   {
-    slug: "woodbury-mn-it-services-support",
+    slug: "woodbury-mn",
     name: "Woodbury",
     state: "MN",
     zip: "55125",
@@ -162,7 +162,7 @@ const cityData = [
     testimonialIndices: [2, 9, 15],
   },
   {
-    slug: "eagan-mn-it-services-support",
+    slug: "eagan-mn",
     name: "Eagan",
     state: "MN",
     zip: "55121",
@@ -180,7 +180,7 @@ const cityData = [
     testimonialIndices: [3, 8, 16],
   },
   {
-    slug: "burnsville-mn-it-services-support",
+    slug: "burnsville-mn",
     name: "Burnsville",
     state: "MN",
     zip: "55337",
@@ -198,7 +198,7 @@ const cityData = [
     testimonialIndices: [4, 11, 17],
   },
   {
-    slug: "twin-cities-it-services-support",
+    slug: "twin-cities-mn",
     name: "Twin Cities",
     state: "MN",
     zip: "55401",
@@ -216,7 +216,7 @@ const cityData = [
     testimonialIndices: [0, 1, 2, 8, 14, 16],
   },
   {
-    slug: "st-louis-park-it-services-support",
+    slug: "st-louis-park-mn",
     name: "St. Louis Park",
     state: "MN",
     zip: "55426",
@@ -234,7 +234,7 @@ const cityData = [
     testimonialIndices: [6, 10, 13],
   },
   {
-    slug: "edina-mn-it-services-support",
+    slug: "edina-mn",
     name: "Edina",
     state: "MN",
     zip: "55424",
@@ -252,7 +252,7 @@ const cityData = [
     testimonialIndices: [12, 16, 19],
   },
   {
-    slug: "lakeville-mn-it-services-support",
+    slug: "lakeville-mn",
     name: "Lakeville",
     state: "MN",
     zip: "55044",
@@ -270,7 +270,7 @@ const cityData = [
     testimonialIndices: [3, 7, 11],
   },
   {
-    slug: "shakopee-mn-it-services-support",
+    slug: "shakopee-mn",
     name: "Shakopee",
     state: "MN",
     zip: "55379",
@@ -288,7 +288,7 @@ const cityData = [
     testimonialIndices: [4, 9, 14],
   },
   {
-    slug: "richfield-mn-it-services-support",
+    slug: "richfield-mn",
     name: "Richfield",
     state: "MN",
     zip: "55423",
@@ -306,7 +306,7 @@ const cityData = [
     testimonialIndices: [5, 10, 19],
   },
   {
-    slug: "roseville-mn-it-services-support",
+    slug: "roseville-mn",
     name: "Roseville",
     state: "MN",
     zip: "55113",
@@ -324,7 +324,7 @@ const cityData = [
     testimonialIndices: [2, 6, 12],
   },
   {
-    slug: "coon-rapids-mn-it-services-support",
+    slug: "coon-rapids-mn",
     name: "Coon Rapids",
     state: "MN",
     zip: "55433",
@@ -342,7 +342,7 @@ const cityData = [
     testimonialIndices: [0, 4, 15],
   },
   {
-    slug: "apple-valley-mn-it-services-support",
+    slug: "apple-valley-mn",
     name: "Apple Valley",
     state: "MN",
     zip: "55124",
@@ -360,7 +360,7 @@ const cityData = [
     testimonialIndices: [1, 8, 13],
   },
   {
-    slug: "chanhassen-mn-it-services-support",
+    slug: "chanhassen-mn",
     name: "Chanhassen",
     state: "MN",
     zip: "55317",
@@ -378,7 +378,7 @@ const cityData = [
     testimonialIndices: [5, 12, 18],
   },
   {
-    slug: "excelsior-mn-it-services-support",
+    slug: "excelsior-mn",
     name: "Excelsior",
     state: "MN",
     zip: "55331",
@@ -396,7 +396,7 @@ const cityData = [
     testimonialIndices: [12, 13, 16],
   },
   {
-    slug: "victoria-mn-it-services-support",
+    slug: "victoria-mn",
     name: "Victoria",
     state: "MN",
     zip: "55386",
@@ -414,7 +414,7 @@ const cityData = [
     testimonialIndices: [0, 5, 11],
   },
   {
-    slug: "waconia-mn-it-services-support",
+    slug: "waconia-mn",
     name: "Waconia",
     state: "MN",
     zip: "55387",
@@ -432,7 +432,7 @@ const cityData = [
     testimonialIndices: [3, 7, 14],
   },
   {
-    slug: "chaska-mn-it-services-support",
+    slug: "chaska-mn",
     name: "Chaska",
     state: "MN",
     zip: "55318",
@@ -450,7 +450,7 @@ const cityData = [
     testimonialIndices: [1, 9, 15],
   },
   {
-    slug: "stillwater-mn-it-services-support",
+    slug: "stillwater-mn",
     name: "Stillwater",
     state: "MN",
     zip: "55082",
@@ -468,7 +468,7 @@ const cityData = [
     testimonialIndices: [2, 10, 17],
   },
   {
-    slug: "blaine-mn-it-services-support",
+    slug: "blaine-mn",
     name: "Blaine",
     state: "MN",
     zip: "55434",
@@ -486,7 +486,7 @@ const cityData = [
     testimonialIndices: [4, 8, 11],
   },
   {
-    slug: "anoka-mn-it-services-support",
+    slug: "anoka-mn",
     name: "Anoka",
     state: "MN",
     zip: "55303",
@@ -504,7 +504,7 @@ const cityData = [
     testimonialIndices: [6, 13, 18],
   },
   {
-    slug: "andover-mn-it-services-support",
+    slug: "andover-mn",
     name: "Andover",
     state: "MN",
     zip: "55304",
@@ -522,7 +522,7 @@ const cityData = [
     testimonialIndices: [0, 7, 15],
   },
   {
-    slug: "st-cloud-mn-it-services-support",
+    slug: "st-cloud-mn",
     name: "St. Cloud",
     state: "MN",
     zip: "56301",
@@ -540,7 +540,7 @@ const cityData = [
     testimonialIndices: [1, 4, 9],
   },
   {
-    slug: "wayzata-mn-it-services-support",
+    slug: "wayzata-mn",
     name: "Wayzata",
     state: "MN",
     zip: "55391",
@@ -558,7 +558,7 @@ const cityData = [
     testimonialIndices: [12, 13, 16],
   },
   {
-    slug: "mound-mn-it-services-support",
+    slug: "mound-mn",
     name: "Mound",
     state: "MN",
     zip: "55364",
@@ -576,7 +576,7 @@ const cityData = [
     testimonialIndices: [5, 10, 17],
   },
   {
-    slug: "minnetrista-mn-it-services-support",
+    slug: "minnetrista-mn",
     name: "Minnetrista",
     state: "MN",
     zip: "55364",
@@ -594,7 +594,7 @@ const cityData = [
     testimonialIndices: [6, 12, 15],
   },
   {
-    slug: "elk-river-mn-it-services-support",
+    slug: "elk-river-mn",
     name: "Elk River",
     state: "MN",
     zip: "55330",
@@ -612,7 +612,7 @@ const cityData = [
     testimonialIndices: [3, 9, 14],
   },
   {
-    slug: "rogers-mn-it-services-support",
+    slug: "rogers-mn",
     name: "Rogers",
     state: "MN",
     zip: "55374",
@@ -630,7 +630,7 @@ const cityData = [
     testimonialIndices: [0, 8, 11],
   },
   {
-    slug: "albertville-mn-it-services-support",
+    slug: "albertville-mn",
     name: "Albertville",
     state: "MN",
     zip: "55301",
@@ -648,7 +648,7 @@ const cityData = [
     testimonialIndices: [2, 7, 18],
   },
   {
-    slug: "orono-mn-it-services-support",
+    slug: "orono-mn",
     name: "Orono",
     state: "MN",
     zip: "55356",
@@ -666,7 +666,7 @@ const cityData = [
     testimonialIndices: [12, 13, 16],
   },
   {
-    slug: "medina-mn-it-services-support",
+    slug: "medina-mn",
     name: "Medina",
     state: "MN",
     zip: "55340",
@@ -684,7 +684,7 @@ const cityData = [
     testimonialIndices: [0, 5, 11],
   },
   {
-    slug: "hopkins-mn-it-services-support",
+    slug: "hopkins-mn",
     name: "Hopkins",
     state: "MN",
     zip: "55343",
@@ -702,7 +702,7 @@ const cityData = [
     testimonialIndices: [3, 10, 15],
   },
   {
-    slug: "savage-mn-it-services-support",
+    slug: "savage-mn",
     name: "Savage",
     state: "MN",
     zip: "55378",
@@ -720,7 +720,7 @@ const cityData = [
     testimonialIndices: [1, 9, 14],
   },
   {
-    slug: "golden-valley-mn-it-services-support",
+    slug: "golden-valley-mn",
     name: "Golden Valley",
     state: "MN",
     zip: "55427",
@@ -738,7 +738,7 @@ const cityData = [
     testimonialIndices: [6, 8, 17],
   },
   {
-    slug: "prior-lake-mn-it-services-support",
+    slug: "prior-lake-mn",
     name: "Prior Lake",
     state: "MN",
     zip: "55372",
@@ -756,7 +756,7 @@ const cityData = [
     testimonialIndices: [4, 7, 11],
   },
   {
-    slug: "champlin-mn-it-services-support",
+    slug: "champlin-mn",
     name: "Champlin",
     state: "MN",
     zip: "55316",
@@ -774,7 +774,7 @@ const cityData = [
     testimonialIndices: [2, 10, 18],
   },
   {
-    slug: "white-bear-lake-mn-it-services-support",
+    slug: "white-bear-lake-mn",
     name: "White Bear Lake",
     state: "MN",
     zip: "55110",
@@ -792,7 +792,7 @@ const cityData = [
     testimonialIndices: [5, 13, 15],
   },
   {
-    slug: "vadnais-heights-mn-it-services-support",
+    slug: "vadnais-heights-mn",
     name: "Vadnais Heights",
     state: "MN",
     zip: "55127",

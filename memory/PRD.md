@@ -706,6 +706,38 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 49 (Feb 2026) - Shortened all 45 city page URLs (MOZ "URL too long" fix on Production)
+- User reported MOZ flagged 29 of 45 city "service area" URLs as too long, e.g.
+  `/service-areas/bloomington-mn-it-services-support` (35-char slug). Approved plan: shorten all 45 to
+  `{city}-mn` (e.g. `bloomington-mn`), keeping "IT Support" only in title/H1/meta, plus redirects from every
+  old URL so existing Google rankings/backlinks aren't lost.
+- **Shortened all 45 slugs** in `cityData.js` (e.g. `minneapolis-it-services-support` -> `minneapolis-mn`,
+  `bloomington-mn-it-services-support` -> `bloomington-mn` - stripped `-it-services-support`, added `-mn` only
+  if not already present). Zero collisions.
+- **New `data/legacyCityRedirects.js`** - old-slug -> new-slug map (45 entries). Wired into
+  `ServiceAreaPage/index.jsx`: if a slug isn't found in `cityData` but IS a legacy key, renders
+  `<Navigate to={.../service-areas/{newSlug}} replace />` instead of the 404 fallback.
+- **Updated `sitemap.xml`** - all 45 `/service-areas/*` URLs replaced with the new short slugs.
+- **Static redirect stubs**: for production's exact-file-lookup-before-SPA-fallback behavior, wrote 45
+  `public/service-areas/{old-slug}/index.html` files (meta-refresh + canonical + JS redirect + `noindex`) so
+  bookmarked/indexed OLD URLs redirect immediately even on a raw (non-JS) crawl, without waiting for React.
+  Deleted the old prerendered folders first so no stale duplicate content remained.
+- **Re-ran full `yarn build` + `node scripts/prerender.js`** (221/221 routes) to regenerate all 45 new-slug
+  static pages with correct title/canonical baked in, confirmed via spot-check (`bloomington-mn` -> title "IT
+  Support in Bloomington, MN | Veracity Technologies", canonical matches new URL).
+- Tested via `testing_agent` (iteration_47.json) - 100% pass: 5 new-slug pages verified correct
+  content/title/canonical; legacy `<Navigate>` redirect confirmed working via SPA nav for old slugs; "We also
+  serve" cross-links and `/service-areas` index confirmed 100% new-slug (zero legacy references); a genuinely
+  invalid slug still shows 404 correctly (no false-positive redirect); homepage/blog regression clean.
+- **True HTTP 301s not implemented in-app** (SPA can't emit real 301 status codes) - the static-stub + client
+  redirect combo is the best available in-app approximation. For a real server-side 301, recommended the user
+  set up Cloudflare Redirect Rules / Bulk Redirects (Cloudflare already fronts production) mapping the 45 old
+  URLs to new ones - not yet done, user's own dashboard action if they want a true 301.
+- **Requires a Preview -> Production redeploy**, then resubmit `sitemap.xml` in Search Console and use
+  "Validate Fix" on the MOZ/GSC long-URL flags once live.
+
+## Backlog / Next Tasks
+
 ### Session 21 (Feb 2026) — AI page FAQ/CTA heading capitalization fix
 - Fixed the lowercase, slug-derived heading bug the testing agent flagged:
   `AIPageFAQ.jsx`/`AIPageCTA.jsx` called `.toLowerCase()` on `page.name` (e.g. "AI Readiness

@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { Phone, ChevronLeft } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { useEffect, useMemo } from "react";
@@ -8,6 +8,7 @@ import { allTestimonials } from "../../data/cityTestimonials";
 import { useLeadSubmit } from "../../hooks/useLeadSubmit";
 import { anchorFor, industryForCity, aiPagesFor } from "../../lib/contentLinks";
 import { buildCityStructuredData } from "../../lib/cityStructuredData";
+import legacyCityRedirects from "../../data/legacyCityRedirects";
 import CityHero from "./CityHero";
 import CityAbout from "./CityAbout";
 import CityServices from "./CityServices";
@@ -76,6 +77,10 @@ export default function ServiceAreaPage() {
   }, [city]);
 
   if (!city) {
+    const newSlug = legacyCityRedirects[citySlug];
+    if (newSlug) {
+      return <Navigate to={`/service-areas/${newSlug}`} replace />;
+    }
     return (
       <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center px-6">
         <div className="text-center">
