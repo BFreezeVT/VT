@@ -6,7 +6,7 @@ import cityData from "../data/cityData";
 
 export default function ServiceAreasIndex() {
   useEffect(() => {
-    document.title = "IT Support Service Areas - Minneapolis-St. Paul Metro | Veracity Technologies";
+    document.title = "IT Support Service Areas | Veracity Technologies";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", "Veracity Technologies provides managed IT services and cybersecurity across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.");
     const canonical = document.querySelector('link[rel="canonical"]');

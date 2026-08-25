@@ -165,7 +165,7 @@ const industryData = [
       { slug: "responsible-ai-consulting", label: "Responsible AI for High-Compliance Orgs" },
     ],
     ctaText: "Get Your Free Compliance Security Audit",
-    metaTitle: "High-Compliance IT & Cybersecurity | CMMC, HIPAA, ITAR | Veracity Technologies",
+    metaTitle: "High-Compliance IT & Cybersecurity | Veracity Technologies",
     metaDescription: "CMMC, HIPAA, ITAR, and NIST 800-171 cybersecurity for defense contractors, healthcare, and government suppliers in Minneapolis-St. Paul. 100% first-attempt audit pass rate.",
   },
 ];

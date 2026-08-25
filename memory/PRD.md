@@ -706,6 +706,27 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 50 (Feb 2026) - Shortened 4 page titles flagged by MOZ as "too long"
+- User reported MOZ flagged 4 URLs for titles over the ~60-char/600px guideline: homepage, `/industries/
+  high-compliance-it-support`, `/service-areas`, `/microsoft-copilot-readiness`.
+- Shortened all 4 (kept full "Veracity Technologies" brand, dropped redundant/lower-value qualifiers):
+  - Homepage (`public/index.html` `<title>`/`<meta name="title">`): "Managed IT & Cybersecurity Built for
+    AI + Automation | Veracity Technologies Minnesota" (86 chars) -> "Managed IT & Cybersecurity | Veracity
+    Technologies" (50 chars).
+  - High-Compliance industry (`industryData.js` `metaTitle`): "High-Compliance IT & Cybersecurity | CMMC,
+    HIPAA, ITAR | Veracity Technologies" (78) -> "High-Compliance IT & Cybersecurity | Veracity Technologies"
+    (58).
+  - Service Areas index (`ServiceAreasIndex.jsx` `document.title`): "IT Support Service Areas - Minneapolis-
+    St. Paul Metro | Veracity Technologies" (77) -> "IT Support Service Areas | Veracity Technologies" (48).
+  - Microsoft Copilot Readiness (`aiPagesData.js` `metaTitle`): "Microsoft Copilot Readiness Assessment
+    Minnesota | Veracity Technologies" (72) -> "Microsoft Copilot Readiness | Veracity Technologies" (51).
+- Re-ran full `yarn build` + `node scripts/prerender.js` (221/221 routes) so the static/social-crawler HTML for
+  all 4 pages bakes in the new short titles - verified via direct file inspection (all 4 confirmed 48-58 chars
+  decoded, `og:title`/`twitter:title` untouched since those weren't flagged).
+- Self-tested (curl on Preview root confirms new `<title>`, static file inspection for the other 3) - small,
+  text-only change, testing agent not used per Quick Testing Rules.
+- **Requires a Preview -> Production redeploy**, then re-run MOZ crawl / Search Console checks.
+
 ### Session 49 (Feb 2026) - Shortened all 45 city page URLs (MOZ "URL too long" fix on Production)
 - User reported MOZ flagged 29 of 45 city "service area" URLs as too long, e.g.
   `/service-areas/bloomington-mn-it-services-support` (35-char slug). Approved plan: shorten all 45 to

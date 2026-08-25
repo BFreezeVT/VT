@@ -126,7 +126,7 @@ const aiPagesData = [
       { q: "How long does Copilot readiness take?", a: "A typical readiness review and remediation takes 2-4 weeks depending on tenant size and how outdated your permission structure is." },
       { q: "Does this apply to Microsoft 365 AI readiness generally?", a: "Yes - the same governance and permission principles apply across all Microsoft 365 AI features, not just Copilot Chat." },
     ],
-    metaTitle: "Microsoft Copilot Readiness Assessment Minnesota | Veracity Technologies",
+    metaTitle: "Microsoft Copilot Readiness | Veracity Technologies",
     metaDescription: "Prepare for a secure Microsoft 365 Copilot rollout with a permission audit, sensitivity labeling, and tenant configuration review for Minneapolis-St. Paul businesses.",
     ctaText: "Assess Your Copilot Readiness",
   },
