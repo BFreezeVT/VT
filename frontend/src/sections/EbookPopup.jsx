@@ -13,25 +13,27 @@ export default function EbookPopup() {
       return;
     }
 
-    const handleScroll = () => {
-      const scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-      if (scrollPct < 0.25 || dismissed) return;
+    let armed = false;
+    // Give the visitor a few seconds on the page before arming exit-intent,
+    // so it never fires on an accidental cursor flick right after landing.
+    const armTimer = setTimeout(() => {
+      armed = true;
+    }, 4000);
 
-      // Don't interrupt an active Human Risk Simulation game session - wait until
-      // that section has scrolled out of view before showing the popup.
-      const gameSection = document.getElementById("cyber-game");
-      if (gameSection) {
-        const rect = gameSection.getBoundingClientRect();
-        const inView = rect.top < window.innerHeight && rect.bottom > 0;
-        if (inView) return;
+    const handleMouseLeave = (e) => {
+      if (!armed || dismissed) return;
+      // Mouse left the top of the browser window - toward the tab bar/URL bar.
+      if (e.clientY <= 0 && e.relatedTarget === null) {
+        setShow(true);
+        document.removeEventListener("mouseout", handleMouseLeave);
       }
-
-      setShow(true);
-      window.removeEventListener("scroll", handleScroll);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mouseout", handleMouseLeave);
+    return () => {
+      clearTimeout(armTimer);
+      document.removeEventListener("mouseout", handleMouseLeave);
+    };
   }, [dismissed]);
 
   const close = () => {

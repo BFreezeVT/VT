@@ -706,6 +706,48 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 51 (Feb 2026) - Meta description length audit + fix, EbookPopup exit-intent, Cloudflare 301 CSV
+- User requested 3 follow-ups from the previous session's suggestions: (1) audit meta description lengths
+  site-wide (ideal 120-158 chars), (2) provide Cloudflare 301 redirect setup for the shortened city URLs,
+  (3) switch EbookPopup from scroll-triggered to exit-intent.
+- **Meta description audit**: found the city-page template (`ServiceAreaPage/index.jsx`) produced 201-265
+  char descriptions for ALL 45 cities (way over limit) - shortened the template to a fixed-length pattern
+  that lands all 45 between 143-153 chars. Also found and shortened 16 more oversized descriptions: homepage
+  (`index.html`, 260->143), `BlogPost.jsx` fallback default (260->143, kept in sync with homepage),
+  `AIROIPreview`, `BusinessTechAssessment`, `ClientSuccess`, `HumanRiskSimulation` inline descriptions, 4 AI
+  pages (`aiPagesData.js`: ai-readiness-assessment, ai-governance, microsoft-copilot-readiness,
+  shadow-ai-risk-assessment), all 5 core services (`coreServicesData.js`), and 3 of 4 industry pages
+  (`industryData.js`: financial, construction, high-compliance - manufacturing was already fine). All now sit
+  within 120-158 chars.
+  - **Found but NOT fixed (flagged for user decision)**: blog post excerpts in `backend/blog_data.py` (used
+    as meta description on `/resources/:slug`) - 138 posts checked, 124 are UNDER 120 chars and 7 are OVER
+    158. This is much larger scope (131 of 138 posts) and touches editorial copy shown on-page (not just
+    meta), so it was surfaced as a finding rather than bulk-edited without confirmation.
+- **EbookPopup exit-intent** (`sections/EbookPopup.jsx`): replaced the 25%-scroll trigger (twice flagged by
+  testing as an interruption) with a `mouseout`-based exit-intent listener (fires when cursor leaves the top
+  of the viewport, i.e. `clientY<=0 && relatedTarget===null`), gated by a 4-second arm delay so it can't fire
+  immediately on page load. Still respects `sessionStorage.ebook_dismissed` and self-removes its listener
+  once shown.
+- **Cloudflare 301 CSV**: generated `/app/memory/cloudflare_city_redirects.csv` (45 rows, correct headerless
+  Cloudflare Bulk Redirects format: `source,target,301,FALSE,FALSE,FALSE`) mapping every old long city URL to
+  its new short one - the user can import this directly under Cloudflare dashboard -> Rules -> Bulk Redirects
+  for a true server-side 301 (this app-level static-redirect-stub approach from Session 49 remains in place as
+  a fallback either way).
+- Re-ran full `yarn build` + `node scripts/prerender.js` (221/221 routes, ~384s) after the description edits,
+  since `testing_agent` (iteration_48.json) caught that the prerendered static HTML tree was stale and still
+  served the old long descriptions to crawlers/hard-loads even though SPA soft-nav already showed the new
+  ones. Also required one `sudo supervisorctl restart frontend` since `craco.config.js` ignores `public/**`
+  in its dev-server watcher, so `index.html` edits don't hot-reload.
+- Retested via `testing_agent` (iteration_49.json) - 100% pass after rebuild: hard-loads of the previously
+  failing routes now serve short descriptions, all regression pages render correctly. EbookPopup exit-intent
+  was 100% verified in iteration_48 (scroll doesn't trigger, arm delay respected, dismiss persists via
+  sessionStorage, doesn't reopen).
+- Minor non-blocking note from testing agent (not investigated): 4 "Unexpected token <" page errors observed
+  during hard-loads across some pages - pages still render correctly and meta tags are correct, flagged for
+  future investigation only.
+- **Requires a Preview -> Production redeploy** to see all of this live; the Cloudflare CSV import is a
+  separate, user-side dashboard action (not part of the redeploy).
+
 ### Session 50 (Feb 2026) - Shortened 4 page titles flagged by MOZ as "too long"
 - User reported MOZ flagged 4 URLs for titles over the ~60-char/600px guideline: homepage, `/industries/
   high-compliance-it-support`, `/service-areas`, `/microsoft-copilot-readiness`.

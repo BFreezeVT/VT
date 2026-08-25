@@ -12,7 +12,7 @@ export default function AIROIPreview() {
   useEffect(() => {
     document.title = "AI ROI Calculator for Businesses | Veracity AI";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Calculate how much time and money your business could save with managed AI and IT automation. Try the free AI ROI calculator, then get your personalized ROI and readiness report from Veracity Technologies.");
+    if (metaDesc) metaDesc.setAttribute("content", "Calculate how much time and money your business could save with managed AI and IT automation. Try Veracity's free AI ROI calculator today.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/ai-roi-preview");
     return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };

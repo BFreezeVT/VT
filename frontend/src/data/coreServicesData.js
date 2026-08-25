@@ -41,7 +41,7 @@ const coreServicesData = [
     relatedAiSlug: "ai-automation-consulting",
     ctaText: "Get Your Free Managed IT Assessment",
     metaTitle: "Managed IT Services Minneapolis-St. Paul | Veracity Technologies",
-    metaDescription: "24/7 managed IT services for Minnesota businesses. Proactive monitoring, dedicated account management, and AI-enhanced automation for financial services, construction, manufacturing, and high-compliance organizations.",
+    metaDescription: "24/7 managed IT services for Minnesota businesses - proactive monitoring, dedicated account management, and AI-enhanced automation.",
   },
   {
     slug: "cybersecurity-services",
@@ -85,7 +85,7 @@ const coreServicesData = [
     relatedAiSlug: "ai-security-assessment",
     ctaText: "Get Your Free Cybersecurity Risk Audit",
     metaTitle: "Cybersecurity Services Minneapolis-St. Paul | Veracity Technologies",
-    metaDescription: "AI-powered cybersecurity for Minnesota businesses: endpoint detection, zero-trust access, email security, and 24/7 threat monitoring for financial services, construction, manufacturing, and high-compliance organizations.",
+    metaDescription: "AI-powered cybersecurity for Minnesota businesses - endpoint detection, zero-trust access, email security, and 24/7 threat monitoring.",
   },
   {
     slug: "disaster-recovery-business-continuity",
@@ -129,7 +129,7 @@ const coreServicesData = [
     relatedAiSlug: null,
     ctaText: "Get Your Free Business Continuity Review",
     metaTitle: "Disaster Recovery & Business Continuity | Veracity Technologies",
-    metaDescription: "Tested backups, ransomware recovery planning, and business continuity strategy for Minnesota financial services, construction, manufacturing, and high-compliance organizations. Target recovery under 4 hours.",
+    metaDescription: "Tested backups, ransomware recovery planning, and business continuity strategy for Minnesota businesses. Target recovery time: under 4 hours.",
   },
   {
     slug: "it-consulting-vcio",
@@ -173,7 +173,7 @@ const coreServicesData = [
     relatedAiSlug: "ai-adoption-strategy",
     ctaText: "Schedule Your Strategy Discussion",
     metaTitle: "IT Consulting & vCIO Services Minnesota | Veracity Technologies",
-    metaDescription: "Fractional vCIO and IT consulting for Minnesota businesses: technology roadmapping, budget planning, and vendor management for financial services, construction, manufacturing, and high-compliance organizations.",
+    metaDescription: "Fractional vCIO and IT consulting for Minnesota businesses - technology roadmapping, budget planning, and vendor management.",
   },
   {
     slug: "compliance-services",
@@ -217,7 +217,7 @@ const coreServicesData = [
     relatedAiSlug: "ai-governance",
     ctaText: "Get Your Free Compliance Gap Assessment",
     metaTitle: "IT Compliance Services Minnesota | SOC 2, CMMC, HIPAA | Veracity Technologies",
-    metaDescription: "SOC 2, CMMC, HIPAA, and PCI-DSS compliance services for Minnesota financial services, construction, manufacturing, and high-compliance organizations. 100% first-attempt audit pass rate.",
+    metaDescription: "SOC 2, CMMC, HIPAA, and PCI-DSS compliance services for Minnesota businesses, with a 100% first-attempt audit pass rate.",
   },
 ];
 

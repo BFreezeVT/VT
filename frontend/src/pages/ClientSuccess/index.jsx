@@ -14,7 +14,7 @@ export default function ClientSuccess() {
   useEffect(() => {
     document.title = "Client Success Stories | Veracity Technologies";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Real client success stories from financial services, manufacturing, and construction companies partnered with Veracity Technologies for managed IT and cybersecurity.");
+    if (metaDesc) metaDesc.setAttribute("content", "Real client success stories from financial services, manufacturing, and construction companies partnered with Veracity Technologies.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/client-success");
     return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };

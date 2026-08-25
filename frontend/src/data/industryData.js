@@ -40,7 +40,7 @@ const industryData = [
     ],
     ctaText: "Get Your Free Financial Services Security Audit",
     metaTitle: "Financial Services IT & Cybersecurity | Veracity Technologies",
-    metaDescription: "SOC 2 compliant managed IT and cybersecurity for banks, RIAs, fintech, and investment firms in Minneapolis-St. Paul. SEC/FINRA aligned. 24/7 AI threat monitoring.",
+    metaDescription: "SOC 2 compliant managed IT and cybersecurity for banks, RIAs, fintech, and investment firms in Minneapolis-St. Paul. SEC/FINRA aligned.",
   },
   {
     slug: "construction-it-support",
@@ -82,7 +82,7 @@ const industryData = [
     ],
     ctaText: "Get Your Free Construction IT Audit",
     metaTitle: "Construction IT & Cybersecurity | Veracity Technologies",
-    metaDescription: "Construction-specialized managed IT and cybersecurity in Minneapolis-St. Paul. Job site connectivity, Procore integration, ransomware protection, CMMC compliance.",
+    metaDescription: "Construction-specialized managed IT and cybersecurity in Minneapolis-St. Paul: job site connectivity, Procore integration, ransomware protection.",
   },
   {
     slug: "manufacturing-it-support",
@@ -166,7 +166,7 @@ const industryData = [
     ],
     ctaText: "Get Your Free Compliance Security Audit",
     metaTitle: "High-Compliance IT & Cybersecurity | Veracity Technologies",
-    metaDescription: "CMMC, HIPAA, ITAR, and NIST 800-171 cybersecurity for defense contractors, healthcare, and government suppliers in Minneapolis-St. Paul. 100% first-attempt audit pass rate.",
+    metaDescription: "CMMC, HIPAA, ITAR, and NIST 800-171 cybersecurity for defense contractors and government suppliers in Minneapolis-St. Paul.",
   },
 ];
 

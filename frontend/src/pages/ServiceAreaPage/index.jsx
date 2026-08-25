@@ -30,7 +30,7 @@ export default function ServiceAreaPage() {
     if (city) {
       document.title = `IT Support in ${city.name}, MN | Veracity Technologies`;
       const metaDesc = document.querySelector('meta[name="description"]');
-      const desc = `Managed IT services and cybersecurity in ${city.name}, Minnesota. ${city.subhead} Call (952) 941-7333 for a free audit.`;
+      const desc = `Managed IT & cybersecurity in ${city.name}, MN - 24/7 monitoring, proactive support, and a free audit from Veracity Technologies. Call (952) 941-7333.`;
       if (metaDesc) metaDesc.setAttribute("content", desc);
       const canonical = document.querySelector('link[rel="canonical"]');
       const cityUrl = `https://www.veracitytechmn.com/service-areas/${city.slug}`;

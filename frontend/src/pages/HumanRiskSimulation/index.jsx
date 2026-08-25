@@ -19,7 +19,7 @@ export default function HumanRiskSimulation() {
   useEffect(() => {
     document.title = "Human Risk Simulation | Veracity Technologies";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Test your team's response to AI-driven phishing and social engineering with Veracity's free Human Risk Simulation. Get a Human Risk Score and a personalized action plan.");
+    if (metaDesc) metaDesc.setAttribute("content", "Test your team's response to AI-driven phishing and social engineering with Veracity's free Human Risk Simulation and personalized action plan.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/human-risk-simulation");
     return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };

@@ -14,7 +14,7 @@ export default function BusinessTechAssessment() {
   useEffect(() => {
     document.title = "Business Technology Assessment | Veracity Technologies";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Free Business Technology Assessment scoring technology infrastructure, cybersecurity, compliance, AI readiness, AI governance, and Microsoft Copilot readiness for Minneapolis-St. Paul businesses.");
+    if (metaDesc) metaDesc.setAttribute("content", "Free Business Technology Assessment scoring your IT infrastructure, cybersecurity, compliance, and AI readiness for Minneapolis-St. Paul businesses.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/business-technology-assessment");
     return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };

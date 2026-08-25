@@ -1,0 +1,47 @@
+{
+  "summary": "Frontend-only testing of (1) EbookPopup exit-intent behavior and (2) shortened meta descriptions. Exit-intent implementation is fully correct and working. Homepage meta description is correct after a frontend restart (public/index.html changes are only picked up on server restart). BUT city pages, service pages, industry pages, and resource pages still serve the OLD long meta descriptions on cold/direct URL loads because the prerendered static HTML files in /app/frontend/public/**/index.html (266 files) and /app/frontend/build/** were not regenerated after the source edits. React's client-side useEffect DOES update the description correctly on SPA soft navigations, so users navigating in-app see the new short version, but SEO bots crawling the URL directly get the stale long version - defeating the purpose of the SEO edit.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "SEO meta description freshness on cold URL loads",
+        "issue": "Prerendered static HTML in /app/frontend/public/**/index.html (266 files) and /app/frontend/build/** was NOT regenerated after shortening meta descriptions in cityData.js, coreServicesData.js, aiPagesData.js, industryData.js and ServiceAreaPage/index.jsx template. Direct/curl/raw fetch of e.g. /service-areas/bloomington-mn returns the OLD 235-char description ('Managed IT services and cybersecurity in Bloomington, Minnesota. Mall of America traffic isn't the only thing that's nonstop here...'). Same for /services/managed-it-services (217 chars, still contains 'financial services, construction, manufacturing, and high-compliance organizations'). Google/Bing crawlers will still index the old copy. Client-side SPA navigation to the same routes DOES apply the new short template (verified: 149 chars, correct 'Managed IT & cybersecurity in Bloomington, MN - 24/7 monitoring...' text) - so only bots and cold loads see the stale value.",
+        "affected_selectors": ["meta[name='description'] on all prerendered routes"]
+      }
+    ],
+    "design_issues": []
+  },
+  "ebook_popup_test_results": {
+    "scroll_does_not_trigger": "PASS - scrolled 0->100% of homepage, popup never appeared",
+    "exit_intent_before_4s_arm_delay": "PASS - mouseout dispatched immediately, popup did not appear",
+    "exit_intent_after_arm": "PASS - mouseout dispatched after ~5s, popup with data-testid='ebook-popup' appeared",
+    "close_button_dismisses": "PASS - click on data-testid='ebook-popup-close' removed popup",
+    "sessionStorage_ebook_dismissed": "PASS - sessionStorage['ebook_dismissed'] set to 'true' after close",
+    "does_not_reopen_after_dismiss": "PASS - re-dispatching mouseout after dismissal did not reopen",
+    "persists_across_navigation": "PASS - navigating to another page, sessionStorage still 'true'"
+  },
+  "meta_description_test_results": {
+    "homepage_/": "PASS after frontend restart - 143 chars, matches expected 'Managed IT & cybersecurity for Minnesota businesses, powered by AI and automation. SOC 2 compliant, CMMC registered. Free assessment available.'",
+    "/service-areas/bloomington-mn (soft-nav)": "PASS - 149 chars, matches expected template",
+    "/service-areas/bloomington-mn (hard-load / raw fetch)": "FAIL - 235 chars, OLD copy still served from /app/frontend/public/service-areas/bloomington-mn/index.html",
+    "/services/managed-it-services (hard-load)": "FAIL - 217 chars, OLD copy still served from /app/frontend/public/services/managed-it-services/index.html; still contains banned phrase 'financial services, construction, manufacturing, and high-compliance organizations'"
+  },
+  "test_report_links": [],
+  "action_items": [
+    "REGENERATE PRERENDERED HTML: run `cd /app/frontend && yarn build` (postbuild will run scripts/prerender.js automatically) to refresh all 266 prerendered index.html files under public/ and the build/ output so cold URL loads and SEO bots see the shortened meta descriptions. Without this, the SEO benefit of the text-shortening edit is not realized in production/preview served HTML.",
+    "NOTE about hot reload: changes to /app/frontend/public/index.html are ignored by the dev server watcher (craco.config.js line 50 ignores '**/public/**'), so future public/*.html edits require `sudo supervisorctl restart frontend` to take effect (I already did this during this test - the homepage meta is now correct in the running dev server).",
+    "OPTIONAL enhancement: EbookPopup mouseout listener has a small ordering quirk - closure over `dismissed` state means the effect re-subscribes when dismissed flips true; low priority, current behavior is correct."
+  ],
+  "critical_code_review_comments": [
+    "EbookPopup.jsx implementation is clean and matches the intended exit-intent contract (armed after 4s, only fires on clientY<=0 && relatedTarget===null, self-removes the listener after firing, respects sessionStorage 'ebook_dismissed'). No changes needed.",
+    "Root problem is process-level, not code-level: this repo maintains a large body of prerendered static HTML (public/**/index.html and build/**) that acts as the true source of truth for what search engines see. Any source-level meta description edit MUST be followed by a prerender rebuild, otherwise the SEO change is invisible to crawlers."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not tested per request)", "frontend": "EbookPopup 100% (7/7 checks). Meta descriptions: homepage 100%, subpages 0% on hard-load / 100% on SPA soft-nav."},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "After main agent runs `yarn build` (postbuild=prerender.js), re-verify meta description on hard-load for /service-areas/bloomington-mn (expect 149 chars starting 'Managed IT & cybersecurity in Bloomington, MN - 24/7 monitoring...') and /services/managed-it-services (expect ~180 chars starting '24/7 managed IT services for Minnesota businesses - proactive monitoring, dedicated account management, and AI-enhanced automation.') via raw curl + Playwright hard-nav. Ebook popup exit-intent already fully passes - no need to retest that.",
+  "rca of the issue": "The main agent updated the source of truth for meta descriptions in .js/.jsx files, but the served frontend consists of two overlapping layers: (a) a CRA dev server that serves React with runtime meta-description updates via useEffect, and (b) a prerendered static HTML tree under frontend/public/**/index.html (generated by scripts/prerender.js during `yarn build` postbuild) that the dev server serves in preference to the SPA fallback for known routes. Layer (b) still contains the OLD long descriptions from a build performed at 19:50-19:56 UTC, before the text edits at 20:34 UTC. Mitigation: `cd /app/frontend && yarn build` — this triggers postbuild=`node scripts/prerender.js` which regenerates every route's static index.html with the current source data. Additionally, the frontend dev server needed a manual restart (`sudo supervisorctl restart frontend`) to pick up the /app/frontend/public/index.html edit for the homepage, because craco.config.js explicitly ignores 'public/**' in webpack's watchOptions."
+}

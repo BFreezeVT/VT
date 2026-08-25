@@ -23,7 +23,7 @@ const aiPagesData = [
       { q: "What happens after the assessment?", a: "You receive a maturity score across five dimensions and a prioritized roadmap. Veracity's team reviews results with you and recommends specific next steps, from policy development to Microsoft Copilot rollout." },
     ],
     metaTitle: "AI Readiness Assessment Minnesota | Veracity Technologies",
-    metaDescription: "Evaluate your organization's AI readiness across data governance, infrastructure, security, and policy maturity. Free AI Readiness Assessment for Minneapolis-St. Paul businesses.",
+    metaDescription: "Evaluate your organization's AI readiness across data governance, infrastructure, and security. Free assessment for Minneapolis-St. Paul businesses.",
     ctaText: "Start Your AI Readiness Assessment",
   },
   {
@@ -49,7 +49,7 @@ const aiPagesData = [
       { q: "Who should own AI governance inside an organization?", a: "Typically a cross-functional owner - often IT or a vCIO working with leadership - since AI governance touches security, compliance, HR policy, and operations." },
     ],
     metaTitle: "AI Governance Services Minnesota | Veracity Technologies",
-    metaDescription: "AI governance frameworks and policy development for regulated Minneapolis-St. Paul businesses. Approved tool registries, data controls, and compliance-aligned oversight.",
+    metaDescription: "AI governance frameworks and policy development for regulated Minneapolis-St. Paul businesses - approved tools, data controls, compliance oversight.",
     ctaText: "Build Your AI Governance Framework",
   },
   {
@@ -127,7 +127,7 @@ const aiPagesData = [
       { q: "Does this apply to Microsoft 365 AI readiness generally?", a: "Yes - the same governance and permission principles apply across all Microsoft 365 AI features, not just Copilot Chat." },
     ],
     metaTitle: "Microsoft Copilot Readiness | Veracity Technologies",
-    metaDescription: "Prepare for a secure Microsoft 365 Copilot rollout with a permission audit, sensitivity labeling, and tenant configuration review for Minneapolis-St. Paul businesses.",
+    metaDescription: "Prepare for a secure Microsoft 365 Copilot rollout with a permission audit, sensitivity labeling, and tenant review for Minneapolis-St. Paul businesses.",
     ctaText: "Assess Your Copilot Readiness",
   },
   {
@@ -205,7 +205,7 @@ const aiPagesData = [
       { q: "How quickly can Shadow AI be discovered?", a: "Initial discovery typically takes 1-2 weeks using network and endpoint monitoring tools, with a full risk report delivered shortly after." },
     ],
     metaTitle: "Shadow AI Risk Assessment Minnesota | Veracity Technologies",
-    metaDescription: "Discover unauthorized AI tools in use across your organization and the data exposure they create. Shadow AI Risk Assessments for Minneapolis-St. Paul businesses.",
+    metaDescription: "Discover unauthorized AI tools in use across your organization and the data exposure they create. Free Shadow AI Risk Assessment.",
     ctaText: "Discover Your Shadow AI Risk",
   },
   {
