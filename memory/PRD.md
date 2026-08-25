@@ -706,6 +706,29 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 52 (Feb 2026) - Fixed all 148 blog excerpt lengths + added missing Scorecard meta description
+- User asked to complete the two items flagged in Session 51: fix the 131 out-of-range blog excerpts, and add
+  a dedicated meta description to the Cyber Risk Scorecard page.
+- **Blog excerpts**: rewrote 131 excerpts in `backend/blog_data.py` (124 were under 120 chars, 7 over 158) to
+  land within 120-158 chars while preserving each post's actual meaning/keyword intent. Also found and fixed 2
+  more oversized excerpts (`manufacturing-ot-it-security-guide`, `hipaa-compliance-small-healthcare-practices`)
+  living in a separate hardcoded post list in `backend/server.py` (not `blog_data.py`). All 148 total blog
+  posts (confirmed via live `/api/blog`) now sit within 120-158 chars.
+- **Cyber Risk Scorecard**: `CyberRiskScorecard/index.jsx` previously set no title/description/canonical of its
+  own (silently inherited whatever the previous page left behind). Added the same `useEffect` pattern used by
+  `HumanRiskSimulation` - title "Cyber Risk Scorecard | Veracity Technologies", a 145-char description, and
+  correct canonical, with cleanup resetting to the site default on unmount.
+- Restarted backend (picks up `blog_data.py`/`server.py` edits) and re-ran full `yarn build` +
+  `node scripts/prerender.js` (221/221 routes) so the static/crawler-facing HTML reflects both changes.
+- Tested via `testing_agent` (iteration_50.json) - 100% pass on all content/metadata checks (148 excerpts
+  verified in range and reading naturally, Scorecard title/description/canonical correct, title-reset-on-nav
+  confirmed). One **non-blocking preview-environment-only artifact** noted (not a real bug): prerendered HTML
+  references the production hashed JS bundle filename, which the Preview dev server doesn't serve (dev server
+  exposes `bundle.js`, not the hashed production filename) - causes "Unexpected token <" and no React hydration
+  when hard-loading a prerendered route *in Preview specifically*. This resolves itself in a real Production
+  build/deploy where the matching hashed bundle is actually served; not something to fix in this environment.
+- **Requires a Preview -> Production redeploy** to see all of this live.
+
 ### Session 51 (Feb 2026) - Meta description length audit + fix, EbookPopup exit-intent, Cloudflare 301 CSV
 - User requested 3 follow-ups from the previous session's suggestions: (1) audit meta description lengths
   site-wide (ideal 120-158 chars), (2) provide Cloudflare 301 redirect setup for the shortened city URLs,

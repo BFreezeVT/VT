@@ -606,7 +606,7 @@ These five steps will significantly reduce your risk, but they're just the begin
     {
         "slug": "manufacturing-ot-it-security-guide",
         "title": "Bridging the OT/IT Gap: A Security Guide for Manufacturing Plants",
-        "excerpt": "When operational technology meets information technology, vulnerabilities multiply. Here's how manufacturing firms can secure the convergence without halting production.",
+        "excerpt": "When operational technology meets information technology, vulnerabilities multiply. Here's how to secure the convergence without halting production.",
         "category": "Manufacturing",
         "author": "Veracity Technologies",
         "published_date": "2025-10-15",
@@ -869,7 +869,7 @@ The average cost of a credential-based breach is $4.67 million (IBM 2025). MFA i
     {
         "slug": "hipaa-compliance-small-healthcare-practices",
         "title": "HIPAA Compliance for Small Healthcare Practices: A No-Nonsense Guide",
-        "excerpt": "Small clinics face the same HIPAA requirements as large hospital systems but with a fraction of the resources. Here's how to stay compliant without a dedicated compliance team.",
+        "excerpt": "Small clinics face the same HIPAA requirements as large hospitals but with a fraction of the resources, and no dedicated compliance team.",
         "category": "Compliance",
         "author": "Veracity Technologies",
         "published_date": "2025-10-20",

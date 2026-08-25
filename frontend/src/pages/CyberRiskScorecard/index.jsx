@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useScorecardFlow } from "./useScorecardFlow";
 import ScorecardHero from "./ScorecardHero";
 import ScorecardIndustryStep from "./ScorecardIndustryStep";
@@ -8,6 +9,15 @@ import ScorecardFooter from "./ScorecardFooter";
 
 export default function CyberRiskScorecard() {
   const flow = useScorecardFlow();
+
+  useEffect(() => {
+    document.title = "Cyber Risk Scorecard | Veracity Technologies";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Take Veracity Technologies free Cyber Risk Scorecard - answer 12 quick questions to get your risk score and a personalized ROI estimate.");
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/cyber-risk-scorecard");
+    return () => { document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT"; };
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="cyber-risk-scorecard">
