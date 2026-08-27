@@ -143,7 +143,7 @@ export default function ServiceAreaPage() {
         <section data-testid="city-other-areas" aria-label="Other service areas" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              className="text-xl font-bold text-white mb-8 text-center"
+              className="text-xl font-bold text-[#0f1d32] mb-8 text-center"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               We also serve
@@ -155,7 +155,7 @@ export default function ServiceAreaPage() {
                     key={c.slug}
                     to={`/service-areas/${c.slug}`}
                     data-testid={`other-city-${c.slug}`}
-                    className="text-xs font-medium text-[#94a8be] border border-white/10 bg-white hover:border-[#0077B3] hover:text-white px-4 py-2 transition-colors"
+                    className="text-xs font-medium text-[#0f1d32] border border-[#0f1d32]/15 bg-white hover:border-[#0077B3] hover:text-[#0077B3] px-4 py-2 transition-colors"
                   >
                     {c.name}
                   </Link>

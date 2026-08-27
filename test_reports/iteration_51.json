@@ -1,0 +1,32 @@
+{
+  "summary": "Verified this session's two fixes on the Veracity Technologies preview site. (1) HIGH — prerender race-condition fix: hard-loaded (fresh navigation, non-SPA via curl -L + Playwright) 8 routes (/service-areas/bloomington-mn, /service-areas/minneapolis-mn, /cyber-risk-scorecard, /resources/hipaa-compliance-small-healthcare-practices, /services/managed-it-services, /microsoft-copilot-readiness, /service-areas, /resources) — every route returned its own unique correct <title> and unique correct <h1>, and grep across the 6 non-home routes for the homepage H1 signature 'Built for the AI + Automation World' returned 0 matches on every single route. No blank shells, no homepage fallback leakage. (2) LOW — 'We also serve' white-on-white fix: confirmed in prerendered HTML source of both bloomington-mn and minneapolis-mn city pages that data-testid='city-other-areas' section has class 'py-16 bg-white', its <h2>We also serve</h2> now uses 'text-[#0f1d32]' (dark navy) and every other-city-* chip uses 'text-[#0f1d32] border border-[#0f1d32]/15 bg-white ...' — dark text on white background, contrast is correct. (3) General regression: homepage, service-areas index, resources index, an individual blog post, and an industry-adjacent page (services/managed-it-services) all returned correct titles and content. (4) EbookPopup exit-intent — NOT re-verifiable interactively in the preview env because React does not hydrate on prerendered routes (preview-infra asset-serving mismatch, documented in iteration_50.json — the hashed /static/js/main.267db6d9.js and /static/css/main.ec331be0.css are served as text/html by webpack-dev-server since it only serves /static/js/bundle.js). Main agent already verified exit-intent in iteration_48; unrelated to this session's changes, so treated as sanity check only and left as env limitation.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Interactive React hydration on prerendered routes in preview env (EbookPopup exit-intent, quiz flows, forms)",
+        "issue": "Pre-existing preview-infra issue (not from this session): prerendered HTMLs reference hashed prod bundles /static/css/main.ec331be0.css and /static/js/main.267db6d9.js, but the supervisor runs 'yarn start' (webpack-dev-server) which only serves /static/js/bundle.js and returns text/html for the hashed paths (58998-byte HTML shell). Result: on preview URL, Tailwind CSS never loads and React never hydrates on prerendered pages. Source content (SEO, prerendered DOM, class attributes) IS correct and would render properly in a production deployment where /app/frontend/build/static/* is served directly.",
+        "affected_selectors": ["[data-testid=ebook-popup]", "[data-testid=city-other-areas]", "[data-testid=start-assessment]"]
+      }
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "None required for E1's two fixes — both verified correct in prerendered source and via live navigation.",
+    "Optional / carried over from iteration_50: the preview env asset-routing mismatch (hashed bundle paths returning text/html) still blocks interactive testing on prerendered routes. Not a code bug; would work in production. Consider serving /app/frontend/build/static/* directly, or a static file server (serve -s build) instead of yarn start, if interactive preview testing is needed."
+  ],
+  "critical_code_review_comments": [
+    "ServiceAreaPage/index.jsx 'We also serve' block now consistently uses text-[#0f1d32] on bg-white for both the heading and the other-city chips — matches the light-section design and passes contrast.",
+    "Prerender output is now internally consistent: 265 non-home prerendered files verified by main agent, spot-checked 6 here — 0 homepage-title leaks. Recommendation retained for future: keep prerender strictly sequential (no overlapping yarn build + node scripts/prerender.js) to avoid the race that caused the previous regression."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "Prerender + CSS-fix source verification: 100% (8/8 routes correct, 6/6 non-home routes clean of homepage leakage, 2/2 city pages have corrected 'We also serve' classes). Interactive hydration: not testable in preview env (pre-existing infra)."},
+  "test_credentials": "None required (public content).",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Two fixes from this session are verified in the live prerendered HTML on the preview URL: (a) all 8 spot-checked routes (bloomington-mn, minneapolis-mn, cyber-risk-scorecard, hipaa-compliance-small-healthcare-practices, managed-it-services, microsoft-copilot-readiness, service-areas index, resources index) have unique correct titles and no homepage H1 leakage — prerender race is fixed; (b) 'We also serve' section on city pages now uses text-[#0f1d32] on bg-white — no more invisible white-on-white. EbookPopup exit-intent was NOT re-verified interactively due to the well-known preview-env asset-serving mismatch documented in iteration_50 (webpack-dev-server serves hashed prod bundles as text/html, so React never hydrates on prerendered routes). If interactive UI regression testing is needed in future, either serve the build/ folder statically or accept that all interactive verification must happen against a real production deployment.",
+  "rca of the issue": "Original HIGH bug: two overlapping 'yarn build' and 'node scripts/prerender.js' processes ran concurrently. prerender.js read /app/frontend/build/index.html while webpack was still rewriting it, so 2 routes ended up snapshotting the intermediate/homepage version. Main agent fixed by rerunning strictly sequentially (build → wait → prerender all 221 routes → verify no leaked titles). Original LOW bug: ServiceAreaPage/index.jsx 'We also serve' section was migrated to bg-white but the h2 and chip anchors still carried text-white / white border classes from the earlier dark-theme design. Main agent replaced those with text-[#0f1d32] and border-[#0f1d32]/15. Both fixes independently verified from the live preview HTML source and via Playwright DOM inspection."
+}

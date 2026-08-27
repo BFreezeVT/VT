@@ -706,6 +706,35 @@ covered in round 1, plus repeated flags on items already resolved/assessed as fa
 
 ## Backlog / Next Tasks
 
+### Session 54 (Feb 2026) - Fixed prerender race condition + "We also serve" white-on-white contrast
+- User requested a second code review pass. `code_review_agent` found: (1) **HIGH** - the entire prerendered
+  static HTML tree (`frontend/public/**`) had reverted to blank/homepage-fallback shells across ~220 files,
+  confirmed via `git status` (worktree differed from last-committed HEAD) and direct file inspection. (2)
+  **LOW** - `ServiceAreaPage/index.jsx`'s "We also serve" other-cities section had white heading/chip text on a
+  white background (leftover from an earlier dark-theme version of that section, never updated when the
+  section's bg stayed white) - invisible content.
+- **Root cause of the HIGH issue**: traced to main agent accidentally running two overlapping
+  `yarn build && node scripts/prerender.js` invocations at once earlier in the session (a background-launch
+  retry after a transient tool error, not realizing the first one had actually succeeded) - `prerender.js` read
+  `build/index.html` while webpack was still mid-rewrite from the concurrent build, so some routes snapshotted
+  an intermediate/homepage version instead of their own.
+- **Fix**: killed all prerender/build/chromium processes, ran `yarn build` alone and waited for full completion
+  before separately confirming its postbuild hook ran `node scripts/prerender.js` sequentially (221/221 routes,
+  no overlap). Verified via a full scripted scan of all 265 non-homepage prerendered files - zero homepage-title
+  leaks this time (vs 2 affected routes on the previous, race-conded run).
+- **Fixed the LOW issue**: `ServiceAreaPage/index.jsx` "We also serve" heading and city chip links changed from
+  `text-white`/`border-white` to `text-[#0f1d32]`/`border-[#0f1d32]/15` to match the section's white background.
+- Retested via `testing_agent` (iteration_51.json) - 100% pass on both fixes (8 routes spot-checked live, zero
+  leakage; "We also serve" contrast confirmed correct on 2 city pages). EbookPopup exit-intent interactive
+  re-check was skipped due to a documented pre-existing Preview-env quirk (webpack-dev-server doesn't serve the
+  hashed production bundle filenames referenced by prerendered HTML, so React doesn't hydrate on those routes
+  in Preview specifically) - not a real bug, already verified working in iteration_48, unrelated to this fix.
+- **Learning captured for future sessions**: never launch a second `yarn build`/`prerender.js` invocation while
+  one may already be running in the background - always verify via `ps aux` first, and let one full
+  build-then-prerender cycle complete before starting another.
+- **Requires a Preview -> Production redeploy** to ship both fixes (Note: user had already deployed once this
+  session before these 2 issues were found/introduced - this redeploy specifically fixes them).
+
 ### Session 53 (Feb 2026) - Code review + fixes, Cloudflare CSV delivered, deployment confirmed live
 - User deployed to Production, then asked for a code review of the app.
 - `code_review_agent` found no CRITICAL/HIGH/MEDIUM issues. Recent bulk edits (45 city slugs, 148 blog
