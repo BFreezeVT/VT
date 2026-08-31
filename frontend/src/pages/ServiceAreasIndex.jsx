@@ -6,14 +6,41 @@ import cityData from "../data/cityData";
 
 export default function ServiceAreasIndex() {
   useEffect(() => {
-    document.title = "IT Support Service Areas | Veracity Technologies";
+    const title = "IT Support Service Areas | Veracity Technologies";
+    const desc = "Veracity Technologies provides managed IT services and cybersecurity across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.";
+    const url = "https://www.veracitytechmn.com/service-areas";
+    document.title = title;
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Veracity Technologies provides managed IT services and cybersecurity across 45 cities in the Minneapolis-St. Paul metro and Central Minnesota.");
+    if (metaDesc) metaDesc.setAttribute("content", desc);
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/service-areas");
+    if (canonical) canonical.setAttribute("href", url);
+    const ogTags = [
+      ['meta[property="og:url"]', "content", url],
+      ['meta[property="og:title"]', "content", title],
+      ['meta[property="og:description"]', "content", desc],
+      ['meta[name="twitter:url"]', "content", url],
+      ['meta[name="twitter:title"]', "content", title],
+      ['meta[name="twitter:description"]', "content", desc],
+    ];
+    ogTags.forEach(([selector, attr, value]) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    });
     return () => {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
       if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+      const defaults = [
+        ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
+        ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
+        ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
+        ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],
+      ];
+      defaults.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
     };
   }, []);
 

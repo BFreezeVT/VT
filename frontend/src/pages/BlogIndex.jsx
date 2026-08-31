@@ -26,11 +26,26 @@ export default function BlogIndex() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    document.title = "Resources & Insights | Veracity Technologies";
+    const title = "Resources & Insights | Veracity Technologies";
+    const desc = "Cybersecurity insights, compliance guides, and AI security resources for construction, financial services, and manufacturing from Veracity Technologies.";
+    const url = "https://www.veracitytechmn.com/resources";
+    document.title = title;
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Cybersecurity insights, compliance guides, and AI security resources for construction, financial services, and manufacturing from Veracity Technologies.");
+    if (metaDesc) metaDesc.setAttribute("content", desc);
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/resources");
+    if (canonical) canonical.setAttribute("href", url);
+    const ogTags = [
+      ['meta[property="og:url"]', "content", url],
+      ['meta[property="og:title"]', "content", title],
+      ['meta[property="og:description"]', "content", desc],
+      ['meta[name="twitter:url"]', "content", url],
+      ['meta[name="twitter:title"]', "content", title],
+      ['meta[name="twitter:description"]', "content", desc],
+    ];
+    ogTags.forEach(([selector, attr, value]) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute(attr, value);
+    });
 
     axios.get(`${API}/blog`)
       .then((res) => setPosts(res.data))
@@ -40,6 +55,18 @@ export default function BlogIndex() {
     return () => {
       document.title = "Veracity Technologies | AI-Powered Cybersecurity & Managed IT";
       if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
+      const defaults = [
+        ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
+        ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
+        ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
+        ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
+        ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],
+      ];
+      defaults.forEach(([selector, attr, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.setAttribute(attr, value);
+      });
     };
   }, []);
 
