@@ -21,21 +21,24 @@ import RiskReversal from "./sections/RiskReversal";
 import FAQSection from "./sections/FAQSection";
 import Footer from "./sections/Footer";
 import EbookPopup from "./sections/EbookPopup";
-import ServiceAreasIndex from "./pages/ServiceAreasIndex";
-import ServiceAreaPage from "./pages/ServiceAreaPage";
-import IndustryPage from "./pages/IndustryPage";
-import BusinessTechAssessment from "./pages/BusinessTechAssessment";
-import AIPage from "./pages/AIPage";
-import BlogIndex from "./pages/BlogIndex";
-import BlogPost from "./pages/BlogPost";
-import CyberRiskScorecard from "./pages/CyberRiskScorecard";
-import AIROIPreview from "./pages/AIROIPreview";
-import ServicePage from "./pages/ServicePage";
-import HumanRiskSimulation from "./pages/HumanRiskSimulation";
-import ClientSuccess from "./pages/ClientSuccess";
-import NotFound from "./pages/NotFound";
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
+
+// Route-level code splitting - each non-homepage page (and its dependencies like recharts/jspdf)
+// ships in its own chunk instead of bloating the initial homepage bundle every visitor downloads.
+const ServiceAreasIndex = lazy(() => import("./pages/ServiceAreasIndex"));
+const ServiceAreaPage = lazy(() => import("./pages/ServiceAreaPage"));
+const IndustryPage = lazy(() => import("./pages/IndustryPage"));
+const BusinessTechAssessment = lazy(() => import("./pages/BusinessTechAssessment"));
+const AIPage = lazy(() => import("./pages/AIPage"));
+const BlogIndex = lazy(() => import("./pages/BlogIndex"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const CyberRiskScorecard = lazy(() => import("./pages/CyberRiskScorecard"));
+const AIROIPreview = lazy(() => import("./pages/AIROIPreview"));
+const ServicePage = lazy(() => import("./pages/ServicePage"));
+const HumanRiskSimulation = lazy(() => import("./pages/HumanRiskSimulation"));
+const ClientSuccess = lazy(() => import("./pages/ClientSuccess"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Color stops for the progressive gradient
 const gradientStops = [
@@ -134,26 +137,32 @@ function HomePage() {
   );
 }
 
+function RouteFallback() {
+  return <div className="min-h-screen bg-[#0f1d32]" data-testid="route-loading-fallback" />;
+}
+
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/service-areas" element={<ServiceAreasIndex />} />
-        <Route path="/service-areas/:citySlug" element={<ServiceAreaPage />} />
-        <Route path="/industries/:industrySlug" element={<IndustryPage />} />
-        <Route path="/business-technology-assessment" element={<BusinessTechAssessment />} />
-        <Route path="/resources" element={<BlogIndex />} />
-        <Route path="/resources/:slug" element={<BlogPost />} />
-        <Route path="/cyber-risk-scorecard" element={<CyberRiskScorecard />} />
-        <Route path="/ai-roi-preview" element={<AIROIPreview />} />
-        <Route path="/services/:serviceSlug" element={<ServicePage />} />
-        <Route path="/human-risk-simulation" element={<HumanRiskSimulation />} />
-        <Route path="/client-success" element={<ClientSuccess />} />
-        <Route path="/:aiSlug" element={<AIPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/service-areas" element={<ServiceAreasIndex />} />
+          <Route path="/service-areas/:citySlug" element={<ServiceAreaPage />} />
+          <Route path="/industries/:industrySlug" element={<IndustryPage />} />
+          <Route path="/business-technology-assessment" element={<BusinessTechAssessment />} />
+          <Route path="/resources" element={<BlogIndex />} />
+          <Route path="/resources/:slug" element={<BlogPost />} />
+          <Route path="/cyber-risk-scorecard" element={<CyberRiskScorecard />} />
+          <Route path="/ai-roi-preview" element={<AIROIPreview />} />
+          <Route path="/services/:serviceSlug" element={<ServicePage />} />
+          <Route path="/human-risk-simulation" element={<HumanRiskSimulation />} />
+          <Route path="/client-success" element={<ClientSuccess />} />
+          <Route path="/:aiSlug" element={<AIPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

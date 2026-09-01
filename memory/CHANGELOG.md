@@ -1479,6 +1479,33 @@ UX fix, ROI calculator analytics
   implemented this session since it requires touching the JS bundling/image-pipeline architecture, out of Wave 1
   scope (technical SEO / crawl / redirects / schema / core pages).
 - **Blog backlog spot-check (10 representative posts across categories, no edits made)**: found the 129
+
+### Session 56 (Aug 2026) - CWV performance fixes + blog URL cleanup (user-picked follow-ups from Session 55 audit)
+- **[FIXED] JS bundle size / route code-splitting.** `App.js` converted 13 non-homepage page imports to
+  `React.lazy()` wrapped in a `<Suspense>` boundary (HomePage stays eager). Main gzipped bundle dropped from
+  ~400KB to ~296KB, with ~20 separate route-level chunk files now loaded on demand.
+- **[FIXED] 777KB unoptimized hero background JPEG.** Downloaded the externally-hosted image, re-encoded to
+  WebP (quality 78) with Pillow, self-hosted at `frontend/public/images/hero-bg.webp` (62KB, 92% smaller, same
+  visual content). `HeroSection.jsx`'s `HERO_BG` constant now points to it.
+- **[FIXED] 7 blog slugs containing literal periods** (`vs.`, `.heres`, `st.paul`, `4.88`) renamed to clean
+  dash-only slugs in `backend/blog_data.py`. Added `frontend/src/data/legacyBlogRedirects.js` (old->new map,
+  same pattern as `legacyCityRedirects.js`) and wired it into `BlogPost/index.jsx` so an old-slug hit does a
+  client-side `<Navigate replace>` to the new slug instead of showing "Article Not Found". Also overwrote the
+  7 corresponding `public/resources/<old-slug>/index.html` prerendered directories with static meta-refresh
+  redirect stubs (same pattern as the 45 legacy city stubs) for non-JS crawlers/direct hits.
+- **[FIXED] Prerender pipeline crash bug** discovered while re-running the build for the above: `prerender.js`'s
+  local static file server had no `.on('error')` handler on its `fs.createReadStream(...).pipe(res)` calls, so
+  a single transient read hiccup on `build/index.html` during the very first route crashed the whole Node
+  process with an unhandled 'error' event (`ENOENT`), aborting the entire 221-route prerender + sitemap
+  generation. Added proper stream error handling (falls back to a 404 response instead of crashing). Not
+  reproducible from source-code correctness bugs elsewhere in this session - purely defensive hardening.
+- Ran one final clean sequential `yarn build` after all the above (postbuild: prerender.js -> generate-sitemap.js)
+  - 221/221 routes, 221-URL sitemap, exit code 0.
+- Verified via `testing_agent` (iteration_53.json) - 100% pass. All 14 route types (incl. lazy-loaded ones) load
+  with no stuck Suspense fallback, hero WebP serves 200, React Router SPA redirect for old blog slugs confirmed
+  working, backend confirms new-slug 200 / old-slug 404 (correct), no new console errors.
+- **Requires a Preview -> Production redeploy** to ship these performance and URL-cleanup fixes.
+
   "extended" posts average ~300-350 words of content vs. 400-1300+ words on the original 19 cornerstone posts -
   systemically thinner content that may cap ranking potential despite correct technical hygiene (schema/metadata
   already prerendered correctly for all 148). Also found 7 slugs contain literal periods from unsanitized

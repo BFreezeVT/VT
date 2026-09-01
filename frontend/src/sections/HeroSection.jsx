@@ -1,7 +1,8 @@
 import { ArrowDown, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const HERO_BG = "https://static.prod-images.emergentagent.com/jobs/a66d851c-ab3d-4669-9a37-bc99f9119744/images/2f29bcce375d4712b5aa01938a4096d1602abc943eee9db99360a5fcce4fb3c8.jpeg";
+// Self-hosted WebP (61KB) - was a 777KB unoptimized JPEG hosted externally, a major Core Web Vitals drag
+const HERO_BG = "/images/hero-bg.webp";
 
 const rotatingWords = ["AI-Driven", "Automated", "Intelligent", "Optimized"];
 

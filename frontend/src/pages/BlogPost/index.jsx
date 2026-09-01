@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { Clock, CalendarDays } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import axios from "axios";
@@ -14,6 +14,7 @@ import BlogPostFooter from "./BlogPostFooter";
 import BlogRelatedResources from "./BlogRelatedResources";
 import ShareButtons from "./ShareButtons";
 import ChecklistDownload from "./ChecklistDownload";
+import legacyBlogRedirects from "../../data/legacyBlogRedirects";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -92,6 +93,10 @@ export default function BlogPost() {
   }
 
   if (!post) {
+    const newSlug = legacyBlogRedirects[slug];
+    if (newSlug) {
+      return <Navigate to={`/resources/${newSlug}`} replace />;
+    }
     return (
       <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center">
         <div className="text-center">

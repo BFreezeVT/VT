@@ -54,14 +54,21 @@ function startStaticServer() {
     const urlPath = decodeURIComponent(req.url.split("?")[0]);
     const filePath = path.join(BUILD_DIR, urlPath);
     const isAsset = /\.[a-zA-Z0-9]+$/.test(urlPath) && !urlPath.endsWith(".html");
+    const serveFile = (fp, contentType) => {
+      const stream = fs.createReadStream(fp);
+      stream.on("error", () => {
+        if (!res.headersSent) res.writeHead(404);
+        res.end();
+      });
+      res.setHeader("Content-Type", contentType);
+      stream.pipe(res);
+    };
     if (isAsset && fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
       const ext = path.extname(filePath);
       const types = { ".js": "application/javascript", ".css": "text/css", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".json": "application/json", ".ico": "image/x-icon", ".webp": "image/webp", ".woff2": "font/woff2" };
-      res.setHeader("Content-Type", types[ext] || "application/octet-stream");
-      fs.createReadStream(filePath).pipe(res);
+      serveFile(filePath, types[ext] || "application/octet-stream");
     } else {
-      res.setHeader("Content-Type", "text/html");
-      fs.createReadStream(path.join(BUILD_DIR, "index.html")).pipe(res);
+      serveFile(path.join(BUILD_DIR, "index.html"), "text/html");
     }
   });
   return new Promise((resolve) => server.listen(PORT, () => resolve(server)));
