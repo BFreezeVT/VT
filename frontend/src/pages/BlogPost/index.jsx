@@ -37,15 +37,16 @@ export default function BlogPost() {
       if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/resources/${slug}`);
 
       const categoryImage = getBlogCategoryImage(postRes.data.category);
+      const categoryOgImage = `https://www.veracitytechmn.com${categoryImage.replace(".webp", "-og.jpg")}`;
       const postUrl = `https://www.veracitytechmn.com/resources/${slug}`;
       const ogTags = [
         ['meta[property="og:url"]', "content", postUrl],
-        ['meta[property="og:image"]', "content", categoryImage],
+        ['meta[property="og:image"]', "content", categoryOgImage],
         ['meta[property="og:image:alt"]', "content", `${postRes.data.title} - ${postRes.data.category}`],
         ['meta[property="og:title"]', "content", postRes.data.title],
         ['meta[property="og:description"]', "content", postRes.data.excerpt],
         ['meta[name="twitter:url"]', "content", postUrl],
-        ['meta[name="twitter:image"]', "content", categoryImage],
+        ['meta[name="twitter:image"]', "content", categoryOgImage],
         ['meta[name="twitter:image:alt"]', "content", `${postRes.data.title} - ${postRes.data.category}`],
         ['meta[name="twitter:title"]', "content", postRes.data.title],
         ['meta[name="twitter:description"]', "content", postRes.data.excerpt],
@@ -67,12 +68,12 @@ export default function BlogPost() {
       if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
       const defaults = [
         ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
-        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.jpg"],
         ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
         ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
         ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
         ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
-        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.jpg"],
         ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
         ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
         ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],

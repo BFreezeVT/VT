@@ -35,6 +35,25 @@ export function buildCityStructuredData(city) {
     parentOrganization: { "@id": "https://www.veracitytechmn.com/#organization" },
   };
 
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Managed IT Services in ${city.name}, MN`,
+    description: `Managed IT services, cybersecurity, compliance management, and AI readiness support for businesses in ${city.name}, Minnesota, including ${city.localIndustries.join(", ")}.`,
+    url: `https://www.veracitytechmn.com/service-areas/${city.slug}`,
+    provider: { "@id": "https://www.veracitytechmn.com/#organization" },
+    areaServed: {
+      "@type": "City",
+      name: city.name,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: city.lat,
+        longitude: city.lng,
+      },
+    },
+    serviceType: ["Managed IT Services", "Cybersecurity", "IT Compliance Management", "AI Readiness & Governance"],
+  };
+
   const breadcrumbList = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -77,5 +96,5 @@ export function buildCityStructuredData(city) {
     ],
   };
 
-  return [localBusiness, breadcrumbList, faqPage];
+  return [localBusiness, service, breadcrumbList, faqPage];
 }

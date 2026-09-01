@@ -40,7 +40,7 @@ export default function IndustryPage() {
       const canonical = document.querySelector('link[rel="canonical"]');
       const industryUrl = `https://www.veracitytechmn.com/industries/${industry.slug}`;
       if (canonical) canonical.setAttribute("href", industryUrl);
-      const ogImage = industryOgImages[industry.slug] || "https://www.veracitytechmn.com/og-image.png";
+      const ogImage = industryOgImages[industry.slug] || "https://www.veracitytechmn.com/og-image.jpg";
       const ogTags = [
         ['meta[property="og:url"]', "content", industryUrl],
         ['meta[property="og:image"]', "content", ogImage],
@@ -64,12 +64,12 @@ export default function IndustryPage() {
       if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
       const defaults = [
         ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
-        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.jpg"],
         ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
         ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
         ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
         ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
-        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.jpg"],
         ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
         ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
         ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],

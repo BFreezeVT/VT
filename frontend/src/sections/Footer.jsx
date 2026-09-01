@@ -21,16 +21,18 @@ export default function Footer() {
             <div className="max-w-[300px] overflow-hidden mb-1 relative" style={{ marginBottom: "-8px" }}>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ filter: "blur(15px)" }}>
                 <img
-                  src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
+                  src="/images/logo-full.webp"
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
                   className="w-full h-auto object-contain scale-110 opacity-60"
                   style={{ marginTop: "-10%", marginBottom: "-15%" }}
                 />
               </div>
               <img
-                src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/3n092vnp_1.png"
+                src="/images/logo-full.webp"
                 alt="Veracity Technologies - Rely On Us"
+                loading="lazy"
                 className="w-full h-auto object-contain scale-110 relative z-10"
                 style={{ marginTop: "-10%", marginBottom: "-15%", filter: "drop-shadow(0 0 4px rgba(100,200,220,0.7)) drop-shadow(0 0 12px rgba(100,200,220,0.4)) drop-shadow(0 0 25px rgba(100,200,220,0.2))" }}
                 data-testid="footer-logo"

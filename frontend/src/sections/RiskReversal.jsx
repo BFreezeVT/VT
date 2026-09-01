@@ -1,6 +1,6 @@
 import { Heart, ShieldAlert } from "lucide-react";
 
-const STRESSED_IMG = "https://images.unsplash.com/photo-1758520144705-b39e11ff32e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxzdHJlc3NlZCUyMGJ1c2luZXNzJTIwcGVyc29uJTIwY29tcHV0ZXIlMjBwcm9ibGVtJTIwb2ZmaWNlfGVufDB8fHx8MTc3NjQ1MDkyMHww&ixlib=rb-4.1.0&q=85";
+const STRESSED_IMG = "https://images.unsplash.com/photo-1758520144705-b39e11ff32e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwyfHxzdHJlc3NlZCUyMGJ1c2luZXNzJTIwcGVyc29uJTIwY29tcHV0ZXIlMjBwcm9ibGVtJTIwb2ZmaWNlfGVufDB8fHx8MTc3NjQ1MDkyMHww&ixlib=rb-4.1.0&q=75&w=960";
 
 export default function RiskReversal() {
   return (
@@ -37,8 +37,9 @@ export default function RiskReversal() {
           <div className="animate-fade-in-up stagger-1">
             <div className="grid-border-card p-10 relative">
               <img
-                src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png"
+                src="/images/logo-circle.webp"
                 alt="Veracity Technologies"
+                loading="lazy"
                 className="w-14 h-14 object-contain absolute top-6 right-6 opacity-50 brightness-150 drop-shadow-[0_0_8px_rgba(0,119,179,0.3)]"
               />
               <div className="w-14 h-14 flex items-center justify-center bg-[#FF5722]/10 border border-[#FF5722]/30 mb-6">

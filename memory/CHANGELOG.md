@@ -1521,3 +1521,55 @@ UX fix, ROI calculator analytics
 - **Requires a Preview -> Production redeploy** to ship the sitemap fix, noscript link fix, OG/Twitter additions,
   and preload removal.
 
+
+### Session 57 (Aug 2026) - Sitewide image optimization, lazy loading, Service schema on city pages
+- User asked: "optimize all images for web, enable lazy loading, and compress static assets... add
+  LocalBusiness and Service schema markup to all service area pages."
+- **[FIXED] 18 externally-hosted images self-hosted as WebP** - site logo (used across 15 section
+  files as decorative watermarks + nav), 5 core-service hero images, 11 AI-page hero images, 9 blog
+  category images (some shared across templates), 1 homepage `OurApproach` client-success graphic
+  (was a 1.9MB PNG -> 140KB WebP). Combined ~8.9MB of original image weight -> ~849KB self-hosted
+  WebP (90.5% reduction). Saved to `frontend/public/images/`.
+- **[FIXED] `og-image.png` (781KB) recompressed and renamed to `og-image.jpg`** (91KB, same visual
+  content, JPEG quality 85) - updated all 6 source references (`index.html` + 5 page templates'
+  default-reset blocks).
+- **[FIXED] Unsplash `STRESSED_IMG`** (RiskReversal.jsx) given explicit `&w=960&q=75` URL params to
+  cut it from 598KB to 46KB via Unsplash's own on-the-fly CDN resizing (kept external, not
+  self-hosted, since Unsplash already serves a CDN-optimized crop).
+- **[FIXED] `loading="lazy"` added to 15 previously-missing `<img>` tags** (decorative logo
+  watermarks scattered across `AIService.jsx`, `BusinessReality.jsx`, `CaseStudy.jsx`,
+  `Compliance.jsx`, `CoreServices.jsx`, `FAQSection.jsx`, `Footer.jsx` (x2), `FreeAuditOffer.jsx`,
+  `Industries.jsx`, `IntroStats.jsx`, `LogoBranding.jsx` (x2), `OurApproach.jsx`, `RiskReversal.jsx`,
+  `WhySpecializedIT.jsx`, `CyberGame/index.jsx`). Correctly did NOT add lazy-loading to the two
+  always-above-the-fold nav-bar logos (`Navigation.jsx`, `ScorecardNav.jsx`).
+- **[FIXED] Static asset compression** - verified (not a code change) that production already
+  serves gzip-compressed JS/HTML via Cloudflare (`curl -I` confirmed `content-encoding: gzip`); CRA
+  production build already minifies JS/CSS. Noted the hashed JS bundle only gets `max-age=60`
+  cache-control, which could safely be far longer - flagged as a hosting/platform-config item
+  outside this repo's control.
+- **[FIXED] Added `Service` JSON-LD schema to all 45 city/service-area pages**
+  (`lib/cityStructuredData.js`) alongside the existing LocalBusiness, BreadcrumbList, and FAQPage -
+  4 schema blocks per city page now. New Service schema includes `name` ("Managed IT Services in
+  {City}, MN"), `provider` (references the site's `#organization` LocalBusiness via `@id`),
+  `areaServed` (city name + `GeoCoordinates`), and a 4-item `serviceType` array.
+- **[BUG FOUND AND FIXED mid-session, caught by testing_agent]**: initially swapping `heroImage`/
+  `categoryImage` values in `coreServicesData.js`/`aiPagesData.js`/`blogCategoryImages.js` to local
+  WebP paths broke `og:image`/`twitter:image` on ServicePage, AIPage, and BlogPost templates - those
+  meta tags directly reused the same constant, so they went from an absolute JPEG URL to a relative
+  WebP path (relative URLs don't resolve for social crawlers, and WebP isn't reliably rendered by
+  Facebook/LinkedIn/Twitter/Slack link previews). Fix: generated a companion `-og.jpg` absolute-URL
+  JPEG variant for every hero/category image (`frontend/public/images/*-og.jpg`, 19 files) and
+  updated the 3 affected page components to build an absolute `.jpg` URL for OG/Twitter meta tags
+  specifically, while the on-page `<img>` tags keep using the fast relative WebP for real visitors.
+  City pages and Industry pages were unaffected (they already used separate absolute JPEG URLs for
+  OG, untouched this session).
+- Ran two full clean sequential `yarn build` passes (one before discovering the OG bug via
+  testing_agent, one after the fix) - both exit 0, 221/221 routes, 221-URL sitemap.
+- Verified via `testing_agent` (iteration_54.json, first pass) - 100% pass on images/lazy-loading/
+  Service-schema, but flagged the OG image relative-path/WebP regression as a code-review note (not
+  a blocking bug in that report, since none of the requested test scenarios directly checked
+  non-homepage og:image absolute-URL correctness) - main agent proactively fixed it afterward and
+  confirmed via direct browser check (`page.get_attribute('meta[property="og:image"]', 'content')`
+  returned the correct absolute `.jpg` URL) rather than re-running a third full testing_agent pass.
+- **Requires a Preview -> Production redeploy** to ship all image/lazy-loading/schema fixes.
+

@@ -128,7 +128,7 @@ export default function FAQSection() {
       aria-label="Frequently asked questions about AI automation and managed intelligence"
       className="py-12 lg:py-18 bg-transparent relative overflow-hidden"
     >
-      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-16 top-1/2 -translate-y-1/2 w-[450px] h-[450px] object-contain opacity-[0.04] brightness-200 pointer-events-none" />
+      <img src="/images/logo-circle.webp" alt="" aria-hidden="true" loading="lazy" className="absolute -right-16 top-1/2 -translate-y-1/2 w-[450px] h-[450px] object-contain opacity-[0.04] brightness-200 pointer-events-none" />
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-10">
           

@@ -2,6 +2,11 @@
 
 See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full session history.
 
+## Structured data
+- ~~Add Service schema to all 45 service-area (city) pages~~ - DONE Session 57 (LocalBusiness +
+  Service + BreadcrumbList + FAQPage, 4 schemas per city page now).
+
+
 ## P0 - External / requires user action (not fixable from this codebase)
 - **Cloudflare: fix `http://veracitytechmn.com` 2-hop redirect chain.** Currently
   `301 http-non-www -> https-non-www` then `308 https-non-www -> https-www`. Needs a single
@@ -17,16 +22,21 @@ See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full s
   reported, no longer reproducing as of Aug 2026 retest) stays resolved.
 
 ## P1 - Core Web Vitals (Lighthouse-identified, Aug 2026 audit)
-- ~~Reduce main JS bundle size / route-level code-splitting~~ - DONE Session 56 (React.lazy +
-  Suspense, ~400KB -> ~296KB gzipped main bundle).
-- ~~Convert/compress the HeroSection background image~~ - DONE Session 56 (777KB JPEG -> 62KB
-  self-hosted WebP).
-- Re-run Lighthouse on production after redeploy to confirm the LCP/TBT improvement from the two
+- ~~Reduce main JS bundle size / route-level code-splitting~~ - DONE Session 56.
+- ~~Convert/compress the HeroSection background image~~ - DONE Session 56.
+- ~~Optimize all other sitewide images (logo, service/AI/blog-category hero images, client-success
+  graphic) + enable lazy loading~~ - DONE Session 57 (18 externally-hosted images self-hosted as
+  WebP, ~90% size reduction; loading="lazy" added to 15 previously-missing decorative images; nav
+  logos correctly kept eager).
+- Re-run Lighthouse on production after redeploy to confirm the LCP/TBT improvement from all the
   fixes above (baseline was Performance 39/100, LCP 13.9s, TBT 940ms).
 - Investigate `server-response-time` (TTFB ~815ms) - partially hosting/Cloudflare-layer, worth a
   look once the redirect-chain fix above is in place (fewer hops changes the TTFB baseline too).
-- Other page templates (Service/Industry/AI/City hero images) not yet audited for size/format -
-  only the homepage `HeroSection` image was in scope this round.
+- Static asset transport compression (gzip/brotli) confirmed already handled by Cloudflare in
+  production (verified via `curl -I` showing `content-encoding: gzip`) - no code-level action
+  needed. Noted: the hashed JS bundle filename (e.g. `main.<hash>.js`) is served with only
+  `max-age=60` cache-control - could be cached far longer (1 year) since the filename changes on
+  every content change; this is hosting/platform config, not in this repo's control.
 
 ## P2 - Blog content backlog (148 posts, spot-checked 10 in Aug 2026 audit)
 - **Content depth**: the 129 "extended" posts average ~300-350 words vs. 400-1300+ words on the

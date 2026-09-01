@@ -26,14 +26,17 @@ export default function ServicePage() {
       const canonical = document.querySelector('link[rel="canonical"]');
       const svcUrl = `https://www.veracitytechmn.com/services/${svc.slug}`;
       if (canonical) canonical.setAttribute("href", svcUrl);
+      // og:image/twitter:image need an absolute URL in a widely-supported format (JPEG),
+      // not the relative WebP used for the on-page <img> - social crawlers often can't render WebP.
+      const ogImageUrl = `https://www.veracitytechmn.com${svc.heroImage.replace(".webp", "-og.jpg")}`;
       const ogTags = [
         ['meta[property="og:url"]', "content", svcUrl],
-        ['meta[property="og:image"]', "content", svc.heroImage],
+        ['meta[property="og:image"]', "content", ogImageUrl],
         ['meta[property="og:image:alt"]', "content", svc.name],
         ['meta[property="og:title"]', "content", svc.metaTitle],
         ['meta[property="og:description"]', "content", svc.metaDescription],
         ['meta[name="twitter:url"]', "content", svcUrl],
-        ['meta[name="twitter:image"]', "content", svc.heroImage],
+        ['meta[name="twitter:image"]', "content", ogImageUrl],
         ['meta[name="twitter:image:alt"]', "content", svc.name],
         ['meta[name="twitter:title"]', "content", svc.metaTitle],
         ['meta[name="twitter:description"]', "content", svc.metaDescription],
@@ -49,12 +52,12 @@ export default function ServicePage() {
       if (canonical) canonical.setAttribute("href", "https://www.veracitytechmn.com/");
       const defaults = [
         ['meta[property="og:url"]', "content", "https://www.veracitytechmn.com/"],
-        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[property="og:image"]', "content", "https://www.veracitytechmn.com/og-image.jpg"],
         ['meta[property="og:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
         ['meta[property="og:title"]', "content", "Managed IT & Cybersecurity Built for AI + Automation | Veracity Technologies"],
         ['meta[property="og:description"]', "content", "Managed IT and cybersecurity for Minnesota businesses, delivered through AI, automation, and proactive intelligence. Free business technology assessment."],
         ['meta[name="twitter:url"]', "content", "https://www.veracitytechmn.com/"],
-        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.png"],
+        ['meta[name="twitter:image"]', "content", "https://www.veracitytechmn.com/og-image.jpg"],
         ['meta[name="twitter:image:alt"]', "content", "Veracity Technologies - AI Automation and Managed Intelligence"],
         ['meta[name="twitter:title"]', "content", "Managed IT & Cybersecurity, Evolved | Veracity Technologies"],
         ['meta[name="twitter:description"]', "content", "Managed IT and cybersecurity delivered through AI, automation, and proactive intelligence. Minnesota businesses trust Veracity."],

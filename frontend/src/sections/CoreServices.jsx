@@ -48,7 +48,7 @@ export default function CoreServices() {
       aria-label="Managed IT services, cybersecurity, disaster recovery, IT consulting, and compliance services in Minneapolis"
       className="py-14 lg:py-20 bg-[#e0ebf4] light-zone relative overflow-hidden"
     >
-      <img src="https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png" alt="" aria-hidden="true" className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] object-contain opacity-[0.05] brightness-50 pointer-events-none" />
+      <img src="/images/logo-circle.webp" alt="" aria-hidden="true" loading="lazy" className="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] object-contain opacity-[0.05] brightness-50 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative flex items-center justify-center mb-10">

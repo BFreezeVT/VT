@@ -1,4 +1,4 @@
-const LOGO_CIRCLE = "https://customer-assets.emergentagent.com/job_jobsite-it-secure/artifacts/yo1g9lv0_2.png";
+const LOGO_CIRCLE = "/images/logo-circle.webp";
 
 export function LogoDivider({ light = false }) {
   return (
@@ -8,6 +8,7 @@ export function LogoDivider({ light = false }) {
         src={LOGO_CIRCLE}
         alt=""
         aria-hidden="true"
+        loading="lazy"
         className={`w-10 h-10 mx-6 object-contain ${light ? "opacity-15 brightness-50" : "opacity-10 brightness-200"}`}
       />
       <div className="flex-1 h-px bg-white/8" />
@@ -22,6 +23,7 @@ export function LogoWatermark({ position = "center" }) {
       src={LOGO_CIRCLE}
       alt=""
       aria-hidden="true"
+      loading="lazy"
       className={`absolute ${posClass} opacity-[0.03] brightness-200 w-64 h-64 object-contain pointer-events-none`}
     />
   );
