@@ -38,10 +38,17 @@ See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full s
   `max-age=60` cache-control - could be cached far longer (1 year) since the filename changes on
   every content change; this is hosting/platform config, not in this repo's control.
 
-## P2 - Blog content backlog (148 posts, spot-checked 10 in Aug 2026 audit)
-- **Content depth**: the 129 "extended" posts average ~300-350 words vs. 400-1300+ words on the
-  19 original cornerstone posts. Consider a scalable remediation (e.g. batch-expand the highest
-  search-intent posts first) rather than editing all 129 individually.
+## P1 - Social share polish
+- Widen the remaining 3 category-only OG images (construction, financial-services, manufacturing)
+  from square 1024x1024 to 1200x630, matching the 16 already done in Session 58 - only needed if
+  category/blog-index pages ever emit their own og:image (currently blog posts use these images
+  too, already widened where shared).
+
+## P2 - Blog content backlog (148 posts total)
+- **Content depth**: 20 of 129 thin posts expanded to 900-1900 words in Session 58 (batch 1 -
+  most recently published). **109 thin posts remain** - continue in batches of ~20, same process
+  (gpt-5.4-mini via Emergent LLM key, `backend/scripts/expand_blog_batch1.py` pattern, verify via
+  diff only intended entries change, rebuild+prerender+testing_agent after each batch).
 - ~~7 slugs contain literal periods~~ - DONE Session 56 (renamed + legacy redirect map + static
   stubs, same pattern as the Session 49 city-URL-shortening project).
 

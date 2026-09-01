@@ -1573,3 +1573,34 @@ UX fix, ROI calculator analytics
   returned the correct absolute `.jpg` URL) rather than re-running a third full testing_agent pass.
 - **Requires a Preview -> Production redeploy** to ship all image/lazy-loading/schema fixes.
 
+
+### Session 58 (Aug 2026) - Landscape OG images + first blog content-expansion batch (LLM)
+- User asked to: (1) crop the 16 square (1024x1024) service/AI-page OG images to landscape 1200x630
+  for full-width LinkedIn/Facebook cards, and (2) expand the 129 "thin" blog posts to cornerstone
+  depth, starting with a batch of 20.
+- **[FIXED] 16 OG images widened to 1200x630** (`frontend/public/images/*-og.jpg`) via center-crop
+  to a 1.905:1 aspect ratio + LANCZOS resize from the original 1024x1024 sources, quality 82 JPEG
+  (~65-105KB each). The on-page `<img>` WebP files (square) were untouched - only the social-share
+  variant changed. Copied directly into `build/images/` (no full rebuild needed for this
+  asset-only swap).
+- **[FIXED/ADDED] LLM-expanded 20 of the 129 thin blog posts** to 900-1900 words (target was
+  900-1300, model ran a bit longer on several - within the spirit of "match cornerstone depth").
+  User chose: gpt-5.4-mini (most credit-efficient per their request) via the Emergent LLM key
+  (`emergentintegrations`, added `EMERGENT_LLM_KEY` to `backend/.env`), cornerstone-depth target,
+  a first batch of 20 (main agent picked the 20 most-recently-published thin posts as "highest
+  priority"), and refreshed excerpts (120-160 char target, actual range ended up 109-144 chars).
+  One-off scripts: `backend/scripts/expand_blog_batch1.py` (generates via LLM, strict JSON output:
+  content/excerpt/read_time) and `apply_blog_batch1.py` (surgically replaces only the 20 matching
+  entries in `backend/blog_data.py` by slug, verified via diff that the other 128 entries were
+  untouched). Content follows the exact existing markdown-like format (`## H2`, `- bullets`,
+  `**bold**`, closing `*italic CTA*`) parsed by `blogContentRenderer.jsx` - no frontend code changes
+  needed.
+- Ran one final clean sequential `yarn build` - exit 0, 221/221 routes, 221-URL sitemap.
+- Verified via `testing_agent` (iteration_55.json) - 100% pass. All 5 sampled expanded articles
+  render correctly (H1/H2s/lists/bold/closing italic CTA, no raw markdown leaking), all 16 OG
+  images confirmed 1200x630, untouched posts confirmed unchanged, no new regressions.
+- Noted for backlog: the 3 category-only OG images (construction/financial-services/manufacturing)
+  remain square 1024x1024 (were out of scope this round - only 5 service + 11 AI page images were
+  requested). 109 thin blog posts remain to be expanded in future batches.
+- **Requires a Preview -> Production redeploy** to ship the widened OG images and expanded posts.
+
