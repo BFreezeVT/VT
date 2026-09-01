@@ -1604,3 +1604,26 @@ UX fix, ROI calculator analytics
   requested). 109 thin blog posts remain to be expanded in future batches.
 - **Requires a Preview -> Production redeploy** to ship the widened OG images and expanded posts.
 
+
+### Session 59 (Aug 2026) - Code review of Sessions 55-58 changes
+- User asked for a code review of the recent SEO/performance/content changes. `code_review_agent`
+  found no critical/high/medium functional defects across lazy-loading, prerender/sitemap scripts,
+  legacy redirects, city Service JSON-LD, image self-hosting, and the scripted `blog_data.py` bulk
+  edit (138 entries confirmed intact, no dupes/loss).
+- **[FIXED] One genuine miss caught by the review**: `IntroStats.jsx`'s `HACKER_IMG` (Unsplash,
+  homepage "why specialized IT" section) had no size/quality URL params at all - 2.49MB per load.
+  Added `&q=75&w=960` (same pattern as the Session 57 `STRESSED_IMG` fix) - down to 64KB (97.4%
+  reduction). Confirmed the fix baked into the rebuilt/reprerendered `build/index.html`.
+- Reviewed and consciously left as-is (not bugs): `info@veracitytech.com` contact email in
+  `Footer.jsx`/`cityStructuredData.js` intentionally differs from the `veracitytechmn.com` domain -
+  per the original problem statement, `veracitytech.com` is the company's established real domain
+  and `veracitytechmn.com` is the A/B-test site, so keeping the original contact email is correct,
+  not a NAP mismatch bug. `WhySpecializedIT.jsx`'s Pexels images were already confirmed
+  appropriately sized in Session 57 (kept external deliberately, CDN already applies size params).
+- Ran one more clean sequential `yarn build` - exit 0, 221/221 routes, 221-URL sitemap. Homepage
+  visually confirmed via screenshot (no regression).
+- Not yet in backlog before this session, now noted: the 3 category-only OG images (construction/
+  financial-services/manufacturing) remain square 1024x1024 - unchanged from Session 58's note.
+- **Requires a Preview -> Production redeploy** to ship this fix along with all prior sessions'
+  unshipped work (Sessions 55-58 are all still Preview-only as of this session).
+

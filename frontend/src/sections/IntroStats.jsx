@@ -1,7 +1,7 @@
 import { Brain, ShieldAlert, DollarSign, AlertTriangle, ExternalLink, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-const HACKER_IMG = "https://images.unsplash.com/photo-1624969862644-791f3dc98927?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxob29kZWQlMjBoYWNrZXIlMjBsYXB0b3AlMjBkYXJrJTIwcm9vbSUyMHJlYWxpc3RpYyUyMHRocmVhdGVuaW5nJTIwY3liZXJjcmltZXxlbnwwfHx8fDE3ODA5Nzc0OTB8MA&ixlib=rb-4.1.0&q=85";
+const HACKER_IMG = "https://images.unsplash.com/photo-1624969862644-791f3dc98927?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwyfHxob29kZWQlMjBoYWNrZXIlMjBsYXB0b3AlMjBkYXJrJTIwcm9vbSUyMHJlYWxpc3RpYyUyMHRocmVhdGVuaW5nJTIwY3liZXJjcmltZXxlbnwwfHx8fDE3ODA5Nzc0OTB8MA&ixlib=rb-4.1.0&q=75&w=960";
 
 const stats = [
   {
