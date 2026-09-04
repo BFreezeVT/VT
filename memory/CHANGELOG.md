@@ -1627,3 +1627,45 @@ UX fix, ROI calculator analytics
 - **Requires a Preview -> Production redeploy** to ship this fix along with all prior sessions'
   unshipped work (Sessions 55-58 are all still Preview-only as of this session).
 
+
+### Session 60 (Aug 2026) - Security audit of Sessions 55-59 changes + fix
+- User asked for a security audit. `security_audit_agent` found one MEDIUM-severity issue
+  (SEC-001): `POST /api/reports/email` could be called directly, bypassing the site UI, to relay
+  an attacker-chosen PDF attachment + subject line from the company's trusted SMTP mailbox to
+  ANY arbitrary third-party email address. The only prior check was "does some lead with this
+  email exist in the last 3 hours" - trivially satisfiable by first calling `POST /api/leads`
+  with the victim's email.
+- **[FIXED]** `backend/server.py`: `AuditLead` gained `report_token` (`secrets.token_urlsafe(32)`,
+  fresh per lead) + `report_email_sent_at` (starts `None`). `create_lead`'s response now includes
+  `report_token`. `EmailReportRequest` gained required `lead_id` + `report_token` fields.
+  Replaced the old `_recipient_has_recent_lead(email)` check with
+  `_validate_and_consume_report_token(lead_id, report_token, recipient_email)`: exact
+  `hmac.compare_digest` token match against the stored lead, case-insensitive recipient-email
+  match to that lead's own stored email, 3-hour window preserved, and atomic single-use
+  consumption via `update_one` filtered on `report_email_sent_at: None` (race-safe - can't be
+  replayed).
+- Threaded the new `leadId`/`reportToken` through the frontend: `hooks/useLeadSubmit.js` now
+  captures them from the `POST /api/leads` response; `lib/emailReport.js` sends them as
+  `lead_id`/`report_token`; `sections/FreeAuditOffer.jsx`, `pages/BlogPost/ChecklistDownload.jsx`,
+  and `pages/CyberRiskScorecard/useScorecardFlow.js` (which makes its own direct `axios.post` to
+  `/api/leads`) all updated to pass them into `emailReport()`.
+- Rewrote `backend/tests/test_reports_email.py` to match the new contract (old payloads had no
+  `lead_id`/`report_token` so every test would now 422; also fixed a pre-existing env-loading bug
+  where `REACT_APP_BACKEND_URL` was only ever in `frontend/.env`, never `backend/.env`, causing
+  collection failure) - 13/13 passing, including token-binding, mismatched-recipient, replay,
+  4-hour-expiry, and independent-rate-limit-bucket cases.
+- Added missing `data-testid`s to `CyberRiskScorecard/ScorecardEmailReport.jsx` (had zero before):
+  `scorecard-email-report-toggle`, `-form`, `-input-firstname/lastname/email/company`, `-submit`,
+  `-success`.
+- Verified via `testing_agent`: iteration_56 (backend, 8/8 token-binding edge cases: missing
+  fields->422, wrong token->403, recipient mismatch->403, unknown lead->403, replay->403,
+  valid->200) + iteration_57 (frontend, 3/3 real "email me the report" UI flows - Assessment,
+  Blog checklist gate, Cyber Risk Scorecard - all reach their success state, no new console
+  errors). No regressions found in either run.
+- Testing agent flagged (pre-existing, out of scope, already tracked since iteration_49 in
+  ROADMAP.md): hard-navigating directly to `/resources/:slug` or `/cyber-risk-scorecard` can
+  reproduce the "Unexpected token <" SPA-hydration error, leaving `#root` empty. Not caused by
+  this session's changes - noted for a future dedicated fix.
+- **Requires a Preview -> Production redeploy** to ship this fix along with all prior sessions'
+  unshipped work.
+

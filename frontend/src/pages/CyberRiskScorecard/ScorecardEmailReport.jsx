@@ -9,7 +9,7 @@ export default function ScorecardEmailReport({ emailSent, emailError, submitEmai
   return (
     <div className="text-center mb-16">
       {!showEmailForm && !emailSent && (
-        <button onClick={() => setShowEmailForm(true)} className="text-[#0077B3] text-sm font-medium hover:text-white transition-colors flex items-center gap-2 mx-auto">
+        <button data-testid="scorecard-email-report-toggle" onClick={() => setShowEmailForm(true)} className="text-[#0077B3] text-sm font-medium hover:text-white transition-colors flex items-center gap-2 mx-auto">
           <Mail className="w-4 h-4" /> Email me my full report
         </button>
       )}
@@ -20,19 +20,19 @@ export default function ScorecardEmailReport({ emailSent, emailError, submitEmai
               We couldn’t send your report just now. Please try again, or call us at (952) 941-7333.
             </p>
           )}
-          <form onSubmit={submitEmail} className="grid grid-cols-2 gap-3">
-            <Input name="firstName" placeholder="First name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
-            <Input name="lastName" placeholder="Last name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
-            <Input name="email" type="email" placeholder="Email" required className="col-span-2 bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
-            <Input name="company" placeholder="Company" className="col-span-2 bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
-            <Button type="submit" className="col-span-2 bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-md font-semibold">
+          <form data-testid="scorecard-email-report-form" onSubmit={submitEmail} className="grid grid-cols-2 gap-3">
+            <Input name="firstName" placeholder="First name" required data-testid="scorecard-email-input-firstname" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+            <Input name="lastName" placeholder="Last name" required data-testid="scorecard-email-input-lastname" className="bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+            <Input name="email" type="email" placeholder="Email" required data-testid="scorecard-email-input-email" className="col-span-2 bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+            <Input name="company" placeholder="Company" data-testid="scorecard-email-input-company" className="col-span-2 bg-white/5 border-white/10 text-white placeholder:text-[#94a8be]/50 rounded-md" />
+            <Button type="submit" data-testid="scorecard-email-report-submit" className="col-span-2 bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-md font-semibold">
               <Send className="w-4 h-4 mr-2" /> Send My Report
             </Button>
           </form>
         </div>
       )}
       {emailSent && (
-        <div className="flex items-center justify-center gap-2 text-[#10b981] text-sm mt-4">
+        <div data-testid="scorecard-email-report-success" className="flex items-center justify-center gap-2 text-[#10b981] text-sm mt-4">
           <CheckCircle className="w-4 h-4" /> Report sent! Check your inbox.
         </div>
       )}

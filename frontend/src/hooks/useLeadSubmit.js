@@ -7,12 +7,16 @@ export function useLeadSubmit() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [leadId, setLeadId] = useState(null);
+  const [reportToken, setReportToken] = useState(null);
 
   const submitLead = async (data) => {
     setSubmitting(true);
     setError(false);
     try {
-      await axios.post(`${API}/leads`, data);
+      const res = await axios.post(`${API}/leads`, data);
+      setLeadId(res.data?.id || null);
+      setReportToken(res.data?.report_token || null);
       setSubmitted(true);
       // GA4 conversion event - only fires on a confirmed successful save
       if (window.gtag) {
@@ -31,6 +35,6 @@ export function useLeadSubmit() {
     }
   };
 
-  return { submitted, submitting, error, submitLead };
+  return { submitted, submitting, error, leadId, reportToken, submitLead };
 }
 

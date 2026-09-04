@@ -126,7 +126,7 @@ export function useScorecardFlow() {
     const company = fd.get("company") || "";
     setEmailError(false);
     try {
-      await axios.post(`${API}/leads`, {
+      const leadRes = await axios.post(`${API}/leads`, {
         company,
         name,
         email,
@@ -149,7 +149,15 @@ export function useScorecardFlow() {
         topRecs,
         roi: { teamSize: 20, weeklyHoursPerPerson: 8, hourlyRate, annualHoursReclaimed: roi.annualHoursReclaimed, monthlySavingsForecast: roi.monthlySavings },
       });
-      await emailReport({ recipientEmail: email, recipientName: name, companyName: company, reportTitle: "Cyber Risk & ROI Readiness Report", pdfBase64 });
+      await emailReport({
+        leadId: leadRes.data?.id,
+        reportToken: leadRes.data?.report_token,
+        recipientEmail: email,
+        recipientName: name,
+        companyName: company,
+        reportTitle: "Cyber Risk & ROI Readiness Report",
+        pdfBase64,
+      });
 
       setEmailSent(true);
       if (window.gtag) window.gtag("event", "scorecard_email", { event_category: "cyber_risk_scorecard" });

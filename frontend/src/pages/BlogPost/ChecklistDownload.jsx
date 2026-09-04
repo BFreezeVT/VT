@@ -9,7 +9,7 @@ import { generateChecklistPDF, getChecklistPDFBase64 } from "../../lib/generateC
 /** Gated "checklist" lead magnet embedded in a resource article. Collects a lead, then
  * unlocks an instant client-side PDF download + an optional "email me a copy" action. */
 export default function ChecklistDownload({ checklist, post }) {
-  const { submitLead, submitted, error: leadSubmitError } = useLeadSubmit();
+  const { submitLead, submitted, leadId, reportToken, error: leadSubmitError } = useLeadSubmit();
   const [stage, setStage] = useState("form"); // form, unlocked
   const [contactInfo, setContactInfo] = useState({ company: "", name: "", phone: "", email: "" });
   const [emailingReport, setEmailingReport] = useState(false);
@@ -56,6 +56,8 @@ export default function ChecklistDownload({ checklist, post }) {
     try {
       const pdfBase64 = getChecklistPDFBase64(buildPDFPayload());
       await emailReport({
+        leadId,
+        reportToken,
         recipientEmail: contactInfo.email,
         recipientName: contactInfo.name,
         companyName: contactInfo.company,

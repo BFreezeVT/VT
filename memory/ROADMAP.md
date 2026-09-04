@@ -2,6 +2,16 @@
 
 See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full session history.
 
+## Security
+- ~~SEC-001: POST /api/reports/email could relay an attacker-chosen PDF from the site's trusted
+  SMTP mailbox to ANY arbitrary email address~~ - FIXED Session 59. POST /api/leads now returns
+  a per-lead unguessable `report_token`; POST /api/reports/email requires `lead_id` +
+  `report_token` + `recipient_email`, validated via hmac.compare_digest + recipient-email match +
+  3h window + atomic single-use consumption. Verified: 8/8 backend edge-case tests (iteration_56)
+  + all 3 real UI "email me the report" flows (Assessment, Blog checklist, Cyber Risk Scorecard -
+  iteration_57), all passing. `backend/tests/test_reports_email.py` rewritten to match the new
+  contract (13/13 passing).
+
 ## Structured data
 - ~~Add Service schema to all 45 service-area (city) pages~~ - DONE Session 57 (LocalBusiness +
   Service + BreadcrumbList + FAQPage, 4 schemas per city page now).

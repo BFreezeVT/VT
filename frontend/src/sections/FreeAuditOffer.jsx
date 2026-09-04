@@ -160,7 +160,7 @@ function ScoreRing({ score, size = 120, label }) {
 }
 
 export default function FreeAuditOffer() {
-  const { submitted, submitting, error, submitLead } = useLeadSubmit();
+  const { submitted, submitting, error, leadId, reportToken, submitLead } = useLeadSubmit();
   const [stage, setStage] = useState("intro"); // intro, assess, contact, results
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -312,6 +312,8 @@ export default function FreeAuditOffer() {
     try {
       const pdfBase64 = getAssessmentPDFBase64(buildPDFPayload());
       await emailReport({
+        leadId,
+        reportToken,
         recipientEmail: contactInfo.email,
         recipientName: contactInfo.name,
         companyName: contactInfo.company,

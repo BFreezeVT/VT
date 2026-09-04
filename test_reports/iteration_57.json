@@ -1,0 +1,31 @@
+{
+  "summary": "Retest of 3 end-to-end 'email me the report' UI flows after per-lead report_token binding was added to POST /api/reports/email. All 3 flows PASSED with success data-testids appearing and no error data-testids. Backend was not re-tested (already verified in iteration_56 per request).",
+  "flows_tested": {
+    "flow1_business_tech_assessment": "PASS - answered all 6 categories, submitted contact form, clicked email-report-btn, data-testid='email-report-success' appeared, no email-report-error.",
+    "flow2_blog_checklist_gate": "PASS - /resources/cybersecurity-predictions-2027, filled lead form, clicked unlock -> unlocked state -> checklist-email-button, data-testid='checklist-email-success' appeared, no error.",
+    "flow3_cyber_risk_scorecard": "PASS - /cyber-risk-scorecard, industry pick + 12 quiz questions, scorecard-email-report-toggle -> filled form -> submit, data-testid='scorecard-email-report-success' appeared, no error."
+  },
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "observations": [
+    "Rate limits (LEAD_RATE_LIMIT_MAX=5/IP/hour on both 'leads' and 'reports_email', GLOBAL_LEAD_SUBMIT_LIMIT=200, GLOBAL_REPORT_EMAIL_LIMIT=50) can bite continuous testing on the same IP. During this run rate-limit and lead_submission_log collections had to be cleared once (delete_many) to unblock the 4th+ test submission. This is intentional production behaviour, not a bug, but worth flagging to future testing agents.",
+    "Hard-navigating (page.goto) to nested SPA routes like /resources/{slug} or /cyber-risk-scorecard occasionally reproduces the pre-existing 'Unexpected token <' pageerror from iteration_49 and leaves <div id=\"root\"></div> empty (React never hydrates). In-app SPA navigation via history.pushState + popstate works fine and was used to reach flows 2 & 3. The 'Unexpected token <' error is the known pre-existing issue - not re-reported here.",
+    "No NEW console/page errors introduced by the token-binding change were observed across the 3 flows."
+  ],
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Hard reload of /resources/:slug served by CF returns index.html but the SPA fails to mount (root stays empty and a pageerror 'Unexpected token <' is thrown). This is the same pre-existing issue tracked since iteration_49 and is orthogonal to the token-binding change - but it does mean deep-linked entrances to Flow 2 / Flow 3 pages are broken for real users hitting those URLs cold. Main agent may want to prioritize fixing this separately (likely lazy-chunk URL resolution or the 301 add-trailing-slash + service worker interaction)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "not retested (100% in iteration_56)", "frontend": "100% (3/3 flows)"},
+  "test_credentials": "none - lead capture uses fake test data",
+  "seed_data_creation": "Cleared rate_limit_global_log and lead_submission_log collections once mid-run to bypass 5/IP/hour rate limit accumulated from repeated test attempts.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Backend token-binding contract on POST /api/reports/email (requires lead_id + report_token + recipient_email, hmac.compare_digest, single-use, 3h TTL) is verified end-to-end from all 3 UI entry points. If you need to re-run these flows, clear MongoDB collections rate_limit_global_log and lead_submission_log first, and use SPA in-app navigation (history.pushState + popstate) rather than page.goto for the /resources/{slug} and /cyber-risk-scorecard pages - hard-loading those URLs reproduces the pre-existing 'Unexpected token <' issue and results in an empty root div."
+}

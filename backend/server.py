@@ -7,7 +7,6 @@ import os
 import hmac
 import html
 import logging
-import re
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -16,6 +15,7 @@ from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
 import base64
+import secrets
 from datetime import datetime, timezone, timedelta
 from email.mime.application import MIMEApplication
 from blog_data import BLOG_POSTS_EXTENDED
@@ -156,6 +156,11 @@ class AuditLead(BaseModel):
     contact_preference: Optional[str] = "call"
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     status: str = "new"
+    # Unguessable, single-use secret returned ONLY in the create_lead response - required by
+    # POST /api/reports/email so that endpoint can't be used to relay attacker-chosen content to
+    # an arbitrary third-party email just by knowing/guessing that email matches some recent lead.
+    report_token: str = Field(default_factory=lambda: secrets.token_urlsafe(32))
+    report_email_sent_at: Optional[str] = None
 
 class BlogPostOut(BaseModel):
     model_config = ConfigDict(extra="ignore")
@@ -170,6 +175,8 @@ class BlogPostOut(BaseModel):
 
 
 class EmailReportRequest(BaseModel):
+    lead_id: str
+    report_token: str
     recipient_email: EmailStr
     recipient_name: Optional[str] = None
     company_name: Optional[str] = None
@@ -186,18 +193,34 @@ REPORT_EMAIL_LEAD_WINDOW_SECONDS = 10800  # 3 hours - matches the real UI flow (
 # genuine prior lead capture, not enforcing a tight time boundary.
 
 
-async def _recipient_has_recent_lead(email: str) -> bool:
-    """Verifies recipient_email matches a lead genuinely captured via POST /api/leads within
-    the last REPORT_EMAIL_LEAD_WINDOW_SECONDS. Without this check, /api/reports/email could be
-    called directly (bypassing the site's UI entirely) to relay an attacker-chosen PDF from our
-    trusted mailbox to any arbitrary third-party recipient - this ties every report-email send to
-    a real, auditable lead record instead."""
+async def _validate_and_consume_report_token(lead_id: str, report_token: str, recipient_email: str) -> bool:
+    """Verifies report_token is the exact, unguessable secret returned to whoever created
+    lead_id, that lead's email matches recipient_email, the lead is within the send window,
+    and no report has already been emailed for this lead - then atomically marks it used.
+    (security fix, 2026-09-01) Replaces a looser "does ANY lead with this email exist recently"
+    lookup, which let anyone relay an attacker-chosen PDF/subject from our trusted mailbox to an
+    arbitrary third party just by creating a throwaway lead with the victim's email - binding to
+    a per-lead single-use secret means each abuse attempt is capped at one send and requires a
+    fresh lead (already rate-limited by check_lead_rate_limit)."""
     cutoff = (datetime.now(timezone.utc) - timedelta(seconds=REPORT_EMAIL_LEAD_WINDOW_SECONDS)).isoformat()
-    match = await db.leads.find_one({
-        "email": {"$regex": f"^{re.escape(email)}$", "$options": "i"},
-        "created_at": {"$gte": cutoff},
-    })
-    return match is not None
+    lead = await db.leads.find_one({"id": lead_id})
+    if not lead:
+        return False
+    if not hmac.compare_digest(str(lead.get("report_token", "")), report_token):
+        return False
+    if lead.get("report_email_sent_at"):
+        return False
+    if lead.get("created_at", "") < cutoff:
+        return False
+    if lead.get("email", "").strip().lower() != recipient_email.strip().lower():
+        return False
+    # Atomic claim: only succeeds if report_email_sent_at is still unset, preventing a
+    # double-send race if the same valid token is replayed concurrently.
+    result = await db.leads.update_one(
+        {"id": lead_id, "report_email_sent_at": None},
+        {"$set": {"report_email_sent_at": datetime.now(timezone.utc).isoformat()}},
+    )
+    return result.modified_count == 1
 
 
 # ─── Email notification ──────────────────────────────────────
@@ -390,7 +413,7 @@ async def email_report(payload: EmailReportRequest) -> dict:
     captured via POST /api/leads within REPORT_EMAIL_LEAD_WINDOW_SECONDS (see _recipient_has_recent_lead) - this
     endpoint sends outbound email through our SMTP relay, so it must not be usable as an open
     mail relay to arbitrary third-party recipients."""
-    if not await _recipient_has_recent_lead(payload.recipient_email):
+    if not await _validate_and_consume_report_token(payload.lead_id, payload.report_token, payload.recipient_email):
         raise HTTPException(
             status_code=403,
             detail="We couldn't verify this request. Please submit the form on our site to receive your report by email.",
@@ -422,7 +445,7 @@ async def create_lead(
     # Send email notification in the background so the API responds immediately
     background_tasks.add_task(send_lead_notification, lead)
 
-    return {"success": True, "id": lead.id, "message": "Your audit request has been received."}
+    return {"success": True, "id": lead.id, "report_token": lead.report_token, "message": "Your audit request has been received."}
 
 @api_router.get("/leads")
 async def get_leads(api_key: str = Depends(verify_admin_api_key)) -> List[dict]:
