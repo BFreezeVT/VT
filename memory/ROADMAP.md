@@ -62,6 +62,17 @@ See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full s
 - ~~7 slugs contain literal periods~~ - DONE Session 56 (renamed + legacy redirect map + static
   stubs, same pattern as the Session 49 city-URL-shortening project).
 
+## P2 - Code quality (style-only, no functional bugs, deferred by user decision Session 60)
+- Automated code-quality scan flagged: 34 useEffect/useCallback missing-dependency warnings, 12
+  high-complexity functions, 49 long functions (`BlogIndex()`, `BlogPost()`, `ChecklistDownload()`,
+  etc.), 44 inline object/array props causing extra re-renders, low backend type-hint coverage.
+  All "critical" items in the same report (hardcoded secret, 28x XSS via
+  `dangerouslySetInnerHTML`, undefined `pdf_bytes` variable, 16x `is`-vs-`==`) were verified
+  false positives against the actual code (JSON-LD script injection + DOMPurify-sanitized
+  content, PEP8-correct `is None`, guaranteed-defined var) - no action needed there.
+  User decided to skip the style-only refactor for now (real regression risk on a live site,
+  no functional bug behind any of it) - revisit only as a specific, scoped request if desired.
+
 ## Previously deferred (from earlier sessions, still open)
 - Service Page hero visuals variety / an industry comparison tool (mentioned in earlier sessions,
   no user follow-up yet).

@@ -409,10 +409,11 @@ def _send_smtp_message(smtp_host: str, smtp_port: int, smtp_user: str, smtp_pass
 async def email_report(payload: EmailReportRequest) -> dict:
     """Emails a client-generated PDF report (Assessment or Cyber Risk Scorecard results) as an
     attachment to the requester's own email. Rate-limited by IP + a site-wide cap (see
-    check_report_email_rate_limit), and requires recipient_email to match a lead genuinely
-    captured via POST /api/leads within REPORT_EMAIL_LEAD_WINDOW_SECONDS (see _recipient_has_recent_lead) - this
-    endpoint sends outbound email through our SMTP relay, so it must not be usable as an open
-    mail relay to arbitrary third-party recipients."""
+    check_report_email_rate_limit), and requires lead_id + report_token to match a genuine lead
+    from POST /api/leads within REPORT_EMAIL_LEAD_WINDOW_SECONDS, with recipient_email matching
+    that lead's own stored email (see _validate_and_consume_report_token) - this endpoint sends
+    outbound email through our SMTP relay, so it must not be usable as an open mail relay to
+    arbitrary third-party recipients."""
     if not await _validate_and_consume_report_token(payload.lead_id, payload.report_token, payload.recipient_email):
         raise HTTPException(
             status_code=403,

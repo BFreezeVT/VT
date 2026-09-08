@@ -1669,3 +1669,32 @@ UX fix, ROI calculator analytics
 - **Requires a Preview -> Production redeploy** to ship this fix along with all prior sessions'
   unshipped work.
 
+
+### Session 61 (Aug 2026) - Code quality report triage
+- User forwarded an automated code-quality report and asked to apply the fixes. Verified every
+  "critical" finding against the actual code before touching anything:
+  - "Hardcoded secret" in `test_reports_email.py:155` - a fake test-only placeholder string, not
+    a real credential. **Fixed anyway** (cheap, removes ambiguity): now generated dynamically via
+    `secrets.token_urlsafe(16)` per test run.
+  - 28x "XSS via `dangerouslySetInnerHTML`" - all either JSON-LD `<script>` structured-data
+    injection (`JSON.stringify()` on static business data, the standard React pattern for SEO
+    schema) or, in `blogContentRenderer.jsx`, content already run through `DOMPurify.sanitize()`
+    with a strict `["strong","em"]` allowlist. False positive, no user input reaches any of them.
+  - "Undefined variable `pdf_bytes`" at `server.py:348` - guaranteed assigned by the preceding
+    try/except (which always either succeeds or raises). False positive.
+  - 16x "improper `is` comparison" - every instance is `is None` (PEP8-mandated idiom) or
+    `is True` on a real Python bool. False positive; `==` would be a no-op or a PEP8 regression.
+  - Also fixed a real stale-docs issue found while reviewing: `server.py`'s `email_report`
+    docstring still referenced the old `_recipient_has_recent_lead` function name (removed in
+    Session 60's security fix, replaced by `_validate_and_consume_report_token`) - updated.
+  - Verified via `pytest tests/test_reports_email.py` - 13/13 still passing after the token
+    hygiene fix.
+- Remaining findings (34 hook-dependency warnings, 12 complex functions, 49 long functions, 44
+  inline-prop re-render cases, low type-hint coverage) are real style/maintainability notes but no
+  functional bugs. Presented the regression-risk tradeoff to the user (mass hook-dependency edits
+  in particular risk introducing infinite render loops in timers/carousels that don't exist
+  today) - **user decided to skip the style-only refactor for now**, logged as P2 backlog in
+  ROADMAP.md, revisit only as a specific scoped request if wanted later.
+- No code was shipped this session beyond the two small hygiene fixes above - no redeploy-blocking
+  changes.
+

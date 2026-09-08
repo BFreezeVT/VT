@@ -13,6 +13,7 @@ limiter (bypassable via a forged X-Forwarded-For) could not.
 """
 import base64
 import os
+import secrets
 import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -152,7 +153,7 @@ class TestEmailReportTokenBinding:
         not unbounded."""
         email = f"test_4h_old_lead_{int(time.time())}@example.com"
         backdated_time = (datetime.now(timezone.utc) - timedelta(hours=4)).isoformat()
-        token = "test-fixed-token-4h"
+        token = secrets.token_urlsafe(16)
         lead_id = f"test-4h-{int(time.time())}"
         _db.leads.insert_one({
             "id": lead_id, "company": "TEST_QA Co", "name": "QA Tester",
