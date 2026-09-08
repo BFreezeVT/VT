@@ -1698,3 +1698,15 @@ UX fix, ROI calculator analytics
 - No code was shipped this session beyond the two small hygiene fixes above - no redeploy-blocking
   changes.
 
+
+### Session 62 (Aug 2026) - Deployment readiness check
+- User requested a production redeploy. Ran `deployment_agent` first - **PASS, no blockers**:
+  env vars used correctly (no hardcoded secrets/URLs), CORS configured, clean build/compile,
+  supervisor config correct, MongoDB-only, no destructive TTL indexes.
+  One non-blocking note: `frontend/scripts/generate-sitemap.js` hardcodes
+  `https://www.veracitytechmn.com` for sitemap URLs - correct as long as the custom domain stays
+  mapped to production.
+- Agent cannot trigger the actual deploy - directed user to click "Deploy" in the Emergent UI to
+  ship all unshipped work (Sessions 56-61: security fix, SEO/sitemap/schema, performance/images,
+  blog batch 1, legacy redirects) to production.
+
