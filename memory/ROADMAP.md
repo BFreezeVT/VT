@@ -76,5 +76,21 @@ See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full s
 ## Previously deferred (from earlier sessions, still open)
 - Service Page hero visuals variety / an industry comparison tool (mentioned in earlier sessions,
   no user follow-up yet).
-- `EbookPopup`/other minor pre-existing "Unexpected token <" SPA-nav console error (seen across
-  iterations 49, 50, 52) - cosmetic/non-blocking, needs a dedicated investigation session.
+- ~~`EbookPopup`/other minor pre-existing "Unexpected token <" SPA-nav console error~~ - ROOT
+  CAUSED & FIXED Session 62 (see CHANGELOG - was never "cosmetic", it was a `prerender.js` race
+  condition causing Soft 404s in Google Search Console).
+
+## SEO indexing (new, Session 62)
+- **Domain age**: `veracitytechmn.com` registered 2026-07-15 (~2 months old, confirmed via RDAP)
+  vs. `veracitytech.com`'s 19-year history. New-domain trust ramp-up (3-6mo+) is the primary,
+  expected explanation for low current organic traffic - not a technical defect.
+- ~~Prerender race condition causing empty `<div id="root">` snapshots on a subset of routes
+  (Soft 404s in GSC)~~ - FIXED Session 62, see CHANGELOG.
+- **Follow-up needed once redeployed**: re-check GSC's "Duplicate, Google chose different
+  canonical than user" (38 pages) and "Soft 404" (3 pages) counts after Google re-crawls the
+  fixed build - expect both to drop significantly since near-identical raw HTML across pages
+  (the likely duplicate-canonical trigger) is now resolved. Also re-submit sitemap.xml in GSC to
+  prompt a faster re-crawl.
+- **User's own action item**: add a cross-link from `veracitytech.com` (19yr domain, real
+  traffic) to `veracitytechmn.com` with the UTM-tagged URL provided in-conversation, to start
+  driving some real visitors while organic ramps up. Outside this codebase (separate site).

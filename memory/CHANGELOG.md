@@ -1699,7 +1699,7 @@ UX fix, ROI calculator analytics
   changes.
 
 
-### Session 62 (Aug 2026) - Deployment readiness check
+### Session 62 (Aug 2026) - Deployment readiness check + traffic/SEO indexing root-cause fix
 - User requested a production redeploy. Ran `deployment_agent` first - **PASS, no blockers**:
   env vars used correctly (no hardcoded secrets/URLs), CORS configured, clean build/compile,
   supervisor config correct, MongoDB-only, no destructive TTL indexes.
@@ -1709,4 +1709,47 @@ UX fix, ROI calculator analytics
 - Agent cannot trigger the actual deploy - directed user to click "Deploy" in the Emergent UI to
   ship all unshipped work (Sessions 56-61: security fix, SEO/sitemap/schema, performance/images,
   blog batch 1, legacy redirects) to production.
+- User reported "0 unique visitors in 7 days" in analytics, then intermittent-seeming traffic.
+  Confirmed GA4 tag (`G-3B8WSZ3G58`) is correctly implemented and live (verified via Realtime
+  report + raw HTML inspection) - not a tracking bug. Investigated live production directly
+  (DNS, TLS cert, 10x rapid requests, deployment logs) - no uptime/crash issue found; user
+  clarified they were only inferring "down" from the analytics dip, never saw an actual outage.
+- Reframed to the real question: why isn't the SEO/AEO/GEO investment producing visibility.
+  Checked WHOIS/RDAP: `veracitytechmn.com` registered 2026-07-15 (~2 months old) vs.
+  `veracitytech.com`'s 19-year history - domain-age trust ramp-up is a major expected factor.
+  Compared live content between both domains directly (crawled `veracitytech.com`) - confirmed
+  the two sites are genuinely differentiated (old-school fear-based MSP copy vs. new AI-driven
+  positioning + unique interactive tools), so cross-domain duplicate-content risk is low.
+- User confirmed GSC already verified + sitemap submitted; shared the "Page indexing" reason
+  breakdown (201 not-indexed pages): Page with redirect (100, benign - old/legacy URLs),
+  Alternate page with proper canonical tag (49, healthy), **Duplicate - Google chose different
+  canonical (38)**, Discovered/Crawled - not indexed (10, expected for new domain), **Soft 404
+  (3)**, Blocked 403 (1).
+- **[ROOT CAUSE FOUND & FIXED] The Soft 404s (and likely a meaningful share of the 38 duplicate-
+  canonical pages) were caused by a real, previously-mischaracterized-as-"cosmetic" bug**: curl
+  against production confirmed several routes (`/service-areas`, `/resources/cybersecurity-
+  predictions-2027`, `/cyber-risk-scorecard`) were serving prerendered snapshots with a
+  completely EMPTY `<div id="root"></div>` - i.e., raw HTML crawlers/Google's first-pass fetch
+  see nothing. Traced to a race condition in `frontend/scripts/prerender.js`: React occasionally
+  hadn't finished mounting into `#root` by the time Puppeteer captured `page.content()`, even
+  after `waitUntil: networkidle0` + a fixed 400ms settle delay - and the script had no
+  verification step, so it silently wrote the empty shell as a "successful" prerender (this is
+  exactly the long-standing "Unexpected token <" issue tracked as cosmetic since iteration_49 -
+  it was never cosmetic, it was actively hurting indexing).
+- **Fix**: added a retry loop (up to 3 attempts, progressive settle delays 400/1200/2000ms) that
+  checks `document.getElementById('root').children.length > 0` via `page.evaluate()` before
+  accepting a render as successful; throws (landing in the real FAILED list) if still empty
+  after 3 attempts, instead of ever silently persisting an empty snapshot.
+- Verified via 3 separate full `yarn build` runs (2 before the final `page.evaluate()` hardening,
+  1 after) - all 221/221 routes prerendered successfully each time, `grep` sweep for empty-root
+  across the entire build output returned 0 every time, and the 3 previously-broken routes all
+  confirmed to contain real content. Independently re-verified via `testing_agent` (iteration_58)
+  - code review + full build re-run + artifact sweep, no issues found (one non-blocking
+  suggestion, the `page.evaluate()` hardening, applied immediately).
+- **Requires a Preview -> Production redeploy** to ship this fix (along with everything from
+  Sessions 55-61, still unshipped) - production is currently serving OLDER, occasionally-broken
+  prerendered snapshots from before this fix. After redeploying, recommended follow-up: resubmit
+  sitemap.xml in GSC to prompt a fresh crawl, then monitor the Soft 404 and duplicate-canonical
+  counts over the following weeks - expect both to drop now that every route reliably serves
+  real content on first fetch.
 

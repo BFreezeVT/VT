@@ -113,9 +113,25 @@ async function main() {
 
   for (const route of allRoutes) {
     try {
-      await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle0", timeout: 30000 });
-      await new Promise((r) => setTimeout(r, 400));
-      const html = await page.content();
+      // Race guard: under load, React occasionally hasn't finished mounting into #root by
+      // the time we capture page.content(), even after networkidle0 + a settle delay - this
+      // silently produces an empty shell that still counts as "success" (the root cause of
+      // long-standing intermittent soft-404s on a handful of routes). Retry with a longer
+      // settle time rather than ever saving that empty shell as a real prerendered snapshot.
+      let html;
+      let mounted = false;
+      let attempt = 0;
+      do {
+        await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle0", timeout: 30000 });
+        await new Promise((r) => setTimeout(r, 400 + attempt * 800));
+        mounted = await page.evaluate(() => document.getElementById("root")?.children.length > 0);
+        if (mounted) html = await page.content();
+        attempt++;
+      } while (!mounted && attempt < 3);
+
+      if (!mounted) {
+        throw new Error("React never mounted into #root after 3 attempts");
+      }
 
       if (route === "/") {
         fs.writeFileSync(path.join(BUILD_DIR, "index.html"), html);
