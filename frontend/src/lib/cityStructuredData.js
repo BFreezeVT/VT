@@ -6,7 +6,7 @@ export function buildCityStructuredData(city) {
     description: city.description,
     url: `https://www.veracitytechmn.com/service-areas/${city.slug}`,
     telephone: "+1-952-941-7333",
-    email: "info@veracitytech.com",
+    email: "info@veracitytechmn.com",
     // Real, single headquarters address - NOT a per-city location. The
     // company is not physically present in every city it serves.
     address: {

@@ -22,7 +22,7 @@ const faqCategories = [
       },
       {
         q: "Can you help us transition from our current provider?",
-        a: "Yes. We run structured transitions: discovery, network assessment, tool deployment, security hardening, ongoing support. Most are completed within 30 days with zero disruption to your operations.",
+        a: "Yes, we handle provider transitions regularly. We conduct a full environment discovery, document your current stack, and migrate services with minimal disruption. Most transitions complete within 30 days.",
       },
     ],
   },
@@ -60,23 +60,23 @@ const faqCategories = [
     items: [
       {
         q: "What is Shadow AI?",
-        a: "Employees using unauthorized AI tools without approval. 68% of employees do this. It creates data leakage, compliance violations, and IP exposure. We discover, assess, and govern it.",
+        a: "Shadow AI refers to unauthorized AI tools employees use without IT or security oversight \u2014 things like ChatGPT for sensitive documents, unapproved automation tools, or consumer AI apps connected to company data. It creates serious compliance and data leakage risk.",
       },
       {
         q: "Do you offer AI governance?",
-        a: "Yes. AI strategy, security frameworks, automated threat detection, Shadow AI monitoring, data loss prevention for LLMs, and AI readiness assessments. 90% of organizations are unprepared for AI-augmented threats.",
+        a: "Yes. We help organizations establish AI usage policies, deploy technical guardrails, audit existing tool usage, and build governed AI environments that let employees use AI productively without creating security or compliance exposure.",
       },
       {
         q: "What is an AI Business Intelligence Assessment?",
-        a: "It is a free assessment that scores your organization across six categories: automation maturity, AI readiness, operational risk, human risk, business continuity, and operational efficiency. You receive a Business Intelligence Score with identified gaps and actionable opportunities. Takes under 3 minutes.",
+        a: "It's a structured evaluation of your organization's AI readiness, current tool usage, governance gaps, and automation opportunities. The output is a prioritized roadmap showing where AI can reduce cost, improve efficiency, and reduce risk in your specific environment.",
       },
       {
         q: "How does AI reduce business risk?",
-        a: "AI reduces risk by automating threat detection 24/7 without human fatigue, identifying anomalies before they become incidents, governing data flows across platforms, and eliminating manual processes that introduce human error. Businesses using AI-driven systems detect and respond to issues in minutes, not days.",
+        a: "AI enables continuous monitoring at a scale humans can't match \u2014 detecting anomalies, flagging policy violations, and responding to threats in real time. It also reduces human error, enforces consistent processes, and provides audit trails that support compliance.",
       },
       {
         q: "What is a Human Risk Simulation?",
-        a: "A behavioral assessment that measures how your team responds to realistic AI-driven threat scenarios - vendor impersonation, payment redirects, credential harvesting, and executive urgency attacks. It produces a Human Risk Score (0-100) that reflects your organizational exposure to social engineering.",
+        a: "It's an interactive assessment that presents realistic AI-generated threat scenarios \u2014 phishing, social engineering, impersonation \u2014 and measures how your team responds. The result is a Human Risk Score identifying your organization's behavioral vulnerabilities.",
       },
     ],
   },
@@ -93,23 +93,23 @@ const faqCategories = [
       },
       {
         q: "What makes Veracity different?",
-        a: "Industry specialization, AI-first approach, and local presence. Every engagement is built on sector-specific knowledge of your regulations, workflows, and operational risks. Our systems use machine learning for real-time detection. Headquartered in Minnetonka, MN with on-site response across the Twin Cities.",
+        a: "We operate as a Managed Intelligence Provider, not a traditional MSP. We use AI and automation to proactively detect and resolve issues rather than reacting when things break. Clients get dedicated account managers, faster response times, and strategic technology guidance \u2014 not just a help desk.",
       },
       {
         q: "What areas do you serve?",
-        a: "45 cities across the Minneapolis-St. Paul metro and Central Minnesota, including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, Edina, Wayzata, Woodbury, Eagan, St. Cloud, and more. Headquarters: 5929 Baker Rd, Suite 420, Minnetonka, MN 55345.",
+        a: "We primarily serve the Twin Cities metro including Minneapolis, St. Paul, Minnetonka, Bloomington, Eden Prairie, Plymouth, and surrounding Minnesota communities. We also support remote and hybrid teams nationwide through our cloud-based delivery model.",
       },
       {
         q: "Do you support remote and hybrid teams?",
-        a: "Yes. Zero-trust access, conditional policies, device management, and cloud security for Microsoft 365, Google Workspace, and other platforms. Every connection verified and encrypted regardless of location.",
+        a: "Absolutely. Our service delivery is cloud-first and supports distributed workforces across any location. We manage endpoint security, identity, access controls, and collaboration tools for remote and hybrid environments.",
       },
       {
         q: "What is a Managed Intelligence Provider?",
-        a: "A Managed Intelligence Provider goes beyond traditional IT support. Instead of managing hardware and responding to tickets, Veracity deploys AI, automation, and intelligent systems to give businesses real-time visibility, reduce manual work, lower operational risk, and make faster decisions. We manage outcomes, not infrastructure.",
+        a: "A Managed Intelligence Provider (MIP) goes beyond traditional managed IT by integrating AI, automation, and proactive intelligence into every layer of your technology environment. Rather than reacting to problems, a MIP predicts, prevents, and resolves issues autonomously.",
       },
       {
         q: "How is Veracity different from a traditional provider?",
-        a: "Traditional providers manage tickets and react when things break. Veracity deploys AI, automation, and intelligent systems to prevent problems, reduce manual work, improve visibility, and drive measurable business outcomes. Minnetonka, Minnesota. Twin Cities metro.",
+        a: "Traditional providers react when things break. Veracity builds proactive, AI-enhanced environments that detect and resolve issues before they impact your business. We combine strategic vCIO guidance with full IT and security execution \u2014 at a fraction of the cost of in-house staff.",
       },
     ],
   },

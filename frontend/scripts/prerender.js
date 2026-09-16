@@ -100,6 +100,24 @@ async function main() {
   const allRoutes = [...staticRoutes, ...citySlugs, ...industrySlugs, ...serviceSlugs, ...aiSlugs, ...blogSlugs];
   console.log(`Prerendering ${allRoutes.length} routes...`);
 
+  // The bundle filenames are content-hashed and change on every build. public/index.html
+  // is BOTH the webpack build template (input) AND, for "/", the file we write the final
+  // prerendered snapshot back into (output) - see below. If we ever wrote the captured
+  // <script>/<link> tags back verbatim, the NEXT build's webpack run would inject a fresh
+  // tag into a template that already contains the previous run's tag (html-webpack-plugin
+  // appends rather than replaces), silently accumulating duplicate/stale bundle references
+  // across repeated builds. Read the current build's true asset paths from CRA's own
+  // manifest and always normalize to exactly one correct <script>/<link> pair.
+  const manifest = JSON.parse(fs.readFileSync(path.join(BUILD_DIR, "asset-manifest.json"), "utf8"));
+  const mainJs = manifest.files["main.js"];
+  const mainCss = manifest.files["main.css"];
+  const ASSET_TAG_RE = /<script[^>]*\ssrc="[^"]*\/main\.[a-f0-9]+\.js"[^>]*><\/script>|<link[^>]*\shref="[^"]*\/main\.[a-f0-9]+\.css"[^>]*>/g;
+  function normalizeAssetTags(html) {
+    const stripped = html.replace(ASSET_TAG_RE, "");
+    const canonicalTags = `<script defer="defer" src="${mainJs}"></script><link href="${mainCss}" rel="stylesheet">`;
+    return stripped.replace("</head>", `${canonicalTags}</head>`);
+  }
+
   const server = await startStaticServer();
   const browser = await puppeteer.launch({
     executablePath: chromePath,
@@ -132,6 +150,8 @@ async function main() {
       if (!mounted) {
         throw new Error("React never mounted into #root after 3 attempts");
       }
+
+      html = normalizeAssetTags(html);
 
       if (route === "/") {
         fs.writeFileSync(path.join(BUILD_DIR, "index.html"), html);

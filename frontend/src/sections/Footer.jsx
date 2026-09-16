@@ -118,11 +118,11 @@ export default function Footer() {
               </a>
               <a
                 data-testid="footer-email"
-                href="mailto:info@veracitytech.com"
+                href="mailto:info@veracitytechmn.com"
                 className="flex items-center gap-2 text-[#94a8be] hover:text-white text-sm transition-colors"
               >
                 <Mail className="w-4 h-4 text-[#0077B3]" />
-                info@veracitytech.com
+                info@veracitytechmn.com
               </a>
               <a
                 data-testid="footer-google-business"
