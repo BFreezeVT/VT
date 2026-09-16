@@ -135,6 +135,17 @@ async function main() {
 
       if (route === "/") {
         fs.writeFileSync(path.join(BUILD_DIR, "index.html"), html);
+
+        // Also write into public/index.html (source-controlled), matching every other
+        // route below - without this, the homepage's SPA shell (empty <div id="root">)
+        // is the only thing ever actually served for "/", meaning raw HTTP crawlers never
+        // see ANY body content (hero copy, FAQ answers, stats, etc.), regardless of any
+        // other fix to the React components themselves. This is the one file that also
+        // carries hand-maintained <head> JSON-LD/meta - safe to overwrite here because
+        // Puppeteer rendered against that exact same head as its starting template, so the
+        // captured snapshot is a strict superset (same head + now-real body) of the
+        // current file, not a regression.
+        fs.writeFileSync(path.join(PUBLIC_DIR, "index.html"), html);
       } else {
         const buildOutPath = path.join(BUILD_DIR, route, "index.html");
         fs.mkdirSync(path.dirname(buildOutPath), { recursive: true });
