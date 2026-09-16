@@ -1,0 +1,55 @@
+{
+  "summary": "Verified email domain fix, 23 FAQ answers in raw HTML, prerender script/link normalization on homepage, and live homepage rendering. Homepage index.html, Footer.jsx, cityStructuredData.js, and llms.txt are all clean. Discovered TWO stale prerendered resource pages that were NOT updated by the fix and still contain stale email + duplicate script tags + /pod-backups/ path. Also, the live preview URL is currently serving a stale deployment (main.b8f86be9.js + b93fb124.js) with 3 duplicate script tags and stale info@veracitytech.com email - dev server/preview is not reflecting the latest local public/index.html on disk (which has main.a0b0307f.js).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Static prerendered resource pages",
+        "issue": "Two blog/resource HTML files in frontend/public/resources/ still contain the STALE email 'info@veracitytech.com' (3 occurrences each in JSON-LD Organization/LocalBusiness/Article schemas) AND still contain the /pod-backups/veracity-ai-managed/build/static/js/main.48555098.js path AND still contain 3 duplicate <script src=main.*.js> tags + 2 duplicate <link href=main.*.css> tags. The prerender.js normalizeAssetTags fix did NOT regenerate these two files. Files: frontend/public/resources/managed-ai-vs-diy-ai-why-letting-employees-figure-it-out-is-costing-you-more-than-you-think/index.html and frontend/public/resources/what-a-real-it-compliance-audit-looks-like-and-how-minneapolis-businesses-can-prepare/index.html. Same two files exist in frontend/build/resources/ (also stale) - so the last build did NOT re-prerender these two blog posts. Likely these two resource slugs are missing from the prerender/sitemap routes list, or blog.js data source, so scripts/prerender.js never touched them and they retained old build output.",
+        "affected_selectors": []
+      },
+      {
+        "flow": "Live preview deployment",
+        "issue": "https://veracity-ai-managed.preview.emergentagent.com/ is currently serving a stale/older build: raw HTML contains 3 <script src='.../main.*.js'> tags (main.48555098.js, main.b8f86be9.js, main.b93fb124.js), 2 css tags (main.22f3a9fb.css, main.f9dc5818.css), 5 occurrences of stale 'info@veracitytech.com' (0 of 'info@veracitytechmn.com'), and Footer email link points to mailto:info@veracitytech.com. However, this differs from the LOCAL frontend/public/index.html on disk (which is CLEAN: main.a0b0307f.js + main.b5a1bbd1.css, correct email, 1 script/1 link). This suggests the preview URL is serving from a stale deployment/cache, not from the current /app/frontend build output. Playwright test on live URL confirmed React app itself still hydrates and renders 23 FAQ items and native <details> toggling works, but the raw crawler-visible HTML is stale.",
+        "affected_selectors": ["footer-email"]
+      }
+    ],
+    "design_issues": []
+  },
+  "verification_pass": {
+    "footer_source_email_correct": true,
+    "cityStructuredData_email_correct": true,
+    "llms_txt_email_correct": true,
+    "public_index_html_email_correct": true,
+    "public_index_html_script_link_count": "1 script + 1 link (canonical)",
+    "public_index_html_faq_items_count": 23,
+    "public_index_html_faq_content_nonempty": "all 23 have content >= 200 chars",
+    "public_index_html_required_11_faq_keywords_present": true,
+    "public_index_html_FAQPage_schema_keywords_present": true,
+    "services_managed_it_index_html_script_link_count": "1 script + 1 link",
+    "services_cybersecurity_index_html_script_link_count": "1 script + 1 link",
+    "services_disaster_recovery_index_html_script_link_count": "1 script + 1 link",
+    "public_pod_backups_occurrences": "2 (in 2 resource pages listed above)",
+    "browser_render_23_faq_items_visible": true,
+    "browser_faq_native_details_toggle_works": true,
+    "browser_footer_email_mailto_correct": true
+  },
+  "test_report_links": ["/tmp/faq_check.py"],
+  "action_items": [
+    "Re-run `yarn build && node scripts/prerender.js` after confirming that both resource slugs 'managed-ai-vs-diy-ai-why-letting-employees-figure-it-out-is-costing-you-more-than-you-think' and 'what-a-real-it-compliance-audit-looks-like-and-how-minneapolis-businesses-can-prepare' are in the prerender route list (probably via src/data/blog.js or similar). If they exist in public/ but not in the blog data source, either add them to the data source or delete the stale files.",
+    "Alternatively, extend scripts/prerender.js to ALSO walk existing frontend/public/**/index.html files and apply normalizeAssetTags to every one of them (post-processing safety net) so stale prerendered HTML from prior builds gets cleaned up even if the current run does not re-prerender that route.",
+    "After fix, verify: `grep -rl 'info@veracitytech.com' frontend/public/` returns empty and `grep -rl '/pod-backups/' frontend/public/` returns empty.",
+    "The live preview URL is serving stale HTML - this is a redeploy concern (main agent noted this is a separate user-triggered action). Once the two stale resource files are fixed AND redeploy happens, live preview should be re-verified."
+  ],
+  "critical_code_review_comments": [
+    "scripts/prerender.js normalizeAssetTags only runs on routes it actively prerenders; it does NOT retroactively clean pre-existing files in public/build. Add a final sweep that reads every existing public/**/index.html and runs normalizeAssetTags on it to prevent legacy stale files from persisting across builds (this is exactly the failure mode observed).",
+    "The 2 stale files reference /pod-backups/veracity-ai-managed/build/static/js/main.48555098.js which is clearly a leaked backup path - production should never emit this. Consider adding a build-time assertion that fails the build if any public/**/index.html contains '/pod-backups/'."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "n/a - not tested (out of scope)", "frontend": "static-content 90% (2 stale resource pages remain); live-preview 0% (serving stale build with all regressions still present)"},
+  "seed_data_creation": "none",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "The core homepage index.html and services/*/index.html are CLEAN and pass all criteria (1 script+1 css, correct email, 23 FAQ items with correct content, FAQPage schema in sync). The only remaining failures are: (1) 2 specific resource/blog pages in public/resources/ still stale (see action_items for slugs), (2) live preview URL serves stale deployment (redeploy-only issue). Re-run grep after main agent's fix: `grep -rlE 'info@veracitytech\\.com|/pod-backups/' /app/frontend/public/` must return empty."
+}

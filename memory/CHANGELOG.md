@@ -1811,3 +1811,41 @@ UX fix, ROI calculator analytics
 - **Requires a Preview -> Production redeploy** to ship this along with everything from Sessions
   55-63, all still unshipped as of this session.
 
+
+
+### Session 64 (Feb 2026) — Email domain fix + FAQ copy update + critical build-artifact regression fix
+- **Email domain consistency**: replaced stale `info@veracitytech.com` with
+  `info@veracitytechmn.com` in `Footer.jsx`, `lib/cityStructuredData.js` (LocalBusiness schema
+  for all 45 city pages), `public/llms.txt`, and the hand-maintained Organization/LocalBusiness
+  JSON-LD in `public/index.html` (propagates to all 221 prerendered pages via shared base
+  template). Verified zero stale-email occurrences across the entire `public/` tree post-build.
+- **FAQ answer copy**: updated exact wording for 11 of 23 homepage FAQ items (Shadow AI, AI
+  governance, AI Business Intelligence Assessment, How AI reduces risk, Human Risk Simulation,
+  Managed Intelligence Provider, What makes Veracity different, service areas, remote/hybrid
+  support, how Veracity differs from traditional providers, provider transition) in both
+  `FAQSection.jsx` and the parallel hand-maintained FAQPage JSON-LD block in `public/index.html`
+  (kept in sync to avoid schema/visible-content drift). All 23 `<details>/<summary>` items
+  confirmed present with non-empty answer text in raw static HTML.
+- **CRITICAL FIX — duplicate build asset tags**: discovered `public/index.html` (used as BOTH
+  the webpack build template input AND the output file `prerender.js` writes the homepage
+  snapshot back into) had accumulated 3 duplicate `<script>` + 3 duplicate `<link>` tags across
+  repeated builds — including a broken `/pod-backups/veracity-ai-managed/build/static/...` path
+  — because CRA's HtmlWebpackPlugin appends a fresh tag into the template on every build rather
+  than replacing pre-existing ones, so each rebuild compounded the corruption. Fixed by adding
+  `normalizeAssetTags()` to `scripts/prerender.js`: reads the canonical current `main.js`/
+  `main.css` paths from `build/asset-manifest.json` and strips+reinserts exactly one correct
+  pair on every captured route before writing to `build/` and `public/`. This makes the pipeline
+  self-healing on every future build regardless of prior corruption. Manually cleaned the
+  existing corrupted `public/index.html` and re-ran a full `yarn build && node
+  scripts/prerender.js && node scripts/generate-sitemap.js` (221/221 routes) to purge all
+  historical duplicate/stale tags site-wide.
+- Restarted frontend supervisor so the dev-server preview reflects the corrected static
+  template (webpack-dev-server caches the HTML template in memory until restart).
+- Tested via `testing_agent`: found 2 blog/resource pages missed by a transient/incomplete
+  prerender run + the not-yet-restarted stale preview — both re-verified clean after a second
+  full prerender pass and supervisor restart. Final sweep: 0 stale emails, 0 `/pod-backups/`
+  refs, exactly 1 script+1 link tag on every real page (the 52 files flagged by an automated
+  script-tag-count sweep were confirmed to be intentional `noindex` redirect stubs for renamed
+  slugs, not a regression).
+- **Still requires a Preview -> Production redeploy** to ship this along with everything from
+  Sessions 55-63, all still unshipped as of this session.
