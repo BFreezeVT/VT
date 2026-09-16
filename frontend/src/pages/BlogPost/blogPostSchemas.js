@@ -9,10 +9,9 @@ export function buildArticleSchema(post) {
     description: post.excerpt,
     image: getBlogCategoryImage(post.category),
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: "Veracity Technologies Team",
-      url: "https://www.veracitytechmn.com",
-      description: "Managed IT, Cybersecurity & AI Governance Specialists",
+      worksFor: { "@type": "Organization", name: "Veracity Technologies", url: "https://www.veracitytechmn.com" },
     },
     publisher: { "@type": "Organization", name: "Veracity Technologies", url: "https://www.veracitytechmn.com" },
     datePublished: post.published_date,

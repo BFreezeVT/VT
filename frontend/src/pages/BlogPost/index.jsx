@@ -140,21 +140,30 @@ export default function BlogPost() {
 
             <h1
               data-testid="blog-post-title"
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white mb-8"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white mb-5"
               style={{ fontFamily: "Outfit" }}
             >
               {post.title}
             </h1>
 
-            <p className="text-[#0077B3] text-lg leading-relaxed mb-6 border-l-2 border-[#0077B3] pl-5">
+            <div data-testid="blog-post-byline" className="flex items-center gap-3 mb-8 text-sm">
+              <img
+                src="/images/logo-circle.webp"
+                alt="Veracity Technologies Team"
+                className="w-8 h-8 rounded-full object-cover"
+                loading="lazy"
+              />
+              <div className="flex flex-col leading-tight">
+                <span className="text-white font-medium">By Veracity Technologies Team</span>
+                <span className="flex items-center gap-1.5 text-[#94a8be] text-xs">
+                  <CalendarDays className="w-3 h-3" /> {post.published_date}
+                </span>
+              </div>
+            </div>
+
+            <p className="text-[#0077B3] text-lg leading-relaxed mb-10 border-l-2 border-[#0077B3] pl-5">
               {post.excerpt}
             </p>
-
-            <div data-testid="blog-post-byline" className="flex items-center gap-2 mb-10 text-sm">
-              <span className="text-white font-medium">By Veracity Technologies Team</span>
-              <span className="text-[#94a8be]/40">&middot;</span>
-              <span className="text-[#94a8be]">Managed IT, Cybersecurity &amp; AI Governance Specialists</span>
-            </div>
 
             <ShareButtons post={post} />
 

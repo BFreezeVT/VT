@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 
 const faqCategories = [
   {
@@ -142,7 +137,7 @@ export default function FAQSection() {
           </h2>
         </div>
 
-        <Accordion type="multiple" defaultValue={["faq-0", "faq-1", "faq-2", "faq-3"]} className="space-y-10 animate-fade-in-up stagger-2">
+        <div className="space-y-10 animate-fade-in-up stagger-2">
           {faqCategories.map((group, groupIndex) => {
             const startIndex = faqCategories.slice(0, groupIndex).reduce((sum, g) => sum + g.items.length, 0);
             return (
@@ -157,32 +152,38 @@ export default function FAQSection() {
                   {group.items.map((faq, itemIndex) => {
                     const i = startIndex + itemIndex;
                     return (
-                      <AccordionItem
+                      // Native <details>/<summary> - the browser guarantees the answer text
+                      // is always present in the DOM (no JS/framework mount-state involved),
+                      // it just controls visibility via the `open` attribute + CSS. This is
+                      // deliberately not a JS-driven accordion library, to permanently remove
+                      // any risk of crawler-visible content depending on client-side state.
+                      <details
                         key={faq.q}
-                        value={`faq-${i}`}
                         data-testid={`faq-item-${i}`}
-                        className="border-b border-white/10 px-0"
+                        open={i < 4}
+                        className="group border-b border-white/10"
                       >
-                        <AccordionTrigger
+                        <summary
                           data-testid={`faq-trigger-${i}`}
-                          className="text-white hover:text-[#0077B3] hover:no-underline text-left py-5 text-base font-medium"
+                          className="flex items-center justify-between gap-4 cursor-pointer list-none text-white hover:text-[#0077B3] text-left py-5 text-base font-medium [&::-webkit-details-marker]:hidden marker:content-none"
                         >
-                          {faq.q}
-                        </AccordionTrigger>
-                        <AccordionContent
+                          <span>{faq.q}</span>
+                          <ChevronDown className="w-4 h-4 shrink-0 text-[#94a8be] transition-transform duration-200 group-open:rotate-180" />
+                        </summary>
+                        <div
                           data-testid={`faq-content-${i}`}
                           className="text-[#c0cfe0] text-sm leading-relaxed pb-5"
                         >
                           {faq.a}
-                        </AccordionContent>
-                      </AccordionItem>
+                        </div>
+                      </details>
                     );
                   })}
                 </div>
               </div>
             );
           })}
-        </Accordion>
+        </div>
       </div>
     </section>
   );

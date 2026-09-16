@@ -74,7 +74,7 @@ export default function HeroSection() {
             data-testid="hero-subhead"
             className="text-base md:text-lg text-white/85 leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-3"
           >
-            Helping organizations reduce risk, improve visibility, strengthen cybersecurity, leverage AI responsibly, modernize operations, and make smarter technology decisions.
+            Helping organizations reduce risk, strengthen cybersecurity, and leverage AI responsibly.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
