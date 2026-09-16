@@ -146,9 +146,15 @@ export default function BlogPost() {
               {post.title}
             </h1>
 
-            <p className="text-[#0077B3] text-lg leading-relaxed mb-10 border-l-2 border-[#0077B3] pl-5">
+            <p className="text-[#0077B3] text-lg leading-relaxed mb-6 border-l-2 border-[#0077B3] pl-5">
               {post.excerpt}
             </p>
+
+            <div data-testid="blog-post-byline" className="flex items-center gap-2 mb-10 text-sm">
+              <span className="text-white font-medium">By Veracity Technologies Team</span>
+              <span className="text-[#94a8be]/40">&middot;</span>
+              <span className="text-[#94a8be]">Managed IT, Cybersecurity &amp; AI Governance Specialists</span>
+            </div>
 
             <ShareButtons post={post} />
 

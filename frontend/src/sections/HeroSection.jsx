@@ -78,13 +78,14 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in-up stagger-4">
-            <button
+            <a
               data-testid="hero-cta-button"
-              onClick={() => scrollTo("audit")}
+              href="#audit"
+              onClick={(e) => { e.preventDefault(); scrollTo("audit"); }}
               className="bg-[#0077B3] text-white hover:bg-[#005f8f] rounded-sm font-bold text-base px-8 h-12 animate-pulse-glow inline-flex items-center justify-center"
             >
               Take the Business Technology Assessment
-            </button>
+            </a>
             <a
               data-testid="hero-secondary-cta"
               href="tel:9529417333"

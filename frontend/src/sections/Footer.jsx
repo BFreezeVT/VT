@@ -124,10 +124,16 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-[#0077B3]" />
                 info@veracitytech.com
               </a>
-              <div className="flex items-start gap-2 text-[#94a8be] text-sm">
+              <a
+                data-testid="footer-google-business"
+                href="https://www.google.com/maps/place/Veracity+Technologies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-[#94a8be] hover:text-white text-sm transition-colors"
+              >
                 <MapPin className="w-4 h-4 text-[#0077B3] mt-0.5 flex-shrink-0" />
                 <span>Minneapolis-St. Paul, MN</span>
-              </div>
+              </a>
             </div>
           </div>
 
