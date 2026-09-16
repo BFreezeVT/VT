@@ -1,0 +1,40 @@
+{
+  "summary": "Verified this session's SEO/AEO structural changes. All source-code edits are correct: hero CTA is <a href='#audit'> (data-testid='hero-cta-button'), footer Google Business Profile link is <a> to google.com/maps with data-testid='footer-google-business', blog byline JSX exists at line 153 of BlogPost/index.jsx, and frontend/public/index.html has all 10 JSON-LD blocks valid (FAQPage: 23 Q&A pairs, first Q='Will the assessment disrupt our operations?'; Organization logo=https://www.veracitytechmn.com/images/logo-circle.webp; all 3 telephone occurrences are '+19529417333'). Homepage renders correctly in the Preview browser (hero <a> clickable, scrolls to audit section; footer GBP <a> with correct href/target; LinkedIn unchanged; no console errors; layout unchanged). Service page (/services/managed-it-services) and blog post breadcrumbs both still render correctly. ONE observed issue: the blog byline is NOT visible in the Preview URL for /resources/schools-out-cybercriminals-are-in/ because that route is served by a stale upstream prerender cache (Last-Modified: Fri, 11 Sep 2026 - predates this session) that also references a nonexistent hashed asset (main.87e7ab8c.js -> 200 HTML SPA fallback), so React never hydrates on that route to inject the new byline. This is an INFRASTRUCTURE/preview-cache issue, not a code bug - source is correct and byline will render on real production build.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {"flow": "Blog post rendering on Preview URL", "issue": "Preview environment serves stale prerendered HTML for /resources/<slug>/ routes (Last-Modified 2026-09-11). The HTML references /static/js/main.87e7ab8c.js which does not exist (returns SPA-fallback HTML with 200), so React never hydrates and the new [data-testid='blog-post-byline'] JSX (correctly present in source) does not appear in the DOM. This is a preview-infra/cache issue, not a source-code defect - homepage (which uses dev-server bundle.js) hydrates correctly and shows the hero CTA <a> change.", "affected_selectors": ["[data-testid='blog-post-byline']"]}
+    ],
+    "design_issues": []
+  },
+  "verified_changes": {
+    "hero_cta_is_anchor_with_href_audit": true,
+    "hero_cta_scrolls_to_audit_on_click": true,
+    "footer_google_business_anchor_correct_href_target": true,
+    "footer_linkedin_unchanged": true,
+    "blog_byline_present_in_source": true,
+    "blog_byline_visible_on_preview_dom": false,
+    "faqpage_jsonld_23_pairs_first_q_matches": true,
+    "organization_logo_fixed_to_webp": true,
+    "all_telephone_e164_no_dashes": true,
+    "all_10_jsonld_blocks_parse_valid_json": true,
+    "service_page_service_schema_present": true,
+    "breadcrumbs_render_on_service_and_blog_pages": true
+  },
+  "test_report_links": [],
+  "action_items": [
+    "No source-code action needed - all this session's edits are correctly implemented.",
+    "For byline visibility verification, main agent should either (a) rely on source-code correctness + production build behavior, or (b) trigger a rebuild/re-prerender to refresh the stale preview cache for /resources/<slug>/ routes."
+  ],
+  "critical_code_review_comments": [
+    "prerender.js special-cases the '/' route to write only to build/index.html (never public/index.html), so the hand-edited FAQPage schema in public/index.html is the source of truth for '/' - correctly preserved this session.",
+    "Byline JSX (lines 153-157 of BlogPost/index.jsx) is clean and follows E-E-A-T best-practice."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (static file verification 100%)", "frontend": "6/7 tested items PASS in-DOM; 1 item (byline) is source-correct but not visible on preview due to stale prerender cache"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All this-session's changes verified in source code and (for static index.html changes) via file inspection. Only note: /resources/<slug>/ routes on the Preview URL are served by a stale upstream prerender that predates the byline change; source code is correct. Do not treat as a code bug."
+}
