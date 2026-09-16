@@ -94,3 +94,24 @@ See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full s
 - **User's own action item**: add a cross-link from `veracitytech.com` (19yr domain, real
   traffic) to `veracitytechmn.com` with the UTM-tagged URL provided in-conversation, to start
   driving some real visitors while organic ramps up. Outside this codebase (separate site).
+
+## SEO quick-wins batch (Session 63-64)
+- ~~FAQPage schema, Organization+LocalBusiness schema, Service schema (5 core pages), canonical
+  tags, robots.txt, breadcrumbs~~ - audited Session 63, already correctly implemented in prior
+  sessions, no changes needed.
+- ~~Hero CTA `<button>` -> `<a>`, footer Google Business Profile link, blog author byline,
+  broken `logo.png` reference, telephone format, stale FAQPage schema text drift~~ - FIXED
+  Session 63.
+- ~~FAQ answers 5-23 invisible in raw HTML (Radix Accordion unmounts closed panels from the DOM
+  by default) + a deeper root cause (prerender.js's root route "/" never wrote to the actually-
+  served `public/index.html`, only an ephemeral build folder - meant the ENTIRE homepage body,
+  not just FAQ, was empty for raw/first-pass crawlers)~~ - FIXED Session 63 (forceMount +
+  public/index.html write), then Session 64 fully replaced the Radix accordion with native
+  HTML `<details>/<summary>` per explicit user request for a JS-independent guarantee. Radix's
+  `accordion.jsx` UI wrapper deleted (Session 64) - no longer used anywhere in the app.
+- ~~Hero subhead trimmed from 6 to 3 benefits~~ - DONE Session 64.
+- ~~Blog byline moved beneath title with avatar + date; Article schema author changed
+  Organization -> Person + worksFor~~ - DONE Session 64.
+- Minor, not yet actioned: blog post publish date now appears twice (small meta chip above the
+  title, and again in the byline below the title) - functional, not a bug, flagged by
+  testing_agent as a possible future polish item if the user wants to de-duplicate it.

@@ -1753,3 +1753,61 @@ UX fix, ROI calculator analytics
   counts over the following weeks - expect both to drop now that every route reliably serves
   real content on first fetch.
 
+
+### Session 63 (Sept 2026) - 9 SEO/AEO/GEO quick wins + FAQ SSR root cause
+- User requested 9 specific structural SEO items. Audited each against the actual codebase
+  first: FAQPage schema (23 Q&A), Organization+LocalBusiness schema, Service schema (5 core
+  pages), canonical tags, robots.txt, and breadcrumbs (9 templates) were ALL already correctly
+  implemented in prior sessions - no changes needed there.
+- **Fixed the real gaps**: hero CTA `<button>` -> `<a href="#audit">` (crawlable); footer address
+  converted to a clickable Google Business Profile link; added a visible blog post byline
+  ("By Veracity Technologies Team · ..."); fixed a broken `logo.png` reference in the Organization
+  schema (pointed to non-existent file, now `/images/logo-circle.webp`); standardized telephone
+  to E.164 format (`+19529417333`) across all 3 schema blocks that had it.
+- **Found & fixed during the audit**: the homepage's hand-maintained FAQPage JSON-LD in
+  `frontend/public/index.html` had drifted out of sync with the actual visible FAQ text (similar
+  but not identical wording on ~10 items) - a real Google structured-data content-match
+  violation. Regenerated the entire block programmatically from `FAQSection.jsx`'s
+  `faqCategories` array so all 23 Q&A pairs match exactly, word for word.
+- Verified via `testing_agent` (iteration_59) + a full clean rebuild (221/221 routes) - all
+  passing, zero regressions.
+- **User reported the fix was still incomplete** ("FAQ answers 5-23 empty in raw HTML" and "hero
+  CTA still a button") - re-investigated and found: hero CTA fix was correct in source, user was
+  very likely checking undeployed production; but the FAQ report led to a real second bug: Radix
+  UI's `AccordionContent` unmounts closed panels from the DOM entirely by default (only 4 of 23
+  items open-by-default) - fixed with `forceMount` in `components/ui/accordion.jsx`, verified via
+  live browser DOM inspection that all 23 panels have real text regardless of open state.
+- **Found a deeper architectural gap while shipping that fix**: `prerender.js`'s root-route ("/")
+  special case only ever wrote its rendered snapshot to the ephemeral `build/index.html`, NEVER
+  to the actually-served `frontend/public/index.html` - meaning the ENTIRE homepage body (not
+  just FAQ - hero copy, stats, everything) had always been served as an empty shell to any raw
+  HTTP client (Googlebot's first pass, curl, etc.), regardless of any component-level fix. Fixed
+  by making the root case also write to `public/index.html`, matching the pattern already used
+  for all 220 other routes. Verified: file grew from ~53KB (empty shell) to ~268KB (full content),
+  0 empty roots, all 23 FAQ answers present, all 10 JSON-LD blocks still valid, canonical/title
+  unaffected. Independently re-verified via `testing_agent` (iteration_60), zero issues.
+
+
+### Session 64 (Sept 2026) - FAQ rebuilt as native HTML, hero trim, blog byline/Person schema
+- User reported the FAQ issue persisting yet again and explicitly requested a more robust,
+  JS-independent fix rather than continuing to patch the Radix accordion: replaced the entire
+  FAQ rendering mechanism with native HTML `<details>/<summary>` elements (browser-guaranteed to
+  always keep content in the DOM, visibility purely CSS/native-attribute driven, zero JS event
+  handlers needed for toggle). First 4 items open by default via the `open` attribute, matching
+  prior behavior. Custom chevron icon rotates via Tailwind's `group-open:` variant.
+  `components/ui/accordion.jsx` (the now-fully-unused Radix wrapper) deleted.
+- Trimmed the hero subheading from 6 benefits to 3: "Helping organizations reduce risk,
+  strengthen cybersecurity, and leverage AI responsibly."
+- Moved the blog post byline to directly beneath the title (was previously after the excerpt),
+  added a circular avatar image + the post's publish date with a calendar icon. Updated the
+  underlying Article JSON-LD schema's `author` field from `Organization` type to `Person` type
+  with a `worksFor` -> Organization reference, per explicit user spec.
+- Verified via a full clean rebuild (221/221 routes, 0 empty roots) + `testing_agent`
+  (iteration_61): all 23 FAQ items confirmed as real `<details>` elements with 50+ char answers
+  regardless of open state, native toggle click-tested on 3 different items, hero subhead text
+  confirmed in both live DOM and static file, byline placement/avatar/date/Person-schema all
+  confirmed in both live DOM and static file, zero regressions (FAQPage schema still 23
+  questions, all 10 JSON-LD blocks valid, other pages unaffected).
+- **Requires a Preview -> Production redeploy** to ship this along with everything from Sessions
+  55-63, all still unshipped as of this session.
+
