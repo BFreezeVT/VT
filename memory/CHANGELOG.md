@@ -1886,3 +1886,42 @@ UX fix, ROI calculator analytics
 - **Still requires a Preview -> Production redeploy** to ship this along with everything from
   Sessions 55-64, all still unshipped as of this session.
 
+
+### Session 66 (Feb 2026) — Diagnosed GTM "no debuggable tags" -> found production serving 2 conflicting JS bundles
+- User reported Google Tag Assistant's Preview/debug tool showing "There are currently no
+  debuggable Google tags at that address" against `https://www.veracitytechmn.com`.
+- Investigation: confirmed via direct curl that the GTM script IS present and correctly
+  positioned on production, no CSP/X-Frame-Options header blocking the debug handshake, and
+  the exact URL the user tested (`https://www.veracitytechmn.com`) requires no redirect hops
+  (ruling out the known Cloudflare 2-hop-redirect P0 item as the cause here).
+- **Found the real root cause**: production is currently serving TWO different hashed
+  `<script src="/static/js/main.*.js">` bundle tags simultaneously (plus a duplicated CSS
+  `<link>`), meaning the browser loads and tries to mount TWO separate React app instances into
+  the same `#root` - very likely the actual reason Tag Assistant's connection is unstable/fails
+  (JS race conditions/errors from a double-mount), independent of the GTM tag itself being
+  correctly configured.
+- Traced a stale `/pod-backups/veracity-ai-managed/build/...` path that had leaked into the
+  local `public/index.html` (confirmed via filesystem check that no such directory exists in
+  this preview pod - it's Emergent's internal deployment-build working directory, resolved by
+  `prerender.js`'s `path.join(__dirname, "..", "build")` when the script runs in that context
+  during an actual platform deploy; harmless in principle since the fix is path-relative, but
+  a STALE reference from a pre-fix era had been baked in and never cleaned).
+- Ran `deployment_agent` twice for a deeper platform-level investigation; both runs only
+  returned the standard static-blocker checklist (secrets/CORS/DB/supervisor config - all
+  PASS) without deep-diving the specific live-HTML duplicate-bundle question - not useful for
+  this specific diagnosis, so investigated directly via filesystem checks and a fresh clean
+  local rebuild instead.
+- **Fix applied**: deleted the local `build/` folder entirely and ran one completely clean
+  `yarn build` (chains `prerender.js` + `generate-sitemap.js` internally) from scratch. Verified
+  the webpack bundle hash is deterministic (`main.a0b0307f.js`/`main.b5a1bbd1.css`, unchanged
+  from earlier in this session with no source changes) and confirmed all 221 real pages now
+  have exactly 1 script tag, 1 CSS link, 1 GTM tag, 0 `/pod-backups/` references, 0 stale email
+  - a full regression-free rebuild.
+- **Conclusion for user**: production's duplicate-bundle bug is because it's running a stale
+  deploy snapshot from before this session's fixes (and possibly before the Session 64
+  `normalizeAssetTags` fix entirely) - a fresh Preview -> Production redeploy of the current,
+  now-fully-clean repo state is required to resolve both the duplicate-bundle issue and (very
+  likely as a result) the GTM Tag Assistant "no debuggable tags" error.
+- **Still requires a Preview -> Production redeploy** - now the single most important pending
+  action, unblocks the GTM debugging issue plus everything from Sessions 55-65.
+
