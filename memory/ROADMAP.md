@@ -115,3 +115,27 @@ See `/app/memory/PRD.md` for architecture, `/app/memory/CHANGELOG.md` for full s
 - Minor, not yet actioned: blog post publish date now appears twice (small meta chip above the
   title, and again in the byline below the title) - functional, not a bug, flagged by
   testing_agent as a possible future polish item if the user wants to de-duplicate it.
+
+
+## Code review findings (Session 65) — MEDIUM/LOW deferred, user approved HIGH only
+- ~~HIGH: GTM/gtag/PostHog analytics tags accumulating on every build across all 221 pages~~ -
+  FIXED Session 65, see CHANGELOG.
+- **MEDIUM (deferred)**: homepage's 23-question FAQPage JSON-LD schema leaks onto every
+  blog/city page via the shared base template, with no matching visible FAQ content there -
+  a schema/content mismatch that risks a Google structured-data manual action across ~220
+  pages. Needs the FAQPage schema to become homepage-only rather than inherited site-wide.
+- **MEDIUM (deferred)**: `/api/leads` and `/api/reports/email` rate limiting relies on a single
+  shared global counter (200 leads/hr, 50 report-emails/hr) that's exhaustible by an actor
+  spoofing `X-Forwarded-For` to rotate apparent IPs - would block real visitors from submitting
+  any lead form for up to an hour. Needs either a captcha/challenge before counting, or a
+  trusted-proxy-aware client identification strategy.
+- **LOW (deferred)**: Human Risk Simulation game's lead-capture copy ("Get your results and a
+  personalized action plan") never actually emails anything - unlike the Cyber Risk Scorecard's
+  equivalent flow which does. Either send an email or adjust the copy.
+- **LOW (deferred)**: FAQ answer text is hand-duplicated in two places (`FAQSection.jsx` and the
+  static FAQPage JSON-LD in `public/index.html`) with no shared source of truth - currently in
+  sync but will drift on the next content edit if only one is updated.
+- **LOW (deferred)**: `backend/server.py` CORS `allow_origins` defaults to `*`.
+- **LOW (deferred)**: no in-flight/duplicate-submission guard on any of the three lead-capture
+  code paths (`useLeadSubmit`, `useScorecardFlow`, `GameResults`) - rapid double-clicks create
+  duplicate leads and consume rate-limit budget.

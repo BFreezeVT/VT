@@ -1849,3 +1849,40 @@ UX fix, ROI calculator analytics
   slugs, not a regression).
 - **Still requires a Preview -> Production redeploy** to ship this along with everything from
   Sessions 55-63, all still unshipped as of this session.
+
+### Session 65 (Feb 2026) — GTM install (head script + body noscript) + code review + critical analytics-tag accumulation fix
+- Installed Google Tag Manager container `GTM-M5KJ387G`: inline bootstrap `<script>` as the
+  very first tag in `public/index.html`'s `<head>`, and the `<noscript><iframe>` fallback
+  immediately after the opening `<body>` tag, exactly as provided by the user. Propagated to
+  all 221 static pages via a full `yarn build` (which internally chains
+  `prerender.js && generate-sitemap.js`).
+- Ran a full functional code review (`code_review_agent`) on the deployed-bound app. Findings:
+  HIGH (confirmed independently) — GTM's own live container self-injects secondary tags at
+  runtime (`gtm.js`, a GTM-managed `gtag/js` pointer, PostHog's `array.js`/inline init snippet);
+  because `prerender.js` captures the fully-hydrated DOM and writes it back into
+  `public/index.html` (which is also the next build's webpack template), these runtime-injected
+  tags were accumulating every build across all 221 pages (7-13 duplicate copies observed) —
+  same root-cause class as the Session 64 webpack-bundle-tag bug, just for GTM's dynamic tags.
+  MEDIUM (not yet actioned per user, hold for later): homepage's 23-question FAQPage schema
+  leaks onto blog/city pages via the shared base template (no visible matching FAQ content
+  there); global lead-capture rate-limit bucket exhaustible via IP-header spoofing. LOW (not
+  yet actioned): Human Risk Simulation lead form promises an emailed "action plan" it never
+  sends; FAQ content hand-duplicated in two files with no shared source of truth; permissive
+  CORS default; no duplicate-submission guard on lead forms.
+- **Fixed the HIGH issue** (user-approved): extended `prerender.js`'s existing
+  `normalizeAssetTags()` with a `GTM_INJECTED_TAG_RE` that strips `gtm.js`, the GTM-managed
+  `gtag/js` variant (identified by `cx=`/`gtm=` query params, carefully NOT matching the
+  original pre-existing static GA4 `gtag/js?id=G-3B8WSZ3G58` tag which is intentionally
+  preserved as-is), any `*.posthog.com` external script src, and the inline PostHog SDK
+  bootstrap snippet (matched by its distinctive `t.__SV` fingerprint) — applied to every
+  captured route before writing to `build/`/`public/`, so none of these ever get baked into
+  the static template; real visitors still get them freshly and correctly from GTM's live
+  container on every real page load. Ran a full clean rebuild + reverified all 221 real pages
+  have exactly 1 GTM tag, 0 injected duplicates, 0 PostHog leftovers, 1 correct bundle tag pair,
+  and the original GA4 tag intact — plus a full regression sweep confirming no reintroduction
+  of the Session 64 stale-email/`/pod-backups/` issues.
+- MEDIUM/LOW code-review findings deferred at user's request ("yeah we need to fix the GTM...")
+  — not yet actioned, remain open backlog items (see ROADMAP.md).
+- **Still requires a Preview -> Production redeploy** to ship this along with everything from
+  Sessions 55-64, all still unshipped as of this session.
+
