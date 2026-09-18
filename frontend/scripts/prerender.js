@@ -113,19 +113,8 @@ async function main() {
   const mainCss = manifest.files["main.css"];
   const ASSET_TAG_RE = /<script[^>]*\ssrc="[^"]*\/main\.[a-f0-9]+\.js"[^>]*><\/script>|<link[^>]*\shref="[^"]*\/main\.[a-f0-9]+\.css"[^>]*>/g;
 
-  // The Google Tag Manager container (loaded via the inline bootstrap snippet in public/
-  // index.html's <head>) self-injects additional <script src> tags at runtime for whatever
-  // tags are configured inside the GTM container itself (a "Google tag"/gtag.js pointer, a
-  // PostHog "Custom HTML" tag, etc.) - none of these live in our source at all, so they must
-  // NEVER be captured into the static snapshot: real visitors get them freshly and correctly
-  // from GTM's own live container on every page load regardless. If left in, they hit the
-  // exact same accumulation bug as the webpack bundle tags above - each build's Puppeteer
-  // capture bakes in whatever GTM injected THIS run, on top of whatever a PRIOR run already
-  // baked in, snowballing duplicate analytics script tags on every one of the 221 pages.
-  const GTM_INJECTED_TAG_RE = /<script[^>]*\ssrc="https:\/\/www\.googletagmanager\.com\/gtm\.js[^"]*"[^>]*><\/script>|<script[^>]*\ssrc="https:\/\/www\.googletagmanager\.com\/gtag\/js\?[^"]*(?:cx=|gtm=)[^"]*"[^>]*><\/script>|<script[^>]*\ssrc="https:\/\/[^"]*\.posthog\.com\/[^"]*"[^>]*><\/script>|<script>!function\(e,t\)\{var r,s,o,i;t\.__SV[\s\S]*?<\/script>/g;
-
   function normalizeAssetTags(html) {
-    const stripped = html.replace(ASSET_TAG_RE, "").replace(GTM_INJECTED_TAG_RE, "");
+    const stripped = html.replace(ASSET_TAG_RE, "");
     const canonicalTags = `<script defer="defer" src="${mainJs}"></script><link href="${mainCss}" rel="stylesheet">`;
     return stripped.replace("</head>", `${canonicalTags}</head>`);
   }

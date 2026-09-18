@@ -1952,3 +1952,42 @@ UX fix, ROI calculator analytics
   concrete new lever pulled this session; recommend the user redeploy and then have production
   re-checked for a clean single bundle + working GTM Tag Assistant connection.
 
+
+### Session 68 (Feb 2026) — GTM removed; kept the pre-existing GA4 tag only
+- User re-tested Tag Assistant against production after the Session 67 `.gitignore` fix and
+  got the identical "no debuggable tags" error. Rechecked production directly: byte-identical
+  to the Session 67 check (same two conflicting bundle hashes, same `/pod-backups/...` stale
+  reference) - confirmed no new deploy had taken effect since.
+- User asked whether GTM was even necessary given GA4 (`G-3B8WSZ3G58`) was already installed
+  and already collecting data before this GTM effort started. Correct - GTM was purely an
+  additive tag-management layer, not required for the GA4 data collection that was already
+  working. Given the main agent cannot trigger the platform's own "Deploy" action (only the
+  user can), and production had stayed unchanged across 3 redeploy asks, the user chose (with
+  the main agent's judgment call, per "try step 2 but if can't verify then let's do 1") to
+  remove GTM entirely rather than keep chasing an unverifiable deploy-pipeline issue.
+- **Removed**: the GTM inline bootstrap `<script>` from `public/index.html`'s `<head>` and the
+  `<noscript><iframe>` fallback from `<body>`. The pre-existing static GA4 tag
+  (`<script src="gtag/js?id=G-3B8WSZ3G58">` + inline `gtag('config', ...)`) was left completely
+  untouched and continues to collect data as it always has.
+- **Cleaned up**: removed the now-unused `GTM_INJECTED_TAG_RE` stripping logic from
+  `scripts/prerender.js` (dead code now that there's no GTM container to self-inject secondary
+  tags) - kept the original `ASSET_TAG_RE` webpack-bundle-tag fix, which remains necessary
+  regardless of analytics configuration.
+- Ran a full clean rebuild (`rm -rf build && yarn build`, chains prerender+sitemap) and verified
+  all 221 real pages: 0 GTM references, exactly 1 GA4 tag, exactly 1 script+1 CSS tag each, 0
+  stale email/`/pod-backups/` artifacts. Restarted frontend and visually confirmed the live
+  preview renders correctly.
+- **Open/unresolved**: the underlying production deploy-pipeline mystery (why the exact same
+  stale `/pod-backups/veracity-ai-managed/build/static/js/main.34b96015.js` reference has
+  persisted unchanged across at least 3 separate user-reported redeploy attempts) was never
+  conclusively root-caused - `deployment_agent` could only perform static code-blocker scans,
+  not inspect actual deploy-time build execution. The Session 67 `.gitignore` fix (untracked
+  `.env` files) is a real, confirmed, and still-valid fix regardless, but did not visibly change
+  production's served HTML on the one recheck performed. If this resurfaces (e.g. duplicate
+  bundles reappearing after a future redeploy, or any other asset serving 2 different hashes),
+  escalate directly to Emergent platform support with this history rather than re-attempting
+  the same local-repo-side fixes, since the evidence points to something in the deploy
+  execution environment itself, outside this repo's control.
+- **Still requires a Preview -> Production redeploy** to ship the GTM removal (and everything
+  else outstanding from Sessions 55-67) - unchanged pending action for the user.
+
