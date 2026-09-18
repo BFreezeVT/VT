@@ -1925,3 +1925,30 @@ UX fix, ROI calculator analytics
 - **Still requires a Preview -> Production redeploy** - now the single most important pending
   action, unblocks the GTM debugging issue plus everything from Sessions 55-65.
 
+
+### Session 67 (Feb 2026) — Found a real deployment blocker: .env files were never committed to git
+- User reported the GTM "no debuggable tags" error persisting even after a redeploy. Re-checked
+  production directly: confirmed a NEW third bundle hash (`main.d2f3d2e7.js`) appeared (proof a
+  redeploy did occur), but the OLD stale `/pod-backups/veracity-ai-managed/build/static/js/
+  main.34b96015.js` tag was STILL present alongside it - still two conflicting bundles.
+- Ran `deployment_agent` twice more with increasingly specific asks (deploy-time build logs,
+  what "/pod-backups/" represents). Second-to-last run surfaced a genuine, previously-undetected
+  **blocker**: `/app/.gitignore` had a "Environment and credential files" block duplicated 5x
+  (with stray literal `-e ` lines - clear evidence of a past session repeatedly running a
+  broken `echo -e "...">>.gitignore` append), which ignored `.env`/`.env.*`/`*.env`. Confirmed
+  via `git ls-files` / `git status` that `backend/.env` and `frontend/.env` have been
+  **untracked in git this entire time** - never committed, ever - which conflicts with
+  Emergent's deploy-time env sync mechanism.
+- **Fixed**: rewrote `.gitignore` cleanly (dedup'd, removed all `.env`-ignoring lines, kept
+  `memory/test_credentials.md` ignored as required). `backend/.env`/`frontend/.env` now
+  correctly show as trackable. Re-ran `deployment_agent` - confirmed PASS, no blockers.
+- This is a plausible contributing factor to the ongoing deploy inconsistency (a missing/stale
+  `frontend/.env` in the actual deploy build environment could affect `REACT_APP_BACKEND_URL`
+  availability during `scripts/prerender.js`'s blog-slug fetch, or other build-time env-
+  dependent behavior) though not proven as the sole cause of the duplicate-bundle bug -
+  `prerender.js`'s `normalizeAssetTags` fix (Sessions 64-66) remains the primary code-level fix
+  for the duplicate-tag-accumulation pattern itself.
+- **User must redeploy again** now that this git blocker is resolved - this is the most
+  concrete new lever pulled this session; recommend the user redeploy and then have production
+  re-checked for a clean single bundle + working GTM Tag Assistant connection.
+
