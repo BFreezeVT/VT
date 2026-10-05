@@ -1991,3 +1991,35 @@ UX fix, ROI calculator analytics
 - **Still requires a Preview -> Production redeploy** to ship the GTM removal (and everything
   else outstanding from Sessions 55-67) - unchanged pending action for the user.
 
+## Session 68 (2026-06) - SSR/SSG crawlability verification + robots.txt sitemap placement
+- User asked to implement SSR/SSG so raw HTML body (not an empty `<div id="root">`) is served to
+  crawlers/AI agents, preserve `<head>` metadata/schema, keep client interactivity, and add the
+  Sitemap directive to robots.txt. **Investigation found all four requirements were already met**
+  by the existing static-snapshot prerenderer (`scripts/prerender.js` -> `postbuild`), so this
+  session was verification + one small robots.txt tidy, not new architecture.
+- **Implemented approach = Static Site Generation via static-snapshot prerenderer (SSG)**, not
+  SSR. `yarn build` -> `postbuild` runs `prerender.js` (Puppeteer renders all 221 routes and
+  writes full-body snapshots to both `build/**/index.html` and source-controlled
+  `public/**/index.html`) then `generate-sitemap.js`. Because the snapshots are committed into
+  `public/` and CRA copies `public/` verbatim into `build/`, full-body HTML is served even if the
+  deploy environment has no Chrome binary at build time.
+- **Clean full build verified end-to-end**: `Prerendered 221/221 routes successfully`,
+  `Sitemap generated with 221 URLs`. Raw HTTP GET (plain `python -m http.server`, zero JS
+  execution - exactly what Googlebot/GPTBot/ClaudeBot see) returned 26,622 body chars for `/`,
+  12,124 for `/service-areas/`, real marketing copy, HTTP 200 on lazy routes. Every sampled page
+  had `<h1>/<nav>/<footer>`, JSON-LD, canonical, og:title, robots meta, exactly 1 main.js + 1
+  main.css, and 0 `pod-backups` refs.
+- **Requirement #3 (hydration) decision**: kept `index.js` on `ReactDOM.createRoot().render()`
+  (prerendered HTML paints first, then React client-renders and takes over - interactivity works).
+  Deliberately did NOT switch to `hydrateRoot()`: non-homepage routes are `React.lazy` + `Suspense`,
+  so the client's first render is the empty `RouteFallback`, which cannot match the prerendered
+  full-page HTML -> `hydrateRoot` would throw guaranteed hydration mismatches on most routes and
+  discard the server HTML anyway. Client-takeover is the correct pattern for this CRA+snapshot
+  architecture. If true hydration is ever wanted, it requires per-route chunk preloading before
+  hydration (Next.js-style), which is out of scope for CRA.
+- **Changed**: `public/robots.txt` - moved the `Sitemap:` directive below the llms.txt comment
+  block so it is literally the last line (it was already present, just not at the very bottom).
+- **Unchanged pending**: production Preview->Prod redeploy is still user-owned (same as Sessions
+  55-67). SSG output is confirmed correct in the repo/build; serving it in production depends on
+  the deploy pipeline.
+
