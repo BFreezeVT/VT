@@ -2023,3 +2023,33 @@ UX fix, ROI calculator analytics
   55-67). SSG output is confirmed correct in the repo/build; serving it in production depends on
   the deploy pipeline.
 
+## Session 69 (2026-06) - ROOT-CAUSED the long-standing production duplicate/stale bundle bug
+- While verifying SSG against LIVE production (raw `curl -A Googlebot`), found production was
+  NOT serving an empty root - homepage returned 26,622 body chars, /service-areas 12,124, correct
+  canonicals. BUT the homepage served **TWO** `main.js` tags: `main.a0b0307f.js` (committed
+  template's hash) AND `main.d2f3d2e7.js` (webpack-injected at deploy) - **both HTTP 200**, so
+  the React app double-mounts. Sub-routes served `main.a0b0307f.js` verbatim (an OLD bundle that
+  only still 200s because old CDN assets linger).
+- **Root cause**: `public/index.html` is BOTH the committed homepage snapshot AND webpack's
+  html-webpack-plugin TEMPLATE. It carried a hardcoded hashed bundle tag; each deploy's own
+  `craco build` produces a FRESH hash and INJECTS it on top -> 2 tags. The deploy image has no
+  Chrome (empty `.emergent/system_deps.txt`), so postbuild `prerender.js` self-skips and never
+  re-normalizes. Separately, sub-route snapshots hardcode the dev-pod hash (`a0b0307f`), which
+  never equals the deploy's hash (`d2f3d2e7`) - confirming the deploy env produces a different
+  content hash than the dev pod, so committed hashes are ALWAYS stale at deploy.
+- **Fix (two parts, both validated locally incl. a hash-divergence simulation)**:
+  1. `scripts/prerender.js`: the homepage `public/index.html` write now uses `stripAssetTags()`
+     (ZERO bundle tags) instead of the full snapshot, so webpack injects exactly one correct tag
+     at deploy - no more double-inject. Added a `stripAssetTags()` helper; `normalizeAssetTags()`
+     reuses it. Sub-route public files keep their single normalized tag (served verbatim).
+  2. NEW `scripts/fix-asset-refs.js` (Chrome-free): walks every `build/**/index.html` and rewrites
+     all `main.*.js`/`main.*.css` refs to the CURRENT build's hash from `build/asset-manifest.json`.
+     Runs in `postbuild` AFTER prerender+sitemap, so even with no Chrome at deploy, every served
+     route (homepage + sub-routes) points at the deploy's actual bundle. Idempotent.
+  - `package.json` postbuild: `... && node scripts/fix-asset-refs.js`.
+- Verified: clean `yarn build` -> `Prerendered 221/221`, `Sitemap 221 URLs`; homepage build has
+  exactly 1 js + 1 css; committed `public/index.html` has 0 bundle tags; divergence test rewrote
+  3 faked-stale files back to the manifest hash.
+- **Next**: redeploy, then re-verify production homepage serves exactly ONE main.js and all
+  sub-routes reference the deploy's current hash (not a lingering old one).
+

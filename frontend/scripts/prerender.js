@@ -113,10 +113,13 @@ async function main() {
   const mainCss = manifest.files["main.css"];
   const ASSET_TAG_RE = /<script[^>]*\ssrc="[^"]*\/main\.[a-f0-9]+\.js"[^>]*><\/script>|<link[^>]*\shref="[^"]*\/main\.[a-f0-9]+\.css"[^>]*>/g;
 
+  function stripAssetTags(html) {
+    return html.replace(ASSET_TAG_RE, "");
+  }
+
   function normalizeAssetTags(html) {
-    const stripped = html.replace(ASSET_TAG_RE, "");
     const canonicalTags = `<script defer="defer" src="${mainJs}"></script><link href="${mainCss}" rel="stylesheet">`;
-    return stripped.replace("</head>", `${canonicalTags}</head>`);
+    return stripAssetTags(html).replace("</head>", `${canonicalTags}</head>`);
   }
 
   const server = await startStaticServer();
@@ -155,18 +158,20 @@ async function main() {
       html = normalizeAssetTags(html);
 
       if (route === "/") {
+        // build/index.html is the homepage actually served for THIS build -> keep exactly one
+        // current-hash bundle tag (the normalized html).
         fs.writeFileSync(path.join(BUILD_DIR, "index.html"), html);
 
-        // Also write into public/index.html (source-controlled), matching every other
-        // route below - without this, the homepage's SPA shell (empty <div id="root">)
-        // is the only thing ever actually served for "/", meaning raw HTTP crawlers never
-        // see ANY body content (hero copy, FAQ answers, stats, etc.), regardless of any
-        // other fix to the React components themselves. This is the one file that also
-        // carries hand-maintained <head> JSON-LD/meta - safe to overwrite here because
-        // Puppeteer rendered against that exact same head as its starting template, so the
-        // captured snapshot is a strict superset (same head + now-real body) of the
-        // current file, not a regression.
-        fs.writeFileSync(path.join(PUBLIC_DIR, "index.html"), html);
+        // public/index.html is ALSO html-webpack-plugin's TEMPLATE for the next build. If it
+        // carries ANY <script>/<link> bundle tag, the next `craco build` injects a second
+        // (current-hash) tag ON TOP of this (now stale-hash) one, so the deployed homepage ends
+        // up with TWO main.*.js tags - both resolving 200, double-mounting the React app
+        // (confirmed in production). The deploy image has no Chrome, so postbuild prerender does
+        // NOT run there to re-normalize. Fix at the source: strip ALL bundle tags from the
+        // committed template and let webpack inject exactly one correct tag at build time.
+        // (Sub-route files below are copied verbatim, never used as a template, so they keep
+        // their single normalized tag.)
+        fs.writeFileSync(path.join(PUBLIC_DIR, "index.html"), stripAssetTags(html));
       } else {
         const buildOutPath = path.join(BUILD_DIR, route, "index.html");
         fs.mkdirSync(path.dirname(buildOutPath), { recursive: true });
