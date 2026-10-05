@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, ArrowRight, ChevronLeft } from "lucide-react";
 import { useEffect } from "react";
@@ -65,7 +66,7 @@ export default function ServiceAreasIndex() {
 
       <main role="main">
         {/* Hero */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "IT Support Service Areas - Minneapolis-St. Paul Metro",
@@ -73,7 +74,7 @@ export default function ServiceAreasIndex() {
           url: "https://www.veracitytechmn.com/service-areas",
           publisher: { "@type": "Organization", name: "Veracity Technologies" },
         }) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [

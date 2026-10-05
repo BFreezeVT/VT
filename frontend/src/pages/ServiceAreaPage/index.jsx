@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Phone, ChevronLeft } from "lucide-react";
 import { Button } from "../../components/ui/button";
@@ -102,7 +103,7 @@ export default function ServiceAreaPage() {
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid={`city-page-${city.slug}`}>
       {structuredData.map((schema) => (
-        <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }} />
       ))}
 
       {/* Nav */}

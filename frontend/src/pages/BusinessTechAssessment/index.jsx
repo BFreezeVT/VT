@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useEffect } from "react";
 import FreeAuditOffer from "../../sections/FreeAuditOffer";
 import TechMaturityTable from "../../components/TechMaturityTable";
@@ -26,9 +27,9 @@ export default function BusinessTechAssessment() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="business-tech-assessment-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServiceSchema()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(answerBoxes)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(answerBoxes)) }} />
 
       <BTANav />
 

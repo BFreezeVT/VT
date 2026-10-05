@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useEffect } from "react";
 import { allTestimonials } from "../../data/industryTestimonials";
 import industryData from "../../data/industryData";
@@ -30,8 +31,8 @@ export default function ClientSuccess() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="client-success-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildWebPageSchema()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildWebPageSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema()) }} />
 
       <ClientSuccessNav />
 

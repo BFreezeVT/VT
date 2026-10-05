@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, Phone, Clock, ArrowRight, Search, X } from "lucide-react";
@@ -103,7 +104,7 @@ export default function BlogIndex() {
       </nav>
 
       <main role="main">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Resources & Insights - Cybersecurity Intelligence",
@@ -112,7 +113,7 @@ export default function BlogIndex() {
           publisher: { "@type": "Organization", name: "Veracity Technologies" },
           inLanguage: "en-US",
         }) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [

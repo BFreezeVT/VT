@@ -2053,3 +2053,28 @@ UX fix, ROI calculator analytics
 - **Next**: redeploy, then re-verify production homepage serves exactly ONE main.js and all
   sub-routes reference the deploy's current hash (not a lingering old one).
 
+## Session 70 (2026-06) - Code review triage + JSON-LD XSS hardening
+- Reviewed an automated code-quality report. Most findings were false positives; applied the one
+  genuine, safe security fix correctly.
+- **APPLIED - JSON-LD breakout hardening**: Added `src/lib/jsonLd.js` -> `stringifyJsonLd(obj)` =
+  `JSON.stringify(obj).replace(/</g, "\\u003c")`. Swapped all 26 `dangerouslySetInnerHTML={{__html:
+  JSON.stringify(...)}}` JSON-LD injections across 12 page files to use it. This closes the real
+  XSS vector (a `</script>` sequence in a backend-sourced field - e.g. a blog title - breaking out
+  of the `<script type=application/ld+json>` tag). Escaped `<`->`\u003c` keeps the JSON valid and
+  identically parsed. Verified: frontend compiles; /cyber-risk-scorecard renders; all 11 ld+json
+  scripts on that page parse as valid JSON.
+- **REJECTED (false positives / would cause regressions)**:
+  - "DOMPurify on the 28 dangerouslySetInnerHTML": 26 are JSON-LD (JSON in a non-rendered script
+    tag, NOT HTML) - running DOMPurify on them would corrupt the SEO schema. The 2 real HTML spots
+    (blog content in `BlogPost/blogContentRenderer.jsx`) ALREADY sanitize via
+    `formatInline()`->`DOMPurify.sanitize(html,{ALLOWED_TAGS:["strong","em"],ALLOWED_ATTR:["class"]})`.
+  - "34 missing hook deps": verified Navigation (`onScroll` is defined INSIDE the effect,
+    `setScrolled` is a stable setter) and HeroSection (`rotatingWords` is a module const; `interval`/
+    `i` are locals; `setFade` stable). Empty dep arrays are correct; adding the "missing" deps would
+    recreate the scroll listener / rotating-word interval and break them.
+  - "server.py:348 pdf_bytes may be undefined": in `_decode_and_validate_report_pdf`, the `except`
+    re-raises, so line 346/348 is only reachable when the assignment succeeded. Never undefined.
+  - "console statements / high-complexity functions": left as-is - `console.error` in catch blocks
+    is legitimate observability, and large-component refactors carry regression risk with zero
+    functional benefit (out of scope per no-gratuitous-refactor policy).
+

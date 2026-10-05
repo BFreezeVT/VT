@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import aiPagesData from "../../data/aiPagesData";
@@ -73,9 +74,9 @@ export default function AIPage() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid={`ai-page-${page.slug}`}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServiceSchema(page)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(page)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema(page)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema(page)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(page)) }} />
 
       <AIPageNav page={page} />
 

@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import coreServicesData from "../../data/coreServicesData";
@@ -75,9 +76,9 @@ export default function ServicePage() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid={`service-page-${svc.slug}`}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServiceSchema(svc)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(svc)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(svc)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema(svc)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema(svc)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(svc)) }} />
 
       <ServiceNav svc={svc} />
 

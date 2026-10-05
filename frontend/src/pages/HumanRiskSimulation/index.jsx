@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useEffect } from "react";
 import humanRiskSimulationData from "../../data/humanRiskSimulationData";
 import { buildServiceSchema, buildBreadcrumbSchema, buildFaqSchema } from "./humanRiskSimulationSchemas";
@@ -31,9 +32,9 @@ export default function HumanRiskSimulation() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="human-risk-simulation-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServiceSchema(data)) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema()) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(data)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema(data)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(data)) }} />
 
       <HRSNav data={data} />
 

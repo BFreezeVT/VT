@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Phone, ChevronLeft, ArrowRight, CheckCircle2, Calculator } from "lucide-react";
@@ -24,7 +25,7 @@ export default function AIROIPreview() {
 
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid="ai-roi-preview-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
         "@context": "https://schema.org",
         "@type": "WebApplication",
         name: "AI ROI Calculator",
@@ -34,7 +35,7 @@ export default function AIROIPreview() {
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         provider: { "@type": "Organization", name: "Veracity Technologies", telephone: "+1-952-941-7333" },
       }) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [

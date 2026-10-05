@@ -1,3 +1,4 @@
+import { stringifyJsonLd } from "@/lib/jsonLd";
 import { useParams, Link } from "react-router-dom";
 import { Phone, ChevronLeft, Shield, Landmark, HardHat, Factory, ShieldCheck } from "lucide-react";
 import { Button } from "../../components/ui/button";
@@ -99,7 +100,7 @@ export default function IndustryPage() {
   return (
     <div className="min-h-screen bg-[#0f1d32]" data-testid={`industry-page-${industry.slug}`}>
       {structuredData.map((schema) => (
-        <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }} />
       ))}
 
       {/* Nav */}
