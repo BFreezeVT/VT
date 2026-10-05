@@ -2090,3 +2090,26 @@ UX fix, ROI calculator analytics
   d2f3d2e7) and the tagless homepage template stopped the double-inject. The long-standing
   production duplicate/stale-bundle issue (open since Sessions 55-69) is RESOLVED.
 
+## Session 71 (2026-06) - Vercel multi-service deploy config
+- User wants to ALSO deploy on Vercel (multi-service, one project/domain). Added root `vercel.json`
+  with two services: `backend` (root `backend`, framework `fastapi`, entrypoint `server:app`) and
+  `frontend` (root `frontend`, framework `create-react-app`). Rewrites: `/api/(.*)` -> backend,
+  `/(.*)` -> frontend (most-specific first).
+- **No bindings added** (user confirmed): the frontend is a static CRA SPA, so its `/api` calls run
+  in the BROWSER, not a Vercel function. Vercel bindings resolve only inside functions, so they
+  don't apply; the browser reaches the backend via the public `/api` rewrite. No app code changes
+  for routing - on Vercel set frontend env `REACT_APP_BACKEND_URL=""` so `${...}/api` becomes a
+  same-origin `/api` call.
+- **Backend serverless fixes applied**:
+  - Removed `emergentintegrations==0.1.0` from `backend/requirements.txt` (not on PyPI -> would
+    break Vercel `pip install`; only used by the offline script scripts/expand_blog_batch1.py).
+  - Made lead-notification email SYNCHRONOUS: replaced FastAPI `BackgroundTasks.add_task(...)` in
+    `POST /api/leads` with `await run_in_threadpool(send_lead_notification, lead)` (BackgroundTasks
+    aren't guaranteed to run after response on serverless). Removed now-unused BackgroundTasks
+    import/param. Verified backend imports + /api/health OK.
+- **User still needs (on their side)**: a cloud MongoDB (Atlas) `MONGO_URL`, and Vercel env vars:
+  backend -> MONGO_URL, DB_NAME, ADMIN_API_KEY, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS,
+  NOTIFY_EMAIL; frontend -> REACT_APP_BACKEND_URL="". SSG still works on Vercel (prerender self-
+  skips without Chrome, but committed public/ snapshots + fix-asset-refs cover it).
+- Note: This is config only; actual Vercel deploy is triggered by the user from Vercel/GitHub.
+

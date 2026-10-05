@@ -1,7 +1,8 @@
-from fastapi import FastAPI, APIRouter, HTTPException, BackgroundTasks, Depends, status, Request
+from fastapi import FastAPI, APIRouter, HTTPException, Depends, status, Request
 from fastapi.security import APIKeyHeader
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
+from starlette.concurrency import run_in_threadpool
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import hmac
@@ -433,7 +434,6 @@ async def health_check() -> dict:
 @api_router.post("/leads")
 async def create_lead(
     input_data: AuditLeadCreate,
-    background_tasks: BackgroundTasks,
     _rate_limit: None = Depends(check_lead_rate_limit),
 ) -> dict:
     lead = AuditLead(**input_data.model_dump())
@@ -443,8 +443,11 @@ async def create_lead(
     doc.pop("_id", None)
     logger.info(f"New lead captured: {lead.company} ({lead.email}) from {lead.source_page}")
 
-    # Send email notification in the background so the API responds immediately
-    background_tasks.add_task(send_lead_notification, lead)
+    # Send the notification synchronously (serverless-safe): FastAPI BackgroundTasks are not
+    # guaranteed to run after the response returns on serverless platforms (e.g. Vercel), so the
+    # blocking SMTP send runs in a threadpool and is awaited before responding. send_lead_notification
+    # swallows its own exceptions, so a mail failure never fails the lead capture.
+    await run_in_threadpool(send_lead_notification, lead)
 
     return {"success": True, "id": lead.id, "report_token": lead.report_token, "message": "Your audit request has been received."}
 
