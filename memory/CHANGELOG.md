@@ -2078,3 +2078,15 @@ UX fix, ROI calculator analytics
     is legitimate observability, and large-component refactors carry regression risk with zero
     functional benefit (out of scope per no-gratuitous-refactor policy).
 
+## Session 70b (2026-06) - PRODUCTION VERIFIED: duplicate/stale bundle bug fixed
+- After redeploy, verified live https://www.veracitytechmn.com via raw `curl -A Googlebot`:
+  - Homepage: exactly 1 main.js + 1 main.css (main.d2f3d2e7.js), 26,622 body chars.
+  - Sub-routes (/service-areas, /cyber-risk-scorecard, /ai-roi-preview, /human-risk-simulation,
+    /industries/financial-it-support, /services): single js tag each, ALL now reference the SAME
+    current hash main.d2f3d2e7.js (previously served stale a0b0307f).
+  - No page references a0b0307f anymore. The old main.a0b0307f.js still 200s (uncleaned CDN
+    leftover) but is unreferenced -> harmless, will age out.
+- Confirms the deploy executed postbuild -> fix-asset-refs.js (sub-routes flipped a0b0307f ->
+  d2f3d2e7) and the tagless homepage template stopped the double-inject. The long-standing
+  production duplicate/stale-bundle issue (open since Sessions 55-69) is RESOLVED.
+
