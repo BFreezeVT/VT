@@ -12,9 +12,15 @@ const DOMAIN = "https://www.veracitytechmn.com";
 
 function readEnvVar(name) {
   const envPath = path.join(__dirname, "..", ".env");
-  const content = fs.readFileSync(envPath, "utf8");
-  const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
-  return match ? match.split("=").slice(1).join("=").trim() : null;
+  try {
+    const content = fs.readFileSync(envPath, "utf8");
+    const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
+    if (match) return match.split("=").slice(1).join("=").trim();
+  } catch (e) {
+    // No .env file on this build host (e.g. Vercel) - fall back to the
+    // actual process environment instead of crashing the build.
+  }
+  return process.env[name] || null;
 }
 
 function extractSlugs(fileName) {
