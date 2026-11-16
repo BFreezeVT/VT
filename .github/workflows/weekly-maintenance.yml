@@ -24,7 +24,7 @@ jobs:
           pip-audit -r backend/requirements.txt > backend-audit.txt 2>&1 || true
           echo "--- backend audit ---"
           cat backend-audit.txt
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "20"
           cache: "yarn"
