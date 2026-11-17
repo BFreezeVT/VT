@@ -196,6 +196,7 @@ https://www.veracitytechmn.com/client-success
 Testimonials organized by Financial Services, Manufacturing, Construction, and general MSP success stories.
 
 ## Blog / Resources
+- 178 Websites Served Malware to Their Own Visitors on Monday. Is Yours One of Them?: https://www.veracitytechmn.com/resources/optimizely-hack-178-websites-what-minnesota-businesses-should-check-now
 - How AI Is Changing the Cybersecurity Threat Landscape in 2025
 - SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide
 - Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week
@@ -206,7 +207,6 @@ Testimonials organized by Financial Services, Manufacturing, Construction, and g
 - MSP vs. Break-Fix IT Support: Which Is Right for Your Business?
 - Internal IT vs. Managed Service Provider: How to Decide
 - Co-Managed IT vs. Fully Managed IT: What's the Difference?
-- Microsoft Copilot vs. ChatGPT for Business: Which Should You Use?
 
 ## Business Technology Assessment (Central Authority Page)
 https://www.veracitytechmn.com/business-technology-assessment
