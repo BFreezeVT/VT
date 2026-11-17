@@ -5109,5 +5109,77 @@ Businesses that invest in identity security, employee awareness, infrastructure 
 
 The organizations that thrive in 2027 will not necessarily be the ones that spend the most on cybersecurity. They will be the ones that adapt the fastest.
 
-*Is your business prepared for the cybersecurity threats of 2027? Veracity Technologies helps organizations across Minnesota strengthen security, reduce risk, and stay ahead of emerging cyber threats with managed IT, cybersecurity, compliance, and AI-driven security solutions.*"""}
+*Is your business prepared for the cybersecurity threats of 2027? Veracity Technologies helps organizations across Minnesota strengthen security, reduce risk, and stay ahead of emerging cyber threats with managed IT, cybersecurity, compliance, and AI-driven security solutions.*"""},
+        {"slug": "cmmc-phase-2-suspended-what-minnesota-defense-contractors-still-owe", "title": "CMMC Phase 2 Is Suspended: Here's What Minnesota Defense Contractors Still Owe", "excerpt": "The Pentagon suspended CMMC Phase 2 on July 13, 2026. That is not a reprieve. Self-assessments, SPRS scores, and NIST 800-171 still gate your next defense award.", "category": "Compliance", "published_date": "2026-11-16", "read_time": "7 min read", "content": """On July 13, 2026, the Department of War suspended the move to Phase 2 of the Cybersecurity Maturity Model Certification program. If you are a Minnesota manufacturer, machine shop, or aerospace supplier in the defense supply chain, here is the short version: you do not need a third-party CMMC certification to win work right now. But you still need a current self-assessment, a current SPRS score, and the NIST SP 800-171 controls behind them, or your next award can still slip away.
+
+        That distinction is the whole story. The suspension paused the certification half of the program. It did not pause the security half, and it did not pause the contract language that already binds you.
+
+        ## What Actually Happened
+
+        The timeline matters, because most of the confusion comes from mixing up the program rule with the rollout schedule.
+
+        - **December 16, 2024:** The CMMC program rule (32 CFR Part 170) took effect, defining three levels. Level 1 covers Federal Contract Information with 15 basic safeguarding requirements. Level 2 covers Controlled Unclassified Information (CUI) with all 110 practices from NIST SP 800-171 Revision 2. Level 3 adds 24 more from NIST SP 800-172.
+        - **November 10, 2025:** The acquisition side started. DFARS clause 252.204-7021 began phasing CMMC requirements into new solicitations: Phase 1, where Level 1 and Level 2 self-assessments gate awards.
+        - **July 13, 2026:** The Department of War (the Department of Defense, as it is styled in current official documents) suspended the transition to Phase 2, the phase that would have started requiring a third-party (C3PAO) Level 2 certification in applicable solicitations from November 10, 2026, along with every pending and future milestone. A 60-day CMMC Reform Task Force was stood up to review the program.
+        - **July 16, 2026:** Class Deviation 2026-O0025 told contracting officers to remove or revise CMMC requirements in new and existing solicitations and contracts in line with the suspension.
+        - **September 3, 2026:** Revision 3 of the class deviation carried that direction forward. Contracting officers are to remove third-party (C3PAO) and Level 3 (DIBCAC) assessment requirements, while Level 1 and Level 2 self-assessments may still be required.
+        - **September 11, 2026:** The task force's 60-day review reached its deadline. As of November 2026, its report has not been published, and no new date for Phase 2 has been announced.
+
+        ## What Stopped, and What Did Not
+
+        **Stopped, for now:** Level 2 certification assessments by a C3PAO, Level 3 assessments by DIBCAC, and the November 10, 2026 start of Phase 2. If a solicitation you are reading still demands a C3PAO certification before award, that language is supposed to be revised. Check it, and raise it with the contracting officer or your prime.
+
+        **Still in force:** Everything that actually protects the data.
+
+        - **Phase 1 self-assessments.** If a solicitation sets a CMMC level, you need a current status in SPRS at that level or higher, plus a current annual affirmation, before award.
+        - **NIST SP 800-171 Revision 2.** All 110 practices at Level 2. These were binding through DFARS 252.204-7012 since 2017. CMMC did not invent them, it attached an assessment to them.
+        - **DFARS 252.204-7012.** Safeguarding, incident reporting to the DoD within 72 hours of discovery, and preserving images of affected systems for at least 90 days.
+        - **Your existing contract.** The clause in your contract binds you until it is actually modified. The class deviation directs amendments, but an unamended contract is still an unamended contract.
+        - **Prime flow-downs.** If you are a subcontractor, your prime's requirements do not disappear because the government's timeline moved. Many primes are holding their suppliers to the same standard regardless.
+
+        ## The Trap: Treating a Pause Like a Reprieve
+
+        The most expensive mistake a Minnesota defense supplier can make right now is also the most understandable one: hearing "suspended" and standing down.
+
+        Consider a machine shop in the Twin Cities with 40 employees that handles CUI drawings for a prime. In July it was six months into a readiness project: network segmentation, access controls, a system security plan, a Plan of Action and Milestones (POA&M) for the gaps. The suspension lands, the project stalls, and the POA&M items sit open. In January, a new solicitation arrives with a Level 2 self-assessment requirement. The shop's SPRS score is stale, the affirmation is out of date, and two of the open POA&M items are controls an assessor would flag. The bid is compliant on price and delivery, and ineligible on CMMC status.
+
+        That is not a hypothetical risk unique to one shop. It is the shape of the risk for every lower-tier supplier: the work that was hard in June is still the work that gates awards in November, and the contractors who kept going are the ones who will be ready when the task force's review lands, whenever that is, and whatever it concludes.
+
+        There is also a legal edge worth naming plainly. Inaccurate SPRS scores and system security plans have drawn Department of Justice attention under the Civil Cyber-Fraud Initiative and the False Claims Act. A self-assessment is a statement. It needs to be true, documented, and current, suspension or no suspension.
+
+        ## What to Do This Month
+
+        If you touch FCI or CUI, do these five things before the end of the year.
+
+        - **Check your SPRS score and affirmation.** Is the score current, does it match your actual implementation, and has a senior official affirmed it within the last year? If any answer is no, that is job one.
+        - **Re-read the solicitation in front of you.** Not the one from last year. The one you are bidding now. It controls. If it still contains a C3PAO requirement, ask for it to be revised under Class Deviation 2026-O0025 Revision 3.
+        - **Close the POA&M items that matter most.** You do not need to close all 110 practices this month. Close the ones tied to access control, incident response, and system security planning first: the controls that show up in every assessment and every incident.
+        - **Keep your evidence trail.** Training records with timestamps, access reviews, backup tests, incident response drills. Self-assessment without evidence is an opinion, and opinions do not survive an audit or a prime's supplier review.
+        - **Talk to your prime.** Ask what they are requiring from suppliers now, in writing. Their answer is your real deadline, whatever Washington's timeline says.
+
+        ## Frequently Asked Questions
+
+        **Does the suspension mean I can stop working toward CMMC?**
+
+        No. It means the third-party certification deadline moved. Self-assessments, SPRS scores, annual affirmations, and the underlying NIST 800-171 controls still apply, and they still gate awards under Phase 1.
+
+        **Do I still need a C3PAO assessment?**
+
+        Not under current direction. Contracting officers are removing C3PAO requirements from solicitations. But do not assume your prime has done the same, and do not discard the readiness work: if Phase 2 resumes, the assessment will be the same 110 practices.
+
+        **What if my contract still says C3PAO?**
+
+        Raise it. The class deviation directs contracting officers to amend solicitations as soon as practicable and existing contracts before the next option period or administrative modification. Until it is amended, the contract language stands.
+
+        **When will we know more?**
+
+        The task force's report was due to the DoD CIO around September 11, 2026. It has not been published as of November 2026, and no new Phase 2 date has been announced. The honest answer is that nobody outside the review knows the new timeline yet, which is exactly why the work that is still required should not wait for it.
+
+        ## The Bottom Line
+
+        The Pentagon paused the certification clock. It did not pause the requirement to protect CUI, to prove you are protecting it, or to keep your SPRS record accurate. For Minnesota defense suppliers, the next award will still go to the shop that can show its work (self-assessed, affirmed, and documented) while the shops that treated July 13 as a holiday find out their paperwork expired.
+
+        If you are not sure where your organization stands, that is a question worth answering before your next bid, not after it. Veracity Technologies works with Minnesota manufacturers, machine shops, and defense suppliers on CMMC readiness: self-assessments, SPRS scores, POA&M closure, and the controls behind them. Book a free Business Technology Assessment, or call (952) 941-7333, and we will tell you exactly where you stand.
+
+        Sources: Department of War press release and CIO memorandum, July 13, 2026; Class Deviation 2026-O0025, Revision 3, September 3, 2026; CMMC program rule, 32 CFR Part 170; DFARS 252.204-7012 and 252.204-7021; NIST SP 800-171 Revision 2. Status checked November 2026."""}
 ]
