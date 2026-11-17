@@ -1027,6 +1027,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    """Baseline security headers on every API response."""
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    return response
+
 @app.on_event("startup")
 async def create_indexes() -> None:
     # TTL indexes so rate-limit tracking entries auto-expire and never grow unbounded
