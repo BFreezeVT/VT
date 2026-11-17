@@ -5182,4 +5182,60 @@ The organizations that thrive in 2027 will not necessarily be the ones that spen
         If you are not sure where your organization stands, that is a question worth answering before your next bid, not after it. Veracity Technologies works with Minnesota manufacturers, machine shops, and defense suppliers on CMMC readiness: self-assessments, SPRS scores, POA&M closure, and the controls behind them. Book a free Business Technology Assessment, or call (952) 941-7333, and we will tell you exactly where you stand.
 
         Sources: Department of War press release and CIO memorandum, July 13, 2026; Class Deviation 2026-O0025, Revision 3, September 3, 2026; CMMC program rule, 32 CFR Part 170; DFARS 252.204-7012 and 252.204-7021; NIST SP 800-171 Revision 2. Status checked November 2026."""}
+,
+    {"slug": "optimizely-hack-178-websites-what-minnesota-businesses-should-check-now", "title": "178 Websites Served Malware to Their Own Visitors on Monday. Is Yours One of Them?", "excerpt": "On November 16, 2026, malicious JavaScript reached visitors of 178 organizations through Optimizely Web Experimentation. Here is what happened, why the usual defenses missed it, and the five checks a Minnesota business should run this week.", "category": "Cybersecurity", "published_date": "2026-11-17", "read_time": "6 min read", "content": """        On Monday, November 16, 2026, visitors to 178 organizations' websites were served malicious JavaScript, and none of those organizations had been breached themselves. The code came through Optimizely Web Experimentation, an A/B testing tool those sites trusted. It swapped cryptocurrency wallet addresses, skimmed payment card details, and stole cookies and screenshots. If your business website loads third-party scripts, and almost every business website does, this is the incident to learn from this week.
+
+        Here is the short version for a busy owner. Your website is not just your code. It is every script, widget, and tag your site loads from someone else's server. On Monday, one of those trusted suppliers was compromised, and big brands served malware to their own visitors for most of a working day.
+
+        ## What happened on November 16
+
+        Security researcher Scott Helme, of the web security firm Report URI, documented the incident. His team checked 1,611 Optimizely snippets and found malicious code in 188 of them, belonging to 178 organizations, including Zoom, the BBC, CNN, Salesforce, GitLab, IKEA, HSBC, Equifax, Air France-KLM, Ledger, and Peacock.
+
+        Optimizely confirmed the incident on its status page at 01:02 UTC on November 17: an unauthorized party exploited a vulnerability in the Experimentation account signup flow to add malicious JavaScript to some customer projects. Optimizely says it fixed the vulnerability, removed the code, and secured affected accounts.
+
+        The malicious code, which researchers have named OPTIMJACK, swapped cryptocurrency wallet addresses, skimmed card numbers, expiry dates, and CVV codes, stole cookies and screenshots, and loaded the Coruna and DarkSword iOS exploit kits on iPhones and iPads. By 19:25 UTC on November 16, the attacker's wallets had received about $7,040 in cryptocurrency, according to Report URI. By 21:52 UTC that evening, all but one infected snippet had been cleaned.
+
+        ## Why the usual defenses did not stop it
+
+        The code was not injected by hacking Zoom, the BBC, or Salesforce. It was written into the Project JavaScript field of Optimizely customer projects, then served from cdn.optimizely.com with a valid Optimizely certificate. Every affected site had already decided to trust that host, so browsers, allowlists, and most security tools treated the file as legitimate.
+
+        That is the supply chain problem in one sentence: you can secure your own servers and still serve malware to your customers, because your website runs code you did not write, from vendors you do not monitor. The same day brought a second reminder: Infoblox confirmed on November 16 that attackers accessed internal company information through a compromised SharePoint migration vendor. Infoblox says its products were not affected.
+
+        ## Why this matters to a Twin Cities SMB
+
+        No Minnesota firm has been named among the 178 organizations, and that is not the point. A Twin Cities contractor, manufacturer, or financial firm runs the same kind of website stack. A quote form, a client portal, or an online order form all load third-party code: analytics, chat widgets, A/B testing, marketing tags, and payment tools. Each one is a vendor that can change what runs on your site, often without telling you first.
+
+        If a visitor to your site had their card skimmed while browsing your pages, they would not blame your vendor. They would blame you. For a firm that wins work on reputation and referrals, that is the real cost of this incident. It is not the $7,040 the attackers collected on Monday. It is the client who never calls back.
+
+        ## What to check this week
+
+        Do these five things before Friday, and you will be ahead of most businesses your size.
+
+        1. Ask for a list of every third-party script your website loads, in writing if you have a web vendor. If you use a tag manager such as Google Tag Manager, ask who can publish changes to it, and when the last change was made. Most owners have never seen this list.
+
+        2. Check whether you use Optimizely Web Experimentation. If you do, confirm with Optimizely or your web vendor that your project was not affected, and that the injected code is gone. If you do not use Optimizely, do not stop there. The next incident will come through a different vendor, and the check is the same.
+
+        3. Tighten your Content Security Policy. It is a set of rules, sent with your website, that tells browsers which sources may run scripts and where data may go. A restrictive policy would not have stopped Optimizely from serving the code, because Optimizely was already allowed, but it can stop the stolen data from leaving, by blocking connections to unknown destinations. If your site has no Content Security Policy, or nobody can tell you what it says, that is a gap worth closing.
+
+        4. Review who can change code on your site. Ask your web vendor and your IT provider who holds admin access to your website, tag manager, and analytics accounts. Remove accounts for people who left, and turn on multi-factor authentication everywhere it is offered.
+
+        5. Watch your own site like a visitor would. Monitoring tools can flag unexpected changes to your scripts. If you take payments online, review recent transactions and any customer reports of odd behavior since Monday.
+
+        ## What to ask your IT provider
+
+        Ask your provider: how many third-party scripts does our website load, and who approves a new one? Do we have a Content Security Policy, and when was it last reviewed? Who has admin access to our tag manager and website, and is multi-factor authentication on for all of them? If a vendor we trust is breached, how would we find out? If your provider cannot answer these, you have found the real gap: the oversight around your website.
+
+        ## Frequently asked questions
+
+        **Was my business affected?** Only if your site loads an Optimizely Web Experimentation snippet from one of the 188 infected projects. Ask your web vendor to check.
+
+        **Is it over now?** The injected code is removed from nearly all affected snippets, and Optimizely says the flaw is fixed. The underlying risk is not gone. Websites will keep loading third-party code, so the fix is ongoing oversight, not a one-time cleanup.
+
+        ## The bottom line
+
+        On Monday, 178 organizations learned that their websites could turn against their own visitors without anyone inside those companies doing anything wrong. The lesson for a Minnesota business is simple: your website runs on trust, and trust needs checking. Find out what your site loads, who can change it, and what stops stolen data from leaving. Do that this week, while the incident is fresh and your vendors are paying attention.
+
+        If you are not sure where your organization stands, that is a question worth answering before your next client visits your site, not after it. Veracity Technologies works with Minnesota construction firms, manufacturers, and financial firms on website and third-party risk. Book a free Business Technology Assessment, or call (952) 941-7333, and we will tell you exactly what your site loads and what to do about it.
+
+        Sources: Report URI, November 16, 2026; Optimizely status page, November 17, 2026; Help Net Security and Security Affairs, November 17, 2026; Infoblox confirmation, November 16, 2026. Status checked November 17, 2026."""}
 ]
