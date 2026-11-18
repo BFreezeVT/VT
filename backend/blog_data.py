@@ -5182,4 +5182,66 @@ The organizations that thrive in 2027 will not necessarily be the ones that spen
         If you are not sure where your organization stands, that is a question worth answering before your next bid, not after it. Veracity Technologies works with Minnesota manufacturers, machine shops, and defense suppliers on CMMC readiness: self-assessments, SPRS scores, POA&M closure, and the controls behind them. Book a free Business Technology Assessment, or call (952) 941-7333, and we will tell you exactly where you stand.
 
         Sources: Department of War press release and CIO memorandum, July 13, 2026; Class Deviation 2026-O0025, Revision 3, September 3, 2026; CMMC program rule, 32 CFR Part 170; DFARS 252.204-7012 and 252.204-7021; NIST SP 800-171 Revision 2. Status checked November 2026."""}
+,
+    {"slug": "cyber-insurance-renewal-2027-what-underwriters-require-minnesota", "title": "One Checkbox Voided a $1 Million Cyber Policy. Your 2027 Renewal Asks the Same Question.", "excerpt": "Cyber insurers stopped taking your word for it in 2026. For a 2027 renewal, underwriters want dated proof of seven controls, and a wrong answer can void the policy entirely. Here is the checklist, the case that proves the stakes, and a 90-day plan for a Minnesota business.", "category": "Cybersecurity", "published_date": "2026-11-18", "read_time": "6 min read", "content": """        If your cyber insurance renews in early 2027, here is the short version: your insurer will no longer take your word on multi-factor authentication, endpoint protection, and tested backups. Underwriters now want dated proof of each control, and a wrong answer on the application can void the whole policy, not just deny one claim. For a CFO or controller, that turns the renewal from paperwork into a budget question: the cost of waiting is a higher premium, a denied application, or no coverage when you need it.
+
+        ## What changed in 2026: from checkboxes to proof
+
+        We covered the basics in May 2025, when getting covered meant answering a questionnaire and promising the controls were in place. In 2026, underwriting moved from attestation to evidence. The underwriter wants documentation: screenshots, admin console exports, signed policies, and dated test logs that prove a control is in place and working. Losses explain the shift. The FBI's Internet Crime Complaint Center reported $20.9 billion in internet crime losses in its 2025 Internet Crime Report. Verizon's 2025 Data Breach Investigations Report found ransomware in 44 percent of breaches studied. Last year, you told the insurer what you had. This year, the insurer checks before quoting, and checks again after a claim.
+
+        ## The case that proves the stakes
+
+        In 2022, International Control Services, a small business, signed an application for a $1 million Travelers CyberRisk policy. The application said the company required multi-factor authentication for administrative or privileged access. After a ransomware attack in May 2022, Travelers investigated and found MFA in exactly one place: the company firewall. It was not on email, remote access, servers, or any administrative account. Travelers sued to rescind the policy on July 6, 2022, and within weeks ICS agreed. The policy was declared void from its inception, and the $1 million claim went unpaid.
+
+        Under the majority rule in US jurisdictions, misrepresentation can justify rescission whether intentional or an honest mistake. Coalition's 2025 Cyber Claims Report found that 82 percent of denied claims involved MFA that existed somewhere but was not enforced everywhere.
+
+        ## The seven controls underwriters verify, and what proof looks like
+
+        Every major carrier asks about the same core controls. Here is what they want, and what counts as proof.
+
+        1. Multi-factor authentication on every account that touches business data: email, VPN, remote access, cloud admin, banking, and line-of-business software. For administrators and finance staff, underwriters increasingly want phishing-resistant MFA. Proof: an admin console export showing enrollment and a list of exceptions.
+
+        2. Endpoint detection and response on every device, including servers, monitored around the clock. Traditional antivirus no longer satisfies most carriers. Proof: a deployment report showing coverage by device.
+
+        3. Immutable, tested backups: three copies, two media types, one copy offsite or immutable, restore-tested in the last 90 days. Proof: a dated restore test log.
+
+        4. Patching on a documented schedule, especially for internet-facing systems. Proof: patch reports and a written cadence.
+
+        5. Email authentication: SPF, DKIM, and DMARC at enforcement. Business email compromise cost US victims $3.05 billion in 2025 across 24,768 complaints, according to the FBI. Proof: a DMARC record check and a written payment verification procedure.
+
+        6. A written incident response plan, tabletop-tested in the last 12 months. Proof: the dated plan and test notes.
+
+        7. Security awareness training with phishing simulations. Proof: completion rates.
+
+        If you cannot produce the proof for a control, do not answer yes to it. An honest no with a fix date is cheaper than a yes that falls apart after a claim.
+
+        ## What failing costs, in CFO terms
+
+        Start with the baseline. Insureon, updated in April 2026, reports small businesses pay an average of $129 a month, or $1,552 a year, for cyber insurance, with annual premiums ranging from about $400 to more than $8,000. The price of failing the renewal is larger. Multiple 2026 underwriting guides report missing MFA adds a 25 to 50 percent surcharge, gaps at renewal can push premiums up 40 to 100 percent, and a denial can push a business into surplus lines markets, where premiums run triple the standard rate. IBM's Cost of a Data Breach Report 2025 puts the global average breach cost at $4.44 million, and the US average at $10.22 million.
+
+        ## The Minnesota part: a new law, and a grace period that just ended
+
+        Minnesota gives this renewal extra weight. The Minnesota Consumer Data Privacy Act, signed on May 24, 2024, took effect on July 31, 2025. It applies to entities doing business in Minnesota that process personal data of 100,000 or more consumers in a year, or 25,000 or more while deriving over 25 percent of gross revenue from selling personal data. It is enforced solely by the Minnesota Attorney General, with penalties up to $7,500 per violation. Its 30-day cure period expired on January 31, 2026.
+
+        Most Twin Cities firms our size fall below those thresholds, and SBA-defined small businesses are excluded except when selling sensitive data without consent. The law may not name your firm directly, but it changed the questions your customers, your prime contractors, and your insurer ask.
+
+        ## Your 90-day renewal plan
+
+        If your policy runs on a calendar year, your renewal lands in the first quarter of 2027. Now, about 90 days out: pull last year's application, list every yes, and verify each one with dated evidence. 60 days out: close the MFA gaps, confirm EDR coverage on every device, and schedule a backup restore test. 30 days out: tabletop-test the incident response plan, finish training and a phishing simulation, and assemble the proof packet. Renewal week: send the proof with the application. If gaps remain, tell your broker early. A disclosed gap with a fix date costs less than a gap discovered after a claim.
+
+        ## Frequently asked questions
+
+        **Do I still need cyber insurance if I already have these controls?** Yes. Controls reduce the likelihood and impact of an incident. Insurance covers what remains.
+
+        **What if MFA is on most accounts but not all?** That is the exact gap Coalition flags. Enforce it everywhere, or document the exception and the fix date, and tell your broker.
+
+        **Will fixing the controls lower my premium?** Guides report that businesses with documented controls typically pay lower premiums, with one 2026 guide reporting discounts of 15 to 25 percent for documented security programs.
+
+        ## The bottom line
+
+        The renewal is a test you can study for: pull last year's application, verify every yes, and close the gaps on a 90-day plan.
+
+        If you are not sure where your organization stands, find out before your renewal, not after a claim. Veracity Technologies, a SOC 2 compliant provider in Minnetonka, helps Minnesota firms put the required controls in place and document them. Book a free Business Technology Assessment, or call (952) 941-7333.
+
+        Sources: FBI IC3 2025 Internet Crime Report; IBM Cost of a Data Breach Report 2025; Verizon 2025 DBIR; Coalition 2025 Cyber Claims Report; Travelers v. International Control Services (C.D. Ill. 2022); Insureon cyber insurance cost data (April 2026); Minnesota House overview of the MCDPA, Minn. Stat. 325M.10-325M.21; CISA guidance on phishing-resistant MFA; 2026 underwriting guides from CrossGuard Cyber, BASG Corp, and Bryce Street. Status checked November 18, 2026."""}
 ]
