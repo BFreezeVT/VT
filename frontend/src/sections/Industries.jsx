@@ -6,6 +6,7 @@ const industries = [
     icon: HardHat,
     title: "Construction",
     slug: "construction-it-support",
+    linkText: "Construction IT support",
     desc: "Job site connectivity, BIM security, Procore and Sage integration, and rapid-response IT for teams that can’t afford downtime on pour day.",
     highlights: ["Job Site Networking", "BIM & Cloud Security", "Procore / Sage Support"],
   },
@@ -13,6 +14,7 @@ const industries = [
     icon: Landmark,
     title: "Financial Services",
     slug: "financial-it-support",
+    linkText: "Financial services IT support",
     desc: "SOC 2, PCI-DSS, and SEC/FINRA-aligned cybersecurity for banks, RIAs, and fintech firms where a single breach means regulatory action.",
     highlights: ["SOC 2 & PCI-DSS", "SEC / FINRA Compliance", "Encrypted Data at Rest & Transit"],
   },
@@ -20,6 +22,7 @@ const industries = [
     icon: Factory,
     title: "Manufacturing",
     slug: "manufacturing-it-support",
+    linkText: "Manufacturing IT support",
     desc: "OT/IT convergence security, SCADA protection, and network segmentation for plants where connected machinery meets legacy systems.",
     highlights: ["OT / ICS Security", "SCADA Protection", "Network Segmentation"],
   },
@@ -27,6 +30,7 @@ const industries = [
     icon: ShieldCheck,
     title: "High-Compliance Industries",
     slug: "high-compliance-it-support",
+    linkText: "High-compliance IT support",
     desc: "CMMC, HIPAA, ITAR, and NIST 800-171 expertise for defense contractors, healthcare orgs, and government suppliers with zero tolerance for gaps.",
     highlights: ["CMMC / NIST 800-171", "HIPAA & ITAR", "Audit-Ready Documentation"],
   },
@@ -93,7 +97,7 @@ export default function Industries() {
                   data-testid={`industry-link-${ind.slug}`}
                   className="inline-flex items-center gap-1 text-[#5cc0e8] text-sm font-bold hover:text-white transition-colors"
                 >
-                  Learn more <ArrowRight className="w-3 h-3" />
+                  {ind.linkText} <ArrowRight className="w-3 h-3" />
                 </Link>
               )}
             </div>

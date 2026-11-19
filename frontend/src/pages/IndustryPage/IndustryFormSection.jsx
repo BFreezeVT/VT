@@ -61,7 +61,7 @@ export default function IndustryFormSection({ industry, submitted, error, submit
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <Button data-testid="industry-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12">
+                  <Button data-testid="industry-form-submit" type="submit" className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold h-12 whitespace-normal h-auto min-h-12 max-w-full text-center">
                     {industry.ctaText}
                   </Button>
                 </div>

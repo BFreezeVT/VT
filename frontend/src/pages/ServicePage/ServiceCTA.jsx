@@ -14,7 +14,7 @@ export default function ServiceCTA({ svc }) {
           The Business Technology Assessment scores your organization across AI readiness, cybersecurity, compliance, and automation maturity - and shows exactly where to start.
         </p>
         <Link to="/business-technology-assessment" data-testid="service-page-bottom-cta">
-          <Button className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold px-8 h-12">
+          <Button className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold px-8 h-12 whitespace-normal h-auto min-h-12 max-w-full text-center">
             Start Your Business Technology Assessment
           </Button>
         </Link>

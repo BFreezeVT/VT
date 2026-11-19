@@ -160,32 +160,55 @@ export default function BlogIndex() {
                 )}
               </div>
 
-              <div className="flex flex-wrap gap-2" data-testid="resources-category-filters">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    data-testid={`category-filter-${cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`text-xs font-medium px-4 py-2 border rounded-sm transition-colors ${
-                      selectedCategory === cat
-                        ? "bg-[#0077B3] border-[#0077B3] text-white"
-                        : "border-white/10 text-[#94a8be] hover:border-[#0077B3] hover:text-white"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
+              <div className="flex flex-wrap gap-2 min-h-9" data-testid="resources-category-filters">
+                {loading ? (
+                  [96, 120, 88, 112, 104, 92, 116, 84].map((w, i) => (
+                    <span
+                      key={i}
+                      aria-hidden="true"
+                      style={{ width: w }}
+                      className="h-[30px] rounded-sm border border-white/10 bg-white/[0.03] animate-pulse"
+                    />
+                  ))
+                ) : (
+                  categories.map((cat) => (
+                    <button
+                      key={cat}
+                      data-testid={`category-filter-${cat.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`text-xs font-medium px-4 py-2 border rounded-sm transition-colors ${
+                        selectedCategory === cat
+                          ? "bg-[#0077B3] border-[#0077B3] text-white"
+                          : "border-white/10 text-[#94a8be] hover:border-[#0077B3] hover:text-white"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))
+                )}
               </div>
 
-              {!loading && (
-                <p data-testid="resources-result-count" className="text-[#94a8be]/60 text-xs">
-                  Showing {filteredPosts.length} of {posts.length} articles
-                </p>
-              )}
+              <p data-testid="resources-result-count" className="text-[#94a8be]/60 text-xs">
+                {loading ? "Loading articles..." : `Showing ${filteredPosts.length} of ${posts.length} articles`}
+              </p>
             </div>
 
             {loading ? (
-              <div className="text-[#94a8be] text-sm">Loading articles...</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-hidden="true">
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="grid-border-card overflow-hidden flex flex-col">
+                    <div className="w-full h-32 bg-white/[0.03] animate-pulse" />
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="h-3 w-24 bg-white/[0.06] rounded-sm mb-4 animate-pulse" />
+                      <div className="h-5 w-full bg-white/[0.06] rounded-sm mb-3 animate-pulse" />
+                      <div className="h-5 w-3/4 bg-white/[0.06] rounded-sm mb-4 animate-pulse" />
+                      <div className="h-3 w-full bg-white/[0.04] rounded-sm mb-2 animate-pulse" />
+                      <div className="h-3 w-5/6 bg-white/[0.04] rounded-sm mb-4 animate-pulse" />
+                      <div className="h-3 w-20 bg-white/[0.04] rounded-sm mt-auto pt-4 animate-pulse" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             ) : filteredPosts.length === 0 ? (
               <div data-testid="resources-empty-state" className="text-center py-20">
                 <p className="text-white font-semibold text-lg mb-2" style={{ fontFamily: "Outfit" }}>No articles found</p>
