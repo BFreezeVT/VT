@@ -25,6 +25,8 @@ export default function Footer() {
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
+                  width={500}
+                  height={500}
                   className="w-full h-auto object-contain scale-110 opacity-60"
                   style={{ marginTop: "-10%", marginBottom: "-15%" }}
                 />
@@ -33,6 +35,8 @@ export default function Footer() {
                 src="/images/logo-full.webp"
                 alt="Veracity Technologies - Rely On Us"
                 loading="lazy"
+                width={500}
+                height={500}
                 className="w-full h-auto object-contain scale-110 relative z-10"
                 style={{ marginTop: "-10%", marginBottom: "-15%", filter: "drop-shadow(0 0 4px rgba(100,200,220,0.7)) drop-shadow(0 0 12px rgba(100,200,220,0.4)) drop-shadow(0 0 25px rgba(100,200,220,0.2))" }}
                 data-testid="footer-logo"

@@ -126,7 +126,11 @@ export default function BlogPost() {
               alt={`${post.category} illustration`}
               data-testid="blog-post-hero-image"
               className="w-full h-52 sm:h-64 object-contain bg-[#0a1220] rounded-sm mb-8"
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={1024}
+              height={1024}
             />
 
             <div className="flex items-center gap-4 mb-6">
@@ -153,6 +157,8 @@ export default function BlogPost() {
                 alt="Veracity Technologies Team"
                 className="w-8 h-8 rounded-full object-cover"
                 loading="lazy"
+                width={32}
+                height={32}
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-white font-medium">By Veracity Technologies Team</span>

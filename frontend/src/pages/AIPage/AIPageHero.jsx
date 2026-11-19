@@ -32,7 +32,11 @@ export default function AIPageHero({ page }) {
               alt={`${page.name} illustration`}
               data-testid="ai-page-hero-image"
               className="w-full h-48 sm:h-56 object-cover"
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={1024}
+              height={1024}
             />
             <div className="p-8 text-center border-t border-white/10">
               <p className="stat-number text-4xl sm:text-5xl text-white mb-2">{page.heroStat.value}</p>

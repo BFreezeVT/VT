@@ -9,6 +9,8 @@ export function LogoDivider({ light = false }) {
         alt=""
         aria-hidden="true"
         loading="lazy"
+        width={40}
+        height={40}
         className={`w-10 h-10 mx-6 object-contain ${light ? "opacity-15 brightness-50" : "opacity-10 brightness-200"}`}
       />
       <div className="flex-1 h-px bg-white/8" />
@@ -24,6 +26,8 @@ export function LogoWatermark({ position = "center" }) {
       alt=""
       aria-hidden="true"
       loading="lazy"
+      width={256}
+      height={256}
       className={`absolute ${posClass} opacity-[0.03] brightness-200 w-64 h-64 object-contain pointer-events-none`}
     />
   );

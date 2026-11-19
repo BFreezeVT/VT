@@ -236,6 +236,8 @@ export default function BlogIndex() {
                       data-testid={`blog-card-image-${i}`}
                       className="w-full h-32 object-cover"
                       loading="lazy"
+                      width={1024}
+                      height={1024}
                     />
                     <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-3 mb-4">
