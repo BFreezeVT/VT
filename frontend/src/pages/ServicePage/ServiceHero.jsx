@@ -24,7 +24,7 @@ export default function ServiceHero({ svc }) {
               {svc.subhead}
             </p>
             <Link to="/business-technology-assessment" data-testid="service-page-hero-cta">
-              <Button className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12">
+              <Button className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12 whitespace-normal h-auto min-h-12 max-w-full text-center">
                 {svc.ctaText} <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
             </Link>

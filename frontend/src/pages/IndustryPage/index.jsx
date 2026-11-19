@@ -149,7 +149,7 @@ export default function IndustryPage() {
           <div className="max-w-2xl mx-auto px-6">
             <p className="text-[#94a8be] text-sm mb-4">Want the full picture beyond this audit?</p>
             <Link to="/business-technology-assessment" data-testid="industry-bottom-cta">
-              <Button className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold px-8 h-11">
+              <Button className="bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-sm font-semibold px-8 h-11 whitespace-normal h-auto min-h-11 max-w-full text-center">
                 Start Your Business Technology Assessment
               </Button>
             </Link>

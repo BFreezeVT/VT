@@ -25,7 +25,7 @@ export default function IndustryHero({ industry, Icon }) {
             <Button
               data-testid="industry-hero-cta"
               onClick={() => document.getElementById("industry-form")?.scrollIntoView({ behavior: "smooth" })}
-              className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12"
+              className="bg-white text-[#1e6bb8] hover:bg-white/90 rounded-sm font-bold text-base px-8 h-12 whitespace-normal h-auto min-h-12 max-w-full text-center"
             >
               {industry.ctaText}
             </Button>

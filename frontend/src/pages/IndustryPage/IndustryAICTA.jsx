@@ -17,7 +17,7 @@ export default function IndustryAICTA({ industry }) {
           ))}
         </div>
         <Link to="/business-technology-assessment" data-testid="industry-mid-cta">
-          <Button className="bg-[#003B71] hover:bg-[#002a52] text-white rounded-sm font-semibold px-8 h-11">
+          <Button className="bg-[#003B71] hover:bg-[#002a52] text-white rounded-sm font-semibold px-8 h-11 whitespace-normal h-auto min-h-11 max-w-full text-center">
             Take the Business Technology Assessment
           </Button>
         </Link>
