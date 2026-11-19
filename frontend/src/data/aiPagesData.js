@@ -283,7 +283,7 @@ const aiPagesData = [
       { q: "How does Responsible AI relate to AI Governance?", a: "AI Governance provides the policies and controls; Responsible AI is the set of principles those policies should be built around - fairness, transparency, and accountability." },
     ],
     metaTitle: "Responsible AI Consulting Minnesota | Veracity Technologies",
-    metaDescription: "Fair, transparent, and accountable AI adoption for Minneapolis-St. Paul organizations. Responsible AI consulting aligned to client and regulator expectations.",
+    metaDescription: "Fair, transparent, and accountable AI adoption for Twin Cities organizations. Responsible AI consulting aligned to client and regulator expectations.",
     ctaText: "Talk to Us About Responsible AI",
   },
 ];
