@@ -40,6 +40,8 @@ export default function RiskReversal() {
                 src="/images/logo-circle.webp"
                 alt="Veracity Technologies"
                 loading="lazy"
+                width={56}
+                height={56}
                 className="w-14 h-14 object-contain absolute top-6 right-6 opacity-50 brightness-150 drop-shadow-[0_0_8px_rgba(0,119,179,0.3)]"
               />
               <div className="w-14 h-14 flex items-center justify-center bg-[#FF5722]/10 border border-[#FF5722]/30 mb-6">

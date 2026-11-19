@@ -110,7 +110,7 @@ export default function BusinessReality() {
       aria-label="The business reality of AI, automation, and cyber risk with sourced statistics"
       className="py-16 lg:py-24 bg-transparent relative overflow-hidden"
     >
-      <img src="/images/logo-circle.webp" alt="" aria-hidden="true" loading="lazy" className="absolute -left-20 top-1/3 w-[500px] h-[500px] object-contain opacity-[0.025] brightness-200 pointer-events-none" />
+      <img src="/images/logo-circle.webp" alt="" aria-hidden="true" loading="lazy" width={500} height={500} className="absolute -left-20 top-1/3 w-[500px] h-[500px] object-contain opacity-[0.025] brightness-200 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
