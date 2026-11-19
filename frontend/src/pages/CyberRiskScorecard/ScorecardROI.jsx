@@ -18,8 +18,8 @@ export default function ScorecardROI({ pct, riskLevel, riskColor, totalScore, ma
     if (window.gtag) window.gtag("event", "scorecard_roi_cta_click", { event_category: "cyber_risk_scorecard", risk_level: riskLevel, estimated_savings: annualSavings });
   };
 
-  const handleDownloadReport = () => {
-    generateScorecardPDF({
+  const handleDownloadReport = async () => {
+    await generateScorecardPDF({
       riskLevel,
       totalScore,
       maxScore,

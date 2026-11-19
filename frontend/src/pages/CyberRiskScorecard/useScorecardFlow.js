@@ -140,7 +140,7 @@ export function useScorecardFlow() {
       // 8 manual hrs/week/person) since the ROI sliders above live in a separate section; the
       // user can always get their live-adjusted numbers via the Download button up there.
       const roi = calculateScorecardROI(pct, 20, 8, hourlyRate);
-      const pdfBase64 = getScorecardPDFBase64({
+      const pdfBase64 = await getScorecardPDFBase64({
         companyName: company,
         riskLevel,
         totalScore,

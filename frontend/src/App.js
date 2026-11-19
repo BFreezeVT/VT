@@ -3,24 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./sections/Navigation";
 import HeroSection from "./sections/HeroSection";
 import TrustIndicators from "./sections/TrustIndicators";
-import CoreServices from "./sections/CoreServices";
-import IntroStats from "./sections/IntroStats";
-import BusinessReality from "./sections/BusinessReality";
-import AIService from "./sections/AIService";
-import OurApproach from "./sections/OurApproach";
-import HowItWorks from "./sections/HowItWorks";
-import Industries from "./sections/Industries";
-import WhySpecializedIT from "./sections/WhySpecializedIT";
-import Compliance from "./sections/Compliance";
-import CaseStudy from "./sections/CaseStudy";
-import Credentials from "./sections/Credentials";
-import ProudPartners from "./sections/ProudPartners";
-import CyberGame from "./sections/CyberGame";
-import FreeAuditOffer from "./sections/FreeAuditOffer";
-import RiskReversal from "./sections/RiskReversal";
-import FAQSection from "./sections/FAQSection";
-import Footer from "./sections/Footer";
-import EbookPopup from "./sections/EbookPopup";
 import { useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -39,6 +21,30 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const HumanRiskSimulation = lazy(() => import("./pages/HumanRiskSimulation"));
 const ClientSuccess = lazy(() => import("./pages/ClientSuccess"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+
+// Below-fold homepage sections - each ships in its own chunk instead of bloating the
+// initial bundle every visitor downloads. Navigation, HeroSection and TrustIndicators
+// above stay eager so the first viewport renders from the main chunk. Each section
+// gets its own Suspense boundary (fallback null) so sections reveal independently as
+// their chunk arrives instead of one slow chunk holding up the whole page.
+const FreeAuditOffer = lazy(() => import("./sections/FreeAuditOffer"));
+const CoreServices = lazy(() => import("./sections/CoreServices"));
+const OurApproach = lazy(() => import("./sections/OurApproach"));
+const AIService = lazy(() => import("./sections/AIService"));
+const Industries = lazy(() => import("./sections/Industries"));
+const IntroStats = lazy(() => import("./sections/IntroStats"));
+const BusinessReality = lazy(() => import("./sections/BusinessReality"));
+const WhySpecializedIT = lazy(() => import("./sections/WhySpecializedIT"));
+const Compliance = lazy(() => import("./sections/Compliance"));
+const HowItWorks = lazy(() => import("./sections/HowItWorks"));
+const CaseStudy = lazy(() => import("./sections/CaseStudy"));
+const Credentials = lazy(() => import("./sections/Credentials"));
+const ProudPartners = lazy(() => import("./sections/ProudPartners"));
+const CyberGame = lazy(() => import("./sections/CyberGame"));
+const RiskReversal = lazy(() => import("./sections/RiskReversal"));
+const FAQSection = lazy(() => import("./sections/FAQSection"));
+const Footer = lazy(() => import("./sections/Footer"));
+const EbookPopup = lazy(() => import("./sections/EbookPopup"));
 
 // Color stops for the progressive gradient
 const gradientStops = [
@@ -114,27 +120,34 @@ function HomePage() {
       <main role="main">
         <HeroSection />
         <TrustIndicators />
-        <FreeAuditOffer />
-        <CoreServices />
-        <OurApproach />
-        <AIService />
-        <Industries />
-        <IntroStats />
-        <BusinessReality />
-        <WhySpecializedIT />
-        <Compliance />
-        <HowItWorks />
-        <CaseStudy />
-        <Credentials />
-        <ProudPartners />
-        <CyberGame />
-        <RiskReversal />
-        <FAQSection />
+        <LazySection><FreeAuditOffer /></LazySection>
+        <LazySection><CoreServices /></LazySection>
+        <LazySection><OurApproach /></LazySection>
+        <LazySection><AIService /></LazySection>
+        <LazySection><Industries /></LazySection>
+        <LazySection><IntroStats /></LazySection>
+        <LazySection><BusinessReality /></LazySection>
+        <LazySection><WhySpecializedIT /></LazySection>
+        <LazySection><Compliance /></LazySection>
+        <LazySection><HowItWorks /></LazySection>
+        <LazySection><CaseStudy /></LazySection>
+        <LazySection><Credentials /></LazySection>
+        <LazySection><ProudPartners /></LazySection>
+        <LazySection><CyberGame /></LazySection>
+        <LazySection><RiskReversal /></LazySection>
+        <LazySection><FAQSection /></LazySection>
       </main>
-      <Footer />
-      <EbookPopup />
+      <LazySection><Footer /></LazySection>
+      <LazySection><EbookPopup /></LazySection>
     </div>
   );
+}
+
+// Per-section Suspense boundary for a lazy homepage section. Fallback is null (no
+// skeleton) because these sections sit below the fold; each reveals as its own chunk
+// arrives instead of blocking on the slowest chunk.
+function LazySection({ children }) {
+  return <Suspense fallback={null}>{children}</Suspense>;
 }
 
 function RouteFallback() {

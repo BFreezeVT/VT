@@ -45,8 +45,8 @@ export default function ChecklistDownload({ checklist, post }) {
     await submitLead(data);
   };
 
-  const handleDownload = () => {
-    generateChecklistPDF(buildPDFPayload());
+  const handleDownload = async () => {
+    await generateChecklistPDF(buildPDFPayload());
     if (window.gtag) window.gtag("event", "checklist_pdf_download", { event_category: "lead_magnet", post_slug: post.slug });
   };
 
@@ -54,7 +54,7 @@ export default function ChecklistDownload({ checklist, post }) {
     setEmailingReport(true);
     setReportEmailStatus(null);
     try {
-      const pdfBase64 = getChecklistPDFBase64(buildPDFPayload());
+      const pdfBase64 = await getChecklistPDFBase64(buildPDFPayload());
       await emailReport({
         leadId,
         reportToken,
