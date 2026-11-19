@@ -1,6 +1,13 @@
-import { createBrandedDoc, addSectionHeader, addScoreBlock, addROIBlock, addListSection, addNextStepsAndFooter, saveDoc, docToBase64 } from "./pdfReportHelpers";
+// jsPDF is loaded on demand only (dynamic import), so the PDF library stays out of
+// the homepage bundle and downloads only when a visitor actually requests a PDF
+// report. The helpers module still imports jspdf statically; the dynamic import
+// below is what keeps it in a separate chunk.
+async function loadPdfHelpers() {
+  return import("./pdfReportHelpers");
+}
 
-function buildAssessmentDoc({ companyName, overallScore, scoreLabel, subScores, topGaps, topOpportunities, roi }) {
+function buildAssessmentDoc(helpers, { companyName, overallScore, scoreLabel, subScores, topGaps, topOpportunities, roi }) {
+  const { createBrandedDoc, addSectionHeader, addScoreBlock, addROIBlock, addListSection, addNextStepsAndFooter } = helpers;
   const { doc, y: startY } = createBrandedDoc(
     "Executive ROI & Readiness Report",
     `Prepared for: ${companyName || "Your Organization"}  |  ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}`
@@ -31,12 +38,15 @@ function buildAssessmentDoc({ companyName, overallScore, scoreLabel, subScores, 
 /**
  * Generates and downloads a branded "Executive ROI & Readiness Report" PDF summarizing a
  * completed Business Technology Assessment - client-side only, no backend call required.
+ * Async: the jsPDF chunk loads on first call only.
  */
-export function generateAssessmentPDF(data) {
-  saveDoc(buildAssessmentDoc(data), "veracity-roi-readiness-report", data.companyName);
+export async function generateAssessmentPDF(data) {
+  const helpers = await loadPdfHelpers();
+  helpers.saveDoc(buildAssessmentDoc(helpers, data), "veracity-roi-readiness-report", data.companyName);
 }
 
 /** Same report, returned as a base64 string for emailing as an attachment. */
-export function getAssessmentPDFBase64(data) {
-  return docToBase64(buildAssessmentDoc(data));
+export async function getAssessmentPDFBase64(data) {
+  const helpers = await loadPdfHelpers();
+  return helpers.docToBase64(buildAssessmentDoc(helpers, data));
 }

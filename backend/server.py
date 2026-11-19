@@ -1008,6 +1008,35 @@ async def get_blog_posts() -> List[dict]:
         for post in ALL_BLOG_POSTS
     ]
 
+@api_router.get("/blog/{slug}/related")
+async def get_related_blog_posts(slug: str, limit: int = 8) -> List[dict]:
+    """Small related-posts payload for a blog article page.
+
+    Returns up to `limit` posts (same category first, then the newest others),
+    without the full `content` body, so a blog view no longer downloads the
+    whole post list just to render the related-articles carousel. Same shape
+    as GET /api/blog (every field except `content`), same ordering the
+    frontend used to compute client-side, so RelatedArticlesCarousel renders
+    unchanged.
+    """
+    current = next((post for post in ALL_BLOG_POSTS if post["slug"] == slug), None)
+    if current is None:
+        raise HTTPException(status_code=404, detail="Post not found")
+    limit = max(1, min(limit, 12))
+    same_category = [
+        post for post in ALL_BLOG_POSTS
+        if post["slug"] != slug and post.get("category") == current.get("category")
+    ]
+    other_category = [
+        post for post in ALL_BLOG_POSTS
+        if post["slug"] != slug and post.get("category") != current.get("category")
+    ]
+    related = (same_category + other_category)[:limit]
+    return [
+        {k: v for k, v in post.items() if k != "content"}
+        for post in related
+    ]
+
 @api_router.get("/blog/{slug}")
 async def get_blog_post(slug: str) -> dict:
     for post in ALL_BLOG_POSTS:

@@ -1,6 +1,13 @@
-import { createBrandedDoc, addScoreBlock, addROIBlock, addListSection, addNextStepsAndFooter, saveDoc, docToBase64 } from "./pdfReportHelpers";
+// jsPDF is loaded on demand only (dynamic import), so the PDF library stays out of
+// the scorecard bundle and downloads only when a visitor actually requests a PDF
+// report. The helpers module still imports jspdf statically; the dynamic import
+// below is what keeps it in a separate chunk.
+async function loadPdfHelpers() {
+  return import("./pdfReportHelpers");
+}
 
-function buildScorecardDoc({ companyName, riskLevel, totalScore, maxScore, topRisks, topRecs, roi }) {
+function buildScorecardDoc(helpers, { companyName, riskLevel, totalScore, maxScore, topRisks, topRecs, roi }) {
+  const { createBrandedDoc, addScoreBlock, addROIBlock, addListSection, addNextStepsAndFooter } = helpers;
   const { doc, y: startY } = createBrandedDoc(
     "Cyber Risk & ROI Readiness Report",
     `Prepared for: ${companyName || "Your Organization"}  |  ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}`
@@ -19,12 +26,15 @@ function buildScorecardDoc({ companyName, riskLevel, totalScore, maxScore, topRi
 
 /**
  * Generates and downloads a branded "Cyber Risk & ROI Readiness Report" PDF - client-side only.
+ * Async: the jsPDF chunk loads on first call only.
  */
-export function generateScorecardPDF(data) {
-  saveDoc(buildScorecardDoc(data), "veracity-risk-roi-report", data.companyName);
+export async function generateScorecardPDF(data) {
+  const helpers = await loadPdfHelpers();
+  helpers.saveDoc(buildScorecardDoc(helpers, data), "veracity-risk-roi-report", data.companyName);
 }
 
 /** Same report, returned as a base64 string for emailing as an attachment. */
-export function getScorecardPDFBase64(data) {
-  return docToBase64(buildScorecardDoc(data));
+export async function getScorecardPDFBase64(data) {
+  const helpers = await loadPdfHelpers();
+  return helpers.docToBase64(buildScorecardDoc(helpers, data));
 }

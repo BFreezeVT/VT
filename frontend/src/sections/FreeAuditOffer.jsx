@@ -301,8 +301,8 @@ export default function FreeAuditOffer() {
     roi,
   });
 
-  const handleDownloadReport = () => {
-    generateAssessmentPDF(buildPDFPayload());
+  const handleDownloadReport = async () => {
+    await generateAssessmentPDF(buildPDFPayload());
     if (window.gtag) window.gtag("event", "assessment_report_download", { event_category: "ai_assessment", overall_score: overallScore });
   };
 
@@ -310,7 +310,7 @@ export default function FreeAuditOffer() {
     setEmailingReport(true);
     setReportEmailStatus(null);
     try {
-      const pdfBase64 = getAssessmentPDFBase64(buildPDFPayload());
+      const pdfBase64 = await getAssessmentPDFBase64(buildPDFPayload());
       await emailReport({
         leadId,
         reportToken,

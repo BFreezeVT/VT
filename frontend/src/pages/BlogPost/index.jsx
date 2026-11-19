@@ -22,14 +22,16 @@ const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 export default function BlogPost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
-  const [allPosts, setAllPosts] = useState([]);
+  const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
       axios.get(`${API}/blog/${slug}`),
-      axios.get(`${API}/blog`),
-    ]).then(([postRes, allRes]) => {
+      // Lightweight related-posts payload (8 posts, no content bodies) instead
+      // of the full post list, which was only used for the related carousel.
+      axios.get(`${API}/blog/${slug}/related`),
+    ]).then(([postRes, relatedRes]) => {
       setPost(postRes.data);
       document.title = postRes.data.title;
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -57,7 +59,7 @@ export default function BlogPost() {
         if (el) el.setAttribute(attr, value);
       });
 
-      setAllPosts(allRes.data);
+      setRelatedPosts(relatedRes.data);
     }).catch(() => setPost(null))
       .finally(() => setLoading(false));
 
@@ -200,7 +202,7 @@ export default function BlogPost() {
             <BlogRelatedResources post={post} />
 
             {/* Related Articles - carousel, prioritizing same category */}
-            <RelatedArticlesCarousel currentSlug={post.slug} category={post.category} allPosts={allPosts} />
+            <RelatedArticlesCarousel currentSlug={post.slug} category={post.category} allPosts={relatedPosts} />
 
             {/* Visible last updated */}
             <p className="mt-10 text-[#94a8be]/40 text-xs flex items-center gap-1">
