@@ -31,7 +31,7 @@ export default function BlogPost() {
       axios.get(`${API}/blog`),
     ]).then(([postRes, allRes]) => {
       setPost(postRes.data);
-      document.title = `${postRes.data.title} | Veracity Technologies`;
+      document.title = postRes.data.title;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", postRes.data.excerpt);
       const canonical = document.querySelector('link[rel="canonical"]');

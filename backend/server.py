@@ -473,7 +473,7 @@ BLOG_POSTS = [
     {
         "slug": "ai-cybersecurity-threats-2025",
         "title": "How AI Is Changing the Cybersecurity Threat Landscape in 2025",
-        "excerpt": "AI-powered attacks are outpacing traditional defenses. Here's what businesses in construction, finance, and manufacturing need to know - and do - right now.",
+        "excerpt": "AI-powered attacks are outpacing traditional defenses. Here's what businesses in construction, finance, and manufacturing need to know - and do.",
         "category": "AI & Cybersecurity",
         "author": "Veracity Technologies",
         "published_date": "2025-12-01",
@@ -513,7 +513,7 @@ The organizations that will be most resilient in 2025 and beyond are those that 
     {
         "slug": "soc-2-compliance-guide-small-business",
         "title": "SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide",
-        "excerpt": "SOC 2 isn't just for enterprises anymore. Here's how smaller firms in the Twin Cities can achieve compliance without breaking the bank - or their operations.",
+        "excerpt": "SOC 2 isn't just for enterprises anymore. Here's how firms in the Twin Cities can achieve compliance without breaking the bank - or their operations.",
         "category": "Compliance",
         "author": "Veracity Technologies",
         "published_date": "2025-11-15",
@@ -796,7 +796,7 @@ The average BEC loss for financial services firms is $130,000 per incident. For 
     {
         "slug": "cmmc-compliance-guide-defense-contractors",
         "title": "CMMC 2.0 Compliance: What Defense Contractors Need to Know in 2026",
-        "excerpt": "The DoD is enforcing CMMC across its entire supply chain. Here's what Level 2 certification requires and how to get there without derailing your operations.",
+        "excerpt": "The DoD is enforcing CMMC across its supply chain. Here's what Level 2 certification requires and how to get there without derailing your operations.",
         "category": "Compliance",
         "author": "Veracity Technologies",
         "published_date": "2025-12-01",
