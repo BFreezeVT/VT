@@ -35,8 +35,8 @@ export default function AIPageHero({ page }) {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              width={1024}
-              height={1024}
+              width={512}
+              height={512}
             />
             <div className="p-8 text-center border-t border-white/10">
               <p className="stat-number text-4xl sm:text-5xl text-white mb-2">{page.heroStat.value}</p>

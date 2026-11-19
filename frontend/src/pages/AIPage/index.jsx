@@ -25,7 +25,7 @@ export default function AIPage() {
       const canonical = document.querySelector('link[rel="canonical"]');
       const pageUrl = `https://www.veracitytechmn.com/${page.slug}`;
       if (canonical) canonical.setAttribute("href", pageUrl);
-      const ogImageUrl = `https://www.veracitytechmn.com${page.heroImage.replace(".webp", "-og.jpg")}`;
+      const ogImageUrl = `https://www.veracitytechmn.com${page.heroImage.replace("-512.webp", "-og.jpg")}`;
       const ogTags = [
         ['meta[property="og:url"]', "content", pageUrl],
         ['meta[property="og:image"]', "content", ogImageUrl],

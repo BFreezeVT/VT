@@ -29,7 +29,7 @@ export default function ServicePage() {
       if (canonical) canonical.setAttribute("href", svcUrl);
       // og:image/twitter:image need an absolute URL in a widely-supported format (JPEG),
       // not the relative WebP used for the on-page <img> - social crawlers often can't render WebP.
-      const ogImageUrl = `https://www.veracitytechmn.com${svc.heroImage.replace(".webp", "-og.jpg")}`;
+      const ogImageUrl = `https://www.veracitytechmn.com${svc.heroImage.replace("-512.webp", "-og.jpg")}`;
       const ogTags = [
         ['meta[property="og:url"]', "content", svcUrl],
         ['meta[property="og:image"]', "content", ogImageUrl],

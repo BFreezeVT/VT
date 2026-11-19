@@ -1,4 +1,4 @@
-const LOGO_CIRCLE = "/images/logo-circle.webp";
+const LOGO_CIRCLE = "/images/logo-circle-300.webp";
 
 export function LogoDivider({ light = false }) {
   return (
