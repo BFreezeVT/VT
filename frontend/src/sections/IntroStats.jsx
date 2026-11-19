@@ -70,7 +70,7 @@ export default function IntroStats() {
 
   return (
     <section id="intro-stats" data-testid="intro-stats-section" aria-label="Cybersecurity threat statistics" className="py-12 lg:py-18 bg-[#e0ebf4] light-zone relative overflow-hidden">
-      <img src="/images/logo-circle.webp" alt="" aria-hidden="true" loading="lazy" width={550} height={550} className="absolute -right-24 top-1/2 -translate-y-1/2 w-[550px] h-[550px] object-contain opacity-[0.06] brightness-50 pointer-events-none" />
+      <img src="/images/logo-circle-300.webp" alt="" aria-hidden="true" loading="lazy" width={300} height={300} className="absolute -right-24 top-1/2 -translate-y-1/2 w-[550px] h-[550px] object-contain opacity-[0.06] brightness-50 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Threat image */}

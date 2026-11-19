@@ -1,8 +1,8 @@
 import { Shield, FileCheck, HardHat, CreditCard, Server, ArrowRight, HeartPulse } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const LOGO = "/images/logo-circle.webp";
-const LOGO_FULL = "/images/logo-full.webp";
+const LOGO = "/images/logo-circle-300.webp";
+const LOGO_FULL = "/images/logo-full-384.webp";
 
 const complianceItems = [
   { icon: Shield, title: "CMMC Compliance", desc: "Cybersecurity Maturity Model Certification for DoD-connected contracts.", link: "/resources/cmmc-compliance-guide-defense-contractors", linkText: "What is CMMC?" },
@@ -31,7 +31,7 @@ function ComplianceCard({ item, index }) {
 export default function Compliance() {
   return (
     <section id="compliance" data-testid="compliance-section" aria-label="Compliance and risk management" className="py-12 lg:py-18 bg-transparent relative overflow-hidden">
-      <img src={LOGO} alt="" aria-hidden="true" loading="lazy" width={500} height={500} className="absolute -right-20 -bottom-16 w-[500px] h-[500px] object-contain opacity-[0.04] brightness-200 pointer-events-none" />
+      <img src={LOGO} alt="" aria-hidden="true" loading="lazy" width={300} height={300} className="absolute -right-20 -bottom-16 w-[500px] h-[500px] object-contain opacity-[0.04] brightness-200 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-10 text-center">

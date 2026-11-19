@@ -37,7 +37,7 @@ export default function RiskReversal() {
           <div className="animate-fade-in-up stagger-1">
             <div className="grid-border-card p-10 relative">
               <img
-                src="/images/logo-circle.webp"
+                src="/images/logo-circle-300.webp"
                 alt="Veracity Technologies"
                 loading="lazy"
                 width={56}

@@ -2,7 +2,7 @@ const aiPagesData = [
   {
     slug: "ai-readiness-assessment",
     name: "AI Readiness Assessment",
-    heroImage: "/images/ai-readiness-assessment-hero.webp",
+    heroImage: "/images/ai-readiness-assessment-hero-512.webp",
     headline: "Is Your Organization Actually Ready for AI?",
     subhead: "Most businesses adopt AI tools before they're ready to govern them. An AI Readiness Assessment tells you exactly where you stand before you invest.",
     heroStat: { value: "90%", label: "of organizations are unprepared for AI-augmented threats (Accenture 2025)" },
@@ -29,7 +29,7 @@ const aiPagesData = [
   {
     slug: "ai-governance",
     name: "AI Governance",
-    heroImage: "/images/ai-governance-hero.webp",
+    heroImage: "/images/ai-governance-hero-512.webp",
     headline: "AI Governance Frameworks Built for Regulated Industries",
     subhead: "AI without governance is a liability. We help organizations deploy AI safely with policies, controls, and oversight that satisfy regulators and protect data.",
     heroStat: { value: "83%", label: "of organizations lack automated AI security controls (Kiteworks 2025)" },
@@ -55,7 +55,7 @@ const aiPagesData = [
   {
     slug: "ai-risk-assessment",
     name: "AI Risk Assessment",
-    heroImage: "/images/ai-risk-assessment-hero.webp",
+    heroImage: "/images/ai-risk-assessment-hero-512.webp",
     headline: "Find Your AI Risk Before It Finds You",
     subhead: "An AI Risk Assessment identifies where artificial intelligence introduces exposure to your data, compliance posture, and operations - before it becomes an incident.",
     heroStat: { value: "59%", label: "of confirmed security incidents are identity-driven attacks (eSentire 2026)" },
@@ -81,7 +81,7 @@ const aiPagesData = [
   {
     slug: "ai-security-assessment",
     name: "AI Security Assessment",
-    heroImage: "/images/ai-security-assessment-hero.webp",
+    heroImage: "/images/ai-security-assessment-hero-512.webp",
     headline: "Is Your AI Stack Actually Secure?",
     subhead: "AI tools introduce new attack surfaces - data leakage, model manipulation, and unauthorized access. An AI Security Assessment finds the gaps before attackers do.",
     heroStat: { value: "68%", label: "of employees use unauthorized AI tools at work (Second Talent 2025)" },
@@ -107,7 +107,7 @@ const aiPagesData = [
   {
     slug: "microsoft-copilot-readiness",
     name: "Microsoft Copilot Readiness",
-    heroImage: "/images/microsoft-copilot-readiness-hero.webp",
+    heroImage: "/images/microsoft-copilot-readiness-hero-512.webp",
     headline: "Is Your Organization Ready for Microsoft Copilot?",
     subhead: "Copilot is only as secure as the permissions structure underneath it. A Microsoft Copilot Readiness Assessment ensures your data is properly governed before rollout.",
     heroStat: { value: "90%", label: "of organizations are unprepared for AI-augmented threats (Accenture 2025)" },
@@ -133,7 +133,7 @@ const aiPagesData = [
   {
     slug: "ai-policy-development",
     name: "AI Policy Development",
-    heroImage: "/images/ai-policy-development-hero.webp",
+    heroImage: "/images/ai-policy-development-hero-512.webp",
     headline: "AI Policies That Actually Get Followed",
     subhead: "A written AI policy only works if it's enforceable, specific, and built around how your team actually works. We write policies your employees can follow and your auditors can verify.",
     heroStat: { value: "68%", label: "of employees use AI tools without approval when no clear policy exists (Second Talent 2025)" },
@@ -159,7 +159,7 @@ const aiPagesData = [
   {
     slug: "ai-data-governance",
     name: "AI Data Governance",
-    heroImage: "/images/ai-data-governance-hero.webp",
+    heroImage: "/images/ai-data-governance-hero-512.webp",
     headline: "Know Where Your Data Goes When AI Touches It",
     subhead: "AI Data Governance ensures every piece of data that flows into an AI system is classified, tracked, and protected - so productivity gains don't become compliance liabilities.",
     heroStat: { value: "83%", label: "of organizations lack automated DLP controls for AI (Kiteworks 2025)" },
@@ -185,7 +185,7 @@ const aiPagesData = [
   {
     slug: "shadow-ai-risk-assessment",
     name: "Shadow AI Risk Assessment",
-    heroImage: "/images/shadow-ai-risk-assessment-hero.webp",
+    heroImage: "/images/shadow-ai-risk-assessment-hero-512.webp",
     headline: "Find the AI Tools Your Team Is Already Using",
     subhead: "68% of employees use AI tools without approval. A Shadow AI Risk Assessment discovers every unauthorized tool in your environment - and the data flowing through it.",
     heroStat: { value: "68%", label: "of employees use unauthorized AI tools at work (Second Talent 2025)" },
@@ -211,7 +211,7 @@ const aiPagesData = [
   {
     slug: "ai-automation-consulting",
     name: "AI Automation Consulting",
-    heroImage: "/images/ai-automation-consulting-hero.webp",
+    heroImage: "/images/ai-automation-consulting-hero-512.webp",
     headline: "Automate the Work, Not the Risk",
     subhead: "AI automation consulting that identifies your highest-impact workflows, builds automation that actually works, and keeps security and compliance intact along the way.",
     heroStat: { value: "68%", label: "of employees still turn to unauthorized AI tools when automation gaps exist (Second Talent 2025)" },
@@ -237,7 +237,7 @@ const aiPagesData = [
   {
     slug: "ai-adoption-strategy",
     name: "AI Adoption Strategy",
-    heroImage: "/images/ai-adoption-strategy-hero.webp",
+    heroImage: "/images/ai-adoption-strategy-hero-512.webp",
     headline: "A Roadmap for AI Adoption, Not Just a Tool List",
     subhead: "Most AI adoption fails because it starts with picking tools instead of understanding readiness, risk, and business priorities. We build the roadmap first.",
     heroStat: { value: "90%", label: "unprepared for AI-augmented threats without a structured adoption plan (Accenture 2025)" },
@@ -263,7 +263,7 @@ const aiPagesData = [
   {
     slug: "responsible-ai-consulting",
     name: "Responsible AI Consulting",
-    heroImage: "/images/responsible-ai-consulting-hero.webp",
+    heroImage: "/images/responsible-ai-consulting-hero-512.webp",
     headline: "AI That Reflects Your Values, Not Just Your Tools",
     subhead: "Responsible AI consulting ensures your organization's use of artificial intelligence is fair, transparent, accountable, and aligned with the standards your clients and regulators expect.",
     heroStat: { value: "83%", label: "of organizations lack the controls needed for responsible AI use (Kiteworks 2025)" },

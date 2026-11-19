@@ -40,7 +40,7 @@ export default function BlogPost() {
       if (canonical) canonical.setAttribute("href", `https://www.veracitytechmn.com/resources/${slug}`);
 
       const categoryImage = getBlogCategoryImage(postRes.data.category);
-      const categoryOgImage = `https://www.veracitytechmn.com${categoryImage.replace(".webp", "-og.jpg")}`;
+      const categoryOgImage = `https://www.veracitytechmn.com${categoryImage.replace("-512.webp", "-og.jpg")}`;
       const postUrl = `https://www.veracitytechmn.com/resources/${slug}`;
       const ogTags = [
         ['meta[property="og:url"]', "content", postUrl],
@@ -131,8 +131,8 @@ export default function BlogPost() {
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              width={1024}
-              height={1024}
+              width={512}
+              height={512}
             />
 
             <div className="flex items-center gap-4 mb-6">
@@ -155,7 +155,7 @@ export default function BlogPost() {
 
             <div data-testid="blog-post-byline" className="flex items-center gap-3 mb-8 text-sm">
               <img
-                src="/images/logo-circle.webp"
+                src="/images/logo-circle-300.webp"
                 alt="Veracity Technologies Team"
                 className="w-8 h-8 rounded-full object-cover"
                 loading="lazy"

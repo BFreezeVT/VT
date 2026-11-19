@@ -614,7 +614,7 @@ export default function FreeAuditOffer() {
 
             {/* CTA */}
             <div className="bg-white rounded-lg p-8 text-center">
-              <img src="/images/logo-circle.webp" alt="Veracity" loading="lazy" width={64} height={64} className="w-16 h-16 object-contain mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,119,179,0.4)]" />
+              <img src="/images/logo-circle-300.webp" alt="Veracity" loading="lazy" width={64} height={64} className="w-16 h-16 object-contain mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,119,179,0.4)]" />
               <h3 className="text-[#003B71] font-bold text-xl mb-2" style={{ fontFamily: "Outfit" }}>
                 Review Your Results With Veracity
               </h3>
