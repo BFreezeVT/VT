@@ -567,7 +567,7 @@ We've guided dozens of Twin Cities businesses through SOC 2 - from 10-person fin
     },
     {
         "slug": "ransomware-protection-construction-firms",
-        "title": "Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week",
+        "title": "Ransomware Protection for Construction Firms: 5 Steps",
         "excerpt": "Construction ransomware attacks are up 41%. Here are five concrete steps any construction firm can implement immediately to reduce their risk.",
         "category": "Construction",
         "author": "Veracity Technologies",
@@ -852,7 +852,7 @@ A C3PAO (Certified Third-Party Assessment Organization) conducts your official a
     },
     {
         "slug": "mfa-implementation-guide-business",
-        "title": "MFA Implementation Guide: The Single Most Impactful Security Step for Any Business",
+        "title": "MFA Implementation Guide: Your Most Impactful Security Step",
         "excerpt": "Multi-factor authentication blocks 99.9% of credential-based attacks. Here's how to implement it across your organization without disrupting productivity.",
         "category": "AI & Cybersecurity",
         "author": "Veracity Technologies",
