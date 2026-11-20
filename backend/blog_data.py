@@ -5182,4 +5182,60 @@ The organizations that thrive in 2027 will not necessarily be the ones that spen
         If you are not sure where your organization stands, that is a question worth answering before your next bid, not after it. Veracity Technologies works with Minnesota manufacturers, machine shops, and defense suppliers on CMMC readiness: self-assessments, SPRS scores, POA&M closure, and the controls behind them. Book a free Business Technology Assessment, or call (952) 941-7333, and we will tell you exactly where you stand.
 
         Sources: Department of War press release and CIO memorandum, July 13, 2026; Class Deviation 2026-O0025, Revision 3, September 3, 2026; CMMC program rule, 32 CFR Part 170; DFARS 252.204-7012 and 252.204-7021; NIST SP 800-171 Revision 2. Status checked November 2026."""}
+,
+    {"slug": "jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do", "title": "Your Bank Was Not Hacked. Its Vendor Was. What the Chase, Visa and Mastercard Leak Means for Minnesota Firms", "excerpt": "On November 19, 2026, a ransomware group leaked customer data from JPMorgan Chase, Visa and Mastercard. None of the three was hacked directly. A vendor was. Here is what leaked, why it matters to a Minnesota financial firm, and the five vendor checks to run this week.", "category": "Financial Services", "published_date": "2026-11-20", "read_time": "6 min read", "content": """        On November 19, 2026, a ransomware group published customer data belonging to JPMorgan Chase, Visa and Mastercard. None of the three companies was hacked. The attackers broke into third-party vendors that provide services to them, stole marketing data, and leaked it after a ransom deadline passed. If your Minnesota firm shares client data with any outside vendor, this is your warning: your vendor's breach becomes your client's problem, and your reputation takes the hit.
+
+        ## What leaked, and what did not
+
+        Here is what is confirmed as of November 19, 2026. JPMorgan Chase said third parties that provide services to the firm were targeted, and that the attackers accessed marketing data held by those vendors, which may include customer names and email addresses. Reporting on the leaked files puts the JPMorgan file at about 16,000 customers in the bank's invitation-only Reserve program, with names, email addresses, phone numbers, account IDs and postal codes. JPMorgan said it will contact affected customers and offer complimentary credit monitoring where appropriate.
+
+        Visa said the incident involved a third-party service provider in the Asia-Pacific region, that no payment data such as card numbers was affected, and that Visa's own systems were not involved or affected. Reporting puts the Visa file at more than 6,000 premium cardholders across nine Asia-Pacific markets. Mastercard said the incident exposed a limited amount of information from a subset of cardholders enrolled in a specific benefit program, and that there was no impact to its payment network or to customers' ability to use their cards.
+
+        Two facts matter most. First, no card numbers or passwords were in the leaked data, according to the companies and the reporting so far. Second, none of the three companies named the vendors that were breached. That second fact is the one that should worry a Minnesota business owner, because you cannot check a headline to learn whether your vendor was the one.
+
+        The group calls itself n0n. It listed the three firms on its leak site on November 16 with a 48-hour deadline, and published the files on November 19 when nobody paid. According to Recorded Future, cited by the Wall Street Journal, the group appeared in September 2026, targets companies with at least $10 million in annual revenue in non-Russian-speaking countries, and pays other hackers a cut for the initial access into a victim's network. It does not need to break into the big name on the letterhead. A smaller vendor with weaker defenses will do.
+
+        ## Why this hits a Minnesota financial firm
+
+        Twin Cities community banks, credit unions, wealth managers and registered investment advisers all run on vendors. A marketing firm holds your client list. A print and mail house holds names, addresses and account numbers. A benefits administrator holds employee data. A CRM provider holds everything. Those vendors hold the same kind of data that leaked this week: names, emails, phone numbers and account details.
+
+        A 20-person firm in Plymouth or St. Paul does not need to be the target. It needs one vendor to be the target. When that vendor is breached, your clients get the phishing emails, your firm fields the angry calls, and your name is the one your clients remember, not the vendor's.
+
+        JPMorgan also said the leak is unrelated to the online banking delays customers saw on Monday, November 16, which the bank attributed to a software bug. Two different events, one week, one lesson: the systems you depend on fail in more than one way.
+
+        ## The second wave is phishing, and it starts now
+
+        Leaked names, email addresses and phone numbers are the raw material for impersonation. Expect a wave of emails, texts and calls pretending to be a bank, a card network or a vendor, referencing real details to sound legitimate. The message will ask the reader to verify an account, confirm a payment, or click a link to review a statement. Some of those messages will reach your clients. Some will reach your staff.
+
+        Warn both groups this week, in plain language: no one from the bank will ask for a password or a one-time code by phone, text or email. Any request to move money or change payment details gets verified through a number you already have, not a number in the message.
+
+        ## Five vendor checks to run this week
+
+        1. List every vendor that holds your client or employee data. Marketing, print and mail, CRM, benefits, payroll, IT, shredding, cloud storage. If you cannot produce the list, that is the first finding, and it takes an afternoon to fix.
+
+        2. Ask each vendor, in writing: what data of ours do you hold, where does it live, who can access it, and when were you last breached or independently tested. A vendor that cannot answer is a vendor to replace.
+
+        3. Read the contract for breach notification deadlines, audit rights and insurance requirements. If a vendor can sit on a breach for 30 days before telling you, renegotiate. You need to hear about a breach in hours, not weeks, because your clients will hear about it from the attackers first.
+
+        4. Require multi-factor authentication and least privilege on every vendor account into your systems, and kill shared logins. A vendor employee with a shared password and no second factor is an open door into your network.
+
+        5. Put vendor risk on your cyber insurance renewal checklist. Ask your broker whether a breach at a vendor, not at your firm, is covered. A gap here is the kind of thing you discover after a claim, when it is too late to fix.
+
+        ## Questions Minnesota owners are asking
+
+        Was my card number stolen? No. Visa said no payment data such as card numbers was affected, and Mastercard said the exposure was limited to a subset of cardholders in a benefit program. JPMorgan described the accessed data as marketing data.
+
+        Was Chase itself hacked? No. JPMorgan said third parties that provide services to the firm were targeted, not the bank's own systems. Visa said the same about its own systems.
+
+        Are we affected if we use the same kind of vendor? You cannot tell from the headlines, because none of the three companies named the vendors. Ask your vendors directly, and ask in writing.
+
+        Does this connect to the Chase outage on Monday? No. JPMorgan said the leak is unrelated to the November 16 online banking disruption, which it attributed to a software bug.
+
+        ## The bottom line
+
+        The biggest names in American finance were not hacked this week. Their vendors were, and their customers paid for it with their names, emails and phone numbers in a public leak. Your firm is not too small for this to matter. Run the five checks this week, warn your clients about the phishing wave, and make vendor risk a line item, not an afterthought.
+
+        If you are not sure where your firm stands, Veracity Technologies offers a free Business Technology Assessment that scores your vendor risk, cybersecurity readiness and compliance posture. Call (952) 941-7333 to schedule one.
+
+        Sources: Wall Street Journal, November 19, 2026; JPMorgan Chase statement on X, November 19, 2026; PYMNTS, November 19, 2026; New York Post, November 19, 2026."""}
 ]
