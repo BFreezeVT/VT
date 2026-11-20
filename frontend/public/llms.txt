@@ -196,6 +196,7 @@ https://www.veracitytechmn.com/client-success
 Testimonials organized by Financial Services, Manufacturing, Construction, and general MSP success stories.
 
 ## Blog / Resources
+- Your Bank Was Not Hacked. Its Vendor Was. What the Chase, Visa and Mastercard Leak Means for Minnesota Firms: https://www.veracitytechmn.com/resources/jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do
 - How AI Is Changing the Cybersecurity Threat Landscape in 2025
 - SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide
 - Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week
@@ -205,8 +206,6 @@ Testimonials organized by Financial Services, Manufacturing, Construction, and g
 - How Much Do Managed IT Services Cost? A Minnesota Pricing Guide
 - MSP vs. Break-Fix IT Support: Which Is Right for Your Business?
 - Internal IT vs. Managed Service Provider: How to Decide
-- Co-Managed IT vs. Fully Managed IT: What's the Difference?
-- Microsoft Copilot vs. ChatGPT for Business: Which Should You Use?
 
 ## Business Technology Assessment (Central Authority Page)
 https://www.veracitytechmn.com/business-technology-assessment
