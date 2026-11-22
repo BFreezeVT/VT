@@ -13,7 +13,13 @@ function formatInline(text) {
 }
 
 function renderBlock(block, key) {
-  const lines = block.split("\n");
+  // Blog content appended from Python triple-quoted strings carries the
+  // dict indentation (spaces before "## ", "- ", "1. "). Trim the block and
+  // each line's leading whitespace so headings and lists are recognized
+  // regardless of how the post was indented in backend/blog_data.py.
+  // Without this, indented headings render as raw "## " text.
+  block = block.trim();
+  const lines = block.split("\n").map((l) => l.trimStart());
   const firstLine = lines[0];
 
   if (firstLine.startsWith("## ") || firstLine.startsWith("### ")) {

@@ -198,14 +198,14 @@ Testimonials organized by Financial Services, Manufacturing, Construction, and g
 ## Blog / Resources
 - Your Bank Was Not Hacked. Its Vendor Was. What the Chase, Visa and Mastercard Leak Means for Minnesota Firms: https://www.veracitytechmn.com/resources/jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do
 - 178 Websites Served Malware to Their Own Visitors on Monday. Is Yours One of Them?: https://www.veracitytechmn.com/resources/optimizely-hack-178-websites-what-minnesota-businesses-should-check-now
-- How AI Is Changing the Cybersecurity Threat Landscape in 2025
-- SOC 2 Compliance for Small and Mid-Size Businesses: A Practical Guide
-- Ransomware Protection for Construction Firms: 5 Steps You Can Take This Week
-- Bridging the OT/IT Gap: A Security Guide for Manufacturing Plants
-- Shadow AI: The Hidden Risk in Your Organization
-- Wire Fraud Prevention for Financial Services Firms
-- How Much Do Managed IT Services Cost? A Minnesota Pricing Guide
-- MSP vs. Break-Fix IT Support: Which Is Right for Your Business?
+- CMMC Phase 2 Suspended: What MN Defense Contractors Still Owe: https://www.veracitytechmn.com/resources/cmmc-phase-2-suspended-what-minnesota-defense-contractors-still-owe
+- Is Your Minneapolis Business Ready for AI? 10-Point Checklist: https://www.veracitytechmn.com/resources/is-your-business-ready-for-ai-a-10-point-readiness-checklist-for-minneapolis-smbs
+- 6 Questions Smart Companies Ask Their IT Provider Every Quarter: https://www.veracitytechmn.com/resources/6-questions-smart-companies-ask-their-it-provider-every-quarter
+- Managed IT vs. IT Compliance: Do You Need Both?: https://www.veracitytechmn.com/resources/managed-it-vs-it-compliance-services-whats-the-difference-and-do-you-need-both
+- What Happens to Your Data When Employees Use ChatGPT at Work?: https://www.veracitytechmn.com/resources/what-happens-to-your-data-when-employees-use-chatgpt-at-work-the-risk-minneapolis-firms-cant-ignore
+- What a Real IT Compliance Audit Looks Like: https://www.veracitytechmn.com/resources/what-a-real-it-compliance-audit-looks-like-and-how-minneapolis-businesses-can-prepare
+- Managed AI vs. DIY AI: Why Letting Employees Figure It Out Costs You: https://www.veracitytechmn.com/resources/managed-ai-vs-diy-ai-why-letting-employees-figure-it-out-is-costing-you-more-than-you-think
+- That Old Tech? You're Still Paying For It Every Month: https://www.veracitytechmn.com/resources/that-old-tech-youre-still-paying-for-it-every-month
 
 ## Business Technology Assessment (Central Authority Page)
 https://www.veracitytechmn.com/business-technology-assessment
