@@ -76,5 +76,21 @@ function renderBlock(block, key) {
 }
 
 export function renderContent(text) {
-  return text.split("\n\n").flatMap((block, i) => renderBlock(block, i));
+  const blocks = text.split("\n\n");
+  // Merge adjacent list-item blocks into one block so a list whose items
+  // are separated by blank lines renders as a single <ol>/<ul> instead
+  // of one single-item list per item (each numbered "1."). Numbered and
+  // bullet lists are merged only with their own kind.
+  const merged = [];
+  for (const block of blocks) {
+    const first = block.trimStart().split("\n")[0];
+    const type = first.startsWith("- ") ? "bullet" : /^\d+\./.test(first) ? "numbered" : null;
+    const prev = merged[merged.length - 1];
+    if (type && prev && prev.listType === type) {
+      prev.text += "\n" + block.trim();
+      continue;
+    }
+    merged.push({ text: block, listType: type });
+  }
+  return merged.flatMap((b, i) => renderBlock(b.text, i));
 }
