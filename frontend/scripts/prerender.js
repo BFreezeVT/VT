@@ -5,6 +5,19 @@ const http = require("http");
 const https = require("https");
 const puppeteer = require("puppeteer-core");
 
+// @sparticuz/chromium bundles a Chromium binary for serverless build images
+// (Vercel has no system Chrome). It is only used when no system Chrome exists.
+// The package is ESM, so require() returns a namespace object; the Chromium
+// class lives on `.default`. v153 exposes executablePath() and args as statics
+// on that class (no headless/defaultViewport properties in this version).
+let sparticuzChromium = null;
+try {
+  const mod = require("@sparticuz/chromium");
+  sparticuzChromium = mod && mod.default ? mod.default : mod;
+} catch (e) {
+  sparticuzChromium = null;
+}
+
 const BUILD_DIR = path.join(__dirname, "..", "build");
 const PUBLIC_DIR = path.join(__dirname, "..", "public");
 const SRC_DATA_DIR = path.join(__dirname, "..", "src", "data");
@@ -16,11 +29,45 @@ function findChromePath() {
   return candidates.find((p) => fs.existsSync(p)) || null;
 }
 
+// Resolve the puppeteer launch options. Prefer a system Chrome when one exists
+// (local runs); otherwise fall back to the @sparticuz/chromium binary bundled
+// for serverless build images. Returns null when no Chrome is available.
+async function getLaunchOptions() {
+  const systemChrome = findChromePath();
+  if (systemChrome) {
+    return {
+      executablePath: systemChrome,
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    };
+  }
+  if (sparticuzChromium && typeof sparticuzChromium.executablePath === "function") {
+    try {
+      const executablePath = await sparticuzChromium.executablePath();
+      return {
+        executablePath,
+        headless: true,
+        args: sparticuzChromium.args,
+      };
+    } catch (e) {
+      console.warn("Prerender: @sparticuz/chromium binary unavailable:", e.message);
+      return null;
+    }
+  }
+  return null;
+}
+
 function readEnvVar(name) {
   const envPath = path.join(__dirname, "..", ".env");
-  const content = fs.readFileSync(envPath, "utf8");
-  const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
-  return match ? match.split("=").slice(1).join("=").trim() : null;
+  try {
+    const content = fs.readFileSync(envPath, "utf8");
+    const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
+    if (match) return match.split("=").slice(1).join("=").trim();
+  } catch (e) {
+    // No .env file on this build host (e.g. Vercel) - fall back to the
+    // actual process environment instead of crashing the build.
+  }
+  return process.env[name] || null;
 }
 
 function extractSlugs(fileName) {
@@ -75,8 +122,8 @@ function startStaticServer() {
 }
 
 async function main() {
-  const chromePath = findChromePath();
-  if (!chromePath) {
+  const launchOptions = await getLaunchOptions();
+  if (!launchOptions) {
     console.warn("Prerender: no Chrome binary found, skipping SEO prerendering (SPA build is unaffected).");
     return;
   }
@@ -123,11 +170,7 @@ async function main() {
   }
 
   const server = await startStaticServer();
-  const browser = await puppeteer.launch({
-    executablePath: chromePath,
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
 
   let success = 0;
@@ -153,6 +196,19 @@ async function main() {
 
       if (!mounted) {
         throw new Error("React never mounted into #root after 3 attempts");
+      }
+
+      // Content guard: a page that failed to load its data renders a not-found
+      // state (for example a blog post whose API fetch failed renders
+      // "Article Not Found"). Saving that as the snapshot would be worse than
+      // keeping the previous snapshot, so treat it as a failure and do not
+      // save it. The route is reported in the FAILED list.
+      const isNotFound = await page.evaluate(() => {
+        const h1 = document.querySelector("h1");
+        return h1 ? /not found/i.test(h1.textContent || "") : false;
+      });
+      if (isNotFound) {
+        throw new Error("Page rendered a not-found state (its data did not load)");
       }
 
       html = normalizeAssetTags(html);

@@ -234,6 +234,8 @@ export default function CaseStudy() {
                           alt={t.name}
                           className="w-10 h-10 rounded-full object-cover border border-white/10"
                           loading="lazy"
+                          width={200}
+                          height={200}
                         />
                       ) : (
                         <div className="w-10 h-10 rounded-full bg-[#1e6bb8] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">

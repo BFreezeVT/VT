@@ -26,6 +26,8 @@ export default function ClientLogos() {
               alt={c.name}
               className="h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
               loading="lazy"
+              width={200}
+              height={200}
             />
           ))}
         </div>
