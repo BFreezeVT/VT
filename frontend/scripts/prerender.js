@@ -2,7 +2,6 @@
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
-const https = require("https");
 const puppeteer = require("puppeteer-core");
 
 // @sparticuz/chromium bundles a Chromium binary for serverless build images
@@ -57,43 +56,27 @@ async function getLaunchOptions() {
   return null;
 }
 
-function readEnvVar(name) {
-  const envPath = path.join(__dirname, "..", ".env");
-  try {
-    const content = fs.readFileSync(envPath, "utf8");
-    const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
-    if (match) return match.split("=").slice(1).join("=").trim();
-  } catch (e) {
-    // No .env file on this build host (e.g. Vercel) - fall back to the
-    // actual process environment instead of crashing the build.
+// Blog post slugs live in code (backend/blog_data.py and backend/server.py),
+// the same source the API serves. Read them from the repository instead of
+// fetching /api/blog, so prerendering does not depend on any environment
+// variable or network access at build time.
+const BACKEND_DIR = path.join(__dirname, "..", "..", "backend");
+
+function getBlogSlugsFromRepo() {
+  const slugs = [];
+  for (const fileName of ["blog_data.py", "server.py"]) {
+    const content = fs.readFileSync(path.join(BACKEND_DIR, fileName), "utf8");
+    for (const m of content.matchAll(/"slug":\s*"([^"]+)"/g)) {
+      slugs.push(m[1]);
+    }
   }
-  return process.env[name] || null;
+  return [...new Set(slugs)];
 }
 
 function extractSlugs(fileName) {
   const content = fs.readFileSync(path.join(SRC_DATA_DIR, fileName), "utf8");
   const matches = [...content.matchAll(/^\s+slug:\s*"([^"]+)"/gm)];
   return matches.map((m) => m[1]);
-}
-
-async function getBlogSlugs(backendUrl) {
-  const client = backendUrl.startsWith("https:") ? https : http;
-  return new Promise((resolve, reject) => {
-    client
-      .get(`${backendUrl}/api/blog`, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          try {
-            const posts = JSON.parse(data);
-            resolve(posts.map((p) => p.slug));
-          } catch (e) {
-            reject(e);
-          }
-        });
-      })
-      .on("error", reject);
-  });
 }
 
 function startStaticServer() {
@@ -128,12 +111,6 @@ async function main() {
     return;
   }
 
-  const backendUrl = readEnvVar("REACT_APP_BACKEND_URL");
-  if (!backendUrl) {
-    console.warn("Prerender: REACT_APP_BACKEND_URL not found, skipping SEO prerendering.");
-    return;
-  }
-
   const staticRoutes = [
     "/", "/service-areas", "/business-technology-assessment", "/resources",
     "/cyber-risk-scorecard", "/ai-roi-preview", "/human-risk-simulation", "/client-success",
@@ -142,7 +119,7 @@ async function main() {
   const industrySlugs = extractSlugs("industryData.js").map((s) => `/industries/${s}`);
   const serviceSlugs = extractSlugs("coreServicesData.js").map((s) => `/services/${s}`);
   const aiSlugs = extractSlugs("aiPagesData.js").map((s) => `/${s}`);
-  const blogSlugs = (await getBlogSlugs(backendUrl)).map((s) => `/resources/${s}`);
+  const blogSlugs = getBlogSlugsFromRepo().map((s) => `/resources/${s}`);
 
   const allRoutes = [...staticRoutes, ...citySlugs, ...industrySlugs, ...serviceSlugs, ...aiSlugs, ...blogSlugs];
   console.log(`Prerendering ${allRoutes.length} routes...`);
