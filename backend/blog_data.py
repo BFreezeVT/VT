@@ -5294,4 +5294,60 @@ The organizations that thrive in 2027 will not necessarily be the ones that spen
         If you are not sure where your firm stands, Veracity Technologies offers a free Business Technology Assessment that scores your vendor risk, cybersecurity readiness and compliance posture. Call (952) 941-7333 to schedule one.
 
         Sources: Wall Street Journal, November 19, 2026; JPMorgan Chase statement on X, November 19, 2026; PYMNTS, November 19, 2026; New York Post, November 19, 2026."""}
+,
+    {"slug": "minnesota-consumer-data-privacy-act-fines-polaris", "title": "Polaris Paid $1,060,986 for Ignoring Website Opt-Outs. Minnesota's Privacy Law Has Teeth Now", "excerpt": "On November 19, 2026, Minnesota Attorney General Keith Ellison announced the first enforcement action under the Minnesota Consumer Data Privacy Act, against Polaris Industries of Medina. The combined settlement is $1,060,986, and the warning period is over. Here are the five website checks to run this week.", "category": "Compliance", "published_date": "2026-11-25", "read_time": "6 min read", "content": """        On November 19, 2026, Minnesota Attorney General Keith Ellison announced the first enforcement action under the Minnesota Consumer Data Privacy Act, and the company on the receiving end was based in Medina. Polaris Industries, the powersports manufacturer, agreed to pay $150,000 to Minnesota and $910,986 to California's privacy regulator, a combined $1,060,986, after investigators found its website made people verify their email before honoring opt-out requests and ignored the Global Privacy Control browser signal. If you are the CFO of a Minnesota business, the question is what compliance costs, and what waiting costs. Polaris just answered the second half: more than a million dollars.
+
+        ## What Polaris actually did wrong
+
+        It was a joint investigation by the Minnesota Attorney General's office and California's privacy regulator, CalPrivacy, covering conduct from July 1, 2023 through April 30, 2026. The Attorney General warned Polaris by letter on November 21, 2025. Here is what they found.
+
+        First, Polaris required people to give an email address and respond to a verification message before processing opt-out requests, then denied the requests of people who did not respond. An opt-out that only works after the consumer proves who they are is not much of an opt-out.
+
+        Second, the "Decline All" button on the site did not stop the sharing it promised to stop. Visitors who clicked it reasonably believed they had opted out. They had not.
+
+        Third, some tracking technologies did not process opt-out preference signals, including the Global Privacy Control browser setting, which tells a website the visitor does not want their data sold or shared for targeted advertising. The privacy policy did not address those signals at all.
+
+        Fourth, when regulators asked for the company's data privacy and protection assessment, Polaris could not produce an adequate one. The law requires documented assessments of high-risk processing.
+
+        Polaris settled without admitting liability, and the California order notes the email verification step was inadvertent. Intent did not change the outcome: a website setting nobody checked cost more than a million dollars.
+
+        ## Why a Medina fine matters to your firm
+
+        Polaris is a large public company, and your firm probably is not. That does not make this someone else's problem. Start with whether the law covers you. The Act applies to a business operating in Minnesota or targeting Minnesota residents that, in a calendar year, controls or processes personal data of at least 100,000 consumers, or data of at least 25,000 consumers while deriving more than 25 percent of gross revenue from selling personal data. Small businesses as defined by the U.S. Small Business Administration are exempt. If you fall below those thresholds, the Act may not cover your firm directly. Confirm that with your attorney.
+
+        Even so, this fine belongs on a CFO's desk. The warning period is over: the Act's 30-day cure period expired on January 31, 2026, so the Attorney General no longer has to send a warning letter before bringing an action. Polaris got one in November 2025. The next company will not. Website visitors count toward the thresholds, and a busy site can reach 100,000 Minnesota visitors in a year faster than its owner expects. Customers, primes, and insurers increasingly ask for the same controls in contracts and renewals, whether or not the statute applies to you. And if you sell to California residents, California's privacy law has its own thresholds, and it just fined the same company $910,986 for the same conduct.
+
+        Regulators now test websites the way they test financial statements, with the same tools any visitor can use: submit an opt-out, turn on Global Privacy Control, read the privacy policy. Your website can be tested the same way, by anyone, today.
+
+        ## Five checks to run this week
+
+        1. Submit an opt-out request on your own website, end to end, the way a customer would. Does it work without creating an account or proving your identity? If it asks for email verification, fix it. The regulators treated that step as a violation.
+
+        2. Turn on Global Privacy Control in your browser and visit your site. Does your site honor the signal? If you do not know, ask your web vendor in writing, and keep the answer.
+
+        3. Inventory every tracker on your site and match it against your privacy policy. Polaris must now run quarterly scans and approve new trackers before they go live. Do the same: a documented quarterly tracker check.
+
+        4. Produce your data privacy and protection assessment. If your firm does targeted advertising, sells data, profiles consumers, or processes sensitive data, the law expects a documented assessment, and regulators will ask for it. If you cannot produce one, that gap comes first.
+
+        5. Name the person responsible for privacy and write down your process. The law expects documented policies and a named contact for compliance. Put a name, an email address, and a written process on paper, and make sure your team knows where it lives.
+
+        ## What the fine math looks like
+
+        The Minnesota settlement is $150,000, due within 30 days after the court enters final judgment, plus a stayed $150,000 civil penalty that becomes payable only if the court finds a material violation of the settlement. The California fine of $910,986 was due within 30 days of the Board's November 13, 2026 decision. Under Minnesota law the Attorney General can seek up to $7,500 per violation and is the sole enforcer; consumers cannot sue directly. One regulator with that tool is enough, and Polaris shows the office will use it.
+
+        Set against that, the five checks above cost an afternoon of staff time and a conversation with your web vendor. A million-dollar settlement started as a website setting nobody checked.
+
+        ## Questions Minnesota owners are asking
+
+        Does the Minnesota Consumer Data Privacy Act apply to my business? It applies if you do business in Minnesota or target Minnesota residents and meet one of the two thresholds: 100,000 consumers in a year, or 25,000 consumers plus more than 25 percent of gross revenue from selling personal data. Small businesses as defined by the U.S. Small Business Administration are exempt.
+
+        What is Global Privacy Control? It is a browser setting that tells every website you visit that you do not want your personal data sold or shared for targeted advertising. Your website is supposed to honor it. Test it yourself this week.
+
+        Can a customer sue my business directly under this law? No. The Minnesota Attorney General has exclusive authority to enforce it, with no private right of action. That does not make the law toothless. The Polaris case is the proof.
+
+        ## The bottom line
+
+        The warning period is over, and the first fine is on the books. It landed on a Minnesota manufacturer, not a tech giant, and it started with website settings nobody had tested. Run the five checks this week, or let Veracity run them for you in a free Business Technology Assessment. Call (952) 941-7333.
+
+        Sources: Minnesota Attorney General press release, November 19, 2026; California Privacy Protection Agency Board decision, Case No. ENF25-128-R-PO, November 13, 2026, and CalPrivacy announcement, November 19, 2026; Minnesota Consumer Data Privacy Act, Minn. Stat. chapter 325M. Status checked November 2026."""}
 ]
