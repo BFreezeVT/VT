@@ -21,6 +21,8 @@ export default function RiskReversal() {
                 alt="Business professional stressed after discovering a cybersecurity breach"
                 className="w-full h-auto object-cover"
                 loading="lazy"
+                width={960}
+                height={540}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#112240] via-[#112240]/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">

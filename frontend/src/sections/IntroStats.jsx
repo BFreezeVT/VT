@@ -76,7 +76,7 @@ export default function IntroStats() {
           {/* Threat image */}
           <div className="relative animate-fade-in-up order-2 lg:order-1">
             <div className="relative overflow-hidden border border-[#FF5722]/20">
-              <img data-testid="threat-image" src={HACKER_IMG} alt="Cybersecurity threat actor" className="w-full h-auto object-cover" loading="lazy" />
+              <img data-testid="threat-image" src={HACKER_IMG} alt="Cybersecurity threat actor" className="w-full h-auto object-cover" loading="lazy" width={960} height={640} />
               <div className="absolute inset-0 bg-gradient-to-t from-[#dce6f0] via-[#112240]/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <p className="text-[#FF5722] text-xs uppercase tracking-wider font-semibold mb-1">Growing Risk</p>

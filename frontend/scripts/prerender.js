@@ -2,13 +2,29 @@
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
-const https = require("https");
 const puppeteer = require("puppeteer-core");
+
+// @sparticuz/chromium bundles a Chromium binary for serverless build images
+// (Vercel has no system Chrome). It is only used when no system Chrome exists.
+// The package is ESM, so require() returns a namespace object; the Chromium
+// class lives on `.default`. v153 exposes executablePath() and args as statics
+// on that class (no headless/defaultViewport properties in this version).
+let sparticuzChromium = null;
+try {
+  const mod = require("@sparticuz/chromium");
+  sparticuzChromium = mod && mod.default ? mod.default : mod;
+} catch (e) {
+  sparticuzChromium = null;
+}
 
 const BUILD_DIR = path.join(__dirname, "..", "build");
 const PUBLIC_DIR = path.join(__dirname, "..", "public");
 const SRC_DATA_DIR = path.join(__dirname, "..", "src", "data");
 const PORT = 5055;
+
+// The title in public/index.html. Every page starts with this title until its
+// page component updates it client-side.
+const TEMPLATE_TITLE = "Managed IT & Cybersecurity | Veracity Technologies";
 
 function findChromePath() {
   if (process.env.PUPPETEER_EXECUTABLE_PATH) return process.env.PUPPETEER_EXECUTABLE_PATH;
@@ -16,37 +32,55 @@ function findChromePath() {
   return candidates.find((p) => fs.existsSync(p)) || null;
 }
 
-function readEnvVar(name) {
-  const envPath = path.join(__dirname, "..", ".env");
-  const content = fs.readFileSync(envPath, "utf8");
-  const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
-  return match ? match.split("=").slice(1).join("=").trim() : null;
+// Resolve the puppeteer launch options. Prefer a system Chrome when one exists
+// (local runs); otherwise fall back to the @sparticuz/chromium binary bundled
+// for serverless build images. Returns null when no Chrome is available.
+async function getLaunchOptions() {
+  const systemChrome = findChromePath();
+  if (systemChrome) {
+    return {
+      executablePath: systemChrome,
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    };
+  }
+  if (sparticuzChromium && typeof sparticuzChromium.executablePath === "function") {
+    try {
+      const executablePath = await sparticuzChromium.executablePath();
+      return {
+        executablePath,
+        headless: true,
+        args: sparticuzChromium.args,
+      };
+    } catch (e) {
+      console.warn("Prerender: @sparticuz/chromium binary unavailable:", e.message);
+      return null;
+    }
+  }
+  return null;
+}
+
+// Blog post slugs live in code (backend/blog_data.py and backend/server.py),
+// the same source the API serves. Read them from the repository instead of
+// fetching /api/blog, so prerendering does not depend on any environment
+// variable or network access at build time.
+const BACKEND_DIR = path.join(__dirname, "..", "..", "backend");
+
+function getBlogSlugsFromRepo() {
+  const slugs = [];
+  for (const fileName of ["blog_data.py", "server.py"]) {
+    const content = fs.readFileSync(path.join(BACKEND_DIR, fileName), "utf8");
+    for (const m of content.matchAll(/"slug":\s*"([^"]+)"/g)) {
+      slugs.push(m[1]);
+    }
+  }
+  return [...new Set(slugs)];
 }
 
 function extractSlugs(fileName) {
   const content = fs.readFileSync(path.join(SRC_DATA_DIR, fileName), "utf8");
   const matches = [...content.matchAll(/^\s+slug:\s*"([^"]+)"/gm)];
   return matches.map((m) => m[1]);
-}
-
-async function getBlogSlugs(backendUrl) {
-  const client = backendUrl.startsWith("https:") ? https : http;
-  return new Promise((resolve, reject) => {
-    client
-      .get(`${backendUrl}/api/blog`, (res) => {
-        let data = "";
-        res.on("data", (chunk) => (data += chunk));
-        res.on("end", () => {
-          try {
-            const posts = JSON.parse(data);
-            resolve(posts.map((p) => p.slug));
-          } catch (e) {
-            reject(e);
-          }
-        });
-      })
-      .on("error", reject);
-  });
 }
 
 function startStaticServer() {
@@ -75,15 +109,9 @@ function startStaticServer() {
 }
 
 async function main() {
-  const chromePath = findChromePath();
-  if (!chromePath) {
+  const launchOptions = await getLaunchOptions();
+  if (!launchOptions) {
     console.warn("Prerender: no Chrome binary found, skipping SEO prerendering (SPA build is unaffected).");
-    return;
-  }
-
-  const backendUrl = readEnvVar("REACT_APP_BACKEND_URL");
-  if (!backendUrl) {
-    console.warn("Prerender: REACT_APP_BACKEND_URL not found, skipping SEO prerendering.");
     return;
   }
 
@@ -95,7 +123,7 @@ async function main() {
   const industrySlugs = extractSlugs("industryData.js").map((s) => `/industries/${s}`);
   const serviceSlugs = extractSlugs("coreServicesData.js").map((s) => `/services/${s}`);
   const aiSlugs = extractSlugs("aiPagesData.js").map((s) => `/${s}`);
-  const blogSlugs = (await getBlogSlugs(backendUrl)).map((s) => `/resources/${s}`);
+  const blogSlugs = getBlogSlugsFromRepo().map((s) => `/resources/${s}`);
 
   const allRoutes = [...staticRoutes, ...citySlugs, ...industrySlugs, ...serviceSlugs, ...aiSlugs, ...blogSlugs];
   console.log(`Prerendering ${allRoutes.length} routes...`);
@@ -123,11 +151,7 @@ async function main() {
   }
 
   const server = await startStaticServer();
-  const browser = await puppeteer.launch({
-    executablePath: chromePath,
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
 
   let success = 0;
@@ -147,12 +171,44 @@ async function main() {
         await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle0", timeout: 30000 });
         await new Promise((r) => setTimeout(r, 400 + attempt * 800));
         mounted = await page.evaluate(() => document.getElementById("root")?.children.length > 0);
-        if (mounted) html = await page.content();
+        if (mounted) {
+          // Title guard: the page title is set client-side by a page-component
+          // useEffect, which can run after React mounts (especially on
+          // lazy-loaded pages). Capturing immediately after mount saves the
+          // template title instead of the page's own title. Wait for the title
+          // to change from the template title before capturing. The homepage
+          // keeps the template title by design, so skip the wait there.
+          if (route !== "/") {
+            try {
+              await page.waitForFunction(
+                (templateTitle) => document.title !== templateTitle,
+                { timeout: 5000 },
+                TEMPLATE_TITLE
+              );
+            } catch (e) {
+              console.warn(`Prerender: title did not update from template for ${route}, capturing as-is.`);
+            }
+          }
+          html = await page.content();
+        }
         attempt++;
       } while (!mounted && attempt < 3);
 
       if (!mounted) {
         throw new Error("React never mounted into #root after 3 attempts");
+      }
+
+      // Content guard: a page that failed to load its data renders a not-found
+      // state (for example a blog post whose API fetch failed renders
+      // "Article Not Found"). Saving that as the snapshot would be worse than
+      // keeping the previous snapshot, so treat it as a failure and do not
+      // save it. The route is reported in the FAILED list.
+      const isNotFound = await page.evaluate(() => {
+        const h1 = document.querySelector("h1");
+        return h1 ? /not found/i.test(h1.textContent || "") : false;
+      });
+      if (isNotFound) {
+        throw new Error("Page rendered a not-found state (its data did not load)");
       }
 
       html = normalizeAssetTags(html);

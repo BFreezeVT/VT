@@ -47,6 +47,8 @@ export default function WhySpecializedIT() {
                 alt="IT specialist handling network cables in a secure server room"
                 className="w-full h-auto object-cover"
                 loading="lazy"
+                width={940}
+                height={650}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#112240]/60 to-transparent" />
             </div>
