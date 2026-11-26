@@ -231,6 +231,7 @@ async function main() {
   const staticRoutes = [
     "/", "/service-areas", "/business-technology-assessment", "/resources",
     "/cyber-risk-scorecard", "/ai-roi-preview", "/human-risk-simulation", "/client-success",
+    "/about",
   ];
   const citySlugs = extractSlugs("cityData.js").map((s) => `/service-areas/${s}`);
   const industrySlugs = extractSlugs("industryData.js").map((s) => `/industries/${s}`);
