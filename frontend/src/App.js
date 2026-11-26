@@ -20,6 +20,8 @@ const AIROIPreview = lazy(() => import("./pages/AIROIPreview"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const HumanRiskSimulation = lazy(() => import("./pages/HumanRiskSimulation"));
 const ClientSuccess = lazy(() => import("./pages/ClientSuccess"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
+const DiscoveryCall = lazy(() => import("./pages/DiscoveryCall"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Below-fold homepage sections - each ships in its own chunk instead of bloating the
@@ -172,6 +174,8 @@ function App() {
           <Route path="/services/:serviceSlug" element={<ServicePage />} />
           <Route path="/human-risk-simulation" element={<HumanRiskSimulation />} />
           <Route path="/client-success" element={<ClientSuccess />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/discovery-call" element={<DiscoveryCall />} />
           <Route path="/:aiSlug" element={<AIPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

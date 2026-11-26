@@ -50,6 +50,7 @@ export default function Navigation() {
           <Link to="/cyber-risk-scorecard" data-testid="nav-scorecard" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Risk Score</Link>
           <Link to="/human-risk-simulation" data-testid="nav-human-risk-simulation" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">Human Risk</Link>
           <Link to="/ai-roi-preview" data-testid="nav-roi-calculator" className="text-[#0077B3] hover:text-[#00a0e4] text-sm font-semibold transition-colors">ROI Calculator</Link>
+          <Link to="/contact" data-testid="nav-contact" className={`text-sm font-semibold transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/90 hover:text-white"}`}>Contact</Link>
           <a data-testid="nav-phone" href="tel:9529417333" className={`flex items-center gap-2 text-sm transition-colors ${scrolled ? "text-[#0a1220] hover:text-[#0077B3]" : "text-white/80 hover:text-white"}`}>
             <Phone className="w-4 h-4" />
             (952) 941-7333
@@ -84,6 +85,8 @@ export default function Navigation() {
           <Link to="/business-technology-assessment" data-testid="mobile-nav-bta" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Business Technology Assessment</Link>
           <Link to="/human-risk-simulation" data-testid="mobile-nav-human-risk-simulation" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Human Risk Simulation</Link>
           <Link to="/ai-roi-preview" data-testid="mobile-nav-roi-calculator" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI ROI Calculator</Link>
+          <Link to="/contact" data-testid="mobile-nav-contact" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Contact Us</Link>
+          <Link to="/discovery-call" data-testid="mobile-nav-discovery-call" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Book a Discovery Call</Link>
           <button data-testid="mobile-nav-faq" onClick={() => scrollTo("faq")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">FAQ</button>
           <a href="tel:9529417333" className="flex items-center gap-2 text-[#0a1220] hover:text-[#0077B3] text-sm">
             <Phone className="w-4 h-4" /> (952) 941-7333

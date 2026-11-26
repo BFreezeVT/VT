@@ -2,47 +2,50 @@
    so every indexable page (including all blog posts) always ends up in the sitemap. */
 const fs = require("fs");
 const path = require("path");
+const http = require("http");
+const https = require("https");
 
 const PUBLIC_DIR = path.join(__dirname, "..", "public");
 const BUILD_DIR = path.join(__dirname, "..", "build");
 const SRC_DATA_DIR = path.join(__dirname, "..", "src", "data");
 const DOMAIN = "https://www.veracitytechmn.com";
 
-// Blog posts live in code (backend/blog_data.py and backend/server.py), the
-// same source the API serves. Read them from the repository instead of
-// fetching /api/blog, so sitemap generation does not depend on any
-// environment variable or network access at build time.
-const BACKEND_DIR = path.join(__dirname, "..", "..", "backend");
-
-function getBlogPostsFromRepo() {
-  const posts = [];
-  for (const fileName of ["blog_data.py", "server.py"]) {
-    const content = fs.readFileSync(path.join(BACKEND_DIR, fileName), "utf8");
-    const slugRe = /"slug":\s*"([^"]+)"/g;
-    let m;
-    while ((m = slugRe.exec(content)) !== null) {
-      const slug = m[1];
-      // The published_date follows the slug within the same post dict.
-      const tail = content.slice(m.index + m[0].length, m.index + m[0].length + 3000);
-      const pm = tail.match(/"published_date":\s*"([^"]+)"/);
-      const sm = tail.match(/"slug":\s*"/);
-      if (pm && (!sm || pm.index < sm.index)) {
-        posts.push({ slug, published_date: pm[1] });
-      }
-    }
+function readEnvVar(name) {
+  const envPath = path.join(__dirname, "..", ".env");
+  try {
+    const content = fs.readFileSync(envPath, "utf8");
+    const match = content.split("\n").find((l) => l.startsWith(`${name}=`));
+    if (match) return match.split("=").slice(1).join("=").trim();
+  } catch (e) {
+    // No .env file on this build host (e.g. Vercel) - fall back to the
+    // actual process environment instead of crashing the build.
   }
-  const seen = new Set();
-  return posts.filter((p) => {
-    if (seen.has(p.slug)) return false;
-    seen.add(p.slug);
-    return true;
-  });
+  return process.env[name] || null;
 }
 
 function extractSlugs(fileName) {
   const content = fs.readFileSync(path.join(SRC_DATA_DIR, fileName), "utf8");
   const matches = [...content.matchAll(/^\s+slug:\s*"([^"]+)"/gm)];
   return matches.map((m) => m[1]);
+}
+
+async function getBlogPosts(backendUrl) {
+  const client = backendUrl.startsWith("https:") ? https : http;
+  return new Promise((resolve, reject) => {
+    client
+      .get(`${backendUrl}/api/blog`, (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          try {
+            resolve(JSON.parse(data));
+          } catch (e) {
+            reject(e);
+          }
+        });
+      })
+      .on("error", reject);
+  });
 }
 
 // Fixed lastmod/changefreq/priority for non-blog routes (only bump a date here
@@ -56,6 +59,8 @@ const STATIC_META = {
   "/ai-roi-preview": { lastmod: "2026-02-01", changefreq: "monthly", priority: "0.9" },
   "/human-risk-simulation": { lastmod: "2026-02-05", changefreq: "monthly", priority: "0.9" },
   "/client-success": { lastmod: "2026-02-05", changefreq: "monthly", priority: "0.8" },
+  "/contact": { lastmod: "2026-11-24", changefreq: "monthly", priority: "0.8" },
+  "/discovery-call": { lastmod: "2026-11-24", changefreq: "monthly", priority: "0.8" },
 };
 
 const INDUSTRY_META = { lastmod: "2025-12-01", changefreq: "monthly", priority: "0.9" };
@@ -77,6 +82,12 @@ function urlEntry(loc, meta) {
 }
 
 async function main() {
+  const backendUrl = readEnvVar("REACT_APP_BACKEND_URL");
+  if (!backendUrl) {
+    console.warn("Sitemap: REACT_APP_BACKEND_URL not found, skipping sitemap generation.");
+    return;
+  }
+
   const entries = [];
 
   Object.entries(STATIC_META).forEach(([route, meta]) => {
@@ -100,7 +111,7 @@ async function main() {
     entries.push(urlEntry(`${DOMAIN}/${slug}`, { ...AI_META_DEFAULT, priority }));
   });
 
-  const posts = getBlogPostsFromRepo();
+  const posts = await getBlogPosts(backendUrl);
   posts.forEach((post) => {
     entries.push(urlEntry(`${DOMAIN}/resources/${post.slug}`, { ...BLOG_META, lastmod: post.published_date }));
   });
