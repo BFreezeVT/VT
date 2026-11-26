@@ -25,7 +25,7 @@ export default function CyberRiskScorecard() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid="cyber-risk-scorecard">
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid="cyber-risk-scorecard">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({ "@context": "https://schema.org", "@type": "WebApplication", name: "Cyber Risk Scorecard", description: "Free interactive cybersecurity risk assessment tool. Answer 12 questions to get your business risk score plus a sample ROI estimate for closing the gaps, instantly.", url: "https://www.veracitytechmn.com/cyber-risk-scorecard", applicationCategory: "SecurityApplication", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, provider: { "@type": "Organization", name: "Veracity Technologies" } }) }} />
 
       <ScorecardNav />

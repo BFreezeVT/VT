@@ -2,7 +2,7 @@ export default function ROIContent() {
   return (
     <section data-testid="ai-roi-content-section" aria-label="The Business Case for Managed AI and IT ROI" className="py-16 lg:py-20 bg-white">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 data-testid="roi-content-h2" className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit" }}>
+        <h2 data-testid="roi-content-h2" className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1c2f4a] mb-6" style={{ fontFamily: "Outfit" }}>
           The Business Case for Managed AI and IT ROI
         </h2>
         <p className="text-[#3a5068] text-base leading-relaxed mb-8">
@@ -11,7 +11,7 @@ export default function ROIContent() {
 
         <div className="space-y-8 text-[#3a5068] text-base leading-relaxed">
           <div>
-            <h3 data-testid="roi-content-h3-1" className="text-lg font-bold text-[#0f1d32] mb-3" style={{ fontFamily: "Outfit" }}>
+            <h3 data-testid="roi-content-h3-1" className="text-lg font-bold text-[#1c2f4a] mb-3" style={{ fontFamily: "Outfit" }}>
               Where Managed IT Savings Come From
             </h3>
             <p>
@@ -20,7 +20,7 @@ export default function ROIContent() {
           </div>
 
           <div>
-            <h3 data-testid="roi-content-h3-2" className="text-lg font-bold text-[#0f1d32] mb-3" style={{ fontFamily: "Outfit" }}>
+            <h3 data-testid="roi-content-h3-2" className="text-lg font-bold text-[#1c2f4a] mb-3" style={{ fontFamily: "Outfit" }}>
               Calculating AI Automation ROI
             </h3>
             <p>
@@ -29,7 +29,7 @@ export default function ROIContent() {
           </div>
 
           <div>
-            <h3 data-testid="roi-content-h3-3" className="text-lg font-bold text-[#0f1d32] mb-3" style={{ fontFamily: "Outfit" }}>
+            <h3 data-testid="roi-content-h3-3" className="text-lg font-bold text-[#1c2f4a] mb-3" style={{ fontFamily: "Outfit" }}>
               Operational Efficiency for Small Business Growth
             </h3>
             <p>
@@ -38,7 +38,7 @@ export default function ROIContent() {
           </div>
 
           <div>
-            <h3 data-testid="roi-content-h3-4" className="text-lg font-bold text-[#0f1d32] mb-3" style={{ fontFamily: "Outfit" }}>
+            <h3 data-testid="roi-content-h3-4" className="text-lg font-bold text-[#1c2f4a] mb-3" style={{ fontFamily: "Outfit" }}>
               Turning a Sample Estimate Into a Real Number
             </h3>
             <p>

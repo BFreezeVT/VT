@@ -2,7 +2,7 @@ import { AlertTriangle, Sparkles } from "lucide-react";
 
 export default function HRSWhyItMatters({ data }) {
   return (
-    <section data-testid="hrs-why-it-matters" className="py-20 bg-[#0f1d32]">
+    <section data-testid="hrs-why-it-matters" className="py-20 bg-[#1c2f4a]">
       <div className="max-w-4xl mx-auto px-6">
         <div className="flex items-center gap-3 mb-4">
           <AlertTriangle className="w-5 h-5 text-[#0077B3]" />

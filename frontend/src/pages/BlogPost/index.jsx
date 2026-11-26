@@ -90,7 +90,7 @@ export default function BlogPost() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center">
+      <div className="min-h-screen bg-[#1c2f4a] flex items-center justify-center">
         <p className="text-[#94a8be]">Loading...</p>
       </div>
     );
@@ -102,7 +102,7 @@ export default function BlogPost() {
       return <Navigate to={`/resources/${newSlug}`} replace />;
     }
     return (
-      <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center">
+      <div className="min-h-screen bg-[#1c2f4a] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit" }}>Article Not Found</h1>
           <Link to="/resources" className="text-[#0077B3] hover:text-white">Back to Resources</Link>
@@ -112,7 +112,7 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid={`blog-post-${post.slug}`}>
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid={`blog-post-${post.slug}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildArticleSchema(post)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema(post)) }} />
 

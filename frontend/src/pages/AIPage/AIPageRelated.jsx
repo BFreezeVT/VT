@@ -3,7 +3,7 @@ import industryData from "../../data/industryData";
 
 export default function AIPageRelated({ otherPages }) {
   return (
-    <section className="py-16 bg-[#0f1d32]">
+    <section className="py-16 bg-[#1c2f4a]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-[#94a8be] text-sm mb-4 text-center">Related AI solutions:</p>
         <div className="flex justify-center gap-3 flex-wrap mb-10">

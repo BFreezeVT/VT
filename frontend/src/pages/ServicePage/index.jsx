@@ -75,7 +75,7 @@ export default function ServicePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid={`service-page-${svc.slug}`}>
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid={`service-page-${svc.slug}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema(svc)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema(svc)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(svc)) }} />

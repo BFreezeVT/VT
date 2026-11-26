@@ -4,7 +4,7 @@ import industryData from "../../data/industryData";
 
 export default function BTARelatedLinks() {
   return (
-    <section className="py-16 bg-[#0f1d32] border-t border-white/10">
+    <section className="py-16 bg-[#1c2f4a] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-[#94a8be] text-sm mb-4 text-center">Explore the AI Readiness content cluster:</p>
         <div className="flex justify-center gap-3 flex-wrap mb-10">

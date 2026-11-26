@@ -7,7 +7,7 @@ export default function ClientSuccessCTA() {
     <section data-testid="client-success-cta" className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <CheckCircle2 className="w-10 h-10 text-[#0077B3] mx-auto mb-4" />
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#0f1d32] mb-4" style={{ fontFamily: "Outfit" }}>
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#1c2f4a] mb-4" style={{ fontFamily: "Outfit" }}>
           See what a partnership with Veracity could look like for your business
         </h2>
         <p className="text-[#3a5068] text-base mb-8 max-w-xl mx-auto">

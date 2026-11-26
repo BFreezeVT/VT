@@ -2,7 +2,7 @@ import { Building2 } from "lucide-react";
 
 export default function CityAbout({ city }) {
   return (
-    <section data-testid="city-about" aria-label={`About IT services in ${city.name}`} className="py-20 bg-[#0f1d32]">
+    <section data-testid="city-about" aria-label={`About IT services in ${city.name}`} className="py-20 bg-[#1c2f4a]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>

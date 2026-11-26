@@ -73,7 +73,7 @@ export default function AIPage() {
   const otherPages = aiPagesData.filter((p) => p.slug !== page.slug).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid={`ai-page-${page.slug}`}>
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid={`ai-page-${page.slug}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema(page)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(page)) }} />

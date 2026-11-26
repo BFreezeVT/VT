@@ -39,7 +39,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center scale-110"
         style={{ backgroundImage: `url(${HERO_BG})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/95 via-[#0f1d32]/75 to-[#0f1d32]/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/95 via-[#1c2f4a]/75 to-[#1c2f4a]/50" />
 
       {/* Animated grid overlay */}
       <div

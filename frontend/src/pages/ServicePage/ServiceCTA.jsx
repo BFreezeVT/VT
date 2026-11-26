@@ -4,7 +4,7 @@ import { Button } from "../../components/ui/button";
 
 export default function ServiceCTA({ svc }) {
   return (
-    <section data-testid="service-page-cta" className="py-20 bg-[#0f1d32]">
+    <section data-testid="service-page-cta" className="py-20 bg-[#1c2f4a]">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <CheckCircle2 className="w-10 h-10 text-[#0077B3] mx-auto mb-4" />
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4" style={{ fontFamily: "Outfit" }}>

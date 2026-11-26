@@ -84,7 +84,7 @@ export default function IndustryPage() {
 
   if (!industry) {
     return (
-      <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center">
+      <div className="min-h-screen bg-[#1c2f4a] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit" }}>Page Not Found</h1>
           <Link to="/" className="text-[#0077B3] hover:text-white">Back to Home</Link>
@@ -98,7 +98,7 @@ export default function IndustryPage() {
   const structuredData = buildIndustryStructuredData(industry);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid={`industry-page-${industry.slug}`}>
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid={`industry-page-${industry.slug}`}>
       {structuredData.map((schema) => (
         <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }} />
       ))}
@@ -145,7 +145,7 @@ export default function IndustryPage() {
         <IndustryTestimonials industry={industry} testimonials={testimonials} />
 
         {/* Bottom BTA CTA */}
-        <section data-testid="industry-bottom-bta" className="py-14 bg-[#0f1d32] text-center">
+        <section data-testid="industry-bottom-bta" className="py-14 bg-[#1c2f4a] text-center">
           <div className="max-w-2xl mx-auto px-6">
             <p className="text-[#94a8be] text-sm mb-4">Want the full picture beyond this audit?</p>
             <Link to="/business-technology-assessment" data-testid="industry-bottom-cta">
@@ -159,7 +159,7 @@ export default function IndustryPage() {
         <IndustryFormSection industry={industry} submitted={submitted} error={error} submitLead={submitLead} />
 
         {/* Other industries */}
-        <section className="py-16 bg-[#0f1d32]">
+        <section className="py-16 bg-[#1c2f4a]">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <p className="text-[#94a8be] text-sm mb-4">We also specialize in:</p>
             <div className="flex justify-center gap-4 flex-wrap">

@@ -4,7 +4,7 @@ import industryData from "../../data/industryData";
 
 export default function ServiceIndustryExamples({ svc }) {
   return (
-    <section data-testid="service-page-industry-examples" className="py-20 bg-[#0f1d32]">
+    <section data-testid="service-page-industry-examples" className="py-20 bg-[#1c2f4a]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="overline text-[#0077B3] mb-4">By Industry</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12" style={{ fontFamily: "Outfit" }}>

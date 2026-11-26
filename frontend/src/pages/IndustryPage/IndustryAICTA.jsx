@@ -6,7 +6,7 @@ export default function IndustryAICTA({ industry }) {
     <section data-testid="industry-ai-cta" className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <p className="overline text-[#0077B3] mb-4">AI Readiness for {industry.name}</p>
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit" }}>
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#1c2f4a] mb-6" style={{ fontFamily: "Outfit" }}>
           See how {industry.name.toLowerCase()} firms are scoring on AI readiness
         </h2>
         <div className="flex justify-center gap-3 flex-wrap mb-8">
