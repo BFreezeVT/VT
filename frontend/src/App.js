@@ -20,6 +20,16 @@ const AIROIPreview = lazy(() => import("./pages/AIROIPreview"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const HumanRiskSimulation = lazy(() => import("./pages/HumanRiskSimulation"));
 const ClientSuccess = lazy(() => import("./pages/ClientSuccess"));
+const TwoFreeHours = lazy(() => import("./pages/TwoFreeHours"));
+const Aspirin = lazy(() => import("./pages/Aspirin"));
+const FreeNetworkAssessment = lazy(() => import("./pages/FreeNetworkAssessment"));
+const InitialConsultation = lazy(() => import("./pages/InitialConsultation"));
+const ITBuyersGuide = lazy(() => import("./pages/ITBuyersGuide"));
+const CyberSecurityTipOfTheWeek = lazy(() => import("./pages/CyberSecurityTipOfTheWeek"));
+const MasteringAI = lazy(() => import("./pages/MasteringAI"));
+const MaximizingAI = lazy(() => import("./pages/MaximizingAI"));
+const CybersecurityThatWorks = lazy(() => import("./pages/CybersecurityThatWorks"));
+const AiriaRequest = lazy(() => import("./pages/AiriaRequest"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Below-fold homepage sections - each ships in its own chunk instead of bloating the
@@ -172,6 +182,16 @@ function App() {
           <Route path="/services/:serviceSlug" element={<ServicePage />} />
           <Route path="/human-risk-simulation" element={<HumanRiskSimulation />} />
           <Route path="/client-success" element={<ClientSuccess />} />
+          <Route path="/2-free-hours" element={<TwoFreeHours />} />
+          <Route path="/aspirin" element={<Aspirin />} />
+          <Route path="/free-network-assessment" element={<FreeNetworkAssessment />} />
+          <Route path="/initial-consultation" element={<InitialConsultation />} />
+          <Route path="/it-buyers-guide" element={<ITBuyersGuide />} />
+          <Route path="/cyber-security-tip-of-the-week" element={<CyberSecurityTipOfTheWeek />} />
+          <Route path="/mastering-ai" element={<MasteringAI />} />
+          <Route path="/maximizing-ai" element={<MaximizingAI />} />
+          <Route path="/cybersecurity-that-works" element={<CybersecurityThatWorks />} />
+          <Route path="/airia-request" element={<AiriaRequest />} />
           <Route path="/:aiSlug" element={<AIPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
