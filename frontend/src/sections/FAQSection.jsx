@@ -60,7 +60,7 @@ const faqCategories = [
     items: [
       {
         q: "What is Shadow AI?",
-        a: "Shadow AI refers to unauthorized AI tools employees use without IT or security oversight \u2014 things like ChatGPT for sensitive documents, unapproved automation tools, or consumer AI apps connected to company data. It creates serious compliance and data leakage risk.",
+        a: "Shadow AI refers to unauthorized AI tools employees use without IT or security oversight, things like ChatGPT for sensitive documents, unapproved automation tools, or consumer AI apps connected to company data. It creates serious compliance and data leakage risk.",
       },
       {
         q: "Do you offer AI governance?",
@@ -72,11 +72,11 @@ const faqCategories = [
       },
       {
         q: "How does AI reduce business risk?",
-        a: "AI enables continuous monitoring at a scale humans can't match \u2014 detecting anomalies, flagging policy violations, and responding to threats in real time. It also reduces human error, enforces consistent processes, and provides audit trails that support compliance.",
+        a: "AI enables continuous monitoring at a scale humans can't match, detecting anomalies, flagging policy violations, and responding to threats in real time. It also reduces human error, enforces consistent processes, and provides audit trails that support compliance.",
       },
       {
         q: "What is a Human Risk Simulation?",
-        a: "It's an interactive assessment that presents realistic AI-generated threat scenarios \u2014 phishing, social engineering, impersonation \u2014 and measures how your team responds. The result is a Human Risk Score identifying your organization's behavioral vulnerabilities.",
+        a: "It's an interactive assessment that presents realistic AI-generated threat scenarios, phishing, social engineering, impersonation, and measures how your team responds. The result is a Human Risk Score identifying your organization's behavioral vulnerabilities.",
       },
     ],
   },
@@ -93,7 +93,7 @@ const faqCategories = [
       },
       {
         q: "What makes Veracity different?",
-        a: "We operate as a Managed Intelligence Provider, not a traditional MSP. We use AI and automation to proactively detect and resolve issues rather than reacting when things break. Clients get dedicated account managers, faster response times, and strategic technology guidance \u2014 not just a help desk.",
+        a: "We operate as a Managed Intelligence Provider, not a traditional MSP. We use AI and automation to proactively detect and resolve issues rather than reacting when things break. Clients get dedicated account managers, faster response times, and strategic technology guidance, not just a help desk.",
       },
       {
         q: "What areas do you serve?",
@@ -109,7 +109,7 @@ const faqCategories = [
       },
       {
         q: "How is Veracity different from a traditional provider?",
-        a: "Traditional providers react when things break. Veracity builds proactive, AI-enhanced environments that detect and resolve issues before they impact your business. We combine strategic vCIO guidance with full IT and security execution \u2014 at a fraction of the cost of in-house staff.",
+        a: "Traditional providers react when things break. Veracity builds proactive, AI-enhanced environments that detect and resolve issues before they impact your business. We combine strategic vCIO guidance with full IT and security execution, at a fraction of the cost of in-house staff.",
       },
     ],
   },

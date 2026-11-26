@@ -21,6 +21,16 @@ const STATIC_ROUTES = new Set([
   "/ai-roi-preview",
   "/human-risk-simulation",
   "/client-success",
+  "/2-free-hours",
+  "/aspirin",
+  "/free-network-assessment",
+  "/initial-consultation",
+  "/it-buyers-guide",
+  "/cyber-security-tip-of-the-week",
+  "/mastering-ai",
+  "/maximizing-ai",
+  "/cybersecurity-that-works",
+  "/airia-request",
 ]);
 
 // Single-segment AI landing pages served by the /:aiSlug catch-all route.

@@ -56,6 +56,16 @@ const STATIC_META = {
   "/ai-roi-preview": { lastmod: "2026-02-01", changefreq: "monthly", priority: "0.9" },
   "/human-risk-simulation": { lastmod: "2026-02-05", changefreq: "monthly", priority: "0.9" },
   "/client-success": { lastmod: "2026-02-05", changefreq: "monthly", priority: "0.8" },
+  "/2-free-hours": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/aspirin": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/free-network-assessment": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.9" },
+  "/initial-consultation": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/it-buyers-guide": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/cyber-security-tip-of-the-week": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.7" },
+  "/mastering-ai": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/maximizing-ai": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/cybersecurity-that-works": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/airia-request": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
 };
 
 const INDUSTRY_META = { lastmod: "2025-12-01", changefreq: "monthly", priority: "0.9" };
