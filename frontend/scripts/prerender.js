@@ -1,7 +1,9 @@
 /* Post-build static prerendering for SEO (fixes soft-404 / wrong canonical on raw HTML fetch) */
 const fs = require("fs");
 const path = require("path");
+const os = require("os");
 const http = require("http");
+const { spawnSync } = require("child_process");
 const puppeteer = require("puppeteer-core");
 
 // @sparticuz/chromium bundles a Chromium binary for serverless build images
@@ -75,6 +77,117 @@ function getBlogSlugsFromRepo() {
     }
   }
   return [...new Set(slugs)];
+}
+
+// Hermetic blog API for prerendering. The BlogPost and BlogIndex pages fetch
+// post data from the live backend API at render time
+// (${REACT_APP_BACKEND_URL}/api/blog...). The prerender static server does
+// not proxy /api, so during a build those fetches go to the absolute backend
+// URL, which is unreachable or too slow from the build container, and the
+// routes fail (no snapshot is written). Load the same data from the repo
+// instead (frontend/scripts/export_blog_data.py parses backend/blog_data.py
+// and backend/server.py with Python ast, never importing server.py) and
+// serve it to the page via Puppeteer request interception, so no live
+// backend is needed at build time. Returns the post array, or null when the
+// export fails; the caller then falls back to the live backend, exactly as
+// before, so this change cannot make a build worse than today.
+function loadBlogData() {
+  const outFile = path.join(os.tmpdir(), `veracity-blog-data-${process.pid}.json`);
+  try {
+    const result = spawnSync(
+      "python3",
+      [path.join(__dirname, "export_blog_data.py"), outFile],
+      { encoding: "utf8", timeout: 60000 }
+    );
+    if (result.status !== 0) {
+      const detail = (result.stderr || "").trim() || (result.error && result.error.message) || "unknown error";
+      console.warn(`Prerender: blog data export failed (${detail}); blog API calls will use the live backend.`);
+      return null;
+    }
+    const data = JSON.parse(fs.readFileSync(outFile, "utf8"));
+    if (!Array.isArray(data) || data.length === 0) {
+      console.warn("Prerender: blog data export returned no posts; blog API calls will use the live backend.");
+      return null;
+    }
+    return data;
+  } catch (e) {
+    console.warn(`Prerender: could not load blog data (${e.message}); blog API calls will use the live backend.`);
+    return null;
+  } finally {
+    try {
+      fs.unlinkSync(outFile);
+    } catch (e) {
+      // Temporary file cleanup is best-effort.
+    }
+  }
+}
+
+// Serve /api/blog, /api/blog/<slug>, and /api/blog/<slug>/related from the
+// repo data, mirroring the backend shapes exactly (see backend/server.py
+// get_blog_posts, get_blog_post, get_related_blog_posts): the list and the
+// related payloads carry every field except `content`; the single-post
+// payload carries the full post. Related posts are the same-category posts
+// first, then the newest others, capped at 8 (limit query param clamped
+// 1-12, same as the backend). The in-page fetch URL is the absolute backend
+// URL in production builds, and a relative "undefined/api/..." URL when
+// REACT_APP_BACKEND_URL is unset, so match the /api/blog path segment
+// wherever it appears in the request path rather than assuming an origin.
+async function stubBlogApi(page) {
+  const blogData = loadBlogData();
+  if (!blogData) return;
+  const postsBySlug = new Map(blogData.map((post) => [post.slug, post]));
+  const stripContent = (post) => {
+    const { content, ...rest } = post;
+    return rest;
+  };
+  await page.setRequestInterception(true);
+  page.on("request", (req) => {
+    let url;
+    try {
+      url = new URL(req.url());
+    } catch (e) {
+      req.continue();
+      return;
+    }
+    const match = url.pathname.match(/(?:^|\/)api\/blog(?:\/([^/]+)(\/related)?)?\/?$/);
+    if (!match) {
+      req.continue();
+      return;
+    }
+    const slug = match[1];
+    const isRelated = Boolean(match[2]);
+    let status = 200;
+    let body;
+    if (!slug) {
+      body = blogData.map(stripContent);
+    } else if (isRelated) {
+      const current = postsBySlug.get(slug);
+      if (!current) {
+        status = 404;
+        body = { detail: "Post not found" };
+      } else {
+        const limit = Math.max(1, Math.min(parseInt(url.searchParams.get("limit") || "8", 10) || 8, 12));
+        const sameCategory = blogData.filter((post) => post.slug !== slug && post.category === current.category);
+        const otherCategory = blogData.filter((post) => post.slug !== slug && post.category !== current.category);
+        body = [...sameCategory, ...otherCategory].slice(0, limit).map(stripContent);
+      }
+    } else {
+      const post = postsBySlug.get(slug);
+      if (!post) {
+        status = 404;
+        body = { detail: "Post not found" };
+      } else {
+        body = post;
+      }
+    }
+    req.respond({
+      status,
+      contentType: "application/json",
+      headers: { "access-control-allow-origin": "*" },
+      body: JSON.stringify(body),
+    });
+  });
+  console.log(`Prerender: serving /api/blog from repo data (${blogData.length} posts).`);
 }
 
 function extractSlugs(fileName) {
@@ -153,6 +266,10 @@ async function main() {
   const server = await startStaticServer();
   const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
+  // Serve the blog API from repo data so blog routes and the /resources hub
+  // prerender without a live backend. Falls back to the live API when the
+  // export fails (see loadBlogData).
+  await stubBlogApi(page);
 
   let success = 0;
   const failed = [];

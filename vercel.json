@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "frontend/middleware.js",
+    "matcher": "/:path*"
+  },
   "services": {
     "backend": {
       "root": "backend",
@@ -9,7 +13,7 @@
     "frontend": {
       "root": "frontend",
       "framework": "create-react-app",
-      "installCommand": "yarn install"
+      "installCommand": "YARN_CACHE_FOLDER=/tmp/yarn-cache-$$ yarn install --network-concurrency 1 --mutex file:/tmp/yarn-mutex"
     }
   },
   "rewrites": [
