@@ -2,7 +2,7 @@ import { XCircle } from "lucide-react";
 
 export default function HRSCommonMistakes({ data }) {
   return (
-    <section data-testid="hrs-common-mistakes" className="py-20 bg-[#0f1d32]">
+    <section data-testid="hrs-common-mistakes" className="py-20 bg-[#1c2f4a]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="overline text-[#0077B3] mb-4">Common Mistakes</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12" style={{ fontFamily: "Outfit" }}>

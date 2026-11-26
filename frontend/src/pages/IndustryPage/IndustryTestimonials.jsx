@@ -2,7 +2,7 @@ import { Quote } from "lucide-react";
 
 export default function IndustryTestimonials({ industry, testimonials }) {
   return (
-    <section data-testid="industry-testimonials" className="py-20 bg-[#0f1d32]">
+    <section data-testid="industry-testimonials" className="py-20 bg-[#1c2f4a]">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-2xl font-bold text-white mb-10 text-center" style={{ fontFamily: "Outfit" }}>
           Trusted by {industry.name.toLowerCase()} professionals

@@ -1,6 +1,6 @@
 export default function IndustryChallenges({ industry }) {
   return (
-    <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#0f1d32]">
+    <section data-testid="industry-challenges" aria-label={`${industry.name} cybersecurity challenges`} className="py-20 bg-[#1c2f4a]">
       <div className="max-w-7xl mx-auto px-6">
         <p className="overline text-[#FF5722] mb-4">The Challenges</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-12" style={{ fontFamily: "Outfit" }}>

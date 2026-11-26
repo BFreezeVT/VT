@@ -4,7 +4,7 @@ import { Input } from "../../components/ui/input";
 
 export default function CityFormSection({ city, submitted, error, submitLead }) {
   return (
-    <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#0f1d32]">
+    <section id="city-form" data-testid="city-form-section" aria-label={`Schedule IT audit in ${city.name}`} className="py-20 bg-[#1c2f4a]">
       <div className="max-w-3xl mx-auto px-6">
         <div className="grid-border-card p-8 lg:p-10">
           {!submitted ? (

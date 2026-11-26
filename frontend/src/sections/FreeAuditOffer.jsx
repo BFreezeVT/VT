@@ -335,7 +335,7 @@ export default function FreeAuditOffer() {
       id="audit"
       data-testid="audit-section"
       aria-label="Business Technology Assessment"
-      className="py-12 lg:py-18 bg-[#0f1d32]"
+      className="py-12 lg:py-18 bg-[#1c2f4a]"
     >
       <div className="max-w-4xl mx-auto px-6">
 

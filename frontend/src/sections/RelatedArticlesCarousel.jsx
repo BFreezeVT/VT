@@ -38,11 +38,11 @@ export default function RelatedArticlesCarousel({ currentSlug, category, allPost
         </CarouselContent>
         <CarouselPrevious
           data-testid="related-articles-prev"
-          className="hidden sm:flex -left-4 lg:-left-10 bg-[#0f1d32] border-white/10 text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white"
+          className="hidden sm:flex -left-4 lg:-left-10 bg-[#1c2f4a] border-white/10 text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white"
         />
         <CarouselNext
           data-testid="related-articles-next"
-          className="hidden sm:flex -right-4 lg:-right-10 bg-[#0f1d32] border-white/10 text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white"
+          className="hidden sm:flex -right-4 lg:-right-10 bg-[#1c2f4a] border-white/10 text-white hover:bg-[#0077B3] hover:border-[#0077B3] hover:text-white"
         />
       </Carousel>
     </div>

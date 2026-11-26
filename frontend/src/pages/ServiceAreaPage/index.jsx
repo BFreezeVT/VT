@@ -83,7 +83,7 @@ export default function ServiceAreaPage() {
       return <Navigate to={`/service-areas/${newSlug}`} replace />;
     }
     return (
-      <div className="min-h-screen bg-[#0f1d32] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#1c2f4a] flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "Outfit, sans-serif" }}>Page Not Found</h1>
           <p className="text-[#94a8be] mb-8">This service area page doesn’t exist.</p>
@@ -101,7 +101,7 @@ export default function ServiceAreaPage() {
   const structuredData = buildCityStructuredData(city);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid={`city-page-${city.slug}`}>
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid={`city-page-${city.slug}`}>
       {structuredData.map((schema) => (
         <script key={schema["@type"]} type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(schema) }} />
       ))}
@@ -144,7 +144,7 @@ export default function ServiceAreaPage() {
         <section data-testid="city-other-areas" aria-label="Other service areas" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              className="text-xl font-bold text-[#0f1d32] mb-8 text-center"
+              className="text-xl font-bold text-[#1c2f4a] mb-8 text-center"
               style={{ fontFamily: "Outfit, sans-serif" }}
             >
               We also serve
@@ -156,7 +156,7 @@ export default function ServiceAreaPage() {
                     key={c.slug}
                     to={`/service-areas/${c.slug}`}
                     data-testid={`other-city-${c.slug}`}
-                    className="text-xs font-medium text-[#0f1d32] border border-[#0f1d32]/15 bg-white hover:border-[#0077B3] hover:text-[#0077B3] px-4 py-2 transition-colors"
+                    className="text-xs font-medium text-[#1c2f4a] border border-[#1c2f4a]/15 bg-white hover:border-[#0077B3] hover:text-[#0077B3] px-4 py-2 transition-colors"
                   >
                     {c.name}
                   </Link>

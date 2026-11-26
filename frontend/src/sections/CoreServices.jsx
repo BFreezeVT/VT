@@ -53,13 +53,13 @@ export default function CoreServices() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="relative flex items-center justify-center mb-10">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div>
-          <span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Our Services</span>
+          <span className="relative bg-[#1c2f4a]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Our Services</span>
         </div>
 
         <div className="text-center mb-12">
           <h2
             data-testid="services-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c2f4a] mb-4"
             style={{ fontFamily: "Outfit" }}
           >
             Managed IT &amp; Cybersecurity Services
@@ -76,10 +76,10 @@ export default function CoreServices() {
               key={svc.title}
               to={svc.link}
               data-testid={`core-service-${i}`}
-              className="group p-6 rounded-lg border border-[#0f1d32]/10 bg-white/60 hover:border-[#0077B3]/40 hover:bg-white transition-all duration-300 hover:-translate-y-1 block"
+              className="group p-6 rounded-lg border border-[#1c2f4a]/10 bg-white/60 hover:border-[#0077B3]/40 hover:bg-white transition-all duration-300 hover:-translate-y-1 block"
             >
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
-              <h3 className="text-[#0f1d32] font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
+              <h3 className="text-[#1c2f4a] font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
               <ul className="space-y-2.5 mb-4">
                 {svc.features.map((f) => (
@@ -89,7 +89,7 @@ export default function CoreServices() {
                   </li>
                 ))}
               </ul>
-              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-[#0f1d32] transition-colors">
+              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-[#1c2f4a] transition-colors">
                 Learn more <ArrowRight className="w-3 h-3" />
               </span>
             </Link>
@@ -101,10 +101,10 @@ export default function CoreServices() {
               key={svc.title}
               to={svc.link}
               data-testid={`core-service-${i + 3}`}
-              className="group p-6 rounded-lg border border-[#0f1d32]/10 bg-white/60 hover:border-[#0077B3]/40 hover:bg-white transition-all duration-300 hover:-translate-y-1 block"
+              className="group p-6 rounded-lg border border-[#1c2f4a]/10 bg-white/60 hover:border-[#0077B3]/40 hover:bg-white transition-all duration-300 hover:-translate-y-1 block"
             >
               <svc.icon className="w-8 h-8 text-[#0077B3] mb-4" />
-              <h3 className="text-[#0f1d32] font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
+              <h3 className="text-[#1c2f4a] font-bold text-lg mb-2" style={{ fontFamily: "Outfit" }}>{svc.title}</h3>
               <p className="text-[#0077B3] text-sm font-medium mb-4">{svc.outcome}</p>
               <ul className="space-y-2.5 mb-4">
                 {svc.features.map((f) => (
@@ -114,7 +114,7 @@ export default function CoreServices() {
                   </li>
                 ))}
               </ul>
-              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-[#0f1d32] transition-colors">
+              <span className="text-[#0077B3] text-sm font-semibold inline-flex items-center gap-1 group-hover:text-[#1c2f4a] transition-colors">
                 Learn more <ArrowRight className="w-3 h-3" />
               </span>
             </Link>

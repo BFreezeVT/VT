@@ -16,10 +16,10 @@ export default function AIService() {
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0077B3 1px, transparent 0)", backgroundSize: "40px 40px" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">AI + Automation</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#1c2f4a]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">AI + Automation</span></div>
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-10">
-          <h2 data-testid="ai-service-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>
+          <h2 data-testid="ai-service-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c2f4a] mb-6" style={{ fontFamily: "Outfit, sans-serif" }}>
             AI and automation that strengthen your IT and cybersecurity.
           </h2>
           <p className="text-[#1a3050] text-base leading-relaxed mb-6">
@@ -27,16 +27,16 @@ export default function AIService() {
           </p>
           <div className="flex items-center justify-center gap-8">
             <div>
-              <p className="stat-number text-4xl sm:text-5xl text-[#0f1d32]">90<span className="text-[#FF5722]">%</span></p>
+              <p className="stat-number text-4xl sm:text-5xl text-[#1c2f4a]">90<span className="text-[#FF5722]">%</span></p>
               <p className="text-xs text-[#1a3050] mt-1">unprepared for AI-augmented threats</p>
             </div>
             <div className="w-px h-14 bg-[#0077B3]/30" />
             <div>
-              <p className="stat-number text-4xl sm:text-5xl text-[#0f1d32]">68<span className="text-[#0077B3]">%</span></p>
+              <p className="stat-number text-4xl sm:text-5xl text-[#1c2f4a]">68<span className="text-[#0077B3]">%</span></p>
               <p className="text-xs text-[#1a3050] mt-1">of employees use unauthorized AI tools</p>
             </div>
           </div>
-          <a href="https://newsroom.accenture.com/news/2025/only-one-in-10-organizations-globally-are-ready-to-protect-against-ai-augmented-cyber-threats" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-3 hover:text-[#0f1d32] transition-colors">
+          <a href="https://newsroom.accenture.com/news/2025/only-one-in-10-organizations-globally-are-ready-to-protect-against-ai-augmented-cyber-threats" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0077B3] text-[10px] mt-3 hover:text-[#1c2f4a] transition-colors">
             Sources: Accenture 2025, Second Talent 2025 <ExternalLink className="w-2.5 h-2.5" />
           </a>
         </div>
@@ -46,7 +46,7 @@ export default function AIService() {
           {aiServices.map((svc, i) => (
             <div key={svc.title} data-testid={`ai-card-${i}`} className={`animate-fade-in-up stagger-${(i % 6) + 1}`}>
               <svc.icon className="w-5 h-5 text-[#0077B3] mb-3" />
-              <h3 className="text-[#0f1d32] font-semibold text-base mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
+              <h3 className="text-[#1c2f4a] font-semibold text-base mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>{svc.title}</h3>
               <p className="text-[#1a3050] text-sm leading-relaxed">{svc.desc}</p>
             </div>
           ))}

@@ -151,7 +151,7 @@ function LazySection({ children }) {
 }
 
 function RouteFallback() {
-  return <div className="min-h-screen bg-[#0f1d32]" data-testid="route-loading-fallback" />;
+  return <div className="min-h-screen bg-[#1c2f4a]" data-testid="route-loading-fallback" />;
 }
 
 function App() {

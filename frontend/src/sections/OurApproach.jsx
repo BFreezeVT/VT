@@ -15,11 +15,11 @@ export default function OurApproach() {
     <section id="approach" data-testid="approach-section" aria-label="How Veracity delivers operational intelligence" className="py-12 lg:py-18 bg-[#e0ebf4] light-zone relative overflow-hidden">
       <img src="/images/logo-circle-300.webp" alt="" aria-hidden="true" loading="lazy" width={300} height={300} className="absolute -right-24 -bottom-20 w-[550px] h-[550px] object-contain opacity-[0.05] brightness-50 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">How We Deliver</span></div>
+        <div className="relative flex items-center justify-center mb-8"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#1c2f4a]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">How We Deliver</span></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left - content */}
           <div>
-            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f1d32] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
+            <h2 data-testid="approach-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c2f4a] mb-6 animate-fade-in-up stagger-1" style={{ fontFamily: "Outfit, sans-serif" }}>
               Managed IT that prevents problems instead of chasing them.
             </h2>
             <p className="text-[#3a5068] text-base leading-relaxed mb-8 animate-fade-in-up stagger-2">
@@ -34,7 +34,7 @@ export default function OurApproach() {
                     <a.icon className="w-5 h-5 text-[#0077B3]" />
                   </div>
                   <div>
-                    <h3 className="text-[#0f1d32] font-semibold text-base mb-1.5" style={{ fontFamily: "Outfit" }}>{a.title}</h3>
+                    <h3 className="text-[#1c2f4a] font-semibold text-base mb-1.5" style={{ fontFamily: "Outfit" }}>{a.title}</h3>
                     <p className="text-[#3a5068] text-sm leading-relaxed">{a.desc}</p>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ export default function OurApproach() {
 
           {/* Right - Client Success infographic (wide 3:2 image with its own baked-in captions) */}
           <div className="animate-fade-in-up stagger-2 lg:sticky lg:top-24">
-            <div className="relative overflow-hidden border border-[#90a4b8] bg-[#0f1d32]">
+            <div className="relative overflow-hidden border border-[#90a4b8] bg-[#1c2f4a]">
               <img data-testid="client-success-image" src={CLIENT_SUCCESS_IMG} width={768} height={512} alt="Veracity Technologies client success overview: partnership, measurable business impact, and scalable growth, with testimonials from a VP of Operations, CFO, and CEO" className="w-full h-auto object-contain" loading="lazy" />
             </div>
           </div>

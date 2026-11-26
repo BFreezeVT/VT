@@ -47,7 +47,7 @@ export default function Industries() {
       <img src="/images/logo-circle-300.webp" alt="" aria-hidden="true" loading="lazy" width={300} height={300} className="absolute -left-20 -bottom-20 w-[550px] h-[550px] object-contain opacity-[0.035] brightness-200 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10">
-          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#0f1d32]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Industries We Serve</span></div>
+          <div className="relative flex items-center justify-center mb-10"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/15"></div></div><span className="relative bg-[#1c2f4a]/80 backdrop-blur-sm px-8 py-1.5 rounded text-[#5cc0e8] text-xl font-extrabold uppercase tracking-[0.15em]">Industries We Serve</span></div>
           <h2
             data-testid="industries-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 animate-fade-in-up stagger-1"

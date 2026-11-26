@@ -42,7 +42,7 @@ export default function TrustIndicators() {
       id="trust-indicators"
       data-testid="trust-indicators-section"
       aria-label="Why Twin Cities businesses trust Veracity Technologies"
-      className="py-8 lg:py-10 bg-[#0f1d32] border-b border-white/10 relative overflow-hidden"
+      className="py-8 lg:py-10 bg-[#1c2f4a] border-b border-white/10 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-6 pb-6 border-b border-white/[0.06]">

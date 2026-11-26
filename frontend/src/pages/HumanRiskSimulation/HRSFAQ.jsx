@@ -2,7 +2,7 @@ import { HelpCircle } from "lucide-react";
 
 export default function HRSFAQ({ data }) {
   return (
-    <section data-testid="hrs-faq" className="py-20 bg-[#0f1d32]">
+    <section data-testid="hrs-faq" className="py-20 bg-[#1c2f4a]">
       <div className="max-w-3xl mx-auto px-6">
         <p className="overline text-[#0077B3] mb-4 text-center">FAQ</p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-10 text-center" style={{ fontFamily: "Outfit" }}>

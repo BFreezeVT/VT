@@ -8,7 +8,7 @@ export default function HRSTrainingAndMeasurement({ data }) {
           <XOctagon className="w-5 h-5 text-[#0077B3]" />
           <p className="overline text-[#0077B3]">The Training Gap</p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit" }}>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1c2f4a] mb-6" style={{ fontFamily: "Outfit" }}>
           {data.whyTrainingFails.title}
         </h2>
         <p className="text-[#3a5068] text-base leading-relaxed mb-14">{data.whyTrainingFails.body}</p>
@@ -17,7 +17,7 @@ export default function HRSTrainingAndMeasurement({ data }) {
           <BarChart3 className="w-5 h-5 text-[#0077B3]" />
           <p className="overline text-[#0077B3]">Measuring Risk</p>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0f1d32] mb-6" style={{ fontFamily: "Outfit" }}>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1c2f4a] mb-6" style={{ fontFamily: "Outfit" }}>
           {data.measurement.title}
         </h2>
         <p className="text-[#3a5068] text-base leading-relaxed">{data.measurement.body}</p>

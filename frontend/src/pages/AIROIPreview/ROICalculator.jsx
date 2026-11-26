@@ -16,7 +16,7 @@ export default function ROICalculator({ teamSize, setTeamSize, manualHours, setM
   const annualSavings = Math.round(annualHoursReclaimed * AVG_HOURLY_LABOR_COST);
 
   return (
-    <section data-testid="ai-roi-calculator-section" aria-label="AI ROI Calculator" className="py-16 lg:py-20 bg-[#0f1d32]">
+    <section data-testid="ai-roi-calculator-section" aria-label="AI ROI Calculator" className="py-16 lg:py-20 bg-[#1c2f4a]">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-10">
           <p className="overline text-[#0077B3] mb-3">Free Interactive Tool</p>

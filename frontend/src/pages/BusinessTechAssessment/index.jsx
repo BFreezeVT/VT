@@ -26,7 +26,7 @@ export default function BusinessTechAssessment() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid="business-tech-assessment-page">
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid="business-tech-assessment-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildServiceSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildFaqSchema(answerBoxes)) }} />
@@ -38,7 +38,7 @@ export default function BusinessTechAssessment() {
         <BTAAreasGrid />
 
         {/* Maturity comparison table (GEO) */}
-        <section data-testid="bta-maturity" className="py-20 bg-[#0f1d32]">
+        <section data-testid="bta-maturity" className="py-20 bg-[#1c2f4a]">
           <div className="max-w-4xl mx-auto px-6">
             <TechMaturityTable title="The Technology Maturity Model" />
           </div>
@@ -47,7 +47,7 @@ export default function BusinessTechAssessment() {
         <BTAAnswerBoxes />
 
         {/* Embedded assessment tool */}
-        <div className="bg-[#0f1d32]">
+        <div className="bg-[#1c2f4a]">
           <FreeAuditOffer />
         </div>
 

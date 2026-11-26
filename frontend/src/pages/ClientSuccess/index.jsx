@@ -30,7 +30,7 @@ export default function ClientSuccess() {
   const generalTestimonials = allTestimonials.filter((_, i) => !usedIndices.has(i));
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid="client-success-page">
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid="client-success-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildWebPageSchema()) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd(buildBreadcrumbSchema()) }} />
 
@@ -45,7 +45,7 @@ export default function ClientSuccess() {
             industryName={ind.name}
             industrySlug={ind.slug}
             testimonials={ind.testimonialIndices.map((idx) => allTestimonials[idx])}
-            bgClass={i % 2 === 0 ? "bg-[#0f1d32]" : "bg-[#0a1628]"}
+            bgClass={i % 2 === 0 ? "bg-[#1c2f4a]" : "bg-[#0a1628]"}
           />
         ))}
 

@@ -24,7 +24,7 @@ export default function AIROIPreview() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid="ai-roi-preview-page">
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid="ai-roi-preview-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: stringifyJsonLd({
         "@context": "https://schema.org",
         "@type": "WebApplication",
@@ -91,7 +91,7 @@ export default function AIROIPreview() {
         <ROIContent />
 
         {/* Bottom CTA */}
-        <section data-testid="roi-bottom-cta" className="py-20 bg-[#0f1d32] border-t border-white/10">
+        <section data-testid="roi-bottom-cta" className="py-20 bg-[#1c2f4a] border-t border-white/10">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <CheckCircle2 className="w-10 h-10 text-[#0077B3] mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4" style={{ fontFamily: "Outfit" }}>

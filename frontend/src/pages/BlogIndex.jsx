@@ -86,7 +86,7 @@ export default function BlogIndex() {
   }, [posts, searchQuery, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-[#0f1d32]" data-testid="blog-index">
+    <div className="min-h-screen bg-[#1c2f4a]" data-testid="blog-index">
       <nav className="bg-[#003B71]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "Outfit" }}>
