@@ -105,6 +105,8 @@ export default function Footer() {
               <Link data-testid="footer-link-roi-calculator" to="/ai-roi-preview" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI ROI Calculator</Link>
               <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#94a8be] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
               <Link data-testid="footer-link-resources" to="/resources" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Resources</Link>
+              <Link data-testid="footer-link-contact" to="/contact" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Contact Us</Link>
+              <Link data-testid="footer-link-discovery-call" to="/discovery-call" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Book a Discovery Call</Link>
             </div>
           </div>
 
