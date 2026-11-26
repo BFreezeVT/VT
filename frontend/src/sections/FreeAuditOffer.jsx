@@ -131,6 +131,62 @@ function getSteps(answers) {
   ];
 }
 
+const PAIN_POINT_REFLECTIONS = {
+  manual_work_level: {
+    "Some tasks are still manual": "Some manual work is normal, but every manual handoff is a place where work gets delayed or dropped.",
+    "Most workflows are manual": "Most workflows manual means your team pays a hidden tax every day. This is usually the biggest recoverable cost in a business your size.",
+  },
+  system_visibility: {
+    "Partially - some tools connected": "Partial visibility usually means the important numbers live in three different tools.",
+    "No - siloed systems everywhere": "Siloed systems mean nobody has the full picture, so decisions get made on partial information.",
+  },
+  weekly_manual_hours: {
+    "5-10 hours": "At 5-10 hours a week, that is roughly 20-40 hours a month per person on work a system could do.",
+    "10-20 hours": "At 10-20 hours a week, that is roughly 40-80 hours a month per person on work a system could do.",
+    "20+ hours": "At 20+ hours a week, that is roughly 80 hours a month per person on work a system could do.",
+  },
+  automation_usage: {
+    "Some automation in select areas": "Automation in select areas usually means the busiest processes are still manual.",
+    "Little to no automation": "Little to no automation means your team is the integration layer between your tools.",
+  },
+  repetitive_tasks: {
+    "Sometimes - some redundancy": "Sometimes is often enough to cost real hours across a whole team.",
+    "Daily - significant repetition": "Daily repetition is the clearest sign a workflow is ready to automate.",
+  },
+  ai_usage_flag: {
+    "Some employees use AI informally": "Informal AI use is the risky middle. Employees get the productivity, but the business gets the exposure.",
+    "No AI usage or awareness": "No AI usage yet means competitors using it are moving faster on the same work.",
+  },
+  ai_governance: {
+    "Informal guidelines": "Informal guidelines rarely hold when someone pastes client data into a chatbot.",
+    "No policies at all": "No AI policies means company data is going into tools nobody approved.",
+  },
+  access_visibility: {
+    "Partial visibility": "Partial visibility leaves gaps an auditor will find before you do.",
+    "Limited or no visibility": "Limited visibility means you would not know if the wrong person had access to the wrong file.",
+  },
+  data_protection: {
+    "Somewhat - some gaps exist": "Some gaps usually means the sensitive data is the least protected part.",
+    "Not confident": "Not confident is an honest answer, and it is the one worth fixing first.",
+  },
+  continuity_readiness: {
+    "Within days - some planning done": "Within days sounds fine until you price a day of downtime.",
+    "Unsure - no tested plan": "Unsure means the plan gets written during the outage, which is the most expensive time to write it.",
+  },
+  monitoring: {
+    "During business hours only": "Business hours monitoring leaves nights and weekends unguarded.",
+    "No - we react when things break": "Reacting when things break means your clients notice problems before you do.",
+  },
+  industry_specific: {
+    "Some documentation, but gaps exist": "Gaps in documentation are where audit findings come from.",
+    "Not audit-ready / no formal process": "Not audit-ready means an audit becomes a fire drill instead of a formality.",
+    "Partially connected - some sites lack connectivity": "Partial connectivity means some sites still run on phone calls and paper.",
+    "Disconnected - manual updates from the field": "Disconnected job sites mean the office works from yesterday's numbers.",
+    "Some protections, not fully segmented": "Unsegmented OT is the gap attackers look for first.",
+    "Little to no OT security": "Little OT security means production systems are one phishing email from a shutdown.",
+  },
+};
+
 function getScoreLabel(pct) {
   if (pct >= 80) return { label: "Strong", color: "#10b981" };
   if (pct >= 50) return { label: "Developing", color: "#eab308" };
@@ -161,7 +217,7 @@ function ScoreRing({ score, size = 120, label }) {
 
 export default function FreeAuditOffer() {
   const { submitted, submitting, error, leadId, reportToken, submitLead } = useLeadSubmit();
-  const [stage, setStage] = useState("intro"); // intro, assess, contact, results
+  const [stage, setStage] = useState("intro"); // intro, assess, contact, calculating, results
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [animating, setAnimating] = useState(false);
@@ -175,6 +231,10 @@ export default function FreeAuditOffer() {
   }, []);
 
   const steps = getSteps(answers);
+
+  const allQuestions = steps.flatMap(s => s.questions);
+  const totalQuestions = allQuestions.length;
+  const answeredCount = allQuestions.filter(q => answers[q.id] !== undefined).length;
 
   const totalScoredQuestions = steps.flatMap(s => s.questions).filter(q => q.options[0]?.score !== undefined);
   const maxScore = totalScoredQuestions.length * 10;
@@ -269,7 +329,8 @@ export default function FreeAuditOffer() {
     };
     setContactInfo(data);
     await submitLead(data);
-    setStage("results");
+    setStage("calculating");
+    setTimeout(() => setStage("results"), 900);
     if (window.gtag) window.gtag("event", "assessment_complete", {
       event_category: "ai_assessment",
       overall_score: overallScore,
@@ -347,7 +408,7 @@ export default function FreeAuditOffer() {
               Business Technology Assessment
             </h2>
             <p className="text-[#c0cfe0] text-base max-w-2xl mx-auto mb-8">
-              Score your IT, cybersecurity, automation maturity, and operational readiness in under 3 minutes. See where you stand and where the biggest opportunities are.
+              Most businesses lose hours every week to manual work they cannot see. Score your IT, cybersecurity, automation maturity, and AI readiness in under 3 minutes, and see exactly where the time and risk are hiding.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto mb-8">
               {steps.map((s, i) => (
@@ -379,11 +440,11 @@ export default function FreeAuditOffer() {
             {/* Progress */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-[#c0cfe0] text-xs">{steps[currentStep].category} ({currentStep + 1}/{steps.length})</span>
-                <span className="text-[#0077B3] text-xs font-semibold">{Math.round(((currentStep + 1) / steps.length) * 100)}%</span>
+                <span className="text-[#c0cfe0] text-xs">{steps[currentStep].category} - Question {answeredCount} of {totalQuestions}</span>
+                <span className="text-[#0077B3] text-xs font-semibold">{Math.round((answeredCount / totalQuestions) * 100)}%</span>
               </div>
               <div className="w-full bg-white/5 h-2 rounded-full">
-                <div className="bg-[#0077B3] h-2 rounded-full transition-all duration-500" style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }} />
+                <div className="bg-[#0077B3] h-2 rounded-full transition-all duration-500" style={{ width: `${(answeredCount / totalQuestions) * 100}%` }} />
               </div>
             </div>
 
@@ -416,6 +477,11 @@ export default function FreeAuditOffer() {
                       );
                     })}
                   </div>
+                  {answers[q.id]?.text && PAIN_POINT_REFLECTIONS[q.id]?.[answers[q.id].text] && (
+                    <p className="mt-3 text-[#0077B3] text-xs bg-[#0077B3]/5 border border-[#0077B3]/20 rounded-md px-3 py-2 leading-relaxed">
+                      {PAIN_POINT_REFLECTIONS[q.id][answers[q.id].text]}
+                    </p>
+                  )}
                   {q.id === "industry" && answers.industry?.text && (
                     <p data-testid="industry-insight-note" className="mt-3 text-[#0077B3] text-xs bg-[#0077B3]/5 border border-[#0077B3]/20 rounded-md px-3 py-2 leading-relaxed">
                       {INDUSTRY_INSIGHTS[answers.industry.text] || INDUSTRY_INSIGHTS["Other"]}
@@ -457,14 +523,17 @@ export default function FreeAuditOffer() {
         {stage === "contact" && (
           <div data-testid="assessment-contact" className="max-w-md mx-auto">
             <div className="text-center mb-8">
-              <h3 className="text-white font-bold text-2xl mb-2" style={{ fontFamily: "Outfit" }}>Almost there.</h3>
-              <p className="text-[#c0cfe0] text-sm">Enter your details to see your full Business Intelligence Score.</p>
+              <h3 className="text-white font-bold text-2xl mb-2" style={{ fontFamily: "Outfit" }}>Your results are ready.</h3>
+              <p className="text-[#c0cfe0] text-sm">Enter your details to see your full Business Intelligence Score. Your report goes to the email below, and we will only use your details to follow up on your results.</p>
             </div>
             <form onSubmit={handleContactSubmit} className="space-y-4">
               <Input name="company" placeholder="Company name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
               <Input name="name" placeholder="Your name" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
               <Input name="phone" type="tel" placeholder="Phone" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
-              <Input name="email" type="email" placeholder="Email" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
+              <div>
+                <Input name="email" type="email" placeholder="Email" required className="bg-white/5 border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md h-11" />
+                <p className="text-[#c0cfe0]/60 text-xs mt-1.5">Your full report goes to this email.</p>
+              </div>
               <textarea name="situation" placeholder="Tell us a little about your current situation or challenges..." rows={3} className="w-full bg-white/5 border border-white/10 text-white placeholder:text-[#c0cfe0]/40 rounded-md px-3 py-2 text-sm resize-none focus:outline-none focus:border-[#0077B3]" />
               <div>
                 <p className="text-[#c0cfe0] text-xs mb-2">Preferred contact method:</p>
@@ -487,6 +556,14 @@ export default function FreeAuditOffer() {
           </div>
         )}
 
+        {/* CALCULATING */}
+        {stage === "calculating" && (
+          <div data-testid="assessment-calculating" className="text-center py-16">
+            <div className="mx-auto mb-6 h-10 w-10 animate-spin rounded-full border-2 border-white/10 border-t-[#0077B3]" />
+            <p className="text-white font-medium">Building your Business Intelligence Score...</p>
+          </div>
+        )}
+
         {/* RESULTS - Business Health Dashboard */}
         {stage === "results" && (
           <div data-testid="assessment-results">
@@ -496,6 +573,11 @@ export default function FreeAuditOffer() {
                 Business Intelligence Score
               </h2>
               <p className="text-[#c0cfe0] text-sm">{contactInfo.company || "Your organization"}</p>
+              {answers.team_size?.text && answers.industry?.text && (
+                <p className="text-[#c0cfe0] text-sm mt-1">
+                  For a {answers.team_size.text} person{answers.industry.text === "Other" ? "" : ` ${answers.industry.text}`} business, your biggest gap is {topGaps[0].label} at {topGaps[0].score}/100. That is where the most value is hiding.
+                </p>
+              )}
             </div>
 
             {error && (
