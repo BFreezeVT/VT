@@ -105,6 +105,8 @@ export default function Footer() {
               <Link data-testid="footer-link-roi-calculator" to="/ai-roi-preview" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI ROI Calculator</Link>
               <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#94a8be] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
               <Link data-testid="footer-link-resources" to="/resources" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Resources</Link>
+              <Link data-testid="footer-link-testimonials" to="/testimonials" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Testimonials</Link>
+              <Link data-testid="footer-link-careers" to="/careers" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Careers</Link>
             </div>
           </div>
 
@@ -165,7 +167,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Veracity Technologies. All rights reserved. &middot; Last updated December 2025
           </p>
           <div className="flex items-center gap-4 text-xs text-[#94a8be]/60">
-            <button data-testid="footer-privacy" className="hover:text-white transition-colors">Privacy Policy</button>
+            <Link data-testid="footer-privacy" to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <button data-testid="footer-terms" className="hover:text-white transition-colors">Terms of Service</button>
           </div>
         </div>
