@@ -103,7 +103,7 @@ That approach is especially smart for SMBs in Minneapolis-St. Paul and Central M
 AI can be a real advantage for SMBs, but only if the business is ready for it. The right checklist helps you avoid the most common traps: unsecured data, hidden usage, vague goals, and poor adoption.
 
 *If your business is thinking about AI, do the readiness check first. Veracity Technologies can help you evaluate your data, security, and compliance posture before you invest in tools that may create more risk than value.*"""},
-    {"slug": "6-questions-smart-companies-ask-their-it-provider-every-quarter", "title": "6 Questions Smart Companies Ask Their IT Provider Every Quarter", "excerpt": "Quarterly IT reviews help SMBs catch security gaps, control costs, and hold providers accountable before problems turn expensive.", "category": "Managed IT", "published_date": "2026-07-06", "read_time": "6 min read", "content": """Waiting until contract renewal to have a real conversation with your IT provider is one of the most common — and costly — mistakes business owners make. Technology changes every quarter. So do cyber threats, compliance expectations, staffing, and the way your team actually uses its tools.
+    {"slug": "6-questions-smart-companies-ask-their-it-provider-every-quarter", "title": "6 Questions Smart Companies Ask Their IT Provider Every Quarter", "excerpt": "Quarterly IT reviews help SMBs catch security gaps, control costs, and hold providers accountable before problems turn expensive.", "category": "Managed IT", "published_date": "2026-07-06", "read_time": "6 min read", "content": """Waiting until contract renewal to have a real conversation with your IT provider is one of the most common, and costly, mistakes business owners make. Technology changes every quarter. So do cyber threats, compliance expectations, staffing, and the way your team actually uses its tools.
 
 If you only hear from your provider when something breaks, you do not have an IT strategy. You have a support line. And for small and mid-sized businesses in Minneapolis-St. Paul and Central Minnesota, that gap can show up fast in the form of downtime, surprise spending, audit headaches, or a security incident that should have been prevented.
 
@@ -111,7 +111,7 @@ The good news: you do not need to be technical to get better answers. You just n
 
 ## Why Quarterly Check-Ins Matter
 
-A strong managed IT partner should be reviewing performance, risk, and strategy with you on a regular cadence, not just closing tickets and waiting for the next crisis. Quarterly check-ins force a different kind of conversation — one focused on trends, accountability, and business impact.
+A strong managed IT partner should be reviewing performance, risk, and strategy with you on a regular cadence, not just closing tickets and waiting for the next crisis. Quarterly check-ins force a different kind of conversation, one focused on trends, accountability, and business impact.
 
 That matters because most problems do not happen all at once. They build quietly. A few unpatched devices here. A backup job that has not been tested there. A subscription someone forgot to cancel. An employee in accounting clicking a convincing phishing email on a busy Friday afternoon. Then one quarter later, the issue becomes expensive.
 
@@ -160,7 +160,7 @@ A lot of businesses assume they are safe because they pay for backup software or
 Ask your provider:
 
 - When was the last successful restore test?
-- What was restored — a file, a mailbox, a full server, a virtual machine?
+- What was restored: a file, a mailbox, a full server, a virtual machine?
 - How long did recovery take?
 - Were there any errors, gaps, or delays?
 - Do we have a documented recovery plan for a ransomware event or site outage?
@@ -223,7 +223,7 @@ Ask to review the basics:
 
 You are not looking for perfection. You are looking for trend lines. Response times should improve or stay strong. Repeat issues should go down. Uptime should stay high. Security events should be caught earlier, not later.
 
-This is also where you can spot patterns that affect productivity. If your office manager in Bloomington is opening the same printer ticket every other week, that is not just an inconvenience — it is lost time. If users in your manufacturing office are reporting slow logins every morning, that could point to a network or identity issue. If your operations lead keeps chasing the same document permission problem, the process needs fixing, not just more ticket closure.
+This is also where you can spot patterns that affect productivity. If your office manager in Bloomington is opening the same printer ticket every other week, that is not just an inconvenience, it is lost time. If users in your manufacturing office are reporting slow logins every morning, that could point to a network or identity issue. If your operations lead keeps chasing the same document permission problem, the process needs fixing, not just more ticket closure.
 
 Metrics give you leverage. Without them, you are guessing.
 
@@ -835,7 +835,7 @@ Summer is not just “busy.” It’s structurally worse for IT response.
 
 People are out of office. Decision-makers are harder to reach. The employee who knows the system best is on vacation at the lake. The external IT contact you normally rely on is backed up by other urgent tickets because half their client list is also in summer scramble mode. If a problem happens at the same time support availability is thin, a manageable issue can spiral quickly.
 
-This is especially true for businesses in Minnesota, where the work season is compressed in several industries. In construction, crews are trying to maximize every dry week. In manufacturing, production schedules are tightly packed to meet customer commitments. In financial services and wealth management, summer is not slow—it’s just different, with client meetings, travel, and compliance work still moving forward. Nobody has time for a surprise network outage.
+This is especially true for businesses in Minnesota, where the work season is compressed in several industries. In construction, crews are trying to maximize every dry week. In manufacturing, production schedules are tightly packed to meet customer commitments. In financial services and wealth management, summer is not slow, it’s just different, with client meetings, travel, and compliance work still moving forward. Nobody has time for a surprise network outage.
 
 That’s why the phrase “we’ll fix it later” is so dangerous. Later often means:
 
@@ -884,7 +884,7 @@ You do not need to be technical to spot whether your business is carrying hidden
 - **Are we deferring any maintenance because it seems inconvenient right now?** Inconvenient is often cheaper than emergency.
 - **Do we know which systems would cost the most if they failed during a holiday week or vacation season?** That’s where planning should start.
 
-If you are an owner or operations leader, these questions matter because IT risk is business risk. A deferred patch can become a compliance issue. A failed backup can become a client communication problem. A neglected server can become a payroll delay. The cost isn’t just technical cleanup—it’s time, trust, and momentum.
+If you are an owner or operations leader, these questions matter because IT risk is business risk. A deferred patch can become a compliance issue. A failed backup can become a client communication problem. A neglected server can become a payroll delay. The cost isn’t just technical cleanup, it’s time, trust, and momentum.
 
 ## How to Get Out of Reaction Mode
 
@@ -902,10 +902,10 @@ For many SMBs, this process is where an experienced managed IT partner adds the 
 
 ## The Bottom Line
 
-Deferred IT maintenance always feels manageable—until the day it isn’t. In summer, when support coverage is thinner and business pressure is high, those delayed fixes are more likely to turn into fire drills. The businesses that stay calm are the ones that address known risks early, test what matters, and plan before the busy season hits.
+Deferred IT maintenance always feels manageable, until the day it isn’t. In summer, when support coverage is thinner and business pressure is high, those delayed fixes are more likely to turn into fire drills. The businesses that stay calm are the ones that address known risks early, test what matters, and plan before the busy season hits.
 
 *If your team is still saying “we’ll fix it later,” now is the time to review what’s waiting on the list and get ahead of the next summer outage.*"""},
-    {"slug": "what-shadow-ai-really-costs-a-minneapolis-msps-breakdown-of-hidden-risks", "title": "What Shadow AI Really Costs Minneapolis SMBs", "excerpt": "Employees are using AI tools without approval. For SMBs, that convenience can trigger compliance issues, breach exposure, and lost client trust.", "category": "AI & Automation", "published_date": "2026-06-10", "read_time": "5 min read", "content": """A Minneapolis accounting firm recently discovered that an employee had been uploading client tax returns into a public AI chatbot to speed up review work. No malicious intent — just an employee trying to be efficient. The exposure, however, was very real.
+    {"slug": "what-shadow-ai-really-costs-a-minneapolis-msps-breakdown-of-hidden-risks", "title": "What Shadow AI Really Costs Minneapolis SMBs", "excerpt": "Employees are using AI tools without approval. For SMBs, that convenience can trigger compliance issues, breach exposure, and lost client trust.", "category": "AI & Automation", "published_date": "2026-06-10", "read_time": "5 min read", "content": """A Minneapolis accounting firm recently discovered that an employee had been uploading client tax returns into a public AI chatbot to speed up review work. No malicious intent, just an employee trying to be efficient. The exposure, however, was very real.
 
 That’s the part many business leaders miss. Shadow AI isn’t usually introduced by a bad actor trying to steal data. It shows up when a well-meaning employee pastes confidential information into a free tool to save time, clean up an email, summarize a contract, or draft a response. In a 10-person office or a 200-person operation, that one shortcut can create a compliance, privacy, and client-trust problem in minutes.
 
@@ -913,7 +913,7 @@ For small and mid-sized businesses in Minneapolis-St. Paul and across Central Mi
 
 ## What Shadow AI Actually Is
 
-Shadow AI refers to employees using AI tools without IT’s knowledge or approval — free chatbots, browser extensions, AI-powered add-ons for everyday software, and other tools that process business data outside company oversight. It’s the AI-era version of shadow IT, and it’s far more common than most leadership teams realize.
+Shadow AI refers to employees using AI tools without IT’s knowledge or approval: free chatbots, browser extensions, AI-powered add-ons for everyday software, and other tools that process business data outside company oversight. It’s the AI-era version of shadow IT, and it’s far more common than most leadership teams realize.
 
 In practice, shadow AI often looks harmless:
 
@@ -950,17 +950,17 @@ And in every case, the hidden cost includes cleanup: investigating what was shar
 
 Most shadow AI use is a symptom of a workflow problem, not a discipline problem. People use the tools that are easiest to access.
 
-Industry research shows a majority of employees use AI tools at work without formal approval — not out of carelessness, but because no approved alternative exists and no one told them not to. That makes this a governance failure, not an employee failure.
+Industry research shows a majority of employees use AI tools at work without formal approval, not out of carelessness, but because no approved alternative exists and no one told them not to. That makes this a governance failure, not an employee failure.
 
 That distinction matters.
 
-If leadership responds with a blanket ban and no replacement, employees usually keep using AI anyway — just more quietly. They’ll do it from personal devices, personal accounts, or browser plugins that never touch your security stack. That creates even more risk because IT loses visibility entirely.
+If leadership responds with a blanket ban and no replacement, employees usually keep using AI anyway, just more quietly. They’ll do it from personal devices, personal accounts, or browser plugins that never touch your security stack. That creates even more risk because IT loses visibility entirely.
 
 In many Minnesota SMBs, the underlying issue is simple: staff need help working faster, but the company hasn’t provided a safe, approved path. So they improvise. The fix is not to pretend AI isn’t being used. The fix is to define where it can be used, what data can go into it, and which tools are approved for specific tasks.
 
 ## How to Find and Fix It
 
-A Shadow AI Risk Assessment maps every AI tool actually in use across your network — approved or not — and evaluates the data exposure of each, so you can replace risky habits with governed, equally convenient alternatives.
+A Shadow AI Risk Assessment maps every AI tool actually in use across your network, approved or not, and evaluates the data exposure of each, so you can replace risky habits with governed, equally convenient alternatives.
 
 That assessment should answer a few practical questions:
 
@@ -992,7 +992,7 @@ That’s the kind of practical boundary most teams can understand and follow.
 
 ## The Bottom Line
 
-Shadow AI is already in your business if employees are using AI tools without approval. The risk isn’t limited to tech companies or large enterprises — it’s showing up in accounting firms, construction offices, financial advisory practices, and manufacturing teams right here in Minnesota.
+Shadow AI is already in your business if employees are using AI tools without approval. The risk isn’t limited to tech companies or large enterprises, it’s showing up in accounting firms, construction offices, financial advisory practices, and manufacturing teams right here in Minnesota.
 
 If you wait until a client asks whether their data was entered into a public chatbot, you’re already in damage-control mode. The smarter move is to find the usage now, set the rules, and give employees a safe way to work efficiently without exposing the business.
 
@@ -1005,7 +1005,7 @@ A useful AI policy is not about saying “no” to everything. It’s about draw
 
 ## Why Most AI Policies Get Ignored
 
-A policy that’s ten pages of legal language, buried in an employee handbook nobody reads, isn’t a policy — it’s a liability shield that provides zero real-world protection. If employees don’t understand it or can’t apply it in the moment, it won’t change behavior.
+A policy that’s ten pages of legal language, buried in an employee handbook nobody reads, isn’t a policy, it’s a liability shield that provides zero real-world protection. If employees don’t understand it or can’t apply it in the moment, it won’t change behavior.
 
 That’s especially true for small and mid-sized businesses. Most teams do not have a dedicated compliance department watching every workflow. In a 40-person construction firm, the office manager may be the de facto technology gatekeeper. In a 75-person financial services practice, staff may be juggling client requests, regulatory expectations, and deadlines all at once. In both cases, people will do what saves time unless the rules are clear and easy to follow.
 
@@ -1068,7 +1068,7 @@ People need a safe way to report when they accidentally pasted sensitive data in
 
 5. **Review and update schedule**
 
-AI tools change quickly. A policy written this year may already be outdated by next year. Set a review schedule now — at least annually, and sooner if your company adopts new tools, changes vendors, or sees a workflow shift.
+AI tools change quickly. A policy written this year may already be outdated by next year. Set a review schedule now, at least annually, and sooner if your company adopts new tools, changes vendors, or sees a workflow shift.
 
 ### Add one short section on prohibited behaviors
 
@@ -1119,7 +1119,7 @@ This matters because most AI mistakes are not malicious. They’re convenience-d
 
 ## Getting Started Without Overcomplicating It
 
-You do not need to solve every future AI issue before writing your first policy. Start with the riskiest data categories — client financial data, health information, proprietary IP — and build outward. A policy that protects your highest-risk data clearly is more valuable than a comprehensive policy nobody reads.
+You do not need to solve every future AI issue before writing your first policy. Start with the riskiest data categories, client financial data, health information, proprietary IP, and build outward. A policy that protects your highest-risk data clearly is more valuable than a comprehensive policy nobody reads.
 
 A practical rollout looks like this:
 
@@ -1130,7 +1130,7 @@ A practical rollout looks like this:
 5. Train staff with real examples from your business
 6. Revisit the policy after the first 60 to 90 days
 
-That first review is important. You will almost certainly find gaps. Maybe staff are using a different tool than expected. Maybe one department needs a safe exception. Maybe the policy is clear but the training missed an actual workflow. That feedback is useful — it means people are engaging with the policy instead of ignoring it.
+That first review is important. You will almost certainly find gaps. Maybe staff are using a different tool than expected. Maybe one department needs a safe exception. Maybe the policy is clear but the training missed an actual workflow. That feedback is useful, it means people are engaging with the policy instead of ignoring it.
 
 ## The Bottom Line
 
@@ -1139,13 +1139,13 @@ A good AI acceptable use policy doesn’t try to impress legal counsel. It helps
 *If your business is using AI without clear rules, now is the time to put a practical policy in place. Veracity Technologies can help you build an enforceable AI acceptable use policy backed by real technical controls.*"""},
     {"slug": "5-questions-every-minneapolis-cfo-should-ask-before-approving-an-ai-budget", "title": "5 Questions for Minneapolis CFOs Before Approving AI Budgets", "excerpt": "Before approving AI spend, Minneapolis CFOs should test the business case, governance, data access, ROI, and cost of waiting.", "category": "AI & Automation", "published_date": "2026-06-01", "read_time": "6 min read", "content": """AI budget requests are landing on CFO desks across Minneapolis at a rapid pace. Between vendor demos, department leaders looking to “do something with AI,” and pressure to modernize, it can be tempting to approve a pilot and figure out the details later. That’s usually how businesses end up with shadow IT, weak controls, and a tool nobody can justify six months from now.
 
-For CFOs in Minnesota—especially in financial services, construction, manufacturing, and other regulated environments—the real job is not to block AI. It’s to separate practical investments from expensive experiments. Before you approve a budget line, five questions can tell you whether the request is grounded in business value, governance, and measurable return.
+For CFOs in Minnesota, especially in financial services, construction, manufacturing, and other regulated environments, the real job is not to block AI. It’s to separate practical investments from expensive experiments. Before you approve a budget line, five questions can tell you whether the request is grounded in business value, governance, and measurable return.
 
 ## Question 1: What Specific Business Problem Does This Solve?
 
 Vague justifications like “we need to be using AI” should be a red flag. A sound AI investment ties directly to a measurable business outcome: reduced processing time, fewer errors, faster client response, better forecasting, or less manual rework.
 
-That matters because AI is not a strategy by itself. It’s a tool. If your accounts payable team is buried in invoice matching, if your wealth management office is spending too much time summarizing client meeting notes, or if your project managers are constantly searching through change orders and jobsite emails, those are real problems. But the tool has to address *that* problem—not just sound innovative in a vendor presentation.
+That matters because AI is not a strategy by itself. It’s a tool. If your accounts payable team is buried in invoice matching, if your wealth management office is spending too much time summarizing client meeting notes, or if your project managers are constantly searching through change orders and jobsite emails, those are real problems. But the tool has to address *that* problem, not just sound innovative in a vendor presentation.
 
 A Minneapolis construction firm, for example, might be pitched an AI platform for project documentation. If the real issue is that field reports are inconsistent and the office team spends hours chasing missing details, the budget request should describe how the tool reduces that friction. A manufacturing company might want AI to help with maintenance scheduling, but if the actual pain point is unplanned downtime caused by poor visibility into equipment history, that’s the business case the CFO should expect to see.
 
@@ -1160,7 +1160,7 @@ If a department cannot explain the problem clearly, it probably has not defined 
 
 ## Question 2: Who Owns Governance for This Tool?
 
-Every AI tool that touches company data needs a clear owner responsible for its data handling, security review, and ongoing compliance—not just a department that requested it.
+Every AI tool that touches company data needs a clear owner responsible for its data handling, security review, and ongoing compliance, not just a department that requested it.
 
 This is where many organizations get into trouble. The sales manager wants a chatbot. The operations team wants automated summaries. The finance team wants faster report generation. But who is accountable when the tool ingests confidential client data, creates a bad output, or exposes information to a vendor with weak controls?
 
@@ -1266,7 +1266,7 @@ That is why many CFOs are finding value in a structured assessment before they c
 AI can be a smart investment for Minnesota SMBs, but only when it is tied to a real business problem, governed properly, and measured honestly. The best CFOs are not asking whether AI is trendy. They are asking whether it is safe, useful, and worth the spend.
 
 *If your business is evaluating AI and you want a practical way to assess readiness, risk, and ROI before approving budget, Veracity Technologies can help.*"""},
-    {"slug": "the-ai-implementation-timeline-what-to-expect-in-your-first-90-days-minneapolis-msp-perspective", "title": "The AI Implementation Timeline: What to Expect in Your First 90 Days", "excerpt": "A successful AI rollout takes 90 days of assessment, piloting, and measurement—not a rushed overnight launch.", "category": "AI & Automation", "published_date": "2026-05-28", "read_time": "6 min read", "content": """Business leaders often assume AI implementation should move fast because the tools are easy to buy. The reality is different. The software may be available in minutes, but the business value takes shape over weeks of planning, testing, and adjustment. A disciplined rollout usually follows a predictable 90-day arc - and when organizations skip steps to move faster, they usually end up with ungoverned tools, frustrated employees, and shaky results.
+    {"slug": "the-ai-implementation-timeline-what-to-expect-in-your-first-90-days-minneapolis-msp-perspective", "title": "The AI Implementation Timeline: What to Expect in Your First 90 Days", "excerpt": "A successful AI rollout takes 90 days of assessment, piloting, and measurement, not a rushed overnight launch.", "category": "AI & Automation", "published_date": "2026-05-28", "read_time": "6 min read", "content": """Business leaders often assume AI implementation should move fast because the tools are easy to buy. The reality is different. The software may be available in minutes, but the business value takes shape over weeks of planning, testing, and adjustment. A disciplined rollout usually follows a predictable 90-day arc - and when organizations skip steps to move faster, they usually end up with ungoverned tools, frustrated employees, and shaky results.
 
 That matters in Minneapolis-St. Paul and across Central Minnesota, where many SMBs are dealing with lean teams, tight margins, and real compliance obligations. A wealth management firm in Edina cannot afford to let staff use unsanctioned AI tools on client information. A St. Cloud manufacturer cannot bolt automation onto a weak process and expect quality to improve. A construction company managing bids, change orders, and subcontractor communication needs AI to reduce friction, not create another system people ignore.
 
@@ -1492,8 +1492,8 @@ For example, a St. Paul wealth management office may want AI for meeting summari
 
 ChatGPT, Copilot, and private AI each have a place. The right choice comes down to how much control you need, how much complexity you can support, and how sensitive your data really is.
 
-*If you are considering AI for your business, start with your data, permissions, and policy—not the tool. Veracity Technologies can help you assess readiness and choose the right path with confidence.*"""},
-    {"slug": "schools-out-cybercriminals-are-in", "title": "Schools Out, Cybercriminals Are In", "excerpt": "Summer brings distractions, shared devices, and travel—exactly the conditions cybercriminals use to make phishing attacks more successful.", "category": "Cybersecurity", "published_date": "2026-05-15", "read_time": "6 min read", "content": """When school lets out, home networks change fast. Kids are online more, parents are juggling work, camps, travel, and family schedules, and the household gets noisier and less predictable. That shift matters for cybersecurity. Cybercriminals watch behavior patterns, and summer gives them a very practical advantage: more distraction, more device sharing, and more opportunities for someone to click before they think.
+*If you are considering AI for your business, start with your data, permissions, and policy, not the tool. Veracity Technologies can help you assess readiness and choose the right path with confidence.*"""},
+    {"slug": "schools-out-cybercriminals-are-in", "title": "Schools Out, Cybercriminals Are In", "excerpt": "Summer brings distractions, shared devices, and travel, exactly the conditions cybercriminals use to make phishing attacks more successful.", "category": "Cybersecurity", "published_date": "2026-05-15", "read_time": "6 min read", "content": """When school lets out, home networks change fast. Kids are online more, parents are juggling work, camps, travel, and family schedules, and the household gets noisier and less predictable. That shift matters for cybersecurity. Cybercriminals watch behavior patterns, and summer gives them a very practical advantage: more distraction, more device sharing, and more opportunities for someone to click before they think.
 
 For small and mid-sized businesses in Minneapolis-St. Paul and Central Minnesota, that risk is not theoretical. A wealth management office with remote advisors. A construction firm with project managers answering email from the truck between job sites. A manufacturer with supervisors checking schedules from home after hours. In all of those cases, summer changes how people work, and attackers take advantage of that change.
 
@@ -1790,7 +1790,7 @@ Supervision is not about fear or resistance to innovation. It's about basic busi
 *If your team is already using AI without clear rules, now is the time to put governance in place. Veracity Technologies can help you build practical AI oversight for your business.*"""},
     {"slug": "the-first-week-mistake-nobody-plans-for", "title": "The First Week Mistake Nobody Plans For", "excerpt": "The first week of onboarding is a high-risk security window. Here’s how Minnesota businesses can prevent costly mistakes.", "category": "Cybersecurity", "published_date": "2026-04-28", "read_time": "7 min read", "content": """The first week of a new hire’s employment is a whirlwind: paperwork, introductions, training, password resets, software logins, and access to a dozen systems they’ve never seen before. It’s also, statistically, one of the highest-risk windows for security mistakes. That’s not because new employees are careless. It’s because they’re busy, unfamiliar with your environment, and trying to look competent while learning how your business actually works.
 
-For small and mid-sized businesses in Minneapolis-St. Paul and Central Minnesota, that first-week pressure shows up in very real ways. A new project coordinator at a construction firm may need access to estimating software, the jobsite scheduling platform, shared files, and payroll portals. A financial services associate may need CRM access, secure document exchange, and compliance training before handling any client records. A manufacturer’s new planner may need ERP permissions, production dashboards, and shared folders tied to vendors and inventory. When onboarding is rushed, security gaps are easy to miss—and attackers know it.
+For small and mid-sized businesses in Minneapolis-St. Paul and Central Minnesota, that first-week pressure shows up in very real ways. A new project coordinator at a construction firm may need access to estimating software, the jobsite scheduling platform, shared files, and payroll portals. A financial services associate may need CRM access, secure document exchange, and compliance training before handling any client records. A manufacturer’s new planner may need ERP permissions, production dashboards, and shared folders tied to vendors and inventory. When onboarding is rushed, security gaps are easy to miss, and attackers know it.
 
 ## Why Onboarding Is a Security Blind Spot
 
@@ -1834,7 +1834,7 @@ The good news is that onboarding risk is highly manageable. You do not need a gi
 3. Establish a verified process for any account or access change requests during onboarding.
 4. Ensure company equipment is ready before day one, removing the incentive for personal device shortcuts.
 
-Those four steps sound simple, but they work because they remove the most common causes of first-week mistakes. Least privilege means the new employee gets what they need to do the job—nothing more. That limits damage if an account is compromised and reduces the chance of accidental exposure. Week-one training means the employee sees your expectations before bad habits form. A verified request process means nobody should be changing payroll, MFA, or document access based on a casual email alone. And having hardware ready means your team isn’t improvising with unsecured laptops and phones.
+Those four steps sound simple, but they work because they remove the most common causes of first-week mistakes. Least privilege means the new employee gets what they need to do the job, nothing more. That limits damage if an account is compromised and reduces the chance of accidental exposure. Week-one training means the employee sees your expectations before bad habits form. A verified request process means nobody should be changing payroll, MFA, or document access based on a casual email alone. And having hardware ready means your team isn’t improvising with unsecured laptops and phones.
 
 ### Make the verification step non-negotiable
 
@@ -1953,13 +1953,13 @@ Passwords are still part of business security, but they should not be treated li
 If your team is still relying on memory, sticky notes, or password reuse, now is the time to tighten things up. A password manager, MFA, and better access controls can make a measurable difference quickly - without disrupting day-to-day work.
 
 *If your business has not standardized passwords and MFA across the organization, Veracity Technologies can help you put the right controls in place before one reused password becomes an expensive incident.*"""},
-    {"slug": "what-is-endpoint-detection-and-response-edr-and-does-your-minneapolis-business-need-it", "title": "Endpoint Detection and Response (EDR): Do You Need It?", "excerpt": "Antivirus alone no longer stops modern attacks. Learn what EDR does, why it matters, and whether your Minnesota business needs it.", "category": "Cybersecurity", "published_date": "2026-04-18", "read_time": "6 min read", "content": """Traditional antivirus software was built for a different era of threats—one where malware had a known signature that could simply be blocked. Modern attacks are far more adaptive, which is exactly the gap Endpoint Detection and Response (EDR) is built to close.
+    {"slug": "what-is-endpoint-detection-and-response-edr-and-does-your-minneapolis-business-need-it", "title": "Endpoint Detection and Response (EDR): Do You Need It?", "excerpt": "Antivirus alone no longer stops modern attacks. Learn what EDR does, why it matters, and whether your Minnesota business needs it.", "category": "Cybersecurity", "published_date": "2026-04-18", "read_time": "6 min read", "content": """Traditional antivirus software was built for a different era of threats, one where malware had a known signature that could simply be blocked. Modern attacks are far more adaptive, which is exactly the gap Endpoint Detection and Response (EDR) is built to close.
 
 For small and mid-sized businesses in Minneapolis-St. Paul and across Minnesota, that distinction matters. A family office in Edina, a contractor in St. Cloud, or a manufacturing plant in the North Metro all rely on endpoints every day: laptops, desktops, servers, and remote devices that touch payroll, proposals, client records, drawings, and production systems. If one of those devices is compromised, the damage is rarely limited to one machine.
 
 ## What EDR Actually Does
 
-EDR continuously monitors endpoint activity—laptops, desktops, servers, and sometimes mobile devices—looking for suspicious behavior patterns rather than just known malware signatures. If a process starts encrypting files rapidly, if a user account begins behaving strangely after hours, or if an application starts communicating with an unusual external server, EDR can detect it in real time and take action.
+EDR continuously monitors endpoint activity, laptops, desktops, servers, and sometimes mobile devices, looking for suspicious behavior patterns rather than just known malware signatures. If a process starts encrypting files rapidly, if a user account begins behaving strangely after hours, or if an application starts communicating with an unusual external server, EDR can detect it in real time and take action.
 
 That matters because many modern attacks don’t look like the malware of a decade ago. A ransomware campaign may arrive through a phishing email, but once inside, it may use legitimate Windows tools, administrative scripts, or remote access utilities to move around unnoticed. EDR is designed to spot those behaviors, not just the file that originally got in.
 
@@ -2097,7 +2097,7 @@ If you want training to change behavior, the delivery matters as much as the con
    Short videos, live lunch-and-learns, email reminders, and quick quizzes all help reinforce the same core behaviors.
 
 3. **Tie lessons to real incidents.**
-   If your office manager almost paid a fake invoice or a salesperson forwarded a suspicious attachment, use that situation—without naming and shaming anyone—as a learning example.
+   If your office manager almost paid a fake invoice or a salesperson forwarded a suspicious attachment, use that situation, without naming and shaming anyone, as a learning example.
 
 4. **Train by role, not just by department.**
    The CFO, the receptionist, the warehouse supervisor, and the project manager do not face the same risks. Role-based examples make the training relevant.
@@ -2151,7 +2151,7 @@ Useful metrics include:
 - **Repeat offenders vs. improved behavior**: Are the same people struggling, or is the training helping the broader team?
 - **Incident volume**: Are fewer issues turning into actual losses or disruptions?
 
-The most useful trend is not perfection. In fact, a healthy program will still produce reported mistakes. That means people are paying attention and speaking up. A team that never reports anything may not be secure—it may just be quiet.
+The most useful trend is not perfection. In fact, a healthy program will still produce reported mistakes. That means people are paying attention and speaking up. A team that never reports anything may not be secure, it may just be quiet.
 
 ## The Business Case for Better Training
 
@@ -2167,7 +2167,7 @@ That matters because most SMB losses do not start with a sophisticated technical
 
 Security awareness is not just an IT concern. It’s a business continuity issue, a financial control issue, and a trust issue.
 
-For Minnesota SMBs competing on reliability, that matters. Customers, vendors, and regulators all expect you to handle information carefully. A team that knows how to spot threats and report them fast protects more than data—it protects the business’s reputation and cash flow.
+For Minnesota SMBs competing on reliability, that matters. Customers, vendors, and regulators all expect you to handle information carefully. A team that knows how to spot threats and report them fast protects more than data, it protects the business’s reputation and cash flow.
 
 ## The Bottom Line
 
