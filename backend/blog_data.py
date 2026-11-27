@@ -5294,4 +5294,48 @@ The organizations that thrive in 2027 will not necessarily be the ones that spen
         If you are not sure where your firm stands, Veracity Technologies offers a free Business Technology Assessment that scores your vendor risk, cybersecurity readiness and compliance posture. Call (952) 941-7333 to schedule one.
 
         Sources: Wall Street Journal, November 19, 2026; JPMorgan Chase statement on X, November 19, 2026; PYMNTS, November 19, 2026; New York Post, November 19, 2026."""}
+,
+    {"slug": "1password-breach-what-minnesota-businesses-should-do", "title": "1Password Was Breached. Your Passwords Are Safe. What Minnesota Businesses Should Do This Week", "excerpt": "On November 25, 2026, 1Password disclosed a breach of its backend systems. Customer vaults were not touched, but names and email addresses were taken. Here is what was stolen, what was not, and the four moves a Minnesota business should make this week.", "category": "Cybersecurity", "published_date": "2026-11-27", "read_time": "6 min read", "content": """        Yes, 1Password was breached. No, your passwords were not stolen. On November 25, 2026, 1Password disclosed that an attacker broke into its backend systems and downloaded customer account records, including names and email addresses. Customer vaults were not accessed at any point, and the keys that protect them were not compromised. 1Password is not asking customers to change their account passwords or Secret Keys. What you should do this week is simpler and more urgent: warn your staff that phishing emails impersonating 1Password are coming, and tell them to open the app directly instead of clicking any link in an email.
+
+        ## What was taken, and what was not
+
+        Here is what 1Password confirmed as of November 25, 2026. The company began investigating on November 19, after detecting signs that an employee's corporate GitHub account had been compromised. The attacker used that account to reach private source code repositories and push malicious code into backend services, which then downloaded customer account records. The stolen data includes customer names and the email addresses used to sign in, account and user IDs, account creation and last sign-in times, public cryptographic keys, Secure Remote Password protocol parameters, tokens embedded in emailed links for account invitations, provisioning and recovery, and other internal account metadata. The attacker also copied source code from private repositories and reached the company's continuous integration and continuous delivery system, which held infrastructure credentials. 1Password says it has disabled the compromised GitHub account, revoked the stolen token, restored clean versions of the affected services, and rotated the infrastructure credentials that may have been exposed.
+
+        What was not taken matters more. 1Password says no customer vault content was accessed, including secrets, passwords and other vault items, and neither were account recovery keys or the keys that secure vaults. The company does not have access to customer account passwords or Secret Keys, because those are scrambled on the user's device before they reach 1Password's servers, and the attacker did not get them either. 1Password also says it has found no internal evidence of customer account takeovers, and it has hired independent cybersecurity experts to validate its remediation.
+
+        One detail deserves a plain explanation. The tokens stolen from emailed links cannot be used on their own to get into an account. Completing an invitation or a recovery still requires single sign-on authentication or a verification code sent to the user's registered email address. As a precaution, 1Password has strengthened those verification codes from six numeric digits to ten alphanumeric characters.
+
+        ## Why this hits a Minnesota business
+
+        Your firm probably does not run 1Password's servers. It runs on 1Password. A 30-person contractor in Eden Prairie, a wealth manager in Edina, a manufacturer in St. Cloud: their staff keep every login in the same vault, from the bank portal to the payroll system to the client file share. When the company that holds those vaults is breached, the first question an owner asks is whether to keep trusting it. The answer, based on what 1Password disclosed, is yes, with your eyes open. The vaults were not opened. The risk that follows is not decryption. It is impersonation.
+
+        The stolen names and email addresses are a ready-made target list of people who use 1Password. Expect emails that look like they come from 1Password, warning about the breach and asking the reader to secure the account, reset a password, or verify account information. The message will use real details to sound legitimate, and it will ask for exactly the things 1Password will never ask for by email: an account password, a Secret Key, or a verification code. Some of those messages will reach your staff. One click and one pasted Secret Key is all it takes to hand an attacker the keys to everything in that vault.
+
+        ## Four moves to make this week
+
+        1. Tell your staff, in plain language, that no password or Secret Key change is needed, and that any email claiming otherwise is a fake. The rule is simple: never click a link in an email about 1Password. Open the app or go to the website directly. If an email asks for a password, a Secret Key, or a verification code, it is not from 1Password.
+
+        2. Watch for unexpected invitations, account recovery requests, and provisioning emails. 1Password warned customers to watch for exactly these. Treat any surprise invitation or recovery message as suspect, verify it inside the 1Password app, and report it to your IT provider before clicking anything.
+
+        3. Check who holds the keys to your own 1Password business account. Confirm that every admin account has multi-factor authentication turned on, remove former employees and stale accounts, and check that nobody outside the firm has an admin seat. A breach at a vendor is the wrong week to discover a departed employee still has access.
+
+        4. Use this as the prompt to check your own GitHub and build system access, because that is how the attacker got in. If your developers use GitHub, ask who has access, whether any tokens are shared, and whether former contractors still hold keys. The 1Password attacker did not break encryption. They walked in through an employee account and pushed code. That is a door most small firms have never checked.
+
+        ## Questions Minnesota owners are asking
+
+        Should I change my 1Password password? No. 1Password says it is not requiring customers to change account passwords or Secret Keys, because neither was accessed. Changing them does no harm, but it is not the fix. Watching for phishing is.
+
+        Should I switch to a different password manager? Not on the basis of this breach. Every password manager is a target, and switching in a hurry creates more risk than it removes: exported vaults, half-migrated teams, and staff who fall back to reused passwords. Judge 1Password on how it handles this incident, and judge your own firm on whether your staff can spot the phishing that follows it.
+
+        Was my vault opened? According to 1Password, no. Vault contents, including passwords and other stored items, were not accessed, and neither were the keys that protect them or your account recovery keys.
+
+        Did 1Password tell affected customers? The company says only a small number of users were affected and have been individually notified. If you did not get a notice, assume the phishing risk still applies to your whole team.
+
+        ## The bottom line
+
+        The company that guards your passwords was breached, and your passwords survived. That is the good news, and it is also the trap: the breach is real enough to make your staff anxious, and anxiety is what phishing preys on. Tell them what was taken, tell them what was not, and give them one rule they can remember. Open the app. Never click the email.
+
+        If you are not sure where your firm stands, Veracity Technologies offers a free Business Technology Assessment that scores your cybersecurity readiness, password and access controls, and vendor risk. Call (952) 941-7333 to schedule one.
+
+        Sources: 1Password security incident disclosure, November 25, 2026, via BleepingComputer, November 25, 2026; TechCrunch, November 25, 2026; The Hacker News, November 26, 2026; SecurityWeek, November 25, 2026; MacRumors, November 25, 2026; Infosecurity Magazine, November 25, 2026."""}
 ]
