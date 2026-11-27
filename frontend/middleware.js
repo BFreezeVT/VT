@@ -21,6 +21,7 @@ const STATIC_ROUTES = new Set([
   "/ai-roi-preview",
   "/human-risk-simulation",
   "/client-success",
+  "/about",
   "/privacy-policy",
   "/careers",
   "/testimonials",

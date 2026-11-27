@@ -20,6 +20,7 @@ const AIROIPreview = lazy(() => import("./pages/AIROIPreview"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const HumanRiskSimulation = lazy(() => import("./pages/HumanRiskSimulation"));
 const ClientSuccess = lazy(() => import("./pages/ClientSuccess"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Testimonials = lazy(() => import("./pages/Testimonials"));
@@ -175,6 +176,7 @@ function App() {
           <Route path="/services/:serviceSlug" element={<ServicePage />} />
           <Route path="/human-risk-simulation" element={<HumanRiskSimulation />} />
           <Route path="/client-success" element={<ClientSuccess />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/testimonials" element={<Testimonials />} />
