@@ -196,16 +196,16 @@ https://www.veracitytechmn.com/client-success
 Testimonials organized by Financial Services, Manufacturing, Construction, and general MSP success stories.
 
 ## Blog / Resources
+- 5 Things Your IT Provider Should Help You Budget For: https://www.veracitytechmn.com/resources/5-things-your-it-service-provider-should-help-you-forecast
 - Your Bank Was Not Hacked. Its Vendor Was. What the Chase, Visa and Mastercard Leak Means for Minnesota Firms: https://www.veracitytechmn.com/resources/jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do
 - 178 Websites Served Malware to Their Own Visitors on Monday. Is Yours One of Them?: https://www.veracitytechmn.com/resources/optimizely-hack-178-websites-what-minnesota-businesses-should-check-now
+- Cut Hidden IT Costs: Q4 Tech Budget Review Tips: https://www.veracitytechmn.com/resources/the-hidden-costs-quietly-draining-your-it-budget
 - CMMC Phase 2 Suspended: What MN Defense Contractors Still Owe: https://www.veracitytechmn.com/resources/cmmc-phase-2-suspended-what-minnesota-defense-contractors-still-owe
-- Is Your Minneapolis Business Ready for AI? 10-Point Checklist: https://www.veracitytechmn.com/resources/is-your-business-ready-for-ai-a-10-point-readiness-checklist-for-minneapolis-smbs
-- 6 Questions Smart Companies Ask Their IT Provider Every Quarter: https://www.veracitytechmn.com/resources/6-questions-smart-companies-ask-their-it-provider-every-quarter
-- Managed IT vs. IT Compliance: Do You Need Both?: https://www.veracitytechmn.com/resources/managed-it-vs-it-compliance-services-whats-the-difference-and-do-you-need-both
-- What Happens to Your Data When Employees Use ChatGPT at Work?: https://www.veracitytechmn.com/resources/what-happens-to-your-data-when-employees-use-chatgpt-at-work-the-risk-minneapolis-firms-cant-ignore
-- What a Real IT Compliance Audit Looks Like: https://www.veracitytechmn.com/resources/what-a-real-it-compliance-audit-looks-like-and-how-minneapolis-businesses-can-prepare
-- Managed AI vs. DIY AI: Why Letting Employees Figure It Out Costs You: https://www.veracitytechmn.com/resources/managed-ai-vs-diy-ai-why-letting-employees-figure-it-out-is-costing-you-more-than-you-think
-- That Old Tech? You're Still Paying For It Every Month: https://www.veracitytechmn.com/resources/that-old-tech-youre-still-paying-for-it-every-month
+- 5 Early Warning Signs Your IT Budget Needs Attention: https://www.veracitytechmn.com/resources/5-signs-of-changing-conditions-in-your-it-spending
+- Is Multi-Factor Authentication Enough to Protect a Small Business on Its Own?: https://www.veracitytechmn.com/resources/is-multi-factor-authentication-enough-for-small-business
+- How Long Does a Cybersecurity Risk Assessment Take, and What Happens Afterward?: https://www.veracitytechmn.com/resources/how-long-does-a-cybersecurity-risk-assessment-take
+- IT Costs to Plan for With Every New Hire: https://www.veracitytechmn.com/resources/it-costs-to-plan-for-with-every-new-hire
+- What Is Dark Web Monitoring - and Should Your Minneapolis Business Be Using It?: https://www.veracitytechmn.com/resources/what-is-dark-web-monitoring-minneapolis-business
 
 ## Business Technology Assessment (Central Authority Page)
 https://www.veracitytechmn.com/business-technology-assessment
