@@ -80,6 +80,20 @@ export default function Navigation() {
           <button data-testid="mobile-nav-approach" onClick={() => scrollTo("approach")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Approach</button>
           <button data-testid="mobile-nav-industries" onClick={() => scrollTo("industries")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Industries</button>
           <button data-testid="mobile-nav-ai" onClick={() => scrollTo("ai-service")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Services</button>
+          <p className="text-[#0a1220] font-semibold text-sm pt-2">AI Services</p>
+          <div className="space-y-2 pl-3">
+            <Link to="/ai-readiness-assessment" data-testid="mobile-nav-ai-readiness-assessment" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Readiness Assessment</Link>
+            <Link to="/ai-governance" data-testid="mobile-nav-ai-governance" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Governance</Link>
+            <Link to="/ai-risk-assessment" data-testid="mobile-nav-ai-risk-assessment" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Risk Assessment</Link>
+            <Link to="/ai-security-assessment" data-testid="mobile-nav-ai-security-assessment" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Security Assessment</Link>
+            <Link to="/microsoft-copilot-readiness" data-testid="mobile-nav-microsoft-copilot-readiness" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Microsoft Copilot Readiness</Link>
+            <Link to="/ai-policy-development" data-testid="mobile-nav-ai-policy-development" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Policy Development</Link>
+            <Link to="/ai-data-governance" data-testid="mobile-nav-ai-data-governance" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Data Governance</Link>
+            <Link to="/shadow-ai-risk-assessment" data-testid="mobile-nav-shadow-ai-risk-assessment" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Shadow AI Risk Assessment</Link>
+            <Link to="/ai-automation-consulting" data-testid="mobile-nav-ai-automation-consulting" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Automation Consulting</Link>
+            <Link to="/ai-adoption-strategy" data-testid="mobile-nav-ai-adoption-strategy" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">AI Adoption Strategy</Link>
+            <Link to="/responsible-ai-consulting" data-testid="mobile-nav-responsible-ai-consulting" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Responsible AI Consulting</Link>
+          </div>
           <button data-testid="mobile-nav-compliance" onClick={() => scrollTo("compliance")} className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Compliance</button>
           <Link to="/business-technology-assessment" data-testid="mobile-nav-bta" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Business Technology Assessment</Link>
           <Link to="/human-risk-simulation" data-testid="mobile-nav-human-risk-simulation" className="block text-[#0a1220] hover:text-[#0077B3] text-sm">Human Risk Simulation</Link>
