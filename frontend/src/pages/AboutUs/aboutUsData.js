@@ -13,7 +13,7 @@ export const TEAM_MEMBERS = [
   { name: "Gary Demers", initials: "GD", role: "Project Manager", linkedin: "https://www.linkedin.com/in/gary-demers-3b5315b" },
   { name: "Patrick Willette", initials: "PW", role: "Support Services Technician", linkedin: "https://www.linkedin.com/in/patrick-willette-05489458" },
   { name: "Ethan Peltier", initials: "EP", role: "Sales Administrator", linkedin: "https://www.linkedin.com/in/ethan-peltier19" },
-  { name: "Blake Friesen", initials: "BF", role: "Marketing", linkedin: "https://www.linkedin.com/in/blake-friesen-607b2736a" },
+  { name: "Blake Friesen", initials: "BF", role: "Marketing Manager", linkedin: "https://www.linkedin.com/in/blake-friesen-607b2736a" },
   { name: "Chris Murphy", initials: "CM", role: null, linkedin: "https://www.linkedin.com/in/chris-murphy-721561a" },
   { name: "David Miller", initials: "DM", role: null, linkedin: "https://www.linkedin.com/in/dkmiller84" },
   { name: "Jon Hutchins", initials: "JH", role: null, linkedin: "https://www.linkedin.com/in/jonhutchins" },
