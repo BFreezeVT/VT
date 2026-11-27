@@ -58,12 +58,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/2-free-hours</loc>
-        <lastmod>2026-11-25</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/privacy-policy</loc>
         <lastmod>2026-11-26</lastmod>
         <changefreq>yearly</changefreq>
@@ -78,6 +72,12 @@
     <url>
         <loc>https://www.veracitytechmn.com/testimonials</loc>
         <lastmod>2026-11-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/2-free-hours</loc>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -132,6 +132,18 @@
     <url>
         <loc>https://www.veracitytechmn.com/airia-request</loc>
         <lastmod>2026-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/contact</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/discovery-call</loc>
+        <lastmod>2026-11-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -526,24 +538,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do</loc>
-        <lastmod>2026-11-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/optimizely-hack-178-websites-what-minnesota-businesses-should-check-now</loc>
-        <lastmod>2026-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/cmmc-phase-2-suspended-what-minnesota-defense-contractors-still-owe</loc>
-        <lastmod>2026-11-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/is-your-business-ready-for-ai-a-10-point-readiness-checklist-for-minneapolis-smbs</loc>
         <lastmod>2026-07-08</lastmod>
         <changefreq>monthly</changefreq>
@@ -760,43 +754,7 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/cybersecurity-predictions-2027</loc>
-        <lastmod>2026-02-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/feeling-lucky-thats-not-how-well-run-businesses-operate</loc>
-        <lastmod>2026-02-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/managed-it-pricing-guide-minnesota-businesses</loc>
-        <lastmod>2026-02-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/msp-vs-break-fix-it-support</loc>
-        <lastmod>2026-02-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/internal-it-vs-managed-service-provider</loc>
-        <lastmod>2026-02-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/co-managed-it-vs-fully-managed-it</loc>
-        <lastmod>2026-02-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/microsoft-copilot-vs-chatgpt-for-business</loc>
         <lastmod>2026-02-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -892,18 +850,6 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/ai-cybersecurity-threats-2025</loc>
-        <lastmod>2025-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/cmmc-compliance-guide-defense-contractors</loc>
-        <lastmod>2025-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/the-business-owners-guide-to-holiday-travel-that-wont-end-in-a-data-breach</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
@@ -928,20 +874,8 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/mfa-implementation-guide-business</loc>
-        <lastmod>2025-11-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/business-email-compromise</loc>
         <lastmod>2025-11-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/soc-2-compliance-guide-small-business</loc>
-        <lastmod>2025-11-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -970,12 +904,6 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/ransomware-protection-construction-firms</loc>
-        <lastmod>2025-11-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/the-holiday-scam-that-cost-one-company-60-million-and-how-to-protect-yours</loc>
         <lastmod>2025-11-01</lastmod>
         <changefreq>monthly</changefreq>
@@ -1000,20 +928,8 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/hipaa-compliance-small-healthcare-practices</loc>
-        <lastmod>2025-10-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/cybersecurity-awareness-month-4-habits-every-workplace-needs</loc>
         <lastmod>2025-10-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/manufacturing-ot-it-security-guide</loc>
-        <lastmod>2025-10-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1042,31 +958,13 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/shadow-ai-risks-business</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/ransomware-and-small-businesses</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/what-is-osha-digital-recordkeeping-compliance</loc>
-        <lastmod>2025-09-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
         <loc>https://www.veracitytechmn.com/resources/financial-services-finra-sec-requirements</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/what-is-iso-27001</loc>
         <lastmod>2025-09-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -1078,14 +976,20 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/cyber-incident-in-st-paul-prompts-statewide-emergency</loc>
-        <lastmod>2025-09-18</lastmod>
+        <loc>https://www.veracitytechmn.com/resources/what-is-iso-27001</loc>
+        <lastmod>2025-09-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.veracitytechmn.com/resources/financial-services-wire-fraud-prevention</loc>
-        <lastmod>2025-09-15</lastmod>
+        <loc>https://www.veracitytechmn.com/resources/what-is-osha-digital-recordkeeping-compliance</loc>
+        <lastmod>2025-09-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/cyber-incident-in-st-paul-prompts-statewide-emergency</loc>
+        <lastmod>2025-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1110,12 +1014,6 @@
     <url>
         <loc>https://www.veracitytechmn.com/resources/windows-10-support-ending-next-month-heres-what-it-means-for-you</loc>
         <lastmod>2025-09-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.veracitytechmn.com/resources/zero-trust-architecture-explained</loc>
-        <lastmod>2025-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1428,6 +1326,120 @@
     <url>
         <loc>https://www.veracitytechmn.com/resources/outdated-technology-is-costing-your-organization-money</loc>
         <lastmod>2025-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/managed-it-pricing-guide-minnesota-businesses</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/msp-vs-break-fix-it-support</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/internal-it-vs-managed-service-provider</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/co-managed-it-vs-fully-managed-it</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/microsoft-copilot-vs-chatgpt-for-business</loc>
+        <lastmod>2026-02-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/cybersecurity-predictions-2027</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/cmmc-phase-2-suspended-what-minnesota-defense-contractors-still-owe</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/optimizely-hack-178-websites-what-minnesota-businesses-should-check-now</loc>
+        <lastmod>2026-11-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do</loc>
+        <lastmod>2026-11-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/ai-cybersecurity-threats-2025</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/soc-2-compliance-guide-small-business</loc>
+        <lastmod>2025-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/ransomware-protection-construction-firms</loc>
+        <lastmod>2025-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/manufacturing-ot-it-security-guide</loc>
+        <lastmod>2025-10-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/shadow-ai-risks-business</loc>
+        <lastmod>2025-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/financial-services-wire-fraud-prevention</loc>
+        <lastmod>2025-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/cmmc-compliance-guide-defense-contractors</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/mfa-implementation-guide-business</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/hipaa-compliance-small-healthcare-practices</loc>
+        <lastmod>2025-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.veracitytechmn.com/resources/zero-trust-architecture-explained</loc>
+        <lastmod>2025-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

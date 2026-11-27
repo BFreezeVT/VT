@@ -236,6 +236,7 @@ async function main() {
     "/2-free-hours", "/aspirin", "/free-network-assessment", "/initial-consultation",
     "/it-buyers-guide", "/cyber-security-tip-of-the-week", "/mastering-ai", "/maximizing-ai",
     "/cybersecurity-that-works", "/airia-request",
+    "/contact", "/discovery-call",
   ];
   const citySlugs = extractSlugs("cityData.js").map((s) => `/service-areas/${s}`);
   const industrySlugs = extractSlugs("industryData.js").map((s) => `/industries/${s}`);
