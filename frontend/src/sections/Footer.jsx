@@ -15,7 +15,7 @@ export default function Footer() {
       className="bg-[#020812] border-t border-white/5 pt-16 pb-8"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-12">
           {/* Brand */}
           <div>
             <div className="max-w-[300px] overflow-hidden mb-1 relative" style={{ marginBottom: "-8px" }}>
@@ -87,6 +87,24 @@ export default function Footer() {
               <Link data-testid="footer-link-service-compliance" to="/services/compliance-services" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Compliance Services</Link>
               <Link data-testid="footer-link-human-risk-simulation" to="/human-risk-simulation" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Human Risk Simulation</Link>
               <Link data-testid="footer-link-client-success" to="/client-success" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Client Success Stories</Link>
+            </div>
+          </div>
+
+          {/* AI Services */}
+          <div>
+            <p className="overline text-[#94a8be] mb-4">AI Services</p>
+            <div className="space-y-2">
+              <Link data-testid="footer-link-ai-readiness-assessment" to="/ai-readiness-assessment" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Readiness Assessment</Link>
+              <Link data-testid="footer-link-ai-governance" to="/ai-governance" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Governance</Link>
+              <Link data-testid="footer-link-ai-risk-assessment" to="/ai-risk-assessment" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Risk Assessment</Link>
+              <Link data-testid="footer-link-ai-security-assessment" to="/ai-security-assessment" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Security Assessment</Link>
+              <Link data-testid="footer-link-microsoft-copilot-readiness" to="/microsoft-copilot-readiness" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Microsoft Copilot Readiness</Link>
+              <Link data-testid="footer-link-ai-policy-development" to="/ai-policy-development" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Policy Development</Link>
+              <Link data-testid="footer-link-ai-data-governance" to="/ai-data-governance" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Data Governance</Link>
+              <Link data-testid="footer-link-shadow-ai-risk-assessment" to="/shadow-ai-risk-assessment" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Shadow AI Risk Assessment</Link>
+              <Link data-testid="footer-link-ai-automation-consulting" to="/ai-automation-consulting" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Automation Consulting</Link>
+              <Link data-testid="footer-link-ai-adoption-strategy" to="/ai-adoption-strategy" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI Adoption Strategy</Link>
+              <Link data-testid="footer-link-responsible-ai-consulting" to="/responsible-ai-consulting" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Responsible AI Consulting</Link>
             </div>
           </div>
 
