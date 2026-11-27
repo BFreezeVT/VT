@@ -57,6 +57,9 @@ const STATIC_META = {
   "/human-risk-simulation": { lastmod: "2026-02-05", changefreq: "monthly", priority: "0.9" },
   "/client-success": { lastmod: "2026-02-05", changefreq: "monthly", priority: "0.8" },
   "/about": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/privacy-policy": { lastmod: "2026-11-26", changefreq: "yearly", priority: "0.5" },
+  "/careers": { lastmod: "2026-11-26", changefreq: "monthly", priority: "0.7" },
+  "/testimonials": { lastmod: "2026-11-26", changefreq: "monthly", priority: "0.8" },
 };
 
 const INDUSTRY_META = { lastmod: "2025-12-01", changefreq: "monthly", priority: "0.9" };
