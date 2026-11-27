@@ -5293,5 +5293,4790 @@ The organizations that thrive in 2027 will not necessarily be the ones that spen
 
         If you are not sure where your firm stands, Veracity Technologies offers a free Business Technology Assessment that scores your vendor risk, cybersecurity readiness and compliance posture. Call (952) 941-7333 to schedule one.
 
-        Sources: Wall Street Journal, November 19, 2026; JPMorgan Chase statement on X, November 19, 2026; PYMNTS, November 19, 2026; New York Post, November 19, 2026."""}
+        Sources: Wall Street Journal, November 19, 2026; JPMorgan Chase statement on X, November 19, 2026; PYMNTS, November 19, 2026; New York Post, November 19, 2026."""},
+    {"slug": "how-do-minneapolis-financial-firms-prepare-for-sec-cybersecurity-disclosure-and-compliance-requirements", "title": "How Do Minneapolis Financial Firms Prepare for SEC Cybersecurity Disclosure and Compliance Requirements?", "excerpt": "Most Minneapolis financial firms do not file Form 8-K, but the SEC rules behind it still shape what examiners, insurers, and clients expect. Here is how a Compliance Lead builds a program that holds up.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """Minneapolis financial firms prepare for SEC cybersecurity disclosure and compliance requirements by building five things before anything goes wrong: governance, a formal risk assessment, strong identity controls, a tested incident response plan, and documentation that proves it all happened. For a Compliance Lead at a Twin Cities RIA or advisory firm, that is the work: the disclosure deadline gets the attention, but the program behind it is what examiners, auditors, and cyber insurers judge.
+
+Start with an honest scope check. The SEC cybersecurity disclosure rule adopted on July 26, 2023 requires public companies to disclose material cybersecurity incidents on Form 8-K within four business days of determining the incident is material, and to describe their cybersecurity risk management, strategy, and governance in annual reports. A privately held RIA in downtown Minneapolis or a wealth manager in Edina does not file Form 8-K, but the rules that do apply borrow the same expectations, and clients and counterparties increasingly ask the same questions.
+
+## What Actually Applies to a Minneapolis Advisory Firm
+
+For most Twin Cities financial firms, the binding obligations come from a different set of rules. Regulation S-P requires firms to have written policies and procedures with administrative, technical, and physical safeguards for customer information. The SEC amended Regulation S-P in May 2024 to require covered institutions, including broker-dealers and registered investment advisers, to adopt an incident response program reasonably designed to detect, respond to, and recover from unauthorized access to customer information, and to notify affected individuals as soon as practicable but no later than 30 days after becoming aware of the unauthorized access. Larger entities had to comply by December 3, 2025, and smaller entities must comply by June 3, 2026.
+
+FINRA member firms face overlapping expectations under FINRA Rules 3110 on supervision and 4370 on business continuity, plus Regulation S-ID on identity theft red flags. Minnesota adds its own layer: Minnesota Statutes section 325E.61 requires a business that owns or licenses personal information to disclose a breach to affected Minnesota residents in the most expedient time possible and without unreasonable delay. A firm with clients across the Twin Cities can therefore face a federal notification clock, a state notification standard, and client contract obligations all at once.
+
+## Step 1: Establish Cybersecurity Governance
+
+Assign one person to own cybersecurity, even if that person is not technical. In a 15-person advisory firm, that is often the Compliance Lead or the Operations VP, supported by the firm's MSP. Document who decides what during an incident, who talks to clients and regulators, and who can shut systems down. Report to the board or ownership group quarterly at a minimum, and keep minutes. Examiners want to see that leadership reviewed cyber risk and made decisions, not that a policy binder exists somewhere.
+
+## Step 2: Conduct a Formal Risk Assessment
+
+A formal risk assessment is the foundation everything else stands on. Inventory critical assets first: client data, portfolio management systems, email, custodial platforms, and the laptops and phones that touch them. Identify realistic risks to each asset, evaluate likelihood and impact, and prioritize remediation in writing. Reassess at least annually, and again after any major change such as a cloud migration or a new vendor. Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches, a reminder to focus on identity and email, not just firewalls.
+
+## Step 3: Strengthen Identity and Access Controls
+
+Identity is where most financial firm incidents start. Enforce multifactor authentication everywhere it is available, especially email, remote access, and custodial platforms. Add conditional access policies that flag impossible travel or unfamiliar devices. Manage privileged accounts tightly, review access when roles change, and remove access the day someone leaves. A firm with advisors working from home needs these controls more, not less, than a firm where everyone sits in one office.
+
+## Step 4: Build an Incident Response Program
+
+An incident response program is a written plan plus practice. Define the phases in advance: detect, contain, investigate, recover, and document. Name the response team, list the outside contacts (MSP, counsel, cyber insurer, forensics firm), and set communication drafts for clients and regulators so nobody writes from scratch at 2 a.m. Then test it: a 90-minute tabletop exercise twice a year will expose gaps a binder never will. Also confirm how quickly your MSP is expected to respond once an incident is detected. Veracity Technologies, for example, commits to a 15-minute response for critical incidents.
+
+## Step 5: Maintain Documentation
+
+Documentation is the evidence layer. Keep policies, risk assessments, vendor reviews, training records, and incident records in one place, current and dated. Cyber insurers increasingly ask for the same records at renewal. If a control cannot be shown, an examiner will treat it as if it does not exist.
+
+## A Realistic Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace with stronger identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium with Microsoft Entra ID, multifactor authentication, conditional access, and centralized device management. The result was a stronger security posture, simpler provisioning, better compliance reporting, and a scalable foundation. Identity first, documentation alongside, is a practical model for firms of similar size anywhere in the Twin Cities.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. A gap assessment against Regulation S-P and FINRA expectations gives the Compliance Lead a prioritized list.
+
+**How often should this be reviewed?**
+Review the program at least annually, and revisit it whenever the business, regulations, or technology environment changes.
+
+**Does the four-day SEC disclosure deadline apply to my firm?**
+Only if your firm is a public reporting company. Private RIAs do not file Form 8-K, but the 30-day notification rule in amended Regulation S-P and Minnesota's breach notice law apply.
+
+**What should leadership ask first?**
+Ask what risk each control reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your environment, identify gaps against SEC, FINRA, and Minnesota requirements, and build a practical roadmap. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If your firm has not mapped its program against the amended Regulation S-P requirements yet, now is the time. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333.
+
+## Sources
+
+- U.S. Securities and Exchange Commission, "SEC Adopts Rules on Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure by Public Companies," July 26, 2023. https://www.sec.gov/newsroom/press-releases/2023-139
+- U.S. Securities and Exchange Commission, "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure," Small Entity Compliance Guide, August 30, 2023. https://www.sec.gov/resources-small-businesses/small-business-compliance-guides/cybersecurity-risk-management-strategy-governance-incident-disclosure
+- FINRA, "Cybersecurity Advisory: SEC Amends Regulation S-P," 2024. https://WWW.FINRA.ORG/rules-guidance/guidance/cybersecurity-advisory-sec-amends-regulation-s-p
+- FINRA, "Cybersecurity and Cyber-Enabled Fraud," 2026 FINRA Annual Regulatory Oversight Report. https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity
+- Minnesota Statutes 2024, section 325E.61, "Data Warehouses; Notice Required for Certain Disclosures." https://www.revisor.mn.gov/statutes/2024/cite/325E.61/pdf
+- Verizon, "2025 Data Breach Investigations Report," 2025. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- Veracity Technologies, "How Do Minneapolis Financial Firms Prepare for SEC Cybersecurity Disclosure and Compliance Requirements?" (original post). https://www.veracitytech.com/blog/how-do-minneapolis-financial-firms-prepare-for-sec-cybersecurity-disclosure-and-compliance-requirements
+"""},
+    {"slug": "how-much-does-managed-it-cost-for-a-financial-advisory-firm-with-25-employees-in-minneapolis", "title": "How Much Does Managed IT Cost for a Financial Advisory Firm with 25 Employees in Minneapolis?", "excerpt": "A 25-person Minneapolis advisory firm typically spends $3,125 to $4,375 a month on managed IT. Here is what that number includes, why financial firms pay more than other small businesses, and how a CFO should sanity-check any quote.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """For a financial advisory firm with about 25 employees in the Minneapolis-St. Paul area, managed IT services typically cost between $3,125 and $4,375 per month, based on a typical range of $125 to $175 per user per month. Annual IT investment generally falls between $37,500 and $52,500, depending on cybersecurity controls, compliance requirements, cloud infrastructure, and strategic planning support. For a CFO or Controller trying to set next year's budget, that range is the honest starting point, and the rest of this post explains what moves a firm toward the low end or the high end.
+
+Those figures are typical market ranges, not a quote. Every firm's actual price depends on its tools, its compliance obligations, and how much strategic work is included. A firm that only needs help desk support and patching will land lower. A firm that needs compliance documentation, incident response readiness, and quarterly planning with a vCIO will land higher. The mistake is to compare two quotes by the monthly number alone without comparing what is inside them.
+
+## What Is Included in Managed IT Services?
+
+A managed IT agreement for a financial advisory firm typically bundles day-to-day support with the security and planning work that keeps a compliance-sensitive business running. The usual components are:
+
+- Help desk support for advisors and staff, including after-hours coverage for urgent issues
+- Device management: laptops, desktops, and mobile devices kept patched, encrypted, and inventoried
+- Microsoft 365 administration, including email, SharePoint, Teams, and licensing
+- Vendor coordination with custodians, portfolio platforms, and line-of-business software providers
+- Endpoint protection on every device that touches client data
+- Backup management, including regular restore testing rather than assuming backups work
+- Strategic vCIO planning: roadmaps, budgets, and quarterly reviews
+
+Veracity Technologies packages these under one managed IT agreement, so firms get one predictable monthly rate instead of a patchwork of vendors and hourly rates. Predictability is the point. A CFO should be able to forecast IT spend for the year without surprise invoices after every incident.
+
+## Why Financial Services Firms Often Invest More in IT
+
+Financial firms manage sensitive client data and face regulatory expectations that a typical small business does not. That means stronger security controls, better documentation, incident response preparation, and compliance-focused guidance, and that extra layer is reflected in the monthly rate. The comparison that matters is not the monthly fee versus a generic small business. It is the monthly fee versus the cost of a breach or a failed audit.
+
+IBM's Cost of a Data Breach Report 2025 put the average financial services breach at $5.56 million, the second highest of any industry, while the global average across all industries was $4.44 million. A 25-person advisory firm will not face the average enterprise breach bill, but even a small fraction of it dwarfs a year of managed IT. Downtime carries its own price: advisors who cannot reach custodial platforms or client files during market hours lose more than productivity. They lose client confidence.
+
+## Fully Managed IT vs. Co-Managed IT
+
+For firms with 10 to 50 employees, fully managed IT is often the best fit, because there is rarely a full internal IT team to share the work with. The MSP becomes the IT department: support, security, planning, and vendor management in one agreement. For firms with 51 to 250 employees and an internal IT person or team, co-managed IT can add cybersecurity, escalation coverage, and strategic guidance without replacing the internal team. A 25-person firm in Minneapolis should default to fully managed unless it already employs dedicated IT staff, and even then the co-managed conversation is worth having as the firm grows.
+
+## A Budgeting Framework a CFO Can Use
+
+Use four inputs to set the number: employee count, security requirements, compliance needs, and growth plans. Then pressure-test the quote against them:
+
+- **Employee count:** 25 users at the typical $125 to $175 range gives $3,125 to $4,375 per month. Add users mid-year and the price should scale transparently.
+- **Security requirements:** Multifactor authentication management, endpoint detection and response, email security, and security awareness training are baseline for financial firms now, and many cyber insurers require them before they will renew a policy.
+- **Compliance needs:** Documentation, risk assessments, and audit support take staff time. If the quote does not mention them, they are either missing or billed separately.
+- **Growth plans:** A firm adding advisors, opening a second office in St. Paul, or acquiring a book of business needs onboarding, licensing, and device provisioning built into the plan.
+
+A comprehensive IT roadmap is the clearest way to turn that framework into an actual number, because it sequences the spending quarter by quarter instead of presenting one lump sum.
+
+## What Drives the Price Up or Down
+
+Several factors move a firm within or beyond the typical range. More locations, more line-of-business applications, and heavier compliance documentation push the price up. A standardized Microsoft 365 environment, current hardware, and clean documentation push it down. The cheapest quote is often cheap because it excludes the expensive parts: after-hours response, compliance support, backup testing, and strategic planning. Ask any provider to list exactly what is excluded, and compare that list across quotes.
+
+## Frequently Asked Questions
+
+**How much should a 25-person financial advisory firm budget for managed IT services?**
+Most firms should expect $3,125 to $4,375 per month based on a typical range of $125 to $175 per user per month, or $37,500 to $52,500 per year.
+
+**Why do financial services firms often pay more for IT support?**
+They typically require stronger cybersecurity controls, compliance support, data protection, and ongoing planning. The regulatory and client trust stakes are higher than in most industries.
+
+**Does managed IT pricing include cybersecurity services?**
+It depends on the provider. Many modern agreements include endpoint protection, email security, multifactor authentication management, and security awareness training. Confirm each item in writing rather than assuming it is covered.
+
+**What factors impact managed IT costs the most?**
+Employee count, cybersecurity requirements, compliance needs, cloud infrastructure, and whether strategic planning is included.
+
+**Is fully managed IT or co-managed IT better for financial firms?**
+Firms with 10 to 50 employees often benefit from fully managed IT, while larger firms with internal IT may prefer co-managed IT.
+
+If you are wondering whether you are overpaying for IT support or missing critical cybersecurity protections, get a number you can defend. Book a free Business Technology Assessment with Veracity Technologies or call (952) 941-7333 for a customized technology cost analysis tailored to your firm.
+
+## Sources
+
+- Veracity Technologies, "How Much Does Managed IT Cost for a Financial Advisory Firm with 25 Employees in Minneapolis?" (original post). https://www.veracitytech.com/blog/how-much-does-managed-it-cost-for-a-financial-advisory-firm-with-25-employees-in-minneapolis
+- IBM, "Cost of a Data Breach Report 2025," July 2025. https://www.infosecurity-magazine.com/news/data-breach-costs-fall/
+- IBM, "Cost of a Data Breach Report 2025," key findings summary. https://databreachcost.com/report/2025
+"""},
+    {"slug": "how-often-should-financial-services-firms-conduct-security-risk-assessments-and-penetration-testing", "title": "How Often Should Financial Services Firms Conduct Security Risk Assessments and Penetration Testing?", "excerpt": "Formal risk assessments belong on an annual cycle at minimum, with penetration testing at least once a year and after every major change. For a Compliance Lead, the cadence is only half the job: the findings have to turn into fixed controls.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """Most financial services firms should review cybersecurity risk continuously and complete a formal risk assessment at least annually. Penetration testing should happen at least once a year as well, and again after any major change to systems, vendors, or offices. For a Compliance Lead, that cadence is the floor, not the ceiling. The firms that get into trouble are not usually the ones that skipped a test. They are the ones that ran the test, filed the report, and never fixed what it found.
+
+A risk assessment and a penetration test are different tools, and confusing them is the most common mistake in this area. A risk assessment is a structured review that identifies and prioritizes risk across systems, data, and processes. It asks what could go wrong, how likely it is, and how bad it would be. A penetration test is a controlled, simulated attack that evaluates whether identified weaknesses can actually be exploited. The assessment tells you where to look. The test tells you whether the door is really open.
+
+## The Cadence Most Financial Firms Follow
+
+There is no single regulation that sets one schedule for every firm, so the practical standard comes from examiner expectations, cyber insurance requirements, and frameworks like the NIST Cybersecurity Framework. A defensible cadence for a Twin Cities advisory firm looks like this:
+
+- **Formal risk assessment:** At least annually, with a documented report, risk ratings, and a remediation plan with owners and dates.
+- **Penetration testing:** At least annually, plus after significant changes such as a cloud migration, a new portfolio platform, a merger, or a new office.
+- **Vulnerability scanning:** Monthly at a minimum, with critical findings remediated on a defined timeline, not whenever someone gets around to it.
+- **Continuous monitoring:** Ongoing, through endpoint detection, log review, and alerting, so the firm is not blind between formal tests.
+- **Reassessment triggers:** Company growth, new locations, cloud migration, cyber insurance renewal, compliance initiatives, and any security incident.
+
+An upcoming cyber insurance renewal is one of the most common triggers. Underwriters increasingly ask for a recent risk assessment and evidence of penetration testing before they will quote or renew, and a firm that cannot produce them should expect harder questions and higher premiums.
+
+## The Five-Step Risk Assessment Framework
+
+A good assessment follows the same five steps every time, so results can be compared year over year:
+
+1. **Inventory assets.** List the systems, data, devices, and vendors that matter, including the ones advisors use from home.
+2. **Identify risks.** Map realistic threats to each asset: phishing, credential theft, ransomware, vendor failure, insider misuse.
+3. **Evaluate impact.** Score each risk on likelihood and impact, in plain language the leadership team can debate.
+4. **Prioritize remediation.** Fix the highest risks first and record what was deferred and why.
+5. **Review progress.** Track remediation to completion and report status to leadership quarterly.
+
+That last step is where most programs fail. A risk register with twenty open items and no owners is not a risk management program. It is a wish list.
+
+## What a Good Penetration Test Actually Covers
+
+Not all penetration tests are equal, and the scope letter matters more than the price. A useful test for a financial firm covers external exposure (email, VPN, remote access, cloud portals), internal lateral movement (what happens if one workstation is compromised), and social engineering (phishing simulations against staff). It should end with a findings report ranked by severity, with reproduction steps and remediation guidance, plus a retest of the critical findings after fixes are applied. If a vendor will not retest, the firm never learns whether the fix worked.
+
+## Warning Signs It Is Time for an Assessment Now
+
+Do not wait for the annual cycle if any of these apply: the firm has grown quickly, opened a new location, migrated to the cloud, changed custodians or portfolio platforms, renewed cyber insurance, started a compliance initiative, or experienced any security incident, even a minor one. Any of those changes can quietly invalidate last year's assessment. A firm in Eden Prairie that just moved its file server to SharePoint, for example, has a different risk profile than it did six months ago, and the assessment should reflect that.
+
+## Continuous Improvement, Not an Annual Event
+
+Assess, improve, monitor, and reassess security throughout the year rather than treating it as a once-a-year event. The annual assessment sets direction. Monthly scanning and continuous monitoring catch what changes between assessments. Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches, and that ransomware appeared in 44 percent of breaches. Those numbers argue for testing identity controls and backup recovery specifically, not just running a generic scan and moving on.
+
+## A Practical Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace while strengthening identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium, integrated Microsoft Entra ID, and implemented modern security policies including multifactor authentication, conditional access, and centralized device management. The result was a stronger cybersecurity posture, simpler user provisioning, better visibility through security and compliance reporting, and a scalable foundation with ongoing strategic guidance. A risk assessment is what tells a firm whether that kind of investment is the right next step, or whether the money should go to backups, training, or vendor review instead.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. A gap assessment gives the Compliance Lead a prioritized list instead of a vague worry.
+
+**How often should this be reviewed?**
+Most firms should review this at least annually and revisit it when the business, regulations, or technology environment changes. Penetration testing follows the same trigger-based logic.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. Examiners and insurers both ask for recent assessments.
+
+**What should leadership ask first?**
+Ask what risk each finding represents, what business outcome fixing it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If your last risk assessment is more than a year old, or your last penetration test predates your last big systems change, the gap is the risk. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 to find out what you may be missing.
+
+## Sources
+
+- Veracity Technologies, "How Often Should Financial Services Firms Conduct Security Risk Assessments and Penetration Testing?" (original post). https://www.veracitytech.com/blog/how-often-should-financial-services-firms-conduct-security-risk-assessments-and-penetration-testing
+- Verizon, "2025 Data Breach Investigations Report," 2025. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- IBM, "Cost of a Data Breach Report 2025," July 2025. https://www.infosecurity-magazine.com/news/data-breach-costs-fall/
+- FINRA, "Cybersecurity and Cyber-Enabled Fraud," 2026 FINRA Annual Regulatory Oversight Report. https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity
+"""},
+    {"slug": "how-quickly-should-an-msp-respond-to-a-cybersecurity-incident-what-financial-firms-should-expect", "title": "How Quickly Should an MSP Respond to a Cybersecurity Incident? What Financial Firms Should Expect", "excerpt": "During a cyber incident, the first hour decides how bad the next month gets. An Operations VP should expect a written response commitment, a named escalation path, and a 15-minute critical response, not a vague promise to get back to you.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "5 min read", "content": """During a cybersecurity event, response speed can significantly affect business disruption, recovery effort, and risk exposure. Financial services firms should understand response commitments, escalation procedures, communication standards, and incident management processes before an event occurs. For an Operations VP, the uncomfortable truth is that the time to learn your MSP's response time is not during the incident. It is in the contract review six months earlier, when there is still time to fix it.
+
+There is no universal legal deadline for how fast an MSP must respond. What exists instead is the service level agreement, the SLA, and the gap between what it promises and what actually happens at 7 p.m. on a Friday. A firm that trades on that gap is taking a risk it probably has not priced.
+
+## Why Response Time Matters
+
+The first hour of an incident is when the damage is usually decided. Fast containment limits how far ransomware spreads, how many mailboxes a compromised account can touch, and how much client data leaves the network. Slow response compounds every cost that follows:
+
+- **Business interruption:** Advisors locked out of custodial platforms and client files during market hours.
+- **Client service disruption:** Missed calls, delayed trades, and clients who learn about the problem from someone else.
+- **Security exposure:** Every hour an attacker stays inside the network is another hour of access to harvest credentials and stage data for theft.
+- **Operational delays:** Recovery, legal review, regulatory notification, and insurer reporting all start later when detection and containment start later.
+
+IBM's Cost of a Data Breach Report 2025 put the average financial services breach at $5.56 million. No MSP response time can prevent every incident, but the difference between a 15-minute response and a next-business-day response is often the difference between an isolated workstation and a firm-wide event.
+
+## What a Good Response Commitment Looks Like
+
+Ask for the SLA in writing, with separate commitments by severity. A credible agreement defines critical, high-priority, and standard requests differently, and states a response time and an escalation path for each. Veracity Technologies, for example, commits to a 15-minute response for critical incidents. Whatever the numbers are, they should be measurable: response time means a qualified engineer acknowledges the issue and begins work, not that a ticket was auto-created and queued.
+
+Four phases should be spelled out in the agreement or the incident response plan:
+
+1. **Detection:** How monitoring catches the event, who gets alerted, and how the firm is notified.
+2. **Containment:** How affected systems are isolated, accounts disabled, and spread stopped.
+3. **Investigation:** How the scope is determined, what was accessed, and what evidence is preserved.
+4. **Recovery:** How systems are restored, from which backups, in what order, and how the firm confirms it is safe to resume.
+
+If your provider cannot describe those four phases for your firm specifically, the SLA number on the page is decorative.
+
+## Questions to Ask Your MSP Before You Need Them
+
+Bring these to the next quarterly review, not to the post-incident meeting:
+
+- Who responds first when an incident is detected, and are they on staff or on call?
+- What happens after hours, on weekends, and on holidays? Is there a real person or a voicemail?
+- How are escalations handled, and who decides an incident is critical?
+- How are clients informed during an incident, and who approves the message?
+- What documentation is provided afterward: a timeline, root cause, and remediation steps?
+- Is there a tabletop exercise each year, and does the firm participate?
+
+The answers belong in the same evaluation as the other questions to ask a potential MSP during the selection process. A provider that is excellent at day-to-day support but has no incident process is a different provider than the one you thought you hired.
+
+## Red Flags
+
+Undefined response commitments, no documented procedures, no escalation path, and poor communication are warning signs. Add a few more: an SLA that only promises a response during business hours, a provider that will not name its after-hours staff, and a contract that treats incident response as billable extra work with no cap. Any one of those should prompt a direct conversation. Two or more should prompt a search for a new provider.
+
+## A Practical Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace while strengthening identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium, integrated Microsoft Entra ID, and implemented modern security policies including multifactor authentication, conditional access, and centralized device management. The result was a stronger cybersecurity posture, simpler user provisioning, better visibility through security and compliance reporting, and a scalable foundation with ongoing strategic guidance. Modern identity controls do not replace incident response, but they make the containment phase dramatically faster, because disabling one compromised account can stop an attack that would otherwise spread.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals, and read the SLA as part of that review.
+
+**How often should this be reviewed?**
+Most firms should review response commitments at least annually and revisit them when the business, regulations, or technology environment changes.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. A slow incident response can turn a contained event into a regulatory notification.
+
+**What should leadership ask first?**
+Ask what risk a slow response creates, what business outcome a fast response protects, and how the commitment fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities, with a 15-minute response commitment for critical incidents.
+
+If you cannot state your MSP's critical response time from memory right now, that is the gap to close first. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 for an incident response review.
+
+## Sources
+
+- Veracity Technologies, "How Quickly Should an MSP Respond to a Cybersecurity Incident? What Financial Firms Should Expect" (original post). https://www.veracitytech.com/blog/how-quickly-should-an-msp-respond-to-a-cybersecurity-incident-what-financial-firms-should-expect
+- IBM, "Cost of a Data Breach Report 2025," July 2025. https://www.infosecurity-magazine.com/news/data-breach-costs-fall/
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 2025. https://www.fbi.gov/contact-us/field-offices/anchorage/news/fbi-releases-annual-internet-crime-report
+"""},
+    {"slug": "what-cybersecurity-controls-are-required-for-financial-services-firms-in-minnesota", "title": "What Cybersecurity Controls Are Required for Financial Services Firms in Minnesota?", "excerpt": "Minnesota financial firms need layered controls: multifactor authentication, endpoint protection, email security, access controls, training, patching, backups, and a tested incident response plan. Here is what each one looks like in practice, and which regulators expect to see it.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "5 min read", "content": """Financial services firms in Minnesota should implement layered cybersecurity controls including multifactor authentication, endpoint protection, email security, access controls, security awareness training, vulnerability management, backup and disaster recovery, and incident response planning. The goal is to reduce risk, protect client information, and support compliance readiness. For a Compliance Lead, the word "required" does a lot of work here, because the requirements come from several directions at once: federal regulation, FINRA expectations, Minnesota law, and cyber insurance underwriting. No single checklist covers all four, but the controls overlap heavily, and a firm that builds the core set well is most of the way there on every front.
+
+## The Seven Core Cybersecurity Controls
+
+These seven controls form the baseline for a Twin Cities financial firm of any size:
+
+- **Identity and access management:** Know who has access to what, review it regularly, and remove it promptly when roles change.
+- **Multifactor authentication:** Required on email, remote access, cloud platforms, and anywhere client data lives. Passwords alone are no longer a control.
+- **Endpoint protection:** Modern endpoint detection and response on every laptop, desktop, and server, with alerts that someone actually monitors.
+- **Email security:** Filtering, attachment and link protection, and impersonation defenses, because email is where most financial firm incidents begin.
+- **Security awareness training:** Regular, realistic training and phishing simulations for every employee, including partners and owners.
+- **Backup and disaster recovery:** Encrypted, tested backups stored so ransomware cannot reach them, plus a written recovery plan.
+- **Continuous monitoring:** Log review, alerting, and a defined process for investigating what the tools flag.
+
+Veracity Technologies builds these controls into its cybersecurity services for financial services clients across the Twin Cities, and the same set appears, in different wording, in nearly every examiner request list and insurance application a firm will see.
+
+## Identity Security Is the New Perimeter
+
+Modern security starts with user identity. Advisors work from the office in Minneapolis, from home in Plymouth, and from a client's conference room, and the old office firewall cannot protect all of that. The controls that matter now are conditional access policies that challenge risky sign-ins, privileged account management that limits who holds the keys, lifecycle controls that provision and deprovision access cleanly, and access reviews that catch the permissions nobody remembers granting. Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches, and ransomware appeared in 44 percent of breaches. Those two numbers explain why identity comes first: stolen credentials are the front door, and ransomware is what walks through it.
+
+## Protecting Client Data
+
+Controls only matter if they protect the data itself. Use data classification so the firm knows which files are client confidential and which are not. Encrypt data at rest and in transit. Set secure sharing rules so client files do not leave the firm through personal email or unsanctioned file sharing. Keep retention policies that match regulatory recordkeeping duties, and maintain reporting that shows who accessed what and when. Regulation S-P requires written policies and procedures with administrative, technical, and physical safeguards for customer information, and its 2024 amendments added a written incident response program and notification of affected individuals within 30 days. Larger entities had to comply by December 3, 2025, and smaller entities must comply by June 3, 2026.
+
+## Preparing for Audits and Reviews
+
+Document policies, conduct assessments, maintain training records, review vendors, and track remediation to completion. Firms preparing for a formal audit should also review the SEC cybersecurity readiness framework, since examiners increasingly ask how the firm's program maps to recognized standards. Minnesota law adds a practical reason to keep records current: Minnesota Statutes section 325E.61 requires breach disclosure to affected Minnesota residents in the most expedient time possible and without unreasonable delay. A firm that cannot show when it discovered an incident, what it contained, and who was affected will struggle to meet that standard.
+
+## A Practical Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace while strengthening identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium, integrated Microsoft Entra ID, and implemented modern security policies including multifactor authentication, conditional access, and centralized device management. The result was a stronger cybersecurity posture, simpler user provisioning, better visibility through security and compliance reporting, and a scalable foundation with ongoing strategic guidance. That is the pattern: identity first, monitoring alongside, documentation throughout.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. A controls gap assessment maps what exists against what regulators and insurers expect.
+
+**How often should this be reviewed?**
+Most firms should review controls at least annually and revisit them when the business, regulations, or technology environment changes. Access reviews deserve a quarterly rhythm of their own.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. The controls above are the difference between a contained incident and a reportable breach.
+
+**What should leadership ask first?**
+Ask what risk each control reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If you are not sure which of the seven controls your firm actually has in place, and can prove, that uncertainty is the finding. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 for a security gap assessment.
+
+## Sources
+
+- Veracity Technologies, "What Cybersecurity Controls Are Required for Financial Services Firms in Minnesota?" (original post). https://www.veracitytech.com/blog/what-cybersecurity-controls-are-required-for-financial-services-firms-in-minnesota
+- FINRA, "Cybersecurity Advisory: SEC Amends Regulation S-P," 2024. https://WWW.FINRA.ORG/rules-guidance/guidance/cybersecurity-advisory-sec-amends-regulation-s-p
+- FINRA, "Cybersecurity and Cyber-Enabled Fraud," 2026 FINRA Annual Regulatory Oversight Report. https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity
+- Minnesota Statutes 2024, section 325E.61, "Data Warehouses; Notice Required for Certain Disclosures." https://www.revisor.mn.gov/statutes/2024/cite/325E.61/pdf
+- Verizon, "2025 Data Breach Investigations Report," 2025. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "what-does-a-vcio-do-for-a-financial-services-firm-and-is-it-worth-the-investment", "title": "What Does a vCIO Do for a Financial Services Firm and Is It Worth the Investment?", "excerpt": "A virtual CIO gives a financial firm strategic technology leadership without the cost of a full-time CIO hire. For an Owner or CEO, the value shows up as fewer emergency purchases, cleaner budgets, and a technology plan that actually matches the business plan.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """For financial services firms with 10 to 250 employees, a virtual CIO provides strategic technology leadership without the cost of hiring a full-time CIO. A vCIO helps align technology investments with business goals, improve cybersecurity maturity, support compliance initiatives, manage IT budgets, and build long-term roadmaps. For an Owner or CEO running a Twin Cities advisory firm, the simplest way to think about it is this: your MSP keeps the technology running, and your vCIO decides what the technology should be doing for the business in the first place.
+
+Most small and mid-sized financial firms do not need a full-time CIO. They need a few days a month of senior judgment: someone who has seen how other firms handled a custodian migration, a cyber insurance renewal, or a compliance exam, and can keep this firm from learning those lessons the expensive way. That is the gap a vCIO fills.
+
+## What Is a vCIO?
+
+A virtual CIO is a senior technology advisor who works with firm leadership on a fractional basis. The role is strategic, not technical support, and it covers five things:
+
+- **Strategic advisor:** Translates business goals into technology decisions, and explains the tradeoffs in plain language.
+- **Technology planner:** Owns the IT roadmap, sequencing projects so they build on each other instead of colliding.
+- **Budget consultant:** Forecasts IT spending, flags renewal and licensing traps, and ties spending to business outcomes.
+- **Security advocate:** Keeps cybersecurity maturity moving forward instead of stalling between incidents.
+- **Compliance partner:** Connects technology decisions to regulatory obligations, so a new tool does not quietly create a compliance problem.
+
+Veracity Technologies delivers vCIO guidance through its IT consulting services, typically in a quarterly rhythm with leadership: a planning session, a budget review, and a progress check on the roadmap.
+
+## Five Areas Where a vCIO Creates Value
+
+The value concentrates in five areas, and a firm should be able to point to progress in each one after a year:
+
+- **Technology roadmaps:** A written, sequenced plan for the next 12 to 36 months, so projects are chosen rather than accumulated.
+- **Cybersecurity strategy:** A maturity plan that prioritizes controls by risk, not by whichever vendor called most recently.
+- **Compliance planning:** Technology decisions mapped to Regulation S-P, FINRA expectations, and Minnesota requirements before they are made.
+- **Budget forecasting:** Predictable spending with fewer emergency purchases, which are almost always the most expensive kind.
+- **Vendor management:** Contracts, renewals, and vendor performance reviewed on a schedule, so the firm renegotiates from a position of knowledge instead of surprise.
+
+These are the same five areas covered in building a strategic IT roadmap, which a vCIO typically owns from start to finish.
+
+## Reactive IT vs. Strategic IT
+
+The goal is not only to keep technology running. The goal is to make technology decisions that reduce risk, improve planning, and support growth. Reactive IT buys a server because the old one failed, renews a contract because the deadline arrived, and adds a security tool because an incident exposed a gap. Strategic IT replaces the server on a schedule, renegotiates the contract before it auto-renews, and adds the security tool because the risk assessment ranked it first. The monthly cost difference between the two is often small. The difference in outcomes is not.
+
+A concrete example: a firm that plans its Microsoft 365 licensing, custodian platform changes, and hardware refresh in one annual budget conversation will spend less and argue less than a firm that discovers each cost separately, mid-year, as an emergency.
+
+## Is a vCIO Worth It?
+
+A vCIO can help firms reduce cybersecurity risk, forecast budgets, avoid costly mistakes, and align technology with business goals. Firms weighing this against evaluating technology budgets usually find the strategic guidance pays for itself by preventing the kind of reactive, emergency spending that drives costs up. The honest test is simple. Look at the last twelve months and add up the unplanned technology spending: the emergency hardware, the rushed software purchase, the incident that consumed a week of staff time, the renewal that auto-renewed at the wrong tier. If that total is larger than the annual cost of vCIO guidance, the investment is already justified, and the firm has not yet counted the risk reduction.
+
+There is also a softer return that owners notice quickly: decisions get faster. When the Owner, the CFO, and the Operations VP all hear the same recommendation with the same reasoning, the meeting that used to take three rounds takes one.
+
+## What the First 90 Days Should Look Like
+
+A vCIO engagement should produce visible output quickly. In the first month, expect a current-state review: environment, risks, contracts, and spending. In the second month, expect a draft roadmap and budget with priorities the leadership team can debate. By the third month, expect the first projects to be under way and a quarterly cadence in place. If three months pass and the only deliverable is a slide deck, the engagement is not working.
+
+## A Practical Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace while strengthening identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium, integrated Microsoft Entra ID, and implemented modern security policies including multifactor authentication, conditional access, and centralized device management. The result was a stronger cybersecurity posture, simpler user provisioning, better visibility through security and compliance reporting, and a scalable foundation with ongoing strategic guidance. That kind of outcome is what a vCIO is supposed to produce: a decision made once, implemented cleanly, with reporting that proves it worked.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. That review is the raw material a vCIO works from.
+
+**How often should this be reviewed?**
+Most firms should review strategy at least annually and revisit it when the business, regulations, or technology environment changes. Quarterly check-ins keep the roadmap honest.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. Strategic guidance is what keeps those needs funded and sequenced instead of improvised.
+
+**What should leadership ask first?**
+Ask what risk each initiative reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If technology decisions at your firm are made one emergency at a time, that is the problem a vCIO solves. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 to talk through what strategic guidance would look like for your firm.
+
+## Sources
+
+- Veracity Technologies, "What Does a vCIO Do for a Financial Services Firm and Is It Worth the Investment?" (original post). https://www.veracitytech.com/blog/what-does-a-vcio-do-for-a-financial-services-firm-and-is-it-worth-the-investment
+- FINRA, "Cybersecurity and Cyber-Enabled Fraud," 2026 FINRA Annual Regulatory Oversight Report. https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity
+- IBM, "Cost of a Data Breach Report 2025," July 2025. https://www.infosecurity-magazine.com/news/data-breach-costs-fall/
+"""},
+    {"slug": "what-is-the-average-cost-of-a-cybersecurity-incident-for-a-financial-services-firm", "title": "What Is the Average Cost of a Cybersecurity Incident for a Financial Services Firm?", "excerpt": "IBM puts the average financial services breach at $5.56 million, but that average describes large enterprises, not a 25-person Twin Cities advisory firm. The useful question is what an incident would cost your firm specifically, and the answer starts with five cost categories.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """For financial services firms, a cybersecurity incident can create costs beyond restoring systems, including downtime, recovery services, legal review, compliance obligations, reputational damage, lost productivity, and client confidence risk. The best question is not what incidents cost on average, but what an incident would cost your firm if operations stopped tomorrow. For a CFO or Controller, that shift in framing is the whole point of this post: averages are useful for context, and useless for budgeting, unless they are translated into your firm's own exposure.
+
+The headline numbers are still worth knowing. IBM's Cost of a Data Breach Report 2025 put the average financial services breach at $5.56 million, the second highest of any industry, against a global average of $4.44 million across all industries and a United States average of $10.22 million. Those figures come from a study of 600 breached organizations across 17 industries, and they skew toward larger enterprises. A 20-person advisory firm in Minnetonka will not face a $5.56 million bill. But it can face a bill that is large relative to its revenue, and that is the comparison that matters.
+
+## The Five Cost Categories
+
+Incident costs fall into five categories, and firms that only count the first one badly underestimate the total:
+
+- **Business downtime:** Advisors unable to reach custodial platforms, portfolio systems, or client files. For a firm that bills on assets under management, every hour of downtime is revenue at risk and client patience spent.
+- **Recovery costs:** Forensics, incident response specialists, system rebuilds, and data restoration. Emergency rates apply when the work is urgent, which it always is.
+- **Regulatory and compliance costs:** Legal counsel, regulatory notification, and the staff time to document what happened. Under the amended Regulation S-P, firms must notify affected individuals within 30 days of becoming aware of unauthorized access to sensitive customer information, and Minnesota law requires breach disclosure in the most expedient time possible and without unreasonable delay.
+- **Reputational damage:** Clients who leave quietly, prospects who choose a competitor, and referral sources who stop referring. This is the hardest category to measure and often the largest.
+- **Productivity losses:** Staff pulled off client work for days or weeks to help with recovery, re-enter data, and answer client questions.
+
+## Why Financial Firms Are Targets
+
+Financial firms manage sensitive client records, financial data, and account credentials, which makes them a higher-value target than most small businesses. Attackers know that a single compromised advisor mailbox can lead to wire fraud, and the FBI's Internet Crime Complaint Center reported $2.77 billion in business email compromise losses in 2024 across 21,442 complaints. A firm does not need to be large to be worth attacking. It needs to hold money, move money, or hold the credentials that move money.
+
+## A Hypothetical Worked Example
+
+Consider a hypothetical 25-person advisory firm in the Twin Cities, used here only as an illustration, not as a reported case. A ransomware event on a Monday morning encrypts the file server and several workstations. The firm is down for three business days while systems are rebuilt from backups, and advisors work at partial capacity for another week. The direct recovery bill from outside specialists is in the low five figures. The larger cost is the week of lost productivity across 25 people, the legal review and client notification work, and the two clients who move their accounts in the following quarter. None of those numbers appear in a vendor quote, and all of them are real. The lesson is that downtime and client trust dominate the total for a firm of this size, not the forensics invoice.
+
+## Common Cybersecurity Risks
+
+The risks that produce these costs are familiar, and they are largely preventable:
+
+- **Phishing:** The entry point for most incidents, often a message that looks like it came from a custodian or a client.
+- **Business email compromise:** Attackers inside a mailbox, redirecting wires and harvesting client data quietly.
+- **Credential theft:** Reused or stolen passwords, often harvested by infostealer malware and sold to other attackers.
+- **Ransomware:** Encryption of files and systems, increasingly paired with data theft and extortion.
+- **Insider threats:** Usually accidental, such as a well-meaning employee emailing a client file to a personal account.
+
+Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches and ransomware appeared in 44 percent of breaches. Both point to the same conclusion: identity controls and tested backups prevent more loss than any other two investments.
+
+## Reducing Risk Through Layered Security
+
+Use a protect, detect, respond, recover framework with multifactor authentication, endpoint protection, training, monitoring, and backups. This is the same framework behind the foundational cybersecurity controls for financial services firms. The two items firms most often skip are the ones that matter most during an incident: backup restore testing, which proves recovery works before it is needed, and a written incident response plan, which keeps the first hours organized instead of improvised. Test both at least annually.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals, and price the downtime scenario for your own firm rather than borrowing an industry average.
+
+**How often should this be reviewed?**
+Most firms should review incident costs and readiness at least annually and revisit them when the business, regulations, or technology environment changes.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. The cost of an incident is measured in client trust as well as dollars.
+
+**What should leadership ask first?**
+Ask what risk each control reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If you have never priced what three days of downtime would cost your firm, do it before an attacker does it for you. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 to schedule a cyber risk assessment.
+
+## Sources
+
+- Veracity Technologies, "What Is the Average Cost of a Cybersecurity Incident for a Financial Services Firm?" (original post). https://www.veracitytech.com/blog/what-is-the-average-cost-of-a-cybersecurity-incident-for-a-financial-services-firm
+- IBM, "Cost of a Data Breach Report 2025," July 2025. https://www.infosecurity-magazine.com/news/data-breach-costs-fall/
+- IBM, "Cost of a Data Breach Report 2025," key findings summary. https://databreachcost.com/report/2025
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 2025. https://www.fbi.gov/contact-us/field-offices/anchorage/news/fbi-releases-annual-internet-crime-report
+- Verizon, "2025 Data Breach Investigations Report," 2025. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- FINRA, "Cybersecurity Advisory: SEC Amends Regulation S-P," 2024. https://WWW.FINRA.ORG/rules-guidance/guidance/cybersecurity-advisory-sec-amends-regulation-s-p
+- Minnesota Statutes 2024, section 325E.61, "Data Warehouses; Notice Required for Certain Disclosures." https://www.revisor.mn.gov/statutes/2024/cite/325E.61/pdf
+"""},
+    {"slug": "what-questions-should-financial-advisors-ask-before-hiring-an-msp", "title": "What Questions Should Financial Advisors Ask Before Hiring an MSP?", "excerpt": "The right MSP reduces risk and improves planning; the wrong one creates frustration and hidden exposure. An Owner or CEO should ask about financial services experience, data protection, response times, and strategy, and should judge the answers, not the brochure.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "5 min read", "content": """Before selecting an MSP, financial advisors should evaluate cybersecurity experience, compliance knowledge, response commitments, strategic planning capabilities, reporting, and financial services understanding. The right partner reduces risk and improves planning, while the wrong provider can create frustration and hidden exposure. For an Owner or CEO, the hiring decision is really a risk decision: this provider will hold the keys to client data, email, and the systems the firm runs on. The questions below are the due diligence that decision deserves.
+
+Most MSP sales conversations sound alike. Every provider promises proactive support, strong security, and great service. The questions are how you separate the providers that can prove those claims from the ones that can only repeat them.
+
+## Question 1: Do You Support Financial Services Firms?
+
+Industry knowledge matters because financial firms face unique security, regulatory, and operational requirements. Ask for specific examples, not just a general list of financial services clients. Which custodians have they integrated with? Which portfolio platforms do they support? Have they helped a firm through a FINRA exam or a cyber insurance renewal? A provider that serves dental offices and manufacturers alongside one advisory firm will not know what an advisor's Monday morning looks like. Veracity Technologies works with financial advisors, RIAs, and wealth managers across the Twin Cities, and that specialization is the reason its answers to the rest of these questions are specific rather than generic.
+
+## Question 2: How Do You Protect Client Data?
+
+Ask for the control list, not the adjectives. A strong answer should name the actual protections and map directly to the cybersecurity controls every financial firm should implement:
+
+- Multifactor authentication enforced on email, remote access, and cloud platforms
+- Endpoint security with detection and response, not just antivirus
+- Email security including impersonation and phishing defenses
+- Continuous monitoring with alerts that someone reviews around the clock
+- Incident response with a written plan and a tested process
+
+Follow up by asking who monitors the alerts after hours. If the answer is a tool with no human behind it, the control is weaker than it sounds.
+
+## Question 3: What Are Your Response Times?
+
+Ask how critical, high-priority, and standard requests are handled, and get the numbers in writing. This matters most during a cybersecurity incident response, when response speed directly affects the outcome. A credible provider states a response time for critical incidents, names who responds after hours, and describes the escalation path. Veracity Technologies commits to a 15-minute response for critical incidents. If a provider will not commit to a number, the firm is buying a best effort, and should price the contract accordingly.
+
+## Question 4: What Strategic Services Are Included?
+
+Day-to-day support is table stakes. Ask what is included beyond it:
+
+- vCIO services and who provides them
+- Roadmap planning and how often it is updated
+- Budget forecasting for the coming year
+- Quarterly business reviews with reporting leadership can actually read
+
+If strategic technology leadership through a vCIO is not part of the base agreement, ask what it costs as an add-on. A provider that only fixes things when they break will keep the firm running and never move it forward, and in financial services, standing still is how compliance gaps accumulate.
+
+## Question 5: How Do You Handle Compliance and Documentation?
+
+Ask how the provider supports Regulation S-P obligations, risk assessments, and audit preparation. Do they produce the documentation examiners ask for, or does the firm assemble it from ticket exports? Do they track remediation from risk assessments to completion? A provider that treats compliance as the firm's problem is a provider that will be absent at the exact moment its help matters most.
+
+## Question 6: What Does Reporting Look Like?
+
+Ask to see a sample quarterly report. It should show ticket trends, security posture, patching status, backup test results, and project progress, in language a non-technical owner can understand. Reporting is also the accountability mechanism: if the provider will not report on its own performance, the firm has no way to know whether the agreement is being honored.
+
+## Question 7: What Happens When Something Goes Wrong?
+
+Ask for the incident process in plain terms: who calls whom, how fast, and what the firm receives afterward. Then ask for a reference who has been through an incident with the provider. The reference conversation is worth more than any sales presentation, because it describes the provider on its worst day, which is the day that matters.
+
+## Red Flags to Watch For
+
+Walk away, or at least slow down, if you see these: no financial services references, no written SLA, no after-hours coverage, no incident response plan, no vCIO or strategic offering, or a quote that is dramatically cheaper than every other quote without an explanation of what is excluded. The cheapest MSP is usually cheap because it excludes the expensive parts, and in financial services the expensive parts are the ones that protect the firm.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. That review tells you which of these questions matter most for your firm.
+
+**How often should this be reviewed?**
+Most firms should review their MSP relationship at least annually and revisit it when the business, regulations, or technology environment changes.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. The MSP is effectively part of the firm's control environment.
+
+**What should leadership ask first?**
+Ask what risk each provider capability reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, serves more than 60 clients across the Twin Cities, and holds a 4.9 out of 5 client rating.
+
+If your current provider cannot answer these questions clearly, that is an answer in itself. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 to request an MSP performance review.
+
+## Sources
+
+- Veracity Technologies, "What Questions Should Financial Advisors Ask Before Hiring an MSP?" (original post). https://www.veracitytech.com/blog/what-questions-should-financial-advisors-ask-before-hiring-an-msp
+- FINRA, "Cybersecurity and Cyber-Enabled Fraud," 2026 FINRA Annual Regulatory Oversight Report. https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity
+- Verizon, "2025 Data Breach Investigations Report," 2025. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "what-should-a-financial-services-firms-it-roadmap-include-over-the-next-12-months", "title": "What Should a Financial Services Firm's IT Roadmap Include Over the Next 12 Months?", "excerpt": "A 12-month IT roadmap for a financial firm should sequence security, compliance, and modernization in four quarters, so each project funds the next one. For an Owner or CEO, the roadmap is what turns a wish list into a budget the CFO can approve.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """A financial services firm's IT roadmap for the next 12 months should include four things in sequence: a current-state assessment and security baseline, compliance documentation and remediation, modernization of core systems, and a quarterly operating rhythm that keeps it all on track. For an Owner or CEO, the roadmap is the document that turns a list of technology worries into a plan the CFO can fund and the Operations VP can execute. Without it, firms buy tools one emergency at a time and wonder why nothing ever feels finished.
+
+Note: the original version of this post on veracitytech.com could not be retrieved when this rewrite was prepared, so this version is built from its title and from the companion posts in this series on vCIO services, managed IT costs, cybersecurity controls, and risk assessments. The structure below follows the same five-area framework those posts use.
+
+## Why a Roadmap Matters More for Financial Firms
+
+Most small businesses can improvise their technology spending. Financial firms cannot, because their technology decisions carry regulatory consequences. A new file-sharing tool can create a Regulation S-P problem. A delayed patch can become an examination finding. A cyber insurance renewal can hinge on whether multifactor authentication and endpoint protection were in place on the renewal date. A roadmap forces those connections to be made in advance, when they are cheap, instead of during an exam or an incident, when they are expensive.
+
+A roadmap also protects the budget. Firms that plan their spending in one annual conversation spend less, and argue less, than firms that discover each cost separately as an emergency.
+
+## Quarter 1: Assess and Secure the Baseline
+
+The first quarter is diagnostic. Complete a current-state review of the environment, risks, contracts, and spending. Run a formal risk assessment and a vulnerability scan, and build a risk register with owners and dates. Confirm the security baseline is actually in place: multifactor authentication enforced everywhere, endpoint protection on every device, email security configured, and backups running and tested. Fix the critical findings before buying anything new. A firm in the Twin Cities that discovers during this quarter that three advisors are not using multifactor authentication on their custodial platform logins has already earned the roadmap's keep.
+
+Quarter 1 should also settle the compliance calendar. Regulation S-P's amended requirements carry compliance dates of December 3, 2025 for larger entities and June 3, 2026 for smaller entities, and Minnesota's breach notification law requires disclosure in the most expedient time possible and without unreasonable delay. Put every regulatory date, insurance renewal, and audit on one calendar so nothing is discovered by surprise.
+
+## Quarter 2: Document, Train, and Remediate
+
+The second quarter turns assessment findings into durable evidence. Write or update the core policies: acceptable use, access control, incident response, business continuity, and vendor management. Build the incident response plan with named roles, outside contacts, and client communication drafts, then run a tabletop exercise with leadership. Deliver security awareness training with phishing simulations, and record completion, because examiners and insurers both ask for training records.
+
+This is also the quarter to review vendors. List every vendor that touches client data, confirm contracts and security expectations, and replace any vendor that cannot answer basic security questions. A custodian or portfolio platform change should be planned here, not improvised later.
+
+## Quarter 3: Modernize Core Systems
+
+With the baseline secure and the documentation in place, the third quarter is for modernization. Standardize on Microsoft 365 Business Premium with Entra ID for identity and device management, the same foundation Veracity deployed for a Wayzata-area financial firm with 11 to 50 employees. Retire legacy hardware and unsupported software, consolidate overlapping tools, and clean up licensing so the firm stops paying for seats nobody uses. If the firm is considering a move to the cloud for file storage or a new customer relationship system, this is the quarter to do it, while the security controls and documentation from quarters 1 and 2 are already in place to support it.
+
+Quarter 3 is also the right time for penetration testing, since the modernized environment is the one worth testing. A test run against the old environment would produce findings about systems that are about to be retired.
+
+## Quarter 4: Review, Budget, and Plan the Next Year
+
+The fourth quarter closes the loop. Review the risk register and confirm remediation is complete or explicitly deferred with a reason. Re-test the critical penetration test findings. Run a backup restore test and an incident response tabletop exercise. Then build next year's budget and roadmap in one planning session with leadership, using actual spending and actual risk data instead of guesses. That session is the vCIO's most valuable meeting of the year, and it is what separates firms with a roadmap from firms with a project list.
+
+## The Operating Rhythm That Holds It Together
+
+A roadmap fails without a rhythm. Put these on the calendar and keep them:
+
+- **Monthly:** Vulnerability scanning, patch review, and backup test results reviewed.
+- **Quarterly:** Leadership review of the roadmap, risk register, and budget, plus access reviews.
+- **Annually:** Formal risk assessment, penetration test, policy review, and insurance renewal preparation.
+
+That rhythm is also what examiners want to see: a program that operates continuously, not a binder that is updated the week before an exam.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. The first quarter assessment is the raw material for everything that follows.
+
+**How often should this be reviewed?**
+Most firms should review the roadmap quarterly and rebuild it annually, revisiting it whenever the business, regulations, or technology environment changes.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. A roadmap is how those needs get funded and sequenced instead of improvised.
+
+**What should leadership ask first?**
+Ask what risk each initiative reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If your firm's technology plan for next year fits on a sticky note, it is time for a real roadmap. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 and we will build the 12-month plan with you.
+
+## Sources
+
+- Veracity Technologies, "What Does a vCIO Do for a Financial Services Firm and Is It Worth the Investment?" (original post). https://www.veracitytech.com/blog/what-does-a-vcio-do-for-a-financial-services-firm-and-is-it-worth-the-investment
+- Veracity Technologies, "What Cybersecurity Controls Are Required for Financial Services Firms in Minnesota?" (original post). https://www.veracitytech.com/blog/what-cybersecurity-controls-are-required-for-financial-services-firms-in-minnesota
+- Veracity Technologies, "How Often Should Financial Services Firms Conduct Security Risk Assessments and Penetration Testing?" (original post). https://www.veracitytech.com/blog/how-often-should-financial-services-firms-conduct-security-risk-assessments-and-penetration-testing
+- FINRA, "Cybersecurity Advisory: SEC Amends Regulation S-P," 2024. https://WWW.FINRA.ORG/rules-guidance/guidance/cybersecurity-advisory-sec-amends-regulation-s-p
+- Minnesota Statutes 2024, section 325E.61, "Data Warehouses; Notice Required for Certain Disclosures." https://www.revisor.mn.gov/statutes/2024/cite/325E.61/pdf
+"""},
+    {"slug": "best-it-support-companies-for-financial-services-firms-in-minneapolis-what-to-look-for", "title": "Best IT Support Companies for Financial Services Firms in Minneapolis: What to Look For", "excerpt": "There is no single best IT support company for every Minneapolis financial firm, but there is a clear checklist that separates the right partner from the wrong one. For an Owner or CEO, the evaluation comes down to financial services experience, security depth, response commitments, and strategic guidance.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """The best IT support companies for financial services firms in Minneapolis share five traits: real financial services experience, deep cybersecurity capability, written response commitments, strategic planning services, and local presence with references a firm can actually call. For an Owner or CEO choosing a provider, that checklist matters more than any ranking, because the right partner for a 12-person RIA in the North Loop is not necessarily the right partner for a 120-person wealth manager in Bloomington. This post explains what to look for, how to compare providers fairly, and which warning signs should end a conversation.
+
+Note: the original version of this post on veracitytech.com could not be retrieved when this rewrite was prepared, so this version is built from its title and from the companion posts in this series on MSP evaluation, incident response, and cybersecurity controls. No competitor is ranked or rated here, because those claims could not be verified from the original.
+
+## What to Look For: The Five Traits
+
+Use these five traits as the scorecard, and score every provider against all five:
+
+- **Financial services experience.** The provider should support advisors, RIAs, and wealth managers already, and be able to name the custodians, portfolio platforms, and compliance obligations it works with. Generic IT support treats a financial firm like any other office, and that is exactly how compliance gaps happen.
+- **Cybersecurity depth.** Look for multifactor authentication management, endpoint detection and response, email security, continuous monitoring, and a written incident response process. Ask who monitors alerts after hours and what happens when one fires at 2 a.m.
+- **Written response commitments.** A service level agreement should state response times by severity, including a critical incident commitment. Veracity Technologies, for example, commits to a 15-minute response for critical incidents. A provider that will not put a number in writing is selling a best effort.
+- **Strategic planning.** The provider should offer vCIO services, roadmap planning, budget forecasting, and quarterly business reviews. Support keeps the firm running. Strategy moves it forward.
+- **Local presence and reputation.** A Minneapolis-based provider with Twin Cities references understands the local market, can be on site when it matters, and has a reputation to protect in the community the firm operates in. Veracity Technologies is based in Minnetonka, is SOC 2 certified, serves more than 60 clients, and holds a 4.9 out of 5 client rating.
+
+## How to Compare Providers Fairly
+
+Start with a short list of three providers and evaluate them the same way. Ask each one the same set of questions: financial services experience, data protection controls, response times, strategic services, compliance support, and reporting. Ask each one for two references in financial services, and actually call them. Ask each reference what the provider is like during an incident, not just during onboarding, because onboarding is every provider's best behavior.
+
+Then compare the proposals line by line. A typical managed IT agreement for a 25-person advisory firm runs $3,125 to $4,375 per month, based on a typical range of $125 to $175 per user per month. If one quote is far below that range, find out what is excluded: after-hours response, compliance documentation, backup testing, and strategic planning are the items most often left out, and they are the items that matter most when something goes wrong.
+
+## The Questions That Separate Good from Great
+
+Beyond the scorecard, a few questions reveal how a provider actually operates:
+
+- How do you support Regulation S-P obligations and audit preparation?
+- What does your incident response plan look like, and when was it last tested with a client?
+- What does a quarterly business review include, and can I see a sample report?
+- How do you handle vendor coordination with custodians and portfolio platforms?
+- What is your process when a client reports a suspected phishing email or a possible breach?
+
+The quality of the answers matters more than their length. A provider that answers with specifics, names, and examples is describing real operations. A provider that answers with adjectives is describing a brochure.
+
+## Warning Signs
+
+End the conversation, or at least slow it down, if you see these: no financial services references, no written SLA, no after-hours coverage, no incident response plan, no strategic offering, or a quote that is dramatically cheaper than the others with no explanation of what is excluded. Also watch for providers that cannot explain how they protect client data in concrete terms, or that treat compliance documentation as the firm's problem. In financial services, the MSP is effectively part of the firm's control environment, and a provider that does not act like it is a liability.
+
+## A Practical Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace while strengthening identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium, integrated Microsoft Entra ID, and implemented modern security policies including multifactor authentication, conditional access, and centralized device management. The result was a stronger cybersecurity posture, simpler user provisioning, better visibility through security and compliance reporting, and a scalable foundation with ongoing strategic guidance. That outcome is the test any provider should be measured against: not whether the tickets get closed, but whether the firm's risk goes down and its planning gets better.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. That review tells you which provider traits matter most for your firm.
+
+**How often should this be reviewed?**
+Most firms should review their IT provider relationship at least annually and revisit it when the business, regulations, or technology environment changes.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. The provider a firm chooses becomes part of how it meets those obligations.
+
+**What should leadership ask first?**
+Ask what risk each provider capability reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, serves more than 60 clients across the Twin Cities, and holds a 4.9 out of 5 client rating.
+
+If you are comparing IT support companies and want an honest benchmark, start with a conversation rather than a sales pitch. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333.
+
+## Sources
+
+- Veracity Technologies, "What Questions Should Financial Advisors Ask Before Hiring an MSP?" (original post). https://www.veracitytech.com/blog/what-questions-should-financial-advisors-ask-before-hiring-an-msp
+- Veracity Technologies, "How Quickly Should an MSP Respond to a Cybersecurity Incident? What Financial Firms Should Expect" (original post). https://www.veracitytech.com/blog/how-quickly-should-an-msp-respond-to-a-cybersecurity-incident-what-financial-firms-should-expect
+- Veracity Technologies, "How Much Does Managed IT Cost for a Financial Advisory Firm with 25 Employees in Minneapolis?" (original post). https://www.veracitytech.com/blog/how-much-does-managed-it-cost-for-a-financial-advisory-firm-with-25-employees-in-minneapolis
+- FINRA, "Cybersecurity and Cyber-Enabled Fraud," 2026 FINRA Annual Regulatory Oversight Report. https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/cybersecurity
+"""},
+    {"slug": "fully-managed-it-vs.co-managed-it-which-is-best-for-a-financial-services-company", "title": "Fully Managed IT vs. Co-Managed IT: Which Is Best for a Financial Services Company?", "excerpt": "Fully managed IT fits most financial firms with 10 to 50 employees, while co-managed IT fits larger firms that already employ internal IT staff. For an Operations VP, the decision comes down to who is on staff today, not which model sounds better in a sales meeting.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """For most financial services companies with 10 to 50 employees, fully managed IT is the best fit, because there is rarely a full internal IT team to share the work with. For firms with 51 to 250 employees and internal IT staff, co-managed IT is often better, because it adds cybersecurity, escalation coverage, and strategic guidance without replacing the team already in place. For an Operations VP, the decision is simpler than vendors make it sound: it comes down to who is on staff today and what gaps the firm needs a partner to fill.
+
+Note: the original version of this post on veracitytech.com could not be retrieved when this rewrite was prepared, so this version is built from its title and from the companion posts in this series on managed IT costs, vCIO services, and MSP evaluation, which all address this same comparison.
+
+## What Fully Managed IT Means
+
+In a fully managed model, the MSP becomes the firm's IT department. One provider handles help desk support, device management, Microsoft 365 administration, vendor coordination, endpoint protection, backup management, and strategic vCIO planning under one agreement and one predictable monthly rate. The firm's staff calls one number, and the provider owns the outcome.
+
+This model fits a 25-person advisory firm in Minneapolis well. There is usually no internal IT employee, and hiring one would cost far more than the managed agreement while covering fewer hours and fewer specialties. A typical managed IT agreement for a firm of that size runs $3,125 to $4,375 per month, based on a typical range of $125 to $175 per user per month. The firm gets a whole team, including after-hours coverage, for less than the cost of one full-time hire.
+
+## What Co-Managed IT Means
+
+In a co-managed model, the MSP works alongside the firm's internal IT staff. The internal team keeps day-to-day ownership: user support, device setup, and the systems they know best. The MSP fills the gaps the internal team cannot cover alone: advanced cybersecurity, 24/7 monitoring and after-hours escalation, compliance documentation, backup and disaster recovery testing, and vCIO strategic planning. The division of labor is written down, so both sides know who owns what, and nothing falls between them.
+
+This model fits a larger firm, typically 51 to 250 employees, that already employs one or more IT staff and wants to keep them. It also fits firms whose internal IT person is strong on support but stretched thin on security, or firms that need senior strategic guidance their current staff cannot provide.
+
+## Side-by-Side Comparison
+
+- **Who does the daily support:** Fully managed, the MSP. Co-managed, the internal team with MSP backup.
+- **Who owns cybersecurity:** Fully managed, the MSP end to end. Co-managed, shared, with the MSP usually owning monitoring, advanced tools, and incident response.
+- **Who plans strategy:** Fully managed, the MSP's vCIO. Co-managed, the MSP's vCIO working with internal IT leadership.
+- **After-hours coverage:** Fully managed, the MSP. Co-managed, the MSP, which is often the main reason firms choose it.
+- **Best fit:** Fully managed, firms with 10 to 50 employees and no internal IT. Co-managed, firms with 51 to 250 employees and internal IT staff.
+- **Main risk:** Fully managed, the firm depends heavily on one provider, so the SLA and the relationship matter enormously. Co-managed, unclear ownership, so the division of responsibilities must be written down and reviewed.
+
+## How to Decide
+
+Answer four questions honestly, and the model usually picks itself:
+
+1. **Do we employ dedicated IT staff?** If no, fully managed. If yes, co-managed deserves a real look.
+2. **What keeps us up at night?** If the answer is day-to-day support and reliability, fully managed. If the answer is cybersecurity depth, after-hours coverage, or strategic planning, co-managed can deliver those without replacing the internal team.
+3. **What does our compliance picture require?** Financial firms need documentation, risk assessments, and incident response readiness either way. Ask which model gets those done, and who owns them.
+4. **What happens when our IT person is on vacation or leaves?** If the answer is uncomfortable silence, the firm needs a partner either way, and co-managed coverage is the direct fix.
+
+A firm can also move between models. A 40-person firm on fully managed IT that hires its first internal IT administrator can shift to co-managed without changing providers, as long as the provider offers both models. Ask about that path before signing, because growth should not require a vendor change.
+
+## Common Mistakes
+
+The most common mistake is choosing co-managed when there is no internal team to co-manage with. The model only works if someone inside the firm owns part of the work. The second mistake is the reverse: keeping fully managed IT after hiring internal staff and paying for overlapping coverage. The third is signing either model without a written division of responsibilities. In co-managed arrangements especially, the document listing who owns patching, backups, incident response, and vendor management is the agreement that matters most.
+
+## A Practical Example
+
+One Wayzata-area financial services firm with 11 to 50 employees needed a more secure and modern workplace while strengthening identity management and compliance controls. Veracity deployed Microsoft 365 Business Premium, integrated Microsoft Entra ID, and implemented modern security policies including multifactor authentication, conditional access, and centralized device management. The result was a stronger cybersecurity posture, simpler user provisioning, better visibility through security and compliance reporting, and a scalable foundation with ongoing strategic guidance. That is a fully managed outcome, and it is the right shape for a firm of that size.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals. The staffing picture that comes out of that review points to the right model.
+
+**How often should this be reviewed?**
+Most firms should review the model at least annually and revisit it when the business, regulations, or technology environment changes, especially after hiring or losing IT staff.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. The model determines who owns those obligations day to day.
+
+**What should leadership ask first?**
+Ask what risk each model reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your environment, identify gaps, and build a practical roadmap. Veracity offers both fully managed and co-managed IT, is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If you are not sure which model fits your firm, the answer is usually one conversation away. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333 and we will map the right model to your team.
+
+## Sources
+
+- Veracity Technologies, "How Much Does Managed IT Cost for a Financial Advisory Firm with 25 Employees in Minneapolis?" (original post). https://www.veracitytech.com/blog/how-much-does-managed-it-cost-for-a-financial-advisory-firm-with-25-employees-in-minneapolis
+- Veracity Technologies, "What Does a vCIO Do for a Financial Services Firm and Is It Worth the Investment?" (original post). https://www.veracitytech.com/blog/what-does-a-vcio-do-for-a-financial-services-firm-and-is-it-worth-the-investment
+- Veracity Technologies, "What Questions Should Financial Advisors Ask Before Hiring an MSP?" (original post). https://www.veracitytech.com/blog/what-questions-should-financial-advisors-ask-before-hiring-an-msp
+"""},
+    {"slug": "cyber-insurance-requirements-in-minnesota-what-financial-firms-need-to-know", "title": "Cyber Insurance Requirements in Minnesota: What Financial Firms Need to Know", "excerpt": "Cyber insurers now grade a financial firm's security before they quote, and the controls they ask about are the same ones examiners expect. For a CFO, the renewal conversation starts months before the renewal date, with multifactor authentication, endpoint protection, backups, and documentation.", "category": "Financial Services", "published_date": "2026-08-18", "read_time": "6 min read", "content": """Cyber insurance providers increasingly evaluate cybersecurity maturity before issuing or renewing policies. For financial services firms, readiness often depends on multifactor authentication, endpoint protection, email security, backup validation, security awareness training, and documented risk management processes. For a CFO or Controller, the practical meaning is blunt: cyber insurance is no longer a form to fill out and a premium to pay. It is an underwriting exam, and the firm's security posture is the application.
+
+There is no Minnesota law that requires a financial firm to carry cyber insurance. The requirement comes from the market instead: clients, custodians, vendors, and boards increasingly expect it, and the policy itself has become a backstop for the incident costs that a small firm cannot absorb alone. IBM's Cost of a Data Breach Report 2025 put the average financial services breach at $5.56 million. A policy will not cover all of that, but it can cover the forensics, legal, notification, and recovery costs that arrive in the first weeks, which is when a small firm is most vulnerable.
+
+## Why Security Expectations Are Rising
+
+Ransomware, business email compromise, identity attacks, and social engineering have increased scrutiny during underwriting. Insurers paid out heavily in recent years and responded by tightening requirements. The FBI's Internet Crime Complaint Center reported $2.77 billion in business email compromise losses in 2024 alone, and Verizon's 2025 Data Breach Investigations Report found ransomware appeared in 44 percent of breaches. Underwriters read the same reports, and they now treat a firm without basic controls as a risk they would rather not take, or will only take at a much higher price.
+
+## Five Controls Often Reviewed
+
+Underwriters typically focus on five controls first, and a firm that cannot evidence all five should expect harder questions, higher premiums, or a declined quote:
+
+- **Multifactor authentication:** Enforced on email, remote access, and privileged accounts, with evidence it is actually enabled rather than merely planned.
+- **Endpoint protection:** Modern endpoint detection and response on every device, with monitoring behind it.
+- **Email security:** Filtering, phishing defenses, and impersonation protection, since business email compromise is the claim insurers fear most.
+- **Backup and recovery:** Encrypted backups that are tested regularly and stored so ransomware cannot reach them. Insurers increasingly ask for proof of a recent restore test, not just a statement that backups exist.
+- **Security awareness training:** Regular training and phishing simulations with completion records.
+
+These overlap closely with the security controls insurers expect to see in place before they will write or renew a policy, and with the controls regulators expect under Regulation S-P and FINRA guidance. Building them once serves all three audiences.
+
+## Identity Security Focus
+
+Underwriters often evaluate multifactor authentication, administrative controls, user access management, remote access security, and conditional access in particular detail. That focus is justified: Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches. A firm that can show enforced multifactor authentication, conditional access policies, and regular access reviews will move through underwriting faster than a firm that cannot. Privileged accounts deserve special attention, because an insurer will ask who holds administrative access and how it is protected.
+
+## Preparing for Renewals
+
+Assess, remediate, document, and review controls before renewal conversations begin, ideally 90 days ahead. A recent risk assessment or penetration test makes that conversation considerably easier, because it gives the firm evidence to attach to the application instead of assertions. Gather the documentation underwriters ask for most often: the risk assessment report, the penetration test summary, training completion records, the incident response plan, backup test results, and the vendor list. If a control is missing, fix it before the application goes in rather than disclosing the gap and hoping for the best. A declined quote or an exclusion for the exact risk the firm faces is worse than a delayed application.
+
+## What Policies Typically Do Not Cover
+
+Read the policy, not the marketing summary, because coverage varies widely. Common limitations include incidents caused by known unpatched vulnerabilities, losses from unreported prior incidents, and social engineering losses that fall under a separate sublimit rather than the main limit. Some policies exclude regulatory fines or limit coverage for them. The application itself matters too: inaccurate answers about controls in place can give an insurer grounds to dispute a claim. Answer carefully, keep evidence for every answer, and involve the firm's IT provider in completing the technical sections.
+
+## The Minnesota Angle
+
+Minnesota law adds a reason to treat renewal preparation seriously. Minnesota Statutes section 325E.61 requires breach disclosure to affected Minnesota residents in the most expedient time possible and without unreasonable delay. A firm that discovers a breach needs to notify quickly, and the costs of that notification, legal review, and client communication are exactly what a cyber policy is meant to absorb. The policy and the notification duty work together: the controls get the firm the policy, and the policy funds the response the law requires.
+
+## Frequently Asked Questions
+
+**What is the best starting point?**
+Start with a clear review of your current environment, risks, support needs, and business goals, and measure the five controls above against what underwriters will ask for.
+
+**How often should this be reviewed?**
+Most firms should review insurance readiness at least annually, starting 90 days before renewal, and revisit it when the business, regulations, or technology environment changes.
+
+**Why does this matter for financial services firms?**
+Financial firms handle sensitive data and often need stronger cybersecurity, compliance readiness, and operational resilience. Insurers now verify those things before they quote.
+
+**What should leadership ask first?**
+Ask what risk each control reduces, what business outcome it supports, and how it fits into the broader IT roadmap.
+
+**How can Veracity help?**
+Veracity can evaluate your current environment, identify gaps, and build a practical roadmap for cybersecurity, compliance, and strategic IT planning. Veracity is SOC 2 certified, based in Minnetonka, and serves more than 60 clients across the Twin Cities.
+
+If your renewal is coming up and you are not sure your controls would pass an underwriter's review, find out now rather than at the renewal meeting. Book a free Business Technology Assessment or call Veracity Technologies at (952) 941-7333.
+
+## Sources
+
+- Veracity Technologies, "Cyber Insurance Requirements in Minnesota: What Financial Firms Need to Know" (original post). https://www.veracitytech.com/blog/cyber-insurance-requirements-in-minnesota-what-financial-firms-need-to-know
+- IBM, "Cost of a Data Breach Report 2025," July 2025. https://www.infosecurity-magazine.com/news/data-breach-costs-fall/
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 2025. https://www.fbi.gov/contact-us/field-offices/anchorage/news/fbi-releases-annual-internet-crime-report
+- Verizon, "2025 Data Breach Investigations Report," 2025. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- FINRA, "Cybersecurity Advisory: SEC Amends Regulation S-P," 2024. https://WWW.FINRA.ORG/rules-guidance/guidance/cybersecurity-advisory-sec-amends-regulation-s-p
+- Minnesota Statutes 2024, section 325E.61, "Data Warehouses; Notice Required for Certain Disclosures." https://www.revisor.mn.gov/statutes/2024/cite/325E.61/pdf
+"""},
+    {"slug": "how-can-construction-companies-secure-job-trailers-field-devices-and-remote-teams", "title": "How Can Construction Companies Secure Job Trailers, Field Devices, and Remote Teams?", "excerpt": "Job trailers, tablets, and remote crews expand where your data lives, so security has to follow the work. Here is the framework Twin Cities contractors use to lock down identity, devices, and trailer networks without slowing down the job.", "category": "Construction", "published_date": "2026-09-30", "read_time": "6 min read", "content": """Construction companies secure job trailers, field devices, and remote teams by starting with identity. Multi-factor authentication (MFA) on every account, conditional access, managed devices, and tightly controlled admin rights form the base. Email protection, secure remote access, and tested backups complete the setup, so company data stays protected no matter which site, network, or device the team is working from.
+
+For an Operations VP in the Twin Cities, this is a daily scheduling risk, not an abstract IT concern. A superintendent locked out of Procore on pour day, or a lost tablet with open access to email and Sage, can stall a job faster than a late concrete truck. The fix is a repeatable system that travels with the crew from a downtown Minneapolis high-rise to a grading job in Maple Grove.
+
+## Why Field Devices Create Risk
+
+Phones, tablets, laptops, and shared trailer computers connect from changing locations and networks. A single shared password on a trailer workstation can expose plans, contracts, payment applications, and client information. Devices get lost, stolen, or left in a truck, and crews rotate between sites, so access that made sense last month may be a liability today.
+
+The numbers back up the worry. Stolen credentials were the most common initial access vector in breaches in the Verizon 2025 Data Breach Investigations Report, used in 22 percent of breaches. Ransomware appeared in 44 percent of breaches in the same report. Construction firms are attractive targets because they move money constantly between owners, general contractors, and subcontractors, and a compromised email account can redirect a payment before anyone notices.
+
+## The Jobsite Security Framework
+
+Six controls cover nearly every trailer and field scenario:
+
+- **Identity security:** MFA and conditional access for every user, including field staff who sign in from phones. Require MFA on email, remote access, and privileged accounts at a minimum.
+- **Device management:** Know every laptop, tablet, and phone that touches company data, and keep them patched. Unmanaged devices should not reach project files.
+- **Email protection:** Filtering and user training reduce the phishing behind most ransomware and email compromise aimed at construction firms.
+- **Secure remote access:** Give trailers and remote staff controlled, logged access instead of open connections. A managed VPN or secure remote access tool beats a shared password on an open port.
+- **Backup and recovery:** Protect project files and email with backups that are tested, not assumed. A backup that has never been restored is a hope, not a plan.
+- **Incident response:** Know who to call and what to do if a device is lost or an account is compromised. Speed matters more than perfection in the first hour.
+
+## What to Review First
+
+If you are starting from scratch, work through this list in order:
+
+- MFA enforced on every account, not just offered as an option
+- Conditional access rules that require a managed device or block sign-ins from unexpected locations
+- Device compliance: every device enrolled, encrypted, and patched
+- Admin permissions limited to the people who genuinely need them
+- Backup coverage for Microsoft 365, project files, and estimating data
+
+Many of these are also the controls cyber insurance carriers ask about at renewal, so fixing them helps on both fronts. A carrier that sees enforced MFA, managed devices, and tested backups is far more likely to offer reasonable terms than one looking at shared logins and unpatched tablets.
+
+## Securing the Trailer Network
+
+A job trailer is a temporary office, and it deserves a real network, not a consumer router and a sticky note with the Wi-Fi password. Use a dedicated, managed network for each trailer, separate guest access from company devices, and require MFA for company systems. When the project closes, remove access, recover equipment, and wipe shared devices before they move to the next site.
+
+Winter adds a Minnesota wrinkle. Trailers lose power, heaters fail, and connectivity drops in a January cold snap. A backup connection, such as a cellular failover, keeps the trailer online when the primary line goes down, and it costs far less than a day of idle crew waiting on plans they cannot open.
+
+## What Happens When a Field Device Is Lost
+
+Every lost device should trigger the same playbook. The device should be managed so it can be locked or wiped remotely, and the user's sessions should be signed out and passwords reset. If the device held project data, confirm what was on it and whether anything needs to be reported. Write the playbook down before you need it, and make sure supers and foremen know the first step is a phone call, not a shrug.
+
+## Should Field Crews Use Personal Phones for Work?
+
+Many do, and banning it outright usually fails. If crews use personal phones, use device management or app protection policies so company data stays separated and can be removed without touching personal data. The goal is simple: the company can wipe its email and files from the phone, and the employee keeps their photos and personal accounts.
+
+## Frequently Asked Questions
+
+### How do you secure a construction job trailer network?
+
+Use a dedicated, managed network for each trailer, separate guest access from company devices, require MFA for company systems, and remove access when the project closes.
+
+### What should happen when a field device is lost?
+
+The device should be managed so it can be locked or wiped remotely, and the user's sessions should be signed out and passwords reset.
+
+### Should field crews use personal phones for work?
+
+If they do, use device management or app protection policies so company data stays separated and can be removed without touching personal data.
+
+### What is conditional access?
+
+Conditional access sets rules for when and how users can sign in, such as requiring a managed device or blocking sign-ins from unexpected locations.
+
+## Find Your Jobsite Security Gaps
+
+The fastest way to improve is a short review of how your trailers, field devices, and remote teams actually connect today, and which gaps to close first. Veracity Technologies, a SOC 2 certified MSP in Minnetonka, offers a free Business Technology Assessment that maps those gaps and ranks them by risk. Call (952) 941-7333 to schedule one, and walk into your next project with a security setup that follows the crew instead of slowing them down.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): $16.6 billion in total reported losses; business email compromise cost $2.77 billion across 21,442 complaints. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "how-can-contractors-reduce-project-delays-caused-by-it-problems", "title": "How Can Contractors Reduce Project Delays Caused by IT Problems?", "excerpt": "Most technology delays on a construction project are predictable, which means they are preventable. Here is how Twin Cities contractors stabilize trailer connectivity, standardize devices, and fix recurring issues at the root.", "category": "Construction", "published_date": "2026-09-30", "read_time": "5 min read", "content": """Contractors reduce project delays caused by IT problems by stabilizing jobsite connectivity, standardizing devices, securing access, and fixing recurring issues at the root instead of treating each one as a one-off ticket. Most technology delays are predictable. The same problems tend to show up on the same kinds of days until someone plans around them.
+
+For an Operations VP, the pain is measured in crew hours and schedule float. When a superintendent cannot open the day's drawings, when a PM cannot send a change order, or when the trailer loses internet on bid morning, the project absorbs the delay and the budget absorbs the cost. The answer is not more tickets. It is a repeatable setup for every site.
+
+## Where IT Delays Show Up
+
+IT problems rarely stay in IT. In construction, they tend to surface in:
+
+- Bid windows, when estimators need plans, email, and estimating software at the same time
+- Scheduling, when the PM cannot reach the schedule or the crew
+- Submittals, when review cycles stall because files will not open or sync
+- Change orders, when approvals wait on access instead of decisions
+- Email access, when a locked or compromised account cuts off the field
+- Jobsite Wi-Fi, when the trailer network drops under load
+- Project management platforms such as Procore, when logins fail or permissions break
+
+Any one of these can cost a day. Several of them together can cost a week, and the delay rarely shows up in a report as a technology problem. It shows up as a missed milestone.
+
+## The Delay Reduction Framework
+
+Five moves cover most of the risk:
+
+- **Stabilize connectivity:** Build a repeatable setup for trailer internet and Wi-Fi, with a backup connection where the site calls for it. Order connectivity early in preconstruction, not the week the trailer arrives.
+- **Standardize devices:** Consistent laptops, tablets, and phones are faster to set up, support, and replace. A super with a broken tablet should get a working replacement the same day, not a different model that needs a day of configuration.
+- **Secure access:** Many disruptions start with a compromised account, so MFA, conditional access, and managed devices are part of staying on schedule, not just staying secure.
+- **Improve support escalation:** Define what counts as urgent for field teams and how those issues get escalated. A down trailer network at 6:30 a.m. is not a next-business-day ticket.
+- **Review recurring issues:** Track repeat tickets and fix the root cause. If the same login problem appears on three jobsites, the problem is the process, not the users.
+
+## Get a New Trailer Online Faster
+
+Use a standard trailer kit and checklist for internet, Wi-Fi, devices, and printers, and order connectivity early in preconstruction. The kit should be identical on every site so any technician can set it up without improvising. In the Twin Cities, that also means planning for winter: cold snaps knock out temporary power and connectivity, so a cellular backup in the kit keeps the trailer working when the primary line fails.
+
+A good test is the first-day test. On day one at a new site, the super should be able to open email, reach Procore, print a drawing, and join a call from the trailer. If any of those fail, the kit needs work before the next mobilization.
+
+## Why Support Speed Matters
+
+When a superintendent or project manager loses access at the wrong time, technology becomes a project risk. Your support agreement should spell out how field issues are prioritized and who responds. Veracity Technologies, a SOC 2 certified MSP in Minnetonka serving more than 60 clients, answers critical issues within 15 minutes. That kind of commitment belongs in writing, not in a sales conversation.
+
+Ask your current provider a direct question: if the trailer network goes down on pour day, who answers, how fast, and what happens if the first fix does not work? If the answer is vague, the delay risk is real.
+
+## How a vCIO Helps
+
+A virtual CIO (vCIO) identifies recurring technology friction and turns it into a prioritized IT roadmap instead of a recurring complaint list. That roadmap needs a budget, and understanding managed IT pricing helps leadership plan for the fixes. Once the basics are stable, many teams look for time savings next, such as secure AI for specs, submittals, and daily logs.
+
+The vCIO role matters because field teams rarely have time to diagnose patterns. They report the symptom, fix it badly, and move on. Someone needs to own the pattern, and for most Twin Cities contractors that owner is either an internal IT lead or a vCIO from their MSP.
+
+## Frequently Asked Questions
+
+### What IT problems cause the most project delays?
+
+Common causes include unreliable trailer connectivity, locked or compromised accounts, device problems in the field, project platform access issues, and recurring problems that never get fixed at the root.
+
+### How can we get a new jobsite trailer online faster?
+
+Use a standard trailer kit and checklist for internet, Wi-Fi, devices, and printers, and order connectivity early in preconstruction.
+
+### Can managed IT prevent all technology delays?
+
+No provider can prevent every problem, but standard setups, monitoring, tested backups, and clear escalation reduce how often delays happen and how long they last.
+
+### What is a vCIO?
+
+A virtual CIO provides strategic IT leadership on a part-time basis, including roadmaps, budgeting, and quarterly reviews, without a full-time executive hire.
+
+## Reduce Technology Delays on Your Jobsites
+
+Start by listing the recurring IT issues slowing your projects, then get a plan to fix them at the root. A free Business Technology Assessment from Veracity Technologies maps the delays, the causes, and the fixes in priority order. Call (952) 941-7333 to schedule one, and give your next project a technology setup that keeps pace with the schedule instead of holding it back.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): $16.6 billion in total reported losses; business email compromise cost $2.77 billion across 21,442 complaints. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "how-can-secure-ai-help-construction-firms-with-specs-submittals-and-daily-logs", "title": "How Can Secure AI Help Construction Firms with Specs, Submittals, and Daily Logs?", "excerpt": "AI can search a 900-page spec book in seconds and turn field notes into a daily log draft, but only if project data stays protected. Here is how Twin Cities firms adopt AI safely, starting with one or two use cases.", "category": "Construction", "published_date": "2026-09-30", "read_time": "6 min read", "content": """Secure AI helps construction firms work faster with specs, submittals, and daily logs by searching large spec books, summarizing submittals, and drafting first versions of routine field documentation. The key word is secure: approved tools, controlled permissions, and trained users keep project, client, and contract data protected while teams save time.
+
+For an Owner or CEO, the pain is the hours your best people spend hunting through documents instead of building. A PM who spends an afternoon finding one requirement in a 900-page spec book is not doing PM work. A super who rewrites the same daily log from scratch every night is not supervising. AI can give those hours back, but only if it runs on tools the company controls.
+
+## Practical AI Use Cases
+
+Start with work your team already does every day:
+
+- **Search large spec books:** Find requirements across hundreds of pages in seconds instead of an afternoon of flipping.
+- **Summarize submittals:** Pull out key details for faster review, so the PM sees what matters before the full package.
+- **Draft daily logs:** Turn field notes into a first draft for the super to review and finalize, not a finished document.
+- **Find details in PDFs:** Locate information in contracts, drawing lists, and RFIs without opening every file.
+- **Create meeting summaries:** Capture decisions and action items from owner, architect, and contractor (OAC) and coordination meetings.
+- **Support internal knowledge bases:** Make company standards and lessons learned easier to find, so a new PM benefits from the last project's experience.
+
+The best first use cases are searching spec books and summarizing submittals. They save time on work PMs already do, and the output is easy to check against the source document.
+
+## The Safe AI Framework
+
+Five rules keep AI from becoming a data problem:
+
+- **Protect company data:** Decide what data AI tools can access and where it is stored. Project, client, and contract data should never go into a tool the company has not approved.
+- **Define approved tools:** Give employees a sanctioned option so they do not turn to unmanaged apps. People will use AI either way, so give them a safe way to do it.
+- **Set permissions:** AI tools should only see what each user is already allowed to see. A field engineer should not be able to ask the AI about executive pay applications.
+- **Train users:** Teach teams what to share, what not to share, and how to check AI output. AI makes confident mistakes, and a wrong spec citation is worse than a slow one.
+- **Monitor usage:** Review how tools are used and adjust policies as needed. Usage patterns show which teams need more training and which use cases deserve more investment.
+
+These controls start with the same identity and access controls that protect field devices and trailers: MFA, managed devices, and least-privilege access. AI built on a weak foundation inherits every weakness underneath it.
+
+## Why Consumer AI Is Risky
+
+Uploading project, client, or contract data into unmanaged tools can create data exposure risk. Free consumer tools may store or use what employees upload, and the company has no agreement governing that data. The risk is not theoretical. IBM reported in its 2025 Cost of a Data Breach Report that 13 percent of organizations experienced a breach of an AI model or application, and 97 percent of those reported lacking proper AI access controls. The pattern is clear: AI adoption is outrunning AI governance, and the gap is where the cost lands.
+
+For a Minnesota contractor, the exposure is practical. A submittal with pricing, a contract with terms, or a daily log with safety notes uploaded to a personal AI account is company data outside company control. Once it is there, it cannot be recalled.
+
+## Where MSP Support Fits
+
+Strong identity security, governance, Microsoft 365 configuration, and user training are the foundation for safe AI adoption. An MSP can handle the access, data, and policy work behind it: configuring Microsoft 365 so AI tools respect existing permissions, setting up approved tools, and training staff on what is safe to share.
+
+Veracity Technologies, a SOC 2 certified MSP in Minnetonka, builds AI readiness on that foundation. The firm's AI as a Service work starts with governance, not gadgets, so the tools land on controls that already work.
+
+## Planning AI the Right Way
+
+AI projects work best when they are planned as part of a 12-month IT roadmap and built on reliable technology for job trailers and field crews. Start with one or two use cases, measure the time saved, and expand from there. A simple before-and-after works: time a spec search the old way, time it with the approved tool, and record the difference for a month. If the savings hold, roll the use case out to the next team. If they do not, fix the process before buying more tools.
+
+Hypothetical example: a PM who saves 45 minutes a day on spec searches and submittal summaries recovers roughly three and a half hours a week. Across a team of five PMs, that is real capacity without a new hire, but treat it as a planning illustration, not a promise, since results vary by project and by how well the tool is configured.
+
+## Frequently Asked Questions
+
+### Is it safe to use AI with construction project documents?
+
+It can be, when you use approved tools configured to protect company data, limit access with permissions, and train employees on what they can share.
+
+### What is the best first AI use case for a contractor?
+
+Searching spec books or summarizing submittals are good starting points because they save time on work PMs already do and are easy to check.
+
+### Why not let employees use free AI tools?
+
+Free consumer tools may store or use what employees upload, which can expose project, client, or contract data.
+
+### Can AI write our daily logs?
+
+AI can turn field notes into a first draft, but the superintendent should review and approve every log before it is filed.
+
+## See Where AI Can Save Your Team Time Safely
+
+Identify the practical AI use cases for your PMs and field teams, and the security steps to put in place first. A free Business Technology Assessment from Veracity Technologies covers both: the time savings and the guardrails. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; 13 percent of organizations reported breaches of AI models or applications, 97 percent of which reported lacking proper AI access controls. https://newsroom.ibm.com/2025-07-30-ibm-report-13-of-organizations-reported-breaches-of-ai-models-or-applications,-97-of-which-reported-lacking-proper-ai-access-controls?_sp=79a5ecfd-3af3-4930-bb93-5afa21ec0ed7&utm
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): stolen credentials the most common initial access vector at 22 percent of breaches. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): $16.6 billion in total reported losses. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "how-much-does-managed-it-cost-for-a-commercial-construction-company-in-minneapolis", "title": "How Much Does Managed IT Cost for a Commercial Construction Company in Minneapolis?", "excerpt": "Most commercial construction companies in Minneapolis can plan on a typical range of $125 to $175 per user per month for managed IT. Here is what drives where you land in that range, and what should be included.", "category": "Construction", "published_date": "2026-09-30", "read_time": "5 min read", "content": """Most commercial construction companies in Minneapolis can plan on $125 to $175 per user per month for managed IT, based on Veracity Technologies pricing guidance. For a 40-user construction firm, that works out to roughly $5,000 to $7,000 per month, before project-specific jobsite infrastructure, hardware, or specialized software. Where you land in that range depends on how many office and field users you have, how many active jobsites you support, and how much security and recovery coverage you need.
+
+For a CFO or Controller, this is a budgeting question with a project risk attached. IT is not a line item that sits quietly in the background. When it is underfunded, the cost shows up as delayed bids, stalled submittals, and supers waiting on access. The goal is a number the business can plan around, with no surprises mid-project.
+
+## What Impacts Managed IT Cost for Contractors?
+
+Six factors move the price:
+
+- **Employee count and active users:** Per-user pricing makes headcount the starting point, including supers and PMs who work mostly from the field.
+- **Number of jobsites and trailers:** Each active site adds connectivity, devices, and setup work. A firm running six sites pays for more infrastructure than a firm running two.
+- **Remote access and mobile device needs:** Field crews on phones and tablets need secure access to email, plans, and project platforms such as Procore.
+- **Cybersecurity requirements:** Carrier, owner, and GC requirements often set the minimum security stack, and that stack is not optional at renewal.
+- **Backup and disaster recovery needs:** How much project data you protect, and how quickly you need it back, both affect cost.
+- **Construction software support:** Project management, estimating, and accounting platforms such as Sage add coordination time.
+
+A firm with heavy field usage and several active Twin Cities jobsites will land higher in the range than an office-heavy firm of the same headcount. That is normal, and a quote that ignores the field is a quote that will grow later.
+
+## What Should Be Included?
+
+A managed IT agreement for a contractor should cover day-to-day support and the planning that keeps problems from coming back. At a minimum, look for:
+
+- Help desk support for office and field users
+- Microsoft 365 administration
+- Device management
+- Email security
+- Endpoint protection
+- Backup monitoring
+- Vendor coordination
+- vCIO planning
+
+Pricing should also reflect the cybersecurity controls your insurer and project owners expect. If a quote leaves those out, expect to pay for them separately later, usually at the worst possible time, such as a renewal deadline or an incident.
+
+## Why the Cheapest IT Can Cost More
+
+Poor support can slow bidding, scheduling, field communication, change orders, and project documentation. For construction firms, downtime is not just an IT issue. It can become a project issue, and project issues carry liquidated damages, overtime, and damaged owner relationships.
+
+The scale of the downside is worth remembering. IBM put the global average cost of a data breach at $4.44 million in its 2025 report, and the United States average at a record $10.22 million. A contractor does not need a breach of that scale to feel the pain. A single compromised email account redirecting one pay application can cost more than a year of the difference between the cheapest quote and a competent one.
+
+When comparing quotes, ask how each provider handles jobsite technology and field-office connectivity, not just the monthly total. The provider that answers with a trailer checklist and a written response commitment understands the work. The provider that talks only about ticket counts does not.
+
+## Fully Managed vs. Co-Managed
+
+Construction firms with 10 to 50 employees often need fully managed support, where one partner owns IT end to end. Firms with 51 to 250 employees may need co-managed support to supplement internal operations or IT staff. The model you choose changes what you pay for, so decide on it before you request pricing. A firm that already employs an IT lead should not pay for a fully managed stack that duplicates that person, and a firm with no internal IT should not buy a co-managed plan that assumes someone in-house will do the daily work.
+
+## Turning a Budget Into a Plan
+
+Once you have a budget range, the next step is a 12-month IT roadmap that ties spending to the projects that matter most. It also helps to know how to choose a construction-focused MSP before comparing quotes, so you measure every provider on the same criteria: construction experience, security, field response, planning, and transparent pricing.
+
+## Frequently Asked Questions
+
+### How much does managed IT cost per user for a construction company?
+
+Veracity Technologies pricing guidance is $125 to $175 per user per month as a typical range. Where a construction firm lands in that range depends on jobsites, field devices, security requirements, and backup scope.
+
+### What costs are usually outside a managed IT agreement?
+
+Jobsite infrastructure, hardware purchases, network equipment for trailers, and specialized software projects are typically scoped and priced separately from monthly support.
+
+### Do field users cost the same as office users?
+
+Most per-user pricing treats every active user the same, but field users often need more mobile device and remote access support, so confirm what each provider includes.
+
+### How can a contractor lower IT costs without adding risk?
+
+Standardize devices, create a repeatable trailer setup, retire unused software, and plan hardware refreshes in advance. Predictable planning usually costs less than reacting to problems mid-project.
+
+## Get a Construction IT Cost Review
+
+See how your current IT spend compares to your jobsite support, cybersecurity, and growth needs. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka, benchmarks your spend and shows where the money should go. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- Veracity Technologies, managed IT pricing guidance for commercial construction companies in Minneapolis (typical range $125 to $175 per user per month): https://www.veracitytech.com/services/minneapolis-managed-it-services
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+"""},
+    {"slug": "how-often-should-construction-firms-review-cybersecurity-risk-backups-and-disaster-recovery", "title": "How Often Should Construction Firms Review Cybersecurity Risk, Backups, and Disaster Recovery?", "excerpt": "A formal risk assessment once a year, backup and recovery checks every quarter, and a fresh review after any major change or before insurance renewal. The schedule matters less than the follow-through.", "category": "Construction", "published_date": "2026-09-30", "read_time": "4 min read", "content": """Construction firms should complete a formal cybersecurity risk assessment at least once a year, check backups and recovery quarterly, and review again after any major jobsite or system change or before cyber insurance renewal. The schedule matters less than the follow-through: every review should end with fixes, owners, and a date to retest.
+
+For a Compliance Lead, the pain is the gap between what the firm believes is protected and what would actually happen on a bad day. A backup that has never been restored, a risk assessment that produced a report nobody acted on, or an incident plan that names people who left the company two years ago are all the same problem: review without follow-through. In the Twin Cities, where a ransomware event in the middle of a project can idle crews across three jobsites at once, that gap is a business risk, not a paperwork issue.
+
+## Risk Assessments vs. Backup Reviews
+
+A risk assessment identifies security exposure. A backup review confirms whether critical systems and files can be restored. You need both, because a company can have strong security and still be unable to restore its project files quickly.
+
+Think of it this way. The risk assessment asks how an attacker could get in: weak MFA, an unpatched device, a vendor with too much access. The backup review asks what happens after they do, or after a server fails, or after a trailer loses power in a January storm. One without the other leaves half the question unanswered.
+
+## How Often to Review
+
+- **Annually for formal risk reviews:** A full look at security controls, access, and exposure, with findings ranked by risk and assigned to owners.
+- **Quarterly for backup and recovery checks:** Confirm backups are running and test restores of real files, mailboxes, and project data.
+- **After major jobsite or system changes:** New sites, new software, a new office, or a big staffing change all alter your risk.
+- **Before cyber insurance renewals:** Reviewing early leaves time to fix gaps and meet the controls carriers ask about, instead of discovering them on the application.
+
+Put the dates on the calendar now. An annual review that happens every 14 months because nobody scheduled it is not an annual review.
+
+## What to Test
+
+A recovery test should cover the systems a project actually depends on:
+
+- Microsoft 365 protection, including email and file recovery
+- File recovery from project folders and shared drives
+- Server or cloud backup restores, timed end to end
+- The disaster recovery process itself, not just the technology
+- Incident communication: how the team talks when email is down
+
+Recovery tests are also the best measure of ransomware preparation. If you cannot restore quickly in a test, you will not restore quickly during an attack. Verizon found ransomware present in 44 percent of breaches in its 2025 report, and 64 percent of ransomware victims did not pay the ransom, which means recovery capability is what separates a bad week from a business-ending event.
+
+## Continuous Improvement
+
+Assess, improve, monitor, and retest, so resilience becomes part of operations rather than a once-a-year project. Findings should feed into your jobsite security controls and your 12-month construction IT roadmap, so every review leads to specific work with a budget and an owner.
+
+Leadership should see a plain-language summary with priorities, owners, and costs. A 40-page technical report that nobody reads is not a review. A two-page summary that gets three fixes funded is.
+
+## Frequently Asked Questions
+
+### What is the difference between backup and disaster recovery?
+
+A backup is a copy of your data. Disaster recovery is the plan and process for restoring systems and getting projects moving again after an outage or attack.
+
+### How do you test backups?
+
+Restore real files, mailboxes, and project data on a schedule, confirm they open correctly, and time how long the restore takes.
+
+### What should a cybersecurity risk assessment include?
+
+It should review identity and access, device security, email protection, backups, vendor access, jobsite connectivity, and incident readiness, then rank findings by risk.
+
+### Who should see the results of a risk review?
+
+Leadership should see a plain-language summary with priorities, owners, and costs, so decisions can be made and tracked.
+
+## Find Out What Recovery Risks You May Be Missing
+
+Review your backups, recovery process, and security risks before an outage tests them. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka, includes a backup and recovery check with findings ranked by risk. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; median ransomware payment $115,000; 64 percent of victim organizations did not pay. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): $16.6 billion in total reported losses. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "how-should-construction-companies-prepare-for-ransomware-and-business-email-compromise", "title": "How Should Construction Companies Prepare for Ransomware and Business Email Compromise?", "excerpt": "Five controls come first: MFA, email security, endpoint protection, tested backups, and security awareness training. Together they make it harder for attackers to get in, protect the payments moving between owners and subs, and give you a way to recover without paying.", "category": "Construction", "published_date": "2026-09-30", "read_time": "5 min read", "content": """Construction companies should prepare for ransomware and business email compromise by putting five controls in place first: MFA, email security, endpoint protection, tested backups, and security awareness training. Together, these make it harder for attackers to get in, protect the payments that move between owners, general contractors, and subs, and give you a way to recover without paying.
+
+For a CFO or Controller, the pain is personal. You sign off on payments, and business email compromise is designed to reach you through a familiar name and a plausible invoice. In 2024, the FBI's Internet Crime Complaint Center recorded 21,442 business email compromise complaints with $2.77 billion in reported losses. The average reported incident ran over $100,000. One redirected pay application can erase a quarter's margin, and the money is usually gone before anyone realizes the email was fake.
+
+## Why Construction Firms Are Targeted
+
+Contractors manage payments, invoices, subcontracts, project schedules, and sensitive business information. Frequent payment requests between many parties make construction a natural target for fraud. A project with an owner, a GC, a dozen subs, and a handful of suppliers generates a constant flow of payment instructions, and attackers only need one of them to look legitimate.
+
+Add the schedule pressure. On bid day or during a pour, nobody wants to be the person who held up a payment over a verification call. Attackers count on that urgency, and they write their emails to exploit it.
+
+## Common Threats
+
+- **Ransomware:** Encrypts files and systems, which can stop estimating, billing, and project documentation. Verizon found ransomware present in 44 percent of breaches in its 2025 report.
+- **Business email compromise:** Attackers take over or impersonate an email account to redirect payments or steal information.
+- **Credential theft:** Stolen passwords give attackers a quiet way into email and project platforms. Stolen credentials were the most common initial access vector in the 2025 Verizon report, used in 22 percent of breaches.
+- **Invoice fraud:** Fake or altered invoices and pay applications trick accounts payable into paying the wrong account.
+- **Phishing:** The most common starting point for all of the above, and the reason training matters as much as technology.
+
+## The Protection Framework
+
+Think in five stages, and make sure each one has an owner:
+
+- **Prevent:** Block common entry points with MFA, email filtering, and patching.
+- **Detect:** Monitor devices and accounts for unusual activity, such as a login from an unexpected location or a mailbox rule forwarding mail outside the company.
+- **Contain:** Isolate affected accounts and devices quickly, starting with securing field devices and trailers.
+- **Recover:** Restore from backups that have been tested, so the business keeps moving while the incident is handled.
+- **Document:** Record what happened and what changed, which also supports insurance claims.
+
+## Controls to Prioritize
+
+- MFA on email, remote access, and privileged accounts
+- Email security, including filtering, spoofing protection, and link scanning
+- Endpoint protection on every device, including field tablets and laptops
+- Backup testing on a real schedule, with restores timed and recorded
+- Security awareness training, at least annually, with shorter refreshers and phishing simulations throughout the year, including for field staff
+
+These controls map closely to the cyber insurance requirements carriers now review. Keep them current with regular cybersecurity risk and backup reviews, and the renewal conversation gets much easier.
+
+## Build Your Response Plan
+
+Decide ahead of time who makes decisions during an incident, how you will communicate if email is down, and how payment changes get verified. That last point deserves a written rule: verify any change to vendor or subcontractor payment details by calling a known phone number, require approval for new payment instructions, and train accounts payable to spot pressure tactics such as urgent deadlines and threats to delay a project.
+
+A useful drill is a fake payment-change email sent to your own AP team. If it gets caught and verified, the training works. If it gets paid in the drill, you have found a gap cheaply, before a real attacker finds it.
+
+## Frequently Asked Questions
+
+### What is business email compromise?
+
+Business email compromise is when an attacker takes over or impersonates a company email account to redirect payments, request sensitive data, or trick employees into acting.
+
+### How can contractors stop payment fraud?
+
+Verify any change to vendor or subcontractor payment details by calling a known phone number, require approval for new payment instructions, and train accounts payable to spot pressure tactics.
+
+### Should a construction company pay a ransomware demand?
+
+That decision should involve leadership, legal counsel, and your insurer. Tested backups and an incident response plan give you options besides paying. In Verizon's 2025 data, 64 percent of ransomware victims did not pay, and the median payment among those who did was $115,000.
+
+### How often should employees get security awareness training?
+
+Train at least annually, with shorter refreshers and phishing simulations throughout the year, including for field staff.
+
+## Assess Your Ransomware and Email Security Risk
+
+Find out how prepared your team is to prevent, contain, and recover from ransomware and payment fraud. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka, tests the five priority controls and shows where the gaps are. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): business email compromise cost $2.77 billion across 21,442 complaints; $16.6 billion in total reported losses. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent; median ransomware payment $115,000; 64 percent of victims did not pay. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "what-questions-should-contractors-ask-before-hiring-an-msp", "title": "What Questions Should Contractors Ask Before Hiring an MSP?", "excerpt": "Five questions separate an MSP that can support jobsites from one that can only support an office: construction experience, cybersecurity, field response, planning, and cost. Ask them all before you sign.", "category": "Construction", "published_date": "2026-09-30", "read_time": "5 min read", "content": """Before hiring an MSP, contractors should ask five things: whether the provider understands construction operations, how it handles cybersecurity, what its response expectations are for field issues, how it plans technology over time, and what it costs. The answers show quickly whether a provider can support jobsites or only an office.
+
+For an Owner or CEO, the pain is a decision that is hard to undo. Switching MSPs mid-project is disruptive, and a provider that looks fine in a proposal can fail on the first pour day when the trailer network goes down. The interview is your cheapest chance to find out. Ask the hard questions now, while walking away still costs nothing.
+
+## Question 1: Do You Understand Construction Operations?
+
+Ask whether the MSP supports field teams, trailers, remote access, mobile devices, and project-driven businesses. Ask for examples of how they have handled a jobsite setup or a field access problem. Listen for specifics: a trailer kit, a mobilization checklist, experience with Procore and Sage, and a plan for closing out a site. A provider that talks only about office networks and ticket queues has told you what it knows.
+
+Follow up with references from other contractors. References from firms that run jobsites, trailers, field crews, and project deadlines are one of the clearest signs a provider has done this work before.
+
+## Question 2: How Do You Handle Cybersecurity?
+
+A provider should explain its security approach in plain language and cover the basics from day one:
+
+- MFA enforced on every account
+- Endpoint protection on every device
+- Email security, including filtering and spoofing protection
+- Backups that are monitored and tested
+- Incident response, with a named process and a first call
+
+If the answer is jargon, or if security is presented as an add-on package, keep looking. Security is not an upgrade for a contractor that moves money by email every day. Business email compromise alone cost victims $2.77 billion in 2024, according to the FBI, and the firms that get hit are usually the ones whose provider treated email security as optional.
+
+## Question 3: What Are Your Response Expectations?
+
+Ask how critical issues, field issues, and after-hours needs are handled, and get the answer in writing. A superintendent locked out at 6:30 a.m. on pour day needs a different response than an office printer jam, and the agreement should say so.
+
+Veracity Technologies, a SOC 2 certified MSP in Minnetonka, answers critical issues within 15 minutes. Whatever your provider promises, it should be written into the agreement with a clear definition of what counts as critical, who responds, and what happens if the first fix does not work. Verbal assurances do not hold up at 6:30 a.m.
+
+## Question 4: How Will You Plan Our Technology?
+
+Ask whether you will get a roadmap, budget guidance, and regular business reviews. Also ask which model they would recommend for you when it comes to fully managed vs. co-managed IT, and why. The answer should reflect your staffing, not their sales target. A firm with no internal IT usually needs fully managed support. A firm with an IT lead usually needs co-managed support that fills gaps instead of duplicating a person.
+
+A provider that only reports tickets is not planning. Look for quarterly reviews, a 12-month roadmap, and a budget conversation before the spring building season, not after it.
+
+## Question 5: What Will It Cost?
+
+Ask what is included in the monthly fee and what is billed separately. Understanding construction IT pricing before these conversations makes quotes much easier to compare. As a typical range, Veracity Technologies pricing guidance for commercial construction companies in Minneapolis is $125 to $175 per user per month, before jobsite infrastructure and hardware. Use that range as a sanity check, not a verdict: a quote far below it usually leaves out security, backup, or field support that you will pay for later.
+
+## Red Flags
+
+Walk away, or at least slow down, if you see:
+
+- No construction references
+- No security process
+- No roadmap planning
+- Vague response times
+- Too much jargon and too few specifics
+
+Any one of these can be a fixable gap. Several together describe a provider that will learn construction on your projects, at your expense.
+
+## Frequently Asked Questions
+
+### What is the most important question to ask an MSP?
+
+Ask how they handle issues from the field. The answer shows whether they understand construction or treat every ticket the same.
+
+### Should an MSP have construction references?
+
+Yes. References from other contractors are one of the clearest signs a provider has supported jobsites, trailers, field crews, and project deadlines.
+
+### What should be in an MSP agreement for a contractor?
+
+The agreement should define scope, response expectations for field and office issues, security responsibilities, jobsite setup, and what is billed outside the monthly fee.
+
+### How long does it take to switch MSPs?
+
+Timing varies by environment. A good provider will walk you through an onboarding plan that covers documentation, access, security baselines, and active jobsites.
+
+## Evaluate Your Current IT Provider
+
+See how your current provider measures up on construction experience, security, response, and planning. A free Business Technology Assessment from Veracity Technologies scores all four and shows what would change. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): business email compromise cost $2.77 billion across 21,442 complaints. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Veracity Technologies, managed IT pricing guidance for commercial construction companies in Minneapolis (typical range $125 to $175 per user per month): https://www.veracitytech.com/services/minneapolis-managed-it-services
+"""},
+    {"slug": "what-should-a-commercial-construction-companys-it-roadmap-include-over-the-next-12-months", "title": "What Should a Commercial Construction Company's IT Roadmap Include Over the Next 12 Months?", "excerpt": "Five priorities, four quarters: cybersecurity, jobsite connectivity, field-office collaboration, backup and recovery, and long-term planning. Here is the quarter-by-quarter plan Twin Cities contractors actually follow.", "category": "Construction", "published_date": "2026-09-30", "read_time": "4 min read", "content": """A 12-month IT roadmap for a commercial construction company should focus on five priorities: cybersecurity, jobsite connectivity, field-office collaboration, backup and recovery, and long-term technology planning. The best roadmaps reduce project friction instead of creating another dashboard nobody asked for. Here is how to break that work into four quarters.
+
+For an Operations VP, the pain is the gap between the technology the firm has and the technology the schedule needs. Every quarter without a plan adds another workaround: a shared login here, an unpatched tablet there, a trailer network that only one person knows how to fix. A roadmap turns that drift into decisions, with owners and dates.
+
+## Quarter 1: Assess and Stabilize
+
+Start by understanding where you are today and fixing anything that puts active projects at risk.
+
+- Review current support issues and find the repeats
+- Audit Microsoft 365 security, including MFA coverage and admin rights
+- Confirm MFA on every account
+- Review backups and confirm what is actually protected
+- Identify jobsite connectivity gaps at active sites
+
+Quarter 1 is triage. Nothing new gets bought until the risks to live projects are understood. In the Twin Cities, that includes a winter check: trailers, connectivity, and backup power before the coldest months test them.
+
+## Quarter 2: Standardize Field and Office Access
+
+Consistency makes support faster and security easier to enforce across every site.
+
+- Standardize devices for office and field staff
+- Improve onboarding and offboarding, so access follows employment, not memory
+- Review remote access and retire anything unsecured
+- Document software ownership: who owns Procore, Sage, estimating, and email, and who pays for each
+
+Standardization pays off quietly. When every super carries the same tablet and every trailer runs the same kit, a replacement takes minutes instead of a day, and a new hire can be productive on day one instead of day three.
+
+## Quarter 3: Strengthen Resilience
+
+This is the quarter to prove you can recover. Test backups, and check your controls against cyber insurance requirements well before renewal season.
+
+- Test backups with real restores, timed and recorded
+- Review cyber insurance controls and close the gaps carriers check
+- Update the incident response plan with current names and phone numbers
+- Review vendor dependencies, including who has access to your systems
+
+Quarter 3 is also the right time for a tabletop exercise: walk the leadership team through a ransomware scenario on paper, and find out whether anyone knows who decides, who calls the insurer, and how the crew communicates if email is down. Finding the gaps in a conference room is far cheaper than finding them during an incident.
+
+## Quarter 4: Budget and Plan
+
+Close the year by turning what you learned into next year's budget, ideally before the spring building season.
+
+- Forecast hardware refreshes so replacements are planned, not emergency purchases
+- Review software spend and retire licenses nobody uses
+- Plan next-year projects, including any new jobsites
+- Hold an executive technology review with leadership, not just IT
+
+The executive review is the point of the whole exercise. It connects technology spending to project outcomes, so the budget conversation is about schedule risk and owner expectations instead of line items.
+
+## Keeping the Roadmap on Track
+
+A roadmap works best when it is backed by ongoing strategic IT planning, with quarterly check-ins to adjust as projects, jobsites, and staffing change. Regular cybersecurity risk assessments keep the plan grounded in current risk, and building toward secure AI readiness ensures new tools land on a secure foundation.
+
+The check-in matters more than the document. A roadmap reviewed once a year is a wish list. A roadmap reviewed quarterly, with owners reporting on what moved and what did not, is a management tool. Assign one owner, put the review on the calendar, and treat a missed review the same way you would treat a missed safety meeting.
+
+## Frequently Asked Questions
+
+### What should a construction IT roadmap include?
+
+A 12-month roadmap should cover cybersecurity, jobsite connectivity, field-office collaboration, backup and recovery, and budget planning, organized by quarter.
+
+### Who should own the IT roadmap?
+
+Leadership should own the priorities, with an internal IT lead or a vCIO turning them into a schedule, a budget, and quarterly reviews.
+
+### How often should a construction company update its IT roadmap?
+
+Review it quarterly and rebuild it annually, or sooner when jobsites, staffing, security requirements, or software platforms change.
+
+### What is the first step in building an IT roadmap?
+
+Start with an assessment of current support issues, Microsoft 365 security, MFA coverage, backups, and jobsite connectivity gaps.
+
+## Get a Construction IT Roadmap Review
+
+Identify the highest-priority technology improvements for the next 12 months. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka, maps your current state and builds the quarter-by-quarter plan. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): business email compromise cost $2.77 billion across 21,442 complaints. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "why-do-commercial-construction-job-sites-need-a-construction-focused-msp", "title": "Why Do Commercial Construction Job Sites Need a Construction-Focused MSP?", "excerpt": "A generic provider can close tickets. A construction-focused provider plans around the schedule. Here is what makes jobsite IT different, and how to tell whether your MSP is built for it.", "category": "Construction", "published_date": "2026-09-30", "read_time": "5 min read", "content": """Commercial construction job sites need a construction-focused MSP because contractors do not operate like office-only businesses. Job trailers, field crews, tight timelines, remote access, mobile devices, and project documentation create technology demands that generic IT providers often miss. A generic provider can close tickets. A construction-focused provider plans around the schedule.
+
+For an Owner or CEO, the pain shows up as a pattern you cannot quite name. Tickets get closed, but the same problems return. The office works fine, but the field struggles. The provider is polite, responsive, and completely unprepared for pour day. That pattern is the gap between office IT and jobsite IT, and it is the reason the specialty exists.
+
+## Construction IT Is Different
+
+- **Jobsite trailers:** Temporary offices need connectivity, printers, and secure access set up quickly and taken down cleanly.
+- **Field crews:** Supers and foremen need reliable access to plans, email, and project platforms from the site, not just from a desk.
+- **Mobile devices:** Phones and tablets are primary work tools, not extras, and they need management, patching, and remote wipe.
+- **Remote access:** PMs and estimators move between the office, the site, and home, and their access has to follow them securely.
+- **Project management platforms:** Submittals, RFIs, and change orders depend on systems such as Procore staying available.
+- **Fast bid and schedule windows:** A technology problem on bid day or during a pour has real cost, and there is no reschedule button for concrete.
+
+A Minneapolis contractor running a downtown tower, a school renovation in St. Paul, and a warehouse in the northwest suburbs is really running three temporary offices, each with its own network, devices, and crew. That is a different job from supporting one office with a stable headcount.
+
+## Where Generic MSPs Fall Short
+
+Providers built around office environments tend to struggle in construction in predictable ways:
+
+- Slow response to field issues, because field tickets look like low priority from an office desk
+- An office-only support model, with no plan for trailers, mobile devices, or remote crews
+- Limited construction software familiarity, so Procore and Sage problems get bounced to the vendor
+- Poor jobsite connectivity planning, so each new site starts from scratch
+- No awareness of project pressure, so a bid-day outage gets the same urgency as a printer jam
+
+None of this means a generic provider is bad at IT. It means the provider is solving a different problem than the one a contractor has.
+
+## What a Construction-Focused MSP Should Support
+
+At a minimum, expect coverage of:
+
+- Microsoft 365, including email, files, and Teams
+- Email security, including filtering and spoofing protection
+- VPN or secure remote access for field and remote staff
+- Jobsite Wi-Fi and trailer connectivity
+- Mobile devices, managed and patched
+- Backups, monitored and tested
+- Vendor coordination with software and hardware providers
+
+Field access also has to be secure. A good provider should have a clear approach to securing job trailers and field devices, not just getting them online. Ask how MFA, conditional access, and device management work on a jobsite, and listen for a real answer rather than a brochure line.
+
+## The Business Case
+
+The value is fewer technology bottlenecks, faster support, better security, and smoother communication between the field and the office. To put numbers to it, compare the managed IT cost for commercial construction against what delays and recurring issues cost you today. As a typical range, Veracity Technologies pricing guidance for Minneapolis commercial construction firms is $125 to $175 per user per month.
+
+The downside of getting it wrong is measurable too. IBM put the United States average cost of a data breach at $10.22 million in its 2025 report, a record high, and the FBI recorded $2.77 billion in business email compromise losses in 2024. A contractor does not need a breach of that scale to feel it. One compromised email account, one redirected pay application, or one week of lost project files is enough.
+
+## Frequently Asked Questions
+
+### What is a construction-focused MSP?
+
+A construction-focused MSP is a managed service provider that plans and supports IT around jobsites, trailers, field crews, mobile devices, and the project pressure contractors face.
+
+### Can a general MSP support a construction company?
+
+It can handle routine office support, but contractors often run into gaps around jobsite connectivity, mobile device support, construction software, and response to field issues.
+
+### What should an MSP do when we open a new jobsite?
+
+It should follow a repeatable setup for trailer connectivity, devices, printers, and secure access, then remove access and recover equipment when the project closes.
+
+### How do I know if my current MSP is a good fit?
+
+Look at how field issues are handled, whether recurring problems get fixed at the root, and whether you receive a roadmap instead of only ticket reports.
+
+## Find Out If Your IT Is Built for Construction
+
+Review whether your current MSP can support real jobsite conditions. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka serving more than 60 clients, tests field support, security, and planning against what a contractor actually needs. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): business email compromise cost $2.77 billion across 21,442 complaints; $16.6 billion in total reported losses. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- Veracity Technologies, managed IT pricing guidance for commercial construction companies in Minneapolis (typical range $125 to $175 per user per month): https://www.veracitytech.com/services/minneapolis-managed-it-services
+"""},
+    {"slug": "best-it-support-companies-for-commercial-construction-firms-in-minneapolis-what-to-look-for", "title": "Best IT Support Companies for Commercial Construction Firms in Minneapolis: What to Look For", "excerpt": "The best IT support companies for commercial construction firms in Minneapolis share four traits: real construction experience, cybersecurity built into every service, strategic planning, and field-ready response. Here is how to judge each one before you sign.", "category": "Construction", "published_date": "2026-09-30", "read_time": "5 min read", "content": """The best IT support companies for commercial construction firms in Minneapolis share four traits: real construction experience, cybersecurity built into every service, strategic planning that goes beyond fixing tickets, and field-ready response when a jobsite has a problem. A provider that has all four will keep your projects moving. A provider missing one will show the gap at the worst possible time.
+
+For an Owner or CEO, the pain is the shortlist itself. Every MSP website promises fast support and strong security, and the proposals all look alike. The difference is not in the brochure. It is in whether the provider has supported trailers, field crews, and bid deadlines before, and whether it can prove it. This guide gives you the four traits to test, and the questions that expose them.
+
+## Trait 1: Real Construction Experience
+
+The provider should understand how a contractor actually works. Ask for construction references, and ask what the provider did for them: trailer setups, mobilization checklists, support for Procore and Sage, and help during bid windows and pours. A provider with real experience will answer with stories about jobsites, not generalities about uptime.
+
+Check the client list too. Veracity Technologies, a SOC 2 certified MSP in Minnetonka, serves more than 60 clients and lists commercial construction among its core industries, alongside financial services and manufacturing. A provider that names construction as a focus, and can show the work, is a different conversation than one that lists every industry equally.
+
+## Trait 2: Cybersecurity Built Into Every Service
+
+Security should be part of the base service, not an add-on package. At a minimum, the provider should include MFA enforcement, endpoint protection, email security, monitored and tested backups, and a written incident response process. Ask whether each of those is included in the monthly fee, and what happens if you decline one of them.
+
+The stakes are concrete. The FBI recorded $2.77 billion in business email compromise losses in 2024, and IBM put the United States average cost of a data breach at a record $10.22 million in its 2025 report. A contractor that moves payments by email every day cannot treat email security as optional, and a provider that does is not built for this industry.
+
+## Trait 3: Strategic Planning That Goes Beyond Fixing
+
+The best providers plan technology, not just tickets. Look for a 12-month IT roadmap, quarterly business reviews, budget guidance, and a vCIO or equivalent planning role. Ask to see a sample roadmap or a sample quarterly review. If the provider can only show ticket reports, you are buying a help desk, not a partner.
+
+Planning also shows up in how the provider talks about your future: new jobsites, new hires, software changes, and insurance renewals. A provider that asks about your project pipeline is thinking about your business. A provider that only asks about your device count is thinking about its invoice.
+
+## Trait 4: Field-Ready Response
+
+Ask how the provider handles field issues, and get the answer in writing. What counts as critical? Who responds, and how fast? What happens after hours, and what happens when the first fix does not work? A superintendent locked out of Procore at 6:30 a.m. on pour day needs a different response than an office printer jam, and the agreement should say so.
+
+Veracity Technologies answers critical issues within 15 minutes. Whatever your provider promises, compare it against that standard, and confirm it is written into the agreement rather than offered verbally in a sales meeting.
+
+## How to Compare Providers Side by Side
+
+Score each provider from one to five on the four traits, plus two practical checks:
+
+- **Construction experience:** references, jobsite work, Procore and Sage familiarity
+- **Cybersecurity:** MFA, endpoint protection, email security, backups, incident response
+- **Strategic planning:** roadmap, quarterly reviews, vCIO, budget guidance
+- **Field response:** written response commitments, after-hours coverage, escalation path
+- **Pricing transparency:** what is included, what is billed separately, and how the fee changes as you add sites
+- **Local presence:** a Twin Cities team that can reach a jobsite in Minneapolis, St. Paul, or the suburbs the same day
+
+As a typical range, Veracity Technologies pricing guidance for commercial construction companies in Minneapolis is $125 to $175 per user per month. Use it as a sanity check: a quote far below that range usually leaves out security, backup, or field support you will pay for later.
+
+## Red Flags
+
+Slow down if you see no construction references, no security process, no roadmap planning, vague response times, or answers full of jargon and short on specifics. Any one of these can be a gap. Several together describe a provider that will learn construction on your projects, at your expense.
+
+## Frequently Asked Questions
+
+### What should a construction company look for in an IT provider?
+
+Look for construction industry experience, fast field support, cybersecurity built into the base service, jobsite networking capability, knowledge of construction applications, transparent pricing, and ongoing strategic planning.
+
+### How do I verify an MSP's construction experience?
+
+Ask for references from other contractors, ask how they handle trailer setups and field access problems, and ask which construction platforms they support day to day.
+
+### Should I choose a local Minneapolis provider?
+
+Local matters for construction. A Twin Cities provider can reach a jobsite the same day, understands local project rhythms, and is available in your time zone when the field calls early.
+
+### What is the most important trait of all?
+
+Field response. A provider that answers fast and fixes the problem on a jobsite is worth more than one with a polished proposal and a slow help desk.
+
+## Compare Your Options With a Free Assessment
+
+A free Business Technology Assessment from Veracity Technologies scores your current setup on construction experience, security, response, and planning, and shows what would change with a construction-focused provider. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): business email compromise cost $2.77 billion across 21,442 complaints; $16.6 billion in total reported losses. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches; stolen credentials the most common initial access vector at 22 percent. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- Veracity Technologies, managed IT pricing guidance for commercial construction companies in Minneapolis (typical range $125 to $175 per user per month): https://www.veracitytech.com/services/minneapolis-managed-it-services
+"""},
+    {"slug": "fully-managed-it-vs.co-managed-it-which-is-best-for-a-construction-company", "title": "Fully Managed IT vs. Co-Managed IT: Which Is Best for a Construction Company?", "excerpt": "The answer comes down to one question: do you already have internal IT staff? If not, fully managed is usually the fit. If you do, co-managed fills the gaps without duplicating the person you already employ.", "category": "Construction", "published_date": "2026-09-30", "read_time": "6 min read", "content": """Fully managed IT usually fits a construction company with no internal IT staff, and co-managed IT usually fits a company that already employs one IT person or a small internal team. The decision comes down to one question: do you already have someone handling IT internally? If not, fully managed gives you a complete IT department without hiring one. If so, co-managed fills the gaps instead of duplicating what you already have.
+
+For a CFO or Controller, the pain is paying twice for the same work, or paying for coverage you do not have. A fully managed contract signed by a firm that already employs an IT lead wastes money. A co-managed contract signed by a firm with nobody in-house leaves the daily work undone. Getting the model right is the cheapest decision in the whole IT budget, and getting it wrong is the most expensive.
+
+## What Is Fully Managed IT?
+
+With fully managed IT, your managed service provider handles everything: help desk, security, backups, vendor management, strategic planning, and procurement. You do not employ an internal IT person. Your MSP is your IT department, and it owns the outcomes, including uptime, security posture, and the technology roadmap.
+
+Construction firms with 10 to 50 employees often need fully managed support, where one partner owns IT end to end. For a Twin Cities contractor in that range, fully managed usually means one monthly fee covering office and field users, trailer connectivity, mobile devices, Microsoft 365, email security, endpoint protection, backup monitoring, and vCIO planning.
+
+Fully managed is the right call when the firm has no internal IT staff, does not want to hire one, or is tired of owning IT problems that keep pulling the owner or the office manager away from project work.
+
+## What Is Co-Managed IT?
+
+Co-managed IT is a partnership between your internal IT staff and an MSP. Your IT person handles the day-to-day work they know well, such as user support, internal projects, and hands-on troubleshooting, while the MSP provides enterprise tools, security expertise, after-hours coverage, and escalation support for problems that exceed internal capacity.
+
+Construction firms with 51 to 250 employees may need co-managed support to supplement internal operations or IT staff. The arrangement works best when roles are clearly defined. Your internal team handles what it knows. The MSP handles what requires specialized expertise or round-the-clock coverage, such as cybersecurity tooling, backup and recovery testing, and vacation coverage so your internal person can actually take time off.
+
+Co-managed is not about replacing your IT person. It is about making that person effective, instead of forcing a solo administrator to be an expert in cybersecurity, cloud architecture, networking, and help desk work all at once.
+
+## Side-by-Side Comparison
+
+- **Day-to-day support:** Fully managed means the MSP handles all tickets. Co-managed means internal IT handles most requests and the MSP handles overflow and escalations.
+- **Security management:** Fully managed means the MSP owns the full security stack. Co-managed means the MSP provides security tools and expertise while internal IT manages daily security tasks.
+- **Strategic planning:** Fully managed means the MSP drives the roadmap and budget. Co-managed means internal IT leads strategy with the MSP providing input and recommendations.
+- **Jobsite support:** Both models should cover trailers, field devices, and mobile crews. If a co-managed proposal leaves the field to your internal person alone, it is not a complete plan.
+- **Cost structure:** Fully managed is a predictable all-in monthly fee. Co-managed is usually a discounted rate, since internal IT handles frontline work, but the firm also carries the internal salary.
+- **Best for:** Fully managed fits firms with no IT staff. Co-managed fits firms with one to three IT staff who need enterprise tools and specialist backup.
+
+## A Simple Test to Decide
+
+Ask this: if your internal IT person left tomorrow, could the business keep running smoothly for two weeks? If the honest answer is no, or if that person is already stretched thin, co-managed IT or a path toward fully managed is worth a real conversation. If there is no internal IT person to lose in the first place, fully managed is the more direct answer.
+
+## Cost Framing
+
+As a typical range, Veracity Technologies pricing guidance for Minneapolis commercial construction firms is $125 to $175 per user per month for managed IT. Fully managed usually sits in that range as an all-in fee. Co-managed usually costs less per user, because the firm only pays for the gaps, but the honest comparison is total cost: fully managed replaces a hire outright, while co-managed supplements one. Add the internal salary to the co-managed fee before comparing.
+
+Veracity Technologies offers both models, and both include unlimited onsite and remote support, SOC 2 certified expertise, and vCIO consulting. The choice is about your staffing, not about which package is bigger.
+
+## Can You Switch Later?
+
+Yes. A firm that starts fully managed can move to co-managed when it hires an internal IT lead, and a firm that starts co-managed can move to fully managed when its internal person leaves. What matters is that the agreement defines roles clearly today, so the transition later is a conversation, not a crisis.
+
+## Frequently Asked Questions
+
+### Which is cheaper, fully managed or co-managed IT?
+
+Co-managed is usually cheaper per user, since you only pay for the gaps rather than the full stack. But the accurate comparison is total cost, including any internal IT salaries.
+
+### We have one IT person. Which model fits us?
+
+Almost always co-managed. A single internal IT person can usually handle day-to-day desktop support and knows your team and software, but cannot realistically also cover after-hours emergencies, deep cybersecurity, and vacation backup.
+
+### Can a small construction firm use co-managed IT?
+
+It can, but only if it actually has internal IT staff to partner with. Without anyone in-house, co-managed leaves daily work undone, and fully managed is the better fit.
+
+### What should the agreement define in a co-managed relationship?
+
+It should define who handles what: tickets, security, backups, after-hours coverage, escalation, and who owns the roadmap. Vague roles are the most common reason co-managed arrangements fail.
+
+## Find Out Which Model Fits Your Firm
+
+A short conversation about your current staff, software, and jobsite count is enough to give you a direct answer. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka, covers both models honestly, including telling you if co-managed is genuinely the better fit. Call (952) 941-7333 to schedule one.
+
+## Sources
+
+- Veracity Technologies, Minneapolis Managed IT Services (accessed November 2026): fully managed and co-managed IT options, both including unlimited onsite and remote support, SOC 2 certified expertise, and vCIO consulting. https://www.veracitytech.com/services/minneapolis-managed-it-services
+- Veracity Technologies, managed IT pricing guidance for commercial construction companies in Minneapolis (typical range $125 to $175 per user per month): https://www.veracitytech.com/services/minneapolis-managed-it-services
+- Verizon, 2025 Data Breach Investigations Report (published April 2025): ransomware present in 44 percent of breaches. https://www.verizon.com/business/resources/infographics/2025-dbir-manufacturing-snapshot.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "cyber-insurance-requirements-for-minnesota-construction-companies-what-contractors-need-to-know", "title": "Cyber Insurance Requirements for Minnesota Construction Companies: What Contractors Need to Know", "excerpt": "Cyber insurance carriers now verify specific controls before they bind coverage, and MFA or endpoint protection gaps are the most common reasons for denial. Here is the checklist Minnesota contractors should work through before renewal.", "category": "Construction", "published_date": "2026-09-30", "read_time": "6 min read", "content": """Cyber insurance carriers now verify specific security controls before they bind coverage for Minnesota construction companies, and missing multi-factor authentication (MFA) or endpoint detection is the most common reason for outright denial. Contractors should start renewal at least 90 days early, close the control gaps carriers check, and gather the documentation underwriters request, because a rushed application with missing controls costs more in premiums, exclusions, or a declined quote.
+
+For a Compliance Lead, the pain is the renewal surprise. The application asks questions the firm cannot answer confidently, the carrier asks for proof the firm does not have, and the quote comes back with a ransomware sublimit, a higher deductible, or a denial. None of that is a surprise to the carrier. It is a checklist, and the firm either meets it or pays for not meeting it.
+
+## What Carriers Actually Verify
+
+Carriers verify a core set of controls when evaluating cyber insurance applications. The nine that matter most for contractors are:
+
+- **Multi-factor authentication (MFA)** on email, remote access, and privileged accounts, enforced at the identity provider level, not just available as an option. Missing MFA is the most common single reason for rejection.
+- **Endpoint detection and response (EDR)** on all endpoints, including field laptops and tablets, confirmed by a console report showing deployment across in-scope devices.
+- **Immutable, tested data backups** with a documented recovery time objective (RTO) and recovery point objective (RPO), stored offsite or in immutable cloud storage, with restore tests on record.
+- **Written incident response plan** with named roles, signed and dated, plus a tabletop exercise record. A generic template with no names does not count.
+- **Patch management** with a documented cadence, critical patches tracked to closure, and a report showing open versus closed vulnerabilities.
+- **Email security**, including filtering, spoofing protection, and phishing-resistant MFA where the carrier requires it.
+- **Privileged access management**, with admin rights limited and reviewed.
+- **Security awareness training**, including phishing simulations, for office and field staff.
+- **Vendor and third-party access controls**, since subs, suppliers, and software vendors all touch your systems.
+
+Every control has a specific documentation artifact the underwriter will request, such as a conditional access policy export, an EDR coverage report, a backup test log with dates, or a signed incident response runbook.
+
+## Construction-Specific Requirements
+
+Beyond the core controls, underwriters apply extra scrutiny to construction firms. Project data, payment flows, and field devices create exposures that office-only businesses do not have, and carriers know it.
+
+Field devices are a frequent gap. A tablet that accesses email and Procore without EDR or MFA is an unprotected endpoint, and carriers may exclude unprotected systems from coverage. Trailer networks matter too: an unmanaged trailer network with shared credentials is a finding, not a footnote. And payment fraud controls matter more for contractors than for most industries, because business email compromise cost victims $2.77 billion in 2024, according to the FBI, and construction payment flows are a prime target.
+
+If your firm works on public or municipal projects in Minnesota, expect additional questions about data handling and subcontractor security, since project owners are passing their own requirements down the chain.
+
+## The Minnesota Angle
+
+Minnesota adds its own layer. The Minnesota Consumer Data Privacy Act took effect on July 31, 2025, and is enforced by the Minnesota Attorney General. Most small businesses are exempt under the law's small business exception, but the exemption does not apply in every case, so contractors should confirm where they stand rather than assume. Separately, Minnesota requires contractors to carry workers' compensation and liability coverage, and a general contractor can face liability for an injured employee of an uninsured subcontractor. Cyber coverage sits alongside those obligations, not instead of them.
+
+## The Renewal Timeline
+
+Work backward from the renewal date:
+
+- **90 days out:** Review the current controls against the carrier checklist and assign owners to the gaps.
+- **60 days out:** Close the gaps that need technology changes, such as MFA enforcement or EDR deployment.
+- **30 days out:** Gather documentation: policy exports, coverage reports, backup test logs, training records, and the signed incident response plan.
+- **At renewal:** Submit a complete application with documentation attached, not a set of promises.
+
+Starting early is the single best way to lower the premium. A carrier that sees enforced MFA, EDR everywhere, and tested backups has less risk to price. A carrier that sees gaps has to price them in, or decline.
+
+## What Happens If Controls Are Missing
+
+The consequences scale with the gap. Missing MFA or EDR often causes outright denial or exclusion of unprotected systems from coverage. Missing backup testing or an incident response plan usually brings a premium increase or a ransomware sublimit reduction. Missing documentation can delay binding, which matters if a project owner requires proof of coverage before work starts.
+
+Fixing the controls almost always costs less than the premium increase, and far less than an uncovered incident. IBM put the United States average cost of a data breach at a record $10.22 million in its 2025 report, and even a small incident without coverage can erase a year's profit on a project.
+
+## Frequently Asked Questions
+
+### What is the most common reason cyber insurance gets denied for contractors?
+
+Missing MFA or missing endpoint detection and response (EDR). Carriers treat both as baseline requirements, and gaps in either often cause outright denial.
+
+### Do we need cyber insurance if we already have general liability?
+
+General liability does not cover cyber events such as ransomware, business email compromise, or a data breach. Cyber insurance is a separate policy with its own application and controls.
+
+### How far ahead should we start the renewal process?
+
+At least 90 days before renewal. That leaves time to fix gaps, gather documentation, and avoid a rushed application.
+
+### Does our cyber policy cover a subcontractor's mistake?
+
+It depends on the policy. Ask your broker whether subcontractor-caused incidents are covered, and confirm what your contracts require subs to carry.
+
+## Get a Cyber Insurance Readiness Review
+
+Find out which controls your firm already meets and which gaps would cost you at renewal. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP in Minnetonka, maps your controls against the carrier checklist and ranks the fixes. Call (952) 941-7333 to schedule one, and walk into renewal with documentation instead of hope.
+
+## Sources
+
+- Veracity Technologies, Cyber Insurance Requirements Checklist: What Minneapolis Businesses Must Have in Place Before Applying (accessed November 2026): nine controls carriers verify, including MFA, EDR, immutable tested backups, incident response plan, and patch management. https://www.veracitytech.com/blog/cyber-insurance-requirements-checklist-minneapolis
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report (published April 2025): business email compromise cost $2.77 billion across 21,442 complaints; $16.6 billion in total reported losses. https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- IBM, Cost of a Data Breach Report 2025 (published July 30, 2025): global average breach cost $4.44 million; United States average $10.22 million. https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Minnesota business insurance requirements and Minnesota Consumer Data Privacy Act (effective July 31, 2025): https://prod-v2-webapp.gilddevel.com/business-insurance/states/minnesota
+"""},
+    {"slug": "how-can-manufacturers-reduce-downtime-caused-by-it-problems", "title": "How Can Manufacturers Reduce Downtime Caused by IT Problems?", "excerpt": "Most IT downtime in a plant is predictable, not random. Here is how Twin Cities manufacturers find the systems production depends on, stabilize them, and cut repeat outages.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Manufacturers can reduce IT-related downtime by identifying which systems production depends on, stabilizing aging infrastructure, securing access, and fixing recurring issues at the root instead of treating each outage as a one-off ticket. Most IT downtime is predictable. The same systems tend to fail in the same ways until someone plans around them.
+
+For an Operations VP, the pain is direct: when the ERP goes down or the shop floor loses connectivity, the line slows or stops, shipments slip, and the whole day becomes recovery instead of production. The fix is not a bigger help desk. It is a short list of production-critical systems, a plan to stabilize them, and support that treats a line-down issue as an operations emergency.
+
+## Where IT Downtime Shows Up on the Shop Floor
+
+IT problems rarely stay in IT. In a Minnesota plant, they tend to surface in places that touch production right away:
+
+- ERP access, so orders, scheduling, and inventory freeze
+- Production scheduling, so the day's run plan cannot be released or updated
+- Shipping and receiving, so labels, scans, and bills of lading stall
+- Quality documentation, so inspections and sign-offs cannot be recorded
+- Email and file access, so vendors, customers, and the front office go quiet
+- Vendor systems, including portals and remote support tools your team depends on
+- Shop-floor devices, from shared workstations and printers to scanners and controllers
+
+A plant in Plymouth or Brooklyn Park can have all of these fail from one cause, such as a network switch, a server, or an expired license nobody tracked. That is why the first step is a list, not a purchase.
+
+## A Practical Framework for Cutting Downtime
+
+Start with five moves, in this order:
+
+- **Identify production-critical systems.** List every system production touches, then ask what happens if each one is unavailable for an hour, a shift, and a day. Rank the list by production impact, not by how loud the complaints are.
+- **Stabilize aging infrastructure.** Plan replacements for hardware and software that fail repeatedly or are past vendor support. A server that has caused three outages is not a nuisance. It is a scheduled project waiting to happen.
+- **Secure access.** Many outages start with a security incident, so identity controls, patching, and vendor access reviews are part of protecting uptime, not a separate project. Ransomware accounted for 47 percent of manufacturing breaches in 2024, according to reporting on the Verizon 2025 Data Breach Investigations Report, and a ransomware event is a downtime event first.
+- **Improve support escalation.** Define what counts as production-critical and how those issues get escalated, including after hours. Put the definition in writing, with named responders and response expectations. Veracity Technologies answers critical issues within 15 minutes under its service agreement, which is the kind of commitment a production schedule needs.
+- **Review recurring issues.** Track repeat tickets and fix the root cause. If the same printer, workstation, or ERP error appears every month, the ticket is not the problem. The underlying system is.
+
+Hypothetical example, labelled as such: suppose a metal fabricator in the Twin Cities finds that its ERP slows every Monday morning. A review shows the backup job and the weekly report job overlap and starve the server. Rescheduling one job costs nothing and ends the pattern. Real plants have versions of this story everywhere, and finding them is the job.
+
+## Why Support Speed Is an Operations Issue
+
+When production or ERP access slows down at the wrong time, technology becomes an operations problem, not just an IT ticket. Your support agreement should spell out how production-critical issues are prioritized, who responds, and what happens after hours. Ask for those terms in writing before you sign, and test them: call the after-hours line once, on purpose, and see what happens.
+
+Also confirm who owns vendor coordination. When an ERP vendor and your IT provider each point at the other, the line stays down. One party should own the escalation and keep you updated until production is running again.
+
+## What a vCIO Adds
+
+A virtual CIO turns recurring technology problems into a prioritized roadmap instead of another round of complaints after the fact. That roadmap needs a budget, a schedule, and an owner for each fix, so the same failure does not return next quarter. Quarterly reviews keep the plan honest: what got fixed, what is still failing, and what changed on the floor since the last review.
+
+## Frequently Asked Questions
+
+**What causes most IT-related downtime in manufacturing?**
+
+Common causes include aging infrastructure, ERP or network issues, security incidents, vendor system problems, and recurring issues that never get fixed at the root. The pattern is usually visible in ticket history before the next outage happens.
+
+**How do we identify production-critical systems?**
+
+List every system production touches, then ask what happens if each one is unavailable for an hour, a shift, and a day. The answers show where to focus first. Include the systems people forget, such as label printers, time clocks, and the file share that holds work instructions.
+
+**Can managed IT prevent all downtime?**
+
+No provider can prevent every outage, but monitoring, planned replacements, tested backups, and clear escalation reduce how often downtime happens and how long it lasts. The goal is fewer surprises and faster recovery, not a promise of zero failures.
+
+**What is a vCIO?**
+
+A virtual CIO provides strategic IT leadership on a part-time basis, including roadmaps, budgeting, and quarterly reviews, without a full-time executive hire. For a manufacturer, that means someone owns the plan that keeps production systems stable.
+
+If downtime keeps stealing production hours, start with the list of production-critical systems and a review of your repeat tickets. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will show which systems put your line at risk and what to fix first. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "How Can Manufacturers Reduce Downtime Caused by IT Problems?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/how-can-manufacturers-reduce-downtime-caused-by-it-problems
+- Security Magazine, "47% of Manufacturing Breaches in 2024 Involved Ransomware" (2025), reporting on the Verizon 2025 Data Breach Investigations Report, https://www.securitymagazine.com/articles/print/101763-47-of-manufacturing-breaches-in-2024-involved-ransomware
+- IBM, "Cost of a Data Breach Report 2025" (2025), global average breach cost of USD 4.44 million, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "how-can-secure-ai-help-manufacturers-with-sops-maintenance-logs-and-quality-documentation", "title": "How Can Secure AI Help Manufacturers with SOPs, Maintenance Logs, and Quality Documentation?", "excerpt": "Secure AI can turn long SOPs, buried maintenance logs, and quality paperwork into answers in seconds. The difference between useful and risky is governance: approved tools, controlled permissions, and trained users.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Secure AI can help manufacturers work faster with SOPs, maintenance logs, and quality documentation by summarizing long documents, finding answers across records, and drafting first versions of routine paperwork. The key word is secure: approved tools, controlled permissions, and trained users keep production and customer data protected while teams save time.
+
+For an Operations VP, the pain is familiar. The answer to a setup question lives in a 40-page SOP, the fix for a recurring machine fault is buried in three years of maintenance logs, and quality paperwork eats hours that should go to the floor. AI can surface those answers in seconds, but only if it runs inside guardrails your company controls.
+
+## Practical AI Use Cases on the Floor
+
+Start where the work is already repetitive and easy to check:
+
+- **Summarize SOPs.** Turn long procedures into quick-reference steps for the floor, so a new operator or a fill-in can follow the current version without reading the whole manual.
+- **Search maintenance logs.** Find past fixes and recurring issues without digging through records by hand. Ask what was done the last three times a press faulted, and get the pattern.
+- **Draft quality documentation.** Create first drafts of reports, inspection notes, and corrective action summaries for people to review and finalize. AI drafts. People approve.
+- **Find details in PDFs.** Pull specifications, tolerances, and customer requirements out of long documents instead of re-reading them for every job.
+- **Create meeting summaries.** Capture decisions and action items from production and planning meetings, so follow-ups do not depend on memory.
+- **Support internal knowledge bases.** Make company know-how easier to find, including the tribal knowledge that currently lives in one senior technician's head.
+
+None of these replace skilled people. They remove the searching, summarizing, and first-draft work that slows skilled people down.
+
+## The Safe AI Framework
+
+Five guardrails separate a useful AI rollout from a data exposure problem:
+
+- **Protect company data.** Decide what data AI tools can access and where it is stored. Customer drawings, pricing, quality records, and contracts should never go into a tool your company has not approved.
+- **Define approved tools.** Give employees a sanctioned option so they do not turn to unmanaged apps. IBM's Cost of a Data Breach Report 2025 notes that the covert use of shadow AI, meaning AI used without employer approval or oversight, is driving up breach costs. A sanctioned tool removes the incentive to improvise.
+- **Set permissions.** AI tools should only see what each user is already allowed to see. A shop-floor user should not be able to pull up pricing or HR records through an AI search.
+- **Train users.** Teach teams what to share, what not to share, and how to check AI output. Every AI answer about a procedure or a tolerance needs a human check against the controlled document.
+- **Monitor usage.** Review how tools are used, which questions come up most, and where the policy needs adjusting. Usage patterns also show which use case to expand next.
+
+## Why Consumer AI Is Risky
+
+Uploading customer, production, quality, or contract data into unmanaged tools can create data exposure risk. Free consumer tools may store or use what employees upload, and your company has no agreement covering that data. The risk is not theoretical: once a drawing or a customer list is in a consumer tool, you cannot reliably get it back or prove where it went.
+
+The same identity and access controls that protect the rest of your systems are the starting point for AI. In the Verizon 2025 Data Breach Investigations Report, credential abuse was the initial access vector in 22 percent of breaches reviewed, which is why AI access should sit behind the same MFA and conditional access rules as your ERP and email.
+
+## Where MSP Support Fits
+
+Strong identity security, governance, Microsoft 365 configuration, and user training are the foundation for safe AI adoption. A manufacturing-focused MSP can handle the access, data, and policy work behind it: which tools are approved, who can reach which data, how Microsoft 365 Copilot or another approved tool is configured, and how usage is monitored.
+
+For a Twin Cities manufacturer, the practical sequence is simple. Secure identity first, pick one or two use cases, measure the time saved, and expand from there. A machine shop in Maple Grove might start with SOP summaries for setup. A food manufacturer in the metro might start with quality documentation drafts. Both should start small and prove the value before expanding.
+
+## Frequently Asked Questions
+
+**Is it safe to use AI with manufacturing documents?**
+
+It can be, when you use approved tools configured to protect company data, limit access with permissions, and train employees on what they can share. The safety comes from the configuration and the policy, not from the AI tool itself.
+
+**What is the best first AI use case for a manufacturer?**
+
+Summarizing SOPs or searching maintenance logs are good starting points because they save time on work people already do and are easy to check. If the AI summary is wrong, the controlled SOP is right there to catch it.
+
+**Why not let employees use free AI tools?**
+
+Free consumer tools may store or use what employees upload, which can expose customer, production, quality, or contract data. An approved business tool with a data protection agreement is the alternative, and it should be easier to use than the free option.
+
+**Does AI replace quality or maintenance staff?**
+
+No. AI helps people find information and draft documents faster, but people should review and approve the output. Quality sign-offs, maintenance decisions, and customer commitments stay with your team.
+
+If your team is already experimenting with AI on the floor, give them a safe way to do it. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will review your AI readiness, your identity controls, and the use cases most likely to save your team time. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "How Can Secure AI Help Manufacturers with SOPs, Maintenance Logs, and Quality Documentation?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/how-can-secure-ai-help-manufacturers-with-sops-maintenance-logs-and-quality-documentation
+- IBM, "Cost of a Data Breach Report 2025" (2025), on shadow AI and governance driving breach costs, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "how-much-does-managed-it-cost-for-a-manufacturing-company-in-minneapolis", "title": "How Much Does Managed IT Cost for a Manufacturing Company in Minneapolis?", "excerpt": "Most Minneapolis manufacturers can plan on a typical range of $125 to $175 per user per month for managed IT. Where you land depends on facilities, ERP complexity, security needs, and recovery requirements.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Most Minneapolis manufacturers can plan on a typical range of $125 to $175 per user per month for managed IT, based on Veracity Technologies pricing guidance. For a 100-user manufacturer, that works out to roughly $12,500 to $17,500 per month, before specialized infrastructure, ERP projects, network upgrades, or compliance work. Where you land in that range depends on how many facilities you run, how complex your production and ERP systems are, and how much security and recovery coverage you need.
+
+For a CFO or Controller, the pain is the gap between the quote and the real cost. A low monthly number looks good until the ERP project, the backup upgrade, and the security tools your insurer requires all arrive as separate bills. This post explains what drives the price, what should be included, and how to compare quotes fairly.
+
+## What Drives Managed IT Cost for Manufacturers
+
+Six factors move the number more than anything else:
+
+- **Employee count and active users.** Per-user pricing makes headcount the starting point, including shared shop-floor accounts that still need licensing and security. Count the accounts that touch a system, not just the desks.
+- **Production-critical systems.** Systems that stop the line when they fail need tighter monitoring and faster escalation, and that coverage costs more than standard office support.
+- **ERP and vendor software complexity.** More integrations and vendor-managed platforms mean more coordination time. A manufacturer running an ERP with shop-floor integrations, EDI, and a quality system will pay more than one running email and file sharing.
+- **Number of facilities.** Each plant, warehouse, or office adds network, device, and connectivity needs. A second building in Eden Prairie or Eagan is not free just because the users are the same.
+- **Cybersecurity and insurance requirements.** Carrier and customer requirements often set the minimum security stack, including MFA, endpoint protection, email security, and backup testing.
+- **Backup and disaster recovery scope.** How much data you protect and how quickly you need it back both affect cost. Restoring an ERP in hours costs more than restoring files next day.
+
+## What Should Be Included
+
+A managed IT agreement for a manufacturer should cover day-to-day support and the planning that keeps problems from coming back. At a minimum, look for:
+
+- Help desk support for office and production users
+- Microsoft 365 administration
+- Device management for laptops, workstations, and shop-floor devices
+- Email security
+- Endpoint protection
+- Backup monitoring, not just backup software
+- Vendor coordination for ERP and line-of-business software
+- vCIO planning, including a roadmap and budget guidance
+
+Pricing should also reflect the cybersecurity controls your insurer and customers expect. If a quote leaves those out, expect to pay for them separately later, usually at the worst time: right before a renewal or after an incident. IBM's Cost of a Data Breach Report 2025 puts the global average breach cost at USD 4.44 million, and the US average at USD 10.22 million, which is the scale of cost that a thin security stack is gambling against.
+
+## Why the Cheapest IT Can Cost More
+
+Poor support can slow production, delay shipments, disrupt ERP access, increase vendor confusion, and turn small issues into expensive downtime. When comparing quotes, weigh the monthly price against downtime and recurring-issue risk, not just the total on the proposal.
+
+Hypothetical example, labelled as such: suppose a 60-user manufacturer in the Twin Cities saves $1,500 a month on a cheaper provider, then loses a full production day to an ERP outage that a monitored backup and a faster escalation would have shortened. One lost day can erase a year of savings. Real numbers vary by plant, but the math is the same everywhere: downtime is priced in lost output, missed shipments, and overtime, not in IT tickets.
+
+## Fully Managed vs. Co-Managed: How the Model Changes Cost
+
+Manufacturers with 10 to 50 employees often need fully managed support, where one partner owns IT end to end. Manufacturers with 51 to 250 employees may need co-managed support to supplement internal operations or IT staff. The model you choose changes what you pay for, so decide on it before you request pricing. Co-managed is not automatically cheaper: it shifts some work to your internal team, and the right choice depends on your staff's capacity, your security needs, and how much escalation support you need.
+
+## Turning a Budget Into a Plan
+
+Once you have a budget range, the next step is a 12-month IT roadmap that ties spending to the projects that matter most. It also helps to know how to choose a manufacturing-focused MSP before comparing quotes, so you measure every provider on the same criteria: production experience, security depth, response commitments, and planning.
+
+## Frequently Asked Questions
+
+**How much does managed IT cost per user for a manufacturer?**
+
+Veracity Technologies pricing guidance is a typical range of $125 to $175 per user per month. Where a manufacturer lands in that range depends on facilities, system complexity, security requirements, and backup scope.
+
+**What costs are usually outside a managed IT agreement?**
+
+Hardware purchases, network upgrades, ERP projects, specialized infrastructure, and compliance work are typically scoped and priced separately from monthly support. Ask every provider to list these exclusions in writing.
+
+**Is co-managed IT cheaper than fully managed IT?**
+
+Not always. Co-managed IT shifts some work to your internal team, but the right choice depends on your staff's capacity, your security needs, and how much escalation support you need. Compare the total cost, including internal time, not just the monthly fee.
+
+**How can a manufacturer lower IT costs without adding risk?**
+
+Standardize devices, retire unused software, document vendor ownership, and plan hardware refreshes in advance. Predictable planning usually costs less than reacting to outages, and it makes the next quote easier to compare.
+
+To see how your current IT spend compares to your uptime, cybersecurity, and production support needs, ask Veracity Technologies for a free Business Technology Assessment. Veracity is a SOC 2 certified MSP based in Minnetonka, serving 60+ clients across the Twin Cities. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "How Much Does Managed IT Cost for a Manufacturing Company in Minneapolis?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/how-much-does-managed-it-cost-for-a-manufacturing-company-in-minneapolis
+- IBM, "Cost of a Data Breach Report 2025" (2025), global average breach cost of USD 4.44 million and US average of USD 10.22 million, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "how-often-should-manufacturers-review-cybersecurity-risk-backups-and-disaster-recovery", "title": "How Often Should Manufacturers Review Cybersecurity Risk, Backups, and Disaster Recovery?", "excerpt": "A formal risk assessment once a year, backup and recovery checks every quarter, and a fresh review after any major change or before insurance renewal. The schedule matters less than the follow-through.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Manufacturers should complete a formal cybersecurity risk assessment at least once a year, check backups and recovery quarterly, and review again after any major system change or before cyber insurance renewal. The schedule matters less than the follow-through: every review should end with fixes, owners, and a date to retest.
+
+For a Compliance Lead, the pain is the gap between what the paperwork says and what would actually happen. The backup report says "successful" every night, but nobody has restored the ERP from it in a year. The risk assessment from two years ago lists controls that have quietly changed since. This post gives you a cadence that closes that gap before an outage or an insurer finds it first.
+
+## Risk Assessments vs. Backup Reviews
+
+A risk assessment identifies security exposure. A backup review confirms whether critical systems and files can be restored. You need both, because a company can have strong security and still be unable to restore its ERP system quickly.
+
+Think of it this way: the risk assessment asks how an attacker could get in, and the backup review asks how you would get back to production if they did. One without the other leaves a blind spot, and in manufacturing that blind spot is measured in stopped lines and missed shipments.
+
+## How Often to Review
+
+Put these four triggers on the calendar and treat them as commitments, not aspirations:
+
+- **Annually for formal risk reviews.** A full look at security controls, access, and exposure, including identity, devices, email, backups, vendor access, and incident readiness. Findings get ranked by risk, assigned owners, and tracked to completion.
+- **Quarterly for backup and recovery checks.** Confirm backups are running and test restores, not just backup jobs. Restore real files, mailboxes, and system data, confirm they open correctly, and time how long the restore takes.
+- **After major system changes.** New ERP versions, new facilities, new vendors, and network changes all change your risk. Review before the change goes live where possible, and right after where it is not.
+- **Before cyber insurance renewals.** Reviewing early leaves time to fix gaps and meet carrier requirements, instead of discovering a missing control on the application. Start at least 90 days before renewal if you can.
+
+Between reviews, monitoring should run continuously. The annual and quarterly cycle is the formal check. Day-to-day monitoring is what catches a failed backup job on a Tuesday instead of at the quarterly test.
+
+## What to Test
+
+A recovery test that only restores one file proves very little. Test the things production actually needs:
+
+- Microsoft 365 protection, including mailbox and file recovery
+- ERP data recovery, with a timed restore to a test environment
+- File recovery for shared drives and quality documentation
+- Server or cloud backup, including the systems that hold production data
+- The disaster recovery process itself, end to end, with the people who would run it
+- Incident communication, including how you reach people if email is down
+
+Recovery tests are also the best measure of ransomware preparation. If you cannot restore quickly in a test, you will not restore quickly during an attack. Ransomware accounted for 47 percent of manufacturing breaches in 2024, according to reporting on the Verizon 2025 Data Breach Investigations Report, so this test is not a theoretical exercise for a Minnesota plant. It is the most likely incident you will face.
+
+## Continuous Improvement
+
+Assess, improve, monitor, and retest so resilience becomes part of operations. Findings should feed into your ERP and shop-floor security controls and your 12-month IT roadmap, so every review leads to specific work with a budget and an owner.
+
+Hypothetical example, labelled as such: suppose a Twin Cities manufacturer runs its quarterly restore test and finds the ERP restore takes nine hours, not the two hours leadership assumed. That single number changes the conversation: the recovery target, the backup design, and the budget all get revisited before a real incident makes the nine hours a production shutdown. The test did its job.
+
+## What Leadership Should See
+
+Leadership should see a plain-language summary with priorities, owners, and costs, so decisions can be made and tracked. A 40-page technical report that nobody reads is worse than useless, because it creates the impression that the review happened. One page per risk, with an owner and a date, is what gets fixed.
+
+## Frequently Asked Questions
+
+**What is the difference between backup and disaster recovery?**
+
+A backup is a copy of your data. Disaster recovery is the plan and process for restoring systems and getting operations running again after an outage or attack. You need the copy and the plan, and you need to have practiced the plan.
+
+**How do you test backups?**
+
+Restore real files, mailboxes, and system data on a schedule, confirm they open correctly, and time how long the restore takes. A test that does not time the restore has not tested recovery, only copying.
+
+**What should a cybersecurity risk assessment include?**
+
+It should review identity and access, device security, email protection, backups, vendor access, and incident readiness, then rank findings by risk. Every finding needs an owner and a due date, or it will still be open at the next assessment.
+
+**Who should see the results of a risk review?**
+
+Leadership should see a plain-language summary with priorities, owners, and costs, so decisions can be made and tracked. The technical detail stays with IT. The decisions stay with leadership.
+
+Find out what recovery risks you may be missing before an outage tests them. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will review your backups, recovery process, and security risks, and show you what to fix first. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "How Often Should Manufacturers Review Cybersecurity Risk, Backups, and Disaster Recovery?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/how-often-should-manufacturers-review-cybersecurity-risk-backups-and-disaster-recovery
+- Security Magazine, "47% of Manufacturing Breaches in 2024 Involved Ransomware" (2025), reporting on the Verizon 2025 Data Breach Investigations Report, https://www.securitymagazine.com/articles/print/101763-47-of-manufacturing-breaches-in-2024-involved-ransomware
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "how-should-manufacturers-secure-erp-shop-floor-systems-and-remote-access", "title": "How Should Manufacturers Secure ERP, Shop-Floor Systems, and Remote Access?", "excerpt": "Start with identity: MFA on every account, conditional access, tightly controlled admin rights, and a documented review of every vendor account. Backed by device management and tested backups, those controls close the gaps attackers use most.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Manufacturers should secure ERP, shop-floor systems, and remote access by starting with identity: MFA on every account, conditional access, tightly controlled admin rights, and a documented review of every vendor account. Backed by device management and tested backups, those controls close the gaps attackers most often use to reach production systems.
+
+For an Operations VP, the pain is that the systems keeping the line running are also the hardest to secure. The ERP holds scheduling, inventory, and finance. The shop floor runs on shared workstations, legacy equipment, and vendor remote access that nobody has reviewed in years. Securing all of it feels like a project that would stop production, so it keeps getting deferred. The approach below secures it without stopping the line.
+
+## The Manufacturing Security Framework
+
+Six controls cover most of the risk:
+
+- **Identity security.** MFA and conditional access for every user, including shared and service accounts where possible. In the Verizon 2025 Data Breach Investigations Report, credential abuse was the initial access vector in 22 percent of breaches reviewed, which is why identity comes first.
+- **Device management.** Know every laptop, workstation, and shop-floor device, and keep them patched. An unmanaged device on the plant network is an unknown, and unknowns are what attackers look for.
+- **Email protection.** Filtering and user training reduce the phishing behind most ransomware and email compromise. The inbox is still the most common way in.
+- **Secure remote access.** Replace open remote desktop connections with controlled, logged access. Vendors and engineers should reach only the systems they support, only while they need them.
+- **Backup and recovery.** Protect ERP data and production files with backups that are tested, not assumed. A backup you have never restored is a hope, not a control.
+- **Vendor access review.** Document every vendor account and remove access that is no longer needed. Vendor accounts are part of your attack surface, and they are the accounts most likely to be forgotten.
+
+## Why ERP and Shop-Floor Access Create Risk
+
+Manufacturers often rely on legacy systems, vendor remote access, shared workstations, and business-critical applications that need stronger access controls. When one of these systems is compromised, the impact reaches production, shipping, and customers, not just the office.
+
+The OT side makes this harder than office IT. NIST Special Publication 800-82 Revision 3, the Guide to Operational Technology (OT) Security published in September 2023, explains that OT systems have unique performance, reliability, and safety requirements, so security controls have to be adapted rather than copied from office IT. A control that reboots a workstation at noon is an annoyance. The same control on a production controller can stop a line. That is why segmentation and careful change windows matter here.
+
+## What to Review First
+
+If you do one review this quarter, cover these six items:
+
+- MFA coverage on every account, including admins and vendors
+- Conditional access rules, such as requiring a managed device or blocking sign-ins from unexpected locations
+- Admin permissions, and who actually holds them today
+- Remote access methods, and whether any open remote desktop ports remain
+- Backup coverage for ERP data and production files
+- Vendor accounts, and which ones are still active
+
+Many of these are also the controls cyber insurance carriers ask about at renewal, so fixing them helps on both fronts. A control you can show an insurer is a control you can show an auditor and a customer, too.
+
+## Securing Legacy Shop-Floor Systems
+
+When a system cannot be updated, it can usually still be protected. Isolate it on the network so it can only talk to the systems it needs, restrict it to specific users, and monitor it more closely. Document the exception, the reason, and the compensating controls, so the decision is visible instead of forgotten.
+
+Hypothetical example, labelled as such: suppose a Twin Cities plant runs a 15-year-old controller that cannot be patched and cannot be replaced until the next capital cycle. Placing it on an isolated network segment, limiting access to two named engineers, and logging every session does not fix the age, but it shrinks the risk to a known, watched box instead of an open door. That is the right trade while the replacement is planned.
+
+## Plain-English Takeaway
+
+If systems keep production moving, access to those systems needs to be secured, documented, and reviewed. If you work with an MSP, these controls belong on your list of questions before hiring one, and on the list of things your current provider reports on every quarter.
+
+## Frequently Asked Questions
+
+**What is the first step in securing ERP access?**
+
+Turn on MFA for every ERP user and admin account, then review who has access and remove accounts that are no longer needed. Access review is not a one-time cleanup. Repeat it at least quarterly.
+
+**How should manufacturers handle vendor remote access?**
+
+Give vendors individual accounts, require MFA, limit access to the systems they support, log sessions, and remove access when the work is done. Shared vendor logins should be retired, because they make it impossible to know who did what.
+
+**Can legacy shop-floor systems be secured?**
+
+Often, yes. When a system cannot be updated, it can usually be isolated on the network, restricted to specific users, and monitored more closely. Document the exception and plan the replacement.
+
+**What is conditional access?**
+
+Conditional access sets rules for when and how users can sign in, such as requiring a managed device or blocking sign-ins from unexpected locations. It turns a stolen password from a break-in into a blocked attempt.
+
+Find out where your ERP and shop-floor access gaps are before an attacker does. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will review access to your ERP, shop-floor systems, and remote connections, and show you which gaps to close first. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "How Should Manufacturers Secure ERP, Shop-Floor Systems, and Remote Access?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/how-should-manufacturers-secure-erp-shop-floor-systems-and-remote-access
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- NIST, "Guide to Operational Technology (OT) Security," NIST Special Publication 800-82 Revision 3 (September 2023), https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf
+"""},
+    {"slug": "how-should-manufacturing-companies-prepare-for-ransomware-and-business-email-compromise", "title": "How Should Manufacturing Companies Prepare for Ransomware and Business Email Compromise?", "excerpt": "Put five controls in place first: MFA, email security, endpoint protection, tested backups, and security awareness training. Together they make it harder to get in, limit the spread, and give you a way to recover without paying.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "6 min read", "content": """Manufacturing companies should prepare for ransomware and business email compromise by putting five controls in place first: MFA, email security, endpoint protection, tested backups, and security awareness training. Together, these make it harder for attackers to get in, limit how far they can spread, and give you a way to recover without paying.
+
+For an Owner or CEO, the pain is the leverage attackers hold over a plant. Production cannot wait. Every hour down is lost output, missed shipments, and overtime, and attackers know that pressure to restore production can push companies to pay quickly. Preparation is what removes that leverage, and it is mostly unglamorous work done before anything happens.
+
+## Why Manufacturers Are Targeted
+
+Manufacturers manage payments, vendors, production schedules, customer data, and systems that cannot afford prolonged downtime. That combination makes them attractive: there is money to steal, and there is pressure to pay to get running again.
+
+The numbers back up the targeting. Ransomware accounted for 47 percent of manufacturing breaches in 2024, according to reporting on the Verizon 2025 Data Breach Investigations Report. And business email compromise is expensive at scale: the FBI's Internet Crime Complaint Center recorded $2.77 billion in BEC losses across 21,442 complaints in 2024, making it the second costliest cybercrime category that year, in a year when total reported cybercrime losses reached a record $16.6 billion.
+
+## Common Threats
+
+Know the five shapes these attacks take in a plant:
+
+- **Ransomware.** Encrypts systems and data, often halting production until systems are restored. In manufacturing, the encryption is only half the damage. The line stoppage is the other half.
+- **Business email compromise.** Attackers take over or impersonate an email account to redirect payments or steal information. A spoofed vendor or executive email is often all it takes.
+- **Credential theft.** Stolen passwords give attackers a quiet way into email, ERP, and remote access. In the Verizon 2025 report, credential abuse was the initial access vector in 22 percent of breaches reviewed.
+- **Invoice fraud.** Fake or altered vendor invoices trick accounts payable into paying the wrong account. This is BEC with a manufacturing target: your payables process.
+- **Phishing.** The most common starting point for all of the above. One clicked link or one entered password can open the door for everything else.
+
+## The Protection Framework
+
+Organize preparation into five verbs, and make sure each one has an owner:
+
+- **Prevent.** Block common entry points with MFA, email filtering, and patching. MFA on every account, including vendors and admins, is the single highest-value control here.
+- **Detect.** Monitor endpoints and accounts for unusual activity, such as a login from an unexpected location or a workstation encrypting files at speed. Detection is what turns a bad day into a contained incident.
+- **Contain.** Isolate affected systems quickly to limit spread, starting with production-critical systems. Know in advance who can pull a machine off the network and who authorizes a line stop.
+- **Recover.** Restore from backups that have been tested. Test the ERP restore, time it, and confirm the restored data opens correctly. If you cannot restore quickly in a test, you will not restore quickly during an attack.
+- **Document.** Record what happened and what changed, which also supports insurance claims. Good documentation is what turns an incident into a fix instead of a repeat.
+
+## Controls to Prioritize
+
+If budget forces a short list, fund these five first:
+
+- MFA on every account
+- Email security, including filtering and impersonation protection
+- Endpoint protection on every workstation, laptop, and server
+- Backup testing on a real schedule, with timed restores
+- Security awareness training, at least annually, with shorter refreshers and phishing simulations throughout the year
+
+These controls map closely to the cyber insurance requirements carriers now review, so the same spending helps at renewal. Keep them current with regular risk and backup reviews, and revisit them after any major system change.
+
+## Build Your Response Plan
+
+Decide ahead of time who makes decisions during an incident, how you will communicate if email is down, and how payment changes get verified. These steps belong in your incident response plan, and the plan belongs on paper, not in one person's head.
+
+Three decisions to make now, while things are calm:
+
+- Who authorizes shutting down a system or a line during an incident?
+- How do you reach the team if email and chat are both down?
+- What is the exact process for verifying any change to vendor payment details? The answer should be a phone call to a known number, not a reply to the email requesting the change.
+
+Hypothetical example, labelled as such: suppose accounts payable receives an email that looks like it comes from a regular steel supplier, asking that future payments go to a new bank account. The email is convincing, the timing matches a real invoice, and the amount is routine. The control that stops the loss is not software. It is the rule that every payment change gets verified by calling a known phone number, every time, with no exceptions for urgency. That one habit is worth more than most tools.
+
+## Frequently Asked Questions
+
+**What is business email compromise?**
+
+Business email compromise is when an attacker takes over or impersonates a company email account to redirect payments, request sensitive data, or trick employees into acting. It targets your payment process, not just your inbox.
+
+**How can manufacturers stop invoice fraud?**
+
+Verify any change to vendor payment details by calling a known phone number, require approval for new payment instructions, and train accounts payable to spot pressure tactics. Urgency is the tell: real vendors will wait for a verification call.
+
+**Should a manufacturer pay a ransomware demand?**
+
+That decision should involve leadership, legal counsel, and your insurer. Tested backups and an incident response plan give you options besides paying. Never decide this for the first time during an incident.
+
+**How often should employees get security awareness training?**
+
+Train at least annually, with shorter refreshers and phishing simulations throughout the year. Training works best when it is short, specific to the threats your team actually sees, and repeated.
+
+Find out how prepared your team is to prevent, contain, and recover from ransomware and email fraud. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will review your five core controls and your response plan, and show you what to fix first. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "How Should Manufacturing Companies Prepare for Ransomware and Business Email Compromise?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/how-should-manufacturing-companies-prepare-for-ransomware-and-business-email-compromise
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report" (2025), BEC losses of $2.77 billion across 21,442 complaints and total reported losses of $16.6 billion, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Security Magazine, "47% of Manufacturing Breaches in 2024 Involved Ransomware" (2025), reporting on the Verizon 2025 Data Breach Investigations Report, https://www.securitymagazine.com/articles/print/101763-47-of-manufacturing-breaches-in-2024-involved-ransomware
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "what-questions-should-manufacturers-ask-before-hiring-an-msp", "title": "What Questions Should Manufacturers Ask Before Hiring an MSP?", "excerpt": "Ask five things: whether the provider understands manufacturing operations, how it handles cybersecurity, what its response expectations are for production-critical issues, how it plans technology, and what it costs.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "6 min read", "content": """Before hiring an MSP, manufacturers should ask five things: whether the provider understands manufacturing operations, how it handles cybersecurity, what its response expectations are for production-critical issues, how it plans technology over time, and what it costs. The answers show quickly whether a provider can support production or only an office.
+
+For an Owner or CEO, the pain is the cost of choosing wrong. A provider that looks fine on paper can take months to expose its gaps, and by then the ERP is unstable, the vendor relationships are tangled, and switching feels like its own project. Five direct questions, asked before you sign, prevent most of that.
+
+## Question 1: Do You Understand Manufacturing Operations?
+
+Ask whether the MSP supports uptime-sensitive operations, ERP systems, production environments, vendors, and cyber insurance needs. Ask for examples of how they have handled ERP issues or vendor escalations, not for a list of industries on a slide.
+
+Good signs in the answer: they talk about production impact first and tickets second, they name ERP platforms they have supported, and they describe a line-down scenario without prompting. Warning signs: they treat every ticket the same, they have no manufacturing references, or they change the subject to office productivity tools.
+
+Manufacturing is a large part of the Minnesota economy: the Minnesota Department of Employment and Economic Development reports an average of 320,328 manufacturing jobs at 8,528 establishments in 2024, so a Twin Cities MSP should have real manufacturing experience to show. If it does not, ask why.
+
+## Question 2: How Do You Handle Cybersecurity?
+
+A provider should explain its security approach in plain language and support core controls from day one, including:
+
+- MFA on every account, including admins and vendors
+- Endpoint protection on every device
+- Email security, including filtering and impersonation protection
+- Backups that are tested, not just scheduled
+- Incident response, with a named process and named people
+
+Ask how they handle the controls that matter on a shop floor: shared workstations, legacy systems that cannot be patched, and vendor remote access. If the answer is jargon or a promise to "handle it," keep asking until the answer is specific. In the Verizon 2025 Data Breach Investigations Report, credential abuse was the initial access vector in 22 percent of breaches reviewed, so identity controls are not a detail. They are the first thing to verify.
+
+## Question 3: What Are Your Response Expectations?
+
+Ask how critical production issues, after-hours needs, and vendor escalations are handled. Get the answer in writing, in the agreement, not in a sales email.
+
+Ask for specifics: what counts as production-critical, who responds, how fast, and what happens at 2 a.m. on a Saturday before a Monday shipment. Veracity Technologies, for example, answers critical issues within 15 minutes under its service agreement. Whatever the number is, it should be written down, and you should test the after-hours line once before you need it for real.
+
+## Question 4: How Will You Plan Our Technology?
+
+Ask whether you will get a roadmap, budget guidance, and regular business reviews. Also ask which model they would recommend for you when it comes to fully managed vs. co-managed IT, and why. The answer should be tied to your staff, your systems, and your growth plans, not to the provider's preferred package.
+
+A provider that only fixes tickets will keep your systems running about as well as they run today. A provider that plans will show you what changes next quarter, what it costs, and what risk it removes. Ask to see a sample roadmap from another manufacturing client, with names removed.
+
+## Question 5: What Will It Cost?
+
+Ask what is included in the monthly fee and what is billed separately. Understanding manufacturing IT pricing before these conversations makes quotes much easier to compare. A typical range for Minneapolis manufacturers is $125 to $175 per user per month, based on Veracity Technologies pricing guidance, before ERP projects, network upgrades, or compliance work.
+
+Ask every provider for the same list: what is included, what is excluded, what counts as a project, and how after-hours work is billed. Then compare the totals, not the headline monthly number.
+
+## Red Flags
+
+Walk away, or at least slow down, if you see any of these:
+
+- No manufacturing references
+- No security process, or security sold only as an add-on
+- No roadmap planning, only ticket reports
+- Vague response times, or response times that are not in writing
+- Too much jargon, and no plain-language answers
+
+Hypothetical example, labelled as such: suppose two providers quote similar monthly fees. One offers a written 15-minute critical response, a quarterly roadmap review, and three manufacturing references you can call. The other offers a lower fee, a 4-hour response target, and no references. The cheaper quote is not cheaper. It is a different service, and the difference shows up the first time the line stops.
+
+## Frequently Asked Questions
+
+**What is the most important question to ask an MSP?**
+
+Ask how they handle production-critical issues. The answer shows whether they understand manufacturing or treat every ticket the same. Follow it with a request for the response commitment in writing.
+
+**Should an MSP have manufacturing references?**
+
+Yes. References from other manufacturers are one of the clearest signs a provider has supported ERP systems, vendors, and uptime-sensitive operations. Call at least two, and ask what went wrong and how the provider handled it.
+
+**What should be in an MSP agreement for a manufacturer?**
+
+The agreement should define scope, response expectations for production-critical issues, security responsibilities, vendor coordination, and what is billed outside the monthly fee. If it is not in the agreement, it is not a commitment.
+
+**How long does it take to switch MSPs?**
+
+Timing varies by environment. A good provider will walk you through an onboarding plan that covers documentation, access, security baselines, and vendor handoffs. Ask for that plan before you sign, not after.
+
+See how your current provider measures up on manufacturing experience, security, response, and planning. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka serving 60+ clients, will benchmark your current setup and show you what a manufacturing-focused provider should deliver. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "What Questions Should Manufacturers Ask Before Hiring an MSP?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/what-questions-should-manufacturers-ask-before-hiring-an-msp
+- Minnesota Department of Employment and Economic Development, "Manufacturing Industry Profile" (2024 data), 320,328 jobs at 8,528 establishments, http://minnesota.gov/deed/assets/manufacturing-profile_tcm1045-595830.pdf
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "what-should-a-manufacturing-companys-it-roadmap-include-over-the-next-12-months", "title": "What Should a Manufacturing Company's IT Roadmap Include Over the Next 12 Months?", "excerpt": "Five priorities, in four quarters: uptime protection, cybersecurity, infrastructure modernization, backup and recovery, and long-term planning. The best roadmaps make technology decisions predictable instead of reactive.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """A 12-month IT roadmap for a manufacturing company should focus on five priorities: uptime protection, cybersecurity, infrastructure modernization, backup and recovery, and long-term technology planning. The best roadmaps reduce production friction and make technology decisions predictable instead of reactive. Here is how to break that work into four quarters.
+
+For an Owner or CEO, the pain is the surprise. A server fails, a vendor ends support, an insurer asks for a control you do not have, and each surprise becomes an emergency purchase. A roadmap replaces surprises with a schedule: what gets fixed, in what order, for how much, and who owns it.
+
+## Quarter 1: Assess and Stabilize
+
+Start by understanding where you are today and fixing anything that puts production at immediate risk.
+
+- Review recurring support issues and find the root cause behind the repeats
+- Audit Microsoft 365 security, including MFA coverage and admin accounts
+- Confirm MFA on every account, including vendors and service accounts
+- Review backups and confirm what is actually protected
+- Identify production-critical systems and rank them by production impact
+
+Quarter 1 is not the quarter for big purchases. It is the quarter for knowing what you have, what is failing, and what would hurt most if it failed tomorrow. A Twin Cities manufacturer with a plant in the metro and a warehouse across town should map both sites, not just the main office.
+
+## Quarter 2: Standardize Access and Vendors
+
+Consistency makes support faster and security easier to enforce.
+
+- Standardize devices, so the floor and the office run known, supported hardware
+- Improve onboarding and offboarding, so access appears when someone starts and disappears when someone leaves
+- Review remote access, and replace open or unlogged connections with controlled access
+- Document ERP and vendor ownership, so every system has a named owner and a named vendor contact
+
+This is also the quarter to clean up vendor accounts. Every vendor who has ever had remote access should be on a list, with current access confirmed or removed. In the Verizon 2025 Data Breach Investigations Report, credential abuse was the initial access vector in 22 percent of breaches reviewed, and forgotten vendor accounts are one of the easiest ways for that abuse to happen.
+
+## Quarter 3: Strengthen Resilience
+
+This is the quarter to prove you can recover. Test backups, and check your controls against cyber insurance requirements well before renewal season.
+
+- Test backups with timed restores, including the ERP
+- Review cyber insurance controls and close gaps while there is still time
+- Update the incident response plan, including who decides and how you communicate if email is down
+- Review infrastructure dependencies, such as the single network switch or server that everything depends on
+
+Quarter 3 is also the right time to test the plan with people, not just systems. A tabletop exercise, where the team walks through a ransomware scenario on paper, finds the gaps that a technical test misses: who calls the insurer, who talks to customers, and who authorizes a line stop.
+
+## Quarter 4: Budget and Plan
+
+Close the year by turning what you learned into next year's budget.
+
+- Forecast hardware refreshes, so replacements are planned instead of emergency purchases
+- Review software spend, and retire licenses and subscriptions nobody uses
+- Plan next-year projects, with costs, timing, and production impact for each
+- Hold an executive technology review, where leadership sees the year's results and next year's priorities in plain language
+
+The executive review is the most important item in Quarter 4. A roadmap that leadership never sees is a wish list. A roadmap that leadership reviews every quarter is a plan.
+
+## Keeping the Roadmap on Track
+
+A roadmap works best when it is backed by ongoing strategic IT planning, with quarterly check-ins to adjust priorities as production needs change. Regular cybersecurity risk assessments keep the plan grounded in current risk, and building toward secure AI readiness ensures new tools land on a secure foundation instead of on top of unmanaged access.
+
+Hypothetical example, labelled as such: suppose a manufacturer plans an ERP upgrade for Quarter 2, then wins a large order in Quarter 1 that fills the production calendar. A quarterly check-in catches the conflict and moves the upgrade to a planned shutdown window, instead of the project colliding with the order. That is what the roadmap is for: making the conflict visible before it is a crisis.
+
+Minnesota manufacturers have reason to plan carefully. The Minnesota Department of Employment and Economic Development reports an average of 320,328 manufacturing jobs at 8,528 establishments in 2024, and manufacturing remains the state's second largest sector. Competition for skilled people and reliable production is real, and a plant that plans its technology has one less thing working against it.
+
+## Frequently Asked Questions
+
+**What should a manufacturing IT roadmap include?**
+
+A 12-month roadmap should cover uptime protection, cybersecurity, infrastructure modernization, backup and recovery, and budget planning, organized by quarter. Each item needs an owner, a cost, and a date.
+
+**Who should own the IT roadmap?**
+
+Leadership should own the priorities, with an internal IT lead or a vCIO turning them into a schedule, a budget, and quarterly reviews. Ownership by leadership is what keeps the roadmap funded when other priorities compete.
+
+**How often should a manufacturer update its IT roadmap?**
+
+Review it quarterly and rebuild it annually, or sooner when production systems, facilities, insurance requirements, or growth plans change. A roadmap that never changes is a roadmap nobody is using.
+
+**What is the first step in building an IT roadmap?**
+
+Start with an assessment of recurring support issues, Microsoft 365 security, MFA coverage, backups, and which systems are production-critical. You cannot plan the next 12 months until you know where the current risks sit.
+
+Identify the highest-priority technology improvements for the next 12 months with a free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka. The assessment maps your current state to a quarterly plan you can actually fund and follow. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "What Should a Manufacturing Company's IT Roadmap Include Over the Next 12 Months?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/what-should-a-manufacturing-companys-it-roadmap-include-over-the-next-12-months
+- Minnesota Department of Employment and Economic Development, "Manufacturing Industry Profile" (2024 data), 320,328 jobs at 8,528 establishments, http://minnesota.gov/deed/assets/manufacturing-profile_tcm1045-595830.pdf
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "why-do-manufacturing-companies-need-a-manufacturing-focused-msp", "title": "Why Do Manufacturing Companies Need a Manufacturing-Focused MSP?", "excerpt": "Production environments depend on technology differently than office-only businesses. ERP, shop-floor devices, legacy infrastructure, vendor platforms, and uptime pressure need support that plans around the line, not just the help desk queue.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Manufacturing companies need a manufacturing-focused MSP because production environments depend on technology differently than office-only businesses. ERP systems, shop-floor devices, legacy infrastructure, vendor platforms, and uptime pressure all require support that understands how a problem affects the line, not just the help desk queue. A generic provider can close tickets. A manufacturing-focused provider plans around production.
+
+For an Owner or CEO, the pain shows up as a mismatch. The IT provider is responsive, polite, and competent with email and laptops, yet the ERP still stalls, the vendor finger-pointing never ends, and nobody can say which system would stop the line if it failed. The provider is not bad at IT. It is bad at manufacturing, and that is a different job.
+
+## Manufacturing IT Is Different
+
+Six things make a plant different from an office:
+
+- **Production uptime.** An outage on the floor affects output, shipments, and customer commitments. An outage in the office affects email. The stakes are not comparable.
+- **ERP and shop-floor systems.** These systems connect scheduling, inventory, quality, and finance, so problems spread quickly. A small ERP issue can become a shipping problem by noon.
+- **Legacy infrastructure.** Older equipment and software often cannot follow a normal refresh cycle and need careful handling. Replacing a controller is a capital project, not a help desk ticket.
+- **Vendor software.** Many production platforms are supported by outside vendors, which makes coordination part of the job. Someone has to own the space between vendors.
+- **Secure remote access.** Engineers, vendors, and managers often need access from outside the building, and that access has to be controlled and logged.
+- **Compliance and insurance requirements.** Customers and carriers increasingly expect documented security controls, and the controls have to cover production environments, not just the office.
+
+## Where Generic MSPs Fall Short
+
+Providers built around office environments tend to struggle in manufacturing in predictable ways:
+
+- Slow response to production-critical issues, because every ticket gets the same priority
+- An office-only support model, with no plan for the shop floor
+- Limited ERP familiarity, so ERP problems get bounced to the vendor
+- No uptime-first planning, so the same failures repeat every quarter
+- Poor vendor coordination, so issues stall between parties
+
+If any of these sound familiar, the problem is fit, not effort. A good office MSP and a good manufacturing MSP are different providers, and the difference is visible the first time something production-critical breaks.
+
+## What a Manufacturing-Focused MSP Should Support
+
+At a minimum, look for a provider that covers these as standard service, not as add-ons:
+
+- Microsoft 365, including security configuration and admin coverage
+- Email security, including filtering and impersonation protection
+- Endpoint protection on every device, including shop-floor workstations
+- Backup and recovery, with tested restores and timed ERP recovery
+- Network monitoring, including the plant network and its single points of failure
+- Vendor coordination, with documented ownership for every system
+- Strategic planning, including a roadmap, budget guidance, and quarterly reviews
+
+The best way to test a provider is with specific scenarios. Ask what they would do if the ERP went down at 6 a.m., if a vendor needed emergency remote access, or if a ransomware alert fired on a shop-floor workstation. The quality of the answer tells you more than any brochure.
+
+## The Business Case
+
+The value is fewer recurring issues, faster support, better security, clearer vendor ownership, and more stable production operations. To put numbers to it, compare the managed IT cost for manufacturing against what downtime and recurring issues cost you today, then map the improvements into a 12-month roadmap.
+
+The risk side of the case is just as concrete. Ransomware accounted for 47 percent of manufacturing breaches in 2024, according to reporting on the Verizon 2025 Data Breach Investigations Report, and IBM's Cost of a Data Breach Report 2025 puts the global average breach cost at USD 4.44 million. A provider that understands manufacturing security is not a luxury purchase. It is protection for the systems that produce your revenue.
+
+Hypothetical example, labelled as such: suppose a Twin Cities fabricator switches from a generalist provider to a manufacturing-focused one. In the first quarter, the new provider finds three vendor accounts with active remote access that nobody uses, a backup job that has never been restore-tested, and an ERP server past vendor support. None of those showed up as tickets under the old provider, because none of them had failed yet. Finding them before they fail is the business case.
+
+Support needs are also changing. Secure AI use cases for manufacturing teams, from SOP summaries to maintenance log search, are arriving fast, and the right MSP should be ready to help you adopt them safely, with approved tools and controlled permissions, rather than discovering that employees are already using consumer AI on their own.
+
+## Frequently Asked Questions
+
+**What is a manufacturing-focused MSP?**
+
+A manufacturing-focused MSP is a managed service provider that plans and supports IT around production uptime, ERP and shop-floor systems, vendor platforms, and the security requirements manufacturers face. The difference is in the planning, not just the ticket handling.
+
+**Can a general MSP support a manufacturing company?**
+
+It can handle routine support, but manufacturers often run into gaps around ERP familiarity, vendor coordination, legacy systems, and uptime-first planning. Routine support is not the problem. Production support is.
+
+**What should a manufacturing MSP handle with vendors?**
+
+It should coordinate with ERP and line-of-business vendors, document who owns each system, and manage vendor remote access so issues do not stall between parties. One party should own the escalation until production is running again.
+
+**How do I know if my current MSP is a good fit?**
+
+Look at how production-critical issues are handled, whether recurring problems get fixed at the root, and whether you receive a roadmap instead of only ticket reports. If the answer to all three is no, the fit is wrong.
+
+Find out if your IT is built for manufacturing. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka serving 60+ clients, will review whether your current provider can support real production needs. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "Why Do Manufacturing Companies Need a Manufacturing-Focused MSP?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/why-do-manufacturing-companies-need-a-manufacturing-focused-msp
+- Security Magazine, "47% of Manufacturing Breaches in 2024 Involved Ransomware" (2025), reporting on the Verizon 2025 Data Breach Investigations Report, https://www.securitymagazine.com/articles/print/101763-47-of-manufacturing-breaches-in-2024-involved-ransomware
+- IBM, "Cost of a Data Breach Report 2025" (2025), global average breach cost of USD 4.44 million, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "best-it-support-companies-for-manufacturing-firms-in-minneapolis-what-to-look-for", "title": "Best IT Support Companies for Manufacturing Firms in Minneapolis: What to Look For", "excerpt": "The best IT support companies for manufacturing firms share four traits: real manufacturing experience, cybersecurity built into every service, strategic planning beyond tickets, and pricing that reflects value rather than the lowest monthly number.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """The best IT support companies for manufacturing firms in Minneapolis share four traits: real manufacturing experience, cybersecurity built into every service, strategic planning that goes beyond fixing tickets, and pricing that reflects value rather than the lowest monthly number. Use those four areas to compare providers side by side.
+
+For an Owner or CEO, the pain is that every provider sounds the same in a sales meeting. Same promises, same jargon, same "proactive" slide. The differences only appear after you sign, when the ERP stalls and the vendor blame game starts. This post gives you a scorecard you can use before you sign, so the comparison happens while you still have leverage.
+
+## Manufacturing Experience Matters
+
+Look for a provider that understands uptime, ERP dependencies, vendor systems, legacy infrastructure, production pressure, and cybersecurity risk. Ask for references from other manufacturers, and call them.
+
+Questions that separate experience from marketing:
+
+- How many manufacturing clients do you support in the Twin Cities today?
+- Which ERP platforms have you supported, and what went wrong?
+- How do you handle a production-critical issue differently from an office ticket?
+- What do you do when a vendor and your team disagree about who owns a problem?
+
+Manufacturing is a large share of the Minnesota economy. The Minnesota Department of Employment and Economic Development reports an average of 320,328 manufacturing jobs at 8,528 establishments in 2024, with the sector still the state's second largest. A Minneapolis provider that cannot show manufacturing references is telling you something, and it is not a secret worth keeping.
+
+## Cybersecurity Must Be Core
+
+Security should be part of the standard service, not an add-on. Look for:
+
+- MFA on every account, including admins and vendors
+- Endpoint protection on every device, including shop-floor workstations
+- Email security, including filtering and impersonation protection
+- Monitoring, with someone watching and responding
+- Backups that are tested, with timed restores
+- Incident response, with a named process and named people
+
+Ask whether the provider's security stack covers production environments, not just the office. Ask how they handle shared workstations, legacy systems, and vendor remote access. IBM's Cost of a Data Breach Report 2025 puts the global average breach cost at USD 4.44 million, and the US average at USD 10.22 million. Security that is optional is security that is missing when it matters.
+
+## Strategic Planning Should Be Included
+
+A strong provider helps you plan, not just react. Look for:
+
+- vCIO services, with a named person who owns your plan
+- Roadmaps that cover the next 12 months, with owners and costs
+- Budget planning, so replacements are scheduled instead of emergency purchases
+- Quarterly business reviews, where leadership sees results and priorities
+
+Also ask each provider whether fully managed or co-managed IT fits your team, and why. The answer should be tied to your staff and your systems, not to the provider's preferred package. And ask how they approach secure AI adoption for manufacturing firms. How a provider answers forward-looking questions tells you a lot about how they will plan with you.
+
+## Compare Value, Not Just Price
+
+The best MSP reduces risk, improves operations, supports growth, and communicates clearly. Start with a baseline for understanding manufacturing IT costs so you can see what each quote actually includes. A typical range for Minneapolis manufacturers is $125 to $175 per user per month, based on Veracity Technologies pricing guidance, before ERP projects, network upgrades, or compliance work.
+
+Build a simple comparison table with one row per provider and one column per trait: manufacturing experience, security depth, planning, response commitment, and total cost including exclusions. Score each provider 1 to 5 in every column. The winner is usually obvious once the scores are on paper, and the exercise forces every provider to answer the same questions.
+
+## How to Build Your Shortlist
+
+Work through a manufacturing MSP evaluation checklist with each provider, and compare two or three providers side by side. Comparing two or three is usually enough to see differences in approach, scope, and pricing without slowing the decision. More than three adds weeks and rarely adds insight.
+
+Hypothetical example, labelled as such: suppose you score three providers and two tie on experience and security, but one offers a written 15-minute critical response and a quarterly roadmap review, while the other offers a 4-hour response target and an annual review. The first provider is not just faster. It is the one that will catch a failing backup before renewal season instead of after it.
+
+## Frequently Asked Questions
+
+**What should manufacturers look for in an IT support company?**
+
+Look for manufacturing experience, built-in cybersecurity, strategic planning such as vCIO services and roadmaps, and clear communication about scope and pricing. Test each one with specific scenarios, not with a brochure.
+
+**Should we choose a local IT provider?**
+
+A provider in the Twin Cities area can help with on-site needs, but experience, security depth, and responsiveness matter more than location alone. Local plus experienced beats local alone, and experienced plus responsive beats either one on its own.
+
+**How many IT providers should we compare?**
+
+Comparing two or three providers is usually enough to see differences in approach, scope, and pricing without slowing the decision. Give each one the same questions and the same scenarios, and compare the answers side by side.
+
+**What makes Veracity Technologies different?**
+
+Veracity combines Minneapolis managed IT support with cybersecurity expertise, vCIO planning, Microsoft 365 support, vendor coordination, and secure AI readiness for manufacturers. Veracity is a SOC 2 certified MSP based in Minnetonka, serving 60+ clients, with a 4.9 out of 5 rating and a 15-minute response for critical issues.
+
+See how Veracity compares. A free Business Technology Assessment will benchmark your current IT support against what a manufacturing-focused provider should deliver, and show you where the gaps are. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "Best IT Support Companies for Manufacturing Firms in Minneapolis: What to Look For" (original post, published October 14, 2026), https://www.veracitytech.com/blog/best-it-support-companies-for-manufacturing-firms-in-minneapolis-what-to-look-for
+- Minnesota Department of Employment and Economic Development, "Manufacturing Industry Profile" (2024 data), 320,328 jobs at 8,528 establishments, http://minnesota.gov/deed/assets/manufacturing-profile_tcm1045-595830.pdf
+- IBM, "Cost of a Data Breach Report 2025" (2025), global average breach cost of USD 4.44 million and US average of USD 10.22 million, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+"""},
+    {"slug": "fully-managed-it-vs.co-managed-it-which-is-best-for-a-manufacturing-company", "title": "Fully Managed IT vs. Co-Managed IT: Which Is Best for a Manufacturing Company?", "excerpt": "Fully managed IT usually fits manufacturers with 10 to 50 employees and no dedicated IT staff. Co-managed IT often fits manufacturers with 51 to 250 employees that have internal IT people who need deeper security expertise, escalation support, or project help.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "5 min read", "content": """Fully managed IT is usually best for manufacturers with 10 to 50 employees and no dedicated IT staff, because one partner owns support, security, and planning. Co-managed IT is often the better fit for manufacturers with 51 to 250 employees that have internal IT people who need deeper security expertise, escalation support, or project help. The right choice depends on your staff, your systems, and your growth plans.
+
+For a CFO or Controller, the pain is paying for the wrong shape of support. A small plant that buys co-managed IT ends up paying an MSP to supervise nobody. A larger plant that buys fully managed IT ends up paying an outside firm to duplicate the internal team it already has. This post explains both models, how to choose, and what changes when you switch.
+
+## Fully Managed IT for Manufacturing
+
+With fully managed IT, the MSP acts as your IT department. That typically includes:
+
+- Complete IT ownership, with one accountable partner
+- Help desk support for office and production users
+- Device management for laptops, workstations, and shop-floor devices
+- Cybersecurity, including MFA, endpoint protection, email security, and backups
+- Vendor coordination for ERP and line-of-business software
+- Strategic planning, including a roadmap and budget guidance
+
+Fully managed fits best when there is no internal IT staff, or when the internal "IT person" is really an operations manager who fixes computers between production duties. One partner, one throat to choke, one roadmap. For a 25-person machine shop in the Twin Cities, this is usually the right shape.
+
+## Co-Managed IT for Manufacturing
+
+With co-managed IT, your internal team stays in place and the MSP fills the gaps. That typically includes:
+
+- Support for your internal team, including help desk overflow
+- Advanced escalation for complex issues, such as ERP and network problems
+- Cybersecurity expertise, tools, and monitoring your team does not run alone
+- Project support for upgrades, migrations, and new facilities
+- Roadmap planning, so internal IT has a plan instead of a ticket queue
+
+Co-managed fits best when you have one or two internal IT people who know the plant, the ERP, and the users, but cannot cover security depth, after-hours escalation, and projects all at once. The MSP adds capacity and specialization. It does not replace your team.
+
+## Decision Criteria
+
+Five factors decide which model fits:
+
+- **Employee count.** Larger organizations often have enough work to justify internal IT staff. The 10 to 50 and 51 to 250 bands in this post are useful guides, not hard rules.
+- **Internal staffing.** If you have IT staff, co-managed support lets them focus on higher-value work, such as ERP improvements and shop-floor projects, instead of password resets.
+- **Production-critical systems.** Complex ERP and shop-floor environments may need more depth than one internal person can provide, especially after hours.
+- **Cybersecurity maturity.** Security work often benefits from specialized tools and experience. In the Verizon 2025 Data Breach Investigations Report, credential abuse was the initial access vector in 22 percent of breaches reviewed, which is a reminder that identity and monitoring need dedicated attention in either model.
+- **Growth plans.** New facilities, acquisitions, or a second shift can change which model fits, sometimes within a single year.
+
+## Recommendation
+
+Use fully managed IT when you need one accountable partner and you do not have internal IT staff to supervise. Use co-managed IT when internal employees need deeper support and security depth. Either way, the model should fit into your manufacturing technology roadmap, and someone must clearly own security tools, monitoring, and response, with that ownership documented.
+
+Hypothetical example, labelled as such: suppose a 120-person manufacturer in the Twin Cities has one internal IT lead who knows the ERP inside out but has no backup when she is on vacation and no time for security reviews. Co-managed IT gives her an escalation team, after-hours coverage, and a security specialist, while she keeps ownership of the ERP and the floor. The company keeps its expert and gains a team. That is co-managed working as designed.
+
+## Comparing Providers
+
+Pricing works differently for each model, so review the managed IT pricing considerations before requesting quotes. A typical range for Minneapolis manufacturers is $125 to $175 per user per month, based on Veracity Technologies pricing guidance, but the range covers different scopes under each model, so compare what is included, not just the monthly number. An evaluation checklist and a guide to selecting a manufacturing-focused MSP can help narrow the field, and every candidate should answer the same questions about production response, security ownership, and vendor coordination.
+
+## Frequently Asked Questions
+
+**What is co-managed IT?**
+
+Co-managed IT is a partnership where an MSP supports your internal IT staff with help desk capacity, security expertise, escalation, and project work, while your team stays in place. Your internal staff keeps the plant knowledge. The MSP adds depth.
+
+**Can we switch from fully managed to co-managed IT later?**
+
+Yes. Many manufacturers change models as they grow or hire internal IT staff. A good provider can adjust scope as your needs change, and the switch should be planned around production, not rushed between quarters.
+
+**Does co-managed IT replace our internal IT person?**
+
+No. Co-managed IT is designed to support internal staff, not replace them, by adding capacity and specialized expertise. If a provider pitches co-managed as a way to cut your internal team, that is a different conversation, and it should be an explicit decision, not a side effect.
+
+**Which model is better for cybersecurity?**
+
+Either model can deliver strong security. What matters is that someone clearly owns security tools, monitoring, and response, and that ownership is documented. Unowned security is the gap attackers find.
+
+Talk through your team, systems, and growth plans to find the support model that fits. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will review your current staffing and systems and recommend the model that fits, fully managed or co-managed. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "Fully Managed IT vs. Co-Managed IT: Which Is Best for a Manufacturing Company?" (original post, published October 14, 2026), https://www.veracitytech.com/blog/fully-managed-it-vs.co-managed-it-which-is-best-for-a-manufacturing-company
+- Verizon, "2025 DBIR: Credential Stuffing Attack Research and Statistics" (2025), credential abuse as the initial access vector in 22 percent of breaches reviewed, https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+"""},
+    {"slug": "cyber-insurance-requirements-for-minnesota-manufacturing-companies-what-leaders-need-to-know", "title": "Cyber Insurance Requirements for Minnesota Manufacturing Companies: What Leaders Need to Know", "excerpt": "Carriers now expect Minnesota manufacturers to show specific security controls before they will write or renew a policy: MFA, endpoint protection, email security, tested backups, training, and a documented incident response plan.", "category": "Manufacturing", "published_date": "2026-10-14", "read_time": "6 min read", "content": """Cyber insurance carriers now expect Minnesota manufacturers to show specific security controls before they will write or renew a policy. The controls reviewed most often are MFA, endpoint protection, email security, tested backups, security awareness training, and a documented incident response plan. Requirements vary by carrier, so your policy application is the final word, but these controls are a reliable place to start.
+
+For a CFO or Controller, the pain is the renewal surprise. The premium jumps, the application asks twenty questions you cannot answer confidently, or the carrier declines to renew until gaps are fixed. And the gaps are usually fixable. They were just never documented, tested, or assigned to anyone. This post explains what carriers look for, the mistakes that cost coverage, and how to prepare.
+
+## Why Carriers Are Asking More Questions
+
+Cyber insurance underwriting increasingly focuses on identity protection, backups, endpoint security, employee training, and incident readiness. Applications have become more detailed, and your answers need to match what is actually in place.
+
+The stakes behind the questions are large. IBM's Cost of a Data Breach Report 2025 puts the global average breach cost at USD 4.44 million, and the US average at USD 10.22 million. Carriers price that risk, and they price it higher when the controls are missing or undocumented. A manufacturer with documented controls is not just safer. It is cheaper to insure.
+
+## Controls Often Reviewed
+
+These six controls appear on most carrier applications for manufacturers:
+
+- MFA on every account, including admins, remote access, and vendors
+- Endpoint protection on every workstation, laptop, and server
+- Email security, including filtering and impersonation protection
+- Backups that are tested, with timed restores, not just scheduled jobs
+- Security awareness training, with records showing who completed it
+- An incident response plan that is documented, current, and known to the team
+
+Carriers want to see these controls cover production environments too, which is why security controls for production systems matter as much as office security. MFA on the office network and nothing on the ERP or the shop floor is a gap, and the application will find it.
+
+Business email compromise is a useful example of why carriers care. The FBI's Internet Crime Complaint Center recorded $2.77 billion in BEC losses across 21,442 complaints in 2024, and BEC was the second costliest cybercrime category that year. MFA, email security, and payment verification are the controls that stop those losses, and carriers know it.
+
+## Common Mistakes
+
+Five mistakes show up on applications and claims again and again:
+
+- **Assuming insurance replaces security.** Insurance helps pay for recovery. It does not prevent an incident or restore production. A policy is not a control.
+- **Not testing backups.** Backups that have never been restored are an assumption, not a control. Carriers increasingly ask for restore test evidence, not just a backup schedule.
+- **Weak admin controls.** Shared or unprotected admin accounts are a frequent gap. Every admin account should have MFA, a named owner, and a documented reason to exist.
+- **No documentation.** If you cannot show a control is in place, it may not count. Screenshots, test logs, training records, and policies are the evidence. Undocumented work is invisible work.
+- **Ignoring vendor access.** Vendor accounts are part of your attack surface. An active vendor account for a project that ended two years ago is a gap, and it is one of the easiest gaps to close.
+
+## Renewal Preparation
+
+Review controls, remediate gaps, document evidence, and schedule a leadership review before renewal conversations. Ongoing cybersecurity risk assessments and backup testing make this far easier, as does strong ransomware and email compromise prevention. Building these controls into your managed IT cost planning keeps renewal from becoming a last-minute scramble.
+
+A practical timeline for a Twin Cities manufacturer:
+
+- **90 days before renewal.** Run a control review against the six controls above, and list every gap with an owner and a fix date.
+- **60 days before renewal.** Complete the fixes, run a timed backup restore test, and gather the evidence: MFA coverage reports, training records, test logs, and the current incident response plan.
+- **30 days before renewal.** Hold a leadership review, confirm the application answers match reality, and involve your insurance broker if anything is unclear.
+- **At renewal.** Answer every question from evidence, not from memory. If a control is partially in place, say so accurately and show the remediation plan.
+
+Hypothetical example, labelled as such: suppose a manufacturer answers "yes" to MFA on the application, but MFA is only enforced on office email, not on the ERP or on vendor remote access. If a claim later traces to an unprotected ERP account, the mismatch between the application and reality can affect the claim. The fix is not to answer "no." The fix is to extend MFA before renewal and then answer "yes" truthfully.
+
+## Frequently Asked Questions
+
+**Do all cyber insurance carriers require MFA?**
+
+Requirements vary by carrier and policy, but MFA is one of the controls carriers review most often. Check your application for the exact requirements, and treat the application as the final word for your policy.
+
+**Can an incorrect answer on a cyber insurance application affect a claim?**
+
+It can. Make sure every answer reflects controls that are actually in place and documented, and involve your insurance broker if you are unsure. When in doubt, fix the control first, then answer.
+
+**When should we start preparing for renewal?**
+
+Start well ahead of your renewal date so there is time to review controls, fix gaps, and gather documentation. Ninety days is a practical minimum. A year-round review cadence is better.
+
+**Does cyber insurance cover ransomware?**
+
+Coverage depends on the policy. Review the terms with your broker to understand what is covered, what is excluded, and what conditions apply. Do not assume a ransom payment, a recovery cost, or a production loss is covered until the broker confirms it.
+
+Review your controls against common carrier requirements and close gaps before your next renewal. A free Business Technology Assessment from Veracity Technologies, a SOC 2 certified MSP based in Minnetonka, will check your controls, your documentation, and your backup testing, and show you what to fix first. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- Veracity Technologies, "Cyber Insurance Requirements for Minnesota Manufacturing Companies: What Leaders Need to Know" (original post, published October 14, 2026), https://www.veracitytech.com/blog/cyber-insurance-requirements-for-minnesota-manufacturing-companies-what-leaders-need-to-know
+- IBM, "Cost of a Data Breach Report 2025" (2025), global average breach cost of USD 4.44 million and US average of USD 10.22 million, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report" (2025), BEC losses of $2.77 billion across 21,442 complaints, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "5-it-compliance-mistakes-minneapolis-businesses-make-and-how-to-fix-them-before-the-auditor-arrives", "title": "5 IT Compliance Mistakes Minneapolis Businesses Make (And How to Fix Them Before the Auditor Arrives)", "excerpt": "A passed audit proves you were compliant on one day, not today. These five mistakes are where Twin Cities businesses most often drift out of compliance between audits, and each one has a fix you can start this week.", "category": "Compliance", "published_date": "2026-07-16", "read_time": "6 min read", "content": """A passed audit does not mean your business is compliant today. It means you were compliant on the day the auditor looked, and everything that changed since then, a new vendor, a new hire, a software update, can quietly open a new gap. For a Compliance Lead at a Twin Cities firm, that is the painful part: you carry the audit risk, while the changes that create it happen in departments you do not control.
+
+IT compliance is not a project with a finish line. Frameworks such as HIPAA, PCI DSS, and SOC 2 update their requirements over time, and your business changes faster than any of them. The five mistakes below are where that ongoing responsibility most often breaks down for Minneapolis businesses, and each one comes with a practical fix.
+
+## Why compliance is a moving target, not a checkbox
+
+HIPAA governs protected health information, PCI DSS governs payment card data, and SOC 2 governs the security practices of service organizations. All three expect controls to operate continuously, not just during audit season. A policy document written three years ago is not active compliance, and auditors ask for evidence that controls operated over time, not just that they exist on paper.
+
+## Mistake 1: Treating last year's audit pass as current coverage
+
+A SOC 2 or HIPAA audit reflects your compliance posture at a single point in time. Any software change, new employee, or vendor onboarded after that review can immediately open new gaps, and your previous result does nothing to address them.
+
+The fix is to replace the annual-only audit cycle with a quarterly internal compliance review. Each review should check for new vendors, system changes, personnel changes, and any regulatory updates that have taken effect since the last review. Quarterly reviews catch drift while it is still cheap to correct.
+
+## Mistake 2: No documented access controls or permission audits
+
+Undocumented or outdated access permissions are among the most common audit findings, and an easy opening for credential abuse. Both NIST guidance and the HIPAA Security Rule expect a least-privilege approach: users should only have access to the systems their current role requires.
+
+The fix is to run automated user access reviews on a defined schedule and document every offboarding action in writing. Access reviews should confirm that every active credential maps to a current employee with a legitimate business need, and that privileged accounts get extra scrutiny.
+
+## Mistake 3: Treating a data backup as disaster recovery
+
+A backup stores copies of your files. A disaster recovery plan documents exactly how, and how fast, your business restores operations after a failure. HIPAA and PCI DSS both expect documented recovery objectives, tested restoration procedures, and offsite or cloud redundancy. A backup alone satisfies none of those requirements.
+
+The fix is to build a formal disaster recovery plan with defined recovery time and recovery point objectives, tested restoration procedures, and offsite or cloud-based redundancy. Then test the restore on a schedule and keep the test log, because an untested restore is an assumption, not a plan.
+
+## Mistake 4: Skipping documentation for security awareness training
+
+HIPAA, PCI DSS, and most cyber insurance carriers now expect documented security awareness training, not just the training itself, but records proving employees completed it. A calendar invite from 18 months ago with no sign-in sheet or assessment scores is an automatic audit finding.
+
+When an auditor asks for training records, the answer needs dated completion logs, employee acknowledgments, and test scores or phishing simulation results. Cyber insurers ask for the same documentation at renewal.
+
+The fix is to run documented security awareness training at least annually, with phishing simulation records tied to individual employees. Keep the records in one place where they can be produced on request, not scattered across inboxes.
+
+## Mistake 5: No vendor risk management for third-party software
+
+SOC 2, HIPAA, and PCI DSS all require businesses to vet and document the compliance posture of any vendor that touches regulated data. Most Minneapolis small businesses have never requested a Business Associate Agreement from a vendor handling health data, or reviewed a software vendor's SOC 2 report before signing a contract.
+
+The fix is to build a vendor intake checklist and run annual vendor reviews for every software tool that accesses sensitive data. The checklist should be enforced before a contract is signed, not after an audit flags the gap.
+
+## Your pre-audit checklist
+
+Work through these five actions before your next audit cycle:
+
+- Schedule a quarterly compliance review, and do not wait for the annual audit to discover what changed.
+- Run a user access audit today, and confirm every active credential belongs to a current employee with a real access need.
+- Test your disaster recovery plan and document the results, because a restore that has never been tested does not count as a recovery plan.
+- Pull your employee training logs and close the gaps, because if you cannot produce dated records with names attached, you have a finding waiting to happen.
+- Inventory every vendor that touches regulated data, and confirm Business Associate Agreements are in place and SOC 2 reports are current for each one.
+
+## Frequently Asked Questions
+
+### What are the most common IT compliance violations for small businesses in Minneapolis?
+
+The most common are outdated user access permissions, missing or untested disaster recovery documentation, no records of employee security training, unvetted third-party vendors handling regulated data, and treating a prior audit pass as ongoing coverage when systems and vendors have changed since.
+
+### How often should a small business conduct an IT compliance review?
+
+At minimum annually, but a quarterly internal review is the more protective standard. Any significant change, a new vendor, a software migration, or a staffing change, should trigger an immediate targeted review rather than waiting for the next scheduled cycle.
+
+### What is the difference between IT compliance and cybersecurity?
+
+Cybersecurity refers to the technical controls that protect systems from threats. IT compliance refers to meeting the documented regulatory standards that govern how your business handles specific data types. Strong cybersecurity supports compliance, but passing an audit also requires documented policies, training records, and vendor agreements, not just technical defenses.
+
+## Find out where you stand before the auditor does
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities with a 4.9 out of 5 client rating and a 15-minute response SLA for critical issues. If you are not sure your business would pass an audit today, book a free Business Technology Assessment and we will walk through your environment, name the frameworks that apply to you, and show you exactly where your exposure is. Call (952) 941-7333 to schedule it.
+
+## Sources
+
+- U.S. Department of Health and Human Services, HIPAA Security Rule guidance, https://www.hhs.gov/hipaa/for-professionals/security/index.html
+- PCI Security Standards Council, PCI DSS v4.0, https://www.pcisecuritystandards.org/
+- American Institute of CPAs, SOC 2 Trust Services Criteria, https://www.aicpa-cima.com/topic/audit-and-assurance/soc-2
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+"""},
+    {"slug": "5-ways-skipping-backup-testing-can-disrupt-your-business", "title": "5 Risks of Skipping Backup Testing", "excerpt": "A backup that has never been restored is a guess, not a safety net. These five risks explain why untested backups fail at the worst possible moment, and how a regular test routine turns recovery into something your team can count on.", "category": "Business Continuity", "published_date": "2026-08-03", "read_time": "6 min read", "content": """If you have never tested your backups, you are relying on guesswork. A file stored somewhere is not the same thing as a proven recovery plan, and the first time you discover the difference should not be during a real outage. For an Operations VP in the Twin Cities, the pain is practical: your team, your customers, and your revenue all depend on systems coming back, and an untested backup cannot promise any of that.
+
+Backup testing shows whether your systems, files, and recovery procedures can actually support business continuity when disaster strikes. Here are five serious risks you take when backup testing is ignored.
+
+## Risk 1: Ransomware recovery failure
+
+Ransomware attackers now target backups as aggressively as they target live systems, because they know a working backup removes their leverage. It is easy to believe backups will protect you automatically, but if the backup data was compromised, or the recovery workflow has never been tested from start to finish, your business could be unable to restore critical systems when it matters most.
+
+A backup that looks healthy in a dashboard can still fail during an actual recovery. Routine testing verifies that backups are clean, usable, and ready to restore, and it reveals how long recovery really takes. Even a couple of extra hours offline can affect revenue, customer service, and day-to-day operations. If you have never tested, you have no clear picture of that risk.
+
+The global average cost of a data breach was 4.44 million dollars in 2025, according to IBM, and the average cost for a United States organization reached a record 10.22 million dollars. Ransomware is a major driver of those figures, which is why a tested, isolated backup is worth more than a backup that merely exists.
+
+## Risk 2: Irrecoverable data loss
+
+Data loss is not limited to cyberattacks. Equipment failure, accidental deletion, software corruption, and severe weather can wipe out important information without warning. In Minnesota, that list also includes the practical realities of winter: burst pipes, power outages from ice storms, and flooded basements in older commercial buildings.
+
+When backups are never tested, you are simply hoping everything was captured correctly and will return intact. If the restore fails and the data is gone, that hope is all you have left. Testing confirms your recovery process works in real-world conditions, not just in theory: files open properly and mission-critical applications perform as expected.
+
+## Risk 3: Undetected data corruption
+
+Some backup problems develop quietly in the background for weeks or even months before anyone notices. Files can become corrupted over time, settings can drift after updates, and important information can stop saving correctly without generating an alert. You may not discover the issue until you try to restore something and find it missing or unusable.
+
+Regular testing catches these problems before an outage forces them into the spotlight.
+
+## Risk 4: Costly downtime
+
+Every minute of downtime affects your bottom line, but the biggest problem is often what happens when your team has never practiced a restore. Without a tested recovery process, a restore that should take 20 minutes can drag on for hours. Employees scramble without a clear plan, pressure rises, customers wait, and the disruption gets worse by the minute.
+
+In the Uptime Institute's 2024 Annual Outage Analysis, 54 percent of operators said their most recent significant outage cost more than 100,000 dollars. For a Twin Cities manufacturer or professional firm, even a fraction of that is a serious hit.
+
+When you test regularly, recovery becomes familiar before it is urgent. Your team understands the steps, knows what a successful restore looks like, and can respond with confidence. That preparation turns a crisis into a manageable disruption.
+
+## Risk 5: Compliance and legal risk
+
+Many industries must meet strict requirements for data protection and retention. Healthcare organizations, financial firms, and legal practices all face serious consequences if protected data cannot be recovered. Regulators want more than proof that backups exist: they want evidence that recovery works.
+
+A failed restore that leaves customer data missing can lead to fines, legal exposure, and a compliance investigation. Minnesota Statutes section 325E.61 requires notification when personal data is breached. Backup testing gives your organization documented proof that your data protection strategy is working.
+
+## What a real backup test looks like
+
+Build your routine around these steps:
+
+- Restore a sample of files and confirm they open and are complete.
+- Restore at least one critical application to a test environment and confirm it runs.
+- Time the full restore so you know your real recovery time, not the vendor's estimate.
+- Record the date, the data sets tested, and the result, and keep the log where an auditor or insurer can review it.
+
+Run this routine at least quarterly, and after any major system change. A test that finds a problem is a success: it found the problem on your schedule, not during a crisis.
+
+## Frequently Asked Questions
+
+### How often should a business test its backups?
+
+At least quarterly, and after any major change such as a server migration, a new application, or a change in backup software. Businesses in regulated industries should test more often, because auditors expect a documented cadence, not an occasional check.
+
+### What is the difference between a backup and disaster recovery?
+
+A backup is a copy of your data. Disaster recovery is the documented plan, with tested procedures and time objectives, for restoring your whole operation after a failure. A backup is one part of disaster recovery, not a substitute for it.
+
+### Can ransomware infect my backups?
+
+Yes. Attackers deliberately seek out backup repositories and try to corrupt or delete them before triggering encryption. That is why backups should be stored offsite or in immutable storage that cannot be altered, and why restore tests should confirm the backup data is clean.
+
+## Your backups are only proven by a successful restore
+
+A backup file stored offsite is not enough. A tested, verified, and documented recovery process is what truly protects your business. Organizations that recover quickly from outages do not always have the most advanced tools. What they do have is a routine of testing, drilling, and preparing before anything breaks.
+
+Do not wait for an emergency to discover whether your recovery plan works. Veracity Technologies, a SOC 2 certified provider based in Minnetonka, serves more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will review your current backup setup, identify the gaps, and leave you with a clear plan to make sure your backups work when it matters.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Uptime Institute, Annual Outage Analysis 2024, reported by Data Center Dynamics, https://www.datacenterdynamics.com/en/news/uptime-institute-outages-in-2024-less-frequent-and-severe-but-more-expensive/
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- U.S. Department of Health and Human Services, HIPAA Security Rule guidance, https://www.hhs.gov/hipaa/for-professionals/security/index.html
+"""},
+    {"slug": "6-things-every-incident-response-plan-needs", "title": "6 Essentials of an Incident Response Plan", "excerpt": "Recovery does not depend on optimism. It depends on a plan your team has already practiced. These six essentials turn a chaotic first hour into a sequence of decisions someone has already made.", "category": "Business Continuity", "published_date": "2026-09-07", "read_time": "6 min read", "content": """No business wants to deal with a major disruption, but recovery does not depend on optimism. It depends on preparation, and preparation is what makes the difference between a bad day and a business-ending event. For an Operations VP, the pain is the first hour after something goes wrong: phones ringing, systems down, and nobody sure who is supposed to decide what happens next.
+
+An incident response plan gives your team a clear path forward, so everyone knows what to do, who to notify, and which actions come next when the unexpected happens. Below are the six essentials every incident response plan should include.
+
+## 1. Defined roles and responsibilities
+
+When a disruption occurs, uncertainty slows recovery. Even experienced teams lose valuable time when no one is sure who owns each task. Your plan should clearly identify who makes decisions, who communicates with employees, who works with IT providers, and who communicates with customers and vendors.
+
+Without this structure, too many people may take on the same responsibility while other critical tasks are overlooked. That creates unnecessary overlap and dangerous gaps. When responsibilities are assigned in advance, decisions move faster and communication stays aligned. Everyone understands their part and can act without waiting for direction.
+
+## 2. Emergency contact information
+
+During an incident, every minute matters. Searching for contact details or confirming the right person wastes time your team cannot afford to lose. Your plan should include up-to-date contacts for internal leadership, IT service providers, software vendors, cyber insurance providers, legal counsel, and key business partners.
+
+This information must be accurate, organized, and easy to access. An outdated phone number or missing vendor contact can delay recovery at the worst possible time. Keep a printed copy of the contact list somewhere accessible, because if your email and chat tools are down, a contact list stored only in those tools is useless.
+
+Review the list quarterly: people change jobs, vendors change support numbers, and insurance carriers change claims contacts.
+
+## 3. Communication procedures
+
+Communication often breaks down when systems fail. Email, chat tools, and internal platforms may not be available when they are needed most. A strong plan should outline internal communication methods, employee notification procedures, customer communication expectations, and vendor communication processes.
+
+This keeps updates moving even when your primary tools are unavailable, and it creates consistency for external messaging: customers and partners receive timely, clear updates instead of confusion, silence, or mixed signals.
+
+## 4. Critical business systems and priorities
+
+Not every system should be recovered in the same order. Some applications directly affect revenue or customer service, while others support internal operations. Your plan should identify critical applications, essential business processes, recovery priorities, and acceptable downtime expectations for each one.
+
+Without clear priorities, teams may try to restore everything at once. That spreads resources too thin and slows the overall recovery process. Clear priorities help your team focus on the systems that keep the business running, and they give leadership the insight needed to decide what can wait and what needs immediate attention.
+
+## 5. Recovery procedures
+
+When an incident occurs, people need immediate direction. Vague steps lead to hesitation, miscommunication, and wasted effort. Your plan should outline initial response actions, escalation procedures, recovery priorities, and decision-making processes.
+
+These procedures do not need to be overly technical, but they should be clear enough that your team knows the next step without having to interpret complicated instructions. A well-structured response lowers the risk of mistakes and keeps everyone working toward the same goal. It also helps newer or less experienced team members contribute effectively under pressure.
+
+Write the procedures as checklists, not paragraphs, and include the criteria for escalating to outside help, such as your managed IT provider, your insurer, or law enforcement.
+
+## 6. Testing and review schedule
+
+An incident response plan is only effective if it reflects how your business operates today. Changes in systems, vendors, or staff can quickly make parts of the plan outdated. You should regularly review procedures, update contact information, test recovery processes, and evaluate lessons learned.
+
+Testing reveals how the plan performs in a real-world scenario. It helps uncover gaps that are not obvious on paper and gives your team a chance to practice their roles. A tabletop exercise, where the team walks through a hypothetical incident together, is a low-cost way to test the plan without taking systems offline. The global average cost of a data breach was 4.44 million dollars in 2025, according to IBM, and the United States average reached a record 10.22 million dollars, which is a strong argument for practicing before the real thing.
+
+Regular reviews keep the plan current and useful. Without them, even a well-built plan loses effectiveness over time. Put the review on the calendar now: at least twice a year, plus a review after any major system or staffing change.
+
+## Frequently Asked Questions
+
+### What is the first thing a business should do when an incident is discovered?
+
+Contain the problem first: isolate affected systems, preserve evidence, and notify the person named in the plan as the incident lead. Do not try to fix everything before you have contained the spread, and do not delete logs or wipe systems, because that evidence matters for investigation and insurance claims.
+
+### How is an incident response plan different from a disaster recovery plan?
+
+An incident response plan covers how your team reacts to a security incident or disruption: roles, communications, and decisions. A disaster recovery plan covers how systems and data are restored afterward. They overlap, and a mature business needs both, with the incident response plan pointing to the disaster recovery procedures.
+
+### How often should an incident response plan be tested?
+
+At least twice a year through tabletop exercises, with a full technical test of recovery procedures at least annually. Test again after any major change to systems, vendors, or key staff.
+
+## Be ready before disruption strikes
+
+The most effective incident response plans are not created during a crisis. They are built ahead of time and refined as the business changes. When something unexpected happens, preparation removes guesswork. Your team does not pause to figure out what to do, because the work has already been done.
+
+Not sure whether your incident response plan covers the essentials? Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will review your current plan, identify the gaps, and strengthen your response before an issue forces you to make a quick decision.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- National Institute of Standards and Technology, Computer Security Incident Handling Guide, SP 800-61 Rev. 2, https://csrc.nist.gov/pubs/sp/800/61/r2/final
+- Cybersecurity and Infrastructure Security Agency, cybersecurity best practices, https://www.cisa.gov/topics/cybersecurity-best-practices
+- Uptime Institute, Annual Outage Analysis 2024, reported by Data Center Dynamics, https://www.datacenterdynamics.com/en/news/uptime-institute-outages-in-2024-less-frequent-and-severe-but-more-expensive/
+"""},
+    {"slug": "compliance-gaps-costing-you-thousands", "title": "Four Compliance Gaps That Increase Business Costs", "excerpt": "Compliance problems rarely start with a breach. They start with assumptions: tools nobody watches, habits nobody corrects, and paperwork nobody can produce. These four gaps are where the money quietly leaks out.", "category": "Compliance", "published_date": "2026-07-27", "read_time": "6 min read", "content": """Compliance issues rarely begin with a breach. More often, they begin with assumptions. A company can invest in the right technology and still have no clear view of what is actually working, and that becomes a serious problem when a client requests proof or an incident exposes weak spots. For a CFO or Controller in the Twin Cities, the pain is financial and hard to see coming: the costs arrive as fines, lost deals, and emergency remediation, not as a line item you budgeted for.
+
+Most organizations do not uncover compliance gaps during everyday operations. They find them when pressure is high, answers are due fast, and the risk is already expensive.
+
+## Gap 1: Security tools that nobody oversees
+
+Most companies already invest in security tools such as endpoint protection, multifactor authentication, firewalls, threat detection, and email filtering. On the surface, that creates the impression of strong protection. The real issue is accountability.
+
+Who verifies that every tool is configured properly? Who checks that it is installed across all devices? Who monitors alerts, catches failed updates, and responds when something suspicious appears? Security software cannot defend what it does not detect. It cannot act on alerts no one reviews. It also cannot make up for poor setup, incomplete deployment, or warning signs that were ignored.
+
+From a distance, your business may look secure. Under a closer review, the picture can change quickly. Purchasing the tool is only the first step: real protection comes from ongoing management, monitoring, and maintenance, and that difference matters during audits, insurance renewals, and client reviews.
+
+## Gap 2: Employee habits that have not been updated
+
+Employees usually are not trying to create risk. They are trying to get their work done. That is why so many compliance problems come from everyday actions like sending sensitive data through the wrong channel, reusing passwords, clicking fake invoices, or accessing company files from a personal device after hours.
+
+The issue is not always intent. It is repetition. Routine shortcuts turn into compliance gaps when they are never reviewed or corrected, and one uncorrected habit can spread across a whole team because people copy what they see working.
+
+Employees need clear expectations, practical training, and systems that make safe choices easy to follow. That means written acceptable-use rules, regular training with records, and phishing simulations that show whether the training is actually changing behavior. The global average cost of a data breach was 4.44 million dollars in 2025, according to IBM, and the United States average reached a record 10.22 million dollars. A large share of breaches still start with a human action, which is why habits are a compliance issue, not just a training topic.
+
+## Gap 3: Documentation created only after it is requested
+
+You may be doing the right things, but if the evidence is incomplete or scattered, that becomes a problem the moment someone asks for proof. That is not the time to begin searching for records.
+
+Last-minute documentation usually leads to errors, and it can make your business look less prepared than it really is. It can also create doubt about whether the right controls were in place from the start. Strong compliance means policies are reviewed before audits, access logs are maintained before disputes, vendor records are tracked before client requests, and incident response plans are ready before an incident happens.
+
+Documentation should be current, organized, and easy to present. If a client asked for your security policies, your last access review, and your backup test log tomorrow morning, could you produce all three before lunch? If not, you have a documentation gap, and the fix is a single organized repository with an owner and a review schedule.
+
+## Gap 4: The business evolved, but security did not
+
+This gap often shows up during a midyear review, because the business may have changed faster than the security program. Maybe you added vendors, hired new employees, switched software, expanded remote work, or began working with clients that require tighter controls.
+
+A security setup that worked for 10 employees may not be enough for 30. A backup plan may not include new cloud applications. Access permissions that made sense last year may now be too broad. That is how businesses outgrow their protection without realizing it. A midyear review helps confirm whether your current security and compliance controls still match the way your business operates today.
+
+This is especially common for growing Twin Cities firms: a manufacturer in Plymouth wins a defense subcontract and suddenly faces CMMC expectations, or a Minnetonka financial firm takes on a client that requires SOC 2 evidence from every vendor. The business changed. The security program has to change with it, or the gap becomes a failed client review.
+
+## The real cost is discovering problems too late
+
+Compliance gaps usually come into view when money, trust, or liability is already at stake. By then, you are in damage control mode instead of prevention mode. The best time to uncover these issues is before a client, insurer, or auditor asks the hard questions.
+
+A focused review can reveal where your business is exposed, where controls have drifted, and whether current security and insurance requirements are still being met. That review costs far less than a single emergency remediation, and it gives leadership a clear list of fixes instead of a surprise.
+
+## Frequently Asked Questions
+
+### How do I know if my business has compliance gaps?
+
+If you cannot quickly produce documented policies, access review records, training logs, backup test results, and vendor agreements, you have gaps. A gap assessment maps your current controls against the frameworks that apply to you and lists exactly what is missing.
+
+### Do small businesses really face compliance requirements?
+
+Yes. HIPAA applies to any business handling protected health information, PCI DSS applies the moment you accept a card payment, and Minnesota law requires breach notification for businesses of any size. Frameworks do not exempt small businesses.
+
+### What is the fastest way to close a documentation gap?
+
+Create one central repository for compliance evidence, assign an owner, and set a quarterly review. Start with the five documents auditors and clients ask for most: your security policies, your access review log, your training records, your backup test log, and your vendor list with agreements.
+
+## Find the gaps before someone else does
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will help uncover your compliance blind spots and show you whether your current controls still align with today's requirements.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- U.S. Department of Health and Human Services, HIPAA Security Rule guidance, https://www.hhs.gov/hipaa/for-professionals/security/index.html
+- PCI Security Standards Council, PCI DSS v4.0, https://www.pcisecuritystandards.org/
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+"""},
+    {"slug": "cyber-insurance-requirements-checklist-minneapolis", "title": "Cyber Insurance Requirements Checklist: What Minneapolis Businesses Must Have in Place Before Applying", "excerpt": "Carriers no longer take your word for it. They want screenshots, logs, and signed policies before they bind coverage. This checklist covers the nine controls underwriters verify, the documents they request, and the industry extras that catch Twin Cities firms off guard.", "category": "Compliance", "published_date": "2026-10-27", "read_time": "6 min read", "content": """A Minneapolis manufacturer submits a cyber insurance renewal application, only to receive a letter saying coverage is reduced and premiums are up 30 percent because an underwriter flagged missing endpoint detection on three shop-floor workstations. That scenario is hypothetical, but the pattern is real. For a CFO or Controller, the pain is a renewal that arrives as a surprise bill and weaker coverage at the same time.
+
+Knowing exactly which cyber insurance requirements carriers verify, and what documentation they want as proof, is the difference between coverage you can rely on and a policy that disappoints at the worst moment.
+
+## Why carriers have raised the bar
+
+Cyber insurance underwriters have shifted from accepting self-reported questionnaires to requiring verified, documented evidence of active security controls. The IBM 2025 Cost of a Data Breach Report puts the global average breach cost at 4.44 million dollars, and the United States average at a record 10.22 million dollars. Those figures have fundamentally changed how carriers price and approve policies for small and mid-sized businesses.
+
+Carriers are no longer willing to take applicants at their word. Underwriters now request configuration screenshots, audit logs, and signed policy documents. Businesses that cannot produce this evidence face denial, reduced limits, or premium increases before a single incident occurs.
+
+## The checklist: nine controls carriers verify
+
+Carriers verify nine core controls when evaluating cyber insurance applications. Missing multifactor authentication or endpoint detection often causes outright denial, while gaps in the rest typically raise premiums or reduce coverage limits. Every control has a specific documentation artifact the underwriter will request.
+
+- **Multifactor authentication (MFA) on email, remote access, and privileged accounts.** Carriers verify MFA is enforced at the identity provider level, not just available as an option. Proof: a conditional access policy export or identity provider configuration screenshot. Missing MFA is the most common single reason for outright denial.
+- **Endpoint detection and response (EDR) on all endpoints, including shop-floor systems.** Carriers want an agent deployment report confirming coverage across 100 percent of in-scope devices. Proof: an EDR platform coverage report showing device count and last-seen timestamps.
+- **Immutable, tested data backups with documented recovery objectives.** Backups must be stored offsite or in immutable cloud storage, with restore tests on record. Proof: a backup test log with dates, tested data sets, and documented recovery time and recovery point objectives.
+- **Written incident response plan with named roles.** Carriers want a signed, dated runbook with specific names or titles assigned to each response role, not a fill-in form. Proof: the signed runbook plus a tabletop exercise record.
+- **Patch management with a documented cadence.** Patches must be applied within a defined window, with critical patches tracked to closure. Proof: a patch compliance report showing open versus closed vulnerabilities and mean time to remediate.
+- **Privileged access management (PAM).** Carriers look for just-in-time access or vaulted credentials. Proof: a PAM configuration summary or access review log.
+- **Email security, including DMARC, DKIM, and SPF plus anti-phishing filters.** Carriers check that the DMARC policy is set to quarantine or reject, not just none. Proof: a DMARC DNS record screenshot and email security platform configuration export.
+- **Security awareness training with logged completion records.** Training must be recurring, not a one-time onboarding module, with completion percentages on record. Proof: a training platform completion report with dates and employee participation rates.
+- **Vulnerability scanning with remediation tracking.** Authenticated scans must run on a regular cadence, with findings tracked to remediation. Proof: a vulnerability scan report with open and closed finding counts and remediation documentation.
+
+## Industry extras Minneapolis businesses often miss
+
+Beyond the nine core controls, underwriters apply vertical-specific requirements that catch Minneapolis businesses off guard at renewal.
+
+Financial services firms face questions about data classification and access logs. The Gramm-Leach-Bliley Act requires financial institutions to implement reasonable safeguards for customer financial information, and carriers treat access log reviews as evidence those obligations are actively managed.
+
+Manufacturers face questions about operational technology. Carriers now ask whether OT networks are segmented from corporate IT networks, and whether shop-floor endpoints are covered by EDR.
+
+Construction firms face questions about subcontractor access. Firms frequently grant subcontractors temporary access to project management platforms, file shares, and VPN connections, and that access is often not logged, time-limited, or revoked promptly. Carriers ask for written subcontractor access policies and access review logs, and project data such as bid files and CAD drawings must be included in backup scope.
+
+## What your MSP should be able to document
+
+A qualified managed IT provider should produce specific documentation artifacts on demand for your broker or underwriter, not just verbal assurances. If your current provider cannot hand you these records within 48 hours, that gap itself becomes a liability.
+
+Ask for an EDR coverage report, a patch compliance report, a backup test log, a signed incident response runbook, a training completion report, and an access review log.
+
+One more factor changes the equation: SOC 2 certification. Most providers can tell you which controls you should have. Fewer can prove they operate those controls under independent audit. Veracity Technologies holds SOC 2 certification, and carriers increasingly accept a provider's SOC 2 report as credible third-party evidence, which reduces the documentation burden at renewal.
+
+## Frequently Asked Questions
+
+### What security controls do I need to get cyber insurance?
+
+Most carriers require multifactor authentication on email and remote access, endpoint detection and response on all devices, immutable tested backups with documented recovery objectives, a signed incident response plan with named roles, patch management, privileged access management, email security with DMARC, DKIM, and SPF, security awareness training, and vulnerability scanning with remediation tracking.
+
+### Will my business be denied cyber insurance if it does not have MFA?
+
+Missing multifactor authentication on email, remote access, or privileged accounts is the most common reason carriers deny cyber insurance applications outright. Other control gaps, like incomplete patch management or undocumented training, more often result in higher premiums or reduced coverage limits rather than denial.
+
+### How does an MSP help my business qualify for cyber insurance?
+
+A qualified MSP implements and maintains the technical controls carriers require, and produces the documentation artifacts underwriters request: EDR coverage reports, patch compliance logs, backup test records, and training completion reports. A SOC 2 certified MSP can also provide audited third-party evidence of those controls, which carries more weight than self-reported answers.
+
+## Find out if your setup will pass an underwriter's review
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will walk through this checklist against your current environment and identify exactly which controls or documentation gaps could affect your coverage eligibility.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Federal Trade Commission, Safeguards Rule, 16 CFR Part 314, https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-314
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- American Institute of CPAs, SOC 2 Trust Services Criteria, https://www.aicpa-cima.com/topic/audit-and-assurance/soc-2
+"""},
+    {"slug": "the-real-cost-of-non-compliance-fines-lawsuits-and-reputational-damage-minneapolis-businesses-cant-afford", "title": "The Real Cost of Non-Compliance: Fines, Lawsuits, and Reputational Damage Minneapolis Businesses Can't Afford", "excerpt": "The fine is only the first invoice. Forensic audits, legal fees, lost contracts, and a damaged reputation usually cost a Minneapolis small business far more than the penalty itself. Here is the full math.", "category": "Compliance", "published_date": "2026-07-16", "read_time": "6 min read", "content": """Most Minneapolis small businesses that face compliance penalties were not cutting corners deliberately. They assumed their current IT setup was sufficient, or they simply did not know a specific rule applied to them. Regulators do not distinguish between willful violations and uninformed ones when calculating fines, and that is the hard truth at the center of this post. For an Owner or CEO, the pain is that a problem you never saw coming can threaten the business you spent years building.
+
+IT compliance is the ongoing process of aligning your IT systems, policies, and data practices with the regulatory frameworks that govern your industry, such as HIPAA, PCI DSS, or the FTC Safeguards Rule. The cost of getting it wrong goes far beyond the fine itself.
+
+## The hard numbers: what regulatory fines actually look like
+
+The fine structures for HIPAA, PCI DSS, and the FTC Safeguards Rule are steep enough to threaten a small business, and the per-violation language in each framework means a single incident can multiply into a six- or seven-figure liability before attorneys get involved.
+
+HIPAA civil monetary penalties are set in four tiers based on culpability. Under the Department of Health and Human Services inflation adjustment published January 28, 2026, penalties run from 145 dollars per violation where the business did not know of the violation, up to 73,011 dollars per violation, with a calendar-year cap of 2,190,294 dollars for violations of an identical provision.
+
+PCI DSS non-compliance brings fines from the card brands, typically 5,000 to 100,000 dollars per month until the issue is resolved. A finding that sits unaddressed for 90 days at the low end reaches 450,000 dollars before any legal fees are counted.
+
+The FTC Safeguards Rule, which applies to non-bank financial firms such as auto dealers, mortgage brokers, and financial planners, carries civil penalties of up to 53,088 dollars per violation under the FTC's January 2025 inflation adjustment, and a continuing violation can be counted per day.
+
+## Beyond the fine: the legal and operational costs nobody talks about
+
+Regulatory fines are only the first invoice. The downstream costs of a compliance failure, breach notifications, forensic audits, attorney fees, and civil lawsuits, typically dwarf the original penalty for small businesses.
+
+Breach notification letters are a major cost on their own. Minnesota requires consumer notification under Minnesota Statutes section 325E.61 when personal data is compromised, and notification at scale involves legal review, printing, mailing, and call center costs. Regulators frequently require an independent forensic investigation as well, commonly running into the tens of thousands of dollars before remediation begins.
+
+Responding to a regulator investigation requires specialized legal counsel, and that cost begins the moment a complaint is filed, running independently of any fine. A mandated remediation period may also restrict normal business operations while systems are rebuilt. And customers and partners whose data was exposed can sue independently of any regulatory action, creating a second cost track running in parallel.
+
+The fine is often the smallest part of the bill.
+
+## Reputational damage: the cost that does not show up on an invoice
+
+Reputational damage after a compliance failure translates directly into lost contracts and lost pipeline, particularly where enterprise clients require documented compliance from their vendors as a condition of doing business.
+
+When a prospect's procurement team runs a background check and surfaces a past compliance violation, the deal can end before a proposal is submitted, and a violation on record can disqualify a business from an entire client category.
+
+Local press exposure compounds the problem. Minneapolis is a mid-size metro where local business news travels quickly within industry circles, and a compliance enforcement action is a newsworthy event. A violation does not just affect the client relationship it touches: it can redefine how the market perceives the business for years afterward.
+
+## The industries at highest risk in the Minneapolis market
+
+Three Minneapolis industry verticals face the most acute non-compliance risk: financial services, healthcare-adjacent businesses, and manufacturers with government contracts.
+
+Financial services firms in Plymouth, Minnetonka, and across the metro are subject to the FTC Safeguards Rule and, depending on their activity, SEC and FINRA requirements. Healthcare-adjacent businesses in Eden Prairie and the broader metro fall under HIPAA as business associates even if they are not providers themselves. Manufacturers and defense subcontractors bidding on Department of Defense work must meet CMMC, and failure to certify blocks contract eligibility entirely.
+
+## Why waiting is the most expensive strategy
+
+Treating compliance as a one-time checklist rather than a continuous process is a financial risk decision. A single enforcement action costs multiples of what a managed compliance program runs annually.
+
+Compliance frameworks are not static. HIPAA guidance updates, PCI DSS released version 4.0 with new requirements, and CMMC certification levels continue to roll out. A business that was compliant in January may not be compliant in October, and regulators do not accept the defense that you did not know something changed.
+
+Proactive managed compliance replaces an unpredictable, potentially catastrophic liability with a predictable monthly cost. Continuous monitoring is what keeps a business compliant year-round.
+
+## Frequently Asked Questions
+
+### How much can a small business be fined for a HIPAA violation in Minnesota?
+
+Under the current inflation-adjusted schedule, HIPAA civil penalties run from 145 dollars to 73,011 dollars per violation, with a calendar-year cap of 2,190,294 dollars for violations of an identical provision. Penalties scale with culpability, and uncorrected willful neglect sits at the top of the range.
+
+### Is my business required to be IT compliant even if we have never had a data breach?
+
+Yes. Compliance obligations are triggered by the type of data you handle and the industry you operate in, not by whether a breach has occurred. A business that handles credit card data, health information, or financial records is required to meet the relevant framework's standards continuously, breach or no breach.
+
+### Who is responsible for IT compliance: my business or my IT provider?
+
+Your business is legally responsible for compliance. An IT provider can implement and monitor the required technical controls, but regulatory liability stays with the business owner. A managed IT compliance provider reduces your risk by ensuring controls are in place and documented, but it cannot assume your legal obligation.
+
+## Find out if your business has a compliance gap before a regulator does
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will review your current IT environment, identify which compliance frameworks apply, and show you exactly where your exposure is.
+
+## Sources
+
+- U.S. Department of Health and Human Services, Annual Civil Monetary Penalties Inflation Adjustment, 91 FR 3665, published January 28, 2026, penalty amounts in 45 CFR 102.3, https://www.hipaabinder.com/hipaa-penalty-tiers
+- Federal Trade Commission civil penalty adjustment, 16 CFR 1.98, effective January 17, 2025, 90 FR 5581, https://safeguardsmonitor.com/safeguards-rule-penalties
+- PCI Security Standards Council, PCI DSS v4.0, https://www.pcisecuritystandards.org/
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+- U.S. Department of Defense, Cybersecurity Maturity Model Certification, https://dodcio.defense.gov/cmmc/
+"""},
+    {"slug": "what-happens-to-your-business-if-you-fail-a-compliance-audit-a-step-by-step-breakdown", "title": "What Happens to Your Business if You Fail a Compliance Audit? A Step-by-Step Breakdown", "excerpt": "A failed audit is not a single event. It is the start of a structured enforcement process with a ticking clock, and what you do in the first 30 days determines whether it stays manageable or compounds into something far worse.", "category": "Compliance", "published_date": "2026-07-09", "read_time": "6 min read", "content": """You open an email on a Tuesday morning and it is from your industry regulator: your business failed its compliance audit, and you have 30 days to respond or face escalating penalties. An IT compliance audit failure is not a single catastrophic event. It is the start of a structured enforcement process with a ticking clock, and what you do in the first 30 days determines whether this stays manageable or compounds into something far more damaging. For an Owner or CEO, the pain is the uncertainty: you do not know how bad it is, how much it will cost, or who will find out.
+
+Here is what actually happens, step by step.
+
+## Step 1: The findings letter arrives, and the clock starts
+
+A compliance audit failure becomes official when the relevant authority issues a formal findings letter. HIPAA's Office for Civil Rights, a PCI DSS Qualified Security Assessor, or a state-level agency each use different formats, but every letter identifies specific deficiencies and sets a mandatory response window, typically 30 to 60 days.
+
+The letter does not impose the final penalty immediately. It opens a structured enforcement process: acknowledge the findings, submit a corrective action plan, and begin documented remediation within the stated window. Missing that window escalates the matter to higher penalty tiers or formal enforcement proceedings.
+
+Early, organized action can still influence the penalty outcome. Delayed or uncoordinated responses almost always make the financial and legal exposure worse.
+
+Financial penalties vary significantly by framework. HIPAA civil penalties, under the inflation adjustment published January 28, 2026, run from 145 dollars per violation up to 73,011 dollars per violation, with a calendar-year cap of 2,190,294 dollars for violations of an identical provision. PCI DSS non-compliance fines from the card brands run 5,000 to 100,000 dollars per month. A SOC 2 failure carries no regulatory fine, but enterprise clients can terminate agreements when a vendor loses its attestation.
+
+## Step 2: Mandatory remediation disrupts your operations
+
+After penalties come the remediation orders. Auditors require a documented corrective action plan, often with third-party verification, completed within a fixed window. The operational cost of emergency remediation frequently exceeds the fine itself.
+
+Consider a hypothetical Minneapolis financial services firm that failed a PCI DSS audit due to inadequate network segmentation, the configuration that separates cardholder data from the rest of the network. The remediation order would require rebuilding that segmentation, retraining staff, and submitting verified evidence of new controls, all while the business continues serving clients.
+
+The disruption shows up in three ways: key employees are pulled from revenue-generating work, outside compliance specialists engaged on short timelines charge premium rates, and some remediation tasks require taking systems offline. Ongoing compliance management is designed to prevent exactly this: when documentation and controls are maintained year-round, remediation work is already done before any auditor asks for it.
+
+## Step 3: Legal liability and insurance consequences
+
+A compliance failure linked to a data breach opens your business to civil litigation. Even without a breach, a failed audit can void cyber liability insurance or trigger contract termination clauses with enterprise vendors.
+
+Minnesota law adds a specific obligation: Minnesota Statutes section 325E.61 requires businesses to notify affected individuals within a reasonable time after a breach of personal data, and failure to notify compounds legal exposure further.
+
+Insurance carriers and enterprise vendors review compliance status independently. A documented audit failure on record can void a cyber liability policy at renewal or give a vendor grounds to terminate a contract under standard due-diligence clauses. When a failed audit and a breach arrive together, those costs stack.
+
+## Step 4: Reputational damage and client attrition
+
+Compliance failures become part of the public record, and in tight-knit business communities like the Twin Cities, that record surfaces during vendor due diligence. You may resolve the fine and complete remediation, and still lose enterprise contracts because a prospect found the audit history.
+
+Enterprise clients and government contractors routinely require proof of compliance before signing agreements. Financial services firms in the Twin Cities and Minneapolis manufacturers that work with large primes are particularly exposed: a public compliance failure can disqualify a firm from bids it would otherwise win.
+
+This is the quiet, long-tail cost of a failed audit. The fine gets paid, the remediation gets done, and the business still shrinks because the market found out.
+
+## Why most small businesses fail audits
+
+Most small business audit failures are not caused by malicious behavior. They stem from undocumented controls, outdated policies, and no single person accountable for ongoing compliance tracking. The fix is a year-round program, not a pre-audit scramble.
+
+A reactive business does compliance work only when an audit is scheduled or a notice arrives, so gaps are discovered under time pressure and emergency remediation costs follow. A proactive business works continuously, year-round, so controls are documented, policies are current, and the audit is a confirmation rather than a discovery exercise.
+
+A proactive program covers continuous monitoring, policy documentation, access control reviews, vendor risk assessments, and audit-ready reporting, maintained as ongoing operations rather than a fire drill.
+
+## Frequently Asked Questions
+
+### How long does a business have to respond after failing a compliance audit?
+
+Most regulatory frameworks require a response within 30 to 60 days of receiving a formal findings letter. HIPAA's Office for Civil Rights and PCI DSS assessors both operate within structured response windows. Missing the deadline escalates the enforcement action and often increases the penalty tier.
+
+### Can a small business be fined for failing a HIPAA or PCI DSS audit?
+
+Yes. HIPAA civil monetary penalties apply to any covered entity or business associate regardless of size, ranging from 145 dollars to 73,011 dollars per violation under the current inflation-adjusted schedule. PCI DSS non-compliance fines from card brands can reach 100,000 dollars per month. Business size does not exempt a company from either framework.
+
+### Does failing a compliance audit affect cyber insurance coverage?
+
+A documented compliance failure can give an insurer grounds to deny a claim or void a cyber liability policy at renewal. Carriers review compliance status as part of underwriting, and a failed audit signals the control gaps that policies are designed to cover, making renewal terms worse or coverage unavailable.
+
+## Do not wait for an audit notice to find out where your gaps are
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333 for a compliance readiness review, and we will identify your gaps, document your controls, and make sure your Minneapolis business is audit-ready before the regulator comes knocking.
+
+## Sources
+
+- U.S. Department of Health and Human Services, Annual Civil Monetary Penalties Inflation Adjustment, 91 FR 3665, published January 28, 2026, penalty amounts in 45 CFR 102.3, https://www.hipaabinder.com/hipaa-penalty-tiers
+- PCI Security Standards Council, PCI DSS v4.0, https://www.pcisecuritystandards.org/
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- American Institute of CPAs, SOC 2 Trust Services Criteria, https://www.aicpa-cima.com/topic/audit-and-assurance/soc-2
+"""},
+    {"slug": "the-recovery-mistakes-that-cost-small-businesses-the-most", "title": "3 Common Business Recovery Planning Mistakes", "excerpt": "Most recovery plans fail in the same three places: the plan confuses backups with recovery, nobody ever tests it, and it depends on one person who might be unavailable. Fix those three, and your plan starts working when it counts.", "category": "Business Continuity", "published_date": "2026-08-03", "read_time": "6 min read", "content": """A business recovery plan only matters on the worst day of the year, and that is exactly when most of them fail. The plan looks fine in a binder, but it was never tested, it depends on one person, or it confuses having backups with being able to recover. For an Owner or CEO of a Twin Cities small business, the pain is that you find out the plan does not work at the same moment you need it most, when every hour of downtime is costing money and trust.
+
+Recovery planning is not about buying more backup storage. It is about knowing, in advance, how your business gets back to work after a disruption.
+
+## Mistake 1: Treating a backup as a recovery plan
+
+A backup is a copy of your data. A recovery plan is the documented sequence of steps, decisions, and responsibilities that turns that copy back into a working business. Many small businesses have the first and believe they have the second.
+
+A real recovery plan answers questions a backup cannot: which systems come back first, who decides, how long each step should take, and what you tell customers while you are down. Without written answers, your team improvises under pressure, and improvisation is slow and error-prone.
+
+The fix is to write the plan around recovery objectives. For each critical system, define a recovery time objective, meaning the longest you can be without it, and a recovery point objective, meaning how much data you can afford to lose. Those two numbers turn a vague plan into a specific one, and they give you something to test against. A plan without recovery objectives is a wish, not a plan.
+
+## Mistake 2: Never testing the plan
+
+An untested recovery plan is an assumption, and assumptions are expensive. The most common version of this mistake is a business that pays for backups for years, then discovers during a real incident that the restore takes six hours instead of one, that a critical application was never included in the backup scope, or that nobody on staff actually knows the restore procedure.
+
+In the Uptime Institute's 2024 Annual Outage Analysis, 54 percent of operators said their most recent significant outage cost more than 100,000 dollars. A test that finds a problem is a success: it found the problem on your schedule, not during a crisis.
+
+The fix is a testing routine, not a one-time event. Run a tabletop exercise, where your team walks through a hypothetical incident together, at least twice a year. Restore a sample of files and at least one critical application to a test environment quarterly, time the restore, and record the result. Test again after any major change: a server migration, a new application, or a change in backup software. Keep a dated test log, because auditors and insurers both ask for it, and because a log is what turns testing into evidence.
+
+## Mistake 3: Building the plan around one person
+
+In many small businesses, the recovery plan lives in one person's head. Usually that person is the owner, the office manager, or the one employee who knows how the server room works. If that person is on vacation, on a job site, or unreachable during a power outage, the plan goes with them.
+
+This mistake is easy to miss because the plan works fine in every drill the key person attends. It fails the day they are not there, and the same problem appears when critical credentials or vendor contacts exist only in one person's email or phone.
+
+The fix is to write the plan down, name a backup for every critical role, and store the plan where more than one person can reach it. Keep a printed copy of the contact list and the first-page checklist somewhere accessible, because if your email and chat tools are down, a plan stored only in those tools is useless. Make sure at least two people can perform each critical recovery step, and rotate who leads the tabletop exercise so the knowledge spreads.
+
+## What a working recovery plan includes
+
+A plan that avoids these three mistakes has a short list of ingredients, and none of them require enterprise budgets:
+
+- A prioritized list of critical systems and processes, ranked by what the business needs first to serve customers and take in revenue.
+- Recovery time and recovery point objectives for each critical system, written down and agreed by leadership.
+- Named roles with backups, so every responsibility has a primary and a second person.
+- Step-by-step restore procedures written as checklists, not paragraphs.
+- Communication procedures for employees, customers, and vendors, including what the first customer message will say.
+- Backup storage that is offsite or immutable, so an attacker or a fire cannot destroy the only copy.
+- A testing schedule with a dated log of every test and its result.
+
+Review the whole plan at least twice a year, and update it whenever the business changes: new hires, new vendors, new software, or a new client with stricter requirements. A plan that does not keep up with the business is a plan that quietly stops working.
+
+## Frequently Asked Questions
+
+### What is the difference between a backup and a recovery plan?
+
+A backup is a copy of your data. A recovery plan is the documented process, with roles, priorities, time objectives, and tested procedures, for restoring your business operations after a disruption. A backup is one part of a recovery plan, not a substitute for it.
+
+### How often should a small business test its recovery plan?
+
+At least twice a year through tabletop exercises, with a technical restore test at least quarterly. Test again after any major system or staffing change. A test that finds a problem is a success, because it found the problem on your schedule.
+
+### What should our recovery time objective be?
+
+It depends on the system. For the application that takes orders or serves clients, the objective may be an hour or less. For an internal reporting tool, it may be a day. The right way to set it is a business impact analysis: write down what happens if each system is down for one hour, four hours, and one full day, and the priorities become obvious.
+
+## Find the gaps in your recovery plan before a disruption does
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will review your current recovery plan, test what can be tested, and show you exactly where it would hold up and where it would not.
+
+## Sources
+
+- Uptime Institute, Annual Outage Analysis 2024, reported by Data Center Dynamics, https://www.datacenterdynamics.com/en/news/uptime-institute-outages-in-2024-less-frequent-and-severe-but-more-expensive/
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- Cybersecurity and Infrastructure Security Agency, cybersecurity best practices, https://www.cisa.gov/topics/cybersecurity-best-practices
+- U.S. Department of Health and Human Services, HIPAA Security Rule guidance, https://www.hhs.gov/hipaa/for-professionals/security/index.html
+"""},
+    {"slug": "the-most-common-business-disruptions-and-how-to-prepare-for-them", "title": "Prepare Your Business for Disruptions and Downtime", "excerpt": "Disruption is not a question of if. It is ransomware, an ice storm, a failed server, or a bad update, and the businesses that recover fastest are the ones that prepared for the specific risks they actually face. Here is how to prepare for the most common ones.", "category": "Business Continuity", "published_date": "2026-08-03", "read_time": "6 min read", "content": """Every business will face a disruption. The only question is whether it arrives as a manageable bad day or as a crisis that threatens the business itself. For an Operations VP, the pain is the range of it: the disruption could be ransomware, an ice storm, a failed server, or a software update gone wrong, and you are expected to be ready for all of them at once.
+
+Most disruptions fall into a small number of categories, and preparation for one category usually helps with the others. Here are the most common ones, and how to prepare for each.
+
+## Cyberattacks and ransomware
+
+Ransomware is the disruption Twin Cities businesses fear most, and for good reason. Attackers encrypt your systems and demand payment, and they increasingly target backups first so you cannot recover without them. The global average cost of a data breach was 4.44 million dollars in 2025, according to IBM, and the United States average reached a record 10.22 million dollars.
+
+Preparation starts with the basics done consistently: multifactor authentication on email and remote access, endpoint detection on every device, and patches applied on a schedule. Backups must be stored offsite or in immutable storage that attackers cannot alter, and restore procedures must be tested, because a backup that has never been restored is a guess. An incident response plan with named roles and a communication procedure turns the first hour from chaos into a sequence of decisions someone has already made.
+
+## Power outages and severe weather
+
+Minnesota weather is a business continuity issue, not just a commuting issue. Ice storms bring down power lines, heavy snow closes roads, summer storms flood basements, and extreme cold bursts pipes in older commercial buildings. A power outage that lasts a few hours is an inconvenience. One that lasts a day can stop a business that has no plan for working without its office.
+
+Preparation means knowing which systems must stay up and which can wait. Cloud-hosted applications keep working when your office loses power, as long as your team can get online somewhere else. A generator or battery backup for critical on-site equipment buys time. A written plan for remote work, including who can work from home and how they connect securely, turns a snow day into a workday. And a simple habit, keeping a printed contact list and a copy of the recovery plan offsite, matters enormously when the office itself is unreachable.
+
+## Hardware and system failure
+
+Servers age, hard drives fail, and a single piece of hardware can take down the application your whole business runs on. Unlike a cyberattack, hardware failure carries no malice, which makes it easy to ignore until it happens. The risk grows quietly: the server that was new five years ago is now out of warranty, and nobody has checked whether its replacement parts are still available.
+
+Preparation is straightforward. Keep an inventory of critical hardware with purchase dates and warranty status, and replace equipment before it fails, not after. Make sure backups cover every critical system, including ones added after the backup plan was written, and test restores on a schedule.
+
+## Human error and bad changes
+
+People make mistakes, and changes cause outages. An employee deletes the wrong folder. An update is applied to a production system without testing. A configuration change takes a network offline. Industry research consistently shows that change and configuration work is a leading cause of unplanned outages, and the fix is process, not blame.
+
+Preparation means change control: a written record of what changed, who approved it, and how to reverse it. It means testing updates before they reach production, and keeping backups current enough that a bad change can be rolled back.
+
+## Vendor and cloud outages
+
+Modern businesses depend on vendors: a cloud provider, a payment processor, an internet provider, a software company. When one of them goes down, your business goes down with it, and there is nothing you can do to fix their systems. The July 2024 CrowdStrike outage, which Parametrix estimated caused roughly 5.4 billion dollars in direct losses for Fortune 500 companies, showed how a single vendor failure can cascade across industries.
+
+Preparation means knowing your dependencies. List the vendors your business cannot operate without, and for each one, know the fallback: a second internet connection, an offline way to take payments, or a manual process for the hours the system is down. Keep vendor support contacts in your incident response plan, and review vendor risk annually.
+
+## Your preparation checklist
+
+Whatever the disruption, the same five habits make recovery faster:
+
+- Know your critical systems and rank them by what the business needs first.
+- Set recovery time and recovery point objectives for each one, and write them down.
+- Keep backups offsite or immutable, covering every critical system, and test restores quarterly.
+- Write the response plan with named roles, backups for each role, and communication procedures.
+- Test the plan at least twice a year, and update it whenever the business changes.
+
+## Frequently Asked Questions
+
+### What is the most common cause of business downtime?
+
+There is no single leading cause. Cyberattacks, power and weather events, hardware failure, human error, and vendor outages all appear regularly, and which one hits you is largely a matter of chance. That is why preparation has to cover categories, not one specific scenario.
+
+### How much does downtime actually cost a small business?
+
+It varies widely by industry, but the scale is well documented. In the Uptime Institute's 2024 Annual Outage Analysis, 54 percent of operators said their most recent significant outage cost more than 100,000 dollars. ITIC's 2024 survey found that more than 90 percent of mid-size and large enterprises lose over 300,000 dollars per hour of downtime. Even a fraction of that is serious for a small business.
+
+### What is a business impact analysis?
+
+It is a structured way to set recovery priorities. For each system, you write down what happens if it is down for one hour, four hours, and one full day. The answers make the recovery order obvious, and they give you documented recovery objectives that auditors and insurers expect.
+
+## Prepare before the disruption, not during it
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will review your current preparation, identify the disruptions you are least ready for, and build a plan that fits the way your business actually operates.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Uptime Institute, Annual Outage Analysis 2024, reported by Data Center Dynamics, https://www.datacenterdynamics.com/en/news/uptime-institute-outages-in-2024-less-frequent-and-severe-but-more-expensive/
+- ITIC, 2024 Hourly Cost of Downtime Survey, as reported by CNI Solutions, https://cnicsolutions.com/business-management/business-continuity/what-is-a-business-impact-analysis-bia/
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+- Cybersecurity and Infrastructure Security Agency, cybersecurity best practices, https://www.cisa.gov/topics/cybersecurity-best-practices
+"""},
+    {"slug": "downtime-doesnt-just-cost-money-it-costs-trust", "title": "How Downtime Impacts Revenue, Trust, and Growth", "excerpt": "Downtime is usually measured in dollars, but the dollars are only the first cost. Customers lose patience, employees lose confidence, and growth stalls while competitors keep serving the clients you cannot reach. Here is the full impact.", "category": "Business Continuity", "published_date": "2026-07-08", "read_time": "6 min read", "content": """Downtime does not just cost money. It costs trust, and trust is harder to earn back than revenue. When your systems go down, customers cannot reach you, employees cannot do their work, and the business stalls while competitors keep serving the clients you cannot reach. For an Owner or CEO, the pain is that the bill keeps growing long after the systems come back up: lost sales, lost clients, and a reputation that takes months to repair.
+
+Most downtime conversations stop at the hourly cost. That number is real, but it is only the first layer. Here is how downtime actually impacts revenue, trust, and growth.
+
+## Revenue: the cost you can count
+
+The direct revenue impact of downtime is the easiest to measure and the hardest to ignore. Orders stop. Appointments cannot be booked. Invoices cannot be sent. A manufacturer cannot run production. A professional firm cannot bill hours. Every minute offline is a minute of lost output, and for businesses that serve clients in real time, there is no way to make those minutes up later.
+
+In the Uptime Institute's 2024 Annual Outage Analysis, 54 percent of operators said their most recent significant outage cost more than 100,000 dollars, and about one in five said it cost more than 1 million dollars. Small businesses face smaller absolute numbers, but the impact relative to their size is often larger, because a small business has less cushion to absorb the loss.
+
+There are also costs that do not appear on the first invoice: overtime to catch up, rush fees for emergency help, and the cost of the work your team does twice because the first attempt was lost when the system went down.
+
+## Trust: the cost that compounds
+
+Revenue loss is immediate. Trust loss is slower, and it lasts longer. When a client cannot reach you, cannot get an answer, or cannot complete a transaction, they do not think about your server. They think about whether your business is reliable.
+
+That matters more in a market like the Twin Cities than it does in a large anonymous metro. Business communities here are tight-knit, and a bad experience travels. A client who cannot get through during an outage may not complain to you. They may simply call a competitor next time, and tell a colleague why. Reviews, referrals, and word of mouth all carry the same message, and none of them mention that the outage was not your fault.
+
+Trust also erodes internally. Employees who repeatedly cannot do their jobs because systems are down lose confidence in the business, and the best ones start looking elsewhere.
+
+The way you communicate during downtime matters as much as the downtime itself. A calm, honest update, sent quickly through a backup channel, protects trust far better than hours of silence. Customers forgive an outage much more easily than they forgive being ignored.
+
+## Growth: the cost that never shows up on a report
+
+The third impact of downtime is the hardest to see, because it is measured in things that did not happen. The new client you did not win because your proposal went out late. The project that slipped a week and pushed the next project back. The expansion you postponed because the quarter was spent recovering instead of growing.
+
+Downtime also consumes leadership attention. While the owner and the operations team are managing an outage, they are not selling, not hiring, and not improving the business. That opportunity cost is real, even though it never appears as a line item. A business that spends its energy recovering is a business that is not moving forward, and competitors that stayed up are.
+
+There is a compliance dimension too. If downtime involves lost or inaccessible data, regulators and insurers ask hard questions. Minnesota law requires breach notification when personal data is compromised, and a failed restore that leaves customer data missing can lead to fines, legal exposure, and a compliance investigation. Downtime that touches data is never just an IT problem.
+
+## What reduces all three costs
+
+The same preparation reduces the revenue cost, the trust cost, and the growth cost at the same time:
+
+- Know your critical systems and the order they come back in, so the revenue-generating work returns first.
+- Keep tested, offsite backups, so a restore is a procedure your team has practiced, not a hope.
+- Write a communication plan with a first message ready to send, so customers hear from you quickly and honestly.
+- Test the plan at least twice a year, because the team that has practiced recovers faster and communicates better.
+- Set recovery time objectives for each system, so leadership can make real decisions about what can wait and what cannot.
+
+The global average cost of a data breach was 4.44 million dollars in 2025, according to IBM, and the United States average reached a record 10.22 million dollars. Downtime that follows a breach carries those costs plus the trust and growth costs described above. Preparation is what keeps a bad day from becoming a bad year.
+
+## Frequently Asked Questions
+
+### How much does one hour of downtime cost a small business?
+
+It depends on the business, but the scale is large even for small firms. Industry surveys of larger organizations put an hour of downtime well into six figures, and for a small business the relative impact is often greater, because there is less cushion to absorb lost revenue, overtime, and recovery costs.
+
+### Why do customers leave after an outage if it was not our fault?
+
+Because customers judge reliability by their own experience, not by the cause. A client who could not reach you does not weigh whether the outage was a cyberattack, a power failure, or a vendor problem. They remember that your business was unavailable when they needed it, and that memory shapes the next decision.
+
+### Can good communication really protect trust during downtime?
+
+Yes. Customers forgive outages far more easily than they forgive silence. A quick, honest update that says what happened, what you are doing, and when you expect to be back builds confidence, even while systems are still down. The plan for that message should exist before the outage, not be written during it.
+
+## Protect the revenue and the trust behind it
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 Twin Cities clients with a 4.9 out of 5 rating and a 15-minute response SLA for critical issues. Book a free Business Technology Assessment or call (952) 941-7333, and we will review your current continuity preparation and show you where downtime would hurt most, and what to fix first.
+
+## Sources
+
+- Uptime Institute, Annual Outage Analysis 2024, reported by Data Center Dynamics, https://www.datacenterdynamics.com/en/news/uptime-institute-outages-in-2024-less-frequent-and-severe-but-more-expensive/
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025, https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+- Minnesota Statutes, section 325E.61, data breach notification, https://www.revisor.mn.gov/statutes/cite/325E.61
+- National Institute of Standards and Technology, Cybersecurity Framework 2.0, February 2024, https://www.nist.gov/cyberframework
+"""},
+    {"slug": "5-signs-of-changing-conditions-in-your-it-spending", "title": "5 Early Warning Signs Your IT Budget Needs Attention", "excerpt": "Most IT budget surprises send advance warning. Here are the five signals Twin Cities owners and CFOs should watch, and what to do about each one before it becomes an unplanned expense.", "category": "Managed IT", "published_date": "2026-11-09", "read_time": "6 min read", "content": """Your IT budget rarely blows up without warning. Aging hardware, a hiring wave, climbing cloud bills, a stack of renewals, and software losing support all send signals months before they turn into unplanned spending. If you are a CFO or Controller trying to hold a budget together while the business keeps changing, the fix is not a bigger contingency line. It is learning to read those five signals early and plan around them.
+
+That pain is familiar across the Twin Cities. A manufacturer in Plymouth adds a second shift and discovers half the shop floor PCs are six years old. A CPA firm in Edina renews three subscriptions in the same quarter and the total jumps 20 percent. None of this is bad luck. It is predictable, and predictable costs can be budgeted.
+
+## 1. Your equipment is showing its age
+
+Computers, servers, and networking gear all have a useful life, usually four to five years for laptops and desktops and five to seven for servers. Past that point, performance slows, parts get scarce, and your team spends more time waiting on machines than using them.
+
+The real problem is visibility. Many small businesses cannot say how old their oldest devices are or when each one was last replaced. Without an inventory with purchase dates, a cost you could have spread across two quarters lands all at once as an emergency purchase.
+
+What to do now:
+
+- Build a simple asset list with device, user, purchase date, and warranty end date.
+- Flag anything over four years old for a replacement decision in the next budget cycle.
+- Stagger replacements so a whole batch bought together does not age out together.
+
+## 2. You are gearing up to hire
+
+Every new hire carries a technology bill, whether or not anyone wrote it down. A laptop, a monitor, software licenses, user accounts, email, security coverage, and sometimes specialized applications or extra storage. For a Twin Cities firm hiring five people in a year, that routinely adds up to thousands of dollars per person before the new employee does a single hour of billable work.
+
+Put hiring plans and IT plans in the same conversation. When leadership shares headcount plans early, IT can price the technology for each role and fold it into the forecast next to payroll, instead of scrambling for a laptop the week someone starts.
+
+## 3. Your software and cloud costs keep climbing
+
+Software spending drifts upward even when headcount stays flat. A team adopts a new app, storage grows, a department upgrades to a pricier tier, and nobody retires the tool it replaced. By budget time, actual spend looks nothing like the plan.
+
+There is usually money to recover here. Unused licenses, duplicate tools that do the same job, accounts belonging to former employees, and service tiers that no longer fit the business quietly drain the budget every month. A quarterly license review in a Minneapolis or St. Paul office often finds 10 to 15 percent of seats paying for nothing, and that is a hypothetical illustration of the pattern, not a promise about your environment.
+
+What to do now:
+
+- Compare this year's software spend with last year's, line by line.
+- Cancel or downgrade anything unused for 90 days.
+- Ask whether each tool still earns its seat before rolling its cost into next year.
+
+## 4. Major renewals are coming up
+
+Software agreements, cloud services, support contracts, and hardware warranties all renew on their own schedules, and the reminder email does not always arrive in time. Renewals are also when prices rise and terms change. Handled reactively, the invoice shows up, gets rubber stamped, and another year begins without anyone asking whether the service still fits.
+
+Build a renewal calendar covering the next 12 months. For each item, note the current cost, the renewal date, whether usage has changed, and any notice of a price increase. That list turns a surprise into a decision point, and it gives you leverage to renegotiate or replace a service before you are locked in again.
+
+## 5. You are relying on tech that is losing support
+
+A system does not have to break to become a budget problem. It only has to lose support. When a vendor stops releasing security patches, every new vulnerability stays open forever, and compatibility problems start piling up. The original post flagged Windows Server 2016, which reaches end of support in January 2027, and Office 2021, which follows in October 2026. If either is still in your environment, the upgrade belongs in the budget now, not after the deadline passes.
+
+If you are not sure which of your systems are nearing end of support, finding out is the first step. An end of support audit is quick, and it prevents the worst kind of surprise: a security gap you cannot patch.
+
+## Turn the warning signs into a plan
+
+Spotting the signs is step one. The payoff comes from turning them into a sequenced plan: what needs attention now, what can wait a quarter, and what those choices mean for next year's budget. That is exactly what a good IT partner should help you build, connecting business goals to technology costs instead of reacting to invoices.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. If you want a clear view of the technology costs on your horizon, book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**How far ahead should we plan IT replacements?**
+Plan 12 to 24 months out. That window is long enough to stagger purchases and short enough that the forecast stays realistic.
+
+**What is the most common surprise IT cost?**
+In our experience, it is the renewal nobody tracked, followed closely by a batch of devices bought together that all age out in the same year.
+
+**Do we need to replace everything at five years?**
+No. Five years is the point to evaluate, not an automatic deadline. Some machines earn another year. The mistake is never evaluating at all.
+
+**Should cloud costs be in the same budget as hardware?**
+Yes. Treat software, cloud, and hardware as one technology budget so a rise in one place is visible against savings somewhere else.
+
+## Sources
+
+- Veracity Technologies, "5 Early Warning Signs Your IT Budget Needs Attention," November 9, 2026, https://www.veracitytech.com/blog/5-signs-of-changing-conditions-in-your-it-spending
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "5-signs-your-business-is-reacting-instead-of-preparing", "title": "5 Signs Your Business Needs Better Recovery Planning", "excerpt": "Most businesses do not choose to be reactive, they just never get around to preparing. These five signs show your recovery plan is thinner than you think, and how to fix it before a disruption proves it.", "category": "Business Continuity", "published_date": "2026-09-21", "read_time": "5 min read", "content": """If every outage, cyber incident, or hardware failure turns into a scramble, your business is reacting instead of preparing. The direct answer is simple: prepared businesses are not luckier, they have a tested recovery plan, a team that knows its role, and backups they have actually restored. If you are an Owner or CEO, the pain is the phone call that pulls you out of serving customers and into crisis management, and the fix starts with the five signs below.
+
+This is not a hypothetical risk in Minnesota. Winter storms knock out power, a frozen pipe floods a server room, and ransomware does not check the forecast first. The businesses that recover fastest are the ones that did the unglamorous work before anything happened.
+
+## 1. You only think about recovery after something goes wrong
+
+For many organizations, recovery planning becomes a priority only when an incident forces it. Data is inaccessible, systems are down, and suddenly everyone is asking the questions that should have been answered months ago: are backups current, how long will restoration take, and who owns each step?
+
+Planning during a crisis is the hardest possible time to plan. People are stressed, the clock is running, and every decision feels rushed. Build the strategy ahead of time, test it regularly, and close the gaps before an incident exposes them.
+
+## 2. Your team is unsure what to do during an outage
+
+Watch what happens in the first ten minutes of a failure. If employees are asking who to contact, whether they can keep working, and what is happening at all, your plan exists on paper but not in practice.
+
+A recovery plan only works when people understand it. Employees should know their roles, leaders should know who makes decisions, and communication steps should already be defined. That takes a short walkthrough, not a binder. Run a tabletop exercise twice a year: pick a scenario, such as a ransomware lockout on a Monday morning, and talk through who does what, in what order. A Twin Cities construction firm that runs this exercise once finds its gaps in an afternoon instead of during a real job delay.
+
+## 3. Your recovery plan has not been updated in years
+
+You may have a plan. The real question is whether it still fits how your business operates today. New systems arrive, staff responsibilities shift, vendors change, and priorities evolve. A document that still lists a former employee as the backup contact, or a system you retired two years ago, creates confusion instead of reducing it.
+
+Review the plan at least twice a year and after any major change. Check the essentials:
+
+- Are contact details and decision makers still correct?
+- Does the plan cover the systems the business depends on now?
+- Has it been tested since the last major change?
+- Do new hires know it exists?
+
+## 4. You assume your backups are enough
+
+Backups are critical, and having backups is not the same as being able to recover. Many businesses feel protected because backups exist, right up until the moment nobody can confirm those backups will actually restore critical data and systems when it matters.
+
+Testing is the difference between a backup and a recovery strategy. A restore test verifies the data is there, the process works, and the timeline is realistic. It also surfaces problems, like a backup job that has been silently failing for weeks, before a real disruption does. If you cannot state when your last successful restore test happened, that is the gap to close first.
+
+## 5. Every issue feels like an emergency
+
+Every business hits unexpected problems. What matters is how the team responds. If each disruption is frantic, improvised, and stressful, the root problem is usually not the event itself. It is the lack of preparation behind the response.
+
+Prepared organizations still suffer outages and cyber incidents. The difference is that they have a clear framework for responding, so the first hour is spent executing a plan instead of inventing one. That calm is worth real money: faster recovery means less downtime, fewer missed deadlines, and less damage to client trust.
+
+## Preparedness begins before disruption hits
+
+Being reactive does not mean your business is failing. It usually means the team has been busy serving customers and keeping operations moving, and planning kept slipping down the list. That is understandable, and it is also fixable. Preparedness is not about predicting every scenario. It is about having the right people, processes, and technology in place so your team can respond with confidence when something happens.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. From building recovery strategies and testing backups to developing incident response plans and identifying operational risks, we help businesses strengthen the planning behind the technology they depend on every day. Book a free Business Technology Assessment or call (952) 941-7333 to find out whether your business is prepared or reactive.
+
+## Frequently Asked Questions
+
+**How often should we test our backups?**
+At least quarterly for a full restore test, with backup success checked weekly. A backup that has never been restored is an assumption, not a safeguard.
+
+**What is a tabletop exercise?**
+A structured discussion where your team walks through a disruption scenario and talks through each decision. No systems go down, and the gaps it reveals are usually easy to fix.
+
+**How long should recovery take?**
+It depends on the business, which is exactly why you define recovery time and recovery point objectives in advance, then test whether you can meet them.
+
+**Does cyber insurance replace a recovery plan?**
+No. Insurance can help with costs after an incident, but it does not restore your systems or keep your team working while recovery happens.
+
+## Sources
+
+- Veracity Technologies, "5 Signs Your Business Needs Better Recovery Planning," September 21, 2026, https://www.veracitytech.com/blog/5-signs-your-business-is-reacting-instead-of-preparing
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 23, 2025, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "5-things-your-it-service-provider-should-help-you-forecast", "title": "5 Things Your IT Provider Should Help You Budget For", "excerpt": "Your IT provider already knows what is coming, from aging equipment to renewals and end of support dates. Here are the five forecasts to ask for before you lock in next year's budget.", "category": "Managed IT", "published_date": "2026-11-23", "read_time": "5 min read", "content": """Building next year's IT budget should not mean staring at a blank spreadsheet and guessing. Your IT provider already knows a great deal about what is coming: which equipment is aging out, which software is losing support, and which renewals are on the horizon. If you are a CFO or Controller finalizing numbers for next year, ask your provider for the five forecasts below, and walk into the new year with far fewer surprise expenses.
+
+The partnership only works if information flows both ways. Your provider knows your technology. You know where the business is headed. Put the two together and the budget practically writes itself.
+
+## 1. Which equipment is nearing replacement
+
+Aging hardware slows down, breaks more often, and consumes more support time. A good IT provider tracks the age and condition of your computers, servers, networking gear, and other essential technology. They should know which devices are causing trouble and whether warranty coverage is still in place.
+
+Ask directly: what is likely to need replacing in the next 12 to 24 months, and what can realistically wait? Pay close attention to equipment purchased around the same time. Devices bought together tend to reach the end of their useful life together, which can hit a single year's budget hard if you are not prepared. A Twin Cities advisory firm that replaced its laptops in one batch in 2022 should expect that same batch to come due together, and staggering the next round avoids repeating the spike.
+
+## 2. What technology is approaching end of support
+
+Software vendors eventually stop releasing updates and security patches for older products. The software does not suddenly break. It simply stops being protected, and any vulnerability discovered after that date may never get patched. That is an open invitation for attackers looking to access your systems, steal sensitive data, or bring operations to a halt.
+
+Your IT partner should flag these deadlines well in advance. The original post noted two to watch: Windows Server 2016 reaches end of support in January 2027, and Office 2021 follows in October 2026. If your business relies on either, the upgrade cost needs to be on your radar now, not after the deadline passes. A system can run flawlessly today and still demand a spot in next year's budget.
+
+## 3. Which renewals are on the horizon
+
+Technology costs are not limited to new purchases. Software subscriptions, licensing agreements, warranties, and other recurring services all renew on their own schedules, and the notices do not always give you much warning.
+
+Your provider should map these costs out ahead of time, including any known price increases. That gives you room to evaluate what you are actually using, what is no longer necessary, and what might be worth cutting before the renewal date hits. A Minneapolis manufacturer that reviews renewals 90 days early can renegotiate or replace a tool. One that reviews them the week they renew can only pay the invoice.
+
+## 4. Where recurring issues could turn into bigger expenses
+
+How often are you paying to fix the exact same problem? Maybe it is the same handful of computers generating support tickets, a system your team constantly complains is too slow, or equipment that needs repair every few months like clockwork.
+
+When the same issues keep draining time and money, repairing what you have eventually stops making financial sense. A strong IT partner helps you spot the tipping point where replacement becomes the smarter investment, and gives you time to plan and budget for it instead of scrambling when the equipment finally fails. Ask your provider to show you the repeat ticket count by device. The numbers usually make the decision obvious.
+
+## 5. How your business plans could shift your technology needs
+
+Your IT provider knows your technology inside and out. What they cannot predict on their own is where your business is headed next. Hiring five new employees could mean five new computers, extra software licenses, added security coverage, and increased support costs. Opening a new location in the Twin Cities might call for new equipment, connectivity, and infrastructure from the ground up.
+
+The sooner you share these plans, the more time your technology advisor has to build those costs into an accurate forecast. Bring your provider into planning conversations early, not after the lease is signed or the offer letters go out.
+
+## Build a more confident IT budget
+
+You should not have to piece together next year's technology costs alone. Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. We help businesses get ahead of the technology expenses heading their way: assessing what you have today, flagging equipment that may need replacing, accounting for upcoming renewals and end of support dates, and building your business plans directly into the forecast. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**When should we start next year's IT budget?**
+Start at least a quarter before the fiscal year begins. End of support dates and renewal calendars do not move, so early planning costs nothing and late planning costs plenty.
+
+**What if our provider cannot forecast replacements?**
+That is a warning sign in itself. A provider that tracks your assets should be able to name what is aging out and when. If they cannot, ask what asset tracking they actually do.
+
+**How do we handle a big replacement year?**
+Stagger it. Replace the highest risk devices first, extend the rest by a year where it is safe, and spread the remaining spend across two budget cycles.
+
+**Should we budget for growth we have not approved yet?**
+Budget the likely scenario and keep a separate line for conditional growth, so an approved hire does not become an unbudgeted scramble.
+
+## Sources
+
+- Veracity Technologies, "5 Things Your IT Provider Should Help You Budget For," November 23, 2026, https://www.veracitytech.com/blog/5-things-your-it-service-provider-should-help-you-forecast
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "6-free-cybersecurity-improvements-you-can-make-today", "title": "6 Quick Cybersecurity Fixes to Reduce Risk Fast", "excerpt": "You do not need a big project or a big budget to lower your cyber risk this week. These six free fixes close the gaps attackers look for first, and any Twin Cities small business can start them now.", "category": "Cybersecurity", "published_date": "2026-10-26", "read_time": "6 min read", "content": """Cybersecurity is too often framed as a technology issue, yet the real danger usually comes from everyday security basics that have been overlooked, postponed, or applied inconsistently. The direct answer: six free improvements, multi-factor authentication, closing unused accounts, limiting admin rights, turning on automatic updates, using a password manager, and testing your backups, will lower your risk more this week than any single product purchase. If you are an Owner or CEO wondering where to start, start here, because these are the gaps attackers check first.
+
+The stakes are not abstract. The FBI Internet Crime Complaint Center recorded 859,532 complaints and $16.6 billion in reported losses in 2024, a record total and a 33 percent increase from 2023, with phishing and spoofing the most commonly reported crime type at 193,407 complaints. The Verizon 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches, phishing in 16 percent, and the human element present in 60 percent. The six fixes below attack exactly those numbers.
+
+## 1. Enable multi-factor authentication
+
+If multi-factor authentication, usually called MFA, is not turned on yet, make it your first move. MFA requires users to confirm their identity in more than one way before accessing an account or system. That second step may be a code from an authenticator app, a security key, or a fingerprint or facial scan.
+
+Even if a criminal gets hold of a password, MFA can stop them from getting in, because they still have to clear the second check. Prioritize MFA for Microsoft 365 or Google Workspace, banking and payroll tools, cloud storage, VPN access, and critical business applications. Many platforms include MFA at no additional cost, making it one of the simplest and most effective protections you can add right away. A small firm in St. Louis Park can turn it on for the whole team in an afternoon.
+
+## 2. Delete unused accounts
+
+Old accounts tied to former employees, contractors, or vendors can stay active long after they should have been removed. Because they are easy to forget, these accounts can become an open door for attackers. Review your active users and ask three questions about each one: does this person still work with us, does this account still support a real business need, and does the account have the right access level? If the answer to any of these is no, reduce access or close the account completely. Build this check into your offboarding process so it happens the day someone leaves, not months later.
+
+## 3. Limit administrator privileges
+
+Administrator accounts have extensive control over your systems. They can install software, change settings, and disable safeguards, which makes them highly attractive to cybercriminals. Review access across the organization and ask: does this person truly need admin rights to do the job, is there a more appropriate permission level, and should this account still have administrative access?
+
+Remove elevated privileges wherever possible. Limiting access to only what is necessary greatly reduces the damage a compromised account can cause. Most employees need standard accounts for daily work, with a separate admin account used only when something actually requires it.
+
+## 4. Activate automatic updates
+
+Attackers frequently look for software with known security flaws, and updates close those weak points before they can be exploited. Make sure automatic updates are enabled for Windows and macOS, phones and tablets, web browsers, Microsoft Office, antivirus software, and core business applications. Verizon's 2025 report found vulnerability exploitation was the initial access vector in 20 percent of breaches, up 34 percent year over year, which is exactly the risk unpatched software invites. Staying current is one of the easiest ways to reduce exposure.
+
+## 5. Use a password manager
+
+Strong passwords are essential, but expecting employees to memorize a unique, complex password for every account is not realistic. A password manager helps users create strong passwords, store them securely, avoid reusing passwords, and share credentials safely when needed. The less your team has to rely on memory, the less likely they are to reuse weak or predictable passwords. That matters because stolen credentials remain the most common way attackers get in, and a password reused across five sites is five doors opened by one theft.
+
+## 6. Test your backups
+
+Backups are valuable only if they can be restored when you need them. If recovery fails, the backup did not really protect the business. Review your backup process and ask: when did our last successful backup run, has anyone performed a restore test recently, and how long would full recovery take? A backup only delivers protection when it works under pressure, so schedule a restore test this month and repeat it quarterly.
+
+## Small improvements can deliver major protection
+
+Cybersecurity does not have to begin with a large project or major spending. It starts by fixing the gaps that create unnecessary risk. These six actions help reduce common threats without adding complexity or cost. What matters most is following through and keeping these protections in place.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. We can help you turn these steps into a clear action plan tailored to your team, systems, and risk profile. Book a free Business Technology Assessment or call (952) 941-7333 to see where you are exposed and what practical steps to take next.
+
+## Frequently Asked Questions
+
+**Which fix should we do first?**
+Turn on MFA for email and financial accounts. It is free on most platforms, takes minutes per user, and blocks the most common attack path.
+
+**Is a password manager safe?**
+Yes, a reputable password manager with a strong master password and MFA is far safer than reusing passwords or keeping them in a spreadsheet. It also lets you revoke shared credentials instantly when someone leaves.
+
+**How often should updates run?**
+Automatically, as soon as they are available for operating systems and browsers. Schedule a monthly window for business applications that need testing first.
+
+**Do these fixes replace antivirus or a firewall?**
+No. They are the foundation, not the whole building. They make the rest of your security stack far more effective.
+
+## Sources
+
+- Veracity Technologies, "6 Quick Cybersecurity Fixes to Reduce Risk Fast," October 26, 2026, https://www.veracitytech.com/blog/6-free-cybersecurity-improvements-you-can-make-today
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 23, 2025, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Verizon, "2025 Data Breach Investigations Report," April 2025, summary at https://www.beyondidentity.com/resource/verizon-dbir-2025-access-is-still-the-point-of-failure
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "dont-get-hooked-understanding-and-preventing-phishing-scams", "title": "AI Phishing Threats and How to Protect Your Business", "excerpt": "Phishing is now the most reported internet crime in America, and AI has made the bait harder to spot. Here is how modern phishing works, what it costs, and the defenses that actually stop it.", "category": "Cybersecurity", "published_date": "2026-10-12", "read_time": "5 min read", "content": """Phishing is the most reported internet crime in the United States, and artificial intelligence has just made it harder to spot. The direct answer for any Twin Cities business is this: assume your team will be targeted, train them to recognize AI polished scams, and layer technical controls so a single click does not become a breach. If you are an Owner or CEO, the pain is simple to name: one convincing email can hand an attacker your email, your bank access, or your client data, and the FBI says it happens to American businesses every day.
+
+The numbers back that up. The FBI Internet Crime Complaint Center received 193,407 phishing and spoofing complaints in 2024, more than any other crime type, as part of 859,532 total complaints and a record $16.6 billion in reported losses. Business email compromise, the expensive cousin of phishing, caused $2.77 billion in reported losses across 21,442 incidents in 2024. Verizon's 2025 Data Breach Investigations Report found phishing was the initial access vector in 16 percent of breaches, with stolen credentials at 22 percent, and the human element present in 60 percent of breaches overall.
+
+## What AI changed about phishing
+
+Old phishing was easy to spot: broken English, a generic greeting, a suspicious link. AI removed those tells. Attackers now generate flawless, personalized messages in seconds, written in the voice of a real vendor, client, or executive. They scrape LinkedIn and company websites to reference real projects, real invoices, and real people.
+
+The newest tricks go beyond email:
+
+- Voice cloning can fake a short call from your boss asking for a wire transfer or a gift card run.
+- Fake invoices arrive that match your real vendors, your real amounts, and your real payment terms.
+- QR code phishing, sometimes called quishing, hides the malicious link inside an image your email filter cannot read.
+- Messages now arrive by text, Teams, and Slack, not just email, because employees trust those channels more.
+
+A finance manager in Minneapolis who would never click a sloppy email can still be fooled by a perfect one that mentions a real project. That is why the defense has to be layered, not just a warning in a staff meeting.
+
+## The scams to watch for in Minnesota
+
+The patterns hitting Twin Cities firms follow the same playbook. An email that looks like it comes from the owner asks accounting to wire funds for a confidential acquisition. A message that appears to come from Microsoft 365 warns that a password expires today and links to a convincing login page that steals the credential. A text claims a package delivery failed and asks the recipient to click a link. A vendor's email address is spoofed by one letter, and the bank details on an invoice are quietly changed.
+
+Each of these works because it creates urgency and looks routine. Slowing down is the defense. Any request involving money, credentials, or a change in payment details deserves a second check through a separate channel, such as calling a known number rather than replying to the message.
+
+## Five defenses that actually work
+
+Technology and training have to work together. No single control stops everything, but the combination below closes most of the gaps attackers rely on.
+
+- Turn on multi-factor authentication for email, banking, and cloud apps. Even if a password is stolen, the second factor blocks the login.
+- Use email filtering and link protection that checks links at the moment of the click, not just at delivery.
+- Run short, realistic phishing simulations and training. A ten minute session every month beats a one hour lecture once a year, because it builds the habit of pausing before clicking.
+- Set a clear rule: no wire transfer, payment change, or credential reset happens from a single email. Verify by phone using a number you already have, not one in the message.
+- Keep software updated and limit admin rights, so a click that does slip through has less room to spread.
+
+## What to do when someone clicks
+
+A click is not a catastrophe if the response is fast. The employee should report it immediately, without fear of blame, and IT should reset the password, revoke active sessions, check for forwarding rules added to the mailbox, and review recent logins. Speed matters more than embarrassment. The Verizon data shows credential abuse follows phishing quickly, so the window to act is measured in minutes, not days.
+
+## Do not get hooked
+
+Phishing works because it targets people, not firewalls, and AI has made the bait nearly perfect. The businesses that stay safe are not the ones with the most expensive tools. They are the ones where employees know what to look for, verify unusual requests, and report mistakes fast, backed by MFA and filtering that catch what humans miss.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. We run phishing simulations, security awareness training, and email protection for Twin Cities businesses, and we can show you where your team is most exposed. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**Why is phishing still so effective?**
+Because it targets trust and urgency, not technology. AI has removed the spelling errors and awkward phrasing that used to give scams away.
+
+**Does MFA stop phishing?**
+It stops most of it. Stolen passwords become far less useful when a second factor is required. The exception is advanced attacks that trick users into approving a prompt, which is why training and number matching matter too.
+
+**How often should we train employees?**
+Monthly in short sessions, with a simulated phishing test each month. Habits fade fast, and new scams arrive constantly.
+
+**What is business email compromise?**
+A scam where an attacker impersonates an executive, vendor, or client to trick a business into sending money or sensitive data. It caused $2.77 billion in reported losses in 2024, according to the FBI IC3.
+
+## Sources
+
+- Veracity Technologies, "AI Phishing Threats and How to Protect Your Business," October 12, 2026, https://www.veracitytech.com/blog/dont-get-hooked-understanding-and-preventing-phishing-scams
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 23, 2025, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Verizon, "2025 Data Breach Investigations Report," April 2025, summary at https://www.beyondidentity.com/resource/verizon-dbir-2025-access-is-still-the-point-of-failure
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "how-long-does-a-cybersecurity-risk-assessment-take", "title": "How Long Does a Cybersecurity Risk Assessment Take, and What Happens Afterward?", "excerpt": "Most small business risk assessments take two to six weeks from kickoff to findings, and the work that follows matters more than the report itself. Here is the timeline, what happens at each stage, and how to use the results.", "category": "Cybersecurity", "published_date": "2026-11-03", "read_time": "5 min read", "content": """A cybersecurity risk assessment for a small or midsize business typically takes two to six weeks from kickoff to a finished report, and the work that follows matters more than the report itself. If you are a Compliance Lead or Owner trying to answer a client questionnaire, satisfy a cyber insurance application, or simply find out where your business stands, the timeline depends on the size of your environment, how many systems and locations you have, and how quickly your team can provide access and answers.
+
+That timeline surprises people in both directions. Some expect a one day scan. Others expect a six month project. The truth sits in the middle, and knowing the stages in advance keeps the process from stalling.
+
+## Why the timeline matters
+
+A risk assessment is not a product you buy. It is a structured look at what you have, what could go wrong, and what would hurt most. The stakes justify the effort: IBM's 2025 Cost of a Data Breach Report put the global average breach cost at $4.44 million, and the average cost in the United States at a record $10.22 million. Small businesses do not pay averages, but they do pay downtime, recovery costs, and lost client trust, and a single incident can consume a quarter's profit. An assessment tells you where that risk actually lives before an attacker finds it for you.
+
+## Stage 1: Scoping, usually 3 to 5 business days
+
+Everything starts with scope. The assessor learns what the business does, how many users and devices you have, which systems hold sensitive data, whether you operate in one Twin Cities office or several, and which frameworks or requirements apply, such as cyber insurance questions, a client security review, CMMC, or HIPAA.
+
+This stage produces a clear list of what is in scope and what is not, who the points of contact are, and what access the assessor needs. Skipping scoping is how assessments drag on: the assessor discovers a second office, a cloud app nobody mentioned, or a vendor with network access halfway through the work.
+
+## Stage 2: Discovery and evidence gathering, usually 1 to 2 weeks
+
+This is the bulk of the work. The assessor reviews your network and device inventory, checks how accounts and permissions are set up, looks at backup and recovery processes, examines policies, and interviews key staff. They will also review external exposure, such as what an attacker can see from the internet, and how email and remote access are protected.
+
+For a typical Twin Cities firm with 20 to 100 users in one or two locations, expect this stage to take one to two weeks, with most of the effort on the assessor's side. Your team's job is to answer questions and provide access promptly. Delays here are the most common reason assessments run long.
+
+## Stage 3: Analysis and risk scoring, usually 1 week
+
+With the evidence gathered, the assessor maps findings to actual risk: how likely is each weakness to be exploited, and how bad would it be if it were? A missing patch on a server holding client financial data scores higher than the same gap on a spare laptop. The result is a prioritized list, not a pile of undifferentiated warnings.
+
+Good assessments also separate quick wins from larger projects. Turning on MFA or fixing a backup gap can happen this week. Replacing an aging firewall or segmenting a network belongs in a planned budget cycle.
+
+## Stage 4: Report and readout, usually 3 to 5 business days
+
+The final report should be readable by a nontechnical leader: what was found, how serious each item is, what to fix first, and what it will take. The readout meeting matters as much as the document, because it is where your team asks questions and agrees on priorities. If a report arrives without a conversation, ask for one.
+
+## What happens afterward
+
+The report is the starting point, not the finish line. What follows usually has three parts. First, fix the critical items, typically within 30 days: exposed credentials, missing MFA, unpatched internet facing systems, and untested backups. Second, plan the medium term items over the next quarter: policy updates, training, and configuration changes. Third, schedule the next assessment. Annual assessments are the norm, with a lighter review after major changes such as a new office, a new system, or a merger.
+
+Cyber insurance carriers and clients increasingly ask for evidence that findings were actually fixed, not just found, so keep records of what changed and when. That paper trail is often the difference between a smooth renewal and a difficult one.
+
+## How to keep it on schedule
+
+Three habits keep an assessment inside its timeline. Name one internal owner who can answer questions and grant access. Gather the basics before kickoff: a user list, a device inventory, and your current policies. And agree on the scope in writing before work starts, so a surprise system does not appear in week three.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. Our assessments cover your environment, your processes, and your people, and we stay to help fix what we find. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**How long does a risk assessment take for a very small business?**
+A business with under 20 users and a single location can often complete one in two to three weeks, provided access and answers come quickly.
+
+**Will an assessment disrupt our work?**
+Very little. Most of the work is review and interviews. Any scanning is scheduled in advance and usually runs outside business hours.
+
+**What do we get at the end?**
+A prioritized findings report, a risk rating for each item, recommended fixes in order of importance, and a readout meeting to agree on next steps.
+
+**How is a risk assessment different from a vulnerability scan?**
+A scan finds technical weaknesses on your systems. An assessment goes further, covering people, processes, policies, and business impact, and it explains which weaknesses actually matter most to you.
+
+## Sources
+
+- Veracity Technologies, "How Long Does a Cybersecurity Risk Assessment Take, and What Happens Afterward?" November 3, 2026, https://www.veracitytech.com/blog/how-long-does-a-cybersecurity-risk-assessment-take
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 23, 2025, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+"""},
+    {"slug": "is-multi-factor-authentication-enough-for-small-business", "title": "Is Multi-Factor Authentication Enough to Protect a Small Business on Its Own?", "excerpt": "MFA is the single most effective free control a small business can turn on, and it is not enough by itself. Here is what MFA stops, where attackers get around it, and the four layers that complete the job.", "category": "Cybersecurity", "published_date": "2026-11-05", "read_time": "5 min read", "content": """Multi-factor authentication is the single most effective free security control a small business can turn on, and it is not enough on its own. The direct answer: MFA blocks the vast majority of password based attacks, because a stolen password alone no longer opens the door, but attackers have adapted with prompt bombing, stolen sessions, and social engineering, so MFA has to sit inside a layered defense. If you are an Owner or CEO who turned on MFA and wondered whether the job was done, this post is the honest follow up.
+
+The case for MFA is strong. Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches, and 88 percent of basic web application attacks involved stolen credentials. A second factor, a code from an authenticator app, a security key, or a fingerprint, breaks that chain in most cases. The FBI's 2024 Internet Crime Report recorded 193,407 phishing and spoofing complaints, the largest single crime category, and most of those attacks exist to harvest a password. MFA makes the harvested password far less useful.
+
+## What MFA does well
+
+MFA protects against the most common attacks a Twin Cities small business faces. Credential stuffing, where attackers try passwords leaked from other breaches against your accounts, fails at the second factor. Phishing pages that steal a password still leave the attacker without the code. Lost or guessed passwords stop being a crisis.
+
+It is also cheap and fast. Microsoft 365 and Google Workspace include MFA at no extra cost, and most business apps support authenticator apps or security keys. A firm in Eden Prairie can enable it for the whole team in an afternoon, starting with email, banking, payroll, and cloud storage, then extending it to VPN access and every critical application.
+
+## Where MFA falls short
+
+Attackers adapt, and four gaps are worth knowing about. First, MFA fatigue, also called prompt bombing: an attacker triggers repeated approval requests until a tired employee taps approve just to make them stop. Second, session theft: if malware steals an active session cookie, the attacker can ride an already authenticated session without facing MFA at all. Third, social engineering: a convincing caller can talk an employee into reading out a code or approving a prompt. Fourth, gaps in coverage: MFA on email means little if the VPN, the accounting system, or a cloud admin account is left unprotected.
+
+None of this makes MFA useless. It makes MFA one layer instead of the whole wall. A locked front door is essential, and you still need windows that lock and an alarm that sounds when one breaks.
+
+## The four layers that complete the job
+
+Think of protection in layers, each one catching what the previous one missed.
+
+- Strong, unique passwords with a password manager, so one leaked password does not open five accounts. Pair this with conditional access rules that block logins from unusual locations or require a stronger factor for admin accounts.
+- Phishing resistant MFA where it matters most. Security keys or number matching in authenticator apps defeat prompt bombing far better than a simple approve button, so use them for administrators and financial accounts first.
+- Endpoint protection and patching. Verizon's 2025 report found vulnerability exploitation was the initial access vector in 20 percent of breaches, up 34 percent year over year, so keeping devices updated closes the door session theft walks through.
+- Monitoring and fast response. Someone, or a service, should be watching for impossible travel logins, password resets at odd hours, and new inbox forwarding rules, and should act within minutes. Veracity's managed detection covers this for clients around the clock, with a 15 minute response SLA for critical issues.
+
+## How to roll MFA out without a revolt
+
+The fastest way to kill a security rollout is to surprise people with it. Announce the change a week ahead, explain in plain language why it protects them as well as the business, and give everyone a short setup session. Start with administrators and finance, then roll out team by team. Keep a documented process for lost phones and new devices so nobody is locked out on a Monday morning with a client waiting. And turn on number matching instead of simple push approvals wherever your platform supports it, because that single setting defeats most MFA fatigue attacks.
+
+## The bottom line
+
+Is MFA enough on its own? No. Is it the first thing to do, and the control you should never skip? Absolutely. A small business with MFA everywhere, a password manager, patched devices, phishing training, and someone watching the alerts is dramatically harder to break into than one with any single control alone, including MFA by itself.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. We can audit your MFA coverage, close the gaps, and add the monitoring that catches what MFA misses. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**What is the best type of MFA for a small business?**
+Authenticator apps with number matching for most staff, and hardware security keys for administrators and anyone who moves money. Avoid SMS codes where a stronger option exists.
+
+**Does MFA slow employees down?**
+Barely. A code or fingerprint takes seconds, and modern systems remember trusted devices so the prompt appears mainly on new sign ins.
+
+**What is MFA fatigue?**
+An attack where a criminal floods a user with approval prompts until the user taps approve to stop the noise. Number matching and security keys defeat it.
+
+**Should MFA cover every account?**
+Every account that holds business data, money, or administrative power, yes. Start with email and finance, then extend to everything else.
+
+## Sources
+
+- Veracity Technologies, "Is Multi-Factor Authentication Enough to Protect a Small Business on Its Own?" November 5, 2026, https://www.veracitytech.com/blog/is-multi-factor-authentication-enough-for-small-business
+- Verizon, "2025 Data Breach Investigations Report," April 2025, summary at https://www.beyondidentity.com/resource/verizon-dbir-2025-access-is-still-the-point-of-failure
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 23, 2025, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "it-costs-to-plan-for-with-every-new-hire", "title": "IT Costs to Plan for With Every New Hire", "excerpt": "A new hire costs far more in technology than a laptop. From licenses and security to onboarding time, here is the full checklist Twin Cities managers should budget before the first day.", "category": "Managed IT", "published_date": "2026-11-02", "read_time": "6 min read", "content": """Every new hire carries a technology bill that goes far beyond a laptop, and most of it is due before the first day of work. The direct answer: budget for the device, the software licenses, the accounts and security, and the setup time, and you will stop being surprised by onboarding costs. If you are an Operations VP or Owner hiring in the Twin Cities, the pain is familiar: the offer is signed, the start date is set, and suddenly IT is scrambling for equipment, licenses, and access while the new employee waits to do any real work.
+
+Planning this cost in advance is not just tidier. It shortens time to productivity, avoids security gaps from rushed setups, and keeps hiring from quietly blowing up the IT budget.
+
+## 1. The device and workspace
+
+The biggest line item is usually the computer, plus a monitor or two, a keyboard, a mouse, a headset, and a docking station. A knowledge worker in a Minneapolis office typically needs a laptop in the range a business would expect for a reliable machine with a warranty, while a designer, engineer, or estimator may need a more powerful workstation and specialized peripherals.
+
+Do not forget the workspace itself. A new desk in the office may need a network drop, power, and a phone. A remote or hybrid employee in the Twin Cities needs a secure home setup, which usually means a company owned device rather than a personal one, and a clear policy about what the company supports.
+
+Buying a standard configuration for each role, instead of a custom order every time, cuts both cost and delay. Keep one spare laptop ready to go, and a new hire can start on day one even if a shipment slips.
+
+## 2. Software licenses and subscriptions
+
+Every new employee needs licenses, and they add up fast. Email and Microsoft 365 or Google Workspace, plus role specific tools: accounting software for finance, a CRM for sales, design or estimating software for a construction firm, or a practice system for a professional services office. Many of these are billed per user per month, so each hire raises the monthly run rate permanently, not just once.
+
+Review the license list before the start date. Assign only what the role needs, set a reminder to review the seat after 90 days, and reclaim licenses the day someone leaves. Unused seats are one of the most common quiet drains on a small business IT budget.
+
+## 3. Accounts, access, and security
+
+This is the part rushed onboarding most often gets wrong. A new hire needs an email account, network access, VPN credentials, and access to shared drives and applications, each with the right permission level. They also need security coverage from day one: multi-factor authentication enrolled, endpoint protection installed, and a password manager set up before they create their first password.
+
+Security is not an afterthought here. Verizon's 2025 Data Breach Investigations Report found credential abuse was the initial access vector in 22 percent of breaches, and the human element was present in 60 percent. A new account with weak setup, or an account that keeps more access than the role needs, is exactly the kind of gap attackers look for. A written onboarding checklist, with security steps built in rather than bolted on, prevents it.
+
+## 4. Setup and onboarding time
+
+Someone has to do the work, and that time has a cost. Unboxing and configuring the device, creating accounts, installing software, enrolling security, and walking the new hire through the basics typically takes several hours of IT time per person. Multiply that by a hiring wave, say five people joining a St. Paul firm in one quarter, and it is a real workload.
+
+Standardization is the fix. A documented onboarding process with a standard device image, a license checklist by role, and an account template turns a day of improvisation into a few hours of execution. It also means the new hire's first day is spent learning the job, not waiting for a password reset.
+
+## 5. The ongoing cost nobody budgets
+
+The first month is only the beginning. Each new hire adds recurring monthly costs in licenses and security, ongoing support time, more data in backups and cloud storage, and eventually a replacement device in four to five years. Hiring plans and IT budgets should be built together, with headcount forecasts shared early so the technology cost per hire is visible next to payroll.
+
+A simple rule helps: when leadership approves a hire, IT prices the full first year technology cost for that role at the same time. No surprises, no scramble, and the new employee starts productive on day one.
+
+## A checklist you can use
+
+Before the start date, confirm each item:
+
+- Device ordered, configured, and tested, with warranty registered.
+- Email, network, VPN, and application accounts created with the right permissions.
+- MFA enrolled and password manager set up.
+- Licenses assigned by role, with a 90 day review reminder.
+- Endpoint protection installed and updates enabled.
+- A short security orientation scheduled for week one.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. We build standard onboarding checklists and per role technology profiles for Twin Cities businesses, so every new hire starts fast and secure. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**What is the biggest hidden cost of a new hire?**
+Recurring licenses. A laptop is a one time cost, but every per user subscription raises the monthly run rate for as long as that person stays.
+
+**How early should IT know about a new hire?**
+Two weeks minimum, and earlier for specialized roles. That is enough time to order, configure, and test without paying for rush shipping or cutting corners on security.
+
+**Should remote employees get company devices?**
+Yes, in almost every case. A company owned, managed device is easier to secure, update, and wipe if it is lost than a personal machine with mixed use.
+
+**What happens to technology when someone leaves?**
+Accounts should be disabled the same day, licenses reclaimed, the device returned and wiped, and shared passwords rotated. Build this into an offboarding checklist, just like onboarding.
+
+## Sources
+
+- Veracity Technologies, "IT Costs to Plan for With Every New Hire," November 2, 2026, https://www.veracitytech.com/blog/it-costs-to-plan-for-with-every-new-hire
+- Verizon, "2025 Data Breach Investigations Report," April 2025, summary at https://www.beyondidentity.com/resource/verizon-dbir-2025-access-is-still-the-point-of-failure
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "mdr-vs-mssp-minneapolis-smb", "title": "MDR vs. MSSP: Which Cybersecurity Service Does a Minneapolis SMB Actually Need?", "excerpt": "MDR and MSSP sound similar and solve different problems. Here is what each one does, what it costs your team in time and attention, and how a Minneapolis small business should choose.", "category": "Cybersecurity", "published_date": "2026-10-22", "read_time": "6 min read", "content": """MDR and MSSP sound similar, and they solve different problems. The direct answer: an MSSP manages your security tools and watches for alerts, while MDR adds active threat hunting and hands on incident response, with analysts who investigate and act on threats around the clock. If you are an Owner or CEO in Minneapolis trying to choose between them, the deciding question is not which one is better. It is whether you need someone to manage your security stack, or someone to hunt threats and respond when one gets through.
+
+Both exist because small businesses cannot hire a security team. The FBI Internet Crime Complaint Center recorded 859,532 complaints and $16.6 billion in reported losses in 2024, and Verizon's 2025 Data Breach Investigations Report found the human element present in 60 percent of breaches. Attackers do not wait for business hours, and neither should your defense.
+
+## What an MSSP does
+
+A managed security service provider, or MSSP, takes over the day to day operation of your security technology. That usually includes managing firewalls, antivirus and endpoint protection, email security, and vulnerability scanning, plus monitoring alerts and sending you reports. Think of it as outsourcing the care and feeding of your security tools.
+
+The strength of an MSSP is breadth and consistency. Patches get applied, rules get tuned, and someone is watching the dashboard. The limitation is depth: a traditional MSSP monitors and alerts, but it may not investigate every alert deeply or take action inside your network without your approval. If your team is small and you mainly need your tools managed well, an MSSP is often the right starting point.
+
+## What MDR does
+
+Managed detection and response, or MDR, starts where monitoring stops. An MDR service collects telemetry from your endpoints, network, and cloud apps, hunts actively for signs of an attack, and responds when it finds one, isolating a compromised device, killing a malicious process, or blocking an attacker, often within minutes and without waiting for your team to wake up.
+
+That response capability is the real difference. A phishing click at 11 pm on a Friday is contained before Monday morning, instead of sitting undiscovered all weekend. MDR is built for the reality that prevention fails sometimes: Verizon's 2025 report found credential abuse was the initial access vector in 22 percent of breaches and vulnerability exploitation in 20 percent, so the question is not only how attackers get in, but how fast someone notices and acts.
+
+## How they compare
+
+Use this comparison to frame the conversation with any provider:
+
+- Scope: an MSSP manages security tools broadly. MDR focuses on detecting and responding to active threats.
+- Response: an MSSP typically alerts you and advises. MDR investigates and takes action directly.
+- Staffing: an MSSP replaces the need for tool administrators. MDR replaces the need for a security operations team.
+- Best fit: an MSSP fits a business that needs solid, managed protection. MDR fits a business that holds sensitive client data, faces compliance pressure, or cannot afford hours of undetected attacker access.
+
+Many Twin Cities firms end up with a blend: an MSSP style foundation for firewalls and endpoint protection, with MDR layered on top for the detection and response that actually stops an intrusion in progress.
+
+## What to ask before you sign
+
+Whether you are evaluating an MSSP, an MDR service, or a provider that offers both, ask these questions and get the answers in writing:
+
+- Who responds to an alert at 2 am, and what can they do without calling me first?
+- What is the guaranteed response time for a critical alert? Veracity, for example, offers a 15 minute response SLA for critical issues.
+- Does the service include threat hunting, or only alert monitoring?
+- What happens during an incident: do you isolate devices and contain the threat, or do you only notify us?
+- How do you report, and will I understand the report without a security background?
+
+The answers reveal whether you are buying management, response, or both, and whether the provider's team or an automated system is doing the work.
+
+## How a Minneapolis SMB should choose
+
+Start with your risk, not the acronym. A firm that stores client financial records, health information, or defense related data has more to lose from hours of undetected access, and MDR's active response is worth the investment. A smaller firm with standard office systems and a solid backup strategy may do well starting with managed security and adding MDR as it grows.
+
+Also weigh your internal capacity honestly. If nobody on your team can investigate an alert at midnight, paying for a service that only sends alerts does not solve the problem. The service has to match the team you actually have, not the team you wish you had.
+
+## The bottom line
+
+An MSSP manages your security tools. MDR hunts threats and responds to them. Most Minneapolis small businesses need both functions eventually, and the right order depends on your data, your compliance obligations, and your tolerance for undetected intrusions. What you should not do is assume a firewall and antivirus alone are a security program, because the breach data says otherwise.
+
+Veracity Technologies is a SOC 2 certified managed IT provider based in Minnetonka, serving more than 60 clients across the Twin Cities, with a 15 minute response SLA for critical issues and a 4.9 out of 5 client rating. Our managed detection and response service watches your environment around the clock and acts on threats fast, backed by the managed IT foundation that keeps your systems healthy. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Frequently Asked Questions
+
+**Can an MSSP and MDR be the same provider?**
+Yes, and they often are. Many providers offer managed security as the foundation and MDR as the active response layer on top. Ask which parts of each you are actually buying.
+
+**Do we still need antivirus if we have MDR?**
+Yes. MDR builds on endpoint protection, it does not replace it. Prevention and detection are partners, not substitutes.
+
+**Is MDR only for large companies?**
+No. MDR is increasingly built for small and midsize businesses, because they face the same attackers with smaller teams. The key is a service priced and scoped for your size.
+
+**What does MDR cost compared to an MSSP?**
+MDR typically costs more, because it includes analyst time and active response rather than tool management alone. The comparison that matters is the cost of undetected attacker access for several hours versus the price of stopping it in minutes.
+
+## Sources
+
+- Veracity Technologies, "MDR vs. MSSP: Which Cybersecurity Service Does a Minneapolis SMB Actually Need?" October 22, 2026, https://www.veracitytech.com/blog/mdr-vs-mssp-minneapolis-smb
+- FBI Internet Crime Complaint Center, "2024 Internet Crime Report," April 23, 2025, https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf
+- Verizon, "2025 Data Breach Investigations Report," April 2025, summary at https://www.beyondidentity.com/resource/verizon-dbir-2025-access-is-still-the-point-of-failure
+- IBM, "Cost of a Data Breach Report 2025," July 30, 2025, https://www.ibm.com/downloads/documents/us-en/131cf87b20b31c91
+"""},
+    {"slug": "midyear-reality-check-whats-changed-in-your-systems-since-january", "title": "Midyear IT Review: 4 Areas to Check Now", "excerpt": "Six months of hiring, new tools, and quick decisions have quietly changed your systems. A midyear review of access, tools, backups, and ownership catches the drift before it turns into a costly problem.", "category": "Managed IT", "published_date": "2026-07-13", "read_time": "5 min read", "content": """Your systems in July are not the systems you had in January, and that drift is exactly where risk hides. For an Owner or CEO, the pain is simple: you approved new hires, new tools, and quick fixes to keep momentum high, but nobody went back to check what those changes left behind.
+
+A midyear review is not a big project. It is four focused checks that tell you whether access, tools, backups, and ownership still match the business you run today. Do it now, while the gaps are still cheap to close, and your second half runs on facts instead of assumptions.
+
+## 1. Access was expanded. Has it been reviewed?
+
+New hires needed fast access. Employees moved into new roles and inherited extra permissions. Temporary access was granted to cover a project or an absence. That is normal growth, and it is also how access quietly piles up.
+
+The problem is that access is rarely revisited once the immediate need passes. Months later, a Twin Cities manufacturer we would describe in general terms can find that a former employee still has an active login, or that a project manager can still open financial folders from a role they left in March. Stolen credentials were the initial entry point in 22 percent of breaches in the Verizon 2025 Data Breach Investigations Report, which is why stale access deserves attention even when nothing looks wrong.
+
+Ask these questions in July:
+
+- Who can reach your financial systems, client data, and admin consoles right now?
+- Do former employees still have any active accounts?
+- Does anyone hold access their current role does not require?
+
+If answering takes more than a few minutes, that is your answer. A quarterly access review, tied to hiring and departures, keeps the list honest.
+
+## 2. Your tools fixed problems and created new ones
+
+Each tool decision made sense on its own. Sales added a CRM. Marketing adopted a campaign platform. Finance brought in billing software. Operations picked a project tool that felt lightweight. Together, they created a stack nobody fully owns.
+
+Data now lives in more places, integrations were built quickly and never fully checked, and reporting is inconsistent across departments. A distributor in Plymouth, for example, might find the same customer listed three ways in three systems, and nobody can say which record is right. The damage shows up slowly: slower decisions, duplicate work, and gaps no one is responsible for.
+
+A midyear tool inventory fixes the fog. List every application, who uses it, what it costs, and who owns it. Look for overlap, orphaned tools from departed employees, and integrations that were never tested. Then assign one owner to the full picture, not just to each tool.
+
+## 3. Your backup and recovery plan is probably assumed
+
+Most businesses have backups and assume that means they are protected. But recovery is rarely tested, the timeline for restoring operations is unclear, and ownership of the process is often undefined.
+
+Having backups is not the same as being able to recover. When ransomware, a server failure, or an accidental deletion hits, the first question is often, "Wait, who handles this?" That is the wrong time to find out.
+
+Test one restore before the end of July. Pick a real folder or a real system, restore it, and time the result. Confirm who runs the process, how long it takes, and what your team does while systems are down. A test that finds a gap in July is a gift. The same gap discovered during a real incident is a crisis.
+
+## 4. Responsibility has become unclear as the business has grown
+
+There was a time when ownership was easy to understand. Your internal team managed some systems, vendors handled others, and responsibilities were loosely defined even if they were never formally documented.
+
+Then the business grew, vendors were added, and roles shifted. Now, when an issue crosses multiple systems or providers, the lead is decided on the spot. Problems get passed around, small issues linger, and no one is fully sure who is supposed to fix what.
+
+Write it down. For each core system, name one accountable owner, one backup contact, and the vendor responsible for support. Post it where your team can find it. Clarity here is worth more than any new tool, because it removes the delay between "something is wrong" and "someone is fixing it."
+
+## Frequently Asked Questions
+
+### How often should a business review who has access to what?
+
+At least quarterly, and every time someone joins, changes roles, or leaves. Access reviews are most effective when they are a routine habit rather than a once-a-year event.
+
+### What is the most common midyear IT surprise?
+
+Stale access and forgotten tools. Both are invisible in day-to-day work, both cost money or create risk, and both are easy to fix once someone looks.
+
+### Do we need to replace our backups if the test fails?
+
+Not necessarily. A failed test usually points to a configuration or process gap, such as an incomplete backup set or an unclear restore procedure. Fix the gap, then test again.
+
+### Who should own the midyear review?
+
+The Owner or CEO should sponsor it, but the work belongs to whoever owns IT day to day, whether that is an internal lead or a managed IT partner. The key is one accountable name, not a committee.
+
+## The bottom line
+
+Most risk does not come from what is broken. It comes from what changed and was never revisited. The businesses that stay ahead are not doing anything complicated. They know who has access to what, they have confirmed their backups work, and they understand who owns each part of the process when something fails.
+
+If you would like a second set of eyes on your midyear review, Veracity Technologies can help. Book a free Business Technology Assessment or call (952) 941-7333. We serve Twin Cities businesses from our Minnetonka office, with a 15-minute response for critical issues and a 4.9 out of 5 client rating across 60 plus clients.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report, published April 2025. Stolen credentials were the initial access vector in 22 percent of breaches. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- Veracity Technologies, Midyear IT Review: 4 Areas to Check Now, published July 13, 2026. https://www.veracitytech.com/blog/midyear-reality-check-whats-changed-in-your-systems-since-january
+"""},
+    {"slug": "more-tools-wont-fix-your-weak-security", "title": "How an Overloaded Security Stack Increases Risk", "excerpt": "Every new security tool promised to close a gap, but a crowded stack can slow response, bury real alerts, and leave dangerous gaps. Strategy, not volume, is what makes security work.", "category": "Cybersecurity", "published_date": "2026-10-19", "read_time": "6 min read", "content": """Adding another security tool feels like progress, but a crowded stack can make your business less secure, not more. For an Operations VP, the pain is familiar: your team juggles dashboards, chases alerts, and pays for overlapping products, yet nobody can say with confidence where the real gaps are.
+
+Stronger security is not about buying more software. It is about making sure the tools you already have are aligned, properly configured, and built around a clear strategy. Before you invest in another product, look at the four ways an overloaded stack quietly increases risk.
+
+## 1. More tools mean more complexity
+
+Most crowded security environments begin with good intentions. One tool is purchased for email protection, another for endpoint security, another for backup and recovery, and another for access management. Each solution addresses a real concern.
+
+Over time, a new challenge appears: no one has a complete picture of how every tool works together. Teams bounce between dashboards, review separate reports, manage renewals, and keep track of which product covers which threat. That friction slows response times and makes blind spots easier to miss.
+
+Consider a 40-person firm in Eden Prairie with six security products and no single owner for the stack. When a suspicious login appears, the team has to check three consoles to decide whether it matters. By the time they agree, the window to act has narrowed. Small gaps stay hidden long enough to damage reputation and revenue.
+
+## 2. Too many alerts can bury real threats
+
+Alerts are only useful when someone can interpret them, prioritize them, and act fast. When every tool sends its own stream of notifications, your team is left sorting through a constant flood of warnings. Some alerts are harmless, some need quick review, and others point to an active threat. The challenge is identifying which is which before the situation escalates.
+
+That is where alert fatigue becomes a real problem. People begin to scan instead of investigate because the queue never ends. A suspicious login, an unusual file transfer, or a malware detection can sit unattended simply because it blends in with everything else.
+
+The global average cost of a data breach was 4.44 million dollars in the IBM Cost of a Data Breach Report 2025, and in the United States it reached a record 10.22 million dollars. A single missed alert can be the difference between a contained incident and a number like that. Consolidating alerts into one monitored queue, with clear severity levels, turns noise back into signal.
+
+## 3. Duplicate software drains time and budget
+
+An oversized stack often hides duplicate spending. You may be paying for multiple products that do nearly the same job. That overlap affects more than your budget. It also creates more work for the people responsible for security, who must review multiple systems, compare reports, and decide which platform should handle each task.
+
+When an incident happens, that confusion slows everything down. If two tools return different results, your team has to stop and determine which one is accurate before taking the next step.
+
+A practical fix is a twice-yearly stack audit. List every security product, its annual cost, what it protects, and who manages it. Flag anything that overlaps by more than half its function. Most Twin Cities SMBs find at least one product they can retire without losing coverage, and the savings often fund the monitoring or training they actually need.
+
+## 4. Poor setup can leave dangerous gaps
+
+A cybersecurity tool does not protect your business simply because you purchased it. Someone must configure it correctly, keep it updated, and make sure it is monitoring the right users, devices, and systems.
+
+This is where many businesses quietly lose ground. A setting gets disabled during troubleshooting and never turned back on. A tool configured for your first 10 employees is never updated after you grow to 25. A new laptop ships without the endpoint agent installed.
+
+None of that appears on an invoice. The tool is installed, the bill is paid, and everything looks fine on the surface. The real risk is not choosing the wrong solution. It is relying on one that was never fully configured to protect your business.
+
+## Strategy always wins over volume
+
+Think of your security stack like a team. Performance does not improve when you add more people with unclear responsibilities. It improves when everyone has a defined role, confusion is removed, and every part of the team works toward the same goal. The best stack is not the biggest one. It is the one where every tool earns its place.
+
+Start by identifying what needs protection, where attackers are most likely to cause harm, and which controls already address those risks. Then evaluate which tools strengthen that plan and which ones only add noise. Retire the duplicates, tune the alerts, verify the configurations, and assign one owner to the whole picture.
+
+## Frequently Asked Questions
+
+### How many security tools does a small business actually need?
+
+There is no magic number. What matters is coverage: email protection, endpoint protection, backup and recovery, access control with multi-factor authentication, and monitoring. If one tool covers two of those well, that is better than two tools covering one each.
+
+### What is alert fatigue, and why does it matter?
+
+Alert fatigue happens when a team receives so many warnings that they start skimming instead of investigating. Real threats get missed because they look like routine noise. Fewer, better-prioritized alerts are safer than a larger volume of unreviewed ones.
+
+### How do I know if two tools overlap?
+
+Compare what each one protects and what it reports. If both monitor the same endpoints for the same threats and produce the same alerts, you are paying twice for one job.
+
+### Should we remove a tool we already paid for?
+
+If it duplicates another product, is misconfigured beyond repair, or nobody manages it, yes. An unmanaged tool creates a false sense of security, which is worse than having no tool at all in that spot.
+
+## The bottom line
+
+More tools will not fix weak security. A clear strategy, tuned alerts, verified configurations, and one accountable owner will. If you are unsure whether your current stack is protecting your business or making security harder to manage, Veracity Technologies can review it with you. Book a free Business Technology Assessment or call (952) 941-7333. We are a SOC 2 certified MSP in Minnetonka, serving Twin Cities businesses with a 15-minute response for critical issues and a 4.9 out of 5 client rating across 60 plus clients.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025. Global average breach cost 4.44 million dollars; United States average 10.22 million dollars. https://uk.newsroom.ibm.com/2025-cost-of-data-breach-UK
+- Veracity Technologies, How an Overloaded Security Stack Increases Risk, published October 19, 2026. https://www.veracitytech.com/blog/more-tools-wont-fix-your-weak-security
+"""},
+    {"slug": "shadow-ai-vs.shadow-it-why-the-new-threat-to-your-business-data-is-sitting-in-your-browser", "title": "Shadow AI vs. Shadow IT: Why the New Threat to Your Business Data Is Sitting in Your Browser", "excerpt": "Shadow IT left footprints your team could find. Shadow AI leaves none: an employee can paste client data into a browser chatbot and your logs will show nothing but normal web traffic. Here is the comparison that matters, and what to do about it.", "category": "AI & Automation", "published_date": "2026-07-21", "read_time": "6 min read", "content": """Your employee just pasted your firm's quarterly financial projections into a public chatbot to write a board summary, and you have no idea it happened. For an Owner or CEO, that is the uncomfortable truth about shadow AI: it does not ask for permission, it does not install anything, and your standard IT monitoring was never built to catch it. The useful comparison is shadow AI versus shadow IT, the older problem your team already learned to manage.
+
+The useful comparison is shadow AI versus shadow IT, the older problem your team already learned to manage. The two differ in the ways that matter: how visible they are, how much data they expose, and how hard they are to stop.
+
+## Shadow IT was a known problem, and it left evidence
+
+Shadow IT meant unauthorized apps, personal file-sharing accounts, and unapproved subscriptions. It was a real risk, but it left footprints: a syncing personal account showed up in endpoint audits, and an unapproved subscription appeared in traffic logs or on a company credit card statement.
+
+Shadow IT also spread slowly, which gave IT teams time to notice, catalog, and respond. The exposure was bounded: data sat in an unauthorized app, and the app could be found and removed.
+
+## Shadow AI is a different animal
+
+Shadow AI is the use of public AI tools like ChatGPT, Google Gemini, and Microsoft Copilot through a browser, without oversight or data security boundaries. It requires no software install, no admin rights, and no IT ticket.
+
+ChatGPT, Gemini, and Copilot run over HTTPS, the same encrypted protocol used by every legitimate website, on domains most networks allow by default. Standard IT monitoring sees normal browsing traffic, not data being submitted to a third-party AI model. To your IT environment, an employee pasting a client contract into ChatGPT looks identical to that employee reading a news article.
+
+Consider a hypothetical example, labelled as such: a paralegal at a Minneapolis law firm pastes a client contract into a public chatbot. The data leaves the firm's network, and on a free-tier account it may be used for model training. The IT team's logs show a normal HTTPS session. Nothing flags as a security event.
+
+## What actually happens to data that enters a public AI tool
+
+Three concrete risks follow. First, the data may enter third-party training pipelines: free-tier accounts have historically allowed submitted data to be used for training unless users opt out. Second, the data is exposed to any breach at the AI provider. In March 2023, a bug in ChatGPT exposed chat history titles and limited payment information of some users, an incident OpenAI disclosed and patched. Third, it may trigger a regulatory violation. For Twin Cities financial firms, submitting client personal information to a public AI tool can produce a finding under the Gramm-Leach-Bliley Act or a gap in a SOC 2 audit.
+
+In the IBM Cost of a Data Breach Report 2025, 20 percent of organizations studied reported a shadow AI breach, averaging 670,000 dollars in additional costs. The industries most exposed are exactly those common in the Twin Cities: construction companies sharing bid data, financial firms handling client portfolios, and manufacturers uploading proprietary process documentation.
+
+## Shadow AI vs. shadow IT: a side-by-side reality check
+
+- Detectability: shadow IT is visible through software audits and endpoint scans. Shadow AI is invisible, browser-based, with no installation footprint.
+- Data exposure: shadow IT stores data in an unauthorized app. Shadow AI transmits data to an external AI provider, where it may be ingested for training.
+- Enforcement: shadow IT can be blocked through endpoint management. Shadow AI is not blockable without explicit DNS or proxy controls.
+- Speed of adoption: shadow IT spread over years. Shadow AI embedded itself in daily workflows within months.
+
+A policy memo has never once stopped a browser tab.
+
+## Why bans fail, and what a managed approach looks like
+
+Blanket bans are the most common first response, and the least effective. An employee who used a chatbot to cut a two-hour task to fifteen minutes will not stop because of a policy memo. Without an alternative, the employee uses a personal device or a browser profile IT cannot see. The data still leaves, and the ban destroys your visibility.
+
+The alternative is a managed AI environment. Veracity Technologies deploys private, business-controlled AI instances, locally or in a secured private cloud, using a Discover, Build, Scale process. Employees keep the productivity benefit, and data stays within your security perimeter.
+
+## Three steps Twin Cities SMBs can take right now
+
+1. Conduct an informal AI usage audit. Ask managers directly which AI tools their teams are using and for what tasks. Do not send a survey. Have the conversation.
+2. Review your acceptable use policy for AI-specific language. Any policy written before 2023 almost certainly says nothing about AI tools.
+3. Schedule an exposure assessment. A structured assessment maps where your data is currently going and what a private, secured AI environment would cost compared with the liability of doing nothing.
+
+## Frequently Asked Questions
+
+### What is shadow AI, and how is it different from shadow IT?
+
+Shadow IT is unauthorized software that IT teams can detect through network scans or software audits. Shadow AI runs entirely in the browser, leaves no installation footprint, and is invisible to most standard IT monitoring.
+
+### Can my employees use ChatGPT at work without me knowing?
+
+Yes. ChatGPT runs over HTTPS in a browser with no software install. Unless your organization has DNS filtering or proxy controls configured for those domains, employee sessions look like normal web browsing.
+
+### What risks come from employees using public AI tools?
+
+Free-tier tools may use submitted data for model training, providers can suffer breaches (OpenAI had one in March 2023), and regulated businesses can face findings under the Gramm-Leach-Bliley Act or during a SOC 2 audit.
+
+### How do I stop employees from putting company data into AI tools?
+
+Policy alone does not work. The effective approach is a managed, private AI environment that keeps data within your security perimeter.
+
+## The bottom line
+
+AI adoption in the workplace is not reversing. The decision is not AI versus no AI. It is managed AI versus unmanaged AI. One option gives you control, visibility, and security. The other is already in progress without you. To find out which one your business is living with, book a free Business Technology Assessment with Veracity Technologies or call (952) 941-7333.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025. Twenty percent of organizations studied reported a breach caused by shadow AI, averaging 670,000 dollars in additional breach costs. https://uk.newsroom.ibm.com/2025-cost-of-data-breach-UK
+- OpenAI, March 2023 ChatGPT data exposure incident, disclosed March 24, 2023, as reported by The Hacker News. A bug in the redis-py library exposed chat history titles and payment information of 1.2 percent of ChatGPT Plus subscribers active during a nine-hour window. https://thehackernews.com/2023/03/openai-reveals-redis-bug-behind-chatgpt.html
+- Verizon, 2025 Data Breach Investigations Report, published April 2025. Stolen credentials were the initial access vector in 22 percent of breaches. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- Veracity Technologies, Shadow AI vs. Shadow IT, published July 21, 2026. https://www.veracitytech.com/blog/shadow-ai-vs.shadow-it-why-the-new-threat-to-your-business-data-is-sitting-in-your-browser"""},
+    {"slug": "the-hidden-costs-quietly-draining-your-it-budget", "title": "Cut Hidden IT Costs: Q4 Tech Budget Review Tips", "excerpt": "Unused licenses, duplicate tools, and forgotten accounts from former employees quietly drain your IT budget all year. A Q4 review finds the money before next year's plan locks it in.", "category": "Managed IT", "published_date": "2026-11-16", "read_time": "6 min read", "content": """Just like finding forgotten cash in a coat pocket when the seasons change, a close look at your IT budget can turn up money you did not know you were losing. For a CFO or Controller, the pain is the opposite of a crisis: nothing is broken, yet the technology bill keeps growing while nobody can explain exactly what it buys.
+
+Q4 is the perfect window to dig into next year's technology spending plan and uncover dollars that could be put to better use. Smart IT budgeting is about striking the right balance. Chasing the lowest-cost option can leave you just as mismatched as overspending on tools nobody touches. The real goal is spending exactly what is needed to get the results your business depends on. Here are five areas worth a second look.
+
+## 1. Software licenses sitting unused
+
+Employees move on. Workflows shift. A free trial gets forgotten and quietly turns into a recurring charge. Whatever the cause, unused software subscriptions pile up fast and become a surprisingly large drain on your budget.
+
+Take time to review every recurring subscription and verify you are still using the tool, and still paying for the right number of seats. Cut what is no longer needed. Even small, overlooked charges add up month after month into real money. A 25-person firm in Bloomington paying for 40 seats of a design tool only 12 people open is not a rounding error. It is a line item that funds something useful every single month.
+
+Ask your IT lead for a license report before budget season, not during it. Compare assigned seats against actual logins from the last 90 days, and flag anything with zero use.
+
+## 2. Multiple tools doing the same job
+
+As companies grow, teams often adopt their own favorite apps, resulting in overlapping or even identical tools scattered across the business. If one department relies on Microsoft Teams for video calls while another swears by Zoom, there should be a clear justification for paying twice for essentially the same service.
+
+Project management software, creative tools, file-sharing platforms, and similar categories are especially prone to this kind of duplication. Building a complete inventory of every tool in use across the organization makes it far easier to spot overlap and eliminate redundancy.
+
+That said, do not assume similar-looking tools always serve the same purpose. Some applications have specialized features that are essential for one team but irrelevant to another. Opening a conversation with department leaders keeps the budgeting process constructive and collaborative, rather than turning it into a battle where teams feel pressured to defend the tools they have built their workflows around.
+
+## 3. Plans and service tiers that no longer fit
+
+Software-as-a-service providers are constantly rolling out new features and capabilities, which usually means more pricing tiers and plan options to choose from. When mapping out next year's budget, the guiding principle should be right-sizing every plan you pay for.
+
+If your customer relationship management platform offers far more, or far less, than your team actually uses, it is time to adjust the service tier and the monthly cost that comes with it. Watch for upgrades like expanded storage, premium AI features, or added customization. If your team will actually use them, they are worth the investment. If not, downsizing the plan frees up budget that can be put to better use elsewhere.
+
+Set a calendar reminder to review tiers every six months. Vendors change plans far more often than businesses review them, and the gap is where the waste lives.
+
+## 4. Leftover technology from former employees
+
+When someone leaves the company, their paid accounts, devices, phone lines, and storage often get left behind too. That is not just a wasted expense. It is also a real security vulnerability. Dormant accounts with lingering access can become an unmonitored doorway into sensitive company data.
+
+Budget season is an excellent time to check for anything that slipped through the cracks. Moving forward, closing out accounts and revoking access should be a standard step in every employee offboarding checklist. The checklist should name a single owner, because a task owned by everyone is owned by no one.
+
+Stolen credentials were the initial entry point in 22 percent of breaches in the Verizon 2025 Data Breach Investigations Report. An orphaned account is exactly the kind of credential an attacker hopes to find, because nobody is watching it.
+
+## 5. Technology that costs more to maintain than replace
+
+Sometimes older technology still earns its place in your stack. Certain legacy software only runs on older hardware and remains critical to daily operations. In other cases, aging equipment is a prime opportunity to cut costs through a smarter upgrade decision.
+
+Old does not automatically mean outdated or inferior. But if your team keeps complaining about clunky hardware, sluggish software, or aging servers, it is worth comparing ongoing maintenance costs against the price of a strategic upgrade. Add up the repair bills, the workaround hours, and the downtime, and the upgrade often pays for itself faster than the budget spreadsheet suggests.
+
+## Frequently Asked Questions
+
+### Where do hidden IT costs usually hide?
+
+In recurring subscriptions: unused licenses, duplicate tools, wrong-sized service tiers, and accounts left over from former employees. All four are invisible on a monthly statement unless someone looks for them.
+
+### How often should we audit our software licenses?
+
+At least twice a year, and every time headcount changes. License audits tied to hiring and departures catch waste before it compounds.
+
+### Should we just cancel every tool that looks duplicated?
+
+No. Talk to the teams first. Some tools look alike but serve different needs. Cancel the true duplicates, and keep the ones with a clear, specific job.
+
+### What is the fastest win for next year's budget?
+
+The license audit. It takes an afternoon, needs no new spending, and almost always finds seats and subscriptions to cut immediately.
+
+## Make your IT budget work harder for you
+
+Before simply copying last year's numbers into next year's plan, take a real look at where your money is actually going. You may uncover subscriptions worth canceling, accounts that need closing, plans that need right-sizing, or aging technology that is quietly draining your budget.
+
+If you need help reviewing your budget to identify where adjustments are needed, Veracity Technologies can help you determine how your IT funds could be spent more effectively. Book a free Business Technology Assessment or call (952) 941-7333. We are a SOC 2 certified MSP in Minnetonka, serving Twin Cities businesses with a 15-minute response for critical issues and a 4.9 out of 5 client rating across 60 plus clients.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report, published April 2025. Stolen credentials were the initial access vector in 22 percent of breaches. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- Veracity Technologies, Cut Hidden IT Costs: Q4 Tech Budget Review Tips, published November 16, 2026. https://www.veracitytech.com/blog/the-hidden-costs-quietly-draining-your-it-budget
+"""},
+    {"slug": "the-longest-day-of-the-year-and-youre-still-out-of-time", "title": "The Longest Day of the Year and You’re Still Out of Time", "excerpt": "Minnesota gives you the longest day of the year in late June, and bad technology still eats it. The problem is not hours. It is the small IT interruptions that shatter focus all day long.", "category": "Managed IT", "published_date": "2026-06-08", "read_time": "5 min read", "content": """Late June in Minnesota is glorious. We get the longest day of the year, offering endless daylight to finally catch up on work before hitting a patio in St. Paul. For an Owner or CEO, the promise is real, and so is the disappointment: the day fills up just as fast as a January afternoon, and you end it feeling just as far behind.
+
+If the longest day of the year still leaves you feeling behind, time is not the actual problem. The problem is what keeps stealing your time in small pieces, all day long.
+
+## The day starts fine. Then the IT gremlins strike.
+
+Very few days start in total chaos. You usually have a solid plan. Then an employee cannot log in. The Wi-Fi slows down to a crawl. A system takes 45 seconds to load a simple file. These small interruptions force you to stop, shift gears, and lose momentum. By the time you get back on track, a massive chunk of your day is gone.
+
+Most business owners lose time in small, agonizing drips. It is the technological equivalent of sitting in I-494 traffic. Work slows down, focus shatters, and simple tasks drag on forever. Nobody schedules a meeting called "fight with the printer for 20 minutes," but that meeting happens anyway, several times a week, in offices across the Twin Cities.
+
+Add up the drips and the math gets uncomfortable. If ten employees each lose 20 minutes a day to slow systems, frozen applications, and password resets, that is more than 16 hours a week. That is nearly half a full-time employee, spent on nothing.
+
+## More hours will not fix a broken workflow
+
+Adding more hours to the day will not fix a broken workflow. If your underlying systems are unreliable, your team will just be inefficient for a longer period of time. Staying late to finish work that slow technology delayed is not dedication. It is a tax your business pays every single day.
+
+The fix is not a longer day. It is a day with fewer interruptions, and that comes from systems that work the way they are supposed to. That means hardware that is current enough to keep up, software that is patched and maintained, and a network that does not buckle every afternoon at 2 p.m.
+
+## What smooth-running businesses do differently
+
+Businesses that run smoothly do not just manage time better. They prevent losing it. The difference is proactive support: monitoring that catches issues before they break your focus, and root-cause fixes instead of the same temporary workaround every month.
+
+Here is what that looks like in practice:
+
+- Monitoring that spots a failing drive, a full server, or a degrading internet connection before anyone notices a symptom.
+- Recurring problems fixed at the root, so the same login failure does not eat 20 minutes every Monday.
+- Updates and patches applied quietly in the background, instead of interrupting the workday.
+- One call for help, answered fast, with a 15-minute response for critical issues.
+
+When the small interruptions stop, the day gets longer in the only way that matters: your team spends it on customers, projects, and growth, instead of on workarounds.
+
+## A quick self-check for your longest day
+
+Ask yourself these questions before summer ends:
+
+- How many times this week did someone on your team wait on technology instead of working?
+- Do the same problems keep coming back, or do they get fixed for good?
+- When something breaks, does your team know exactly who to call, or do they improvise?
+- Could your business keep working if your internet or your main system went down for an hour?
+
+If the answers make you wince, the issue is not your calendar. It is your infrastructure, and it is fixable.
+
+## Frequently Asked Questions
+
+### Why are my office computers running so slow?
+
+Slow computers are usually the result of outdated hardware, bloated software, or underlying network bottlenecks. An audit of your systems can identify the root cause and restore your speed and productivity.
+
+### What does proactive IT support look like for a small business?
+
+Instead of waiting for things to break, a proactive provider monitors your network around the clock, applies updates quietly in the background, and resolves small glitches before they cause downtime.
+
+### Is it worth replacing hardware that still works?
+
+If hardware is slow enough to cost your team time every day, it is not really working. Compare the cost of the delay against the cost of the replacement. The delay usually costs more.
+
+### How fast should IT support respond when something is critical?
+
+For a critical issue, minutes matter. Veracity Technologies answers critical issues within 15 minutes, so a bad morning does not become a lost day.
+
+## Take your day back
+
+Late June gives Minnesota the most daylight of the year. You should spend it on your business, not on your business's technology problems. Veracity Technologies monitors your systems to catch issues before they break your focus, and fixes recurring problems at the root. If you are tired of losing time to bad tech in Dakota County or anywhere in the Twin Cities, book a free Business Technology Assessment or call (952) 941-7333. We are a SOC 2 certified MSP in Minnetonka, with a 4.9 out of 5 client rating across 60 plus clients.
+
+## Sources
+
+- Veracity Technologies, The Longest Day of the Year and You're Still Out of Time, published June 8, 2026. https://www.veracitytech.com/blog/the-longest-day-of-the-year-and-youre-still-out-of-time
+"""},
+    {"slug": "the-most-dangerous-risks-in-your-business-dont-swim-on-the-surface", "title": "Summer Cyber Threats to Watch in Business", "excerpt": "Like a shark, the threats that cost Twin Cities businesses the most never announce themselves. Fake vendor invoices, phishing aimed at distracted summer staff, and compromised vendors do their damage below the surface.", "category": "Cybersecurity", "published_date": "2026-07-20", "read_time": "6 min read", "content": """At first glance, the water seems peaceful. That is exactly why Shark Week grabs attention every year: the threat is never obvious on the surface. The real danger is what is already moving below.
+
+For an Owner or CEO, cybercriminals work the same way. Today's attacks are built to blend into normal business activity until the moment a payment is approved, a system fails, or money disappears. During the summer, when calendars fill up, employees travel, and oversight naturally slips, attackers know businesses are often looking the other way. Here are three threats they are using right now.
+
+## 1. Fraudulent invoices and vendor impersonation
+
+In many cases, attackers never need to break into anything. One convincing email is enough. This tactic, known as business email compromise, relies on impersonating a vendor, supplier, or executive your team already recognizes and trusts.
+
+The message looks routine. Someone processes the payment to the "vendor." By the time the fraud is discovered, the funds are already gone. The numbers explain why this is the first threat to take seriously: business email compromise caused 2.77 billion dollars in reported losses across 21,442 incidents in 2024, according to the FBI Internet Crime Complaint Center, making it the second costliest cybercrime category of the year.
+
+These scams surge during vacation season for a reason. When the usual approver is out, requests are redirected to employees who may not know what normal should look like. Temporary coverage creates confusion, and attackers count on it. A fake invoice can arrive on a Friday, look like regular subcontractor billing, and get paid before anyone thinks to check.
+
+The best defense is easy to put in place: create a verification step for every financial request that comes in by email. A quick call to a trusted number, not the one included in the message, can stop most fraudulent payments before they happen. No exceptions for urgency, no exceptions for the boss being out, and no exceptions for "this vendor always does it this way."
+
+## 2. Phishing attacks aimed at distracted employees
+
+Phishing succeeds because it exploits how people behave when they are busy. Cybercriminals time these messages carefully. A rushed employee sees a password reset prompt and clicks. Someone gets a text that appears to come from IT. An email arrives just before a meeting asking for urgent wire approval. In the moment, verifying the request feels slower than responding.
+
+Phishing was the most reported cybercrime of 2024, with 193,407 complaints filed with the FBI Internet Crime Complaint Center. Summer makes it worse: short-staffed weeks and employees checking email from phones while traveling. Attackers do not wait until September.
+
+The strongest protection is not just technology. It is a security-first culture. Employees should feel confident pausing when something feels off:
+
+- An unexpected login request
+- A payment instruction that appeared without warning
+- A link in an email they were not expecting
+
+Attackers use speed to pressure people into mistakes. When your team slows down, you take that advantage away. Make it explicit that no one will ever be punished for double-checking a suspicious message, even if it turns out to be legitimate.
+
+## 3. Third-party risk that spreads quickly
+
+When a vendor with access to your systems is compromised, the risk does not stay with them. It can move straight into your environment through every connection they have to your business.
+
+This is supply chain exposure, and most organizations have more of it than they realize. Connected software, service providers holding credentials, and contractors whose access was never removed all create hidden entry points many business owners have never fully mapped. Outsourcing a service does not outsource accountability.
+
+To understand your supply chain exposure, you need clear answers to three questions:
+
+1. Which vendors can access your data or systems?
+2. What are they connecting to?
+3. Who inside your business is responsible for managing those relationships?
+
+If those answers are not clear, your risk is already higher than it should be. A vendor who still holds a login from a project that ended two years ago is risk you cannot see. Review vendor access at least twice a year, and remove what is no longer needed the moment a project ends.
+
+## By the time you notice it, it is already in motion
+
+Sharks do not announce themselves, and neither do the cybercriminals targeting your business. The companies that get hit are not always the ones ignoring obvious red flags. More often, they are the ones assuming everything is fine because nothing looks wrong.
+
+Summer is when routines loosen, attention drifts, and the water looks the calmest. It is also when attackers are often most active. The good news is that all three threats in this post have practical defenses: verify payments by phone, give your team permission to pause, and map your vendor access. None of them requires a big budget. All of them require someone to take them seriously before an incident, not after.
+
+## Frequently Asked Questions
+
+### What is business email compromise?
+
+Business email compromise is fraud in which an attacker impersonates a vendor, supplier, or executive to trick an employee into sending money or sensitive information. It rarely involves breaking into systems. It works by looking legitimate.
+
+### How can I tell if an invoice email is fake?
+
+Look for small changes: a slightly different sender address, new payment details, unusual urgency, or a request that skips your normal approval process. When in doubt, call the vendor at a number you already have, not the number in the email.
+
+### Why do phishing attacks spike in summer?
+
+Vacation coverage puts less experienced staff in approval roles, employees check email on personal devices while traveling, and routines loosen. Attackers time their messages for exactly those moments.
+
+### What should we do if we already paid a fraudulent invoice?
+
+Act immediately. Contact your bank to attempt a recall, report the incident to the FBI Internet Crime Complaint Center, and tell your IT provider so they can check for compromised accounts. Speed matters more than embarrassment.
+
+## The bottom line
+
+The most dangerous risks in your business do not swim on the surface. They move quietly, below the routine, until the damage is done. If you are not sure where your business stands, Veracity Technologies can help you identify where you are exposed across vendors, employee behavior, and day-to-day operations before a costly incident occurs. Book a free Business Technology Assessment or call (952) 941-7333. We are a SOC 2 certified MSP in Minnetonka, serving Twin Cities businesses with a 15-minute response for critical issues and a 4.9 out of 5 client rating across 60 plus clients.
+
+## Sources
+
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report, published April 2025. Business email compromise caused 2.77 billion dollars in losses across 21,442 incidents; phishing drew 193,407 complaints, the most of any crime type. https://www.proofpoint.com/us/blog/email-and-cloud-threats/email-attacks-drive-record-cybercrime-losses-2024
+- Verizon, 2025 Data Breach Investigations Report, published April 2025. Stolen credentials were the initial access vector in 22 percent of breaches. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- Veracity Technologies, Summer Cyber Threats to Watch in Business, published July 20, 2026. https://www.veracitytech.com/blog/the-most-dangerous-risks-in-your-business-dont-swim-on-the-surface
+"""},
+    {"slug": "think-your-cloud-data-is-safe-think-again", "title": "Cloud Data Backup Risks and Recovery Strategies", "excerpt": "Microsoft 365 and Google Workspace keep your team connected, but they do not back up your data for you. Here are the five ways cloud data is lost, and what a real recovery plan looks like.", "category": "Cybersecurity", "published_date": "2026-08-10", "read_time": "6 min read", "content": """Too many companies keep their documents in Microsoft 365 or Google Workspace and believe that means their data is fully protected. It does not. For an Operations VP, the pain hits on the day a critical file disappears and someone says, "But it is in the cloud, so we can get it back," and nobody can say how, or how long it will take.
+
+Cloud tools are built to keep your team connected and efficient, but convenience is not the same as recovery. If a file is removed, edited incorrectly, or locked by ransomware, your cloud provider is not automatically responsible for restoring it. That responsibility belongs to you.
+
+## Shared responsibility, in plain English
+
+Your provider maintains the platform and protects the infrastructure. Safeguarding your data and restoring it after an incident is your responsibility. That is the reality of shared responsibility, and it surprises a lot of business owners the first time they hear it.
+
+Microsoft and Google keep their services running. They do not keep a separate, independent copy of your data that you can roll back to whenever you want. Their recycle bins and version histories help with small mistakes, but they are not a backup strategy. A backup strategy answers three questions: what is protected, how far back can we go, and how fast can we restore it?
+
+## Five ways cloud data can be lost
+
+Cloud platforms sync quickly, which is great for productivity, but that speed can also spread problems fast. Once a file is deleted, altered, or encrypted, the change can replicate across devices before anyone notices.
+
+1. Accidental file deletion. Someone removes a shared folder by mistake, and the deletion syncs across the cloud and connected devices. Employees lose access to the documents they depend on, work comes to a halt, and your team scrambles to determine what disappeared.
+2. Overwritten data. An employee saves the wrong version of a critical file and replaces the correct one without realizing it. The team then wastes valuable time digging through emails and previous versions to rebuild what was lost.
+3. Ransomware on synced files. Ransomware can encrypt files on one device, and if those files are synced to the cloud, the encrypted versions sync as well. Your business can lose access to important documents, projects, or customer records. Recovery becomes much more difficult without a clean backup from before the attack.
+4. Expired retention limits. Cloud platforms only keep deleted or changed data for a limited period. In SharePoint and OneDrive, deleted items are retained in the recycle bin for 93 days from the time they were deleted, according to Microsoft's own documentation. If an issue is not discovered before that window closes, restoring the information becomes far more difficult. One missing file can create a much larger business disruption, especially when the data supports billing, customer service, compliance, or project delivery.
+5. Misconfigured permissions. A simple permissions error can lock employees out of the files they need or expose sensitive information to the wrong people. Either mistake disrupts operations, wastes time, and forces managers into a recovery process they were not expecting.
+
+Cloud storage gives your team flexibility, but it does not replace a real recovery plan. Without a tested backup strategy, these everyday risks can lead to lost productivity, slower customer response times, and confusion when your business needs clear answers most.
+
+## Testing confirms your backup plan works
+
+Many businesses have backups in place, but having backups is not the same as knowing they are complete, current, and recoverable. That is a dangerous assumption during an outage, cyberattack, or data loss event.
+
+Routine testing helps uncover issues before they become emergencies. It can expose corrupted files, missing folders, or incomplete backups. Just as importantly, it gives your team a clear recovery process before a real incident happens.
+
+You should never have to discover your recovery process during downtime. Your business should already know what can be restored, how long it will take, and who is responsible for each step. Testing gives your organization a dependable path forward so employees can get back to work faster, customers receive timely updates, and leadership avoids unnecessary stress.
+
+Run a test restore every quarter. Pick a different system each time, time each restore, write down what worked and what did not, and fix the gaps before the next test.
+
+## True resilience means being ready to recover
+
+No company can stop every disruption, whether it comes from downtime, ransomware, accidental deletion, or a system problem that cuts off access to critical data. With the right foundation, disruption becomes manageable. Instead of uncertainty, you have a clear plan to follow.
+
+That is why you need a trusted IT partner to help build and maintain that foundation. The right partner can verify that your backups are complete, test your recovery process, and help reduce downtime so normal operations can resume faster when something goes wrong. The average breach took 241 days to identify and contain in the IBM Cost of a Data Breach Report 2025. You cannot afford a recovery plan that has never been tested.
+
+## Frequently Asked Questions
+
+### Does Microsoft 365 back up my data automatically?
+
+No. Microsoft 365 provides recycle bins, version history, and short-term retention, but it does not provide an independent backup you can restore from after a serious incident. A separate backup product or service is needed for that.
+
+### How long do I have to recover a deleted SharePoint file?
+
+Deleted items are retained in the SharePoint recycle bin for 93 days from the time they were deleted, according to Microsoft. After that window, or if the bin is emptied, recovery depends on your backup or retention policies.
+
+### Can ransomware spread through cloud sync?
+
+Yes. If ransomware encrypts files on a synced device, the encrypted versions can sync to the cloud like any other change. That is why a clean backup from before the attack matters more than sync alone.
+
+### How often should we test our backups?
+
+At least quarterly, covering a different system each time. A backup that has never been tested is a hope, not a plan.
+
+## The bottom line
+
+Your cloud provider keeps the platform running. Protecting your data is your job, and a tested backup is how you do it. Book a free Business Technology Assessment with Veracity Technologies or call (952) 941-7333, and we will check whether your safety net is ready to protect your business when it matters. We are a SOC 2 certified MSP in Minnetonka, serving Twin Cities businesses with a 15-minute response for critical issues and a 4.9 out of 5 client rating across 60 plus clients.
+
+## Sources
+
+- Microsoft Support, Restore deleted items from the site collection recycle bin. In SharePoint in Microsoft 365, items are retained for 93 days from the time they are deleted. https://support.microsoft.com/en-gb/sharepoint/admin/restore-deleted-items-from-the-site-collection-recycle-bin
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025. The mean time to identify and contain a breach fell to 241 days. https://uk.newsroom.ibm.com/2025-cost-of-data-breach-UK
+- Veracity Technologies, Cloud Data Backup Risks and Recovery Strategies, published August 10, 2026. https://www.veracitytech.com/blog/think-your-cloud-data-is-safe-think-again
+"""},
+    {"slug": "what-ai-cant-do-when-your-systems-go-down", "title": "AI Monitoring vs Recovery: What Businesses Need", "excerpt": "Your AI monitoring tool spotted the outage in seconds, and then it did nothing to fix it. Detection is not recovery. The difference is a tested playbook, and most businesses have never run theirs.", "category": "Business Continuity", "published_date": "2026-08-24", "read_time": "5 min read", "content": """It is 4 a.m., and an alert has just jolted you awake. A critical system is down. For an Owner or CEO, that moment is the test of everything you bought and everything you postponed.
+
+The AI monitoring platform you invested in did exactly what it was supposed to do: it spotted the problem quickly. But the real question is what happens after the alert. That is where many businesses are still exposed. Today's monitoring tools are excellent at detecting unusual activity, identifying issues early, and notifying the right people faster than ever. What they cannot do is recover your data, rebuild your environment, or get your team productive again.
+
+## Detection and recovery are different challenges
+
+Too many businesses invest heavily in tools that tell them when something is wrong, while recovery planning gets overlooked. Think of a fire alarm. It warns you about danger, but it does not extinguish the fire, protect your property, or move people to safety. What it does provide is time. Whether the situation stays contained or escalates depends on the preparation and protections you have already built.
+
+In the same way, AI monitoring can tell you a server is offline, flag suspicious behavior, or alert you to a failed backup. What it cannot do is reduce the cost of lost productivity or keep your team waiting without direction. For a growing business, the real difference often comes down to one factor: how fast you can recover once an incident occurs.
+
+The stakes are measurable. The global average cost of a data breach was 4.44 million dollars in the IBM Cost of a Data Breach Report 2025, and in the United States it reached a record 10.22 million dollars. The mean time to identify and contain a breach was 241 days. Every hour your team spends figuring out what to do, instead of following a plan, adds to that cost.
+
+## Your true safety net
+
+As a business owner, you know disruption is inevitable. The only question is when it will happen. The businesses that recover fastest are not always the ones with the most advanced tools. They are the ones that know exactly what to do the moment something goes wrong.
+
+Two companies hit by the same cyberattack on the same day can end up in very different places. One spends days trying to figure out the next move, while the other is back online within hours. The difference is preparation. One had a documented recovery playbook that defined responsibilities, steps, and sequencing. They tested it, found what failed, made improvements, and practiced again. When the real incident happened, they followed a plan instead of creating one under pressure.
+
+That is what a tested recovery process looks like in action: a reliable, living system your team can execute confidently when time matters most. A playbook that sits in a drawer, untested, is not a plan. It is a document.
+
+## How prepared are you? Ask yourself these questions
+
+Think back to that 4 a.m. alert. When the notification comes in, these questions help determine whether you recover quickly or face a long, expensive disruption:
+
+- When did we last test our backups, and did the restore actually work?
+- If something failed today, how long would recovery take?
+- Does everyone know their role if a critical system goes down?
+- Are we confident our backups would work if we needed them right now?
+- If an outage happened today, could we get employees back to work within a timeframe we can accept?
+
+If you cannot answer most of these confidently, your monitoring is doing its job and your recovery planning is not. That gap is normal, and it is fixable, but only before the incident.
+
+## How we help
+
+Your AI monitoring tool can tell you when something breaks. It cannot tell you whether you are ready to recover. That is where we come in. We help Twin Cities businesses test backups, confirm recovery processes, and uncover gaps before they turn into costly downtime.
+
+Many clients discover their backups are incomplete or corrupted the first time we test them. It is far better to uncover those issues in a controlled environment than during an emergency. A smarter alert only delivers value if you are prepared for what happens after it fires.
+
+A good recovery test has three parts: restore the data, confirm it is complete and usable, and time the whole process. Do it quarterly, rotate the systems you test, and update the playbook every time you find a gap. The businesses that recover in hours are the ones that practiced in advance.
+
+## Frequently Asked Questions
+
+### What is the difference between monitoring and recovery?
+
+Monitoring detects a problem and alerts you. Recovery restores your data and systems and gets your team working again. You need both, but only recovery limits the damage.
+
+### How often should we test our backups?
+
+At least quarterly. Test a different system each time, and always verify the restored data is complete and usable, not just that the restore finished.
+
+### What should a recovery playbook include?
+
+Responsibilities, step-by-step restore procedures, the order systems come back online, vendor contact information, and a communication plan for employees and customers.
+
+### Does AI monitoring replace the need for a recovery plan?
+
+No. AI monitoring makes detection faster. It does not restore a single file. A recovery plan is still the part that brings your business back.
+
+## You may not be as ready as you think
+
+Here is the reality: like most businesses, you may not have fully tested your recovery plan. It is easy to postpone that work when everything is running normally. The encouraging part is that the gap can be closed, and it does not require a complete overhaul.
+
+Spend a few minutes getting clarity. Book a free Business Technology Assessment with Veracity Technologies or call (952) 941-7333. We will review your current recovery plan, identify what has been tested and what has not, and show you where your business stands. No obligation, no hard sell, just a straightforward assessment of your readiness. Because when that 4 a.m. alert goes off, you want to follow a plan, not create one from scratch.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025. Global average breach cost 4.44 million dollars; United States average 10.22 million dollars; mean time to identify and contain a breach 241 days. https://uk.newsroom.ibm.com/2025-cost-of-data-breach-UK
+- Veracity Technologies, AI Monitoring vs Recovery: What Businesses Need, published August 24, 2026. https://www.veracitytech.com/blog/what-ai-cant-do-when-your-systems-go-down
+"""},
+    {"slug": "what-is-ai-as-a-service-aiaas-a-plain-english-guide-for-minneapolis-business-owners", "title": "What Is AI as a Service (AIaaS)? A Plain-English Guide for Minneapolis Business Owners", "excerpt": "AI as a Service gives your Twin Cities business enterprise-grade AI without hiring a data science team: managed, subscription-based tools that work inside a security boundary you control.", "category": "AI & Automation", "published_date": "2026-07-14", "read_time": "6 min read", "content": """Your employees are probably already using ChatGPT at work right now, and if your business has not set any rules around it, there is a real chance client data has already been pasted into a public AI tool your company does not control. For an Owner or CEO, that is the gap AI as a Service exists to close: your team gets the productivity tools they want, inside a security boundary you control.
+
+## So, what exactly is AI as a Service (AIaaS)?
+
+AI as a Service (AIaaS) is access to enterprise-grade artificial intelligence, document summarization, predictive analytics, and workflow automation, delivered through a managed, subscription-based model rather than built from scratch in-house. A local IT partner configures, secures, and supports the toolset.
+
+The analogy that fits best: cloud computing let small businesses access server infrastructure they could never afford to own outright. AIaaS does the same for artificial intelligence. A 20-person accounting firm in Plymouth can access the same AI capability a Fortune 500 company uses, without a data science team.
+
+AIaaS is not a single product. It is a category of managed service, with capabilities selected and configured for a specific business's workflows and data environment.
+
+## What can AIaaS actually do for a Minneapolis business?
+
+AIaaS applies most directly to businesses that deal with high document volumes, repetitive reporting tasks, or compliance-sensitive client data, which describes a large share of the Minneapolis-St. Paul metro's SMB market.
+
+- Construction firms: automated project reporting and RFI tracking. AIaaS can extract status updates from email threads, flag overdue items, and generate weekly project summaries.
+- Financial services firms: compliance flag detection. AI can scan client documents and flag language that may trigger compliance review, catching issues in minutes.
+- Manufacturers: predictive maintenance alerts. AI can analyze sensor data and surface alerts before a failure occurs, reducing unplanned downtime.
+- Professional services: proposal drafting and meeting summaries. AI can draft first-pass proposals and generate structured meeting summaries automatically, recovering hours per week per employee.
+
+## The shadow AI problem: why "just let employees use it" is a risky strategy
+
+Shadow AI, unsanctioned, unmonitored use of public AI tools by employees with no governance framework, is the real risk most Minneapolis SMBs are already carrying without knowing it.
+
+What specifically gets exposed:
+
+- Client personal information entered into a free-tier tool may be used to train the model, with no opt-out under the default terms.
+- Proprietary financial models or blueprints uploaded for analysis may be retained by the platform, outside your control.
+- No breach accountability exists when there is no record of what data left your environment.
+
+The exposure compounds quickly for businesses handling sensitive client information. For Minneapolis businesses in regulated industries, it also creates direct compliance risk that a single undocumented AI interaction can trigger.
+
+In the IBM Cost of a Data Breach Report 2025, 20 percent of organizations studied reported a breach caused by shadow AI usage, averaging 670,000 dollars in additional breach costs. The problem is not that employees are using AI. The problem is that no one is responsible for how it is being used.
+
+## Managed AIaaS vs. DIY AI: what is the actual difference?
+
+The difference between managed AIaaS and DIY AI is not the technology. It is accountability. One model has a responsible party; the other does not.
+
+With DIY AI, there is no security review, no data governance, and no staff training. Nobody owns the outcome. With managed AIaaS, every tool is vetted before deployment, data boundaries keep company data under business control, tools are integrated with existing systems, and a local IT team is responsible for outcomes.
+
+Managed AIaaS deploys within a managed IT services model where Veracity Technologies vets every tool, configures data boundaries, trains staff on safe usage, and monitors for policy violations.
+
+## How a managed AI implementation actually works
+
+A managed AI implementation with Veracity Technologies runs in three defined phases over 90 days, each with a concrete deliverable.
+
+1. Days 1 to 30, Discover and Secure: audit existing AI tool usage, identify all shadow AI exposure, and establish a data governance baseline. By day 30, you will know exactly which tools your team is using and which ones need to be shut down or replaced.
+2. Days 30 to 60, Build and Train: select and configure the right AI tools, integrate them with existing systems, and train staff on safe usage. No tool goes live without a defined data boundary.
+3. Days 60 to 90 and beyond, Scale and Optimize: measure productivity impact against the day-one baseline, expand to additional use cases, and adjust governance policies as the toolset evolves.
+
+An AI project many businesses avoid because it feels overwhelming becomes a structured 90-day project with clear milestones.
+
+## Is managed AIaaS right for your Minneapolis business?
+
+Most Minneapolis SMBs that handle client data or run document-heavy operations qualify. The self-check below takes 30 seconds.
+
+- Do you have employees using AI tools today without a formal policy?
+- Do you handle client data, financial information, or proprietary documents?
+- Are you looking for a productivity edge without adding headcount?
+
+If you answered yes to any of these, managed AI as a Service is worth a direct conversation.
+
+## Frequently Asked Questions
+
+### How is AI as a Service different from just using ChatGPT for my business?
+
+ChatGPT is a single public tool with no data governance, no integration with your systems, and default terms that may allow your inputs to be used for model training. Managed AIaaS is a configured deployment: vetted tools, defined data boundaries, staff training, and a local IT team accountable for the result.
+
+### Is managed AIaaS affordable for a small business in Minneapolis?
+
+Managed AIaaS is structured as a subscription, so costs scale with the size of the business rather than requiring a large upfront investment. For most Minneapolis SMBs, the productivity recovered more than offsets the monthly cost.
+
+### What happens to my company's data when employees use AI tools?
+
+With free-tier public tools, data entered may be retained by the platform, with no audit trail. With managed AIaaS, data boundaries are configured at deployment so company data stays within your controlled environment.
+
+### How long does it take to set up a managed AI solution for a small business?
+
+Veracity Technologies runs a 90-day roadmap. The first 30 days produce a complete audit of AI tool usage and a governance baseline. Core tools are configured and staff are trained by day 60.
+
+## The bottom line
+
+AI as a Service is how a Twin Cities business gets enterprise-grade AI without enterprise-grade risk: the productivity your employees already want, inside a boundary you control. To find out what that would look like for your business, book a free Business Technology Assessment with Veracity Technologies or call (952) 941-7333.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025. Twenty percent of organizations studied reported a shadow AI breach, averaging 670,000 dollars in additional costs. https://uk.newsroom.ibm.com/2025-cost-of-data-breach-UK
+- Veracity Technologies, What Is AI as a Service (AIaaS)? A Plain-English Guide for Minneapolis Business Owners, published July 14, 2026. https://www.veracitytech.com/blog/what-is-ai-as-a-service-aiaas-a-plain-english-guide-for-minneapolis-business-owners
+"""},
+    {"slug": "what-is-dark-web-monitoring-minneapolis-business", "title": "What Is Dark Web Monitoring - and Should Your Minneapolis Business Be Using It?", "excerpt": "Your employee's work email and password may already be listed for sale on a dark web marketplace, and nobody will tell you unless someone is watching. Here is what monitoring catches, what it cannot do, and why the response after the alert matters most.", "category": "Cybersecurity", "published_date": "2026-10-29", "read_time": "6 min read", "content": """Your employee's work email and password may already be listed for sale on a dark web marketplace right now, and your business will not get a notification unless someone is actively watching for it. For an Owner or CEO, the question is straightforward: what is dark web monitoring, and is it genuinely useful for a small business, or just another vendor scare tactic?
+
+It is a real, limited, and useful control. It does one job: it tells you when credentials have already escaped your perimeter, so you can act before a buyer uses them. It does not prevent the leak, it does not remove your data from criminal forums, and it does not replace your firewall or antivirus.
+
+## What dark web monitoring actually does, and what it does not
+
+Dark web monitoring is automated, continuous scanning of dark web marketplaces, paste sites, and criminal forums for email addresses, passwords, and sensitive data tied to your business domain. It tells you when credentials have already escaped your perimeter, not before.
+
+In short, it is a managed service that crawls hidden, non-indexed internet networks and criminal forums to identify business credentials or sensitive data that have been leaked or listed for sale.
+
+What it detects:
+
+- Leaked email and password combinations tied to your business domain, sourced from third-party breaches
+- Domain mentions in criminal forums where threat actors discuss or trade access to companies
+- Sensitive data fragments such as financial account details or client records appearing in breach databases
+
+What it does not do matters just as much. Dark web monitoring does not remove your data from criminal forums. Once credentials are listed, they remain there. It also does not replace antivirus software or a firewall, which guard your perimeter against incoming threats. It watches what has already escaped the perimeter, filling a gap those tools leave open. It is one component of a complete security posture, not a posture on its own.
+
+## The credential-to-breach kill chain Minneapolis businesses should know
+
+A stolen credential rarely goes from breach to attack in one step. It follows a predictable sequence: leaked in a third-party breach, listed on a dark web forum, purchased by a threat actor, then used to access your systems. Monitoring interrupts that chain at the listing stage, before a buyer acts.
+
+How the kill chain progresses:
+
+1. Third-party breach. An employee reuses a work email and password on an external platform. That platform is breached, not your network.
+2. Dark web listing. The credential set is packaged and listed on a criminal marketplace or paste site, often within days.
+3. Purchase by a threat actor. A buyer acquires the credential, sometimes in bulk lots of thousands of accounts.
+4. Exploitation. The threat actor attempts business email compromise or uses the credential to deploy ransomware after gaining network access.
+
+Stolen credentials were the most common initial access vector in the Verizon 2025 Data Breach Investigations Report, used in 22 percent of breaches. In basic web application attacks, 88 percent involved stolen credentials.
+
+Why Minneapolis SMB verticals face specific credential risks: a financial firm's client-portal login may provide direct access to account management tools, a manufacturer's VPN credential can open remote access to operational systems, and a construction company's project-management account holds subcontractor payment details that attract invoice fraud. In each case, the original breach happens somewhere outside the business. The business never receives a direct notification. Dark web monitoring is the mechanism that surfaces the exposure before a threat actor acts on it.
+
+## What dark web monitoring watches for, and how it works
+
+Dark web monitoring watches three data categories: employee credential pairs, domain-specific mentions in hacker forums, and fragments of sensitive business or financial data. Monitoring runs continuously and automatically, not as a one-time scan.
+
+A one-time scan tells you what was exposed at one moment. Managed monitoring runs continuously, cross-referencing your monitored domain against newly indexed sources. A single scan becomes stale within days, while continuous monitoring surfaces new exposures as they appear. A managed service also handles the indexing infrastructure, which is not accessible through standard browsers.
+
+## Why a SOC 2 certified MSP changes what happens after an alert
+
+When an alert fires, what happens next determines whether the exposure becomes a breach. A SOC 2 certified MSP has documented incident-response procedures and access controls independently verified before any alert, so the response is structured, not improvised.
+
+SOC 2 certification is an independent audit standard that verifies an organization's security, availability, and confidentiality controls meet defined criteria, covering policies, access controls, and incident-response workflows. With a non-certified provider, the alert arrives as an email or PDF report, and the client must initiate the credential reset. With a SOC 2 certified MSP like Veracity Technologies, the alert triggers a documented workflow: a forced credential reset, a review of multi-factor authentication coverage, active sessions terminated, and a change-management record created. Many offerings treat the alert as the end of the service. Veracity's SOC 2 certification means the workflows behind every alert are independently verified. Dark web monitoring without a response plan is detection without action.
+
+## Frequently Asked Questions
+
+### Can dark web monitoring remove my data from the dark web?
+
+No. Dark web monitoring is a detection service. It identifies when your credentials appear on criminal forums and marketplaces, but it cannot remove that data. The value is early detection so you can reset credentials before an attacker uses them.
+
+### How does dark web monitoring work for a small business?
+
+A managed service continuously scans criminal forums, marketplaces, and breach databases for credentials tied to your business domain. When a match is found, your IT provider is alerted and initiates a response, typically a credential reset and MFA review, before an attacker can act.
+
+### What happens when my credentials are found on the dark web?
+
+The exposed credential should be reset immediately, active sessions terminated, and multi-factor authentication coverage reviewed. A SOC 2 certified MSP executes these steps through documented incident-response procedures, rather than leaving remediation to the business owner.
+
+### Is dark web monitoring worth it for small businesses?
+
+It is worth considering for any business whose employees use work email addresses to access external platforms, which covers nearly every small business. Credential theft frequently originates from third-party breaches outside your control. Monitoring closes the visibility gap between a breach elsewhere and an attacker using those credentials against your systems.
+
+## The bottom line
+
+Your credentials are probably already out there somewhere, in a breach you never heard about. Dark web monitoring is how you find out before a buyer does, and a SOC 2 certified response is how you make sure the alert turns into action instead of another unread report. To check whether your business credentials are already exposed, book a free Business Technology Assessment with Veracity Technologies or call (952) 941-7333.
+
+## Sources
+
+- Verizon, 2025 Data Breach Investigations Report, published April 2025. Stolen credentials were the initial access vector in 22 percent of breaches; 88 percent of basic web application attacks involved stolen credentials. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- Veracity Technologies, What Is Dark Web Monitoring, and Should Your Minneapolis Business Be Using It?, published October 29, 2026. https://www.veracitytech.com/blog/what-is-dark-web-monitoring-minneapolis-business
+"""},
+    {"slug": "what-is-soc-2-compliance", "title": "What Is SOC 2 Compliance and Why You Need It", "excerpt": "SOC 2 is the independent audit standard that separates IT providers who can prove their security from those who can only describe it. Here is what the five trust criteria cover, the difference between Type I and Type II, and what to ask your MSP.", "category": "Compliance", "published_date": "2025-08-07", "read_time": "6 min read", "content": """In today's cybersecurity landscape, "trust but verify" is essential. For a Compliance Lead, the pain is concrete: your clients, your cyber insurer, and your auditors all ask for proof that your IT provider protects data properly, and a sales deck is not proof. That is why SOC 2 compliance, short for System and Organization Controls 2, is quickly becoming a non-negotiable standard when choosing a Managed Services Provider. Choosing an IT partner without this kind of independent verification puts your systems, and your clients, at unnecessary risk.
+
+## What is SOC 2 compliance?
+
+SOC 2 is a cybersecurity and risk management framework developed by the American Institute of Certified Public Accountants (AICPA). It is designed to ensure that service providers manage data securely to protect their clients and their customers' privacy.
+
+A SOC 2 report evaluates how a service organization implements controls around five areas, the Trust Services Criteria:
+
+- Security
+- Availability
+- Processing Integrity
+- Confidentiality
+- Privacy
+
+Security is required in every SOC 2 report, through the AICPA's Common Criteria. The other four categories are optional, and the organization chooses which are in scope.
+
+There are two main types of SOC 2 reports:
+
+- SOC 2 Type I assesses the design of controls at a specific point in time. It shows that the controls exist and are suitably designed.
+- SOC 2 Type II evaluates the effectiveness of those controls over a defined period, typically 6 to 12 months. It shows that the controls actually worked, consistently, because the auditor tested evidence from across the whole window.
+
+You may also come across SOC 2 Type III, a summary-level report meant for public distribution. For comparison, SOC 1 reports focus on financial reporting systems, not cybersecurity.
+
+## Why SOC 2 certification matters
+
+Achieving SOC 2 requires time, investment, and operational discipline. It signals that you are working with a managed IT partner who values security, transparency, and accountability. An independent auditor has examined the provider's controls, a layer of credibility you can take straight to your board or your clients. For Veracity Technologies, SOC 2 is the core of how we serve Twin Cities businesses:
+
+- Trust through transparency. Our processes have been audited by an independent third party, a layer of credibility no marketing claim can match.
+- Security built in. At Veracity, security is not added on at the end. It is baked into every service we offer.
+- Audit-ready IT. We have been through it, and we can help you pass your own compliance audit with confidence.
+
+## Breaking down the five trust principles of SOC 2
+
+Here is what each principle means for your business:
+
+1. Security. Controls protect against unauthorized access and attacks: managed detection and response, firewalls, endpoint protection, and employee training.
+2. Availability. Systems are available and functional when needed, thanks to 24/7 monitoring and proactive maintenance that protect uptime.
+3. Processing integrity. Systems process data accurately, completely, and on time.
+4. Confidentiality. Sensitive data is protected with encrypted backups, access control, and regular audits.
+5. Privacy. Personal information is collected, used, and disposed of responsibly.
+
+## How SOC 2 certification helps you prepare for compliance
+
+If your industry is regulated, finance, manufacturing, commercial construction, and others, compliance is not optional. It is expected. SOC 2 expertise gives you an edge in meeting:
+
+- Financial audit requirements
+- Cyber liability insurance criteria
+- Client vendor due diligence
+- State and federal data protection laws
+
+This makes a certified MSP the ideal partner to guide your organization through SOC 2 preparation, evidence collection, and policy documentation. When a client sends you a vendor security questionnaire, a SOC 2 certified provider can answer it with an auditor's report instead of a paragraph of promises. Consider a hypothetical example, labelled as such: a Minneapolis manufacturer wins a bid, and the customer's procurement team sends a 200-question security questionnaire. With a SOC 2 certified MSP, most answers point to the auditor's report. Without one, it becomes weeks of work, and sometimes a lost deal.
+
+## How Veracity builds SOC 2 into your business
+
+When you work with Veracity, SOC 2 is not just our certification. It becomes your advantage:
+
+- Security tool deployment. From day one, we install and configure SOC 2-aligned tools to protect your endpoints, emails, backups, and networks.
+- Documentation and policies. We provide the guides and support you need to build out internal IT policies and compliance documentation.
+- Strategic vCIO services. Our virtual CIOs give you quarterly insights, planning, and risk assessments, keeping you moving toward audit readiness.
+- Unlimited support. Whether it is a question about multi-factor authentication or a full security incident response, our team is available for unlimited onsite and remote support.
+
+## Frequently Asked Questions
+
+### What is the difference between SOC 2 Type I and Type II?
+
+Type I reports on whether controls are suitably designed as of a single date. Type II also tests whether the controls operated effectively across a review period, commonly 6 to 12 months. Type II is what enterprise customers usually require, because it proves consistent operation, not just design.
+
+### Is SOC 2 a certification or a report?
+
+Strictly speaking, SOC 2 produces an attestation report from an independent CPA firm, not a pass or fail certificate. In practice, a provider that holds a current SOC 2 report is described as SOC 2 certified, and that is the usage in this post.
+
+### How long does a SOC 2 audit take?
+
+A Type I engagement typically takes 6 to 12 weeks once controls are in place. A Type II engagement takes 6 to 12 months, because the auditor needs evidence across the full observation period.
+
+### What should I ask an MSP about SOC 2?
+
+Ask for the report itself, the report type and coverage period, which trust criteria are in scope, and how the provider's controls map to your compliance needs. A provider that cannot produce the report does not have one.
+
+## The bottom line
+
+SOC 2 is how you separate an IT provider that can prove its security from one that can only describe it. The five trust criteria, the independent auditor, and the Type II evidence trail turn a sales claim into something your board, your insurer, and your clients can rely on. If you are still relying on an MSP that cannot prove its security practices, it is time for a change. Veracity Technologies is the SOC 2 certified IT partner trusted by Minneapolis-St. Paul businesses in high-compliance industries. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Sources
+
+- American Institute of Certified Public Accountants (AICPA), Trust Services Criteria. SOC 2 evaluates a service organization against five criteria: security, availability, processing integrity, confidentiality, and privacy. Type I assesses design at a point in time; Type II tests effectiveness over a period, typically 6 to 12 months. https://www.sanity.io/glossary/soc-2-compliance
+- CloudQuery, What Is SOC 2? Technical Guide. Type I attests controls are designed appropriately at a point in time; Type II attests controls operated effectively over a period, typically 6 to 12 months. https://www.cloudquery.io/blog/what-is-soc2-compliance
+- Veracity Technologies, What Is SOC 2 Compliance and Why You Need It, published August 7, 2025. https://www.veracitytech.com/blog/what-is-soc-2-compliance
+"""},
+    {"slug": "your-biggest-cybersecurity-risk-might-be-inside-the-house", "title": "Insider Threats: Types, Risks and Warning Signs", "excerpt": "The most expensive breaches are often the ones that start with a trusted login, not a broken firewall. Here is how insider risk works, why it costs more than outside attacks, and the controls that keep trusted access from becoming your biggest exposure.", "category": "Cybersecurity", "published_date": "2026-10-05", "read_time": "6 min read", "content": """The biggest cybersecurity risk to your business might already have a key to the building. For an Owner or CEO, that is the hardest threat to accept: the danger is not always a stranger breaking in. Sometimes it is a trusted employee, a departing team member, or a well-meaning staffer who makes one careless mistake.
+
+An insider threat is a risk from inside your organization: an employee, vendor, partner, or executive who already has legitimate access to your systems and data. The harm can be deliberate or accidental. It is not about distrusting your team. It is about recognizing that trusted access is powerful, and powerful access needs guardrails.
+
+## The 6 faces of insider threats
+
+Insider threats come in different forms, and each one puts your business at risk in a different way:
+
+- Data theft. Someone inside copies, downloads, or leaks sensitive information for personal benefit or harmful intent, or takes company devices that store privileged data.
+- Sabotage. A frustrated employee intentionally harms your organization by deleting files, infecting systems, or blocking access to essential resources.
+- Unauthorized access. Someone views or obtains information they should not be allowed to see. Sometimes this is deliberate. Other times, employees access restricted data without realizing they have no business need for it.
+- Negligence and error. Not every insider threat is malicious. Careless mistakes, weak handling of data, and ignored security procedures can create just as much risk as an attacker with bad intentions.
+- Credential sharing. Sharing passwords is like giving away the keys to your office. When employees share credentials with coworkers, friends, or contractors, they open the door to unauthorized access and cyber incidents.
+- Unauthorized AI use. Employees may turn to unapproved AI tools and unintentionally expose company records or customer information to outside platforms.
+
+## Spotting the warning signs
+
+Early detection is critical. Train your team to watch for these common warning signs:
+
+- Unusual access patterns. An employee suddenly starts opening confidential data that has nothing to do with their role.
+- Excessive data transfers. Large volumes of customer information are downloaded or copied to external storage devices.
+- Authorization requests. Someone keeps asking for access to sensitive systems even though their responsibilities do not require it.
+- Use of unapproved devices. Confidential business data is being accessed from personal laptops or other unauthorized devices.
+- Disabling security tools. An insider turns off antivirus protection, firewall settings, or other security defenses.
+- Use of unapproved AI tools. Employees begin entering sensitive information into public AI apps or platforms that your business has not reviewed.
+- Behavioral changes. An employee becomes overly secretive, misses deadlines, or shows signs of unusual stress.
+
+No single clue confirms misconduct, but patterns can reveal a real threat. The sooner you notice them, the faster you can act.
+
+## Why insider incidents cost more
+
+In the IBM Cost of a Data Breach Report 2025, malicious insider attacks carried the highest average cost of any attack type, at 4.92 million dollars per breach, against a global average of 4.44 million dollars and a United States average of 10.22 million dollars. Insider incidents cost more because they are harder to detect and take longer to contain.
+
+Your firewall, antivirus, and email filters are all pointed outward. They do an excellent job against strangers and almost nothing against a login that belongs in the building.
+
+A Twin Cities example makes it concrete. Consider a hypothetical scenario, labelled as such: a project manager at a construction firm in Eden Prairie gives notice and works two more weeks. Nobody reviews what files they access, and nobody revokes their access to the estimating system on their last day. Three weeks later, a competitor underbids your firm using numbers that look familiar. You cannot prove where they came from, and that is the problem.
+
+## Building your defenses from the inside out
+
+Use these five steps to strengthen your cybersecurity strategy and reduce insider risk:
+
+1. Adopt a strong password policy and require multi-factor authentication (MFA) wherever possible.
+2. Limit access so employees only use the data and systems their current jobs require, and review permissions regularly.
+3. Train employees on insider threats, security best practices, and the safe use of AI tools.
+4. Back up critical data on a regular schedule so recovery is possible after a loss event.
+5. Create a detailed incident response plan for insider threats and set clear rules for AI use and sensitive data handling.
+
+Two more habits close the remaining gaps. Revoke access on the last day, not the last week, with a checklist and one named owner covering email, file shares, VPN, cloud applications, and shared passwords. And separate duties for money movement, so no single person can create a vendor, approve a payment, and release the funds. The FBI Internet Crime Complaint Center reported 2.77 billion dollars in business email compromise losses in 2024, and many succeed because one person can move money alone.
+
+## Frequently Asked Questions
+
+### What is an insider threat?
+
+An insider threat is a risk from someone inside your organization, with legitimate access to your systems and data, who causes harm on purpose or by accident. It covers data theft, sabotage, unauthorized access, careless mistakes, credential sharing, and unapproved AI use.
+
+### Is insider risk mostly about disgruntled employees?
+
+No. The most common insider incidents are careless, not malicious: a clicked phishing link, a file emailed to a personal account, or a shared password. Deliberate theft is rarer but more damaging per incident.
+
+### How do we detect insider threats without spying on employees?
+
+Focus on behavior, not people. Monitor for unusual activity patterns, large downloads, or odd-hours access, rather than reading employee messages or tracking keystrokes.
+
+### What should happen on an employee's last day?
+
+Revoke access to email, file shares, VPN, cloud applications, and shared passwords on the last day, collect company devices, and confirm the checklist is complete.
+
+### Does multi-factor authentication help against insider risk?
+
+Yes, against the compromised insider scenario. MFA stops a stolen password from being enough to get in. It does not stop a legitimate user from misusing their own access, which is why least privilege and offboarding matter too.
+
+## The bottom line
+
+Your biggest cybersecurity risk might be inside the house, and that is not a reason to distrust your team. It is a reason to give trusted access the guardrails it deserves: least privilege, fast offboarding, multi-factor authentication, and monitoring for unusual behavior. If you are not sure where your trusted access stands today, Veracity Technologies can help. Book a free Business Technology Assessment or call (952) 941-7333.
+
+## Sources
+
+- IBM, Cost of a Data Breach Report 2025, published July 30, 2025. Malicious insider attacks carried the highest average cost at 4.92 million dollars; global average 4.44 million dollars; United States average 10.22 million dollars. https://uk.newsroom.ibm.com/2025-cost-of-data-breach-UK
+- Verizon, 2025 Data Breach Investigations Report, published April 2025. Stolen credentials were the initial access vector in 22 percent of breaches. https://www.verizon.com/business/resources/articles/credential-stuffing-attacks-2025-dbir-research/
+- FBI Internet Crime Complaint Center, 2024 Internet Crime Report, published April 2025. Business email compromise caused 2.77 billion dollars in losses across 21,442 incidents. https://www.proofpoint.com/us/blog/email-and-cloud-threats/email-attacks-drive-record-cybercrime-losses-2024
+"""}
 ]
