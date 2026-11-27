@@ -65,7 +65,7 @@ export default function EbookPopup() {
           <p className="text-[#94a8be] text-sm mb-6 leading-relaxed">
             <span className="text-white font-semibold">Mastering AI for Business Success</span> - an Amazon bestselling guide by Veracity Technologies leadership on implementing AI strategies that drive real business outcomes.
           </p>
-          <a href="https://www.veracitytech.com/mastering-ai" target="_blank" rel="noopener noreferrer">
+          <a href="/mastering-ai">
             <Button className="w-full bg-[#0077B3] hover:bg-[#0077B3]/90 text-white rounded-md font-semibold h-12 text-base mb-3">
               Get Your Free Copy <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
