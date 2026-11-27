@@ -196,6 +196,7 @@ https://www.veracitytechmn.com/client-success
 Testimonials organized by Financial Services, Manufacturing, Construction, and general MSP success stories.
 
 ## Blog / Resources
+- 1Password Was Breached. Your Passwords Are Safe. What Minnesota Businesses Should Do This Week: https://www.veracitytechmn.com/resources/1password-breach-what-minnesota-businesses-should-do
 - Your Bank Was Not Hacked. Its Vendor Was. What the Chase, Visa and Mastercard Leak Means for Minnesota Firms: https://www.veracitytechmn.com/resources/jpmorgan-visa-mastercard-vendor-breach-what-minnesota-firms-should-do
 - 178 Websites Served Malware to Their Own Visitors on Monday. Is Yours One of Them?: https://www.veracitytechmn.com/resources/optimizely-hack-178-websites-what-minnesota-businesses-should-check-now
 - CMMC Phase 2 Suspended: What MN Defense Contractors Still Owe: https://www.veracitytechmn.com/resources/cmmc-phase-2-suspended-what-minnesota-defense-contractors-still-owe
@@ -205,7 +206,6 @@ Testimonials organized by Financial Services, Manufacturing, Construction, and g
 - What Happens to Your Data When Employees Use ChatGPT at Work?: https://www.veracitytechmn.com/resources/what-happens-to-your-data-when-employees-use-chatgpt-at-work-the-risk-minneapolis-firms-cant-ignore
 - What a Real IT Compliance Audit Looks Like: https://www.veracitytechmn.com/resources/what-a-real-it-compliance-audit-looks-like-and-how-minneapolis-businesses-can-prepare
 - Managed AI vs. DIY AI: Why Letting Employees Figure It Out Costs You: https://www.veracitytechmn.com/resources/managed-ai-vs-diy-ai-why-letting-employees-figure-it-out-is-costing-you-more-than-you-think
-- That Old Tech? You're Still Paying For It Every Month: https://www.veracitytechmn.com/resources/that-old-tech-youre-still-paying-for-it-every-month
 
 ## Business Technology Assessment (Central Authority Page)
 https://www.veracitytechmn.com/business-technology-assessment
