@@ -113,6 +113,8 @@ export default function Footer() {
               <Link data-testid="footer-link-about" to="/about" className="block text-[#94a8be] hover:text-white text-sm transition-colors">About Us</Link>
               <Link data-testid="footer-link-testimonials" to="/testimonials" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Testimonials</Link>
               <Link data-testid="footer-link-careers" to="/careers" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Careers</Link>
+              <Link data-testid="footer-link-contact" to="/contact" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Contact Us</Link>
+              <Link data-testid="footer-link-discovery-call" to="/discovery-call" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Book a Discovery Call</Link>
             </div>
           </div>
 

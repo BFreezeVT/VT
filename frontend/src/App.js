@@ -34,6 +34,8 @@ const MasteringAI = lazy(() => import("./pages/MasteringAI"));
 const MaximizingAI = lazy(() => import("./pages/MaximizingAI"));
 const CybersecurityThatWorks = lazy(() => import("./pages/CybersecurityThatWorks"));
 const AiriaRequest = lazy(() => import("./pages/AiriaRequest"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
+const DiscoveryCall = lazy(() => import("./pages/DiscoveryCall"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Below-fold homepage sections - each ships in its own chunk instead of bloating the
@@ -200,6 +202,8 @@ function App() {
           <Route path="/maximizing-ai" element={<MaximizingAI />} />
           <Route path="/cybersecurity-that-works" element={<CybersecurityThatWorks />} />
           <Route path="/airia-request" element={<AiriaRequest />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/discovery-call" element={<DiscoveryCall />} />
           <Route path="/:aiSlug" element={<AIPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

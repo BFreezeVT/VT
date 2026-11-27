@@ -70,6 +70,8 @@ const STATIC_META = {
   "/maximizing-ai": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
   "/cybersecurity-that-works": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
   "/airia-request": { lastmod: "2026-11-25", changefreq: "monthly", priority: "0.8" },
+  "/contact": { lastmod: "2026-11-24", changefreq: "monthly", priority: "0.8" },
+  "/discovery-call": { lastmod: "2026-11-24", changefreq: "monthly", priority: "0.8" },
 };
 
 const INDUSTRY_META = { lastmod: "2025-12-01", changefreq: "monthly", priority: "0.9" };
