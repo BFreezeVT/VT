@@ -52,6 +52,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.veracitytechmn.com/about</loc>
+        <lastmod>2026-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.veracitytechmn.com/service-areas/minnetonka-mn</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
