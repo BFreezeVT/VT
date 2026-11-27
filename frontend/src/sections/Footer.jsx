@@ -102,6 +102,11 @@ export default function Footer() {
               <button data-testid="footer-link-faq" onClick={() => scrollTo("faq")} className="block text-[#94a8be] hover:text-white text-sm transition-colors">FAQ</button>
               <button data-testid="footer-link-audit" onClick={() => scrollTo("audit")} className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Free Audit</button>
               <Link data-testid="footer-link-bta" to="/business-technology-assessment" className="block text-[#0077B3] hover:text-white text-sm transition-colors font-medium">Business Technology Assessment</Link>
+              <Link data-testid="footer-link-free-network-assessment" to="/free-network-assessment" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Free Network Assessment</Link>
+              <Link data-testid="footer-link-2-free-hours" to="/2-free-hours" className="block text-[#94a8be] hover:text-white text-sm transition-colors">2 Free Hours of Support</Link>
+              <Link data-testid="footer-link-it-buyers-guide" to="/it-buyers-guide" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Free IT Buyers Guide</Link>
+              <Link data-testid="footer-link-mastering-ai" to="/mastering-ai" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Mastering AI (Free Book)</Link>
+              <Link data-testid="footer-link-maximizing-ai" to="/maximizing-ai" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Maximizing AI (Free Book)</Link>
               <Link data-testid="footer-link-roi-calculator" to="/ai-roi-preview" className="block text-[#94a8be] hover:text-white text-sm transition-colors">AI ROI Calculator</Link>
               <Link data-testid="footer-link-areas" to="/service-areas" className="block text-[#94a8be] hover:text-white text-sm transition-colors mt-1">Service Areas</Link>
               <Link data-testid="footer-link-resources" to="/resources" className="block text-[#94a8be] hover:text-white text-sm transition-colors">Resources</Link>

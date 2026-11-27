@@ -1,4 +1,5 @@
 import { Award, BookOpen, ShieldCheck, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const credentials = [
   {
@@ -19,14 +20,14 @@ const credentials = [
     icon: BookOpen,
     title: "Mastering AI for Business Success",
     desc: "Amazon bestselling book by Veracity Technologies leadership on implementing AI strategies that drive real business outcomes.",
-    url: "https://www.veracitytech.com/mastering-ai",
+    url: "/mastering-ai",
     linkText: "Read more",
   },
   {
     icon: BookOpen,
     title: "Maximizing AI",
     desc: "Our second published work on advanced AI adoption, governance, and security for business leaders navigating the AI landscape.",
-    url: "https://www.veracitytech.com/maximizing-ai",
+    url: "/maximizing-ai",
     linkText: "Read more",
   },
 ];
@@ -59,25 +60,41 @@ export default function Credentials() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {credentials.map((cred, i) => (
-            <a
-              key={cred.title}
-              href={cred.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid={`credential-card-${i}`}
-              className="border border-white/15 bg-white/[0.07] rounded-md p-6 text-center group block hover:border-[#0077B3] hover:bg-white/[0.1] transition-all"
-            >
-              <cred.icon className="w-8 h-8 text-[#0077B3] mx-auto mb-4 group-hover:text-white transition-colors" />
-              <h3 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
-                {cred.title}
-              </h3>
-              <p className="text-[#c0cfe0] text-xs leading-relaxed mb-4">{cred.desc}</p>
-              <span className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium group-hover:text-white transition-colors">
-                {cred.linkText} <ExternalLink className="w-3 h-3" />
-              </span>
-            </a>
-          ))}
+          {credentials.map((cred, i) => {
+            const cardClass = "border border-white/15 bg-white/[0.07] rounded-md p-6 text-center group block hover:border-[#0077B3] hover:bg-white/[0.1] transition-all";
+            const cardInner = (
+              <>
+                <cred.icon className="w-8 h-8 text-[#0077B3] mx-auto mb-4 group-hover:text-white transition-colors" />
+                <h3 className="text-white font-semibold text-sm mb-2" style={{ fontFamily: "Outfit, sans-serif" }}>
+                  {cred.title}
+                </h3>
+                <p className="text-[#c0cfe0] text-xs leading-relaxed mb-4">{cred.desc}</p>
+                <span className="inline-flex items-center gap-1 text-[#0077B3] text-xs font-medium group-hover:text-white transition-colors">
+                  {cred.linkText} <ExternalLink className="w-3 h-3" />
+                </span>
+              </>
+            );
+            // Internal book pages use client-side routing; external links open a new tab.
+            if (cred.url.startsWith("/")) {
+              return (
+                <Link key={cred.title} to={cred.url} data-testid={`credential-card-${i}`} className={cardClass}>
+                  {cardInner}
+                </Link>
+              );
+            }
+            return (
+              <a
+                key={cred.title}
+                href={cred.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid={`credential-card-${i}`}
+                className={cardClass}
+              >
+                {cardInner}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
